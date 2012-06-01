@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Utility">
+</Property><Property Name="Solution File" Value="C:\Users\Ace\Desktop\projects\Utility\Utility.sln">
+</Property><Property Name="Date" Value="2012年1月10日">
+</Property><Property Name="Time" Value="9:51:52">
+</Property></Properties><Event ErrorLevel="0" Project="Utility" Source="Utility.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Utility" Source="Utility.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Utility" Source="Utility.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
