@@ -36,6 +36,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -139,6 +140,15 @@
             this.barButtonItem5.Id = 4;
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "设计";
+            this.barButtonItem6.Id = 5;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
+
             // 
             // barDockControlTop
             // 
@@ -385,6 +395,7 @@
         private DevExpress.XtraEditors.TextEdit txtIndex;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraEditors.CheckEdit checkEdit2;
     }
 }

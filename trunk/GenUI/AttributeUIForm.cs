@@ -105,40 +105,11 @@ namespace GenUI
             curDiyForm.Width = layoutControlDragDrop1.dragDropLayoutControl1.Width;
             curDiyForm.CtrlList = list;
             curSys_Model.UIXml = curDiyForm.XmlSerialize<DiyForm>();
-            Environment.Logic.ExecuteNonQuery(CreateTable());
+            
             Environment.Logic.Modify<Sys_Model>(curSys_Model);
         }
 
-        public string CreateTable()
-        {
-            List<string> pks = new List<string>();
-            List<string> attrlist = new List<string>();
-            foreach (Sys_ModelAttribute attr in attrs)
-            {
-                if (attr.IsPk)
-                    pks.Add(attr.AttrName + " asc");
-                string ty = ((EnumFieldType)(attr.AttrType.ParseTo<int>())).ToString();
-                string len = "";
-                if (!attr.AttrLenth.IsEmpty())
-                    len = "(" + attr.AttrLenth + ")";
-                string temp = attr.AttrName + " " + ty + " " + len + " " + (attr.AllowNull ? "null" : "not null");
-                attrlist.Add(temp);
-            }
-
-            string attrstring = string.Join(",", attrlist.ToArray());
-            string pkstring = string.Join(",", pks.ToArray());
-            string sql = @"
-            if exists (select * from sys.sysobjects where name='{0}')
-            drop table {0}
-            CREATE TABLE [dbo].[{0}](
-	        {1}
-            CONSTRAINT [PK_{0}] PRIMARY KEY CLUSTERED 
-            (
-	            {2}
-            )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-            ) ON [PRIMARY]";
-            return sql.FormatWith(curSys_Model.TableName, attrstring, pkstring);
-        }
+       
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
