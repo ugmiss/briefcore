@@ -110,7 +110,7 @@ namespace {0}
                 fieldstr += "        public " + typestr + nullable + " " + publicName + " { set; get; }\r\n";
             }
             fieldstr = fieldstr.TrimEnd();
-            string istborview = isview ? "        [Description(\"IsTable\")]\r\n" : "        [Description(\"IsView\")]\r\n";
+            string istborview = !isview ? "        [Description(\"IsTable\")]\r\n" : "        [Description(\"IsView\")]\r\n";
             code.FormatWith(namespacestr, tablename, fieldstr, istborview).WriteToFile((namespacestr + "\\" + tablename + ".cs").AppPath());
         }
 
