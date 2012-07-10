@@ -3,15 +3,16 @@ using System.ComponentModel;
 
 namespace Business
 {
+            [Description("IsTable")]
+
     public class Portal
     {
         [Description("IsPrimaryKey")]
-
-        public string Id { get; set; }
-        public string Parentid { get; set; }
-        public int Sortindex { get; set; }
-        public string Itemtext { get; set; }
-        public string Itemurl { get; set; }
-        public string Imagepath { get; set; }
+        public string Id { set; get; }
+        public string Parentid { set; get; }
+        public int? Sortindex { set; get; }
+        public string Itemtext { set; get; }
+        public string Itemurl { set; get; }
+        public string Imagepath { set; get; }
     }
 }

@@ -110,21 +110,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttributeListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AttributeListForm.cs" />
     <Compile Include="AttributeListForm.Designer.cs">
       <DependentUpon>AttributeListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AttributeUIForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AttributeUIForm.cs" />
     <Compile Include="AttributeUIForm.Designer.cs">
       <DependentUpon>AttributeUIForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommonForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="CommonForm.cs" />
     <Compile Include="CommonForm.Designer.cs">
       <DependentUpon>CommonForm.cs</DependentUpon>
     </Compile>
@@ -139,9 +133,7 @@
       <DependentUpon>DragDropLayoutControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Environment.cs" />
-    <Compile Include="ModelListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ModelListForm.cs" />
     <Compile Include="ModelListForm.Designer.cs">
       <DependentUpon>ModelListForm.cs</DependentUpon>
     </Compile>
@@ -190,7 +182,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -200,15 +191,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="SettingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="SettingForm.cs" />
     <Compile Include="SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sys_ModelForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Sys_ModelForm.cs" />
     <Compile Include="Sys_ModelForm.Designer.cs">
       <DependentUpon>Sys_ModelForm.cs</DependentUpon>
     </Compile>

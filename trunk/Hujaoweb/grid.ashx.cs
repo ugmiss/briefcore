@@ -16,8 +16,8 @@ namespace Hujaoweb
         {
             context.Response.ContentType = "text/plain";
             string json = "";
-            Logic logic = new Logic("server=.;uid=sa;pwd=sa11;database=hujaodata");
-            var li= logic.GetAll<Test>();
+            Logic logic = new Logic("server=.;uid=sa;pwd=sa;database=hujaodata");
+            var li= logic.GetAll<Userinfo>();
             json = @"{""Rows"":" + li.JsonSerialize() + @",""Total"":""" + li.Count + @"""}";
             context.Response.Write(json);
         }

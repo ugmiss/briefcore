@@ -3,13 +3,14 @@ using System.ComponentModel;
 
 namespace Business
 {
-    [Description("IsTable")]
+            [Description("IsTable")]
+
     public class Sys_Model
     {
         [Description("IsPrimaryKey")]
-        public string Id { get; set; }
-        public string TableName { get; set; }
-        public string TableTitle { get; set; }
-        public string UIXml { get; set; }
+        public string Id { set; get; }
+        public string TableName { set; get; }
+        public string TableTitle { set; get; }
+        public string UIXml { set; get; }
     }
 }

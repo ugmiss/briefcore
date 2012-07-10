@@ -63,7 +63,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
     <Content Include="grid.htm" />
+    <Content Include="images\4leaf.ico" />
+    <Content Include="images\4leaf16.png" />
+    <Content Include="images\4leaf32.ico" />
+    <Content Include="images\4leaf32.png" />
+    <Content Include="images\hujao.ico" />
+    <Content Include="images\hujao2.ico" />
     <Content Include="index.htm" />
     <Content Include="jquery-validation\jquery.metadata.js" />
     <Content Include="jquery-validation\jquery.validate.min.js" />
@@ -355,6 +362,13 @@
     <Content Include="grid.ashx" />
     <None Include="ligerUI\skins\icons\新建 Microsoft Office Excel 工作表.xlsx" />
     <Content Include="gridjs.ashx" />
+    <Content Include="web.config" />
+    <Content Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Business\Business.csproj">

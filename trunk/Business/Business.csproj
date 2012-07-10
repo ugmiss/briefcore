@@ -58,10 +58,16 @@
     <Compile Include="Enums\EnumOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropListCache.cs" />
+    <Compile Include="Sys\Article.cs" />
+    <Compile Include="Sys\Customer.cs" />
+    <Compile Include="Sys\Orderdetails.cs" />
+    <Compile Include="Sys\Orderreports.cs" />
+    <Compile Include="Sys\Orders.cs" />
     <Compile Include="Sys\Portal.cs" />
     <Compile Include="Sys\Product.cs" />
     <Compile Include="Sys\Sys_Model.cs" />
     <Compile Include="Sys\Sys_ModelAttribute.cs" />
+    <Compile Include="Sys\Userinfo.cs" />
     <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
