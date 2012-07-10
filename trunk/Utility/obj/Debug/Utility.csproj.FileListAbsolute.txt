@@ -1,0 +1,13 @@
+C:\Users\Administrator\Desktop\brief\Utility\bin\Debug\Utility.dll
+C:\Users\Administrator\Desktop\brief\Utility\bin\Debug\Utility.pdb
+C:\Users\Administrator\Desktop\brief\Utility\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Administrator\Desktop\brief\Utility\bin\Debug\Interop.Microsoft.Office.Core.dll
+C:\Users\Administrator\Desktop\brief\Utility\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\Administrator\Desktop\brief\Utility\bin\Debug\Microsoft.Office.Interop.Word.dll
+C:\Users\Administrator\Desktop\brief\Utility\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\Administrator\Desktop\brief\Utility\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\brief\Utility\bin\Debug\office.dll
+C:\Users\Administrator\Desktop\brief\Utility\bin\Debug\office.xml
+C:\Users\Administrator\Desktop\brief\Utility\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\brief\Utility\obj\Debug\Utility.dll
+C:\Users\Administrator\Desktop\brief\Utility\obj\Debug\Utility.pdb

@@ -16,9 +16,17 @@ namespace System
 {
     public static class StringExtensions
     {
+        public static bool NotEmpty(this string s)
+        {
+            return !string.IsNullOrEmpty(s);
+        }
         public static bool IsEmpty(this string s)
         {
             return string.IsNullOrEmpty(s);
+        }
+        public static string[] Splitty(this string s)
+        {
+            return s.Split(new char[] { ',', '|', ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
         }
         public static string FirstLower(this string s)
         {
@@ -157,6 +165,18 @@ namespace System
                 returnValue += b.ToString("X").PadLeft(2, '0');
             md5.Clear();
             return returnValue;
+        }
+        public static string FileName(this string input)
+        {
+            int a = input.LastIndexOf('\\');
+            int b = input.LastIndexOf('/');
+            return input.Substring((a > b ? a : b) + 1);
+        }
+        public static string FilePath(this string input)
+        {
+            int a = input.LastIndexOf('\\');
+            int b = input.LastIndexOf('/');
+            return input.Substring(0, (a > b ? a : b) + 1);
         }
     }
     public static class TypeExtensions
