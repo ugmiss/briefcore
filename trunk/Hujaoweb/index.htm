@@ -140,18 +140,18 @@
                 success: function (data) {
                     $("#middle").css({ opacity: 0 });
                     $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 2000);
-                    $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 4000); ;
-                    $("#middle").css("background-image", "url(images/green/" + data[index + 1] + ")").animate({ opacity: 0 }, 2000);
-                    index = index + 1;
-                    if (index == data.Length)
-                        index = 0;
+                    $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 4000);
+                    $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 0 }, 2000);
+
                     setInterval(function () {
+
                         $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 2000);
                         $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 4000);
-                        $("#middle").css("background-image", "url(images/green/" + data[index + 1] + ")").animate({ opacity: 0 }, 2000);
                         index = index + 1;
-                        if (index == data.Length)
+                        if (index == data.length)
                             index = 0;
+                        $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 0 }, 2000);
+
                     }, 8000);
 
                 },
