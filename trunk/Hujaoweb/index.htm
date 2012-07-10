@@ -138,19 +138,21 @@
                 data: "",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
-                    $("#middle").css({ opacity: 0 });
-                    $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 2000);
-                    $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 4000);
-                    $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 0 }, 2000);
-
+                    $("#mipic").css({ opacity: 0 });
+                    $("#mipic").attr("src", "/images/green/" + data[index]).animate({ opacity: 1 }, 2000);
+                    $("#mipic").attr("src", "/images/green/" + data[index]).animate({ opacity: 1 }, 4000);
+                    index = index + 1;
+                    if (index == data.length)
+                        index = 0;
+                    $("#mipic").css("src", "/images/green/" + data[index]).animate({ opacity: 0 }, 2000);
                     setInterval(function () {
 
-                        $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 2000);
-                        $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 4000);
+                        $("#mipic").attr("src", "/images/green/" + data[index]).animate({ opacity: 1 }, 2000);
+                        $("#mipic").attr("src", "/images/green/" + data[index]).animate({ opacity: 1 }, 4000);
                         index = index + 1;
                         if (index == data.length)
                             index = 0;
-                        $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 0 }, 2000);
+                        $("#mipic").css("src", "/images/green/" + data[index]).animate({ opacity: 0 }, 2000);
 
                     }, 8000);
 
@@ -160,12 +162,13 @@
         });
     </script>
 </head>
-<body>
+<body scroll="no">
     <div id="main">
         <div id="top">
             <span id="words" style="color: Gray"><b>人生应如此般绿意盎然，携盛夏一抹清凉，如微如醉。</b></span>
         </div>
-        <div id="middle" style="width: 800px; height: 580px">
+        <div id="middle" style="width: 800px; height: 570px">
+            <img id="mipic" style="width: 800px; height: 570px" />
         </div>
         <div id="bottom" style="color: Gray; position: relative">
             <div style="color: Gray; font-size: x-small; text-align: left; float: left; width: 30%">

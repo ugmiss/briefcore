@@ -21,7 +21,13 @@ namespace Hujaoweb
             {
                 plist.Add(f.FileName());
             }
-            context.Response.Write(plist.JsonSerialize());
+            Random random = new Random(DateTime.Now.Millisecond);
+            List<string> newList = new List<string>();
+            foreach (var item in plist)
+            {
+                newList.Insert(random.Next(newList.Count), item);
+            }
+            context.Response.Write(newList.JsonSerialize());
         }
 
         public bool IsReusable
