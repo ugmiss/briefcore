@@ -140,19 +140,19 @@
                 success: function (data) {
                     $("#middle").css({ opacity: 0 });
                     $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 2000);
-                    $("#middle").css("background-image", "url(images/green/" + data[index + 1] + ")").animate({ opacity: 1 }, 3000); ;
+                    $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 4000); ;
                     $("#middle").css("background-image", "url(images/green/" + data[index + 1] + ")").animate({ opacity: 0 }, 2000);
                     index = index + 1;
                     if (index == data.Length)
                         index = 0;
                     setInterval(function () {
                         $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 2000);
-                        $("#middle").css("background-image", "url(images/green/" + data[index + 1] + ")").animate({ opacity: 1 }, 3000); ;
+                        $("#middle").css("background-image", "url(images/green/" + data[index] + ")").animate({ opacity: 1 }, 4000);
                         $("#middle").css("background-image", "url(images/green/" + data[index + 1] + ")").animate({ opacity: 0 }, 2000);
                         index = index + 1;
                         if (index == data.Length)
                             index = 0;
-                    }, 7000);
+                    }, 8000);
 
                 },
                 dataType: "JSON"
@@ -167,10 +167,14 @@
         </div>
         <div id="middle" style="width: 800px; height: 580px">
         </div>
-        <div id="bottom" style="color: Gray">
-            copyright <span style="color: Gray">
-                <img src="images/hujao16.png" style="margin-top: 12px; width: 16px; height: 16px;" />
-                胡椒网 </span>2012
+        <div id="bottom" style="color: Gray; position: relative">
+            <div style="color: Gray; font-size: x-small; text-align: left; float: left; width: 30%">
+                by:<a style="color: Gray; font-size: x-small;" href="#">水探花</a></div>
+            <div style="float: right; width: 50%">
+                copyright <span style="color: Gray">
+                    <img src="images/hujao16.png" style="margin-top: 5px; width: 16px; height: 16px;" />
+                    胡椒网 </span>2012
+            </div>
         </div>
     </div>
 </body>
