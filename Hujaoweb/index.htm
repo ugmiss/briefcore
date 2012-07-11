@@ -74,6 +74,8 @@
             margin: 0 auto;
             align: center;
             background: black;
+            overflow-x: hidden; /*隐藏水平滚动条*/
+            overflow-y: hidden; /*隐藏水平滚动条*/
         }
         
         #main
@@ -125,7 +127,7 @@
         html
         {
             overflow: -moz-scrollbars-vertical;
-            overflow-y: scroll;
+            overflow-y: hidden;
         }
     </style>
     <script src="jquery/jquery-1.5.2.min.js" type="text/javascript"></script>
