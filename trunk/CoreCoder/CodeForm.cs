@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Threading;
 
 namespace CoreCoder
 {
@@ -24,26 +25,33 @@ namespace CoreCoder
             exec = new SqlExecuter(this.textBox1.Text);
             if (!textBox2.Text.IsEmpty())
                 namespacestr = textBox2.Text;
-            if (Directory.Exists(namespacestr.AppPath()))
-                Directory.Delete(namespacestr.AppPath(), true);
-            Directory.CreateDirectory(namespacestr.AppPath());
-            string sqltable = "SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_TYPE FROM INFORMATION_SCHEMA.TABLES WHERE Table_name<>'sysdiagrams' and (Table_Type='BASE TABLE' or  Table_Type='View') and ISNULL(OBJECTPROPERTY(OBJECT_ID(TABLE_NAME), 'IsMSShipped'), 0) = 0 ORDER BY TABLE_NAME";
-
-            foreach (DataRow dr in exec.QueryDataTable(sqltable).Rows)
+            try
             {
-                bool isview = !(dr["TABLE_TYPE"].ToString() == "BASE TABLE");
-                string tablename = dr["TABLE_NAME"].ToString();
-                Gen(tablename.FirstUpper(), isview);
-            }
-            MessageBox.Show("生成完毕。");
-            Process.Start(AppDomain.CurrentDomain.BaseDirectory);
-        }
+                if (Directory.Exists(namespacestr.AppPath()))
+                    Directory.Delete(namespacestr.AppPath(), true);
 
+                Directory.CreateDirectory(namespacestr.AppPath());
+                Thread.Sleep(50);
+
+                string sqltable = "SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_TYPE FROM INFORMATION_SCHEMA.TABLES WHERE Table_name<>'sysdiagrams' and (Table_Type='BASE TABLE' or  Table_Type='View') and ISNULL(OBJECTPROPERTY(OBJECT_ID(TABLE_NAME), 'IsMSShipped'), 0) = 0 ORDER BY TABLE_NAME";
+                foreach (DataRow dr in exec.QueryDataTable(sqltable).Rows)
+                {
+                    bool isview = !(dr["TABLE_TYPE"].ToString() == "BASE TABLE");
+                    string tablename = dr["TABLE_NAME"].ToString();
+                    Gen(tablename.FirstUpper(), isview);
+                }
+                MessageBox.Show("生成完毕。");
+                Process.Start(AppDomain.CurrentDomain.BaseDirectory);
+            }
+            catch {
+                MessageBox.Show("生成失败，重新生成。");
+            }
+        }
         void Gen(string tablename, bool isview)
         {
             List<string> fields = new List<string>();
             string sql =
-                 @"select 
+                 @"select isnull(identity_columns.is_identity ,0) is_identity,
                  isnull(pk.is_primary_key,0) pk,Col.is_nullable is_nullable,
                  (CASE
                  WHEN Type.name = 'uniqueidentifier' THEN 'string'
@@ -68,6 +76,7 @@ namespace CoreCoder
                  WHEN Type.name = 'smallmoney' THEN 'decimal'
                  WHEN Type.name = 'decimal' THEN 'decimal'
                  WHEN Type.name = 'numeric' THEN 'decimal'
+                 WHEN Type.name = 'time' THEN 'DateTime'
                  WHEN Type.name = 'datetime' THEN 'DateTime'
                  WHEN Type.name = 'smalldatetime' THEN 'DateTime'
                  WHEN Type.name = 'bit' THEN 'bool'
@@ -88,7 +97,9 @@ namespace CoreCoder
             string code =
 @"using System;
 using System.ComponentModel;
+using System.Runtime.Serialization;
 
+/* Code Generate Time " + DateTime.Now.ToLocalTime() + @"*/
 namespace {0}
 {{
     {3}
@@ -102,15 +113,25 @@ namespace {0}
             {
                 string publicName = dr["propname"].ToString();
                 bool pk = Convert.ToBoolean(dr["pk"]);
+                bool is_identity = Convert.ToBoolean(dr["is_identity"]);
                 bool is_nullable = Convert.ToBoolean(dr["is_nullable"]);
                 string typestr = dr["type"].ToString();
                 string nullable = is_nullable && typestr != "object" && typestr != "string" && typestr != "byte[]" ? "?" : "";
+
+                List<string> desc = new List<string>();
                 if (pk)
-                    fieldstr += "        [Description(\"IsPrimaryKey\")]\r\n";
+                    desc.Add("IsPrimaryKey");
+                if (is_identity)
+                    desc.Add("IsIdentity");
+                if (desc.Count > 0)
+                    fieldstr += "        [Description(\"" + string.Join(",", desc) + "\")]\r\n";
+
+                fieldstr += "        [DataMember]\r\n";
                 fieldstr += "        public " + typestr + nullable + " " + publicName + " { set; get; }\r\n";
             }
             fieldstr = fieldstr.TrimEnd();
-            string istborview = !isview ? "        [Description(\"IsTable\")]\r\n" : "        [Description(\"IsView\")]\r\n";
+            string istborview = !isview ? "[Description(\"IsTable\")]\r\n" : "[Description(\"IsView\")]\r\n";
+            istborview += "    [DataContract]";
             code.FormatWith(namespacestr, tablename, fieldstr, istborview).WriteToFile((namespacestr + "\\" + tablename + ".cs").AppPath());
         }
 
