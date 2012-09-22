@@ -57,6 +57,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 21);
             this.textBox2.TabIndex = 2;
+            this.textBox2.Text = "vOrient.Business";
             // 
             // CodeForm
             // 

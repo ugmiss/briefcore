@@ -43,7 +43,8 @@ namespace CoreCoder
                 MessageBox.Show("生成完毕。");
                 Process.Start(AppDomain.CurrentDomain.BaseDirectory);
             }
-            catch {
+            catch
+            {
                 MessageBox.Show("生成失败，重新生成。");
             }
         }
@@ -107,7 +108,104 @@ namespace {0}
     {{
 {2}
     }}
+            //        StaticDataProvider.cs  
+            //        public {1}[] GetAll{1}()
+            //        {{
+            //            return logic.GetAll<{1}>().ToArray();
+            //        }}
+            //        public void Add{1}({1} model)
+            //        {{
+            //            logic.Add<{1}>(model);
+            //        }}
+            //        public void Delete{1}({1} model)
+            //        {{
+            //            logic.Delete<{1}>(model);
+            //        }}
+            //        public void Modify{1}({1} model)
+            //        {{
+            //            logic.Modify<{1}>(model);
+            //        }}
+
+            //        IStaticDataProvider.cs  
+            //        {1}[] GetAll{1}();             
+            //        void Add{1}({1} model);
+            //        void Delete{1}({1} model);
+            //        void Modify{1}({1} model);
+
+            //        BusinessManager.cs
+            //        public static {1}[] GetAll{1}()
+            //        {{
+            //            return s_staticDataProvider.GetAll{1}();
+            //        }}
+            //        public static void Add{1}({1} model)
+            //        {{
+            //            s_staticDataProvider.Add{1}(model);
+            //        }}
+            //        public static void Delete{1}({1} model)
+            //        {{
+            //            s_staticDataProvider.Delete{1}(model);
+            //        }}
+            //        public static void Modify{1}({1} model)
+            //        {{
+            //            s_staticDataProvider.Modify{1}(model);
+            //        }}
+
+            //        IWCFService.cs
+            //        [OperationContract]
+            //        {1}[] GetAll{1}();
+            //        [OperationContract]
+            //        void Add{1}({1} model);
+            //        [OperationContract]
+            //        void Delete{1}({1} model);
+            //        [OperationContract]
+            //        void Modify{1}({1} model);
+
+            //        WCFServiceHandler.cs
+            //        public {1}[] GetAll{1}()
+            //        {{
+            //            return BusinessManager.GetAll{1}();
+            //        }}
+            //        public void Add{1}({1} model)
+            //        {{
+            //            BusinessManager.Add{1}(model);
+            //        }}
+            //        public void Delete{1}({1} model)
+            //        {{
+            //            BusinessManager.Delete{1}(model);
+            //        }}
+            //        public void Modify{1}({1} model)
+            //        {{
+            //            BusinessManager.Modify{1}(model);
+            //        }}
+
+
+            //        WCFClient.cs
+            //        public {1}[] GetAll{1}()
+            //        {{
+            //            return client.GetAll{1}();
+            //        }}
+            //        public void Add{1}({1} model)
+            //        {{
+            //            client.Add{1}(model);
+            //        }}
+            //        public void Delete{1}({1} model)
+            //        {{
+            //            client.Delete{1}(model);
+            //        }}
+            //        public void Modify{1}({1} model)
+            //        {{
+            //            client.Modify{1}(model);
+            //        }}
 }}";
+
+           
+
+            
+
+          
+
+
+            
             string fieldstr = "";
             foreach (DataRow dr in exec.QueryDataTable(sql).Rows)
             {
@@ -133,6 +231,9 @@ namespace {0}
             string istborview = !isview ? "[Description(\"IsTable\")]\r\n" : "[Description(\"IsView\")]\r\n";
             istborview += "    [DataContract]";
             code.FormatWith(namespacestr, tablename, fieldstr, istborview).WriteToFile((namespacestr + "\\" + tablename + ".cs").AppPath());
+
+
+
         }
 
 
