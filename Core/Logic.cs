@@ -11,7 +11,6 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Data.Common;
 using System.IO;
-using FastReflect;
 
 namespace System
 {
@@ -49,7 +48,7 @@ namespace System
             string tablename = GetTableName<T>();
             List<string> pks = GetPrimaryKeyNames<T>();
             string rowfield = null;
-            if (rowfields.Length == 0 || rowfields[0].IsNullOrEmpty() || !fields.Contains(rowfields[0].Split(' ')[0]))
+            if (rowfields.Length == 0 || rowfields[0].IsEmpty() || !fields.Contains(rowfields[0].Split(' ')[0]))
             {
                 if (pks.Count > 0)
                     rowfield = pks[0];

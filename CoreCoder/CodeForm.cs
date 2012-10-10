@@ -94,7 +94,7 @@ namespace CoreCoder
                  on indexes.object_id = index_columns.object_id and indexes.index_id = index_columns.index_id
                  where indexes.is_primary_key = 1
                ) PK on Tab.object_id = PK.object_id AND Col.column_id = PK.column_id
-               where Type.Name <> 'sysname' and (Tab.type = 'U' or Tab.type='V')  and Tab.Name<>'sysdiagrams' and Tab.Name='" + tablename + "'";
+               where Type.Name <> 'sysname' and (Tab.type = 'U' or Tab.type='V')  and Tab.Name<>'sysdiagrams' and Tab.Name='" + tablename + "'  order by Col.object_id";
             string code =
 @"using System;
 using System.ComponentModel;
@@ -198,14 +198,14 @@ namespace {0}
             //        }}
 }}";
 
-           
-
-            
-
-          
 
 
-            
+
+
+
+
+
+
             string fieldstr = "";
             foreach (DataRow dr in exec.QueryDataTable(sql).Rows)
             {
@@ -217,6 +217,7 @@ namespace {0}
                 string nullable = is_nullable && typestr != "object" && typestr != "string" && typestr != "byte[]" ? "?" : "";
 
                 List<string> desc = new List<string>();
+                desc.Add("DataField");
                 if (pk)
                     desc.Add("IsPrimaryKey");
                 if (is_identity)
