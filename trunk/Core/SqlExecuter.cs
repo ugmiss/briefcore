@@ -214,7 +214,7 @@ namespace System
                 return null;
         }
         // 执行非查询类型的语句。
-        public void ExecuteNonQuery(string commandText, params object[] parameterArray)
+        public int ExecuteNonQuery(string commandText, params object[] parameterArray)
         {
             SqlConnection Connection = null;
             if (Transaction != null)
@@ -232,21 +232,64 @@ namespace System
                 using (SqlCommand Command = new SqlCommand(sql, Connection))
                 {
                     Command.Transaction = Transaction;
-                    Command.ExecuteNonQuery();
+                    return Command.ExecuteNonQuery();
                 }
             }
             catch (Exception ex)
             {
                 Exception newEx = new Exception(ex.Message + "(sql:" + commandText + ")", ex);
                 Logger.Write(newEx);
-                //throw newEx;
+                throw newEx;
             }
             finally
             {
                 if (Transaction == null)
                     Connection.Dispose();
             }
+            return 0;
         }
+        // 需要返回标识列的值时
+        public int ExecuteNonQuery(out int IdentityID, string commandText, params object[] parameterArray)
+        {
+            IdentityID = -1;
+            SqlConnection Connection = null;
+            if (Transaction != null)
+            {
+                Connection = Transaction.Connection;
+            }
+            else
+            {
+                Connection = new SqlConnection(ConnectionString);
+                Connection.Open();
+            }
+            string sql = ParseCommandString(commandText, parameterArray);
+            try
+            {
+                using (SqlCommand Command = new SqlCommand(sql, Connection))
+                {
+                    Command.Transaction = Transaction;
+                    object obj = Command.ExecuteScalar();
+                    if (obj != null)
+                    {
+                        IdentityID = Convert.ToInt32(obj);
+                        return IdentityID;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Exception newEx = new Exception(ex.Message + "(sql:" + commandText + ")", ex);
+                Logger.Write(newEx);
+                throw newEx;
+            }
+            finally
+            {
+                if (Transaction == null)
+                    Connection.Dispose();
+            }
+            return 0;
+        }
+
         // 执行非查询类型的语句，不抛出异常。
         public void NonQueryWithoutException(string commandText, params object[] parameterArray)
         {
@@ -276,7 +319,7 @@ namespace System
             {
                 Exception newEx = new Exception(ex.Message + "(sql:" + commandText + ")", ex);
                 Logger.Write(newEx);
-                //throw newEx;
+                throw newEx;
             }
             finally
             {
