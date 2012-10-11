@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Linq.Expressions;
-using System.Data;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Reflection.Emit;
+using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
-using System.Data.Common;
-using System.IO;
+using System.Linq.Expressions;
+using System.Reflection;
+using System.Text;
 
 namespace System
 {
@@ -34,7 +29,6 @@ namespace System
             string sql = GetSelectSql<T>();
             return QueryDataTable(sql);
         }
-
         // 查询所有。
         public List<T> GetAll<T>() where T : new()
         {
@@ -58,53 +52,6 @@ namespace System
             }
             return list;
         }
-
-        public static string GetMyWhere<T>(Expression<Func<T, bool>> func) where T : new()
-        {
-            return GetWhere<T>(func.Body);
-        }
-
-        public static string GetWhere<T>(Expression Body) where T : new()
-        {
-            string where = string.Empty;
-
-            if (Body is BinaryExpression)
-            {
-                BinaryExpression be = ((BinaryExpression)Body);
-                where = "where " + BinarExpressionProvider(be.Left, be.Right, be.NodeType);
-            }
-            else if (Body is MemberExpression)
-            {
-                MemberExpression m = (MemberExpression)Body;
-                if (m.Type.FullName == "System.Boolean")
-                {
-                    string left = m.Member.Name;
-                    where = "where {0}=1".FormatWith(left);
-                }
-            }
-            else if (Body is UnaryExpression)
-            {
-                UnaryExpression u = (UnaryExpression)Body;
-                if (u.NodeType == ExpressionType.Not)
-                {
-                    string left = (u.Operand as MemberExpression).Member.Name;
-                    where = "where {0}=0".FormatWith(left);
-                }
-                // u.Operand
-            }
-            else if (Body is ConstantExpression)
-            {
-                ConstantExpression ce = (ConstantExpression)Body;
-                string left = GetExpressionValue(ce.Value);
-                where = "where {0}=1".FormatWith(left);
-            }
-            else
-            {
-                where = ExpressionRouter(Body, false);
-            }
-            return where;
-        }
-
         // 单例条件查询。
         public T GetSingle<T>(Expression<Func<T, bool>> func) where T : new()
         {
@@ -155,7 +102,6 @@ namespace System
                 return default(T);
             }
         }
-
         // 添加单例
         public int Add<T>(T model)
         {
@@ -205,7 +151,6 @@ namespace System
             string sql = string.Format("insert into {0}({1}) values({2});select SCOPE_IDENTITY()", GetTableName<T>(), string.Join(",", fields.ToArray()), string.Join(",", values.ToArray()));
             return this.ExecuteNonQuery(out IdentityID, ParseCommandString(sql, paramList.ToArray()));
         }
-
         // 删除单例。
         public int Delete<T>(T model)
         {
@@ -252,7 +197,6 @@ namespace System
             string sql = string.Format("delete from {0} where {1}", GetTableName<T>(), where);
             return ExecuteNonQuery(ParseCommandString(sql));
         }
-
         // 更新单例。
         public int Modify<T>(T model)
         {
@@ -314,7 +258,7 @@ namespace System
                 List<string> fieldsets = new List<string>();
                 foreach (MemberAssignment ma in mie.Bindings)
                 {
-                    fieldsets.Add("{0} = {1}".FormatWith(ma.Member.Name, ExpressionRouter(ma.Expression, false)));
+                    fieldsets.Add("{0} = {1}".FormatWith(ma.Member.Name, ExpressionRouter(ma.Expression)));
                 }
                 set = string.Join(",", fieldsets.ToArray());
             }
@@ -325,7 +269,6 @@ namespace System
             string sql = string.Format("update {0} set {1} {2}", tablename, set, where);
             return ExecuteNonQuery(ParseCommandString(sql));
         }
-
         // 仅添加不存在的记录。
         public int AddOnly<T>(T t) where T : new()
         {
@@ -345,8 +288,6 @@ namespace System
             else
             { return Modify<T>(t); }
         }
-
-
         // 缓存字段名集合。
         static Dictionary<Type, List<string>> FieldNameListMap = new Dictionary<Type, List<string>>();
         // 缓存主键名集合。
@@ -355,7 +296,6 @@ namespace System
         static Dictionary<Type, List<string>> IdentityNameListMap = new Dictionary<Type, List<string>>();
         // 非标识列集合。
         static Dictionary<Type, List<string>> FieldNameListWithOutIdentityMap = new Dictionary<Type, List<string>>();
-
 
         // 获取字段名集合。
         static List<string> GetFieldNamesWithOutIdentity<T>()
@@ -554,6 +494,8 @@ namespace System
             }
             return string.Format(commandText, parameterList.ToArray());
         }
+
+
         // 取查询语句。
         string GetSelectSql<T>() where T : new()
         {
@@ -597,7 +539,7 @@ namespace System
             }
             sb += ExpressionRouter(left, ExpressionType.Equal == type);
             sb += ExpressionTypeCast(type);
-            tmpStr = ExpressionRouter(right, false);
+            tmpStr = ExpressionRouter(right);
             if (tmpStr == "null")
             {
                 if (sb.EndsWith(" ="))
@@ -609,11 +551,52 @@ namespace System
                 sb += tmpStr;
             return sb += ")";
         }
-        // 解析Lambda表达式路由。
-        static string ExpressionRouter(Expression exp)
+        // 取where
+        public static string GetMyWhere<T>(Expression<Func<T, bool>> func) where T : new()
         {
-            return ExpressionRouter(exp);
+            return GetWhere<T>(func.Body);
         }
+        // 取where
+        public static string GetWhere<T>(Expression Body) where T : new()
+        {
+            string where = string.Empty;
+
+            if (Body is BinaryExpression)
+            {
+                BinaryExpression be = ((BinaryExpression)Body);
+                where = "where " + BinarExpressionProvider(be.Left, be.Right, be.NodeType);
+            }
+            else if (Body is MemberExpression)
+            {
+                MemberExpression m = (MemberExpression)Body;
+                if (m.Type.FullName == "System.Boolean")
+                {
+                    string left = m.Member.Name;
+                    where = "where {0}=1".FormatWith(left);
+                }
+            }
+            else if (Body is UnaryExpression)
+            {
+                UnaryExpression u = (UnaryExpression)Body;
+                if (u.NodeType == ExpressionType.Not)
+                {
+                    string left = (u.Operand as MemberExpression).Member.Name;
+                    where = "where {0}=0".FormatWith(left);
+                }
+            }
+            else if (Body is ConstantExpression)
+            {
+                ConstantExpression ce = (ConstantExpression)Body;
+                string left = GetExpressionValue(ce.Value);
+                where = "where {0}=1".FormatWith(left);
+            }
+            else
+            {
+                where = ExpressionRouter(Body);
+            }
+            return where;
+        }
+        // 解析Expression
         static string ExpressionRouter(Expression exp, bool inBin)
         {
             string sb = string.Empty;
@@ -693,82 +676,10 @@ namespace System
             }
             return null;
         }
-
-        static string ExpressionRouter2(Expression exp)
+        // 解析Lambda表达式路由。
+        static string ExpressionRouter(Expression exp)
         {
-            string sb = string.Empty;
-            if (exp is BinaryExpression)
-            {
-                BinaryExpression be = ((BinaryExpression)exp);
-                return BinarExpressionProvider(be.Left, be.Right, be.NodeType);
-            }
-            else if (exp is MemberExpression)
-            {
-                if (!exp.ToString().StartsWith("value("))
-                {
-                    MemberExpression me = ((MemberExpression)exp);
-                    //if (me.Type.FullName == "System.Boolean")
-                    //{
-                    //    string left = me.Member.Name;
-                    //    return "({0}=1) ".FormatWith(left);
-                    //}
-                    return me.Member.Name;
-                }
-                else
-                {
-                    var result = Expression.Lambda(exp).Compile().DynamicInvoke();
-                    return GetExpressionValue(result);
-                }
-            }
-            else if (exp is NewArrayExpression)
-            {
-                NewArrayExpression ae = ((NewArrayExpression)exp);
-                StringBuilder tmpstr = new StringBuilder();
-                foreach (Expression ex in ae.Expressions)
-                {
-                    tmpstr.Append(ExpressionRouter(ex));
-                    tmpstr.Append(",");
-                }
-                return tmpstr.ToString(0, tmpstr.Length - 1);
-            }
-            else if (exp is MethodCallExpression)
-            {
-                MethodCallExpression mce = (MethodCallExpression)exp;
-                if (mce.Method.Name == "Like")
-                    return string.Format("({0} like {1})", ExpressionRouter(mce.Arguments[0]), ExpressionRouter(mce.Arguments[1]));
-                else if (mce.Method.Name == "NotLike")
-                    return string.Format("({0} Not like {1})", ExpressionRouter(mce.Arguments[0]), ExpressionRouter(mce.Arguments[1]));
-                else if (mce.Method.Name == "In")
-                    return string.Format("{0} In ({1})", ExpressionRouter(mce.Arguments[0]), ExpressionRouter(mce.Arguments[1]));
-                else if (mce.Method.Name == "NotIn")
-                    return string.Format("{0} Not In ({1})", ExpressionRouter(mce.Arguments[0]), ExpressionRouter(mce.Arguments[1]));
-                else
-                {
-                    var result = Expression.Lambda(exp).Compile().DynamicInvoke();
-                    return GetExpressionValue(result);
-                }
-            }
-            else if (exp is ConstantExpression)
-            {
-                ConstantExpression ce = ((ConstantExpression)exp);
-                return GetExpressionValue(ce.Value);
-            }
-            else if (exp is UnaryExpression)
-            {
-                UnaryExpression ue = ((UnaryExpression)exp);
-                if (ue.NodeType == ExpressionType.Not)
-                {
-                    string left = ExpressionRouter(ue.Operand);
-                    return "({0}=0)".FormatWith(left);
-                }
-                return ExpressionRouter(ue.Operand);
-            }
-            else if (exp is NewExpression)
-            {
-                var result = Expression.Lambda(exp).Compile().DynamicInvoke();
-                return GetExpressionValue(result);
-            }
-            return null;
+            return ExpressionRouter(exp, false);
         }
         // 计算Lambda表达式值。
         static string GetExpressionValue(object result)
