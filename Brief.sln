@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hujaoweb", "Hujaoweb\Hujaoweb.csproj", "{F4B4CB74-34CB-48F5-928F-0307AE0B4EE4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCoder", "CoreCoder\CoreCoder.csproj", "{FB66A4C5-1103-47BD-8DCE-DB120C3414C2}"
@@ -20,10 +18,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F4B4CB74-34CB-48F5-928F-0307AE0B4EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4B4CB74-34CB-48F5-928F-0307AE0B4EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4B4CB74-34CB-48F5-928F-0307AE0B4EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4B4CB74-34CB-48F5-928F-0307AE0B4EE4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
