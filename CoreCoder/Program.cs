@@ -17,7 +17,7 @@ namespace CoreCoder
             Application.SetCompatibleTextRenderingDefault(false);
             QueryTranslator tran = new QueryTranslator();
             // string x = tran.Translate<HT>(p => p.ID == "".ToString() && !p.IsValid);
-            string x = Logic.GetMyWhere<HT>(p => p.IsValid == true && p.IsValid && p.IsValid == false);
+            string x = Logic.GetMyWhere<HT>(p => true == p.IsValid && p.IsValid && p.IsValid == false);
 
             Application.Run(new CodeForm());
         }

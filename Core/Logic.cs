@@ -539,7 +539,7 @@ namespace System
             }
             sb += ExpressionRouter(left, ExpressionType.Equal == type);
             sb += ExpressionTypeCast(type);
-            tmpStr = ExpressionRouter(right);
+            tmpStr = ExpressionRouter(right, ExpressionType.Equal == type);
             if (tmpStr == "null")
             {
                 if (sb.EndsWith(" ="))
@@ -611,7 +611,7 @@ namespace System
                 {
                     MemberExpression me = ((MemberExpression)exp);
                     if (!inBin)
-                    {   //如果在二叉表达式中
+                    {   //如果不在等式二叉表达式中左边
                         if (me.Type.FullName == "System.Boolean")
                         {
                             string left = me.Member.Name;
