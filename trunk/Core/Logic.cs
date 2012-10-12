@@ -11,17 +11,14 @@ namespace System
 {
     public class Logic : SqlExecuter
     {
-        #region 属性和构造
-
-        public string ConnnectString { get; set; }
-        public string ConnstringKey { get; set; }
+        // 连接串
+        public string ConnectionString { get; set; }
         // 构造方法。
-        public Logic(string connstr)
-            : base(connstr)
+        public Logic(string connectionString)
+            : base(connectionString)
         {
-            ConnnectString = connstr;
+            ConnectionString = connectionString;
         }
-        #endregion
 
         // 查询DataTable
         public DataTable GetTable<T>() where T : new()
@@ -506,7 +503,7 @@ namespace System
         // 开启数据库缓存依赖
         public void StartSqlDependency()
         {
-            SqlDependency.Start(this.ConnnectString);
+            SqlDependency.Start(this.ConnnectionString);
         }
         // 是不是表
         bool IsTable(Type t)
