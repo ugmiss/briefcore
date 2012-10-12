@@ -95,7 +95,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comb.cs" />
     <Compile Include="EnCodingHelper.cs" />
     <Compile Include="File\Pather.cs" />
     <Compile Include="Hanzi\Bopomofo.cs" />
