@@ -29,10 +29,12 @@ namespace CoreCoder
             {
                 if (Directory.Exists(namespacestr.AppPath()))
                     Directory.Delete(namespacestr.AppPath(), true);
-
+                while (true)
+                {   //删除文件夹时，由于文件可能在其他地方被打开
+                    if (!Directory.Exists(namespacestr.AppPath()))
+                        break;
+                }
                 Directory.CreateDirectory(namespacestr.AppPath());
-                Thread.Sleep(50);
-
                 string sqltable = "SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_TYPE FROM INFORMATION_SCHEMA.TABLES WHERE Table_name<>'sysdiagrams' and (Table_Type='BASE TABLE' or  Table_Type='View') and ISNULL(OBJECTPROPERTY(OBJECT_ID(TABLE_NAME), 'IsMSShipped'), 0) = 0 ORDER BY TABLE_NAME";
                 foreach (DataRow dr in exec.QueryDataTable(sqltable).Rows)
                 {
@@ -108,104 +110,8 @@ namespace {0}
     {{
 {2}
     }}
-            //        StaticDataProvider.cs  
-            //        public {1}[] GetAll{1}()
-            //        {{
-            //            return logic.GetAll<{1}>().ToArray();
-            //        }}
-            //        public void Add{1}({1} model)
-            //        {{
-            //            logic.Add<{1}>(model);
-            //        }}
-            //        public void Delete{1}({1} model)
-            //        {{
-            //            logic.Delete<{1}>(model);
-            //        }}
-            //        public void Modify{1}({1} model)
-            //        {{
-            //            logic.Modify<{1}>(model);
-            //        }}
-
-            //        IStaticDataProvider.cs  
-            //        {1}[] GetAll{1}();             
-            //        void Add{1}({1} model);
-            //        void Delete{1}({1} model);
-            //        void Modify{1}({1} model);
-
-            //        BusinessManager.cs
-            //        public static {1}[] GetAll{1}()
-            //        {{
-            //            return s_staticDataProvider.GetAll{1}();
-            //        }}
-            //        public static void Add{1}({1} model)
-            //        {{
-            //            s_staticDataProvider.Add{1}(model);
-            //        }}
-            //        public static void Delete{1}({1} model)
-            //        {{
-            //            s_staticDataProvider.Delete{1}(model);
-            //        }}
-            //        public static void Modify{1}({1} model)
-            //        {{
-            //            s_staticDataProvider.Modify{1}(model);
-            //        }}
-
-            //        IWCFService.cs
-            //        [OperationContract]
-            //        {1}[] GetAll{1}();
-            //        [OperationContract]
-            //        void Add{1}({1} model);
-            //        [OperationContract]
-            //        void Delete{1}({1} model);
-            //        [OperationContract]
-            //        void Modify{1}({1} model);
-
-            //        WCFServiceHandler.cs
-            //        public {1}[] GetAll{1}()
-            //        {{
-            //            return BusinessManager.GetAll{1}();
-            //        }}
-            //        public void Add{1}({1} model)
-            //        {{
-            //            BusinessManager.Add{1}(model);
-            //        }}
-            //        public void Delete{1}({1} model)
-            //        {{
-            //            BusinessManager.Delete{1}(model);
-            //        }}
-            //        public void Modify{1}({1} model)
-            //        {{
-            //            BusinessManager.Modify{1}(model);
-            //        }}
-
-
-            //        WCFClient.cs
-            //        public {1}[] GetAll{1}()
-            //        {{
-            //            return client.GetAll{1}();
-            //        }}
-            //        public void Add{1}({1} model)
-            //        {{
-            //            client.Add{1}(model);
-            //        }}
-            //        public void Delete{1}({1} model)
-            //        {{
-            //            client.Delete{1}(model);
-            //        }}
-            //        public void Modify{1}({1} model)
-            //        {{
-            //            client.Modify{1}(model);
-            //        }}
+           
 }}";
-
-
-
-
-
-
-
-
-
             string fieldstr = "";
             foreach (DataRow dr in exec.QueryDataTable(sql).Rows)
             {
@@ -224,7 +130,6 @@ namespace {0}
                     desc.Add("IsIdentity");
                 if (desc.Count > 0)
                     fieldstr += "        [Description(\"" + string.Join(",", desc) + "\")]\r\n";
-
                 fieldstr += "        [DataMember]\r\n";
                 fieldstr += "        public " + typestr + nullable + " " + publicName + " { set; get; }\r\n";
             }
@@ -232,11 +137,94 @@ namespace {0}
             string istborview = !isview ? "[Description(\"IsTable\")]\r\n" : "[Description(\"IsView\")]\r\n";
             istborview += "    [DataContract]";
             code.FormatWith(namespacestr, tablename, fieldstr, istborview).WriteToFile((namespacestr + "\\" + tablename + ".cs").AppPath());
-
-
-
         }
-
-
     }
+    //        StaticDataProvider.cs  
+    //        public {1}[] GetAll{1}()
+    //        {{
+    //            return logic.GetAll<{1}>().ToArray();
+    //        }}
+    //        public void Add{1}({1} model)
+    //        {{
+    //            logic.Add<{1}>(model);
+    //        }}
+    //        public void Delete{1}({1} model)
+    //        {{
+    //            logic.Delete<{1}>(model);
+    //        }}
+    //        public void Modify{1}({1} model)
+    //        {{
+    //            logic.Modify<{1}>(model);
+    //        }}
+
+    //        IStaticDataProvider.cs  
+    //        {1}[] GetAll{1}();             
+    //        void Add{1}({1} model);
+    //        void Delete{1}({1} model);
+    //        void Modify{1}({1} model);
+
+    //        BusinessManager.cs
+    //        public static {1}[] GetAll{1}()
+    //        {{
+    //            return s_staticDataProvider.GetAll{1}();
+    //        }}
+    //        public static void Add{1}({1} model)
+    //        {{
+    //            s_staticDataProvider.Add{1}(model);
+    //        }}
+    //        public static void Delete{1}({1} model)
+    //        {{
+    //            s_staticDataProvider.Delete{1}(model);
+    //        }}
+    //        public static void Modify{1}({1} model)
+    //        {{
+    //            s_staticDataProvider.Modify{1}(model);
+    //        }}
+
+    //        IWCFService.cs
+    //        [OperationContract]
+    //        {1}[] GetAll{1}();
+    //        [OperationContract]
+    //        void Add{1}({1} model);
+    //        [OperationContract]
+    //        void Delete{1}({1} model);
+    //        [OperationContract]
+    //        void Modify{1}({1} model);
+
+    //        WCFServiceHandler.cs
+    //        public {1}[] GetAll{1}()
+    //        {{
+    //            return BusinessManager.GetAll{1}();
+    //        }}
+    //        public void Add{1}({1} model)
+    //        {{
+    //            BusinessManager.Add{1}(model);
+    //        }}
+    //        public void Delete{1}({1} model)
+    //        {{
+    //            BusinessManager.Delete{1}(model);
+    //        }}
+    //        public void Modify{1}({1} model)
+    //        {{
+    //            BusinessManager.Modify{1}(model);
+    //        }}
+
+
+    //        WCFClient.cs
+    //        public {1}[] GetAll{1}()
+    //        {{
+    //            return client.GetAll{1}();
+    //        }}
+    //        public void Add{1}({1} model)
+    //        {{
+    //            client.Add{1}(model);
+    //        }}
+    //        public void Delete{1}({1} model)
+    //        {{
+    //            client.Delete{1}(model);
+    //        }}
+    //        public void Modify{1}({1} model)
+    //        {{
+    //            client.Modify{1}(model);
+    //        }}
 }
