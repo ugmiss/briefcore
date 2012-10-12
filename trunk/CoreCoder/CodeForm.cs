@@ -23,7 +23,7 @@ namespace CoreCoder
         private void button1_Click(object sender, EventArgs e)
         {
             exec = new SqlExecuter(this.textBox1.Text);
-            if (!textBox2.Text.IsEmpty())
+            if (!textBox2.Text.IsNullOrEmpty())
                 namespacestr = textBox2.Text;
             try
             {

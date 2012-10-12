@@ -136,7 +136,7 @@
     <Compile Include="FastReflect\PropertyAccessorCache.cs" />
     <Compile Include="FastReflect\PropertyAccessorFactory.cs" />
     <Compile Include="Logging\Logger.cs" />
-    <Compile Include="Logic.cs" />
+    <Compile Include="BussinessExecuter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlExecuter.cs" />
   </ItemGroup>
