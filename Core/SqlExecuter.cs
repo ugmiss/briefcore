@@ -8,9 +8,9 @@ namespace System
 {
     public class SqlExecuter
     {
-        // 连接串。
+        // 连接串
         string ConnectionString { get; set; }
-
+        // 库名称
         public string DataBaseName
         {
             get
@@ -20,8 +20,9 @@ namespace System
                 return Conn.Database;
             }
         }
+        // 事务对象
         SqlTransaction Transaction { get; set; }
-        // 构造。
+        // 构造
         public SqlExecuter(string connectionString)
         {
             try
@@ -32,32 +33,32 @@ namespace System
             catch { }
             ConnectionString = connectionString;
         }
-        // 解析命令字符串。
+        // 解析命令字符串
         string ParseCommandString(string commandText, params object[] parameterArray)
         {
-            // 参数列表。
+            // 参数列表
             List<string> parameterList = new List<string>();
             foreach (object obj in parameterArray)
             {
-                // 数字类型。
+                // 数字类型
                 if (obj is short || obj is ushort || obj is int || obj is uint || obj is long || obj is ulong || obj is float || obj is double || obj is decimal || obj is Byte)
                 {
                     parameterList.Add(obj.ToString());
                     continue;
                 }
-                // 字符串类型。
+                // 字符串类型
                 if (obj is string)
                 {
                     parameterList.Add(string.Format("'{0}'", (obj as string).Replace("'", "''")));
                     continue;
                 }
-                // Guid类型。
+                // Guid类型
                 if (obj is Guid)
                 {
                     parameterList.Add(string.Format("'{0}'", obj.ToString()));
                     continue;
                 }
-                // 时间类型。
+                // 时间类型
                 if (obj is DateTime)
                 {
                     DateTime datetime = Convert.ToDateTime(obj);
@@ -68,7 +69,7 @@ namespace System
                     parameterList.Add(string.Format("'{0}'", datetime));
                     continue;
                 }
-                // 二进制类型。
+                // 二进制类型
                 if (obj is byte[])
                 {
                     StringBuilder stringBuilder = new StringBuilder("0x", (obj as byte[]).Length * 2 + 2);
@@ -79,13 +80,13 @@ namespace System
                     parameterList.Add(stringBuilder.ToString());
                     continue;
                 }
-                // 布尔类型。
+                // 布尔类型
                 if (obj is bool)
                 {
                     parameterList.Add(Convert.ToBoolean(obj) ? "1" : "0");
                     continue;
                 }
-                // 空类型。
+                // 空类型
                 if (obj == null || obj is DBNull)
                 {
                     parameterList.Add("Null");
@@ -95,7 +96,7 @@ namespace System
             }
             return string.Format(commandText, parameterList.ToArray());
         }
-        // 表查询。
+        // 表查询
         public DataTable QueryTableWithCache(string commandText, SqlDependency dependency, params object[] parameterArray)
         {
             string sql = ParseCommandString(commandText, parameterArray);
@@ -134,7 +135,7 @@ namespace System
                 }
             }
         }
-        // 表查询。
+        // 表查询
         public DataTable QueryDataTable(string commandText, params object[] parameterArray)
         {
             string sql = ParseCommandString(commandText, parameterArray);
@@ -173,7 +174,7 @@ namespace System
                 }
             }
         }
-
+        // DataReader方式
         public SqlDataReader QueryDataReader(string commandText, params object[] parameterArray)
         {
             string sql = ParseCommandString(commandText, parameterArray);
@@ -204,7 +205,7 @@ namespace System
                 throw newEx;
             }
         }
-        // 行查询。
+        // 行查询
         public DataRow QueryDataRow(string commandText, params object[] parameterArray)
         {
             DataTable dataTable = QueryDataTable(commandText, parameterArray);
@@ -213,7 +214,7 @@ namespace System
             else
                 return null;
         }
-        // 执行非查询类型的语句。
+        // 执行非查询类型的语句
         public int ExecuteNonQuery(string commandText, params object[] parameterArray)
         {
             SqlConnection Connection = null;
@@ -246,7 +247,6 @@ namespace System
                 if (Transaction == null)
                     Connection.Dispose();
             }
-            return 0;
         }
         // 需要返回标识列的值时
         public int ExecuteNonQuery(out int IdentityID, string commandText, params object[] parameterArray)
@@ -289,8 +289,7 @@ namespace System
             }
             return 0;
         }
-
-        // 执行非查询类型的语句，不抛出异常。
+        // 执行非查询类型的语句，不抛出异常
         public void NonQueryWithoutException(string commandText, params object[] parameterArray)
         {
             SqlConnection Connection = null;
@@ -327,7 +326,7 @@ namespace System
                     Connection.Dispose();
             }
         }
-        // 执行非查询类型的语句（SqlParameter方式）。
+        // 执行非查询类型的语句（SqlParameter方式）
         public void ExecuteNonQuery(string commandText, Dictionary<string, object> parameterMap)
         {
             SqlConnection Connection = null;
@@ -363,7 +362,7 @@ namespace System
                     Connection.Dispose();
             }
         }
-        // 开始事务。
+        // 开始事务
         public void BeginTransaction()
         {
             if (Transaction != null)
@@ -381,7 +380,7 @@ namespace System
             Connection.Open();
             Transaction = Connection.BeginTransaction(IsolationLevel.ReadCommitted);
         }
-        // 提交事务。
+        // 提交事务
         public void CommitTransaction()
         {
             if (Transaction != null)
@@ -397,7 +396,7 @@ namespace System
                 }
             }
         }
-        // 回滚事务。
+        // 回滚事务
         public void RollbackTransaction()
         {
             if (Transaction != null)
