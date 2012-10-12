@@ -13,7 +13,7 @@ namespace System
     {
         // 连接串
         public string ConnectionString { get; set; }
-        // 构造方法。
+        // 构造方法
         public Logic(string connectionString)
             : base(connectionString)
         {
@@ -26,7 +26,7 @@ namespace System
             string sql = GetSelectSql<T>();
             return QueryDataTable(sql);
         }
-        // 查询所有。
+        // 查询所有
         public List<T> GetAll<T>() where T : new()
         {
             List<T> list = new List<T>();
@@ -37,7 +37,7 @@ namespace System
             }
             return list;
         }
-        // 查询所有。
+        // 查询所有
         public List<T> GetAll<T>(Expression<Func<T, bool>> func) where T : new()
         {
             List<T> list = new List<T>();
@@ -49,7 +49,7 @@ namespace System
             }
             return list;
         }
-        // 单例条件查询。
+        // 单例条件查询
         public T GetSingle<T>(Expression<Func<T, bool>> func) where T : new()
         {
             string where = string.Empty;
@@ -65,7 +65,7 @@ namespace System
             else
                 return default(T);
         }
-        // 按主键查询。
+        // 按主键查询
         public T GetByPrimaryKey<T>(T model) where T : new()
         {
             PropertyInfo[] properties = typeof(T).GetProperties();
@@ -86,7 +86,7 @@ namespace System
             }
             if (wheres.Count == 0)
             {
-                throw new Exception("没有设置主键。");
+                throw new Exception("没有设置主键");
             }
             string sql = (GetSelectSql<T>() + "  where {0}").FormatWith(string.Join(" and ", wheres.ToArray()));
             DataRow dr = this.QueryDataRow(this.ParseCommandString(sql, paramList.ToArray()));
@@ -148,7 +148,7 @@ namespace System
             string sql = string.Format("insert into {0}({1}) values({2});select SCOPE_IDENTITY()", GetTableName<T>(), string.Join(",", fields.ToArray()), string.Join(",", values.ToArray()));
             return this.ExecuteNonQuery(out IdentityID, ParseCommandString(sql, paramList.ToArray()));
         }
-        // 删除单例。
+        // 删除单例
         public int Delete<T>(T model)
         {
             if (!IsTable(typeof(T)))
@@ -173,12 +173,12 @@ namespace System
             }
             if (wheres.Count == 0)
             {
-                throw new Exception("没有设置主键。");
+                throw new Exception("没有设置主键");
             }
             string sql = string.Format("delete from {0} where {1}", GetTableName<T>(), string.Join(" and ", wheres.ToArray()));
             return ExecuteNonQuery(ParseCommandString(sql, paramList.ToArray()));
         }
-        // 删除批量。
+        // 删除批量
         public int Delete<T>(Expression<Func<T, bool>> func)
         {
             if (!IsTable(typeof(T)))
@@ -194,7 +194,7 @@ namespace System
             string sql = string.Format("delete from {0} where {1}", GetTableName<T>(), where);
             return ExecuteNonQuery(ParseCommandString(sql));
         }
-        // 更新单例。
+        // 更新单例
         public int Modify<T>(T model)
         {
             if (!IsTable(typeof(T)))
@@ -229,12 +229,12 @@ namespace System
             }
             if (wheres.Count == 0)
             {
-                throw new Exception("没有设置主键。");
+                throw new Exception("没有设置主键");
             }
             string sql = string.Format("update {0} set {1} where {2}", GetTableName<T>(), string.Join(",", sets.ToArray()), string.Join(" and ", wheres.ToArray()));
             return ExecuteNonQuery(ParseCommandString(sql, paramList.ToArray()));
         }
-        // 更新批量。
+        // 更新批量
         public int Modify<T>(Expression<Func<T, bool>> func, Expression<Action<T>> act)
         {
             if (!IsTable(typeof(T)))
@@ -261,12 +261,12 @@ namespace System
             }
             else
             {
-                throw new Exception("Action<T> act 参数格式应写成 u => new UserInfo { UserName = \"abc\", UserPass = \"123\" } 形式。");
+                throw new Exception("Action<T> act 参数格式应写成 u => new UserInfo { UserName = \"abc\", UserPass = \"123\" } 形式");
             }
             string sql = string.Format("update {0} set {1} {2}", tablename, set, where);
             return ExecuteNonQuery(ParseCommandString(sql));
         }
-        // 仅添加不存在的记录。
+        // 仅添加不存在的记录
         public int AddOnly<T>(T t) where T : new()
         {
             object obj = GetByPrimaryKey<T>(t);
@@ -276,7 +276,7 @@ namespace System
             }
             return 0;
         }
-        // 不存在的添加，已存在的做更新。
+        // 不存在的添加，已存在的做更新
         public int AddOrModify<T>(T t) where T : new()
         {
             object obj = GetByPrimaryKey<T>(t);
@@ -285,16 +285,16 @@ namespace System
             else
             { return Modify<T>(t); }
         }
-        // 缓存字段名集合。
+        // 缓存字段名集合
         static Dictionary<Type, List<string>> FieldNameListMap = new Dictionary<Type, List<string>>();
-        // 缓存主键名集合。
+        // 缓存主键名集合
         static Dictionary<Type, List<string>> PrimaryKeyNameListMap = new Dictionary<Type, List<string>>();
-        // 缓存标识列集合。
+        // 缓存标识列集合
         static Dictionary<Type, List<string>> IdentityNameListMap = new Dictionary<Type, List<string>>();
-        // 非标识列集合。
+        // 非标识列集合
         static Dictionary<Type, List<string>> FieldNameListWithOutIdentityMap = new Dictionary<Type, List<string>>();
 
-        // 获取字段名集合。
+        // 获取字段名集合
         static List<string> GetFieldNamesWithOutIdentity<T>()
         {
             List<string> fields = null;
@@ -327,7 +327,7 @@ namespace System
             }
             return fields;
         }
-        // 获取字段名集合。
+        // 获取字段名集合
         static List<string> GetFieldNames<T>()
         {
             List<string> fields = null;
@@ -358,7 +358,7 @@ namespace System
             }
             return fields;
         }
-        // 获取主键名集合。
+        // 获取主键名集合
         static List<string> GetPrimaryKeyNames<T>()
         {
             List<string> fields = null;
@@ -389,7 +389,7 @@ namespace System
             }
             return fields;
         }
-        // 获取标识列名集合。
+        // 获取标识列名集合
         static List<string> GetIdentityNames<T>()
         {
             List<string> fields = null;
@@ -420,7 +420,7 @@ namespace System
             }
             return fields;
         }
-        // 获取表名。
+        // 获取表名
         string GetTableName<T>()
         {
             string dbname = "";
@@ -430,29 +430,29 @@ namespace System
         // 解析sql
         string ParseCommandString(string commandText, params object[] parameterArray)
         {
-            // 参数列表。
+            // 参数列表
             List<string> parameterList = new List<string>();
             foreach (object obj in parameterArray)
             {
-                // 数字类型。
+                // 数字类型
                 if (obj is short || obj is ushort || obj is int || obj is uint || obj is long || obj is ulong || obj is float || obj is double || obj is decimal || obj is Byte)
                 {
                     parameterList.Add(obj.ToString());
                     continue;
                 }
-                // 字符串类型。
+                // 字符串类型
                 if (obj is string)
                 {
                     parameterList.Add(string.Format("'{0}'", (obj as string).Replace("'", "''")));
                     continue;
                 }
-                // Guid类型。
+                // Guid类型
                 if (obj is Guid)
                 {
                     parameterList.Add(string.Format("'{0}'", obj.ToString()));
                     continue;
                 }
-                // 时间类型。
+                // 时间类型
                 if (obj is DateTime)
                 {
                     DateTime datetime = Convert.ToDateTime(obj);
@@ -463,7 +463,7 @@ namespace System
                     parameterList.Add(string.Format("'{0}'", datetime));
                     continue;
                 }
-                // 二进制类型。
+                // 二进制类型
                 if (obj is byte[])
                 {
                     StringBuilder stringBuilder = new StringBuilder("0x", (obj as byte[]).Length * 2 + 2);
@@ -475,13 +475,13 @@ namespace System
                     parameterList.Add(stringBuilder.ToString());
                     continue;
                 }
-                // 布尔类型。
+                // 布尔类型
                 if (obj is bool)
                 {
                     parameterList.Add(Convert.ToBoolean(obj) ? "1" : "0");
                     continue;
                 }
-                // 空类型。
+                // 空类型
                 if (obj == null || obj is DBNull)
                 {
                     parameterList.Add("Null");
@@ -493,7 +493,7 @@ namespace System
         }
 
 
-        // 取查询语句。
+        // 取查询语句
         string GetSelectSql<T>() where T : new()
         {
             List<string> fields = GetFieldNames<T>();
@@ -503,7 +503,7 @@ namespace System
         // 开启数据库缓存依赖
         public void StartSqlDependency()
         {
-            SqlDependency.Start(this.ConnnectionString);
+            SqlDependency.Start(this.ConnectionString);
         }
         // 是不是表
         bool IsTable(Type t)
@@ -523,7 +523,7 @@ namespace System
             }
             return istable;
         }
-        // 解析Lambda表达式。
+        // 解析Lambda表达式
         static string BinarExpressionProvider(Expression left, Expression right, ExpressionType type)
         {
             string sb = "(";
@@ -673,12 +673,12 @@ namespace System
             }
             return null;
         }
-        // 解析Lambda表达式路由。
+        // 解析Lambda表达式路由
         static string ExpressionRouter(Expression exp)
         {
             return ExpressionRouter(exp, false);
         }
-        // 计算Lambda表达式值。
+        // 计算Lambda表达式值
         static string GetExpressionValue(object result)
         {
             if (result == null)
@@ -694,7 +694,7 @@ namespace System
                 return result.ToString();
             return null;
         }
-        // 解析Lambda表达式连接符。
+        // 解析Lambda表达式连接符
         static string ExpressionTypeCast(ExpressionType type)
         {
             switch (type)
@@ -733,7 +733,7 @@ namespace System
             }
         }
 
-        // 分页查询。
+        // 分页查询
         //public List<T> GetAll<T>(string whereStr, int maxcount, int pagenumber, params string[] rowfields) where T : new()
         //{
         //    List<T> list = new List<T>();
@@ -765,6 +765,6 @@ namespace System
         //    }
         //    return list;
         //}
-        // 条件查询。
+        // 条件查询
     }
 }
