@@ -15,7 +15,7 @@ namespace CoreCoder
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            string x = Logic.GetMyWhere<HT>(p => true == p.IsValid && p.IsValid && p.IsValid == false);
+            string x = BussinessExecuter.GetMyWhere<HT>(p => true == p.IsValid && p.IsValid && p.IsValid == false);
 
             Application.Run(new CodeForm());
         }

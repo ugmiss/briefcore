@@ -9,12 +9,12 @@ using System.Text;
 
 namespace System
 {
-    public class Logic : SqlExecuter
+    public class BussinessExecuter : SqlExecuter
     {
         // 连接串
         public string ConnectionString { get; set; }
         // 构造方法
-        public Logic(string connectionString)
+        public BussinessExecuter(string connectionString)
             : base(connectionString)
         {
             ConnectionString = connectionString;
