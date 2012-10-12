@@ -11,7 +11,7 @@ using System.IO;
 
 namespace Utility
 {
-    public class Zip
+    public class SharpZip
     {
         public static void CreateZipFile(string filesPath, string zipFilePath)
         {
