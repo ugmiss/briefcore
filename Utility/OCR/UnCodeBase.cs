@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
-namespace BallotAiying2
+namespace Utility
 {
     public class UnCodebase
     {
