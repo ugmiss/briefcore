@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 
-namespace BallotAiying2
+namespace Utility
 {
-    public class unCodeAiYing : UnCodebase
+    public class UnCode : UnCodebase
     {
         //字符表 顺序为0..9,A..Z,a..z
         string[] CodeArray = new string[] {
@@ -73,7 +73,7 @@ namespace BallotAiying2
 "111111000010000100001000010000100000111111"
         };
 
-        public unCodeAiYing(Bitmap pic)
+        public UnCode(Bitmap pic)
             : base(pic)
         {
         }
@@ -83,7 +83,6 @@ namespace BallotAiying2
             GrayByPixels(); //灰度处理
             GetPicValidByValue(128, 4); //得到有效空间
             Bitmap[] pics = GetSplitPics(4, 1);     //分割
-
             if (pics.Length != 4)
             {
                 return ""; //分割错误
@@ -95,7 +94,6 @@ namespace BallotAiying2
                 pics[2] = GetPicValidByValue(pics[2], 128);
                 pics[3] = GetPicValidByValue(pics[3], 128);
             }
-
             //      if (!textBoxInput.Text.Equals(""))
             string result = "";
             char singleChar = ' ';
@@ -103,7 +101,7 @@ namespace BallotAiying2
                 for (int i = 0; i < 4; i++)
                 {
                     string code = GetSingleBmpCode(pics[i], 128);   //得到代码串
-                   
+
                     for (int arrayIndex = 0; arrayIndex < CodeArray.Length; arrayIndex++)
                     {
                         if (CodeArray[arrayIndex].Equals(code))  //相等
@@ -119,7 +117,7 @@ namespace BallotAiying2
                     }
                 }
             }
-           return result;
+            return result;
         }
     }
 }
