@@ -58,8 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthManagement.cs" />
-    <Compile Include="Advises.cs" />
+    <Compile Include="Aspects.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Environment.cs" />
     <Compile Include="MainForm.cs">
