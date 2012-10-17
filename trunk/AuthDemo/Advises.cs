@@ -8,8 +8,8 @@ using System.Reflection;
 
 namespace AuthDemo
 {
-
-    public class DataAroundAdvise : IMethodInterceptor
+    // 数据过滤
+    public class DataFilterAdvise : IMethodInterceptor
     {
         public object Invoke(IMethodInvocation invocation)
         {
@@ -21,21 +21,16 @@ namespace AuthDemo
                 case "admin":
                     returnValue = li;
                     break;
-                case "eo":
-                    returnValue = li.FindAll(p => p.StartsWith("eo")).ToList();
-                    break;
-                case "mo":
-                    returnValue = li.FindAll(p => p.StartsWith("mo")).ToList();
-                    break;
                 default:
+                    returnValue = li.FindAll(p => p.StartsWith(Environment.CurrrentUser)).ToList();
                     break;
             }
             return returnValue;
         }
     }
 
-
-    public class AuthPreAdvise : IMethodBeforeAdvice
+    // 权限验证。
+    public class AuthVarifyAdvise : IMethodBeforeAdvice
     {
         public void Before(MethodInfo method, object[] args, object target)
         {

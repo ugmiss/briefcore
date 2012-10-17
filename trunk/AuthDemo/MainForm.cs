@@ -34,10 +34,10 @@ namespace AuthDemo
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ProxyFactory fac = new ProxyFactory(new Data());
-            fac.AddAdvice(new DataAroundAdvise());
-            fac.AddAdvice(new AuthPreAdvise());
-            IData idata = (IData)fac.GetProxy();
+            ProxyFactory fac = new ProxyFactory(new DataProvider());
+            fac.AddAdvice(new DataFilterAdvise());
+            fac.AddAdvice(new AuthVarifyAdvise());
+            IDataProvider idata = (IDataProvider)fac.GetProxy();
             try
             {
                 List<string> res = idata.GetData();
