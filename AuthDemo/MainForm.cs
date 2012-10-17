@@ -36,9 +36,17 @@ namespace AuthDemo
         {
             ProxyFactory fac = new ProxyFactory(new Data());
             fac.AddAdvice(new DataAroundAdvise());
+            fac.AddAdvice(new AuthPreAdvise());
             IData idata = (IData)fac.GetProxy();
-            string res = idata.GetData();
-            MessageBox.Show(res);
+            try
+            {
+                List<string> res = idata.GetData();
+                MessageBox.Show(string.Join("\n", res));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -7,6 +7,6 @@ namespace AuthDemo
 {
     public interface IData
     {
-        string GetData();
+        List<string> GetData();
     }
 }

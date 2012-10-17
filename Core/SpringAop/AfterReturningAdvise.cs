@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Reflection;
-
 using Spring.Aop;
 
 namespace Spring.Aop
@@ -26,7 +25,6 @@ namespace Spring.Aop
                 }
             }
             Console.Out.WriteLine("     后置通知：  返回值是 : " + returnValue);
-
             Console.WriteLine();
         }
     }
