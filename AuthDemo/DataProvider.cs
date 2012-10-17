@@ -5,7 +5,12 @@ using System.Text;
 
 namespace AuthDemo
 {
-    public class Data : IData
+    
+    public interface IDataProvider
+    {
+        List<string> GetData();
+    }
+    public class DataProvider : IDataProvider
     {
         public List<string> GetData()
         {

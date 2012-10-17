@@ -5,14 +5,14 @@ using System.Text;
 
 namespace AuthDemo
 {
-    public class Auth : IAuth
+    public class AuthManagement : IAuthManagement
     {
         public bool Verify()
         {
             return false;
         }
     }
-    public interface IAuth
+    public interface IAuthManagement
     {
         bool Verify();
     }

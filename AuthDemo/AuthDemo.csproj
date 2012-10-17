@@ -58,11 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auth.cs" />
+    <Compile Include="AuthManagement.cs" />
     <Compile Include="Advises.cs" />
-    <Compile Include="Data.cs" />
+    <Compile Include="DataProvider.cs" />
     <Compile Include="Environment.cs" />
-    <Compile Include="IData.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
