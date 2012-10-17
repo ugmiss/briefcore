@@ -5,11 +5,17 @@ using System.Text;
 
 namespace AuthDemo
 {
-    public class Data:IData
+    public class Data : IData
     {
-        public string GetData()
+        public List<string> GetData()
         {
-            return "none";
+            List<string> li = new List<string>();
+            li.Add("eo:1000");
+            li.Add("eo:2000");
+            li.Add("eo:3000");
+            li.Add("mo:5000");
+            li.Add("mo:4000");
+            return li;
         }
     }
 }

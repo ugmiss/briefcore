@@ -55,7 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAroundAdvise.cs" />
+    <Compile Include="Auth.cs" />
+    <Compile Include="Advises.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Environment.cs" />
     <Compile Include="IData.cs" />
