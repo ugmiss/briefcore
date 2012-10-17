@@ -35,8 +35,8 @@ namespace AuthDemo
         private void button4_Click(object sender, EventArgs e)
         {
             ProxyFactory fac = new ProxyFactory(new DataProvider());
-            fac.AddAdvice(new DataFilterAdvise());
-            fac.AddAdvice(new AuthVarifyAdvise());
+            fac.AddAdvice(new DataFilterAspect());
+            fac.AddAdvice(new AuthVarifyAspect());
             IDataProvider idata = (IDataProvider)fac.GetProxy();
             try
             {
