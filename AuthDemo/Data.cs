@@ -5,9 +5,8 @@ using System.Text;
 
 namespace AuthDemo
 {
-    public class Data
+    public class Data:IData
     {
-        [Auth]
         public string GetData()
         {
             return "none";

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Aop;
+using Spring.Aop.Framework;
 
 namespace AuthDemo
 {
@@ -34,8 +34,10 @@ namespace AuthDemo
 
         private void button4_Click(object sender, EventArgs e)
         {
-            IData mydata = ProxyFactory.CreateProxy<IData>(typeof(Data));
-            string res = mydata.GetData();
+            ProxyFactory fac = new ProxyFactory(new Data());
+            fac.AddAdvice(new DataAroundAdvise());
+            IData idata = (IData)fac.GetProxy();
+            string res = idata.GetData();
             MessageBox.Show(res);
         }
     }
