@@ -9,7 +9,7 @@ using System.Reflection;
 namespace AuthDemo
 {
     // 数据过滤
-    public class DataFilterAdvise : IMethodInterceptor
+    public class DataFilterAspect : IMethodInterceptor
     {
         public object Invoke(IMethodInvocation invocation)
         {
@@ -30,7 +30,7 @@ namespace AuthDemo
     }
 
     // 权限验证。
-    public class AuthVarifyAdvise : IMethodBeforeAdvice
+    public class AuthVarifyAspect : IMethodBeforeAdvice
     {
         public void Before(MethodInfo method, object[] args, object target)
         {
