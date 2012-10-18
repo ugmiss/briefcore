@@ -1,8 +1,7 @@
 #summary One-sentence summary of this page.
 = Aop技术提要=
-Aop面向方面
+  * Aop面向方面
 = Aop应用 =
-
   *  _日志管理_
   *  _异常管理_
   *  _事务管理_
