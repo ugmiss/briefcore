@@ -1,4 +1,4 @@
-﻿namespace AuthDemo
+﻿namespace AopDemo
 {
     partial class MainForm
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace AuthDemo
+namespace AopDemo
 {
     static class Program
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Spring.Aop.Framework;
 
-namespace AuthDemo
+namespace AopDemo
 {
     public partial class MainForm : Form
     {

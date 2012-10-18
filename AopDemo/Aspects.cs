@@ -6,7 +6,7 @@ using AopAlliance.Intercept;
 using Spring.Aop;
 using System.Windows.Forms;
 
-namespace AuthDemo
+namespace AopDemo
 {
     // 数据过滤 环绕切入 IMethodInterceptor
     public class DataFilterAdvice : IMethodInterceptor
