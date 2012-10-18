@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dll", "dll", "{FDB75DBC-B4CD-4433-8DD3-B07E9E2FCAD9}"
 	ProjectSection(SolutionItems) = preProject
 		dll\Common.Logging.dll = dll\Common.Logging.dll
+		..\vOrient\lib\log4net\log4net.dll = ..\vOrient\lib\log4net\log4net.dll
 		dll\Spring.Aop.dll = dll\Spring.Aop.dll
 		dll\Spring.Core.dll = dll\Spring.Core.dll
 		dll\Spring.Data.dll = dll\Spring.Data.dll

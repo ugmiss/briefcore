@@ -37,6 +37,8 @@ namespace AuthDemo
             ProxyFactory fac = new ProxyFactory(new DataProvider());
             fac.AddAdvice(new DataFilterAspect());
             fac.AddAdvice(new AuthVarifyAspect());
+            fac.AddAdvice(new LoggingAspect());
+            fac.AddAdvice(new ExceptionAspect());
             IDataProvider idata = (IDataProvider)fac.GetProxy();
             try
             {
@@ -47,6 +49,11 @@ namespace AuthDemo
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Environment.CurrrentUser = "lo";
         }
     }
 }

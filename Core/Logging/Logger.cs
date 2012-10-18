@@ -2,58 +2,70 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
-using System.IO;
 
 namespace System
 {
-    public class Logger
+    public static class Logger
     {
-        // 日志路径。
-        const string ERRORLOG = "error.log";
-        // 资源访问的锁
-        static ReaderWriterLockSlim lockx = new ReaderWriterLockSlim();
-        // 写日志。
-        public static void Write(string message)
+        private static log4net.ILog log = null;
+
+        static Logger()
         {
-            lockx.EnterWriteLock();
-            try
-            {
-                using (StreamWriter sw = new StreamWriter(ERRORLOG, true))
-                {
-                    string prefix = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " : ";
-                    sw.WriteLine(prefix);
-                    sw.WriteLine(message);
-                    sw.Flush();
-                    sw.Close();
-                }
-            }
-            finally
-            {
-                lockx.ExitWriteLock();
-            }
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo("log4net.config"));
+            log = log4net.LogManager.GetLogger("CommonLogger");
         }
-        // 写日志。
-        public static void Write(Exception ex)
+
+        /// <summary>
+        /// DEBUG, 帮助应用程序进行调试的信息。
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="args"></param>
+        public static void Debug(string format, params object[] args)
         {
-            lockx.EnterWriteLock();
-            try
-            {
-                using (StreamWriter sw = new StreamWriter(ERRORLOG, true))
-                {
-                    string prefix = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " : ";
-                    sw.WriteLine(ex.Message);
-                    sw.WriteLine(ex.Source);
-                    sw.WriteLine(ex.StackTrace);
-                    sw.WriteLine();
-                    sw.Flush();
-                    sw.Close();
-                }
-            }
-            finally
-            {
-                lockx.ExitWriteLock();
-            }
+            log.DebugFormat(format, args);
+        }
+
+        /// <summary>
+        /// INFO, 指出应用程序运行过程的信息。
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="args"></param>
+        public static void Info(string format, params object[] args)
+        {
+            log.InfoFormat(format, args);
+        }
+
+        /// <summary>
+        /// WARN, 表明应用程序可能存在潜在错误的信息。
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="args"></param>
+        public static void Warn(string format, params object[] args)
+        {
+            log.WarnFormat(format, args);
+        }
+
+        /// <summary>
+        /// ERROR, 表明应用程序出现错误(但不影响程序继续运行)。
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="args"></param>
+        public static void Error(string format, params object[] args)
+        {
+            log.ErrorFormat(format, args);
+        }
+        public static void Error(Exception ex)
+        {
+            log.ErrorFormat(ex.Message, null);
+        }
+        /// <summary>
+        /// FATAL, 表明应用程序出现严重错误(程序无法继续运行)。
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="args"></param>
+        public static void Fatal(string format, params object[] args)
+        {
+            log.FatalFormat(format, args);
         }
     }
 }

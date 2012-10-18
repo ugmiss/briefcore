@@ -124,7 +124,7 @@ namespace System
             catch (Exception ex)
             {
                 Exception newEx = new Exception(ex.Message + "(sql:" + commandText + ")", ex);
-                Logger.Write(newEx);
+                Logger.Error(newEx);
                 throw newEx;
             }
             finally
@@ -163,7 +163,7 @@ namespace System
             catch (Exception ex)
             {
                 Exception newEx = new Exception(ex.Message + "(sql:" + commandText + ")", ex);
-                Logger.Write(newEx);
+                Logger.Error(newEx);
                 throw newEx;
             }
             finally
@@ -201,7 +201,7 @@ namespace System
             catch (Exception ex)
             {
                 Exception newEx = new Exception(ex.Message + "(sql:" + commandText + ")", ex);
-                Logger.Write(newEx);
+                Logger.Error(newEx);
                 throw newEx;
             }
         }
@@ -239,7 +239,7 @@ namespace System
             catch (Exception ex)
             {
                 Exception newEx = new Exception(ex.Message + "(sql:" + commandText + ")", ex);
-                Logger.Write(newEx);
+                Logger.Error(newEx);
                 throw newEx;
             }
             finally
@@ -279,7 +279,7 @@ namespace System
             catch (Exception ex)
             {
                 Exception newEx = new Exception(ex.Message + "(sql:" + commandText + ")", ex);
-                Logger.Write(newEx);
+                Logger.Error(newEx);
                 throw newEx;
             }
             finally
@@ -317,7 +317,7 @@ namespace System
             catch (Exception ex)
             {
                 Exception newEx = new Exception(ex.Message + "(sql:" + commandText + ")", ex);
-                Logger.Write(newEx);
+                Logger.Error(newEx);
                 throw newEx;
             }
             finally
@@ -353,7 +353,7 @@ namespace System
             catch (Exception ex)
             {
                 Exception newEx = new Exception(ex.Message + "(sql:" + commandText + ")", ex);
-                Logger.Write(newEx);
+                Logger.Error(newEx);
                 throw newEx;
             }
             finally
