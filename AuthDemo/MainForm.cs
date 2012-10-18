@@ -34,11 +34,13 @@ namespace AuthDemo
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //创建代理工厂
             ProxyFactory fac = new ProxyFactory(new DataProvider());
-            fac.AddAdvice(new DataFilterAspect());
-            fac.AddAdvice(new AuthVarifyAspect());
-            fac.AddAdvice(new LoggingAspect());
-            fac.AddAdvice(new ExceptionAspect());
+            //添加通知
+            fac.AddAdvice(new DataFilterAdvice());
+            fac.AddAdvice(new AuthVarifyAdvice());
+            fac.AddAdvice(new LoggingAdvice());
+            fac.AddAdvice(new ExceptionAdvice());
             IDataProvider idata = (IDataProvider)fac.GetProxy();
             try
             {
