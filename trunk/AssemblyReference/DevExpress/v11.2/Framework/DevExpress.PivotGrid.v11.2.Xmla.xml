@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevExpress.PivotGrid.v11.2.Xmla</name>
+    </assembly>
+    <members>
+        <member name="T:DevExpress.XtraPivotGrid.PivotGridXmlaDataSource">
+
+            <summary>
+                <para>A data source used to access OLAP data via XMLA.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridXmlaDataSource.#ctor">
+            <summary>
+                <para>Initializes a new instance of the PivotGridXmlaDataSource class.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridXmlaDataSource.ConnectionString">
+            <summary>
+                <para>Specifies parameters used to connect to a data pump.
+</para>
+            </summary>
+            <value>A <see cref="T:System.String"/> that encapsulates parameters used to connect to a data pump.
+
+</value>
+
+
+        </member>
+    </members>
+</doc>

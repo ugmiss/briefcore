@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <assembly>
+    <name>DevExpress.Xpf.RichEdit.v11.2.Extensions</name>
+    <version>11.2.11.5</version>
+    <publickeytoken>b88d1754d700e49a</publickeytoken>
+    <relpath>DevExpress.Xpf.RichEdit.v11.2.Extensions.dll</relpath>
+    <extension downloadUri="DevExpress.Xpf.RichEdit.v11.2.Extensions.zip" />
+  </assembly>
+</manifest>

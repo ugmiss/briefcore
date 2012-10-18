@@ -1,0 +1,3622 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevExpress.PivotGrid.v11.2.Core</name>
+    </assembly>
+    <members>
+        <member name="T:DevExpress.XtraPivotGrid.Localization.PivotGridStringId">
+
+            <summary>
+                <para>Lists values corresponding to strings that can be localized. 
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_BottomPanelOnly1by4Layout">
+            <summary>
+                <para>The alternative text for the image corresponding to the 'Areas Section Only (1 by 4)' layout, displayed in the Customization Form Layout menu.
+
+<para><b>Default value</b>: [Bottom Panel Only 1 by 4 Layout]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_BottomPanelOnly2by2Layout">
+            <summary>
+                <para>The alternative text for the image corresponding to the 'Areas Section Only (2 by 2)' layout, displayed in the Customization Form Layout menu.
+
+<para><b>Default value</b>: [Bottom Panel Only 2 by 2 Layout]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_Collapse">
+            <summary>
+                <para>The alternative text for the collapse button.
+
+<para><b>Default value</b>: [Collapse]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_ColumnAreaHeaders">
+            <summary>
+                <para>The alternative text for the image displayed near the caption of the Column Area Headers section in the Customization Form.
+<para><b>Default value</b>: [Column Area Headers]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_DataAreaHeaders">
+            <summary>
+                <para>The alternative text for the image displayed near the caption of the Data Area Headers section in the Customization Form.
+<para><b>Default value</b>: [Data Area Headers]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_DragHideField">
+            <summary>
+                <para>The alternative text for the image displayed when a field is about to be hidden via drag-and-drop.
+
+<para><b>Default value</b>: Hide</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_Expand">
+            <summary>
+                <para>The alternative text for the expand button.
+
+<para><b>Default value</b>: [Expand]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_FieldListHeaders">
+            <summary>
+                <para>The alternative text for the image displayed near the caption of the Hidden Headers section in the Customization Form.
+<para><b>Default value</b>: [Hidden Field's Headers]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_FilterAreaHeaders">
+            <summary>
+                <para>The alternative text for the image displayed near the caption of the Filter Area Headers section in the Customization Form.
+<para><b>Default value</b>: [Filter Area Headers]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_FilterButton">
+            <summary>
+                <para>The alternative text for the filter button used when the field values are not filtered.
+
+<para><b>Default value</b>: [Filter]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_FilterButtonActive">
+            <summary>
+                <para>The alternative text for the filter button used when the field values are filtered.
+
+<para><b>Default value</b>: [Filtered]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_FilterWindowSizeGrip">
+            <summary>
+                <para>The alternative text for the filter drop-down's size grip.
+
+<para><b>Default value</b>: [Resize]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_LayoutButton">
+            <summary>
+                <para>The alternative text for the image displayed on the Layout button in the Customization Form.
+<para><b>Default value</b>: [Layout Button]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_RowAreaHeaders">
+            <summary>
+                <para>The alternative text for the image displayed near the caption of the Row Area Headers section in the Customization Form.
+<para><b>Default value</b>: [Row Area Headers]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_SortedAscending">
+            <summary>
+                <para>The alternative text for the ascending sorting image.
+
+<para><b>Default value</b>: (Ascending)</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_SortedDescending">
+            <summary>
+                <para>The alternative text for the descending sorting image.
+
+<para><b>Default value</b>: (Descending)</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_StackedDefaultLayout">
+            <summary>
+                <para>The alternative text for the image corresponding to the 'Fields Section and Areas Section Stacked' layout, displayed in the Customization Form Layout menu.
+<para><b>Default value</b>: [Stacked Default Layout]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_StackedSideBySideLayout">
+            <summary>
+                <para>The alternative text for the image corresponding to the 'Fields Section and Areas Section Side-By-Side' layout, displayed in the Customization Form Layout menu.
+<para><b>Default value</b>: [Stacked Side By Side Layout]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Alt_TopPanelOnlyLayout">
+            <summary>
+                <para>The alternative text for the image corresponding to the 'Fields Section Only' layout, displayed in the Customization Form Layout menu.
+<para><b>Default value</b>: [Top Panel Only Layout]</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CannotCopyMultipleSelections">
+            <summary>
+                <para>Not used.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CellError">
+            <summary>
+                <para>The text displayed within a cell when an error occurs (the cell's value is <b>PivotSummaryValue.ErrorValue</b>).
+
+<para><b>Default value</b>: Error</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.ColumnArea">
+            <summary>
+                <para>The text that represents the column area (displayed within the Customization Form).
+
+<para><b>Default value</b>: Column Area</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.ColumnHeadersCustomization">
+            <summary>
+                <para>The text displayed within the Column Area when it contains no field headers.
+
+<para><b>Default value</b>: Drop Column Fields Here</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormAddTo">
+            <summary>
+                <para>The caption of the 'Add To' button displayed within the Customization Form.
+
+<para><b>Default value</b>: Add To</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormBottomPanelOnly1by4">
+            <summary>
+                <para>The text that represents the Customization Form's 'Area Section Only (1 by 4)' layout mode (displayed in the popup menu invoked by clicking the Customization Form Layout button).
+
+<para><b>Default value</b>: Areas Section Only (1 by 4)</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormBottomPanelOnly2by2">
+            <summary>
+                <para>The text that represents the Customization Form's 'Areas Section Only (2 by 2)' layout mode (displayed in the popup menu invoked by clicking the Customization Form Layout button).
+
+<para><b>Default value</b>: Areas Section Only (2 by 2)</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormCaption">
+            <summary>
+                <para>The caption of the Customization Form.
+
+<para><b>Default value</b>: PivotGrid Field List</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormDeferLayoutUpdate">
+            <summary>
+                <para>The caption of the check box in the Customization Form that allows you to perform delayed layout updates.
+
+<para><b>Default value</b>: Defer Layout Update</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormHiddenFields">
+            <summary>
+                <para>The text displayed within the Customization Form above the hidden fields list.
+
+<para><b>Default value</b>: Hidden Fields</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormHint">
+            <summary>
+                <para>The text displayed above the areas section in the Customization Form.
+
+<para><b>Default value</b>: Drag fields between areas below:</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormLayoutButtonTooltip">
+            <summary>
+                <para>The text displayed within the Customization Form Layout button's tooltip.
+
+<para><b>Default value</b>: Customization Form Layout</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormListBoxText">
+            <summary>
+                <para>The text displayed within the Customization Form's field list when it is empty.
+
+<para><b>Default value</b>: Drag a field here to customize layout</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormStackedDefault">
+            <summary>
+                <para>The text that represents the Customization Form's 'Fields Section and Areas Section Stacked' layout mode (displayed in the popup menu invoked by clicking the Customization Form Layout button).
+
+<para><b>Default value</b>: Fields Section and Areas Section Stacked</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormStackedSideBySide">
+            <summary>
+                <para>The text that represents the Customization Form's 'Fields Section and Areas Section Side-By-Side' layout mode (displayed in the popup menu invoked by clicking the Customization Form Layout button).
+
+<para><b>Default value</b>: Fields Section and Areas Section Side-By-Side</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormText">
+            <summary>
+                <para>The text displayed above the Customization Form's field list.
+
+<para><b>Default value:</b> Drag Items to the PivotGrid</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormTopPanelOnly">
+            <summary>
+                <para>The text that represents the Customization Form's 'Fields Section Only' layout mode (displayed in the popup menu invoked by clicking the Customization Form Layout button).
+
+<para><b>Default value</b>: Fields Section Only</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.CustomizationFormUpdate">
+            <summary>
+                <para>The caption of the Customization Form's update button.
+
+<para><b>Default value</b>: Update</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.DataArea">
+            <summary>
+                <para>The text that represents the data area (displayed within the Customization Form).
+
+<para><b>Default value</b>: Data Area</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.DataFieldCaption">
+            <summary>
+                <para>The text displayed within the data field header.
+
+<para><b>Default value</b>: Data</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.DataHeadersCustomization">
+            <summary>
+                <para>The text displayed within the Data Header Area when it contains no field headers.
+
+<para><b>Default value</b>: Drop Data Items Here</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.EditPrefilter">
+            <summary>
+                <para>The caption of the button displayed within the Prefilter Panel and used to edit the Prefilter.
+
+<para><b>Default value:</b> Edit Prefilter</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterArea">
+            <summary>
+                <para>The text that represents the filter area (displayed within the Customization Form).
+
+<para><b>Default value</b>: Filter Area</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterBlank">
+            <summary>
+                <para>The caption of the blank item in the group filter drop-down.
+
+<para><b>Default value</b>: (Blank)</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterCancel">
+            <summary>
+                <para>The caption of the Cancel button displayed within the filter dropdown.
+
+<para><b>Default value:</b> Cancel</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterHeadersCustomization">
+            <summary>
+                <para>The text displayed within the Filter Header Area when it contains no field headers.
+
+<para><b>Default value</b>: Drop Filter Fields Here</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterInvert">
+            <summary>
+                <para>The caption of the filter dropdown's popup menu item used to invert the selection.
+
+<para><b>Default value</b>: Invert Filter</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterOk">
+            <summary>
+                <para>The caption of the OK button displayed within the filter dropdown.
+
+<para><b>Default value</b>: OK</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterPopupToolbarIncrementalSearch">
+            <summary>
+                <para>The text displayed in the tooltip invoked when hovering over the 'Incremental Search' button in a filter popup toolbox.
+<para><b>Default value</b>: Incremental Search</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterPopupToolbarInvertFilter">
+            <summary>
+                <para>The text displayed in the tooltip invoked when hovering over the 'Invert Filter' button in a filter popup toolbox.
+<para><b>Default value</b>: Invert Filter</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterPopupToolbarMultiSelection">
+            <summary>
+                <para>The text displayed in the tooltip invoked when hovering over the 'Multi-Selection' button in a filter popup toolbox.
+<para><b>Default value</b>: Multi-Selection</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterPopupToolbarRadioMode">
+            <summary>
+                <para>The text displayed in the tooltip invoked when hovering over the 'Radio Mode' button in a filter popup toolbox.
+<para><b>Default value</b>: Radio Mode</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterPopupToolbarShowNewValues">
+            <summary>
+                <para>The text displayed in the tooltip invoked when hovering over the 'Show New Field Values' button in a filter popup toolbox. 
+<para><b>Default value</b>: Show New Field Values</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterPopupToolbarShowOnlyAvailableItems">
+            <summary>
+                <para>The text displayed in the tooltip invoked when hovering over the 'Show Only Available Items' button in a filter popup toolbox.
+<para><b>Default value</b>: Show Only Available Items</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterShowAll">
+            <summary>
+                <para>The caption of the filter dropdown list item used to show all field values.
+
+<para><b>Default value</b>: (Show All)</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.FilterShowBlanks">
+            <summary>
+                <para>The caption of the filter dropdown list item used to show blank values.
+
+<para><b>Default value</b>: (Show Blanks)</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.GrandTotal">
+            <summary>
+                <para>The caption of grand total columns and rows.
+
+<para><b>Default value</b>: Grand Total</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.OLAPDrillDownFilterException">
+            <summary>
+                <para>The error message which is displayed when a drill-through is performed while multiple items are selected in the report filter field.
+
+<para><b>Default value</b>: Show Details command cannot be executed when multiple items are selected in a report filter field. Select a single item for each field in the report filter area before performing a drill-through.</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.OLAPMeasuresCaption">
+            <summary>
+                <para>The caption of the 'measures' tree item displayed in the field section of the Customization Form in the OLAP mode.
+
+<para><b>Default value</b>: Measures</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.OLAPNoOleDbProvidersMessage">
+            <summary>
+                <para>The message that appears if no OLE DB provider can be found on the system when binding the pivot grid to an OLAP data source.
+<para><b>Default value</b>: In order to use the PivotGrid OLAP functionality, you should have a MS OLAP OleDb provider installed on your system.\r\nYou can download it here:</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuClearSorting">
+            <summary>
+                <para>The caption of the field header's context menu item used to clear the currently applied sorting.
+
+<para><b>Default value</b>: Clear Sorting</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuCollapse">
+            <summary>
+                <para>The name of the field value's context menu item used to collapse the field value.
+
+<para><b>Default value</b>: Collapse</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuCollapseAll">
+            <summary>
+                <para>The name of the field value's context menu item used to collapse all values of the field.
+
+<para><b>Default value</b>: Collapse All</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuExpand">
+            <summary>
+                <para>The name of the field value's context menu item used to expand the field value.
+
+<para><b>Default value</b>: Expand</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuExpandAll">
+            <summary>
+                <para>The name of the field value's context menu item used to expand all values of the field.
+
+<para><b>Default value</b>: Expand All</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuFieldOrder">
+            <summary>
+                <para>The caption of the field header's context menu item which contains subitems used to reorder fields.
+
+<para><b>Default value</b>: Order</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuHideField">
+            <summary>
+                <para>The caption of the field header's context menu item used to hide the field.
+<para><b>Default value</b>: Hide</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuHideFieldList">
+            <summary>
+                <para>The caption of the context menu item used to hide the Customization Form.
+
+<para><b>Default value</b>: Hide Field List</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuHidePrefilter">
+            <summary>
+                <para>The caption of the context menu item used to hide the Prefilter.
+
+<para><b>Default value</b>: Hide Prefilter</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuMovetoBeginning">
+            <summary>
+                <para>The caption of the field header's context menu item used to move the field to the first position in its area.
+
+<para><b>Default value</b>: Move to Beginning</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuMovetoEnd">
+            <summary>
+                <para>The caption of the field header's context menu item used to move the field to the last position in its area.
+
+<para><b>Default value</b>: Move to End</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuMovetoLeft">
+            <summary>
+                <para>The caption of the field header's context menu item used to move the field left.
+
+<para><b>Default value</b>: Move to Left</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuMovetoRight">
+            <summary>
+                <para>The caption of the field header's context menu item used to move the field right.
+
+<para><b>Default value</b>: Move to Right</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuRefreshData">
+            <summary>
+                <para>The caption of the context menu item used to refresh the pivot grid's data.
+
+<para><b>Default value</b>: Reload Data</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuRemoveAllSortByColumn">
+            <summary>
+                <para>The name of the field value's context menu item used to remove sorting by column.
+
+<para><b>Default value</b>: Remove All Sorting</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuShowExpression">
+            <summary>
+                <para>The caption of the field value's context menu item used to invoke the Expression Editor.
+
+<para><b>Default value</b>: Expression Editor...</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuShowFieldList">
+            <summary>
+                <para>The caption of the context menu item used to invoke the Customization Form.
+
+<para><b>Default value</b>: Show Field List</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuShowPrefilter">
+            <summary>
+                <para>The caption of the context menu item used to invoke the Prefilter.
+
+<para><b>Default value</b>: Show Prefilter</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuSortAscending">
+            <summary>
+                <para>The caption of the field header's context menu item used to sort the field values in ascending order.
+
+<para><b>Default value</b>: Sort A-Z</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuSortDescending">
+            <summary>
+                <para>The caption of the field header's context menu item used to sort the field values in descending order.
+
+<para><b>Default value</b>: Sort Z-A</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuSortFieldByColumn">
+            <summary>
+                <para>The caption of the column field value's context menu item used to sort the other field values by this column.
+
+<para><b>Default value</b>: Sort "{0}" by This Column</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PopupMenuSortFieldByRow">
+            <summary>
+                <para>The caption of the row field value's context menu item used to sort the other field values by this row.
+
+<para><b>Default value</b>: Sort "{0}" by This Row</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrefilterFormCaption">
+            <summary>
+                <para>The caption of the Prefilter form.
+
+<para><b>Default value</b>: PivotGrid Prefilter</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrefilterInvalidCriteria">
+            <summary>
+                <para>The text displayed in the Prefilter Panel if the Prefilter expression is invalid.
+
+<para><b>Default value</b>: An error occurs in the Prefilter criteria. Please detect invalid property captions inside the criteria operands and correct or remove them.</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrefilterInvalidProperty">
+            <summary>
+                <para>If you specify an invalid field name in a Prefilter expression, this string will be displayed in the Prefilter window instead of that field name.
+
+<para><b>Default value</b>: (invalid property)</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesigner">
+            <summary>
+                <para>The caption of the Print Designer dialog.
+
+<para><b>Default value</b>: Print Designer</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerCategoryDefault">
+            <summary>
+                <para>The caption of the default options category in the Print Designer dialog.
+
+<para><b>Default value</b>: Default</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerCategoryFieldValues">
+            <summary>
+                <para>The caption of the Print Designer options category which contains options used to specify how field values are printed.
+
+<para><b>Default value</b>: Field Values</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerCategoryHeaders">
+            <summary>
+                <para>The caption of the Print Designer options category which contains options used to specify how field headers are printed.
+
+<para><b>Default value</b>: Headers</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerCategoryLines">
+            <summary>
+                <para>The caption of the Print Designer options category which contains options used to specify how cell borders are printed.
+
+<para><b>Default value</b>: Lines</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerColumnHeaders">
+            <summary>
+                <para>The caption of the Print Designer dialog option used to specify whether headers of column fields are printed.
+
+<para><b>Default value</b>: Column Headers</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerDataHeaders">
+            <summary>
+                <para>The caption of the Print Designer dialog option used to specify whether headers of data fields are printed.
+
+<para><b>Default value</b>: Data Headers</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerFilterHeaders">
+            <summary>
+                <para>The caption of the Print Designer dialog option used to specify whether headers of filter fields are printed.
+
+<para><b>Default value</b>: Filter Headers</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerHeadersOnEveryPage">
+            <summary>
+                <para>The caption of the Print Designer dialog option used to specify whether headers are printed on every page.
+
+<para><b>Default value</b>: Headers On Every Page</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerHorizontalLines">
+            <summary>
+                <para>The caption of the Print Designer dialog option used to specify whether horizontal cell borders are printed.
+
+<para><b>Default value</b>: Horizontal Lines</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerMergeColumnFieldValues">
+            <summary>
+                <para>The caption of the Print Designer dialog option used to specify whether cells that display the same column field value are merged.
+
+<para><b>Default value</b>: Merge Column Field Values</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerMergeRowFieldValues">
+            <summary>
+                <para>The caption of the Print Designer dialog option used to specify whether cells that display the same row field value are merged.
+
+<para><b>Default value</b>: Merge Row Field Values</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerPageBehavior">
+            <summary>
+                <para>The caption of the Print Designer dialog page that contains options used to specify the printing behavior.
+
+<para><b>Default value</b>: Behavior</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerPageOptions">
+            <summary>
+                <para>The caption of the Print Designer dialog page that contains general printing options.
+
+<para><b>Default value</b>: Options</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerRowHeaders">
+            <summary>
+                <para>The caption of the Print Designer dialog option used to specify whether headers of row fields are printed.
+
+<para><b>Default value</b>: Row Headers</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerUnusedFilterFields">
+            <summary>
+                <para>The caption of the Print Designer dialog option used to specify whether unused filter fields are printed.
+
+<para><b>Default value</b>: Unused Filter Fields</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerUsePrintAppearance">
+            <summary>
+                <para>The caption of the Print Designer dialog option used to specify whether print appearances are used when the pivot grid is printed.
+
+<para><b>Default value</b>: Use Print Appearance</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.PrintDesignerVerticalLines">
+            <summary>
+                <para>The caption of the Print Designer dialog option used to specify whether vertical cell borders are printed.
+
+<para><b>Default value</b>: Vertical Lines</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.RowArea">
+            <summary>
+                <para>The text that represents the row area (displayed within the Customization Form).
+
+<para><b>Default value</b>: Row Area</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.RowHeadersCustomization">
+            <summary>
+                <para>The text displayed within the Row Header Area when it contains no field headers.
+
+<para><b>Default value</b>: Drop Row Fields Here</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.SearchBoxText">
+            <summary>
+                <para>The text displayed within the Search Box in the Group Filter popup when the box is empty.
+
+<para><b>Default value</b>: Search</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.StatusBad">
+            <summary>
+                <para>The text of the tooltip displayed for KPI values representing a bad progress state.
+
+<para><b>Default value</b>: Bad</para>
+
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.StatusGood">
+            <summary>
+                <para>The text of the tooltip displayed for KPI values representing a good progress state.
+
+<para><b>Default value</b>: Good</para>
+
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.StatusNeutral">
+            <summary>
+                <para>The text of the tooltip displayed for KPI values representing a neutral progress state.
+
+<para><b>Default value</b>: Neutral</para>
+
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.SummaryAverage">
+            <summary>
+                <para>The text displayed within the headers of <b>average</b> summary data fields.
+
+<para><b>Default value</b>: Average</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.SummaryCount">
+            <summary>
+                <para>The text displayed within the headers of <b>count</b> summary data fields.
+
+<para><b>Default value</b>: Count</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.SummaryCustom">
+            <summary>
+                <para>The text displayed within the headers of data fields with manually calculated summary values.
+
+<para><b>Default value</b>: Custom</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.SummaryMax">
+            <summary>
+                <para>The text displayed within the headers of <b>maximum</b> summary data fields.
+
+<para><b>Default value</b>: Max</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.SummaryMin">
+            <summary>
+                <para>The text displayed within the headers of <b>minimum</b> summary data fields.
+
+<para><b>Default value</b>: Min</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.SummaryStdDev">
+            <summary>
+                <para>The text displayed within the headers of <b>standard deviation of a population subset</b> summary data fields.
+
+<para><b>Default value</b>: StdDev</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.SummaryStdDevp">
+            <summary>
+                <para>The text displayed within the headers of <b>standard deviation of the whole population</b> summary data fields.
+
+<para><b>Default value</b>: StdDevp</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.SummarySum">
+            <summary>
+                <para>The text displayed within the headers of <b>sum</b> summary data fields.
+
+<para><b>Default value</b>: Sum</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.SummaryVar">
+            <summary>
+                <para>The text displayed within the headers of <b>variance of a population subset</b> summary data fields.
+
+<para><b>Default value</b>: Var</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.SummaryVarp">
+            <summary>
+                <para>The text displayed within the headers of <b>variance of the whole population</b> summary data fields.
+
+<para><b>Default value</b>: Varp</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TopValueOthersRow">
+            <summary>
+                <para>The text displayed within the header of the 'Others' row.
+
+<para><b>Default value</b>: Others</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.Total">
+            <summary>
+                <para>The text displayed after the field name within the grand total column/row header, if a specific caption for grand total headers has not been specified.
+
+<para><b>Default value</b>: Total</para>
+
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TotalFormat">
+            <summary>
+                <para>A pattern used to format headers of automatic total summary columns/rows.
+
+<para><b>Default value</b>: {0} Total</para>
+<para>Where {0} - the field value</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TotalFormatAverage">
+            <summary>
+                <para>A pattern used to format headers of <b>average</b> total summary columns/rows.
+
+<para><b>Default value</b>: {0} Average</para>
+<para>Where {0} - the field value</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TotalFormatCount">
+            <summary>
+                <para>A pattern used to format headers of <b>count</b> total summary columns/rows.
+
+<para><b>Default value</b>: {0} Count</para>
+<para>Where {0} - the field value</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TotalFormatCustom">
+            <summary>
+                <para>A pattern used to format headers of data fields with manually calculated summary values.
+
+<para><b>Default value</b>: {0} Custom</para>
+<para>Where {0} - the field value</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TotalFormatMax">
+            <summary>
+                <para>A pattern used to format headers of <b>maximum</b> total summary columns/rows.
+
+<para><b>Default value</b>: {0} Max</para>
+<para>Where {0} - the field value</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TotalFormatMin">
+            <summary>
+                <para>A pattern used to format headers of <b>minimum</b> total summary columns/rows.
+
+<para><b>Default value</b>: {0} Min</para>
+<para>Where {0} - the field value</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TotalFormatStdDev">
+            <summary>
+                <para>A pattern used to format headers of <b>standard deviation of a population subset</b> total summary columns/rows.
+
+<para><b>Default value</b>: {0} StdDev</para>
+<para>Where {0} - the field value</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TotalFormatStdDevp">
+            <summary>
+                <para>A pattern used to format headers of <b>standard deviation of the whole population</b> total summary columns/rows.
+
+<para><b>Default value</b>: {0} StdDevp</para>
+<para>Where {0} - the field value</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TotalFormatSum">
+            <summary>
+                <para>A pattern used to format headers of <b>sum</b> total summary columns/rows.
+
+<para><b>Default value</b>: {0} Sum</para>
+<para>Where {0} - the field value</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TotalFormatVar">
+            <summary>
+                <para>A pattern used to format headers of <b>variance of a population subset</b> total summary columns/rows.
+
+<para><b>Default value</b>: {0} Var</para>
+<para>Where {0} - the field value</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TotalFormatVarp">
+            <summary>
+                <para>A pattern used to format headers of <b>variance of the whole population</b> total summary columns/rows.
+
+<para><b>Default value</b>: {0} Varp</para>
+<para>Where {0} - the field value</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TrendGoingDown">
+            <summary>
+                <para>The text of the tooltip displayed for KPI values representing a descending trend.
+
+<para><b>Default value</b>: Going Down</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TrendGoingUp">
+            <summary>
+                <para>The text of the tooltip displayed for KPI values representing an ascending trend.
+
+<para><b>Default value</b>: Going Up</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.TrendNoChange">
+            <summary>
+                <para>The text of the tooltip displayed for KPI values representing a horizontal trend.
+
+<para><b>Default value</b>: No Change</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Localization.PivotGridStringId.ValueError">
+            <summary>
+                <para>The text displayed within a field value cell when an error occurs.
+
+<para><b>Default value</b>: Error</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.Localization.PivotGridLocalizer">
+
+            <summary>
+                <para>Provides localized strings for the PivotGrid's user interface elements.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.Localization.PivotGridLocalizer.#ctor">
+            <summary>
+                <para>Initializes a new instance of the PivotGridLocalizer class with default settings.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Localization.PivotGridLocalizer.Active">
+            <summary>
+                <para>Gets or sets a localizer object providing localization of the PivotGrid's user interface at runtime.
+</para>
+            </summary>
+            <value>A <b>DevExpress.Utils.Localization.XtraLocalizer@lt;T@gt;</b> descendant, used to localize the user interface at runtime. 
+
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.Localization.PivotGridLocalizer.CreateResXLocalizer">
+            <summary>
+                <para>Returns an object representing resources based on the thread's language and regional settings (culture). 
+</para>
+            </summary>
+            <returns>A <b>DevExpress.Utils.Localization.XtraLocalizer@lt;T@gt;</b> object representing resources based on the thread's culture.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.Localization.PivotGridLocalizer.GetAreaText(System.Int32)">
+            <summary>
+                <para>Returns a localized name of the specified field header area. 
+</para>
+            </summary>
+            <param name="areaIndex">
+		An integer value identifying the field header area.
+
+            </param>
+            <returns>A <see cref="T:System.String"/> corresponding to the specified field header area. 
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.Localization.PivotGridLocalizer.GetHeadersAreaText(System.Int32)">
+            <summary>
+                <para>Returns a localized string to be displayed within the specified field header area when it is empty.
+</para>
+            </summary>
+            <param name="areaIndex">
+		An integer value identifying the field header area.
+
+            </param>
+            <returns>A <see cref="T:System.String"/> that should be displayed in the specified field header area.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.Localization.PivotGridLocalizer.GetString(DevExpress.XtraPivotGrid.Localization.PivotGridStringId)">
+            <summary>
+                <para>Returns a localized string for the specified string identifier. 
+</para>
+            </summary>
+            <param name="id">
+		A <see cref="T:DevExpress.XtraPivotGrid.Localization.PivotGridStringId"/> enumeration value identifying the string to localize.
+
+            </param>
+            <returns>A <see cref="T:System.String"/> corresponding to the specified identifier. 
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.Localization.PivotGridLocalizer.GetSummaryTypeText(DevExpress.Data.PivotGrid.PivotSummaryType)">
+            <summary>
+                <para>Returns a localized name of the specified summary type. 
+</para>
+            </summary>
+            <param name="summaryType">
+		A <see cref="T:DevExpress.Data.PivotGrid.PivotSummaryType"/> enumeration value identifying the summary type.
+
+            </param>
+            <returns>A <see cref="T:System.String"/> corresponding to the specified summary type. 
+</returns>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotGroupFilterValue">
+
+            <summary>
+                <para>Represents a group filter value.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValue.#ctor(System.Object)">
+            <summary>
+                <para>Initializes a new instance of the PivotGroupFilterValue class.
+</para>
+            </summary>
+            <param name="value">
+		An object that represents the corresponding field value. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGroupFilterValue.Value"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValue.ChildValues">
+            <summary>
+                <para>Gets the collection of the filter value's child values.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection"/> object representing the collection of child values.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValue.Clear">
+            <summary>
+                <para>Clears the child values collection.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValue.Field">
+            <summary>
+                <para>Gets the field to which the filter value corresponds.
+</para>
+            </summary>
+            <value>A <b>DevExpress.XtraPivotGrid.PivotGridFieldBase</b> descendant, representing the field to which the filter value corresponds.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValue.IsLastLevel">
+            <summary>
+                <para>Gets whether the field to which the filter value corresponds is the last in the group.
+</para>
+            </summary>
+            <value><b>true</b> if the field to which the filter value corresponds is the last in the group; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValue.Level">
+            <summary>
+                <para>Gets the hierarchy level of the field to which the filter value corresponds.
+</para>
+            </summary>
+            <value>An integer value representing the hierarchy level of the field to which the filter value corresponds.
+
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValue.ToString">
+            <summary>
+                <para>Returns the textual representation of the corresponding field value.
+</para>
+            </summary>
+            <returns>A <see cref="T:System.String"/> that specifies the textual representation of the corresponding field value.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValue.Value">
+            <summary>
+                <para>Gets the field value that corresponds to the current filter value.
+</para>
+            </summary>
+            <value>An object that represents the field value that corresponds to the current filter value.
+
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection">
+
+            <summary>
+                <para>Represents a collection of group filter values.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.#ctor(DevExpress.XtraPivotGrid.IPivotGroupFilterValueParent)">
+            <summary>
+                <para>Initializes a new instance of the PivotGroupFilterValuesCollection class.
+</para>
+            </summary>
+            <param name="owner">
+		An object implementing the <b>DevExpress.XtraPivotGrid.IPivotGroupFilterValueParent</b> interface that represents the owner of the collection (e.g., a <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValue"/> or <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValues"/> object).
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.Add(DevExpress.XtraPivotGrid.PivotGroupFilterValue)">
+            <summary>
+                <para>Adds the specified filter value to the collection.
+</para>
+            </summary>
+            <param name="value">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValue"/> object representing the filter value that should be added to the collection.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.Add(System.Object)">
+            <summary>
+                <para>Creates a filter value that corresponds to the specified field value, and adds it to the collection.
+</para>
+            </summary>
+            <param name="value">
+		The field value for which the filter value should be created and added to the collection.
+
+            </param>
+            <returns>A <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValue"/> object representing the filter value that has been added to the collection.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.AfterDeserializeCollection(System.String,DevExpress.Utils.Serializing.XtraItemEventArgs)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="propertyName">
+		@nbsp;
+
+            </param>
+            <param name="e">
+		@nbsp;
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.BeforeDeserializeCollection(System.String,DevExpress.Utils.Serializing.XtraItemEventArgs)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="propertyName">
+		@nbsp;
+
+            </param>
+            <param name="e">
+		@nbsp;
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.Clear">
+            <summary>
+                <para>Clears the collection.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.ClearCollection(System.String,DevExpress.Utils.Serializing.XtraItemEventArgs)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="propertyName">
+		@nbsp;
+
+            </param>
+            <param name="e">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.Clone(DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection,DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection)">
+            <summary>
+                <para>Copies the specified collection to the other PivotGroupFilterValuesCollection object.
+</para>
+            </summary>
+            <param name="src">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection"/> object that specifies the collection that should be copied to the <i>dest</i> collection.
+
+            </param>
+            <param name="dest">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection"/> object that specifies the collection to which the <i>src</i> collection should be copied.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.ContainsValue(System.Object)">
+            <summary>
+                <para>Returns whether the filter value that corresponds to the specified field value is contained in the collection.
+</para>
+            </summary>
+            <param name="value">
+		An object representing the field value.
+
+            </param>
+            <returns><b>true</b> if the filter value that corresponds to the specified field value is contained in the collection; otherwise, <b>false</b>.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.Count">
+            <summary>
+                <para>Gets the number of filter values in the collection.
+</para>
+            </summary>
+            <value>An integer value representing the number of filter values in the collection.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.CreateCollectionItem(System.String,DevExpress.Utils.Serializing.XtraItemEventArgs)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="propertyName">
+		@nbsp;
+
+            </param>
+            <param name="e">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.FindAll(System.Predicate`1)">
+            <summary>
+                <para>Returns all group filter values that meet the specified condition.
+</para>
+            </summary>
+            <param name="predicate">
+		A <b>System.Predicate</b> that specifies the condition used to select the required collection elements.
+
+            </param>
+            <returns>A list of <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValue"/> objects that represent the group filter values that meet the specified condition.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.IsEmpty">
+            <summary>
+                <para>Gets whether the collection is empty.
+</para>
+            </summary>
+            <value><b>true</b> if the collection is empty; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.IsEquals(DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection,DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection)">
+            <summary>
+                <para>Returns whether the specified collections match.
+</para>
+            </summary>
+            <param name="a">
+		The first filter values collection to be compared.
+
+            </param>
+            <param name="b">
+		The second filter values collection to be compared.
+
+            </param>
+            <returns><b>true</b> if the specified collections match; otherwise, <b>false</b>.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.Item(System.Object)">
+            <summary>
+                <para>Gets or sets the filter value by the corresponding field value.
+</para>
+            </summary>
+            <param name="key">
+		The field value for which the corresponding filter value should be specified.
+
+            </param>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValue"/> object representing the filter value that corresponds to the specified field value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.Items">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <value>@nbsp;
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.Remove(DevExpress.XtraPivotGrid.PivotGroupFilterValue)">
+            <summary>
+                <para>Removes the specified filter value from the collection.
+</para>
+            </summary>
+            <param name="value">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValue"/> object representing the filter value that should be removed from the collection.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.Remove(System.Object)">
+            <summary>
+                <para>Removes the filter value that corresponds to the specified field value.
+</para>
+            </summary>
+            <param name="value">
+		An object representing the field value to which the filter value that should be removed corresponds.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.SetIndexCollectionItem(System.String,DevExpress.Utils.Serializing.XtraSetItemIndexEventArgs)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="propertyName">
+		@nbsp;
+
+            </param>
+            <param name="e">
+		@nbsp;
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.ToList">
+            <summary>
+                <para>Returns the collection elements as a list.
+</para>
+            </summary>
+            <returns>A list of group filter values.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection.ToString">
+            <summary>
+                <para>Returns the collection elements number as text.
+</para>
+            </summary>
+            <returns>A <see cref="T:System.String"/> that contains the number of filter values in the collection.
+</returns>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotDataSource">
+
+            <summary>
+                <para>Serves as the base for classes that represent data sources provided by the pivot grid control (e.g. summary data source, drill-down data source).
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotDataSource.Dispose">
+            <summary>
+                <para>Disposes of the data source.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotDataSource.GetItemProperties(DevExpress.Data.Browsing.PropertyDescriptor[])">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="listAccessors">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotDataSource.GetListName(DevExpress.Data.Browsing.PropertyDescriptor[])">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="listAccessors">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotDataSource.GetRowIndex(System.Object)">
+            <summary>
+                <para>When overridden in descendant classes, returns the index of the specified row.
+</para>
+            </summary>
+            <param name="value">
+		A data source row.
+
+            </param>
+            <returns>Always <b>-1</b>.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotDataSource.IsLive">
+            <summary>
+                <para>When overridden in descendant classes, gets or sets whether to update the data source when the pivot grid data changes.
+</para>
+            </summary>
+            <value>Always <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="E:DevExpress.XtraPivotGrid.PivotDataSource.ListChanged">
+            <summary>
+                <para>Occurs after the data source has been changed.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotDataSource.RowCount">
+            <summary>
+                <para>When overridden in descendant classes, gets the number of rows in the data source.
+</para>
+            </summary>
+            <value>Always <b>0</b>.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition">
+
+            <summary>
+                <para>Represents a sort condition used to identify the column/row by whose values the other field values will be sorted. 
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.#ctor(DevExpress.XtraPivotGrid.PivotGridFieldBase,System.Object)">
+            <summary>
+                <para>Initializes a new instance of the PivotGridFieldSortCondition class.
+</para>
+            </summary>
+            <param name="field">
+		The field to which the condition corresponds. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.Field"/> property.
+
+            </param>
+            <param name="value">
+		An object that specifies the field value represented by the condition. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.Value"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.#ctor(DevExpress.XtraPivotGrid.Data.PivotFieldValueItem)">
+            <summary>
+                <para>Initializes a new instance of the PivotGridFieldSortCondition class.
+</para>
+            </summary>
+            <param name="item">
+		A PivotFieldValueItem object.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.#ctor(DevExpress.XtraPivotGrid.PivotGridFieldBase,System.Object,System.String)">
+            <summary>
+                <para>Initializes a new instance of the PivotGridFieldSortCondition class.
+</para>
+            </summary>
+            <param name="field">
+		The field to which the condition corresponds. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.Field"/> property.
+
+            </param>
+            <param name="value">
+		An object that specifies the field value represented by the condition. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.Value"/> property.
+
+
+            </param>
+            <param name="olapUniqueName">
+		A <see cref="T:System.String"/> that represents the unique name of the corresponding OLAP member. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.OLAPUniqueMemberName"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.#ctor">
+            <summary>
+                <para>Initializes a new instance of the PivotGridFieldSortCondition class with default settings.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.Changed">
+            <summary>
+                <para>Occurs after one of the current object's properties has been changed.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.Field">
+            <summary>
+                <para>Gets or sets the field to which the condition corresponds.
+</para>
+            </summary>
+            <value>The field to which the condition corresponds.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.FieldComponentName">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <value>@nbsp;
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.IsEqual(DevExpress.XtraPivotGrid.PivotGridFieldSortCondition,System.Comparison`1,System.Boolean)">
+            <summary>
+                <para>Returns whether the specified condition matches the current one.
+</para>
+            </summary>
+            <param name="condition">
+		A PivotGridFieldSortCondition object that specifies the condition that should be compared with the current one.
+
+            </param>
+            <param name="compareValues">
+		A <b>System.Comparison</b> descendant that represents the method used to compare conditions.
+
+            </param>
+            <param name="isOLAP">
+		<b>true</b> if the conditions represent OLAP members; otherwise, <b>false</b>.
+
+            </param>
+            <returns><b>true</b> if the specified condition matches the current one; otherwise, <b>false</b>.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.OLAPUniqueMemberName">
+            <summary>
+                <para>Gets or sets the unique name of the corresponding OLAP member.
+</para>
+            </summary>
+            <value>A <see cref="T:System.String"/> that specifies the unique name of the corresponding OLAP member.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.Value">
+            <summary>
+                <para>Gets or sets the field value represented by the condition.
+</para>
+            </summary>
+            <value>An object that specifies the field value represented by the condition.
+
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotSummaryDataSource">
+
+            <summary>
+                <para>Represents a summary data source.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.#ctor(DevExpress.XtraPivotGrid.Data.PivotGridData,System.Int32,System.Int32)">
+            <summary>
+                <para>Initializes a new instance of the PivotSummaryDataSource class.
+</para>
+            </summary>
+            <param name="data">
+		A <b>DevExpress.XtraPivotGrid.Data.PivotGridData</b> object representing the pivot grid data.
+
+            </param>
+            <param name="columnIndex">
+		An integer value that specifies the index of the pivot grid column whose data cells should be represented by the summary data source; <b>-1</b> to include data from all columns to the data source.
+
+            </param>
+            <param name="rowIndex">
+		An integer value that specifies the index of the pivot grid row whose data cells should be represented by the summary data source; <b>-1</b> to include data from all rows to the data source.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.GetColumnIndex(DevExpress.XtraPivotGrid.PivotGridFieldBase)">
+            <summary>
+                <para>Returns the index of the column that corresponds to the specified field.
+</para>
+            </summary>
+            <param name="field">
+		A <b>DevExpress.XtraPivotGrid.PivotGridFieldBase</b> descendant that represents the pivot grid field used to identify the summary data source column.
+
+            </param>
+            <returns>An integer value that specifies the zero-based index of the summary data source column that corresponds to the specified field.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.GetField(System.Int32)">
+            <summary>
+                <para>Returns the field to which the specified column corresponds.
+</para>
+            </summary>
+            <param name="columnIndex">
+		An integer value that specifies the zero-based index of the summary data source column.
+
+            </param>
+            <returns>A <b>DevExpress.XtraPivotGrid.PivotGridFieldBase</b> descendant that represents the field to which the specified column corresponds.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.GetIsOthersValue(System.Int32,System.Int32)">
+            <summary>
+                <para>Returns whether the specified cell corresponds to the 'Others' column/row.
+</para>
+            </summary>
+            <param name="rowIndex">
+		An integer value that specifies the zero-based index of the summary data source row.
+
+            </param>
+            <param name="columnIndex">
+		An integer value that specifies the zero-based index of the summary data source column.
+
+            </param>
+            <returns><b>true</b> if the specified cell corresponds to the pivot grid's 'Others' column/row; otherwise, <b>false</b>.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.GetIsOthersValue(System.Int32,System.String)">
+            <summary>
+                <para>Returns whether the specified cell corresponds to the 'Others' column/row.
+</para>
+            </summary>
+            <param name="rowIndex">
+		An integer value that specifies the zero-based index of the summary data source row.
+
+            </param>
+            <param name="columnName">
+		A <see cref="T:System.String"/> that specifies the name of the summary data source column.
+
+            </param>
+            <returns><b>true</b> if the specified cell corresponds to the pivot grid's 'Others' column/row; otherwise, <b>false</b>.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.GetItemProperties(DevExpress.Data.Browsing.PropertyDescriptor[])">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="listAccessors">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.GetListName(DevExpress.Data.Browsing.PropertyDescriptor[])">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="listAccessors">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.GetRowIndex(System.Object)">
+            <summary>
+                <para>Returns the index of the specified row.
+</para>
+            </summary>
+            <param name="value">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotSummaryDataRow"/> object that represents the summary data source row.
+
+            </param>
+            <returns>An integer value that represents the zero-based index of the specified summary data source row.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.GetValue(System.Int32,DevExpress.XtraPivotGrid.PivotGridFieldBase)">
+            <summary>
+                <para>Returns the value of the specified cell.
+
+</para>
+            </summary>
+            <param name="rowIndex">
+		An integer value that specifies the zero-based index of the summary data source row.
+
+            </param>
+            <param name="field">
+		A <b>DevExpress.XtraPivotGrid.PivotGridFieldBase</b> descendant representing the field used to identify the data source column.
+
+            </param>
+            <returns>The value of the specified summary data source cell.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.GetValue(System.Int32,System.Int32)">
+            <summary>
+                <para>Returns the value of the specified cell.
+</para>
+            </summary>
+            <param name="rowIndex">
+		An integer value that specifies the zero-based index of the summary data source row.
+
+            </param>
+            <param name="columnIndex">
+		An integer value that specifies the zero-based index of the summary data source column.
+
+            </param>
+            <returns>The value of the specified summary data source cell.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.GetValue(System.Int32,System.String)">
+            <summary>
+                <para>Returns the value of the specified cell.
+</para>
+            </summary>
+            <param name="rowIndex">
+		An integer value that specifies the zero-based index of the summary data source row.
+
+            </param>
+            <param name="columnName">
+		A <see cref="T:System.String"/> that specifies the name of the summary data source column.
+
+            </param>
+            <returns>The value of the specified summary data source cell.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataSource.IndexOf(System.Object)">
+            <summary>
+                <para>Returns the index of the specified row.
+</para>
+            </summary>
+            <param name="value">
+		The summary data source row.
+
+            </param>
+            <returns>An integer value that represents the zero-based index of the specified summary data source row.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotSummaryDataSource.IsLive">
+            <summary>
+                <para>Gets or sets whether to update the data source when the pivot grid data changes.
+</para>
+            </summary>
+            <value><b>true</b> to update the summary data source when the pivot grid data changes; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotSummaryDataSource.Item(System.Int32)">
+            <summary>
+                <para>Gets or sets the row by its index.
+</para>
+            </summary>
+            <param name="index">
+		@nbsp;
+
+            </param>
+            <value>@nbsp;
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotSummaryDataSource.RowCount">
+            <summary>
+                <para>Gets the number of rows in the data source.
+</para>
+            </summary>
+            <value>An integer value that specifies the number of rows in the summary data source.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotSummaryDataRow">
+
+            <summary>
+                <para>Represents a summary data source row.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotSummaryDataRow.#ctor(DevExpress.XtraPivotGrid.PivotSummaryDataSource,System.Int32,System.Int32,System.Int32)">
+            <summary>
+                <para>Initializes a new instance of the PivotSummaryDataRow class.
+</para>
+            </summary>
+            <param name="dataSource">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotSummaryDataSource"/> object that represents the parent summary data source.
+
+            </param>
+            <param name="index">
+		An integer value that specifies the index of the row in the summary data source.
+
+            </param>
+            <param name="columnIndex">
+		An integer value that specifies the index of the pivot grid column where the cell represented by the summary row resides.
+
+            </param>
+            <param name="rowIndex">
+		An integer value that specifies the index of the pivot grid row where the cell represented by the summary row resides.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotSummaryDataRow.ColumnIndex">
+            <summary>
+                <para>Gets the index of the pivot grid column where the cell represented by the summary row resides.
+</para>
+            </summary>
+            <value>An integer value that specifies the index of the pivot grid column where the cell represented by the summary row resides.
+
+
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotSummaryDataRow.DataSource">
+            <summary>
+                <para>Gets the parent summary data source.
+</para>
+            </summary>
+            <value>@nbsp;
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotSummaryDataRow.Index">
+            <summary>
+                <para>Gets the index of the current row in the summary data source.
+</para>
+            </summary>
+            <value>An integer value that specifies the zero-based index of the current row in the summary data source.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotSummaryDataRow.Item(System.String)">
+            <summary>
+                <para>Provides access to the cells in the current row by the name of the corresponding field.
+</para>
+            </summary>
+            <param name="fieldName">
+		A <see cref="T:System.String"/> that specifies the name of the field. 
+
+            </param>
+            <value>The value of the cell that corresponds to the specified field.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotSummaryDataRow.Item(DevExpress.XtraPivotGrid.PivotGridFieldBase)">
+            <summary>
+                <para>Provides access to the cells in the current row by the corresponding pivot grid field.
+</para>
+            </summary>
+            <param name="field">
+		@nbsp;
+
+            </param>
+            <value>@nbsp;
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotSummaryDataRow.Item(System.Int32)">
+            <summary>
+                <para>Provides indexed access to the cells in the current row.
+</para>
+            </summary>
+            <param name="columnIndex">
+		An integer value that specifies the zero-based index of the summary data source column.
+
+            </param>
+            <value>The value of the cell that resides in the column with the specified index.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotSummaryDataRow.Location">
+            <summary>
+                <para>Gets the location of the pivot grid cell represented by the current summary row.
+</para>
+            </summary>
+            <value>A <see cref="T:System.Drawing.Point"/> object that represents the location of the corresponding pivot grid cell.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotSummaryDataRow.RowIndex">
+            <summary>
+                <para>Gets the index of the pivot grid row where the cell represented by the summary row resides.
+</para>
+            </summary>
+            <value>An integer value that specifies the index of the pivot grid row where the cell represented by the summary row resides.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotDrillDownDataRow">
+
+            <summary>
+                <para>A single row in a data source that provides data used to calculate summaries for individual cells.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotDrillDownDataRow.#ctor(DevExpress.XtraPivotGrid.PivotDrillDownDataSource,System.Int32)">
+            <summary>
+                <para>Initializes a new instance of the PivotDrillDownDataRow class.
+</para>
+            </summary>
+            <param name="dataSource">
+		A <b>DevExpress.XtraPivotGrid.PivotDrillDownDataSource</b> object that represents the data source that will own the created row.
+
+            </param>
+            <param name="index">
+		An integer that specifies the index of the created row in the data source.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotDrillDownDataRow.DataSource">
+            <summary>
+                <para>Gets the data source which contains the current row.
+</para>
+            </summary>
+            <value>A <b>DevExpress.XtraPivotGrid.PivotDrillDownDataSource</b> object which represents the data source that contains the current row.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotDrillDownDataRow.Index">
+            <summary>
+                <para>Gets the row's index in the data source.
+</para>
+            </summary>
+            <value>An integer which specifies the row's index in the data source.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotDrillDownDataRow.Item(System.String)">
+            <summary>
+                <para>Returns the value of the specified field in the current row.
+</para>
+            </summary>
+            <param name="fieldName">
+		A <see cref="T:System.String"/> value that specifies the data field name.
+
+            </param>
+            <value>An object that represents the value of the specified data field in the current row.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotDrillDownDataRow.Item(DevExpress.XtraPivotGrid.PivotGridFieldBase)">
+            <summary>
+                <para>Gets the row's value for the specified field.
+
+</para>
+            </summary>
+            <param name="field">
+		A <b>DevExpress.XtraPivotGrid.PivotGridFieldBase</b> descendant that represents the required field.
+
+            </param>
+            <value>An object which represents the row's value in the specified field.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotDrillDownDataRow.Item(System.Int32)">
+            <summary>
+                <para>Returns the value of the specified field in the current row.
+</para>
+            </summary>
+            <param name="index">
+		A zero-based integer that identifies the data column.
+
+            </param>
+            <value>An object that represents the value of the specified data field in the current row.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotDrillDownDataRow.ListSourceRowIndex">
+            <summary>
+                <para>Gets the row's index in the pivot grid's data source.
+</para>
+            </summary>
+            <value>Gets the current row's index in the pivot grid's data source. 
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem">
+
+            <summary>
+                <para>Represents a filter item.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.#ctor(System.Object,System.String,System.Nullable`1,System.Boolean)">
+            <summary>
+                <para>Initializes a new instance of the PivotGridFilterItem class.
+</para>
+            </summary>
+            <param name="value">
+		A field value that corresponds to the current filter value. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.Value"/> property.
+
+            </param>
+            <param name="text">
+		A <see cref="T:System.String"/> that specifies the item's caption. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.Text"/> property.
+
+            </param>
+            <param name="isChecked">
+		<b>true</b> if the item should be checked; <b>false</b> if it should be unchecked; <b>null</b> if its check state should be indeterminate. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.IsChecked"/> property.
+
+            </param>
+            <param name="isVisible">
+		<b>true</b> if the item should be visible; otherwise, <b>false</b>. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.IsVisible"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.#ctor(System.Object,System.String,System.Nullable`1)">
+            <summary>
+                <para>Initializes a new instance of the PivotGridFilterItem class.
+</para>
+            </summary>
+            <param name="value">
+		A field value that corresponds to the current filter value. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.Value"/> property.
+
+            </param>
+            <param name="text">
+		A <see cref="T:System.String"/> that specifies the item's caption. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.Text"/> property.
+
+            </param>
+            <param name="isChecked">
+		<b>true</b> if the item should be checked; <b>false</b> if it should be unchecked; <b>null</b> if its check state should be indeterminate. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.IsChecked"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.IsBlank">
+            <summary>
+                <para>Gets whether the filter item represents the blank field value.
+</para>
+            </summary>
+            <value><b>true</b> if the filter item represents the blank field value; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.IsChecked">
+            <summary>
+                <para>Gets or sets the check state of the filter item.
+</para>
+            </summary>
+            <value><b>true</b> if the item is checked; <b>false</b> if it is unchecked; <b>null</b> if its check state is indeterminate.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.IsVisible">
+            <summary>
+                <para>Gets or sets whether the filter item is visible.
+</para>
+            </summary>
+            <value><b>true</b> if the filter item is visible; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.Level">
+            <summary>
+                <para>Gets the hierarchy level of the filter item when overridden in descendant classes.
+</para>
+            </summary>
+            <value>Always returns <b>0</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.Text">
+            <summary>
+                <para>Gets or sets the caption of the filter item.
+</para>
+            </summary>
+            <value>A <see cref="T:System.String"/> that specifies the caption of the filter item.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.ToString">
+            <summary>
+                <para>Returns the textual representation of the filter item.
+</para>
+            </summary>
+            <returns>A <see cref="T:System.String"/> that specifies the textual representation of the filter item.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.PivotGridFilterItem.Value">
+            <summary>
+                <para>Gets or sets the field value represented by the filter item.
+</para>
+            </summary>
+            <value>The field value represented by the filter item.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.Data.FieldValueSplitData">
+
+            <summary>
+                <para>Represents a cell created when splitting a field value cell.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.Data.FieldValueSplitData.#ctor(System.Object,System.Int32)">
+            <summary>
+                <para>Initializes a new instance of the FieldValueSplitData class.
+</para>
+            </summary>
+            <param name="value">
+		The value that will be contained in the new cell. Assigned to the <see cref="P:DevExpress.XtraPivotGrid.Data.FieldValueSplitData.Value"/> property.
+
+            </param>
+            <param name="nestedCellCount">
+		An integer value that specifies the number of cells nested in the new cell. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.Data.FieldValueSplitData.NestedCellCount"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueSplitData.NestedCellCount">
+            <summary>
+                <para>Gets or sets the number of cells nested in the new cell.
+</para>
+            </summary>
+            <value>An integer value that specifies the number of cells nested in the new cell.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueSplitData.Value">
+            <summary>
+                <para>Gets or sets the value of the new cell.
+</para>
+            </summary>
+            <value>The value of the new cell.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.Data.GrandTotalLocation">
+
+            <summary>
+                <para>Lists values that specify the location of Grand Total rows and columns.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Data.GrandTotalLocation.Far">
+            <summary>
+                <para>Grand Total columns are displayed to the right of the column field values. Grand Total rows are displayed under the row field values. 
+<para></para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraPivotGrid.Data.GrandTotalLocation.Near">
+            <summary>
+                <para>Grand Total columns are displayed to the left of the column field values. Grand Total rows are displayed above the row field values. 
+<para></para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.Data.PivotGrid.PivotSummaryType">
+
+            <summary>
+                <para>Lists values that specify the summary function types.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.Data.PivotGrid.PivotSummaryType.Average">
+            <summary>
+                <para>The average of the values.
+<para>
+
+</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Data.PivotGrid.PivotSummaryType.Count">
+            <summary>
+                <para>The number of values (excluding <b>Null</b> and <b>DBNull</b> values).
+
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Data.PivotGrid.PivotSummaryType.Custom">
+            <summary>
+                <para>Specifies whether calculations should be performed manually, by handling the <b>CustomSummary</b> event. 
+
+<para>
+Not supported in OLAP mode.
+</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Data.PivotGrid.PivotSummaryType.Max">
+            <summary>
+                <para>The largest value.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Data.PivotGrid.PivotSummaryType.Min">
+            <summary>
+                <para>The smallest value.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Data.PivotGrid.PivotSummaryType.StdDev">
+            <summary>
+                <para>An estimate of the standard deviation of a population, where the sample is a subset of the entire population.
+<para>
+
+</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Data.PivotGrid.PivotSummaryType.StdDevp">
+            <summary>
+                <para>The standard deviation of a population, where the population is all of the data to be summarized.
+<para>
+
+</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Data.PivotGrid.PivotSummaryType.Sum">
+            <summary>
+                <para>The sum of the values.
+<para>
+
+</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Data.PivotGrid.PivotSummaryType.Var">
+            <summary>
+                <para>An estimate of the variance of a population, where the sample is a subset of the entire population.
+<para>
+
+</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Data.PivotGrid.PivotSummaryType.Varp">
+            <summary>
+                <para>The variance of a population, where the population is all of the data to be summarized.
+<para>
+
+</para>
+</para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotGroupFilterValues">
+
+            <summary>
+                <para>Represents a group filter condition.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.#ctor(DevExpress.XtraPivotGrid.PivotGridGroup)">
+            <summary>
+                <para>Initializes a new instance of the PivotGroupFilterValues class.
+</para>
+            </summary>
+            <param name="group">
+		A <b>DevExpress.XtraPivotGrid.PivotGridGroup</b> object, representing the owner field group. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGroupFilterValues.Group"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.#ctor(DevExpress.XtraPivotGrid.PivotGridGroup,DevExpress.XtraPivotGrid.PivotFilterType)">
+            <summary>
+                <para>Initializes a new instance of the PivotGroupFilterValues class.
+</para>
+            </summary>
+            <param name="group">
+		A <b>DevExpress.XtraPivotGrid.PivotGridGroup</b> object that represents the owner field group. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGroupFilterValues.Group"/> property.
+
+            </param>
+            <param name="filterType">
+		A <b>DevExpress.XtraPivotGrid.PivotFilterType</b> enumeration member that specifies the filter type. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGroupFilterValues.FilterType"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.AllowProperty(DevExpress.Utils.OptionsLayoutBase,System.String,System.Int32)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="options">
+		@nbsp;
+
+            </param>
+            <param name="propertyName">
+		@nbsp;
+
+            </param>
+            <param name="id">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.Assign(DevExpress.XtraPivotGrid.PivotGroupFilterValues)">
+            <summary>
+                <para>Initializes the current PivotGroupFilterValues object with the specified one.
+</para>
+            </summary>
+            <param name="src">
+		A PivotGroupFilterValues object that will be used to initialize the current object.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.BeginUpdate">
+            <summary>
+                <para>Locks the PivotGroupFilterValues object by preventing visual updates until the <b>EndUpdate</b> method is called.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.CancelUpdate">
+            <summary>
+                <para>Unlocks the PivotGroupFilterValues object after it has been locked by the <b>BeginUpdate</b> method, without causing an immediate visual update.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.Clone">
+            <summary>
+                <para>Returns a copy of the current object.
+</para>
+            </summary>
+            <returns>A PivotGroupFilterValues object that represents the copy of the current object.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.Contains(System.Object,System.Object[])">
+            <summary>
+                <para>Returns whether the current filter condition allows processing the specified group value.
+
+</para>
+            </summary>
+            <param name="value">
+		The field value.
+
+            </param>
+            <param name="parentValues">
+		Parent values of the field value specified by the <i>value</i> parameter.
+
+            </param>
+            <returns><b>true</b> if the current filter condition allows processing the specified group value with all its child values; <b>null</b> (<b>Nothing</b> in Visual Basic) if some of the child values are processed, while others are not; <b>false</b> if the specified group value is not processed.
+
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.Contains(System.Object,System.Object[],System.Boolean)">
+            <summary>
+                <para>For internal use.
+
+
+</para>
+            </summary>
+            <param name="value">
+		@nbsp;
+
+
+
+            </param>
+            <param name="parentValues">
+		@nbsp;
+
+            </param>
+            <param name="invertExcluded">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+
+
+
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValues.Count">
+            <summary>
+                <para>Gets the number of filter values.
+</para>
+            </summary>
+            <value>An integer value specifying the number of filter values.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.EndUpdate">
+            <summary>
+                <para>Unlocks the PivotGroupFilterValues object after a call to the <b>BeginUpdate</b> method and causes an immediate visual update.
+
+
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValues.FilterType">
+            <summary>
+                <para>Gets or sets the filter type.
+</para>
+            </summary>
+            <value>@nbsp;
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.FindFilterValue(System.Object[])">
+            <summary>
+                <para>Returns a filter value that corresponds to the specified group value.
+</para>
+            </summary>
+            <param name="values">
+		An array of field values that identify the group value.
+
+            </param>
+            <returns>A <b>DevExpress.XtraPivotGrid.PivotGroupFilterValue</b> object, which is a filter value that corresponds to the specified group value; <b>null</b> (<b>Nothing</b> in Visual Basic) if the required filter value has not been found.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValues.Group">
+            <summary>
+                <para>Gets the owner field group.
+</para>
+            </summary>
+            <value>A <b>DevExpress.XtraPivotGrid.PivotGridGroup</b> object that represents the owner group.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValues.HasFilter">
+            <summary>
+                <para>Gets whether the filter condition is not empty.
+
+</para>
+            </summary>
+            <value><b>true</b> if the filter condition is not empty; otherwise, <b>false</b>.
+
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValues.IsEmpty">
+            <summary>
+                <para>Gets whether the filter condition is empty.
+</para>
+            </summary>
+            <value><b>true</b> if the filter condition is empty; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.IsEquals(DevExpress.XtraPivotGrid.PivotGroupFilterValues)">
+            <summary>
+                <para>Returns whether the current PivotGroupFilterValues object matches the specified one.
+</para>
+            </summary>
+            <param name="b">
+		A PivotGroupFilterValues object that should be compared with the current one.
+
+            </param>
+            <returns><b>true</b> if the current PivotGroupFilterValues object matches the specified one; otherwise, <b>false</b>.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.Reset">
+            <summary>
+                <para>Clears the filter values collection.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.ResetProperties(DevExpress.Utils.OptionsLayoutBase)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="options">
+		@nbsp;
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.SetValues(DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection,DevExpress.XtraPivotGrid.PivotFilterType,System.Boolean)">
+            <summary>
+                <para>Adds the specified filter values to the collection, and sets the filter type to the specified value.
+</para>
+            </summary>
+            <param name="values">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection"/> object that specifies the collection of group filter values. This object is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGroupFilterValues.Values"/> property.
+
+            </param>
+            <param name="filterType">
+		A <b>DevExpress.XtraPivotGrid.PivotFilterType</b> enumeration member that specifies the filter type. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGroupFilterValues.FilterType"/> property.
+
+            </param>
+            <param name="allowOnChanged">
+		<b>true</b> to allow raising <b>OnChanged</b> events; otherwise, <b>false</b>. 
+
+
+            </param>
+            <returns><b>true</b> if the specified values differ from the current ones; otherwise, <b>false</b>.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.SetValuesAsync(DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection,DevExpress.XtraPivotGrid.PivotFilterType,System.Boolean)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="values">
+		@nbsp;
+
+            </param>
+            <param name="filterType">
+		@nbsp;
+
+            </param>
+            <param name="allowOnChanged">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGroupFilterValues.SetValuesAsync(DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection,System.Boolean)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="values">
+		@nbsp;
+
+            </param>
+            <param name="allowOnChanged">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGroupFilterValues.Values">
+            <summary>
+                <para>Gets the collection of filter values.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGroupFilterValuesCollection"/> object representing the collection of filter values.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.Data.FieldValueCellBase">
+
+            <summary>
+                <para>Serves as the base for classes that represent field value cells.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.#ctor(DevExpress.XtraPivotGrid.Data.PivotFieldValueItem)">
+            <summary>
+                <para>Initializes a new instance of the FieldValueCellBase class.
+</para>
+            </summary>
+            <param name="item">
+		A <b>DevExpress.XtraPivotGrid.Data.PivotFieldValueItem</b> object.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.CanExpand">
+            <summary>
+                <para>Gets whether an end-user can expand/collapse the field value.
+</para>
+            </summary>
+            <value><b>true</b> if an end-user can expand/collapse the field value; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.DisplayText">
+            <summary>
+                <para>Gets the text displayed within the cell.
+</para>
+            </summary>
+            <value>A <see cref="T:System.String"/> that represents the text displayed within the cell.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.EndLevel">
+            <summary>
+                <para>Gets the index of the last column or row level occupied by the cell.
+</para>
+            </summary>
+            <value>An integer value that represents the zero-based index of the last column or row level occupied by the cell.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.IsCollapsed">
+            <summary>
+                <para>Gets whether the field value is collapsed.
+</para>
+            </summary>
+            <value><b>true</b> if the field value is collapsed; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.IsColumn">
+            <summary>
+                <para>Gets whether the cell is a column header.
+</para>
+            </summary>
+            <value><b>true</b> if the cell is a column header; <b>false</b> if the cell is a row header.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.IsVisible">
+            <summary>
+                <para>Gets whether the cell is visible.
+</para>
+            </summary>
+            <value><b>true</b> if the cell is visible; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.MaxIndex">
+            <summary>
+                <para>Gets the index of the last nested cell at the last column/row level.
+</para>
+            </summary>
+            <value>An integer value that specifies the zero-based index of the last nested cell at the last column/row level.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.MinIndex">
+            <summary>
+                <para>Gets the index of the first nested cell at the last column/row level.
+</para>
+            </summary>
+            <value>An integer value that specifies the zero-based index of the first nested cell at the last column/row level.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.StartLevel">
+            <summary>
+                <para>Gets the first column or row level occupied by the cell.
+</para>
+            </summary>
+            <value>An integer value that represents the zero-based index of the first column or row level occupied by the cell.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.Value">
+            <summary>
+                <para>Gets the field value represented by the cell.
+</para>
+            </summary>
+            <value>The field value represented by the cell.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.Data.FieldValueCellBase.ValueType">
+            <summary>
+                <para>Gets the type of the cell.
+</para>
+            </summary>
+            <value>@nbsp;
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues">
+
+            <summary>
+                <para>Contains filter values for a specific field.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.#ctor(DevExpress.XtraPivotGrid.PivotGridFieldBase)">
+            <summary>
+                <para>Initializes a new instance of the PivotGridFieldFilterValues class.
+</para>
+            </summary>
+            <param name="field">
+		A <b>DevExpress.XtraPivotGrid.PivotGridFieldBase</b> descendant which represents the field that will own the collection. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Field"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Add(System.Object)">
+            <summary>
+                <para>Adds the specified element to the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Values"/> array.
+</para>
+            </summary>
+            <param name="value">
+		An object which represents the element to add.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.AllowProperty(DevExpress.Utils.OptionsLayoutBase,System.String,System.Int32)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="options">
+		@nbsp;
+
+            </param>
+            <param name="propertyName">
+		@nbsp;
+
+            </param>
+            <param name="id">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Assign(DevExpress.XtraPivotGrid.PivotGridFieldFilterValues)">
+            <summary>
+                <para>Copies the settings from the <see cref="T:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues"/> object passed as a parameter.
+</para>
+            </summary>
+            <param name="filteredValues">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues"/> object whose settings are assigned to the current object. If <b>null</b> (<b>Nothing</b> in Visual Basic), this method does nothing.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Clear">
+            <summary>
+                <para>Removes all elements from the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Values"/> array.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Contains(System.Object)">
+            <summary>
+                <para>Returns whether the current filter condition allows displaying the specified value.
+</para>
+            </summary>
+            <param name="value">
+		An object that should be located in the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Values"/> array.
+
+
+            </param>
+            <returns><b>true</b> if the current filter condition allows displaying the specified value; otherwise, <b>false</b>.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Contains(System.Object,System.Boolean)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="value">
+		 @nbsp;
+
+            </param>
+            <param name="invertExcluded">
+		 @nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Count">
+            <summary>
+                <para>Gets the number of elements in the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Values"/> array.
+</para>
+            </summary>
+            <value>An integer value which specifies the number of elements in the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Values"/> array.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Field">
+            <summary>
+                <para>Gets the field which owns the current collection.
+</para>
+            </summary>
+            <value>@nbsp;
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.FilterType">
+            <summary>
+                <para>Gets or sets the field's filter type. 
+
+</para>
+            </summary>
+            <value>@nbsp;
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.HasFilter">
+            <summary>
+                <para>Gets whether the current PivotGridFieldFilterValues object specifies non-empty filter criteria.
+</para>
+            </summary>
+            <value><b>true</b> if the current PivotGridFieldFilterValues object specifies non-empty filter criteria; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.InvertFilterType">
+            <summary>
+                <para>Inverts the current filter type.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.IsEmpty">
+            <summary>
+                <para>Gets whether the current collection contains values used to filter against the current field.
+</para>
+            </summary>
+            <value><b>true</b> if there are no elements in the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Values"/> array and the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.FilterType"/> property is set to <b>Excluded</b>; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.IsEquals(System.Collections.Generic.IList`1)">
+            <summary>
+                <para>Returns whether the current filter values and the specified values match.
+</para>
+            </summary>
+            <param name="values">
+		A list of objects that represents the values that should be compared with the current filter values.
+
+            </param>
+            <returns><b>true</b> if the current filter values and the specified values match; otherwise, <b>false</b>.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.IsEquals(DevExpress.XtraPivotGrid.PivotGridFieldFilterValues)">
+            <summary>
+                <para>Returns whether the filter values and settings represented by the current and specified objects match.
+</para>
+            </summary>
+            <param name="b">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues"/> object that represents the filter values and settings that should be compared with the current ones.
+
+            </param>
+            <returns><b>true</b> if the filter values and settings represented by the current and specified objects match; otherwise, <b>false</b>.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Remove(System.Object)">
+            <summary>
+                <para>Removes the specified element from the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Values"/> array.
+</para>
+            </summary>
+            <param name="value">
+		An object which represents the element to remove.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.ResetProperties(DevExpress.Utils.OptionsLayoutBase)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="options">
+		@nbsp;
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.SetFilterType(DevExpress.XtraPivotGrid.PivotFilterType)">
+            <summary>
+                <para>Sets the filter type to the specified value.
+</para>
+            </summary>
+            <param name="filterType">
+		A <b>DevExpress.XtraPivotGrid.PivotFilterType</b> enumeration member that specifies the filter type. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.FilterType"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.SetValues(System.Collections.Generic.IList`1,DevExpress.XtraPivotGrid.PivotFilterType,System.Boolean)">
+            <summary>
+                <para>Adds the specified values to the collection and sets the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.FilterType"/> and <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.ShowBlanks"/> properties to the specified values.
+</para>
+            </summary>
+            <param name="values">
+		An array of objects that contains filter values that should be added to the collection. 
+
+            </param>
+            <param name="filterType">
+		A <b>DevExpress.XtraPivotGrid.PivotFilterType</b> value that specifies the current field's filter type. 
+
+            </param>
+            <param name="showBlanks">
+		<b>true</b> if the PivotGridControl should process records that contain NULL values in the current field; otherwise, <b>false</b>.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.SetValues(System.Collections.Generic.IList`1,DevExpress.XtraPivotGrid.PivotFilterType,System.Boolean,System.Boolean)">
+            <summary>
+                <para>Adds the specified values to the collection and sets the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.FilterType"/> and <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.ShowBlanks"/> properties to the specified values.
+</para>
+            </summary>
+            <param name="values">
+		An array of objects that contains filter values that should be added to the collection. 
+
+            </param>
+            <param name="filterType">
+		A <b>DevExpress.XtraPivotGrid.PivotFilterType</b> value that specifies the current field's filter type. 
+
+            </param>
+            <param name="showBlanks">
+		<b>true</b> if the PivotGridControl should process records that contain NULL values in the current field; otherwise, <b>false</b>.
+
+            </param>
+            <param name="allowOnChanged">
+		<b>true</b> to allow raising <b>OnChanged</b> events; otherwise, <b>false</b>. 
+
+            </param>
+            <returns><b>true</b> if the specified values differ from the current ones; otherwise, <b>false</b>.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.SetValuesAsync(System.Collections.Generic.IList`1,DevExpress.XtraPivotGrid.PivotFilterType,System.Boolean,System.Boolean)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="values">
+		@nbsp;
+
+            </param>
+            <param name="filterType">
+		@nbsp;
+
+            </param>
+            <param name="showBlanks">
+		@nbsp;
+
+            </param>
+            <param name="allowOnChanged">
+		@nbsp;
+
+            </param>
+            <returns>@nbsp;
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.ShowBlanks">
+            <summary>
+                <para>Gets or sets whether records that contain NULL values in the current field should be processed by the control.
+</para>
+            </summary>
+            <value><b>true</b> if records that contain NULL values in the current field are processed by the control; <b>false</b> if these records are ignored.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.Values">
+            <summary>
+                <para>Gets or sets an array of filter values.
+</para>
+            </summary>
+            <value>An array of objects that represent the filter values.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.ValuesExcluded">
+            <summary>
+                <para>Gets or sets which values are excluded from the current field.
+
+</para>
+            </summary>
+            <value>An array of the values that are excluded from being displayed in the current field.
+
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldFilterValues.ValuesIncluded">
+            <summary>
+                <para>Gets or sets the values that are displayed in the current field.
+
+</para>
+            </summary>
+            <value>An array of the values that are displayed in the current field.
+
+</value>
+
+
+        </member>
+    </members>
+</doc>
