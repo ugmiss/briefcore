@@ -11,14 +11,14 @@ namespace AuthDemo
         List<string> GetData();
     }
 
-    
+
     public class DataProvider : IDataProvider
     {
         public List<string> GetData()
         {
             Random random = new Random(DateTime.Now.Millisecond);
             var x = random.Next(100);
-            if (x > 80)
+            if (x > 80) 
                 throw new Exception("数据访问异常");
             List<string> li = new List<string>();
             li.Add("eo:1000");
