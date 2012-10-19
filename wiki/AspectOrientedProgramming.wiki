@@ -21,74 +21,73 @@
 {{{
 private void button4_Click(object sender, EventArgs e)
 {
-            //创建SpringAop代理工厂
-            ProxyFactory proxyFactory = new ProxyFactory(new DataProvider());
-            //添加通知
-            proxyFactory.AddAdvice(new DataFilterAdvice());
-            proxyFactory.AddAdvice(new AuthVarifyAdvice());
-            proxyFactory.AddAdvice(new LoggingAdvice());
-            //动态代理接口
-            IDataProvider idata = (IDataProvider)proxyFactory.GetProxy();
-            try
-            {
-                List<string> res = idata.GetData();
-                MessageBox.Show(string.Join("\n", res));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-//数据过滤 环绕切入 IMethodInterceptor
+    //创建SpringAop代理工厂
+    ProxyFactory proxyFactory = new ProxyFactory(new DataProvider());
+    //添加通知
+    proxyFactory.AddAdvice(new DataFilterAdvice());
+    proxyFactory.AddAdvice(new AuthVarifyAdvice());
+    proxyFactory.AddAdvice(new LoggingAdvice());
+    //动态代理接口
+    IDataProvider idata = (IDataProvider)proxyFactory.GetProxy();
+    try
+    {
+        List<string> res = idata.GetData();
+        MessageBox.Show(string.Join("\n", res));
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show(ex.Message);
+    }
+}
+// 数据过滤 环绕切入 IMethodInterceptor
 public class DataFilterAdvice : IMethodInterceptor
 {
-        public object Invoke(IMethodInvocation invocation)
+    public object Invoke(IMethodInvocation invocation)
+    {
+        object returnValue = null;
+        returnValue = invocation.Proceed();
+        List<string> li = (List<string>)returnValue;
+        switch (Environment.CurrrentUser)
         {
-            object returnValue = null;
-            returnValue = invocation.Proceed();
-            List<string> li = (List<string>)returnValue;
-            switch (Environment.CurrrentUser)
-            {
-                case "admin":
-                    returnValue = li;
-                    break;
-                default:
-                    returnValue = li.FindAll(p => p.StartsWith(Environment.CurrrentUser)).ToList();
-                    break;
-            }
-            return returnValue;
+            case "admin":
+                returnValue = li;
+                break;
+            default:
+                returnValue = li.FindAll(p => p.StartsWith(Environment.CurrrentUser)).ToList();
+                break;
         }
+        return returnValue;
     }
+}
 // 权限验证 前置切入 IMethodBeforeAdvice
 public class AuthVarifyAdvice : IMethodBeforeAdvice
 {
-        public void Before(MethodInfo method, object[] args, object target)
+    public void Before(MethodInfo method, object[] args, object target)
+    {
+        if (!Environment.CurrrentUser.In("admin,eo,mo".Split(',')))
         {
-            if (!Environment.CurrrentUser.In("admin,eo,mo".Split(',')))
-            {
-                throw new Exception("没有权限访问");
-            }
+            throw new Exception("没有权限访问");
         }
     }
+}
 // 日志记录 异常处理 抛出切入 IThrowsAdvice 后置切入 IAfterReturningAdvice
 public class LoggingAdvice : IAfterReturningAdvice, IThrowsAdvice
 {
-        public void AfterReturning(object returnValue, MethodInfo method, object[] args, object target)
+    public void AfterReturning(object returnValue, MethodInfo method, object[] args, object target)
+    {
+        string successLog = Environment.CurrrentUser + " 执行：" + method.Name + "方法成功";
+        Logger.Info(successLog);
+    }
+    public void AfterThrowing(MethodInfo method, object[] args, object target, Exception exception)
+    {
+        string failedLog = Environment.CurrrentUser + " 执行：" + method.Name + "方法失败";
+        if (exception != null)
         {
-            string successLog = Environment.CurrrentUser + " 执行：" + method.Name + "方法成功";
-            Logger.Info(successLog);
-        }
-
-        public void AfterThrowing(MethodInfo method, object[] args, object target, Exception exception)
-        {
-            string failedLog = Environment.CurrrentUser + " 执行：" + method.Name + "方法失败";
-            if (exception != null)
-            {
-                string errorMsg = string.Format(failedLog + "{0}", exception.Message);
-                Logger.Error(errorMsg);
-            }
+            string errorMsg = string.Format(failedLog + "{0}", exception.Message);
+            Logger.Error(errorMsg);
         }
     }
+}
 }}}
  * 企业库(基于动态代理的*消息拦截*)
  * Emit IL(基于中间语言IL的*动态编译*）
