@@ -40,7 +40,6 @@ namespace AopDemo
             proxyFactory.AddAdvice(new DataFilterAdvice());
             proxyFactory.AddAdvice(new AuthVarifyAdvice());
             proxyFactory.AddAdvice(new LoggingAdvice());
-            proxyFactory.AddAdvice(new ExceptionAdvice());
             //动态代理接口
             IDataProvider idata = (IDataProvider)proxyFactory.GetProxy();
             try

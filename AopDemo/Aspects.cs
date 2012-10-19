@@ -39,22 +39,21 @@ namespace AopDemo
             }
         }
     }
-    // 日志记录 后置切入 IAfterReturningAdvice
-    public class LoggingAdvice : IAfterReturningAdvice
+    // 日志记录 异常处理 抛出切入 IThrowsAdvice 后置切入 IAfterReturningAdvice
+    public class LoggingAdvice : IAfterReturningAdvice, IThrowsAdvice
     {
         public void AfterReturning(object returnValue, MethodInfo method, object[] args, object target)
         {
-            Logger.Info(Environment.CurrrentUser + " 执行：" + method.Name + " 方法");
+            string successLog = Environment.CurrrentUser + " 执行：" + method.Name + "方法成功";
+            Logger.Info(successLog); 
         }
-    }
-    // 异常处理 抛出切入 IThrowsAdvice
-    public class ExceptionAdvice : IThrowsAdvice
-    {
+
         public void AfterThrowing(MethodInfo method, object[] args, object target, Exception exception)
         {
+            string failedLog = Environment.CurrrentUser + " 执行：" + method.Name + "方法失败";
             if (exception != null)
             {
-                string errorMsg = string.Format("异常通知:{0}", exception.Message);
+                string errorMsg = string.Format(failedLog + "{0}", exception.Message);
                 Logger.Error(errorMsg);
             }
         }
