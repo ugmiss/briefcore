@@ -1,0 +1,2 @@
+#labels powerdesigner,Options
+powerdesigner->tools->General Options->Dialog->Name to Code Mirroring 
