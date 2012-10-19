@@ -1,2 +1,3 @@
 #labels powerdesigner,Options
+#sumary 设置powerdesigner的对象名称与Code的镜像同步
 powerdesigner->tools->General Options->Dialog->Name to Code Mirroring 
