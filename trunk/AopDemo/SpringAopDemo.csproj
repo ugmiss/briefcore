@@ -8,8 +8,8 @@
     <ProjectGuid>{4F9852E2-5B67-4DBB-9FC0-3F419BA5D8BB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AopDemo</RootNamespace>
-    <AssemblyName>AopDemo</AssemblyName>
+    <RootNamespace>SpringAopDemo</RootNamespace>
+    <AssemblyName>SpringAopDemo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

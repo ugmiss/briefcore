@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCoder", "CoreCoder\Core
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{8D45C50B-B6AF-4E1D-BB1B-23AD9ACA1A69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AopDemo", "AopDemo\AopDemo.csproj", "{4F9852E2-5B67-4DBB-9FC0-3F419BA5D8BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpringAopDemo", "AopDemo\SpringAopDemo.csproj", "{4F9852E2-5B67-4DBB-9FC0-3F419BA5D8BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityDemo", "UnityDemo\UnityDemo.csproj", "{6D4394F9-F590-42B4-A116-6F12475D7E01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityAopDemo", "UnityDemo\UnityAopDemo.csproj", "{6D4394F9-F590-42B4-A116-6F12475D7E01}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssemblyReference", "AssemblyReference", "{F13DAE0E-9A09-451B-BAD8-19699D400DFB}"
 EndProject
