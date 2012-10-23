@@ -6,7 +6,7 @@ using AopAlliance.Intercept;
 using Spring.Aop;
 using Spring.Aop.Framework;
 
-namespace AopDemo
+namespace SpringAopDemo
 {
     static class Program
     {

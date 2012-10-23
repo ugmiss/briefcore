@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Practices.Unity.InterceptionExtension;
 using Microsoft.Practices.Unity;
 
-namespace UnityDemo
+namespace UnityAopDemo
 {
     class Program
     {
