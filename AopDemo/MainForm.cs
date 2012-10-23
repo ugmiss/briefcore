@@ -100,7 +100,6 @@ namespace AopDemo
             string successLog = Environment.CurrrentUser + " 执行：" + method.Name + "方法成功";
             Logger.Info(successLog);
         }
-
         public void AfterThrowing(MethodInfo method, object[] args, object target, Exception exception)
         {
             string failedLog = Environment.CurrrentUser + " 执行：" + method.Name + "方法失败";
