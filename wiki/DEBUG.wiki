@@ -1,0 +1,8 @@
+#summary C# debug代码
+#labels C,if,Debug
+= 代码=
+{{{
+#if DEBUG
+
+#endif
+}}}
