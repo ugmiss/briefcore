@@ -1,6 +1,6 @@
 #summary Winform中使用快捷键时的写法
 #labels Winform,ShotcutKeys
-=== 代码如下，注意KeyPreview设置为true ===
+=== 代码如下，注意 _KeyPreview_ 设置为true ===
 {{{
 public BaseForm()
 {
