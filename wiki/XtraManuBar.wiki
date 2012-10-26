@@ -2,6 +2,7 @@
 #labels Bar
 ===Code===
 {{{
+//通过Form找BarManager 
 DevExpress.XtraBars.BarManager myManager = null;
 foreach (var childControl in parentform.Controls)
 {
@@ -13,6 +14,7 @@ foreach (var childControl in parentform.Controls)
             break;
     }
 }
+//找主菜单条
 Bar bar = myManager.MainMenu;
 foreach (BarItem sbi in myManager.Items)
 {
