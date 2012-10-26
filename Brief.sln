@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityAopDemo", "UnityDemo\U
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssemblyReference", "AssemblyReference", "{F13DAE0E-9A09-451B-BAD8-19699D400DFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleCodeWikiEditor", "GoogleCodeWikiEditor\GoogleCodeWikiEditor.csproj", "{92AF45EF-E406-4FDF-893B-46CBE2C4E441}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Brief.vsmdi
@@ -76,6 +78,16 @@ Global
 		{6D4394F9-F590-42B4-A116-6F12475D7E01}.Release|Mixed Platforms.Build.0 = Release|x86
 		{6D4394F9-F590-42B4-A116-6F12475D7E01}.Release|x86.ActiveCfg = Release|x86
 		{6D4394F9-F590-42B4-A116-6F12475D7E01}.Release|x86.Build.0 = Release|x86
+		{92AF45EF-E406-4FDF-893B-46CBE2C4E441}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{92AF45EF-E406-4FDF-893B-46CBE2C4E441}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{92AF45EF-E406-4FDF-893B-46CBE2C4E441}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{92AF45EF-E406-4FDF-893B-46CBE2C4E441}.Debug|x86.ActiveCfg = Debug|x86
+		{92AF45EF-E406-4FDF-893B-46CBE2C4E441}.Debug|x86.Build.0 = Debug|x86
+		{92AF45EF-E406-4FDF-893B-46CBE2C4E441}.Release|Any CPU.ActiveCfg = Release|x86
+		{92AF45EF-E406-4FDF-893B-46CBE2C4E441}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{92AF45EF-E406-4FDF-893B-46CBE2C4E441}.Release|Mixed Platforms.Build.0 = Release|x86
+		{92AF45EF-E406-4FDF-893B-46CBE2C4E441}.Release|x86.ActiveCfg = Release|x86
+		{92AF45EF-E406-4FDF-893B-46CBE2C4E441}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
