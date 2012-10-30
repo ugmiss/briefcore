@@ -174,16 +174,6 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="dll\Common.Logging.dll" />
-    <Content Include="dll\Newtonsoft.Json.dll" />
-    <Content Include="dll\Spring.Aop.dll" />
-    <Content Include="dll\Spring.Core.dll" />
-    <Content Include="dll\Spring.Data.dll" />
-    <Content Include="dll\Spring.Messaging.dll" />
-    <Content Include="dll\Spring.Template.Velocity.dll" />
-    <Content Include="dll\Spring.Web.dll" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
