@@ -1,15 +1,16 @@
 #summary 策略模式
 #labels 策略模式,Strategy
 == 抽象策略角色 ==
-策略类，通常由一个接口或者抽象类实现。 
+ 策略类，通常由一个接口或者抽象类实现。 
 {{{
+// 策略接口
 public interface IStrategy
 {
     void DoOperation();
 }
-}}}　　
+}}}
 == 具体策略角色 ==
-包装了相关的算法和行为。
+ 包装了相关的算法和行为。
 {{{
 // 策略A
 public class StrategyA:IStrategy
