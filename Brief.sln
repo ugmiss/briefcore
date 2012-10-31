@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpringAopDemo", "AopDemo\Sp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityAopDemo", "UnityDemo\UnityAopDemo.csproj", "{6D4394F9-F590-42B4-A116-6F12475D7E01}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssemblyReference", "AssemblyReference", "{F13DAE0E-9A09-451B-BAD8-19699D400DFB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFService", "WCFService\WCFService.csproj", "{DD584570-3394-4006-917C-38A0972FC0B8}"
 EndProject
 Global
