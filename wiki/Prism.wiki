@@ -1,6 +1,6 @@
 #summary prism
 #labels Prism,MVVM,MEF,Unity,Bootstrapper
-= Bootstrapper =
+== Bootstrapper ==
 在程序中使用框架必然要有一个切入点，框架会在这里进行初始化，处理相关配置信息等。在Prism中扮演这一角色的就是Bootstrapper。 
 
       Prism提供了一个抽象基类Bootstrapper，这个类里面包含了包含了许多空的虚方法，可以重写它们添加自己的逻辑。这个基类与任何容器无关，所以可以通过继承它来实现基于特定容器的Bootstrapper，不过通常我们大可不必这样做，因为Prism默认提供了两个基于特定容器的Bootstrapper——UnityBootstrapper和MefBootstrapper，分别使用Unity和Mef来实现依赖注入。
