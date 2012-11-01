@@ -12,14 +12,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ApplicationHost
+namespace UserManageModule
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// RoleView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RoleView : UserControl
     {
-        public MainWindow()
+        public RoleView()
         {
             InitializeComponent();
         }
