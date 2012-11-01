@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationHost", "Applicat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManageModule", "UserManageModule\UserManageModule.csproj", "{F1BECE2D-00B3-4133-9538-BB46EABEB96D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Brief.vsmdi
@@ -38,6 +40,16 @@ Global
 		{F1BECE2D-00B3-4133-9538-BB46EABEB96D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F1BECE2D-00B3-4133-9538-BB46EABEB96D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F1BECE2D-00B3-4133-9538-BB46EABEB96D}.Release|x86.ActiveCfg = Release|Any CPU
+		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
