@@ -7,6 +7,7 @@ using System.Windows.Media.Animation;
 using DevExpress.Utils;
 using DevExpress.Xpf.Core;
 using System.Windows.Controls;
+using Win8Style.View;
 
 namespace Win8Style
 {
