@@ -1,5 +1,5 @@
-==CLR==
-Common Language Runtime 公共语言运行时，有多种不同编程语言使用的运行库
+#summary Common Language Runtime 公共语言运行时，有多种不同编程语言使用的运行库
+#labels CLR,CTS,CLI,CLS,JIT,FCL,IL
 ==托管模块==
 Managed Module，一个标准的MS Window可移植执行体文件(32位PE32或64位PE32+)
 ==IL==
