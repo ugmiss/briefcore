@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
+using Model;
 
 namespace UserManageModule
 {
-
+    [Module(ModuleName = ModuleNames.UserManageModule, OnDemand = true)]
     public class UserManageModule : IModule
     {
         private readonly IRegionViewRegistry regionViewRegistry;

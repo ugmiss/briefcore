@@ -1,32 +1,45 @@
 ﻿using System.Windows;
-using Microsoft.Practices.Prism.MefExtensions;
-using Microsoft.Practices.Prism.Modularity;
 using System.ComponentModel.Composition.Hosting;
-
+using Microsoft.Practices.Prism.Logging;
+using Microsoft.Practices.Prism.Modularity;
+using Microsoft.Practices.Prism.UnityExtensions;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.ServiceLocation;
 namespace ApplicationHost
 {
-    public class Bootstrapper : MefBootstrapper
+    // 启动引导器
+    public class Bootstrapper : UnityBootstrapper
     {
         protected override DependencyObject CreateShell()
         {
-            return this.Container.GetExportedValue<Shell>();
+            return this.Container.Resolve<Shell>();
         }
+
         protected override void InitializeShell()
         {
             base.InitializeShell();
+
             App.Current.MainWindow = (Window)this.Shell;
             App.Current.MainWindow.Show();
         }
-        protected override void ConfigureAggregateCatalog()
-        {
-            base.ConfigureAggregateCatalog();
-            this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(Bootstrapper).Assembly));
-            DirectoryCatalog catalog = new DirectoryCatalog("DirectoryModules");
-            this.AggregateCatalog.Catalogs.Add(catalog);
-        }
         protected override IModuleCatalog CreateModuleCatalog()
         {
-            return new ConfigurationModuleCatalog();
+            return new AggregateModuleCatalog();
         }
+
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
+        }
+
+        protected override void ConfigureModuleCatalog()
+        {
+            DirectoryModuleCatalog directoryCatalog = new DirectoryModuleCatalog() { ModulePath = @".\DirectoryModules" };
+            ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(directoryCatalog);
+            ConfigurationModuleCatalog configurationCatalog = new ConfigurationModuleCatalog();
+            ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(configurationCatalog);
+
+        }
+
     }
 }
