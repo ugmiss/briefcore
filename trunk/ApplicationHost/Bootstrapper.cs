@@ -1,10 +1,8 @@
 ﻿using System.Windows;
 using System.ComponentModel.Composition.Hosting;
-using Microsoft.Practices.Prism.Logging;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.ServiceLocation;
 namespace ApplicationHost
 {
     // 启动引导器
@@ -20,7 +18,7 @@ namespace ApplicationHost
 
         protected override void ConfigureModuleCatalog()
         {
-            DirectoryModuleCatalog directoryCatalog = new DirectoryModuleCatalog() { ModulePath = @"DirectoryModules" };
+            DirectoryModuleCatalog directoryCatalog = new DirectoryModuleCatalog() { ModulePath = @".\DirectoryModules" };
             ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(directoryCatalog);
             ConfigurationModuleCatalog configurationCatalog = new ConfigurationModuleCatalog();
             ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(configurationCatalog);
