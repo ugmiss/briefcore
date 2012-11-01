@@ -1,5 +1,5 @@
-#summary prism 可重用，扩展性，灵活性的WPF框架
-#labels Prism,MVVM,MEF,Unity,Bootstrapper
+#summary Prism 可重用，扩展性，灵活性的WPF框架。
+#labels Prism,MVVM,MEF,Unity,Bootstrapper,Modules
 == Modules==
 模块，多模块共同组成模块化系统的程序。
 == Module Catalog ==
@@ -8,8 +8,8 @@
 宿主程序
 == Views==
 前端UI展现
-== ViewModel或Presenters==
-ViewModel对控件的属性，命令，事件进行封装。
+== `ViewModel`或Presenters==
+`ViewModel`对控件的属性，命令，事件进行封装。
 == Model==
 Model封装数据
 == Commands==
