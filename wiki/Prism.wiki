@@ -8,6 +8,6 @@
 
       执行`CreateLogger`方法，默认创建一个`EmptyLogger`，不会在任何地方输出log。当然是可以扩展的，比如你可以使用Clog来做一个适配器。 
 
-      2. 创建并配置ModuleCatalog 
+      2. 创建并配置`ModuleCatalog` 
 
       执行`CreateModuleCatalog`方法，默认创建一个空的`ModuleCatalog`。然后执行`ConfigureModuleCatalog`方法，默认情况下这个方法是空的。可以重写这两个方法，加入自定义的获取`ModuleCatalog`的逻辑，比如在`CreateModuleCatalog`中可以从一个xaml文件中读取Module信息。`
