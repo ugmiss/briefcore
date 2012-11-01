@@ -8,7 +8,7 @@ using Model;
 
 namespace UserManageModule
 {
-    [Module(ModuleName = ModuleNames.UserManageModule, OnDemand = true)]
+    [Module(ModuleName = ModuleNames.UserManageModule, OnDemand = false)]
     public class UserManageModule : IModule
     {
         private readonly IRegionViewRegistry regionViewRegistry;
