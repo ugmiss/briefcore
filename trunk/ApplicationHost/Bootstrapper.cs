@@ -10,6 +10,32 @@ namespace ApplicationHost
     // 启动引导器
     public class Bootstrapper : UnityBootstrapper
     {
+
+
+
+        protected override IModuleCatalog CreateModuleCatalog()
+        {
+            return new AggregateModuleCatalog();
+        }
+
+        protected override void ConfigureModuleCatalog()
+        {
+            DirectoryModuleCatalog directoryCatalog = new DirectoryModuleCatalog() { ModulePath = @"DirectoryModules" };
+            ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(directoryCatalog);
+            ConfigurationModuleCatalog configurationCatalog = new ConfigurationModuleCatalog();
+            ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(configurationCatalog);
+
+        }
+
+
+        protected override IUnityContainer CreateContainer()
+        {
+            return base.CreateContainer();
+        }
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
+        }
         protected override DependencyObject CreateShell()
         {
             return this.Container.Resolve<Shell>();
@@ -22,24 +48,9 @@ namespace ApplicationHost
             App.Current.MainWindow = (Window)this.Shell;
             App.Current.MainWindow.Show();
         }
-        protected override IModuleCatalog CreateModuleCatalog()
-        {
-            return new AggregateModuleCatalog();
-        }
 
-        protected override void ConfigureContainer()
-        {
-            base.ConfigureContainer();
-        }
 
-        protected override void ConfigureModuleCatalog()
-        {
-            DirectoryModuleCatalog directoryCatalog = new DirectoryModuleCatalog() { ModulePath = @".\DirectoryModules" };
-            ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(directoryCatalog);
-            ConfigurationModuleCatalog configurationCatalog = new ConfigurationModuleCatalog();
-            ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(configurationCatalog);
 
-        }
 
     }
 }

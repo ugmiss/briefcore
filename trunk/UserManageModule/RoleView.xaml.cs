@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Practices.Prism.Modularity;
 
 namespace UserManageModule
 {
@@ -19,9 +20,11 @@ namespace UserManageModule
     /// </summary>
     public partial class RoleView : UserControl
     {
-        public RoleView()
+        IModuleManager moduleManager;
+        public RoleView(IModuleManager moduleManager)
         {
             InitializeComponent();
+            this.moduleManager = moduleManager;
         }
     }
 }
