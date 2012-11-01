@@ -2,4 +2,4 @@
 #labels Repository,领域
 
 == Repository层 ==
-在DDD中，介于Domain层和DTO层之间，以非泛型的方式，为Domain层提供DTO对象对Domain对象的映射和转换，按Domain的需要，实现查找，添加，修改，删除等方法。
+在DDD中，介于Domain层和数据访问层之间，以非泛型的方式，为Domain层提供表对象对Domain对象的映射和转换，按Domain的需要，实现查找，添加，修改，删除等方法。
