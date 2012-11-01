@@ -8,8 +8,8 @@
 宿主程序
 == Views==
 前端UI展现
-== `ViewModel`或Presenters==
-`ViewModel`对控件的属性，命令，事件进行封装。
+== ViewModel或Presenters==
+ViewModel对控件的属性，命令，事件进行封装。
 == Model==
 Model封装数据
 == Commands==
