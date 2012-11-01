@@ -3,11 +3,11 @@
 == Bootstrapper ==
 在程序中使用框架必然要有一个切入点，框架会在这里进行初始化，处理相关配置信息等。在Prism中扮演这一角色的就是Bootstrapper。 
 
-      `Prism提供了一个抽象基类Bootstrapper，这个类里面包含了包含了许多空的虚方法，可以重写它们添加自己的逻辑。这个基类与任何容器无关，所以可以通过继承它来实现基于特定容器的Bootstrapper，不过通常我们大可不必这样做，因为Prism默认提供了两个基于特定容器的Bootstrapper——UnityBootstrapper和MefBootstrapper，分别使用Unity和Mef来实现依赖注入。
+      Prism提供了一个抽象基类Bootstrapper，这个类里面包含了包含了许多空的虚方法，可以重写它们添加自己的逻辑。这个基类与任何容器无关，所以可以通过继承它来实现基于特定容器的Bootstrapper，不过通常我们大可不必这样做，因为Prism默认提供了两个基于特定容器的Bootstrapper——`UnityBootstrapper`和`MefBootstrapper`，分别使用Unity和Mef来实现依赖注入。
       1. 创建Logger： 
 
-      执行CreateLogger方法，默认创建一个EmptyLogger，不会在任何地方输出log。当然是可以扩展的，比如你可以使用Clog来做一个适配器。 
+      执行`CreateLogger`方法，默认创建一个`EmptyLogger`，不会在任何地方输出log。当然是可以扩展的，比如你可以使用Clog来做一个适配器。 
 
       2. 创建并配置ModuleCatalog 
 
-      执行CreateModuleCatalog方法，默认创建一个空的ModuleCatalog。然后执行ConfigureModuleCatalog方法，默认情况下这个方法是空的。可以重写这两个方法，加入自定义的获取ModuleCatalog的逻辑，比如在CreateModuleCatalog中可以从一个xaml文件中读取Module信息。`
+      执行`CreateModuleCatalog`方法，默认创建一个空的`ModuleCatalog`。然后执行`ConfigureModuleCatalog`方法，默认情况下这个方法是空的。可以重写这两个方法，加入自定义的获取`ModuleCatalog`的逻辑，比如在`CreateModuleCatalog`中可以从一个xaml文件中读取Module信息。`
