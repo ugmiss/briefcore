@@ -26,7 +26,7 @@ namespace UserManageModule
         public void Initialize()
         {
             IRegion mainRegion = this.regionManager.Regions["MainRegion"];
-            mainRegion.Add(new RoleView());
+            mainRegion.Add(new UserInfoView());
         }
 
     }
