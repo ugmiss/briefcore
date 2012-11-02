@@ -27,5 +27,10 @@ namespace UserManageModule
             InitializeComponent();
             this.DataContext = ViewModel;
         }
+
+        private void buttonEdit1_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
     }
 }

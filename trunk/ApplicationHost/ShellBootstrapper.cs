@@ -4,6 +4,7 @@ using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.Unity;
 using System;
+using DevExpress.Xpf.Core;
 namespace ApplicationHost
 {
     // 启动引导器
@@ -44,9 +45,13 @@ namespace ApplicationHost
 
         protected override void InitializeShell()
         {
-            //base.InitializeShell();
-
+            base.InitializeShell();
+            ThemeManager.ApplicationThemeName = Theme.MetropolisDark.Name;
             App.Current.MainWindow = (Window)this.Shell;
+            App.Current.MainWindow.Width = 1300.0;
+            App.Current.MainWindow.Height = 730.0;
+            App.Current.MainWindow.MinWidth = 1000.0;
+            App.Current.MainWindow.MinHeight = 600.0;
             App.Current.MainWindow.Show();
         }
 
