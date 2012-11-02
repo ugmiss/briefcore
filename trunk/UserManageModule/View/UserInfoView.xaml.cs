@@ -12,17 +12,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Practices.Prism.Modularity;
+using UserManageModule.ViewModel;
 
 namespace UserManageModule
 {
     /// <summary>
     /// RoleView.xaml 的交互逻辑
     /// </summary>
-    public partial class RoleView : UserControl
+    public partial class UserInfoView : UserControl
     {
-        public RoleView()
+        UserInfoViewModel ViewModel = new UserInfoViewModel();
+        public UserInfoView()
         {
             InitializeComponent();
+            this.DataContext = ViewModel;
         }
     }
 }

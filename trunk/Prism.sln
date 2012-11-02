@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManageModule", "UserMan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessService", "BusinessService\BusinessService.csproj", "{2DF250CB-F0C3-4B49-8634-DD51E255ED92}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Brief.vsmdi
@@ -50,6 +52,16 @@ Global
 		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}.Release|x86.ActiveCfg = Release|Any CPU
+		{2DF250CB-F0C3-4B49-8634-DD51E255ED92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF250CB-F0C3-4B49-8634-DD51E255ED92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF250CB-F0C3-4B49-8634-DD51E255ED92}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2DF250CB-F0C3-4B49-8634-DD51E255ED92}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2DF250CB-F0C3-4B49-8634-DD51E255ED92}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2DF250CB-F0C3-4B49-8634-DD51E255ED92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF250CB-F0C3-4B49-8634-DD51E255ED92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DF250CB-F0C3-4B49-8634-DD51E255ED92}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2DF250CB-F0C3-4B49-8634-DD51E255ED92}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2DF250CB-F0C3-4B49-8634-DD51E255ED92}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
