@@ -4,9 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Button Content="刷新" Command="{Binding Cmd}" Margin="58,49,116,214" />
-        <DataGrid Height="130" HorizontalAlignment="Left" Margin="58,100,0,0" Name="listBox1" VerticalAlignment="Top" Width="126" ItemsSource="{Binding Path=Result}" />
+             d:DesignHeight="357" d:DesignWidth="456" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:my="clr-namespace:DevExpress.Xpf.Editors;assembly=DevExpress.Xpf.Core.v12.1" xmlns:my1="clr-namespace:DevExpress.Xpf.Grid;assembly=DevExpress.Xpf.Grid.v12.1">
+    <Grid Height="320" Width="435">
+        <dxg:GridControl AutoPopulateColumns="True" HorizontalAlignment="Left" Margin="0,39,0,0" Name="gridControl1" VerticalAlignment="Top" Width="435"  ItemsSource="{Binding Path=Result}" Height="281">
+            <dxg:GridControl.View>
+                <dxg:TableView Name="tableView1" ShowTotalSummary="True" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+        <my:ButtonEdit  HorizontalAlignment="Left" Margin="5,3,0,0" Name="buttonEdit1" VerticalAlignment="Top" Width="123" ShowText="False" Text="" IsTextEditable="True" AllowDefaultButton="False" Height="36">
+            <my:ButtonInfo Command="{Binding Cmd}"  Content="刷新" />
+        </my:ButtonEdit>
     </Grid>
 </UserControl>
