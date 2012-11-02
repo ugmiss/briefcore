@@ -5,22 +5,28 @@ using System.Text;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Model;
+using Microsoft.Practices.Unity;
 
 namespace UserManageModule
 {
     [Module(ModuleName = ModuleNames.UserManageModule, OnDemand = false)]
     public class UserManageModule : IModule
     {
-        private readonly IRegionViewRegistry regionViewRegistry;
+        private readonly IRegionManager regionManager;
 
-        public UserManageModule(IRegionViewRegistry registry)
+        public IUnityContainer container { get; set; }
+
+        public UserManageModule(IRegionManager regionManager, IUnityContainer container)
         {
-            this.regionViewRegistry = registry;
+            this.regionManager = regionManager;
+            this.container = container;
+
         }
 
         public void Initialize()
         {
-            regionViewRegistry.RegisterViewWithRegion("MainRegion", typeof(RoleView));
+            IRegion mainRegion = this.regionManager.Regions["MainRegion"];
+            mainRegion.Add(new RoleView());
         }
 
     }
