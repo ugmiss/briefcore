@@ -21,6 +21,9 @@ namespace ApplicationHost
     public partial class Shell : Window
     {
         IModuleManager moduleManager;
+
+        public Shell()
+        { }
         public Shell(IModuleManager moduleManager)
         {
             if (moduleManager == null)
@@ -29,12 +32,12 @@ namespace ApplicationHost
             }
             this.moduleManager = moduleManager;
             InitializeComponent();
-           
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.moduleManager.LoadModule(ModuleNames.UserManageModule);
+            //this.moduleManager.LoadModule(ModuleNames.UserManageModule);
         }
     }
 }

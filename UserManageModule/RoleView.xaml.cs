@@ -20,11 +20,9 @@ namespace UserManageModule
     /// </summary>
     public partial class RoleView : UserControl
     {
-        IModuleManager moduleManager;
-        public RoleView(IModuleManager moduleManager)
+        public RoleView()
         {
             InitializeComponent();
-            this.moduleManager = moduleManager;
         }
     }
 }

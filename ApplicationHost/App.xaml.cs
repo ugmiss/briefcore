@@ -15,7 +15,7 @@ namespace ApplicationHost
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            Bootstrapper bootstrapper = new Bootstrapper();
+            ShellBootstrapper bootstrapper = new ShellBootstrapper();
             bootstrapper.Run();
         }
     }
