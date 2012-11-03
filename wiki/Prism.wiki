@@ -3,7 +3,7 @@
 == Modules==
 模块，多模块共同组成模块化系统的程序。
 Module是一些逻辑上相关的程序集或者资源文件的集合，在Silverlight程序中通常以xap文件为单位存在。而每一个Module中都需要有一个负责进行初始化工作以及与系统进行集成的角色，它需要实现IModule接口。IModule接口中只有一个Initialize方法，一方面这个接口将这个工程标记为一个Module，另一方面你可以在Initialize方法中实现一些逻辑，比如向容器中注册一些Service，或者将视图集成到程序中等等。
-===使用Unity方式===
+====使用Unity方式====
 {{{
 using System;
 using Microsoft.Practices.Prism.Modularity;
@@ -41,7 +41,10 @@ ModuleCatalog实现了IModuleCatalog接口，它是ModuleInfo的容器，保存�
  
 == ModuleManager==
 ModuleManager实现了IModuleManager接口。顾名思义就是管理Module的类。IModuleManager中含有两个方法和两个事件：Run方法会将所有InitializationMode为WhenAvailable的Module加载，然后进行初始化，初始化的工作委托给了IModuleInitializer来完成，它会获取到Module类(上面提到的实现了IModule接口的类)的实例，然后调用其Initialize方法。LoadModule方法用来加载InitializationMode为OnDemand的Module。两个事件分别用来通知下载Module的进度变化以及Module加载完成。
-
+====按名称手动加载====
+{{{
+this.moduleManager.LoadModule(ModuleNames.UserManageModule);
+}}}
 == Shell==
 宿主程序
 == Views==
