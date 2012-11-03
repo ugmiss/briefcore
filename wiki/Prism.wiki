@@ -47,6 +47,8 @@ this.moduleManager.LoadModule(ModuleNames.UserManageModule);
 }}}
 == Shell==
 宿主程序
+== Region==
+== RegionManager==
 == Views==
 前端UI展现
 == ViewModel或Presenters==
