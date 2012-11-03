@@ -20,13 +20,15 @@ namespace ApplicationHost
 
         protected override void ConfigureModuleCatalog()
         {
-            //Type moduleAType = typeof(UserManageModule.UserManageModule);
-            //ModuleCatalog.AddModule(new ModuleInfo(moduleAType.Name, moduleAType.AssemblyQualifiedName));
+            // 直接注册方式
+            // Type moduleAType = typeof(UserManageModule.UserManageModule);
+            // ModuleCatalog.AddModule(new ModuleInfo(moduleAType.Name, moduleAType.AssemblyQualifiedName));
 
+            // 物理目录方式加载模块。
             DirectoryModuleCatalog directoryCatalog = new DirectoryModuleCatalog() { ModulePath = @".\DirectoryModules" };
             ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(directoryCatalog);
-            //ConfigurationModuleCatalog configurationCatalog = new ConfigurationModuleCatalog();
-            //((AggregateModuleCatalog)ModuleCatalog).AddCatalog(configurationCatalog);
+            ConfigurationModuleCatalog configurationCatalog = new ConfigurationModuleCatalog();
+            ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(configurationCatalog);
 
         }
 
