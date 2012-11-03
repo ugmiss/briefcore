@@ -15,7 +15,8 @@ namespace ApplicationHost
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            ShellBootstrapper bootstrapper = new ShellBootstrapper();
+            AppBootstrapper bootstrapper = new AppBootstrapper();
+            //Run方法做Prism框架的初始化工作
             bootstrapper.Run();
         }
     }
