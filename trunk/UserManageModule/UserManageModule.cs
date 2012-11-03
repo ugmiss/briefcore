@@ -9,7 +9,7 @@ using Microsoft.Practices.Unity;
 
 namespace UserManageModule
 {
-    [Module(ModuleName = ModuleNames.UserManageModule, OnDemand = false)]
+    [Module(ModuleName = ModuleNames.UserManageModule, OnDemand = true)]
     public class UserManageModule : IModule
     {
         private readonly IRegionManager regionManager;

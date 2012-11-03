@@ -52,8 +52,8 @@ namespace ApplicationHost
             App.Current.MainWindow = (Window)this.Shell;
             App.Current.MainWindow.Width = 1300.0;
             App.Current.MainWindow.Height = 730.0;
-            App.Current.MainWindow.MinWidth = 1000.0;
-            App.Current.MainWindow.MinHeight = 600.0;
+            //App.Current.MainWindow.MinWidth = 1000.0;
+            //App.Current.MainWindow.MinHeight = 600.0;
             App.Current.MainWindow.Show();
         }
 
