@@ -1,11 +1,10 @@
-﻿<dx:DXWindow x:Class="ApplicationHost.Shell"
+﻿<Window x:Class="ApplicationHost.Shell"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
-        xmlns:cal="http://www.codeplex.com/prism"
         xmlns:Prism ="http://www.codeplex.com/CompositeWPF"
-        Title="Shell" Height="300" Width="300">
+        Title="Shell" Height="300" Width="300" WindowStyle="None">
     <Grid>
         <ContentControl Name="MainRegion" Prism:RegionManager.RegionName="MainRegion" />
     </Grid>
-</dx:DXWindow>
+</Window>

@@ -19,7 +19,7 @@ namespace ApplicationHost
     /// <summary>
     /// Shell.xaml 的交互逻辑
     /// </summary>
-    public partial class Shell : DXWindow
+    public partial class Shell : Window
     {
         IModuleManager moduleManager;
 

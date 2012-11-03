@@ -25,8 +25,8 @@ namespace ApplicationHost
 
             DirectoryModuleCatalog directoryCatalog = new DirectoryModuleCatalog() { ModulePath = @".\DirectoryModules" };
             ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(directoryCatalog);
-            ConfigurationModuleCatalog configurationCatalog = new ConfigurationModuleCatalog();
-            ((AggregateModuleCatalog)ModuleCatalog).AddCatalog(configurationCatalog);
+            //ConfigurationModuleCatalog configurationCatalog = new ConfigurationModuleCatalog();
+            //((AggregateModuleCatalog)ModuleCatalog).AddCatalog(configurationCatalog);
 
         }
 
