@@ -4,6 +4,9 @@
 == Modules==
 模块，多模块共同组成模块化系统的程序。
 Module是一些逻辑上相关的程序集或者资源文件的集合，在Silverlight程序中通常以xap文件为单位存在。而每一个Module中都需要有一个负责进行初始化工作以及与系统进行集成的角色，它需要实现IModule接口。IModule接口中只有一个Initialize方法，一方面这个接口将这个工程标记为一个Module，另一方面你可以在Initialize方法中实现一些逻辑，比如向容器中注册一些Service，或者将视图集成到程序中等等。
+[http://i.msdn.microsoft.com/dynimg/IC448639.png]
+
+[http://i.msdn.microsoft.com/dynimg/IC448642.png]
 ====使用Unity方式====
 {{{
 using System;
@@ -63,6 +66,7 @@ Model封装数据
 == Bootstrapper ==
 框架会在这里进行初始化，处理相关配置信息等 
 Prism提供了一个抽象基类Bootstrapper，这个类里面包含了包含了许多空的虚方法，可以重写它们添加自己的逻辑。Prism默认提供了两个基于特定容器的Bootstrapper——`UnityBootstrapper`和`MefBootstrapper`，分别使用Unity和Mef来实现依赖注入。
+[http://i.msdn.microsoft.com/dynimg/IC448593.png]
 {{{
 using System.Windows;
 using DevExpress.Xpf.Core;
@@ -124,7 +128,8 @@ namespace ApplicationHost
     }
 }
 }}}
-
+==架构图==
+[http://i.msdn.microsoft.com/dynimg/IC448577.png]
 ===msdn===
 Modules. Modules are packages of functionality that can be independently developed, tested, and (optionally) deployed. In many situations, modules are developed and maintained by separate teams. A typical Prism application is built from multiple modules. Modules can be used to represent specific business-related functionality (for example, profile management) and encapsulate all the views, services, and data models required to implement that functionality. Modules can also be used to encapsulate common application infrastructure or services (for example, logging and exception management services) that can be reused across multiple applications.
 Module catalog. In a composite application, modules must be discovered and loaded at run time by the host application. In Prism, a module catalog is used to specify which modules to are to be loaded, when they are loaded, and in what order. The module catalog is used by the ModuleManager and ModuleLoader components, which are responsible for downloading the modules if they are remote, loading the module's assemblies into the application domain, and for initializing the module. Prism allows the module catalog to be specified in different ways, including programmatically using code, declaratively using XAML, or using a configuration file. You can also implement a custom module catalog if you need to.
