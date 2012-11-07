@@ -9,5 +9,6 @@ namespace Model
     public class ModuleNames
     {
         public const string UserManageModule = "UserManageModule";
+        public const string ReportingModule = "ReportingModule";
     }
 }

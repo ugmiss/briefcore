@@ -7,16 +7,17 @@ using Model;
 using System.ComponentModel;
 using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;
+using BusinessService.Data;
 using Microsoft.Practices.Prism.Regions;
 
-namespace UserManageModule.ViewModel
+namespace ReportingModule.ViewModel
 {
-    public class UserInfoViewModel : INotifyPropertyChanged, INavigationAware
+    public class ReportingViewModel : INotifyPropertyChanged, INavigationAware
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand Cmd { get; private set; }
-        UserInfo[] _Result;
-        public UserInfo[] Result
+        Report[] _Result;
+        public Report[] Result
         {
             get { return _Result; }
             set
@@ -28,15 +29,14 @@ namespace UserManageModule.ViewModel
                 }
             }
         }
-        public UserInfoViewModel()
+        public ReportingViewModel()
         {
             Cmd = new DelegateCommand(Seaching);
         }
         public void Seaching()
         {
-            Result = new BusinessService.UserRepository().GetAllUserInfos();
+            Result = new BusinessService.ReportRepository().GetAllReports();
         }
-
         bool INavigationAware.IsNavigationTarget(NavigationContext navigationContext)
         {
             return true;
