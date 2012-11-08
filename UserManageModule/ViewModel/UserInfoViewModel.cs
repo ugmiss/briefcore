@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Practices.Prism.ViewModel;
-using Model;
+using DomainModel;
 using System.ComponentModel;
 using System.Windows.Input;
 using Microsoft.Practices.Prism.Commands;

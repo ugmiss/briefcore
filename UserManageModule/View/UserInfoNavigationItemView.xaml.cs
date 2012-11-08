@@ -13,7 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel.Composition;
 using Microsoft.Practices.Prism.Regions;
-using Model;
+using DomainModel;
 
 namespace UserManageModule.View
 {

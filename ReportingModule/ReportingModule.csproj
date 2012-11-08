@@ -81,9 +81,9 @@
       <Project>{2DF250CB-F0C3-4B49-8634-DD51E255ED92}</Project>
       <Name>BusinessService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
       <Project>{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}</Project>
-      <Name>Model</Name>
+      <Name>DomainModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
