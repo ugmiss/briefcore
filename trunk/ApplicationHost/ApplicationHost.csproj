@@ -153,9 +153,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj">
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
       <Project>{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}</Project>
-      <Name>Model</Name>
+      <Name>DomainModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

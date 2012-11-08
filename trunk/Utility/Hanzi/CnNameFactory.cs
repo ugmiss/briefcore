@@ -8,6 +8,19 @@ namespace Utility.Hanzi
 {
     public class CnNameFactory
     {
+        public CnNameFactory()
+        {
+            foreach (var n in boynames)
+            {
+                if (n.Length > 2)
+                    throw new Exception(n);
+            }
+            foreach (var n in girlsnames)
+            {
+                if (n.Length > 2)
+                    throw new Exception(n);
+            }
+        }
         const string FirstName = @"
 赵 钱 孙 李 周 吴 郑 王 
 冯 陈 褚 卫 蒋 沈 韩 杨 
@@ -149,11 +162,10 @@ namespace Utility.Hanzi
 锐泽 锐阵 锐志 锐智 睿博 睿才 睿诚 睿慈 睿聪 睿达 睿德 睿范 
 睿广 睿好 睿明 睿识 睿思 
 绍辉 绍钧 绍祺 绍元 升荣 圣杰 晟睿 思聪 思淼 思源 思远 思博 
-斯年 斯伯 
+斯年 斯伯 同济
 泰初 泰和 泰河 泰鸿 泰华 泰宁 泰平 泰清 泰然 天材 天成 天赋 
 天干 天罡 天工 天翰 天和 天华 天骄 天空 天禄 天路 天瑞 天睿 
 天逸 天佑 天宇 天元 天韵 天泽 天纵 同方 同甫 同光 同和 同化 
-同济 
 巍昂 巍然 巍奕 伟博 伟毅 伟才 伟诚 伟茂 伟懋 伟祺 伟彦 伟晔 
 伟泽 伟兆 伟志 温纶 温茂 温书 温韦 温文 温瑜 文柏 文昌 文成 
 文德 文栋 文赋 文光 文翰 文虹 文华 文康 文乐 文林 文敏 文瑞 
@@ -194,8 +206,11 @@ namespace Utility.Hanzi
 北辰 北嘉 北晶 贝莉 贝丽 琲瓃 蓓蕾 碧菡 碧琳 碧莹 碧玉 冰冰 冰枫 冰洁 
 冰蓝 冰心 冰彦 冰莹 博丽 博敏 博雅 布凡 布侬 布欣 布衣 
 偲偲 采莲 采薇 采文 采萱 彩静 彩萱 彩妍 灿灿 婵娟 畅畅 畅然
-唱月 朝旭 朝雨 琛丽 琛瑞 晨曦 晨旭 初然 初阳 楚楚 楚洁 楚云 春芳 春华 春娇 春兰 春岚 春梅 春桃 春晓 春雪 春燕 春英 春雨 淳静 淳美 淳雅 慈心 聪慧 聪睿 翠茵 
-黛娥 丹丹 丹红 丹彤 丹溪 笛韵 典丽 典雅 蝶梦 丁辰 丁兰 冬梅 端静 端丽 端敏 端雅 端懿 多思 朵儿 
+唱月 朝旭 朝雨 琛丽 琛瑞 晨曦 晨旭 初然 初阳 楚楚 楚洁 楚云
+春芳 春华 春娇 春兰 春岚 春梅 春桃 春晓 春雪 春燕 春英 春雨
+淳静 淳美 淳雅 慈心 聪慧 聪睿 翠茵 
+黛娥 丹丹 丹红 丹彤 丹溪 笛韵 典丽 典雅 蝶梦 丁辰 丁兰 冬梅
+端静 端丽 端敏 端雅 端懿 多思 朵儿 
 婀娜 恩霈 尔雅 璠瑜 方方 方雅 方仪 芳蔼 芳春 芳芳 芳菲 芳馥 
 芳华 芳蕙 芳洁 芳林 芳苓 芳荃 芳蕤 芳润 芳馨 芳懿 芳茵 芳泽 
 芳洲 飞雪 飞燕 菲菲 霏霏 斐斐 芬菲 芬芬 芬馥 丰熙 丰雅 芙蓉 
@@ -239,7 +254,7 @@ namespace Utility.Hanzi
 盼盼 沛若 沛珊 沛文 佩兰 佩杉 佩玉 佩珍 芃芃 彭丹 嫔然 品韵 
 平和 平惠 平乐 平良 平宁 平婉 平晓 平心 平雅 平莹 萍雅 萍韵 
 璞玉 
-齐敏 齐心 其雨　奇思 奇文 奇颖 颀秀 琦巧 琦珍 琪华 启颜 绮怀 
+齐敏 齐心 其雨 奇思 奇文 奇颖 颀秀 琦巧 琦珍 琪华 启颜 绮怀 
 绮丽 绮梅 绮美 绮梦 绮思 绮文 绮艳 绮玉 绮云 千秋 千叶 芊丽 
 芊芊 茜茜 倩丽 倩美 倩秀 倩语 俏丽 俏美 琴心 琴轩 琴雪 琴音 
 琴韵 卿月 卿云 清昶 清芬 清涵 清华 清晖 清霁 清嘉 清宁 清奇 
@@ -255,7 +270,7 @@ namespace Utility.Hanzi
 瑞灵 瑞绣 瑞云 瑞芝 睿敏 睿思 睿彤 睿文 睿哲 睿姿 润丽 若芳 
 若华 若兰 若淑 若彤 若英 若云 
 莎莉 莎莎 三春 三姗 三诗 森莉 森丽 沙羽 沙雨 杉月 姗姗 珊珊 
-善芳 善和　善静 善思 韶华 韶丽 韶美 韶敏 韶容 韶阳 韶仪 邵美 
+善芳 善和 善静 善思 韶华 韶丽 韶美 韶敏 韶容 韶阳 韶仪 邵美 
 沈靖 沈静 沈然 沈思 沈雅 诗怀 诗兰 诗蕾 诗柳 诗蕊 诗文 施然 
 施诗 世敏 世英 世韵 书慧 书桃 书文 书萱 书仪 书艺 书意 书语 
 书云 抒怀 姝好 姝惠 姝丽 姝美 姝艳 淑华 淑惠 淑慧 淑静 淑兰 
@@ -330,19 +345,26 @@ namespace Utility.Hanzi
 梓彤 梓童 梓琬 梓欣 梓馨 梓萱 梓瑶 梓莹 梓颖 梓榆 梓玥 梓云 
 紫蕙 紫琼 紫杉 紫桐 紫薇 紫玉 
 ";
-        public string GetNewName()
+        public string GetNewName(out bool IsMale)
         {
             Random r = new Random(DateTime.Now.Millisecond);
             if (r.Next(2) > 0)
+            {
+                IsMale = true;
                 return GetBoyName();
+            }
             else
+            {
+                IsMale = false;
                 return GetGirlName();
+            }
         }
         string[] boynames = boy.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
         string[] fs = FirstName.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
         string[] girlsnames = girls.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
         public string GetBoyName()
         {
+
             Random r = new Random(DateTime.Now.Millisecond);
             string name = fs[r.Next(fs.Length)] + boynames[r.Next(boynames.Length)];
             return name;

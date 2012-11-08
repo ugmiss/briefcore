@@ -13,7 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel.Composition;
 using Microsoft.Practices.Prism.Regions;
-using Model;
+using DomainModel;
 
 namespace ReportingModule.View
 {
@@ -33,10 +33,5 @@ namespace ReportingModule.View
         {
             this.regionManager.RequestNavigate(RegionNames.MainRegion, emailsViewUri);
         }
-
-        //void IPartImportsSatisfiedNotification.OnImportsSatisfied()
-        //{
-        //    IRegion mainContentRegion = this.regionManager.Regions[RegionNames.MainRegion];
-        //}
     }
 }

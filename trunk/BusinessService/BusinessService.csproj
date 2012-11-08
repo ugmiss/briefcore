@@ -40,19 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Report.cs" />
-    <Compile Include="Data\User.cs" />
+    <Compile Include="TableData\Report.cs" />
+    <Compile Include="TableData\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="ReportRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj">
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
       <Project>{C1A9EA4B-EDEE-45FB-BB32-711CBC24D560}</Project>
-      <Name>Model</Name>
+      <Name>DomainModel</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

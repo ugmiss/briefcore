@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Practices.Prism.Modularity;
-using Model;
+using DomainModel;
 using DevExpress.Xpf.Core;
 using System.Windows.Media.Animation;
 using Microsoft.Practices.Prism.Regions;
