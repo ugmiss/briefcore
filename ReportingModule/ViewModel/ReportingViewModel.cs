@@ -31,6 +31,7 @@ namespace ReportingModule.ViewModel
         }
         public ReportingViewModel()
         {
+            Result = new BusinessService.ReportRepository().GetAllReports();
             Cmd = new DelegateCommand(Seaching);
         }
         public void Seaching()

@@ -30,6 +30,7 @@ namespace UserManageModule.ViewModel
         }
         public UserInfoViewModel()
         {
+            Result = new BusinessService.UserRepository().GetAllUserInfos();
             Cmd = new DelegateCommand(Seaching);
         }
         public void Seaching()

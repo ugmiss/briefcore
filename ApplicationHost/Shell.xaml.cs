@@ -15,15 +15,21 @@ using Model;
 using DevExpress.Xpf.Core;
 using System.Windows.Media.Animation;
 using Microsoft.Practices.Prism.Regions;
+using System.ComponentModel.Composition;
 
 namespace ApplicationHost
 {
     /// <summary>
     /// Shell.xaml 的交互逻辑
     /// </summary>
-    public partial class Shell : DXWindow
+    [Export]
+    public partial class Shell : Window
     {
+        [Import(AllowRecomposition = false)]
+
         IModuleManager moduleManager;
+        [Import(AllowRecomposition = false)]
+
         IRegionManager regionManager;
         public Shell()
         { }

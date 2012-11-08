@@ -8,7 +8,7 @@ using UserManageModule.View;
 namespace UserManageModule
 {
     //模块(模块名称，默认加载 OnDemand=false 不加载OnDemand=true）;
-    [Module(ModuleName = ModuleNames.UserManageModule, OnDemand = true)]
+    [Module(ModuleName = ModuleNames.UserManageModule, OnDemand = false)]
     public class UserManageModule : IModule
     {
         private readonly IRegionManager regionManager;
@@ -27,7 +27,7 @@ namespace UserManageModule
             container.RegisterType<object, UserInfoView>("UserInfoView");
             container.RegisterType<object, UserInfoNavigationItemView>("UserInfoNavigationItemView");
             //注册导航
-            //regionManager.RequestNavigate("MainRegion", "UserInfoView");
+            regionManager.RequestNavigate(RegionNames.MainNavigationRegion, "UserInfoNavigationItemView");
             //IRegion mainRegion = this.regionManager.Regions["MainRegion"];
             //mainRegion.Add(new UserInfoView());
         }
