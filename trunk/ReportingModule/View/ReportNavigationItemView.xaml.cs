@@ -20,14 +20,12 @@ namespace ReportingModule.View
     /// <summary>
     /// ReportNavigationItemView.xaml 的交互逻辑
     /// </summary>
-    [Export]
-    [ViewSortHint("01")]
     public partial class ReportNavigationItemView : UserControl
     {
-        [Import]
         public IRegionManager regionManager;
-        public ReportNavigationItemView()
+        public ReportNavigationItemView(IRegionManager regionManager)
         {
+            this.regionManager = regionManager;
             InitializeComponent();
         }
         private static Uri emailsViewUri = new Uri("ReportingView", UriKind.Relative);

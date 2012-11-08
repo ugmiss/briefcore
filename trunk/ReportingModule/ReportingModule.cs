@@ -8,7 +8,7 @@ using ReportingModule.View;
 namespace ReportingModule
 {
     //模块(模块名称，默认加载 OnDemand=false 不加载OnDemand=true）;
-    [Module(ModuleName = ModuleNames.ReportingModule, OnDemand = true)]
+    [Module(ModuleName = ModuleNames.ReportingModule, OnDemand = false)]
     public class ReportingModule : IModule
     {
         private readonly IRegionManager regionManager;
@@ -30,7 +30,7 @@ namespace ReportingModule
             container.RegisterType<object, ReportNavigationItemView>("ReportNavigationItemView");
             container.RegisterType<object, ReportingView>("ReportingView");
             //注册导航
-            // regionManager.RequestNavigate("MainRegion", "ReportingView");
+            regionManager.RequestNavigate(RegionNames.MainNavigationRegion, "ReportNavigationItemView");
 
             //
         }

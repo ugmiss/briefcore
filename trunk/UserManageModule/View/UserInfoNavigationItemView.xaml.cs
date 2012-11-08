@@ -20,15 +20,13 @@ namespace UserManageModule.View
     /// <summary>
     /// UserInfoNavigationItemView.xaml 的交互逻辑
     /// </summary>
-    [Export]
-    [ViewSortHint("02")]
     public partial class UserInfoNavigationItemView : UserControl
     {
-        public UserInfoNavigationItemView()
+        public UserInfoNavigationItemView(IRegionManager regionManager)
         {
+            this.regionManager = regionManager;
             InitializeComponent();
         }
-        [Import]
         public IRegionManager regionManager;
         private static Uri emailsViewUri = new Uri("UserInfoView", UriKind.Relative);
         private void NavToReportBtn_Click(object sender, RoutedEventArgs e)
