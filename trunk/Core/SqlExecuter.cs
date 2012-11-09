@@ -25,12 +25,12 @@ namespace System
         // 构造
         public SqlExecuter(string connectionString)
         {
-            try
-            {
-                SqlDependency.Stop(connectionString);
-                SqlDependency.Start(connectionString);
-            }
-            catch { }
+            //try
+            //{
+            //    SqlDependency.Stop(connectionString);
+            //    SqlDependency.Start(connectionString);
+            //}
+            //catch { }
             ConnectionString = connectionString;
         }
         // 解析命令字符串

@@ -6,6 +6,7 @@ using System.Data.SqlTypes;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
+using System.Collections.Concurrent;
 
 namespace System
 {
@@ -178,6 +179,18 @@ namespace System
             string sql = string.Format("delete from {0} where {1}", GetTableName<T>(), string.Join(" and ", wheres.ToArray()));
             return ExecuteNonQuery(ParseCommandString(sql, paramList.ToArray()));
         }
+
+        // 删除单例
+        public int DeleteAll<T>()
+        {
+            if (!IsTable(typeof(T)))
+            {
+                throw new Exception("只能对表进行该操作");
+            }
+            string sql = string.Format("TRUNCATE TABLE  {0}", GetTableName<T>());
+            return ExecuteNonQuery(sql);
+        }
+
         // 删除批量
         public int Delete<T>(Expression<Func<T, bool>> func)
         {
@@ -286,13 +299,13 @@ namespace System
             { return Modify<T>(t); }
         }
         // 缓存字段名集合
-        static Dictionary<Type, List<string>> FieldNameListMap = new Dictionary<Type, List<string>>();
+        static ConcurrentDictionary<Type, List<string>> FieldNameListMap = new ConcurrentDictionary<Type, List<string>>();
         // 缓存主键名集合
-        static Dictionary<Type, List<string>> PrimaryKeyNameListMap = new Dictionary<Type, List<string>>();
+        static ConcurrentDictionary<Type, List<string>> PrimaryKeyNameListMap = new ConcurrentDictionary<Type, List<string>>();
         // 缓存标识列集合
-        static Dictionary<Type, List<string>> IdentityNameListMap = new Dictionary<Type, List<string>>();
+        static ConcurrentDictionary<Type, List<string>> IdentityNameListMap = new ConcurrentDictionary<Type, List<string>>();
         // 非标识列集合
-        static Dictionary<Type, List<string>> FieldNameListWithOutIdentityMap = new Dictionary<Type, List<string>>();
+        static ConcurrentDictionary<Type, List<string>> FieldNameListWithOutIdentityMap = new ConcurrentDictionary<Type, List<string>>();
 
         // 获取字段名集合
         static List<string> GetFieldNamesWithOutIdentity<T>()
