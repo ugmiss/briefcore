@@ -19,24 +19,24 @@ namespace RandomDemo
             int N = 10;
             Parallel.For(0, N, i =>
             {
-                int t = (int)DateTime.Now.Ticks;
-                Random rnd = new Random(t);
+                int seed = (int)DateTime.Now.Ticks;
+                Random rnd = new Random(seed);
                 int num = rnd.Next(100);
-                Console.WriteLine("Ticks {0:D2}:::{1}", num, t);
+                Console.WriteLine("  {0:D2}  :  Ticks {1}", num, seed);
             });
             Parallel.For(0, N, i =>
             {
-                int t = DateTime.Now.Millisecond;
-                Random rnd = new Random(t);
+                int seed = DateTime.Now.Millisecond;
+                Random rnd = new Random(seed);
                 int num = rnd.Next(100);
-                Console.WriteLine("Milli {0:D2}:::{1}", num, t);
+                Console.WriteLine("  {0:D2}  :  Milli {1}", num, seed);
             });
             Parallel.For(0, N, i =>
             {
-                int t = Guid.NewGuid().GetHashCode();
-                Random rnd = new Random(t);
+                int seed = Guid.NewGuid().GetHashCode();
+                Random rnd = new Random(seed);
                 int num = rnd.Next(100);
-                Console.WriteLine("GUID  {0:D2}:::{1}", num, t);
+                Console.WriteLine("  {0:D2}  :  Guid  {1}", num, seed);
             });
             Console.ReadKey();
         }
