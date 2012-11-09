@@ -580,15 +580,15 @@ namespace System
             return Text;
         }
     }
-    public static class JsonExtensions
-    {
-        public static string JsonSerialize<T>(this T obj)
-        {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
-        }
-        public static T JsonDeerialize<T>(this string obj)
-        {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(obj);
-        }
-    }
+    //public static class JsonExtensions
+    //{
+    //    public static string JsonSerialize<T>(this T obj)
+    //    {
+    //        return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+    //    }
+    //    public static T JsonDeerialize<T>(this string obj)
+    //    {
+    //        return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(obj);
+    //    }
+    //}
 }

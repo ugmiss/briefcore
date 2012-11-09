@@ -144,11 +144,6 @@
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="BussinessExecuter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpringAop\AfterReturningAdvise.cs" />
-    <Compile Include="SpringAop\AopTest.cs" />
-    <Compile Include="SpringAop\AroundAdvise.cs" />
-    <Compile Include="SpringAop\BeforeAdvise.cs" />
-    <Compile Include="SpringAop\ThrowsAdvise.cs" />
     <Compile Include="SqlExecuter.cs" />
   </ItemGroup>
   <ItemGroup>

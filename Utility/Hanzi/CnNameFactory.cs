@@ -10,16 +10,6 @@ namespace Utility.Hanzi
     {
         public CnNameFactory()
         {
-            foreach (var n in boynames)
-            {
-                if (n.Length > 2)
-                    throw new Exception(n);
-            }
-            foreach (var n in girlsnames)
-            {
-                if (n.Length > 2)
-                    throw new Exception(n);
-            }
         }
         const string FirstName = @"
 赵 钱 孙 李 周 吴 郑 王 
@@ -347,7 +337,7 @@ namespace Utility.Hanzi
 ";
         public string GetNewName(out bool IsMale)
         {
-            Random r = new Random(DateTime.Now.Millisecond);
+            Random r = new Random(Guid.NewGuid().GetHashCode()); 
             if (r.Next(2) > 0)
             {
                 IsMale = true;
@@ -359,19 +349,18 @@ namespace Utility.Hanzi
                 return GetGirlName();
             }
         }
-        string[] boynames = boy.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-        string[] fs = FirstName.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-        string[] girlsnames = girls.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+        static string[] boynames = boy.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+        static string[] fs = FirstName.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+        static string[] girlsnames = girls.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
         public string GetBoyName()
         {
-
-            Random r = new Random(DateTime.Now.Millisecond);
+            Random r = new Random(Guid.NewGuid().GetHashCode()); 
             string name = fs[r.Next(fs.Length)] + boynames[r.Next(boynames.Length)];
             return name;
         }
         public string GetGirlName()
         {
-            Random r = new Random(DateTime.Now.Millisecond);
+            Random r = new Random(Guid.NewGuid().GetHashCode()); 
             string name = fs[r.Next(fs.Length)] + girlsnames[r.Next(girlsnames.Length)];
             return name;
         }
