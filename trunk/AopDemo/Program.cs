@@ -103,7 +103,7 @@ namespace SpringAopDemo
         public void AfterReturning(object returnValue, MethodInfo method, object[] args, object target)
         {
             string successLog = Environment.CurrentUser + " 执行：" + method.Name + "方法成功";
-            Logger.Info(successLog);//自定义的日志管理类
+            //Logger.Info(successLog);//自定义的日志管理类
         }
     }
     class ExcetionAdvice : IThrowsAdvice
@@ -113,7 +113,7 @@ namespace SpringAopDemo
             string failedLog = Environment.CurrentUser + " 执行：" + method.Name + "方法失败";
             if (exception != null)
             {
-                Logger.Error(failedLog, exception);//自定义的日志管理类
+                //Logger.Error(failedLog, exception);//自定义的日志管理类
             }
         }
     }
