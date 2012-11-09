@@ -9,7 +9,7 @@ namespace WCFClient
     {
         static void Main(string[] args)
         {
-            WCFServiceReference.WCFServiceClient client=new WCFServiceReference.WCFServiceClient(
+            //WCFServiceReference.WCFServiceClient client=new WCFServiceReference.WCFServiceClient(
         }
     }
 }
