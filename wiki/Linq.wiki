@@ -5,3 +5,8 @@
 {{{
 int[]arr=Enumerable.Range(0,100).ToArray();
 }}}
+
+2 通过List<T>取类型T
+{{{
+Type t = typeof(List<T>).GetGenericArguments()[0];
+}}}
