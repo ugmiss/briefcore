@@ -1,4 +1,4 @@
-#summary 技术目录索引
+#summary 目录全索引
 ===.Net Framework4.0===
  * [ConcurrentDictionary]
  * [Parallel]
