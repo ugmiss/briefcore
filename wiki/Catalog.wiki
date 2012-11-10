@@ -8,6 +8,8 @@
  * [WCF]
  * [Linq]
  * [IL]
+ * [CLR] 
+ * [Random] 
 ===Winform===
  * [Winform] 
  * [WinFormLifeCycle]
@@ -18,3 +20,21 @@
  * [Partition]
  * [ADO] 
  * [BI]
+===Architecture & Framework===
+ * [Spring]
+ * [EntityFramework]
+ * [MVVM]
+ * [LinqToSql]
+ * [Prism]
+ * [NHibernate]
+ * [Prism]
+ * [Unity]
+ * [MEF]
+ * [Entlib]
+===Design Pattern===
+ * [Strategy]
+ * [Repository]
+===Tool===
+ * [svn]
+ * [VS2010]
+ * [powerdesigner]
