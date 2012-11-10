@@ -1,4 +1,4 @@
-#summary ADO
+#summary ADO和SQL
 1 表过滤
 {{{
 DataTable dt；
@@ -15,3 +15,9 @@ TempTable.Rows.Add(row);
 } 
 dataGrid1.DataSource=TempTable;
 }}}
+
+2 如何清除 SQL Server 登录时记录的信息SQL Server 客户端登陆信息记录在
+`%AppData%\Microsoft\Microsoft SQL Server\100\Tools\Shell\SqlStudio.bin （SQL Server 2008）`
+`AppData%\Microsoft\Microsoft SQL Server\90\Tools\Shell\mru.dat（SQL Server 2005）`
+文件中，直接删除后重新启动客户端就可以了。
+`%AppData%` 是环境变量，可通过在命令行中运行 `ECHO %APPDATA%`查看。
