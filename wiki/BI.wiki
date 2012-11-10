@@ -1,5 +1,5 @@
 #summary 商业智能
-#labels BI,数据挖掘
+#labels BI,数据挖掘,SISS,SASS,OLAP,ETL,数据仓库,Cube,Reporting
 
 ===建立时间维度表并初始化时间数据一建表：===
 {{{
