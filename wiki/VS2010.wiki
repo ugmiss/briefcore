@@ -1,4 +1,5 @@
-#summary VS2010一些技巧
+#summary VS2010一些知识
+#labels vs2010
 ==清理调试信息==
 这个文件夹很大，需要定时去清理
 C:\ProgramData\Microsoft Visual Studio\10.0\TraceDebugging
