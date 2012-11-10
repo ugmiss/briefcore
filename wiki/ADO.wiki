@@ -28,3 +28,7 @@ dataGrid1.DataSource=TempTable;
 select db.name,sf.name,sf.filename,sf.size from sys.sysaltfiles sf 
 inner join sys.databases db on sf.dbid=db.database_id where db.database_id>4 and db.name <>'distribution' order by db.name
 }}}
+
+4 SQL SERVER 2008 阻止保存要求重新创建表的更改
+提示： 不允许保存更改。您所做的更改要求删除并重新创建以下表。您对无法重新创建的标进行了更改或者启用了“阻止保存要求重新创建表的更改”选项。
+  如果要去掉此提示，打开SQL 2008 在最上面 工具-〉选项-〉左侧有个 设计器-〉表设计器和数据库设计器 -> 阻止保存要求重新创建表的更改(右侧) 把钩去重新启动2008即可。
