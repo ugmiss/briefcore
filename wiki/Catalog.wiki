@@ -42,6 +42,10 @@
  * [Emit]
  * [IL]
  * [Random] 
+ * [Thread]
+ * [Collections]
+ * [GC]
+ * [GAC]
  * [WordAddin]
  * [VSAddin]
 ===Web===
@@ -55,3 +59,4 @@
  * [svn]
  * [VS2010]
  * [powerdesigner]
+ * [Reflector]
