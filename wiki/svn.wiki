@@ -8,9 +8,9 @@
  
 
 
-问题描述：访问“https://code.google.com/hosting/settings”查看google code托管的svn 工程的密码，连接被重置。
+问题描述：访问[https://code.google.com/hosting/settings]查看google code托管的svn 工程的密码，连接被重置。
 
-问题原因：可能是code.google.com与其他一些google服务共享ip，根据code.google.com解析得到ip属于GFWED的ip，因此导致服务访问失败。（似乎也不对，直接访问https://code.google.com并不会被重置，只有查看密玛会被重置。）
+问题原因：可能是code.google.com与其他一些google服务共享ip，根据code.google.com解析得到ip属于GFWED的ip，因此导致服务访问失败。（似乎也不对，直接访问[https://code.google.com]并不会被重置，只有查看密码会被重置。）
 
 解决方法：修改本地dns设置，添加“74.125.71.139 code.google.com”记录。74.125.71.139为google.com的dns解析结果。
 
