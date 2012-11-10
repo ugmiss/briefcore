@@ -2,7 +2,7 @@
 #labels vs2010
 ==清理调试信息==
 这个文件夹很大，需要定时去清理
-C:\ProgramData\Microsoft Visual Studio\10.0\TraceDebugging
+`C:\ProgramData\Microsoft Visual Studio\10.0\TraceDebugging`
 ==.sln与.suo==
 .sln（Visual Studio.Solution）：它通过为环境提供对项目、项目项和解决方案项在磁盘上位置的引用,可将它们组织到解决方案中。
 
