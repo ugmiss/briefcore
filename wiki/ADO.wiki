@@ -1,0 +1,17 @@
+#summary ADO
+1 表过滤
+{{{
+DataTable dt；
+dt.DefaultView.RowFilter= "id> '4 ' "; 
+DataTable TempTable=dt.Clone(); 
+for(int i=0;i <dt.DefaultView.Count;i++) 
+{ 
+DataRow row=TempTable.NewRow(); 
+for(int j=0;j <TempTable.Columns.Count;j++) 
+{ 
+row[j]=dt.DefaultView[i][j]; 
+} 
+TempTable.Rows.Add(row); 
+} 
+dataGrid1.DataSource=TempTable;
+}}}
