@@ -1,0 +1,7 @@
+#summary Linq技巧
+#labels Linq
+===Linq技巧===
+1 生成0到100的数字集合
+{{{
+int[]arr=Enumerable.Range(0,100).ToArray();
+}}}
