@@ -1,0 +1,12 @@
+#summary Winform相关
+#labels 嵌入的资源,Winform
+===嵌入的资源文件===
+{{{
+//根据assembly名称加载程序集到当前的Appdomain
+System.Reflection.Assembly ass = System.Reflection.Assembly.Load("MyAssembly");
+//按照 命名空间+目录的全路径+文件名 获取嵌入文件的流
+using (StreamReader reader = new StreamReader(ass.GetManifestResourceStream("MyAssembly.Xml.objects.xml")))
+{
+    xml = reader.ReadToEnd();
+}
+}}}
