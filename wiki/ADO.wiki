@@ -22,3 +22,9 @@ dataGrid1.DataSource=TempTable;
 `AppData%\Microsoft\Microsoft SQL Server\90\Tools\Shell\mru.dat（SQL Server 2005）`
 文件中，直接删除后重新启动客户端就可以了。
 `%AppData%` 是环境变量，可通过在命令行中运行 `ECHO %APPDATA%`查看。
+
+3 sql查询库名及物理文件
+{{{
+select db.name,sf.name,sf.filename,sf.size from sys.sysaltfiles sf 
+inner join sys.databases db on sf.dbid=db.database_id where db.database_id>4 and db.name <>'distribution' order by db.name
+}}}
