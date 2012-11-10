@@ -1,5 +1,5 @@
 #summary LinqToSql技巧
 ===LinqToSql技巧===
 {{{
-1 int[]arr=Enumable.Range(0,100).ToArray();
+1 int[]arr=Enumerable.Range(0,100).ToArray();
 }}}
