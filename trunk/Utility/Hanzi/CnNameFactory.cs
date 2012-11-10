@@ -337,7 +337,7 @@ namespace Utility.Hanzi
 ";
         public string GetNewName(out bool IsMale)
         {
-            Random r = new Random(Guid.NewGuid().GetHashCode()); 
+            Random r = new Random(Guid.NewGuid().GetHashCode());
             if (r.Next(2) > 0)
             {
                 IsMale = true;
@@ -354,13 +354,13 @@ namespace Utility.Hanzi
         static string[] girlsnames = girls.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
         public string GetBoyName()
         {
-            Random r = new Random(Guid.NewGuid().GetHashCode()); 
+            Random r = new Random(Guid.NewGuid().GetHashCode() + DateTime.Now.Millisecond);
             string name = fs[r.Next(fs.Length)] + boynames[r.Next(boynames.Length)];
             return name;
         }
         public string GetGirlName()
         {
-            Random r = new Random(Guid.NewGuid().GetHashCode()); 
+            Random r = new Random(Guid.NewGuid().GetHashCode());
             string name = fs[r.Next(fs.Length)] + girlsnames[r.Next(girlsnames.Length)];
             return name;
         }

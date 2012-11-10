@@ -15,26 +15,7 @@ namespace CoreCoder
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            Utility.Hanzi.CnNameFactory fac = new Utility.Hanzi.CnNameFactory();
-            List<string> li = new List<string>();
-
-            for (int i = 0; i < 100; i++)
-            {
-                string name = fac.GetNewName();
-                if (li.Contains(name))
-                {
-                    i--;
-                    continue;
-                }
-                li.Add(name);
-            }
-            foreach (var c in li.OrderBy(p => p))
-            {
-                Console.Write(c + "\t");
-            }
-            Console.ReadKey();
-            //Application.Run(new CodeForm());
+            Application.Run(new CodeForm());
         }
         class HT
         {
