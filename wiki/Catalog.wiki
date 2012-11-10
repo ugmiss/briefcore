@@ -4,6 +4,7 @@
  * [Parallel]
  * [Expression]
  * [Extensions]
+ * [Fabric]
 ===.Net Framework===
  * [WF]
  * [WPF]
@@ -20,13 +21,16 @@
  * [ShotcutKey] 
  * [TreeList] 
  * [XtraManuBar]
-===SqlServer===
+===Data===
+ * [Cache]
+ * [Sql]
+ * [NoSql]
  * [Partition]
  * [ADO] 
  * [BI]
 ===Architecture & Framework===
  * [Spring]
- * [EntityFramework]
+ * [EF]
  * [MVVM]
  * [NHibernate]
  * [FastReflect]
@@ -35,6 +39,8 @@
  * [MEF]
  * [Entlib]
  * [DDD]
+ * [ESB]
+ * [MemCache]
 ===Design Pattern===
  * [Strategy]
  * [Repository]
