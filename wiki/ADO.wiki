@@ -1,4 +1,5 @@
 #summary ADO和SQL
+#labels Ado,SqlServer
 1 表过滤
 {{{
 DataTable dt；
