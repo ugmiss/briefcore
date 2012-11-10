@@ -3,6 +3,7 @@
  * [ConcurrentDictionary]
  * [Parallel]
  * [Expression]
+ * [Extensions]
 ===.Net Framework===
  * [WF]
  * [WPF]
@@ -46,8 +47,14 @@
  * [Collections]
  * [GC]
  * [GAC]
- * [WordAddin]
+ * [VSTO]
  * [VSAddin]
+ * [FullTextSearch]
+ * [Maths]
+ * [P2P]
+ * [Reporting]
+ * [Hook]
+ * [Refactoring]
 ===Web===
  * [Json] 
  * [Jquery] 
