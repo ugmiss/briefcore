@@ -45,6 +45,7 @@
 ===Design Pattern===
  * [Strategy]
  * [Repository]
+ * [Singleton]
 ===Others===
  * [LinqToSql]
  * [Emit]
