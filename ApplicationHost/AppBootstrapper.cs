@@ -30,13 +30,16 @@ namespace ApplicationHost
         // 3.创建Unity IOC容器
         protected override IUnityContainer CreateContainer()
         {
-            return base.CreateContainer();
+
+            IUnityContainer uc = base.CreateContainer();
+            uc.RegisterType<object, IUnityContainer>();
+            return uc;
         }
         // 4.配置容器
-        protected override void ConfigureContainer()
-        {
-            base.ConfigureContainer();
-        }
+        //protected override void ConfigureContainer()
+        //{
+        //    base.ConfigureContainer();
+        //}
         // 5.创建程序Shell
         protected override DependencyObject CreateShell()
         {

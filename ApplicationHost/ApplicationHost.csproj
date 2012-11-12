@@ -67,6 +67,7 @@
     <Reference Include="DevExpress.Xpf.Printing.v12.1.Service, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Xpf.Ribbon.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Practices.Prism">
       <HintPath>..\lib\Prism\Microsoft.Practices.Prism.dll</HintPath>
     </Reference>

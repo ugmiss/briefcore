@@ -16,6 +16,7 @@ using DevExpress.Xpf.Core;
 using System.Windows.Media.Animation;
 using Microsoft.Practices.Prism.Regions;
 using System.ComponentModel.Composition;
+using DevExpress.Xpf.Ribbon;
 
 namespace ApplicationHost
 {
@@ -23,7 +24,7 @@ namespace ApplicationHost
     /// Shell.xaml 的交互逻辑
     /// </summary>
     [Export]
-    public partial class Shell : Window
+    public partial class Shell : DXRibbonWindow
     {
         [Import(AllowRecomposition = false)]
 
