@@ -11,6 +11,12 @@ namespace PatternDemo
         {
             Console.Write(Singleton.Instance == null);
             Console.ReadKey();
+
+            ICoat food;
+            Console.Write("我要的是时尚上衣\t");
+            food = SimpleFactory.CreateCoat("fashion");
+            food.GetYourCoat();
+            Console.ReadKey();
         }
     }
 }
