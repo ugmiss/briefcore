@@ -5,39 +5,43 @@ using System.Text;
 
 namespace PatternDemo
 {
-
-    public interface ICoat
+    public interface ICar
     {
-        void GetYourCoat();
+        string GetCarName();
     }
-    public class BusinessCoat : ICoat
+    public class BusinessCar : ICar
     {
-        public void GetYourCoat()
+        public string GetCarName()
         {
-            Console.WriteLine("商务上衣");
+            return "商务轿车";
         }
     }
-    public class FashionCoat : ICoat
+    public class FamilyCar : ICar
     {
-        public void GetYourCoat()
+        public string GetCarName()
         {
-            Console.WriteLine("时尚上衣");
+            return "家用轿车";
         }
     }
     public class SimpleFactory
     {
-        public static ICoat CreateCoat(string styleName)
+        public static ICar CreateCoat(string styleName)
         {
-            switch (styleName.Trim().ToLower())
+            ICar car = null;
+            Console.WriteLine("开始生产...");
+            switch (styleName)
             {
                 case "business":
-                    return new BusinessCoat();
-                case "fashion":
-                    return new FashionCoat();
+                    car = new BusinessCar();
+                    break;
+                case "family":
+                    car = new FamilyCar();
+                    break;
                 default:
-                    throw new Exception("还没有你要的那种衣服");
+                    throw new Exception("不生产这种车");
             }
+            Console.WriteLine("生产完成。");
+            return car;
         }
     }
-
 }
