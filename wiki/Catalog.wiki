@@ -46,6 +46,9 @@
  * [Strategy]
  * [Repository]
  * [Singleton]
+ * [SimpleFactory]
+ * [FactoryMethod]
+ * [AbstractFactory]
 ===Others===
  * [LinqToSql]
  * [Emit]
