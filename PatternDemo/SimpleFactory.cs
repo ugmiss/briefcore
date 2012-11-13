@@ -25,23 +25,16 @@ namespace PatternDemo
     }
     public class SimpleFactory
     {
-        public static ICar CreateCoat(string styleName)
+        public static ICar CreateCar(string styleName)
         {
-            ICar car = null;
-            Console.WriteLine("开始生产...");
             switch (styleName)
             {
-                case "business":
-                    car = new BusinessCar();
-                    break;
-                case "family":
-                    car = new FamilyCar();
-                    break;
-                default:
-                    throw new Exception("不生产这种车");
+                case "BusinessCar":
+                    return new BusinessCar();
+                case "FamilyCar":
+                    return new FamilyCar();
             }
-            Console.WriteLine("生产完成。");
-            return car;
+            return null;
         }
     }
 }
