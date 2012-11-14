@@ -25,4 +25,5 @@
 ||wmpnetwk.exe||用户名为NETWORK SERVICE.Windows Media Player Network Sharing Service:为其他网络播放器或者使用UPnP(Universal Plug and Play，通用即插即用)标准的媒体设备共享Windows Media Player的媒体库。该服务的默认运行方式是手动，不过如果你没有这类设备或者应用的话则可以放心将其禁用。 ||
 ||hkcmd,igfxtray.exe||intel集成显卡诊断程序 msconfig中禁用||
 ||FlashUtilXXXXXX||Adobe更新程序，跟随IE启动启动，在IE高级设置中禁用加载项||
-
+||imeutil||sogou输入法，将 启用细胞词库自动更新 和 开启流行新词更新 两个选项的复选框的勾去掉，然后 应用--确定 就可以了。 ||
+||sogoucloud||sogou输入法，关闭云计算||
