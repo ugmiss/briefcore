@@ -21,4 +21,5 @@
 
 以上是win7基本的进程 如果还有多出来的系统进程可以根据描述关闭相关的服务。对于程序进程则可以右击该进程，查看文件位置是否是你安装的程序，不需要的也可以去掉。如果类似系统进程的，当文件位置又不是在system32下的 那很可能就是病毒.
 
-CDASrv -> Common Desktop Agent 
+||CDASrv||Common Desktop Agent ||
+||wmpnetwk.exe||用户名为NETWORK SERVICE.Windows Media Player Network Sharing Service:为其他网络播放器或者使用UPnP(Universal Plug and Play，通用即插即用)标准的媒体设备共享Windows Media Player的媒体库。该服务的默认运行方式是手动，不过如果你没有这类设备或者应用的话则可以放心将其禁用。 ||
