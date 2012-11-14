@@ -27,3 +27,5 @@
 ||FlashUtilXXXXXX||Adobe更新程序，跟随IE启动启动，在IE高级设置中禁用加载项||
 ||imeutil||sogou输入法，将 启用细胞词库自动更新 和 开启流行新词更新 两个选项的复选框的勾去掉，然后 应用--确定 就可以了。 ||
 ||sogoucloud||sogou输入法，关闭云计算||
+||ssms||window对话管理器||
+||Ssms||Sqlserver Manager Studio，SqlServer客户端||
