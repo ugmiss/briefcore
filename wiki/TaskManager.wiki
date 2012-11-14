@@ -4,16 +4,17 @@
 ||dwm.exe||桌面窗口管理器 可以被结束（需2次）结束无法显示Aero效果 无法重新新建任务还原||
 ||explorer.exe||windows任务管理器 可以被结束但是任务栏和桌面图标会消失掉 可以重新新建||
 ||lsass.exe||lsass.exe是一个系统进程，用于本地安全授权.关闭该进程会系统关闭防火墙同时系统会1分钟后重启||
-||lsm.exe||本地会话管理器服务  关闭该进程系统会1分钟后重启（所谓本地会话个人理解应该是本地用户或者程序提出一系列请求，系统调用相应服务与之响应）||
+||lsm.exe||本地会话管理器服务  关闭该进程系统会1分钟后重启（所谓本地会话个人理解应该
+是本地用户或者程序提出一系列请求，系统调用相应服务与之响应）||
 ||services.exe||服务和控制器应用 用于管理启动和停止服务  关闭该进程系统会1分钟后重启||
 ||spoolsv.exe||后台处理程序子系统应用程序 管理所有打印工作 可以关闭||
 ||svchost.exe||windows服务主进程 有很多个（大约9-13个具体看加载的服务） window很多服务都要用到该进程  local的可以关闭 ，其他关闭自动回复||
 ||system||windows页面内存管理进程  无法关闭||
 ||system Idle Process||系统虚拟进程 显示cpu空闲占有率  无法关闭||
+||ssms||window对话管理器，关闭会重启||
 ||taskhost.exe||win7计划任务程序 可以被结束 但是定时任务就会失效||
 ||taskmgr.exe||按ctrl+shift+esc调出的任务管理器||
 ||wininit.exe||windows启动初始化进程 会启动services.exe||
-||lsm.exe||关闭会蓝屏||
 ||winlogon.exe||windows用户登录管理器  结束该进程导致只有桌面背景和鼠标指针，无法进行任何其他操作||
 ||WMIADAP.exe||用于通过WinMgmt.exe程序处理WMI操作 开机一段时间会消失||
 ||WmiPrvSE.exe||微软Windows操作系统的一部分。用于通过WinMgmt.exe程序处理WMI操作(不知道Wmi是啥,应该是管理工具类的）数量为2个，开机一段时间会消失||
@@ -27,5 +28,4 @@
 ||FlashUtilXXXXXX||Adobe更新程序，跟随IE启动启动，在IE高级设置中禁用加载项||
 ||imeutil||sogou输入法，将 启用细胞词库自动更新 和 开启流行新词更新 两个选项的复选框的勾去掉，然后 应用--确定 就可以了。 ||
 ||sogoucloud||sogou输入法，关闭云计算||
-||ssms||window对话管理器||
 ||Ssms||Sqlserver Manager Studio，SqlServer客户端||
