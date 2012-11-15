@@ -41,12 +41,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.txtLog = new System.Windows.Forms.RichTextBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnInit
             // 
-            this.btnInit.Location = new System.Drawing.Point(12, 320);
+            this.btnInit.Location = new System.Drawing.Point(16, 291);
             this.btnInit.Name = "btnInit";
             this.btnInit.Size = new System.Drawing.Size(90, 23);
             this.btnInit.TabIndex = 1;
@@ -57,7 +59,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(16, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 2;
@@ -65,7 +67,7 @@
             // 
             // txtDBName
             // 
-            this.txtDBName.Location = new System.Drawing.Point(12, 31);
+            this.txtDBName.Location = new System.Drawing.Point(16, 27);
             this.txtDBName.Name = "txtDBName";
             this.txtDBName.Size = new System.Drawing.Size(120, 21);
             this.txtDBName.TabIndex = 3;
@@ -73,7 +75,7 @@
             // 
             // txtDBPath
             // 
-            this.txtDBPath.Location = new System.Drawing.Point(12, 77);
+            this.txtDBPath.Location = new System.Drawing.Point(16, 73);
             this.txtDBPath.Name = "txtDBPath";
             this.txtDBPath.Size = new System.Drawing.Size(120, 21);
             this.txtDBPath.TabIndex = 5;
@@ -82,7 +84,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 61);
+            this.label2.Location = new System.Drawing.Point(16, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 4;
@@ -90,7 +92,7 @@
             // 
             // txtPartitionCount
             // 
-            this.txtPartitionCount.Location = new System.Drawing.Point(12, 118);
+            this.txtPartitionCount.Location = new System.Drawing.Point(16, 114);
             this.txtPartitionCount.Name = "txtPartitionCount";
             this.txtPartitionCount.Size = new System.Drawing.Size(120, 21);
             this.txtPartitionCount.TabIndex = 7;
@@ -99,7 +101,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 102);
+            this.label3.Location = new System.Drawing.Point(16, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 6;
@@ -107,7 +109,7 @@
             // 
             // txtStartTime
             // 
-            this.txtStartTime.Location = new System.Drawing.Point(12, 165);
+            this.txtStartTime.Location = new System.Drawing.Point(16, 161);
             this.txtStartTime.Name = "txtStartTime";
             this.txtStartTime.Size = new System.Drawing.Size(120, 21);
             this.txtStartTime.TabIndex = 9;
@@ -116,7 +118,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 149);
+            this.label4.Location = new System.Drawing.Point(16, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 8;
@@ -124,7 +126,7 @@
             // 
             // txtInterval
             // 
-            this.txtInterval.Location = new System.Drawing.Point(12, 243);
+            this.txtInterval.Location = new System.Drawing.Point(16, 239);
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.Size = new System.Drawing.Size(120, 21);
             this.txtInterval.TabIndex = 11;
@@ -133,7 +135,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 195);
+            this.label5.Location = new System.Drawing.Point(16, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 10;
@@ -148,42 +150,53 @@
             "日",
             "时",
             "分"});
-            this.comboBox1.Location = new System.Drawing.Point(13, 211);
+            this.comboBox1.Location = new System.Drawing.Point(17, 207);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(119, 20);
             this.comboBox1.TabIndex = 12;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnInit);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.txtDBName);
+            this.panel1.Controls.Add(this.txtInterval);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.txtDBPath);
+            this.panel1.Controls.Add(this.txtStartTime);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtPartitionCount);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(166, 483);
+            this.panel1.TabIndex = 14;
+            // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(153, 15);
+            this.txtLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLog.Location = new System.Drawing.Point(166, 0);
             this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(756, 347);
-            this.txtLog.TabIndex = 13;
+            this.txtLog.Size = new System.Drawing.Size(720, 483);
+            this.txtLog.TabIndex = 15;
             this.txtLog.Text = "";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 374);
+            this.ClientSize = new System.Drawing.Size(886, 483);
             this.Controls.Add(this.txtLog);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.txtInterval);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtStartTime);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtPartitionCount);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtDBPath);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtDBName);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnInit);
-            this.Name = "Form1";
+            this.Controls.Add(this.panel1);
+            this.Name = "MainForm";
             this.Text = "数据库归档解决方案（分区-滑动窗口）";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -202,6 +215,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RichTextBox txtLog;
     }
 }
