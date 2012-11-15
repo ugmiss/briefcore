@@ -43,6 +43,8 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtLog = new System.Windows.Forms.RichTextBox();
+            this.btnData = new System.Windows.Forms.Button();
+            this.btnAch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,9 +88,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(16, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 4;
-            this.label2.Text = "地址";
+            this.label2.Text = "物理路径";
             // 
             // txtPartitionCount
             // 
@@ -157,6 +159,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnAch);
+            this.panel1.Controls.Add(this.btnData);
             this.panel1.Controls.Add(this.btnInit);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBox1);
@@ -180,15 +184,34 @@
             this.txtLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLog.Location = new System.Drawing.Point(166, 0);
             this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(720, 483);
+            this.txtLog.Size = new System.Drawing.Size(804, 483);
             this.txtLog.TabIndex = 15;
             this.txtLog.Text = "";
+            // 
+            // btnData
+            // 
+            this.btnData.Location = new System.Drawing.Point(16, 333);
+            this.btnData.Name = "btnData";
+            this.btnData.Size = new System.Drawing.Size(90, 23);
+            this.btnData.TabIndex = 13;
+            this.btnData.Text = "模拟数据";
+            this.btnData.UseVisualStyleBackColor = true;
+            this.btnData.Click += new System.EventHandler(this.btnData_Click);
+            // 
+            // btnAch
+            // 
+            this.btnAch.Location = new System.Drawing.Point(16, 379);
+            this.btnAch.Name = "btnAch";
+            this.btnAch.Size = new System.Drawing.Size(90, 23);
+            this.btnAch.TabIndex = 14;
+            this.btnAch.Text = "归档滑动";
+            this.btnAch.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 483);
+            this.ClientSize = new System.Drawing.Size(970, 483);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
@@ -217,6 +240,8 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RichTextBox txtLog;
+        private System.Windows.Forms.Button btnAch;
+        private System.Windows.Forms.Button btnData;
     }
 }
 
