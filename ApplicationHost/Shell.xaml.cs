@@ -48,6 +48,7 @@ namespace ApplicationHost
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            homeview.TilePanel.ItemsSource = "asdasd".ToArray();
             //this.moduleManager.LoadModule(ModuleNames.ReportingModule);
             //this.moduleManager.LoadModule(ModuleNames.UserManageModule);
         }

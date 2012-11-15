@@ -17,7 +17,7 @@
                 <RowDefinition Height="699*" />
             </Grid.RowDefinitions>
             <TextBlock IsHitTestVisible="False" Margin="62,18,0,17" Text="主界面（Home）" Foreground="#FFF78A09" FontSize="42" FontFamily="Segoe UI Light" />
-            <dxlc:TileLayoutControl Grid.Row="1" Margin="30,0,0,0" Padding="32,0,30,10" Prism:RegionManager.RegionName="MainNavigationRegion" >
+            <dxlc:TileLayoutControl x:Name="TilePanel" Grid.Row="1" Margin="30,0,0,0" Padding="32,0,30,10" Prism:RegionManager.RegionName="MainNavigationRegion" >
                 <!--<dxlc:Tile  Header="Research" Background="#FFD4AF00">
                 </dxlc:Tile>-->
             </dxlc:TileLayoutControl>
