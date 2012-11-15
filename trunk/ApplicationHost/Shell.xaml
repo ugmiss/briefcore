@@ -14,7 +14,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <ItemsControl  Grid.ColumnSpan="5" x:Name="NavigationItemsControl" Prism:RegionManager.RegionName="MainNavigationRegion" Grid.Column="0" Margin="5" Padding="5" >
+        <local:HomeView x:Name="homeview">
+        </local:HomeView>
+        <!--<ItemsControl  Grid.ColumnSpan="5" x:Name="NavigationItemsControl" Prism:RegionManager.RegionName="MainNavigationRegion" Grid.Column="0" Margin="5" Padding="5" >
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal"/>
@@ -25,6 +27,6 @@
             <local:SwitchControl Canvas.Left="0" Canvas.Right="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="MainRegion" Prism:RegionManager.RegionName="MainRegion" Margin="20,18,20,12">
 
             </local:SwitchControl>
-        </Canvas>
+        </Canvas>-->
     </Grid>
 </dxr:DXRibbonWindow>
