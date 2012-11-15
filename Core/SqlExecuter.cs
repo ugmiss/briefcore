@@ -6,7 +6,7 @@ using System.Text;
 
 namespace System
 {
-    public class SqlExecuter
+    public class SqlExecuter : IDisposable
     {
         // 连接串
         string ConnectionString { get; set; }
@@ -411,6 +411,10 @@ namespace System
                     Transaction = null;
                 }
             }
+        }
+        public void Dispose()
+        {
+            this.ConnectionString = "";
         }
     }
 }
