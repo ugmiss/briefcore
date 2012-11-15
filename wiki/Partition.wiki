@@ -1,5 +1,5 @@
 #summary Sql表分区
-#labels sqlserver,分区索引,归档,滑动窗口,合并,拆分
+#labels sqlserver,分区,归档,滑动窗口,合并,拆分,索引
 {{{
 --创建分区数据库，分区文件夹需要手动创建
 use master
