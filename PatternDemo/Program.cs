@@ -9,12 +9,9 @@ namespace PatternDemo
     {
         static void Main(string[] args)
         {
-            Console.Write(Singleton.Instance == null);
-            Console.ReadKey();
-
-            ICar car = SimpleFactory.CreateCar("BusinessCar");
-            Console.WriteLine(car.GetCarName());
-            Console.ReadKey();
+            SingletonDemo.Show();
+            SimpleFactoryDemo.Show();
+            AbstractFactoryDemo.Show();
         }
     }
 }

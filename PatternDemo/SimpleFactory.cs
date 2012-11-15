@@ -37,4 +37,13 @@ namespace PatternDemo
             return null;
         }
     }
+    public class SimpleFactoryDemo
+    {
+        public static void Show()
+        {
+            ICar car = SimpleFactory.CreateCar("BusinessCar");
+            Console.WriteLine(car.GetCarName());
+            Console.ReadKey();
+        }
+    }
 }
