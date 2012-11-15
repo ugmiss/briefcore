@@ -1,6 +1,6 @@
 ﻿namespace SlideWindowDemo
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtLog = new System.Windows.Forms.TextBox();
             this.btnInit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDBName = new System.Windows.Forms.TextBox();
@@ -41,16 +40,9 @@
             this.txtInterval = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.txtLog = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
-            // 
-            // txtLog
-            // 
-            this.txtLog.Location = new System.Drawing.Point(150, 12);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtLog.Size = new System.Drawing.Size(434, 331);
-            this.txtLog.TabIndex = 0;
             // 
             // btnInit
             // 
@@ -161,11 +153,20 @@
             this.comboBox1.Size = new System.Drawing.Size(119, 20);
             this.comboBox1.TabIndex = 12;
             // 
+            // txtLog
+            // 
+            this.txtLog.Location = new System.Drawing.Point(153, 15);
+            this.txtLog.Name = "txtLog";
+            this.txtLog.Size = new System.Drawing.Size(756, 347);
+            this.txtLog.TabIndex = 13;
+            this.txtLog.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 359);
+            this.ClientSize = new System.Drawing.Size(921, 374);
+            this.Controls.Add(this.txtLog);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtInterval);
             this.Controls.Add(this.label5);
@@ -178,7 +179,6 @@
             this.Controls.Add(this.txtDBName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInit);
-            this.Controls.Add(this.txtLog);
             this.Name = "Form1";
             this.Text = "数据库归档解决方案（分区-滑动窗口）";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -189,7 +189,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.Button btnInit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDBName;
@@ -202,6 +201,8 @@
         private System.Windows.Forms.TextBox txtInterval;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.RichTextBox txtLog;
     }
 }
 

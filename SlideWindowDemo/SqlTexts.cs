@@ -9,18 +9,14 @@ namespace SlideWindowDemo
     {
         public static string RemoveDB(InitSetting setting)
         {
-            return string.Format(@"
-            use master
-            IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'{0}')
-            DROP DATABASE {0} 
-            ", setting.DBName, setting.DBPath);
+            return string.Format(@"use master
+IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'{0}')
+DROP DATABASE {0}", setting.DBName, setting.DBPath);
         }
         public static string CreateDB(InitSetting setting)
         {
-            string sql = string.Format(@"
-            CREATE DATABASE {0} ON
-            PRIMARY (NAME='{0}Primary', FILENAME='{1}{0}Primary.mdf',SIZE=5,MAXSIZE=500,FILEGROWTH=1 ),
-            ", setting.DBName, setting.DBPath);
+            string sql = string.Format(@"CREATE DATABASE {0} ON
+PRIMARY (NAME='{0}Primary', FILENAME='{1}{0}Primary.mdf',SIZE=5,MAXSIZE=500,FILEGROWTH=1 ),", setting.DBName, setting.DBPath);
             List<string> li = new List<string>();
             for (int i = 1; i < setting.PartitionCount + 1; i++)
             {
@@ -29,6 +25,13 @@ namespace SlideWindowDemo
             sql += string.Join(",", li);
             return sql;
         }
+
+        public static string RemovePartitionFunc(InitSetting setting)
+        {
+            return string.Format(@"IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'{0}_Partition_Range')
+DROP PARTITION FUNCTION {0}_Partition_Range", setting.DBName, setting.DBPath);
+        }
+
         public static string CreatePartitionFunc(InitSetting setting)
         {
             string sql = @"CREATE PARTITION FUNCTION [{0}_Partition_Range](DATETIME) AS RANGE left FOR VALUES ".FormatWith(setting.DBName);
