@@ -34,6 +34,11 @@ namespace SlideWindowDemo
 
         void Form1_Load(object sender, EventArgs e)
         {
+            btnAch.Click += new EventHandler(btnAch_Click);
+            btnAuto.Click += new EventHandler(btnAuto_Click);
+            btnData.Click += new EventHandler(btnData_Click);
+            btnInit.Click += new EventHandler(btnInit_Click);
+            btnMonitor.Click += new EventHandler(btnMonitor_Click);
             System.Windows.Forms.Timer tt = new System.Windows.Forms.Timer();
             tt.Interval = 1000;
             tt.Tick += delegate { this.labeltime.Text = DateTime.Now.ToString(SystemKeys.SqlDateTime); };
