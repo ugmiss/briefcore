@@ -13,7 +13,7 @@ namespace SlideWindowDemo
 {
     public partial class MainForm : Form
     {
-        public const string master = @"server=.;uid=sa;pwd=123456;database=master";
+        public const string master = @"server={0};uid={1};pwd={2};database=master";
         delegate void AppendMessageCallback(RichTextBox box, string text, Color forecolor, Color backcolor);
         bool Adding = false;
         string[] rot = "♫, ♬ ,♪ ,♩ ,♭ ,♪".Split(",".ToArray());
@@ -23,6 +23,7 @@ namespace SlideWindowDemo
         bool moniting = false;
         object syncdt = new object();
         System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
+        System.Windows.Forms.Timer tauto = new System.Windows.Forms.Timer();
         InitSetting setting = null;
         object syn = new object();
 
@@ -33,12 +34,33 @@ namespace SlideWindowDemo
 
         void Form1_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.Timer tt = new System.Windows.Forms.Timer();
+            tt.Interval = 1000;
+            tt.Tick += delegate { lblcurrent.Text = DateTime.Now.ToString(SystemKeys.SqlDateTime); };
+            tt.Start();
+
+            this.txtScript.Text = @"if  exists (select name from sys.objects where name = N'{0}')
+drop table {0}
+create table [dbo].{0}(
+OrderID int  not null  identity(1,1),
+{2} datetime not null,
+ProductName nvarchar(20) not null,
+ProductPrice decimal(18,2) not null,
+ProductCount int not null
+)  on [{1}_Partition_Scheme] ({2});";
             Control.CheckForIllegalCrossThreadCalls = false;
             this.comboBox1.SelectedIndex = 4;
             this.txtStartTime.Text = DateTime.Now.ToString(SystemKeys.SqlDateTime);
             this.dataGridView1.SelectionChanged += new EventHandler(dataGridView1_SelectionChanged);
             setting = new InitSetting()
             {
+                Server = txtServer.Text,
+                UID = txtUid.Text,
+                Pwd = txtPwd.Text,
+                TName = txtTable.Text,
+                ColName = txtCol.Text,
+                TScript = txtScript.Text,
+
                 DBName = txtDBName.Text,
                 DBPath = txtDBPath.Text,
                 PartitionCount = txtPartitionCount.Text.ParseTo<int>(),
@@ -56,10 +78,16 @@ namespace SlideWindowDemo
             btnInit.Enabled = false;
             ThreadPool.QueueUserWorkItem(o =>
             {
-                using (BussinessExecuter exec = new BussinessExecuter(master))
+                using (BussinessExecuter exec = new BussinessExecuter(master.FormatWith(setting.Server,setting.UID,setting.Pwd)))
                 {
                     setting = new InitSetting()
                     {
+                        Server = txtServer.Text,
+                        UID = txtUid.Text,
+                        Pwd = txtPwd.Text,
+                        TName = txtTable.Text,
+                        ColName = txtCol.Text,
+                        TScript = txtScript.Text,
                         DBName = txtDBName.Text,
                         DBPath = txtDBPath.Text,
                         PartitionCount = txtPartitionCount.Text.ParseTo<int>(),
@@ -79,7 +107,7 @@ namespace SlideWindowDemo
                     AppendCodeText(sql);
                     x = exec.ExecuteNonQuery(sql);
                     AppendDescriptionText("创建数据库完成");
-                    using (BussinessExecuter dbexec = new BussinessExecuter("server=.;uid=sa;pwd=123456;database={0}".FormatWith(setting.DBName)))
+                    using (BussinessExecuter dbexec = new BussinessExecuter("server={0};uid={1};pwd={2};database={3}".FormatWith(setting.Server, setting.UID, setting.Pwd, setting.DBName)))
                     {
                         AppendDescriptionText("开始删除分区函数");
                         sql = (SqlTexts.RemovePartitionFunc(setting));
@@ -99,26 +127,26 @@ namespace SlideWindowDemo
                         AppendDescriptionText("创建分区架构完成");
 
                         AppendDescriptionText("开始创建分区表");
-                        sql = SqlTexts.CreatePartitionTable(setting, "Orders");
+                        sql = SqlTexts.CreatePartitionTable(setting, false);
                         AppendCodeText(sql);
                         x = dbexec.ExecuteNonQuery(sql);
                         AppendDescriptionText("创建分区表完成");
 
                         AppendDescriptionText("开始创建分区备份表");
-                        sql = SqlTexts.CreatePartitionTable(setting, "OrdersBak");
+                        sql = SqlTexts.CreatePartitionTable(setting,true);
                         AppendCodeText(sql);
                         x = dbexec.ExecuteNonQuery(sql);
                         AppendDescriptionText("创建分区备份表完成");
 
 
                         AppendDescriptionText("开始创建分区索引");
-                        sql = SqlTexts.CreatePartitionTableIndex(setting, "Orders");
+                        sql = SqlTexts.CreatePartitionTableIndex(setting, false);
                         AppendCodeText(sql);
                         x = dbexec.ExecuteNonQuery(sql);
                         AppendDescriptionText("创建分区索引完成");
 
                         AppendDescriptionText("开始创建分区备份索引");
-                        sql = SqlTexts.CreatePartitionTableIndex(setting, "OrdersBak");
+                        sql = SqlTexts.CreatePartitionTableIndex(setting, true);
                         AppendCodeText(sql);
                         x = dbexec.ExecuteNonQuery(sql);
                         AppendDescriptionText("创建分区备份索引完成");
@@ -153,7 +181,7 @@ namespace SlideWindowDemo
             }
             ThreadPool.QueueUserWorkItem(o =>
             {
-                BussinessExecuter be = new BussinessExecuter("server=.;uid=sa;pwd=123456;database=DataCenter");
+                BussinessExecuter be = new BussinessExecuter("server={0};uid={1};pwd={2};database={3}".FormatWith(setting.Server, setting.UID, setting.Pwd, setting.DBName));
                 //be.DeleteAll<Orders>();
                 while (Adding)
                 {
@@ -195,8 +223,8 @@ namespace SlideWindowDemo
                 {
                     lock (syncdt)
                     {
-                        BussinessExecuter be = new BussinessExecuter("server=.;uid=sa;pwd=123456;database={0}".FormatWith(setting.DBName));
-                        DataTable dt = be.QueryDataTable(SqlTexts.GetInfo("Orders"));
+                        BussinessExecuter be = new BussinessExecuter("server={0};uid={1};pwd={2};database={3}".FormatWith(setting.Server, setting.UID, setting.Pwd, setting.DBName));
+                        DataTable dt = be.QueryDataTable(SqlTexts.GetInfo(setting));
                         dataGridView1.SelectionChanged -= new EventHandler(dataGridView1_SelectionChanged);
                         this.dataGridView1.DataSource = dt;
                         this.dataGridView1.Refresh();
@@ -218,22 +246,21 @@ namespace SlideWindowDemo
         }
         void btnAch_Click(object sender, EventArgs e)
         {
-            using (BussinessExecuter be = new BussinessExecuter("server=.;uid=sa;pwd=123456;database={0}".FormatWith(setting.DBName)))
+            using (BussinessExecuter be = new BussinessExecuter("server={0};uid={1};pwd={2};database={3}".FormatWith(setting.Server, setting.UID, setting.Pwd, setting.DBName)))
             {
                 AppendDescriptionText("开始Switch 1");
-                string sql = SqlTexts.Switch1("Orders", "OrdersBak");
+                string sql = SqlTexts.Switch1(setting.TName, setting.TNameBak);
                 be.ExecuteNonQuery(sql);
                 AppendCodeText(sql);
                 AppendDescriptionText("Switch 1 完成");
 
                 AppendDescriptionText("开始Switch 2");
-                sql = SqlTexts.Switch2("Orders", "OrdersBak");
+                sql = SqlTexts.Switch2(setting.TName, setting.TNameBak);
                 be.ExecuteNonQuery(sql);
                 AppendCodeText(sql);
                 AppendDescriptionText("Switch 2 完成");
 
-                DataTable dt = be.QueryDataTable(SqlTexts.GetInfo("Orders"));
-
+                DataTable dt = be.QueryDataTable(SqlTexts.GetInfo(setting));
                 Dictionary<DateTime, string> datelist = new Dictionary<DateTime, string>();
                 string NullGroup = "";
                 foreach (DataRow dr in dt.Rows)
@@ -257,12 +284,6 @@ namespace SlideWindowDemo
                 DateTime dtstart = datelist.Keys.OrderBy(p => p).First();
                 string group2 = datelist[dtstart];
                 DateTime dtend = datelist.Keys.OrderByDescending(p => p).First();
-
-                //AppendDescriptionText("开始设置NextUse");
-                //sql = SqlTexts.NextUsed(setting, group2);
-                //be.ExecuteNonQuery(sql);
-                //AppendCodeText(sql);
-                //AppendDescriptionText("设置NextUse完成");
 
                 AppendDescriptionText("开始Merge");
                 sql = SqlTexts.Merge(setting, dtstart);
@@ -314,17 +335,76 @@ go", Color.Blue, Color.White);
                     box.Clear();
             }
         }
+
+        private void btnAuto_Click(object sender, EventArgs e)
+        {
+            tauto.Interval = 10 * 1000;
+            t.Tick += delegate
+            {
+                using (BussinessExecuter be = new BussinessExecuter("server={0};uid={1};pwd={2};database={3}".FormatWith(setting.Server, setting.UID, setting.Pwd, setting.DBName)))
+                {
+                    DataTable dt = be.QueryDataTable(SqlTexts.GetInfo(setting));
+                    Dictionary<DateTime, string> datelist = new Dictionary<DateTime, string>();
+                    string NullGroup = "";
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        string s = dr.Field<string>("range_boundary");
+                        if (s.NotNullOrEmpty())
+                        {
+                            datelist.Add(s.ParseTo<DateTime>(), dr.Field<string>("filegroup"));
+                        }
+                        else
+                        {
+                            NullGroup = dr.Field<string>("filegroup");
+                        }
+                    }
+                    DateTime dtstart = datelist.Keys.OrderBy(p => p).First();
+                    int secs = setting.Interval * setting.PartitionCount;
+                    if (DateTime.Now.CompareTo(dtstart.AddSeconds(secs)) > 0)
+                    {
+                        btnAch_Click(null, null);
+                    }
+                }
+            };
+            t.Start();
+        }
+
+
+
     }
 
 
     public class InitSetting
     {
+        public string Server { get; set; }
+
+        public string UID { get; set; }
+
+        public string Pwd { get; set; }
+
+        public string TName { get; set; }
+
+
+        public string TNameBak
+        {
+            get
+            {
+                return TName + "Bak";
+            }
+        }
+
+        public string ColName { get; set; }
+
+        public string TScript { get; set; }
+
         public string DBName { get; set; }
         public string DBPath { get; set; }
         public int PartitionCount { get; set; }
         public DateTime StartTime { get; set; }
         public int Interval { get; set; }
         public EnumIntervalType IntervalType { get; set; }
+
+
     }
     public enum EnumIntervalType
     {

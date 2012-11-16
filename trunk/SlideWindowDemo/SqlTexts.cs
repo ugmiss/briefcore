@@ -102,29 +102,24 @@ as partition [{0}_Partition_Func] TO ".FormatWith(setting.DBName);
             return sql;
         }
 
-        public static string CreatePartitionTable(InitSetting setting, string tableName)
+        public static string CreatePartitionTable(InitSetting setting, bool IsBak)
         {
-            string sql = @"if  exists (select name from sys.objects where name = N'{0}')
-drop table {0}
-create table [dbo].{0}(
-OrderID int  not null  identity(1,1),
-OrderDate datetime not null,
-ProductName nvarchar(20) not null,
-ProductPrice decimal(18,2) not null,
-ProductCount int not null
-)  on [{1}_Partition_Scheme] (OrderDate); ".FormatWith(tableName, setting.DBName);
-            return sql;
+            if (IsBak)
+                return setting.TScript.FormatWith(setting.TNameBak, setting.DBName, setting.ColName);
+            return setting.TScript.FormatWith(setting.TName, setting.DBName, setting.ColName); ;
         }
-        public static string CreatePartitionTableIndex(InitSetting setting, string tableName)
+        public static string CreatePartitionTableIndex(InitSetting setting, bool IsBak)
         {
-            return @"create nonclustered index IX_{0} on {0}(OrderDate)".FormatWith(tableName);
+            if (IsBak)
+                return @"create nonclustered index IX_{0} on {0}({1})".FormatWith(setting.TNameBak, setting.ColName);
+            return @"create nonclustered index IX_{0} on {0}({1})".FormatWith(setting.TName, setting.ColName);
         }
 
 
-        public static string GetInfo(string table)
+        public static string GetInfo(InitSetting setting)
         {//ps.name partition_scheme,
             return @"select  
-p.partition_number number, 
+p.partition_number No, 
  ds2.name as filegroup, 
 convert(varchar(19), isnull(v.value, ''), 120) as range_boundary, 
 str(p.rows, 9) as rows
@@ -141,7 +136,7 @@ and v.boundary_id = p.partition_number - pf.boundary_value_on_right
 WHERE i.object_id = object_id('{0}')
 and i.index_id in (0, 1) 
 order by p.partition_number
-".FormatWith(table);
+".FormatWith(setting.TName);
         }
         public static string Switch1(string table, string table2)
         {
