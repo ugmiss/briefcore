@@ -36,7 +36,7 @@ namespace SlideWindowDemo
         {
             System.Windows.Forms.Timer tt = new System.Windows.Forms.Timer();
             tt.Interval = 1000;
-            tt.Tick += delegate { lblcurrent.Text = DateTime.Now.ToString(SystemKeys.SqlDateTime); };
+            tt.Tick += delegate { this.labeltime.Text = DateTime.Now.ToString(SystemKeys.SqlDateTime); };
             tt.Start();
 
             this.txtScript.Text = @"if  exists (select name from sys.objects where name = N'{0}')
@@ -47,7 +47,8 @@ OrderID int  not null  identity(1,1),
 ProductName nvarchar(20) not null,
 ProductPrice decimal(18,2) not null,
 ProductCount int not null
-)  on [{1}_Partition_Scheme] ({2});";
+)  on [{1}_Partition_Scheme] ({2});
+--参数依次为：表名，库名，分区列名";
             Control.CheckForIllegalCrossThreadCalls = false;
             this.comboBox1.SelectedIndex = 4;
             this.txtStartTime.Text = DateTime.Now.ToString(SystemKeys.SqlDateTime);
@@ -78,7 +79,7 @@ ProductCount int not null
             btnInit.Enabled = false;
             ThreadPool.QueueUserWorkItem(o =>
             {
-                using (BussinessExecuter exec = new BussinessExecuter(master.FormatWith(setting.Server,setting.UID,setting.Pwd)))
+                using (BussinessExecuter exec = new BussinessExecuter(master.FormatWith(setting.Server, setting.UID, setting.Pwd)))
                 {
                     setting = new InitSetting()
                     {
@@ -133,7 +134,7 @@ ProductCount int not null
                         AppendDescriptionText("创建分区表完成");
 
                         AppendDescriptionText("开始创建分区备份表");
-                        sql = SqlTexts.CreatePartitionTable(setting,true);
+                        sql = SqlTexts.CreatePartitionTable(setting, true);
                         AppendCodeText(sql);
                         x = dbexec.ExecuteNonQuery(sql);
                         AppendDescriptionText("创建分区备份表完成");
@@ -190,13 +191,13 @@ ProductCount int not null
                         Random r = new Random(Guid.NewGuid().GetHashCode());
                         Orders or = new Orders()
                         {
-                            OrderDate = DateTime.Now,
+                            CreateTime = DateTime.Now,
                             ProductCount = r.Next(1000),
                             ProductName = new Utility.Hanzi.CnNameFactory().GetBoyName(),
                             ProductPrice = r.NextDouble() + r.Next(500)
                         };
                         be.Add<Orders>(or);
-                        Append(txtLog, string.Format("{0} - {1} - {2} - {3}\n", or.OrderDate.ToString(SystemKeys.SqlDateTime)
+                        Append(txtLog, string.Format("{0} - {1} - {2} - {3}\n", or.CreateTime.ToString(SystemKeys.SqlDateTime)
                         , or.ProductName, or.ProductPrice, or.ProductCount), Color.Red, Color.White);
                     }
                 }
@@ -416,7 +417,7 @@ go", Color.Blue, Color.White);
         [Description("DataField,IsPrimaryKey,IsIdentity")]
         public int OrderID { set; get; }
         [Description("DataField")]
-        public DateTime OrderDate { set; get; }
+        public DateTime CreateTime { set; get; }
         [Description("DataField")]
         public string ProductName { set; get; }
         [Description("DataField")]
