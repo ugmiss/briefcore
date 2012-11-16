@@ -13,7 +13,7 @@ namespace SlideWindowDemo
 {
     public partial class MainForm : Form
     {
-        public const string master = @"server=.;uid=sa;pwd=sa;database=master";
+        public const string master = @"server=.;uid=sa;pwd=123456;database=master";
         delegate void AppendMessageCallback(RichTextBox box, string text, Color forecolor, Color backcolor);
         bool Adding = false;
         string[] rot = "♫, ♬ ,♪ ,♩ ,♭ ,♪".Split(",".ToArray());
@@ -79,7 +79,7 @@ namespace SlideWindowDemo
                     AppendCodeText(sql);
                     x = exec.ExecuteNonQuery(sql);
                     AppendDescriptionText("创建数据库完成");
-                    using (BussinessExecuter dbexec = new BussinessExecuter("server=.;uid=sa;pwd=sa;database={0}".FormatWith(setting.DBName)))
+                    using (BussinessExecuter dbexec = new BussinessExecuter("server=.;uid=sa;pwd=123456;database={0}".FormatWith(setting.DBName)))
                     {
                         AppendDescriptionText("开始删除分区函数");
                         sql = (SqlTexts.RemovePartitionFunc(setting));
@@ -153,7 +153,7 @@ namespace SlideWindowDemo
             }
             ThreadPool.QueueUserWorkItem(o =>
             {
-                BussinessExecuter be = new BussinessExecuter("server=.;uid=sa;pwd=sa;database=DataCenter");
+                BussinessExecuter be = new BussinessExecuter("server=.;uid=sa;pwd=123456;database=DataCenter");
                 //be.DeleteAll<Orders>();
                 while (Adding)
                 {
@@ -195,7 +195,7 @@ namespace SlideWindowDemo
                 {
                     lock (syncdt)
                     {
-                        BussinessExecuter be = new BussinessExecuter("server=.;uid=sa;pwd=sa;database={0}".FormatWith(setting.DBName));
+                        BussinessExecuter be = new BussinessExecuter("server=.;uid=sa;pwd=123456;database={0}".FormatWith(setting.DBName));
                         DataTable dt = be.QueryDataTable(SqlTexts.GetInfo("Orders"));
                         dataGridView1.SelectionChanged -= new EventHandler(dataGridView1_SelectionChanged);
                         this.dataGridView1.DataSource = dt;
@@ -218,7 +218,7 @@ namespace SlideWindowDemo
         }
         void btnAch_Click(object sender, EventArgs e)
         {
-            using (BussinessExecuter be = new BussinessExecuter("server=.;uid=sa;pwd=sa;database={0}".FormatWith(setting.DBName)))
+            using (BussinessExecuter be = new BussinessExecuter("server=.;uid=sa;pwd=123456;database={0}".FormatWith(setting.DBName)))
             {
                 AppendDescriptionText("开始Switch 1");
                 string sql = SqlTexts.Switch1("Orders", "OrdersBak");
