@@ -125,3 +125,425 @@ go*/
  
 --以上情况可写成job进行循环
 }}}
+SQL大表转为分区表实例 
+-- 进行演示操作前, 先备份, 以便可以在演示完成后, 恢复到原始状态
+USE master
+-- 备份
+BACKUP DATABASE AdventureWorks
+    TO DISK = 'AdventureWorks.bak'
+    WITH FORMAT
+
+---- 恢复
+--RESTORE DATABASE AdventureWorks
+--    FROM DISK = 'AdventureWorks.bak'
+--    WITH REPLACE
+GO
+
+--=========================================
+-- 转换为分区表
+--=========================================
+USE AdventureWorks
+GO
+
+-- 1. 创建分区函数
+--    a. 适用于存储历史存档记录的分区表的分区函数
+DECLARE @dt datetime
+SET @dt = '20020101'
+CREATE PARTITION FUNCTION PF_HistoryArchive(datetime)
+AS RANGE RIGHT
+FOR VALUES(
+    @dt,
+    DATEADD(Year, 1, @dt))
+
+--    b. 适用于存储历史记录的分区表的分区函数
+--DECLARE @dt datetime
+SET @dt = '20030901'
+CREATE PARTITION FUNCTION PF_History(datetime)
+AS RANGE RIGHT
+FOR VALUES(
+    @dt,
+    DATEADD(Month, 1, @dt), DATEADD(Month, 2, @dt), DATEADD(Month, 3, @dt),
+    DATEADD(Month, 4, @dt), DATEADD(Month, 5, @dt), DATEADD(Month, 6, @dt),
+    DATEADD(Month, 7, @dt), DATEADD(Month, 8, @dt), DATEADD(Month, 9, @dt),
+    DATEADD(Month, 10, @dt), DATEADD(Month, 11, @dt), DATEADD(Month, 12, @dt))
+GO
+
+-- 2. 创建分区架构
+--    a. 适用于存储历史存档记录的分区表的分区架构
+CREATE PARTITION SCHEME PS_HistoryArchive
+AS PARTITION PF_HistoryArchive
+TO([PRIMARY], [PRIMARY], [PRIMARY])
+
+--    b. 适用于存储历史记录的分区表的分区架构
+CREATE PARTITION SCHEME PS_History
+AS PARTITION PF_History
+TO([PRIMARY], [PRIMARY],
+    [PRIMARY], [PRIMARY], [PRIMARY],
+    [PRIMARY], [PRIMARY], [PRIMARY],
+    [PRIMARY], [PRIMARY], [PRIMARY],
+    [PRIMARY], [PRIMARY], [PRIMARY])
+GO
+
+-- 3. 删除索引
+--    a. 删除存储历史存档记录的表中的索引
+DROP INDEX Production.TransactionHistoryArchive.IX_TransactionHistoryArchive_ProductID
+DROP INDEX Production.TransactionHistoryArchive.IX_TransactionHistoryArchive_ReferenceOrderID_ReferenceOrderLineID
+
+--    b. 删除存储历史记录的表中的索引
+DROP INDEX Production.TransactionHistory.IX_TransactionHistory_ProductID
+DROP INDEX Production.TransactionHistory.IX_TransactionHistory_ReferenceOrderID_ReferenceOrderLineID
+GO
+
+-- 4. 转换为分区表
+--    a. 将存储历史存档记录的表转换为分区表
+ALTER TABLE Production.TransactionHistoryArchive
+    DROP CONSTRAINT PK_TransactionHistoryArchive_TransactionID
+    WITH(
+        MOVE TO PS_HistoryArchive(TransactionDate))
+
+--    b.将存储历史记录的表转换为分区表
+ALTER TABLE Production.TransactionHistory
+    DROP CONSTRAINT PK_TransactionHistory_TransactionID
+    WITH(
+        MOVE TO PS_History(TransactionDate))
+GO
+
+-- 5. 恢复主键
+--    a. 恢复存储历史存档记录的分区表的主键
+ALTER TABLE Production.TransactionHistoryArchive
+    ADD CONSTRAINT PK_TransactionHistoryArchive_TransactionID
+        PRIMARY KEY CLUSTERED(
+            TransactionID,
+            TransactionDate)
+
+--    b. 恢复存储历史记录的分区表的主键
+ALTER TABLE Production.TransactionHistory
+    ADD CONSTRAINT PK_TransactionHistory_TransactionID
+        PRIMARY KEY CLUSTERED(
+            TransactionID,
+            TransactionDate)
+GO
+
+-- 6. 恢复索引
+--    a. 恢复存储历史存档记录的分区表的索引
+CREATE INDEX IX_TransactionHistoryArchive_ProductID
+    ON Production.TransactionHistoryArchive(
+        ProductID)
+
+CREATE INDEX IX_TransactionHistoryArchive_ReferenceOrderID_ReferenceOrderLineID
+    ON Production.TransactionHistoryArchive(
+        ReferenceOrderID,
+        ReferenceOrderLineID)
+
+--    b. 恢复存储历史记录的分区表的索引
+CREATE INDEX IX_TransactionHistory_ProductID
+    ON Production.TransactionHistory(
+        ProductID)
+
+CREATE INDEX IX_TransactionHistory_ReferenceOrderID_ReferenceOrderLineID
+    ON Production.TransactionHistory(
+        ReferenceOrderID,
+        ReferenceOrderLineID)
+GO
+
+-- 7. 查看分区表的相关信息
+SELECT
+    SchemaName = S.name,
+    TableName = TB.name,
+    PartitionScheme = PS.name,
+    PartitionFunction = PF.name,
+    PartitionFunctionRangeType = CASE
+            WHEN boundary_value_on_right = 0 THEN 'LEFT'
+            ELSE 'RIGHT' END,
+    PartitionFunctionFanout = PF.fanout,
+    SchemaID = S.schema_id,
+    ObjectID = TB.object_id,
+    PartitionSchemeID = PS.data_space_id,
+    PartitionFunctionID = PS.function_id
+FROM sys.schemas S
+    INNER JOIN sys.tables TB
+        ON S.schema_id = TB.schema_id
+    INNER JOIN sys.indexes IDX
+        on TB.object_id = IDX.object_id
+            AND IDX.index_id < 2
+    INNER JOIN sys.partition_schemes PS
+        ON PS.data_space_id = IDX.data_space_id
+    INNER JOIN sys.partition_functions PF
+        ON PS.function_id = PF.function_id
+GO
+
+--=========================================
+-- 移动分区表数据
+--=========================================
+-- 1. 为存储历史存档记录的分区表增加分区, 并接受从历史记录分区表移动过来的数据
+--    a. 修改分区架构, 增加用以接受新分区的文件组
+ALTER PARTITION SCHEME PS_HistoryArchive
+NEXT USED [PRIMARY]
+
+--    b. 修改分区函数, 增加分区用以接受从历史记录分区表移动过来的数据
+DECLARE @dt datetime
+SET @dt = '20030901'
+ALTER PARTITION FUNCTION PF_HistoryArchive()
+SPLIT RANGE(@dt)
+
+--    c. 将历史记录表中的过期数据移动到历史存档记录表中
+ALTER TABLE Production.TransactionHistory
+    SWITCH PARTITION 2
+        TO Production.TransactionHistoryArchive PARTITION $PARTITION.PF_HistoryArchive(@dt)
+
+--    d. 将接受到的数据与原来的分区合并
+ALTER PARTITION FUNCTION PF_HistoryArchive()
+MERGE RANGE(@dt)
+GO
+
+-- 2. 将存储历史记录的分区表中不包含数据的分区删除, 并增加新的分区以接受新数据
+--    a. 合并不包含数据的分区
+DECLARE @dt datetime
+SET @dt = '20030901'
+ALTER PARTITION FUNCTION PF_History()
+MERGE RANGE(@dt)
+
+--    b.  修改分区架构, 增加用以接受新分区的文件组
+ALTER PARTITION SCHEME PS_History
+NEXT USED [PRIMARY]
+
+--    c. 修改分区函数, 增加分区用以接受新数据
+SET @dt = '20041001'
+ALTER PARTITION FUNCTION PF_History()
+SPLIT RANGE(@dt)
+GO
+
+--=========================================
+-- 清除历史存档记录中的过期数据
+--=========================================
+-- 1. 创建用于保存过期的历史存档数据的表
+CREATE TABLE Production.TransactionHistoryArchive_2001_temp(
+    TransactionID int NOT NULL,
+    ProductID int NOT NULL,
+    ReferenceOrderID int NOT NULL,
+    ReferenceOrderLineID int NOT NULL
+        DEFAULT ((0)),
+    TransactionDate datetime NOT NULL
+        DEFAULT (GETDATE()),
+    TransactionType nchar(1) NOT NULL,
+    Quantity int NOT NULL,
+    ActualCost money NOT NULL,
+    ModifiedDate datetime NOT NULL
+        DEFAULT (GETDATE()),
+    CONSTRAINT PK_TransactionHistoryArchive_2001_temp_TransactionID
+        PRIMARY KEY CLUSTERED(
+            TransactionID,
+            TransactionDate)
+)
+
+-- 2. 将数据从历史存档记录分区表移动到第1步创建的表中
+ALTER TABLE Production.TransactionHistoryArchive
+    SWITCH PARTITION 1
+        TO Production.TransactionHistoryArchive_2001_temp
+
+-- 3. 删除不再包含数据的分区
+DECLARE @dt datetime
+SET @dt = '20020101'
+ALTER PARTITION FUNCTION PF_HistoryArchive()
+MERGE RANGE(@dt)
+
+-- 4. 修改分区架构, 增加用以接受新分区的文件组
+ALTER PARTITION SCHEME PS_HistoryArchive
+NEXT USED [PRIMARY]
+
+-- 5. 修改分区函数, 增加分区用以接受新数据
+SET @dt = '20040101'
+ALTER PARTITION FUNCTION PF_HistoryArchive()
+SPLIT RANGE(@dt)
+
+
+查询分区信息：
+
+;WITH
+TBINFO AS(
+    SELECT
+        SchemaName = S.name,
+        TableName = TB.name,
+        PartitionScheme = PS.name,
+        PartitionFunction = PF.name,
+        PartitionFunctionRangeType = CASE
+                WHEN boundary_value_on_right = 0 THEN 'LEFT'
+                ELSE 'RIGHT' END,
+        PartitionFunctionFanout = PF.fanout,
+        SchemaID = S.schema_id,
+        ObjectID = TB.object_id,
+        PartitionSchemeID = PS.data_space_id,
+        PartitionFunctionID = PS.function_id
+    FROM sys.schemas S
+        INNER JOIN sys.tables TB
+            ON S.schema_id = TB.schema_id
+        INNER JOIN sys.indexes IDX
+            on TB.object_id = IDX.object_id
+                AND IDX.index_id < 2
+        INNER JOIN sys.partition_schemes PS
+            ON PS.data_space_id = IDX.data_space_id
+        INNER JOIN sys.partition_functions PF
+            ON PS.function_id = PF.function_id
+),
+PF1 AS(
+    SELECT PFP.function_id, PFR.boundary_id, PFR.value, Type = CONVERT(sysname,
+            CASE T.name
+                WHEN 'numeric' THEN 'decimal'
+                WHEN 'real' THEN 'float'
+                ELSE T.name END
+            + CASE
+                WHEN T.name IN('decimal', 'numeric')
+                    THEN QUOTENAME(RTRIM(PFP.precision)
+                        + CASE WHEN PFP.scale > 0 THEN ',' + RTRIM(PFP.scale) ELSE '' END, '()')
+                WHEN T.name IN('float', 'real')
+                    THEN QUOTENAME(PFP.precision, '()')
+                WHEN T.name LIKE 'n%char'
+                    THEN QUOTENAME(PFP.max_length / 2, '()')
+                WHEN T.name LIKE '%char' OR T.name LIKE '%binary'
+                    THEN QUOTENAME(PFP.max_length, '()')
+                ELSE '' END)
+    FROM sys.partition_parameters PFP
+        LEFT JOIN sys.partition_range_values PFR
+            ON PFR.function_id = PFP.function_id
+                AND PFR.parameter_id = PFP.parameter_id
+        INNER JOIN sys.types T
+            ON PFP.system_type_id = T.system_type_id
+),
+PF2 AS(
+    SELECT * FROM PF1
+    UNION ALL
+    SELECT
+        function_id, boundary_id = boundary_id - 1, value, type
+    FROM PF1
+    WHERE boundary_id = 1
+),
+PF AS(
+    SELECT
+        B.function_id, boundary_id = ISNULL(B.boundary_id + 1, 1),
+        value = STUFF(
+            CASE
+                WHEN A.boundary_id IS NULL THEN ''
+                ELSE ' AND [partition_column_name] ' + PF.LessThan + ' ' + CONVERT(varchar(max), A.value) END
+            + CASE
+                WHEN A.boundary_id = 1 THEN ''
+                ELSE ' AND [partition_column_name] ' + PF.MoreThan + ' ' + CONVERT(varchar(max), B.value) END,
+            1, 5, ''),
+        B.Type
+    FROM PF1 A       
+        RIGHT JOIN PF2 B
+            ON A.function_id = B.function_id
+                AND (A.boundary_id - 1 = B.boundary_id
+                    OR(A.boundary_id IS NULL AND B.boundary_id IS NULL))
+        INNER JOIN(
+            SELECT
+                function_id,
+                LessThan = CASE
+                        WHEN boundary_value_on_right = 0 THEN '<='
+                        ELSE '<' END,
+                MoreThan = CASE
+                        WHEN boundary_value_on_right = 0 THEN '>'
+                        ELSE '>=' END
+            FROM sys.partition_functions
+        )PF
+            ON B.function_id = PF.function_id
+),
+PS AS(
+    SELECT
+        DDS.partition_scheme_id, DDS.destination_id,
+        FileGroupName = FG.name, IsReadOnly = FG.is_read_only
+    FROM sys.destination_data_spaces DDS
+        INNER JOIN sys.filegroups FG
+            ON DDS.data_space_id = FG.data_space_id
+),
+PINFO AS(
+    SELECT
+        RowID = ROW_NUMBER() OVER(ORDER BY SchemaID, ObjectID, PS.destination_id),
+        TB.SchemaName, TB.TableName,
+        TB.PartitionScheme, PS.destination_id, PS.FileGroupName, PS.IsReadOnly,
+        TB.PartitionFunction, TB.PartitionFunctionRangeType, TB.PartitionFunctionFanout,
+        PF.boundary_id, PF.Type, PF.value
+    FROM TBINFO TB
+        INNER JOIN PS
+            ON TB.PartitionSchemeID = PS.partition_scheme_id
+        LEFT JOIN PF
+            ON TB.PartitionFunctionID = PF.function_id
+                AND PS.destination_id = PF.boundary_id
+)
+SELECT
+    RowID,
+    SchemaName = CASE destination_id
+            WHEN 1 THEN SchemaName
+            ELSE N'' END,
+    TableName = CASE destination_id
+            WHEN 1 THEN TableName
+            ELSE N'' END,
+    PartitionScheme = CASE destination_id
+            WHEN 1 THEN PartitionScheme
+            ELSE N'' END,
+    destination_id, FileGroupName, IsReadOnly,
+    PartitionFunction = CASE destination_id
+            WHEN 1 THEN PartitionFunction
+            ELSE N'' END,
+    PartitionFunctionRangeType = CASE destination_id
+            WHEN 1 THEN PartitionFunctionRangeType
+            ELSE N'' END,
+    PartitionFunctionFanout = CASE destination_id
+            WHEN 1 THEN CONVERT(varchar(20), PartitionFunctionFanout)
+            ELSE N'' END,
+    boundary_id = ISNULL(CONVERT(varchar(20), boundary_id), ''),
+    Type = ISNULL(Type, N''),
+    value = CASE PartitionFunctionFanout
+            WHEN 1 THEN '<ALL Data>'
+            ELSE ISNULL(value, N'<NEXT USED>') END
+FROM PINFO
+ORDER BY RowID
+
+
+
+
+--＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+--drop database dbPartitionTest
+　　--测试数据库
+　　create database dbPartitionTest
+　　go
+　　use
+　　dbPartitionTest
+　　go
+　　--增加分组
+　　alter database dbPartitionTest ADD FILEGROUP P200801
+　　alter database dbPartitionTest ADD FILEGROUP P200802
+　　alter database dbPartitionTest ADD FILEGROUP P200803
+　　go
+　　--分区函数
+　　CREATE PARTITION FUNCTION part_Year(datetime)
+　　AS RANGE LEFT FOR VALUES
+　　(
+　　’20080131 23:59:59.997’,’20080229 23:59:59.997’,’20080331 23:59:59.997’
+　　)
+　　go
+　　--增加文件组
+　　ALTER DATABASE dbPartitionTest ADD FILE (NAME = N’P200801’,FILENAME = N’c:tb_P200801.ndf’,SIZE = 1MB,MAXSIZE = 500MB,FILEGROWTH = 1MB)TO FILEGROUP P200801
+　　ALTER DATABASE dbPartitionTest ADD FILE (NAME = N’P200802’,FILENAME = N’c:tb_P200802.ndf’,SIZE = 1MB,MAXSIZE = 500MB,FILEGROWTH = 1MB)TO FILEGROUP P200802
+　　ALTER DATABASE dbPartitionTest ADD FILE (NAME = N’P200803’,FILENAME = N’c:tb_P200803.ndf’,SIZE = 1MB,MAXSIZE = 500MB,FILEGROWTH = 1MB)TO FILEGROUP P200803
+　　go
+　　--分区架构
+　　CREATE PARTITION SCHEME part_YearScheme　AS PARTITION part_Year　 TO (P200801,P200802,P200803,[PRIMARY])
+　　go
+　　CREATE TABLE [dbo].t_part
+　　(name varchar(100) default newid(),date datetime NOT NULL)
+　　ON part_YearScheme (date)
+　　go
+　　--添加测试数据,每天1条
+　　declare @date datetime
+　　set @date=’2007-12-31’
+　　while @date<=’2008-04-0’
+　　1 begin
+　　insert into t_part(date)values(@date)
+　　set @date=@date+1
+　　end
+　　go
+　　--查询数据分布在哪些分区
+　　select $partition.part_Year(date) as 分区编号,* from t_part　order by date
+　　--查询数据库文件
+　　go
+　　sp_helpfile
