@@ -351,9 +351,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(12, 49);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 12);
+            this.label10.Size = new System.Drawing.Size(173, 12);
             this.label10.TabIndex = 7;
-            this.label10.Text = "Column Name";
+            this.label10.Text = "分区列       （Column Name）";
             // 
             // comboBox3
             // 
@@ -368,9 +368,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(12, 23);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 12);
+            this.label9.Size = new System.Drawing.Size(173, 12);
             this.label9.TabIndex = 5;
-            this.label9.Text = "Table Name";
+            this.label9.Text = "分区表        （Table Name）";
             // 
             // comboBox2
             // 
