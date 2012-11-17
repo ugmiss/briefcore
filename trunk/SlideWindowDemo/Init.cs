@@ -7,6 +7,20 @@ namespace SlideWindowDemo
 {
     public class InitSetting
     {
+        public string ConnectionString
+        {
+            get
+            {
+                return "server={0};uid={1};pwd={2};database={3}".FormatWith(Server, UID, Pwd, DBName);
+            }
+        }
+        public string MasterConnectionString
+        {
+            get
+            {
+                return "server={0};uid={1};pwd={2};database={3}".FormatWith(Server, UID, Pwd, "master");
+            }
+        }
         public string Server { get; set; }
 
         public string UID { get; set; }
