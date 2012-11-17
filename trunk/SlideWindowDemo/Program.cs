@@ -21,8 +21,8 @@ namespace SlideWindowDemo
                 Application.Run(new MainForm());
             }
             catch (ThreadAbortException ex)
-            { 
-                MessageBox.Show(ex.Message??""+ex.StackTrace);
+            {
+                MessageBox.Show(ex.Message ?? "" + ex.StackTrace);
             }
         }
     }
