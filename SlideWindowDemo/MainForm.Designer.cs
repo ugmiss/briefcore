@@ -57,9 +57,9 @@
             this.wizardPage3 = new DevExpress.XtraWizard.WizardPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboCol = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboTable = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.wizardControl1.SuspendLayout();
@@ -103,6 +103,8 @@
             this.wizardControl1.PreviousText = "< 上一步";
             this.wizardControl1.Size = new System.Drawing.Size(693, 436);
             this.wizardControl1.Text = "";
+            this.wizardControl1.CancelClick += new System.ComponentModel.CancelEventHandler(this.wizardControl1_CancelClick);
+            this.wizardControl1.FinishClick += new System.ComponentModel.CancelEventHandler(this.wizardControl1_FinishClick);
             // 
             // welcomeWizardPage1
             // 
@@ -119,6 +121,7 @@
             this.wizardPage1.Name = "wizardPage1";
             this.wizardPage1.Size = new System.Drawing.Size(661, 291);
             this.wizardPage1.Text = "第一步";
+            this.wizardPage1.PageCommit += new System.EventHandler(this.wizardPage1_PageCommit);
             // 
             // groupBox1
             // 
@@ -212,7 +215,7 @@
             this.completionWizardPage1.Name = "completionWizardPage1";
             this.completionWizardPage1.ProceedText = "点击完成关闭";
             this.completionWizardPage1.Size = new System.Drawing.Size(476, 303);
-            this.completionWizardPage1.Text = " ";
+            this.completionWizardPage1.Text = "完成向导";
             // 
             // wizardPage2
             // 
@@ -221,6 +224,7 @@
             this.wizardPage2.Name = "wizardPage2";
             this.wizardPage2.Size = new System.Drawing.Size(661, 291);
             this.wizardPage2.Text = "第二步";
+            this.wizardPage2.PageCommit += new System.EventHandler(this.wizardPage2_PageCommit);
             // 
             // groupBox2
             // 
@@ -331,13 +335,14 @@
             this.wizardPage3.Name = "wizardPage3";
             this.wizardPage3.Size = new System.Drawing.Size(661, 291);
             this.wizardPage3.Text = "第三步";
+            this.wizardPage3.PageCommit += new System.EventHandler(this.wizardPage3_PageCommit);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.cboCol);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.cboTable);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
@@ -355,13 +360,13 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "分区列       （Column Name）";
             // 
-            // comboBox3
+            // cboCol
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(216, 54);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(140, 22);
-            this.comboBox3.TabIndex = 6;
+            this.cboCol.FormattingEnabled = true;
+            this.cboCol.Location = new System.Drawing.Point(216, 54);
+            this.cboCol.Name = "cboCol";
+            this.cboCol.Size = new System.Drawing.Size(140, 22);
+            this.cboCol.TabIndex = 6;
             // 
             // label9
             // 
@@ -372,13 +377,13 @@
             this.label9.TabIndex = 5;
             this.label9.Text = "分区表        （Table Name）";
             // 
-            // comboBox2
+            // cboTable
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(216, 23);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(140, 22);
-            this.comboBox2.TabIndex = 0;
+            this.cboTable.FormattingEnabled = true;
+            this.cboTable.Location = new System.Drawing.Point(216, 23);
+            this.cboTable.Name = "cboTable";
+            this.cboTable.Size = new System.Drawing.Size(140, 22);
+            this.cboTable.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -442,8 +447,8 @@
         private DevExpress.XtraWizard.WizardPage wizardPage3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboCol;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboTable;
     }
 }
