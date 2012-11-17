@@ -11,6 +11,7 @@ namespace SlideWindowDemo
 {
     public partial class MainForm : Form
     {
+        #region const string
         const string page0Text = @"方案概要：
     采用滑动窗口机制，把分区表的分区依次移入到另一个分区表。
 分区初始工作：
@@ -23,6 +24,8 @@ namespace SlideWindowDemo
     临时表归档并清理（Achieve & Clean Up）,
     分区函数合并（Partition Merge）,
     拆分（Partition Split）";
+        #endregion
+
         public MainForm()
         {
             InitializeComponent();
