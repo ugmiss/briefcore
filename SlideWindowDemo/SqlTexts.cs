@@ -30,6 +30,29 @@ filegroup {0}FG{1}(name = '{0}FG{1}',filename ='{2}{0}FG{1}.ndf',size = 5,maxsiz
             sql += string.Join(",", li);
             return sql;
         }
+        public static string AppendGroup(InitSetting setting)
+        {
+            List<string> li = new List<string>();
+            for (int i = 1; i <= setting.PartitionCount + 1; i++)
+            {
+                li.Add(@"alter database {0}
+add filegroup {0}FG{1}
+alter database {0}
+add file
+(
+ name={0}FG{1},
+ filename='{2}{0}FG{1}.ndf',
+ size=1,
+ maxsize=5,
+ filegrowth=1
+)
+to filegroup {0}FG{1}
+".FormatWith(setting.DBName, i, setting.DBPath));
+            }
+            return string.Join("", li);
+        }
+
+
         public static string RemovePartitionFunc(InitSetting setting)
         {
             return string.Format(@"use {0}

@@ -338,6 +338,7 @@
             this.wizardPage3.Size = new System.Drawing.Size(661, 291);
             this.wizardPage3.Text = "第三步";
             this.wizardPage3.PageCommit += new System.EventHandler(this.wizardPage3_PageCommit);
+            this.wizardPage3.PageRollback += new System.EventHandler(this.wizardPage3_PageRollback);
             // 
             // groupBox3
             // 
