@@ -32,13 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.labeltime = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAuto = new System.Windows.Forms.Button();
-            this.btnInit = new System.Windows.Forms.Button();
-            this.btnMonitor = new System.Windows.Forms.Button();
-            this.btnData = new System.Windows.Forms.Button();
-            this.btnAch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCol = new System.Windows.Forms.TextBox();
@@ -63,13 +58,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtInterval = new System.Windows.Forms.TextBox();
             this.txtDBPath = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAuto = new System.Windows.Forms.Button();
+            this.btnInit = new System.Windows.Forms.Button();
+            this.btnMonitor = new System.Windows.Forms.Button();
+            this.btnData = new System.Windows.Forms.Button();
+            this.btnAch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtLog = new System.Windows.Forms.RichTextBox();
-            this.labeltime = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +83,11 @@
             this.statusStrip1.TabIndex = 26;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // labeltime
+            // 
+            this.labeltime.Name = "labeltime";
+            this.labeltime.Size = new System.Drawing.Size(0, 17);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.groupBox1);
@@ -92,64 +97,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(312, 504);
             this.panel2.TabIndex = 30;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnAuto);
-            this.panel1.Controls.Add(this.btnInit);
-            this.panel1.Controls.Add(this.btnMonitor);
-            this.panel1.Controls.Add(this.btnData);
-            this.panel1.Controls.Add(this.btnAch);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 427);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 77);
-            this.panel1.TabIndex = 18;
-            // 
-            // btnAuto
-            // 
-            this.btnAuto.Location = new System.Drawing.Point(108, 39);
-            this.btnAuto.Name = "btnAuto";
-            this.btnAuto.Size = new System.Drawing.Size(90, 23);
-            this.btnAuto.TabIndex = 16;
-            this.btnAuto.Text = "自动归档滑动";
-            this.btnAuto.UseVisualStyleBackColor = true;
-            // 
-            // btnInit
-            // 
-            this.btnInit.Location = new System.Drawing.Point(8, 10);
-            this.btnInit.Name = "btnInit";
-            this.btnInit.Size = new System.Drawing.Size(90, 23);
-            this.btnInit.TabIndex = 1;
-            this.btnInit.Text = "初始化";
-            this.btnInit.UseVisualStyleBackColor = true;
-            // 
-            // btnMonitor
-            // 
-            this.btnMonitor.Location = new System.Drawing.Point(108, 10);
-            this.btnMonitor.Name = "btnMonitor";
-            this.btnMonitor.Size = new System.Drawing.Size(90, 23);
-            this.btnMonitor.TabIndex = 15;
-            this.btnMonitor.Text = "监测表空间";
-            this.btnMonitor.UseVisualStyleBackColor = true;
-            // 
-            // btnData
-            // 
-            this.btnData.Location = new System.Drawing.Point(211, 39);
-            this.btnData.Name = "btnData";
-            this.btnData.Size = new System.Drawing.Size(90, 23);
-            this.btnData.TabIndex = 13;
-            this.btnData.Text = "模拟数据";
-            this.btnData.UseVisualStyleBackColor = true;
-            // 
-            // btnAch
-            // 
-            this.btnAch.Location = new System.Drawing.Point(211, 10);
-            this.btnAch.Name = "btnAch";
-            this.btnAch.Size = new System.Drawing.Size(90, 23);
-            this.btnAch.TabIndex = 14;
-            this.btnAch.Text = "归档滑动";
-            this.btnAch.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -388,6 +335,64 @@
             this.txtDBPath.TabIndex = 5;
             this.txtDBPath.Text = "D:\\Data\\";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnAuto);
+            this.panel1.Controls.Add(this.btnInit);
+            this.panel1.Controls.Add(this.btnMonitor);
+            this.panel1.Controls.Add(this.btnData);
+            this.panel1.Controls.Add(this.btnAch);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 427);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(312, 77);
+            this.panel1.TabIndex = 18;
+            // 
+            // btnAuto
+            // 
+            this.btnAuto.Location = new System.Drawing.Point(108, 39);
+            this.btnAuto.Name = "btnAuto";
+            this.btnAuto.Size = new System.Drawing.Size(90, 23);
+            this.btnAuto.TabIndex = 16;
+            this.btnAuto.Text = "自动归档滑动";
+            this.btnAuto.UseVisualStyleBackColor = true;
+            // 
+            // btnInit
+            // 
+            this.btnInit.Location = new System.Drawing.Point(8, 10);
+            this.btnInit.Name = "btnInit";
+            this.btnInit.Size = new System.Drawing.Size(90, 23);
+            this.btnInit.TabIndex = 1;
+            this.btnInit.Text = "初始化";
+            this.btnInit.UseVisualStyleBackColor = true;
+            // 
+            // btnMonitor
+            // 
+            this.btnMonitor.Location = new System.Drawing.Point(108, 10);
+            this.btnMonitor.Name = "btnMonitor";
+            this.btnMonitor.Size = new System.Drawing.Size(90, 23);
+            this.btnMonitor.TabIndex = 15;
+            this.btnMonitor.Text = "监测表空间";
+            this.btnMonitor.UseVisualStyleBackColor = true;
+            // 
+            // btnData
+            // 
+            this.btnData.Location = new System.Drawing.Point(211, 39);
+            this.btnData.Name = "btnData";
+            this.btnData.Size = new System.Drawing.Size(90, 23);
+            this.btnData.TabIndex = 13;
+            this.btnData.Text = "模拟数据";
+            this.btnData.UseVisualStyleBackColor = true;
+            // 
+            // btnAch
+            // 
+            this.btnAch.Location = new System.Drawing.Point(211, 10);
+            this.btnAch.Name = "btnAch";
+            this.btnAch.Size = new System.Drawing.Size(90, 23);
+            this.btnAch.TabIndex = 14;
+            this.btnAch.Text = "归档滑动";
+            this.btnAch.UseVisualStyleBackColor = true;
+            // 
             // dataGridView1
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -433,12 +438,7 @@
             this.txtLog.TabIndex = 32;
             this.txtLog.Text = "";
             // 
-            // labeltime
-            // 
-            this.labeltime.Name = "labeltime";
-            this.labeltime.Size = new System.Drawing.Size(0, 17);
-            // 
-            // MainForm
+            // DemoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -447,15 +447,15 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.statusStrip1);
-            this.Name = "MainForm";
-            this.Text = "数据库归档解决方案（分区-滑动窗口）";
+            this.Name = "DemoForm";
+            this.Text = "Demo数据库归档解决方案（分区-滑动窗口）";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
