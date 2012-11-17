@@ -26,18 +26,7 @@ namespace SlideWindowDemo
     分区函数合并（Partition Merge）,
     拆分（Partition Split）";
         #endregion
-        delegate void AppendMessageCallback(RichTextBox box, string text, Color forecolor, Color backcolor);
-        bool Adding = false;
-        string[] rot = "♫, ♬ ,♪ ,♩ ,♭ ,♪".Split(",".ToArray());
-        int c = 0;
-        string curr = "";
-        System.Windows.Forms.Timer tadd = new System.Windows.Forms.Timer();
-        bool moniting = false;
-        object syncdt = new object();
-        System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
-        System.Windows.Forms.Timer tauto = new System.Windows.Forms.Timer();
         InitSetting setting = null;
-        object syn = new object();
         public MainForm()
         {
             InitializeComponent();
