@@ -26,7 +26,18 @@ namespace SlideWindowDemo
     分区函数合并（Partition Merge）,
     拆分（Partition Split）";
         #endregion
-
+        delegate void AppendMessageCallback(RichTextBox box, string text, Color forecolor, Color backcolor);
+        bool Adding = false;
+        string[] rot = "♫, ♬ ,♪ ,♩ ,♭ ,♪".Split(",".ToArray());
+        int c = 0;
+        string curr = "";
+        System.Windows.Forms.Timer tadd = new System.Windows.Forms.Timer();
+        bool moniting = false;
+        object syncdt = new object();
+        System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
+        System.Windows.Forms.Timer tauto = new System.Windows.Forms.Timer();
+        InitSetting setting = null;
+        object syn = new object();
         public MainForm()
         {
             InitializeComponent();
@@ -35,6 +46,43 @@ namespace SlideWindowDemo
         private void MainForm_Load(object sender, EventArgs e)
         {
             welcomeWizardPage1.IntroductionText = page0Text;
+        }
+
+        private void wizardPage1_PageCommit(object sender, EventArgs e)
+        {
+            setting = new InitSetting()
+            {
+                Server = txtServer.Text,
+                UID = txtUid.Text,
+                Pwd = txtPwd.Text,
+                DBName = txtDBName.Text
+            };
+        }
+
+        private void wizardPage2_PageCommit(object sender, EventArgs e)
+        {
+            setting.DBPath = txtDBPath.Text;
+            setting.PartitionCount = txtPartitionCount.Text.ParseTo<int>();
+            setting.IntervalType = (EnumIntervalType)comboBox1.SelectedIndex;
+            setting.StartTime = txtStartTime.Text.ParseTo<DateTime>();
+            setting.Interval = txtInterval.Text.ParseTo<int>();
+        }
+
+        private void wizardPage3_PageCommit(object sender, EventArgs e)
+        {
+            setting.TName = cboTable.Text;
+            setting.ColName = cboCol.Text;
+            setting.TScript = "";
+        }
+
+        private void wizardControl1_FinishClick(object sender, CancelEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void wizardControl1_CancelClick(object sender, CancelEventArgs e)
+        {
+            this.Close();
         }
     }
 }
