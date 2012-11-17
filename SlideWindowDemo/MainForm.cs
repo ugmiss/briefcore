@@ -141,7 +141,13 @@ namespace SlideWindowDemo
         {
             setting.TName = cboTable.Text;
             setting.ColName = cboCol.Text;
+            // 追加分区
             exec.ExecuteNonQuery(SqlTexts.AppendGroup(setting));
+            // 添加分区函数
+            // 添加分区架构
+            // 修改表 移除主键
+            // 修改表 为分区表
+            //"alter table test DROP CONSTRAINT PK_test with (move to DataCenter_Partition_Scheme(times))";
             setting.TScript = "";
         }
 
