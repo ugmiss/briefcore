@@ -43,7 +43,7 @@ namespace SlideWindowDemo
             tt.Interval = 1000;
             tt.Tick += delegate { this.labeltime.Text = DateTime.Now.ToString(SystemKeys.SqlDateTime); };
             tt.Start();
-
+          
             this.txtScript.Text = @"if  exists (select name from sys.objects where name = N'{0}')
 drop table {0}
 create table [dbo].{0}(
@@ -144,7 +144,6 @@ ProductCount int not null
                         x = dbexec.ExecuteNonQuery(sql);
                         AppendDescriptionText("创建分区备份表完成");
 
-
                         AppendDescriptionText("开始创建分区索引");
                         sql = SqlTexts.CreatePartitionTableIndex(setting, false);
                         AppendCodeText(sql);
@@ -156,8 +155,6 @@ ProductCount int not null
                         AppendCodeText(sql);
                         x = dbexec.ExecuteNonQuery(sql);
                         AppendDescriptionText("创建分区备份索引完成");
-
-
                     }
                 }
                 //btnInit.Enabled = true;

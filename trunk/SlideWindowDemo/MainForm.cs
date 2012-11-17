@@ -6,10 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace SlideWindowDemo
 {
-    public partial class MainForm : Form
+    public partial class MainForm : XtraForm
     {
         #region const string
         const string page0Text = @"方案概要：
