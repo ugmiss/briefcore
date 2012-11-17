@@ -39,13 +39,7 @@ namespace SlideWindowDemo
 
         private void wizardPage1_PageCommit(object sender, EventArgs e)
         {
-            setting = new InitSetting()
-            {
-                Server = txtServer.Text,
-                UID = txtUid.Text,
-                Pwd = txtPwd.Text,
-                DBName = txtDBName.Text
-            };
+
         }
 
         private void wizardPage2_PageCommit(object sender, EventArgs e)
@@ -72,6 +66,27 @@ namespace SlideWindowDemo
         private void wizardControl1_CancelClick(object sender, CancelEventArgs e)
         {
             this.Close();
+        }
+        // 跳转前
+        private void wizardPage1_PageValidating(object sender, DevExpress.XtraWizard.WizardPageValidatingEventArgs e)
+        {
+            setting = new InitSetting()
+            {
+                Server = txtServer.Text,
+                UID = txtUid.Text,
+                Pwd = txtPwd.Text,
+                DBName = txtDBName.Text
+            };
+            try
+            {
+                BussinessExecuter exec = new BussinessExecuter(setting.ConnectionString);
+                exec.QueryDataRow("select 1");
+            }
+            catch
+            {
+                e.ErrorText = "数据库连接失败。";
+                e.Valid = false;
+            }
         }
     }
 }
