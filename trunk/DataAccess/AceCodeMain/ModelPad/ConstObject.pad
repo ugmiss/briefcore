@@ -1,0 +1,12 @@
+﻿    /// <summary>
+    /// [[classtxt]]
+    /// </summary>
+    public class [[class]]
+    {
+        [#/// <summary>
+        /// [[proptxt]]。
+        /// </summary>
+        public const string [[proptxt]] = "([prop])";
+        #]
+    }
+

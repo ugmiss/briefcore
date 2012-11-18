@@ -1,0 +1,17 @@
+﻿using System;
+using BusinessObject;
+
+namespace IBusinessLogic
+{
+    public interface I[[class]]Service
+    {
+        void Delete([[class]] target);
+        [[class]][] GetAll();
+        [[class]] GetByObject([[class]] target);
+        void Insert([[class]] target);
+        void InsertAll([[class]][] [[class]]Array);
+        void Update([[class]] target);
+        [[class]] Login([[class]] target);
+        void UpdatePass([[class]] target);
+    }
+}

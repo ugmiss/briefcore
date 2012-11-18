@@ -1,0 +1,199 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using DataAccess;
+using BusinessObject;
+using IBusinessLogic;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace BusinessLogic
+{
+    /// <summary>
+    /// [[classtxt]]业务。
+    /// </summary>
+    public class [[class]]Service : BasicLogic,I[[class]]Service
+    {
+        /// <summary>
+        /// 构造方法。
+        /// </summary>
+        public [[class]]Service()
+        {
+        }
+        /// <summary>
+        /// 获取全部。
+        /// </summary>
+        public [[class]][] GetAll()
+        {
+            DataTable dataTable = this.Executer.QueryTable("select * from [(class)]");
+            List<[[class]]> [(class)]List=new List<[[class]]>();
+            if (dataTable != null)
+            {
+                foreach(DataRow dataRow in dataTable.Rows)
+                {
+                   [[class]] taget=new [[class]](dataRow);
+                    [(class)]List.Add(taget);
+                }
+                return [(class)]List.ToArray();
+            }
+            else
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// 添加对象。
+        /// </summary>
+        public void Insert([[class]] target)
+        {
+			target.[[upass]]=Encode(target.[[upass]]);
+            this.Executer.NonQuery("insert into [(class)] values([*{@propN@},*])",[*target.[[prop]],*]);
+        }
+        /// <summary>
+        /// 添加对象数组。
+        /// </summary>
+        public void InsertAll([[class]] [] [(class)]Array)
+        {
+            foreach([[class]] target in [(class)]Array)
+            {
+				target.[[upass]]=Encode(target.[[upass]]);
+                this.Executer.NonQuery("insert into [(class)]  values([*{@propN@},*])",[*target.[[prop]],*]);
+            }
+        }
+        /// <summary>
+        /// 删除对象。
+        /// </summary>
+        public void Delete([[class]] target)
+        {
+            this.Executer.NonQuery("delete from [(class)]  where [[pkey]]={0}",target.[[pkeybig]]);
+        }
+        /// <summary>
+        /// 更新对象。
+        /// </summary>
+        public void Update([[class]] target)
+        {
+            this.Executer.NonQuery("update [(class)] set [*[(prop)]={@propN@},*] where [[pkey]]={[[propcount]]}",[#target.[[prop]],#] target.[[pkeybig]]);
+        }
+        
+        /// <summary>
+        /// 根据主键获取对象。
+        /// </summary>
+        public [[class]] GetByObject([[class]] target)
+        {
+            DataRow dataRow = this.Executer.QueryRow("select * from [(class)] where [[pkey]]={0}",target.[[pkeybig]]);
+            if (dataRow != null)
+            {
+                [[class]] result=new [[class]](dataRow);
+                return result;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// 更新对象。
+        /// </summary>
+        public void UpdatePass([[class]] target)
+        {
+            target.[[upass]]=Encode(target.[[upass]]);
+            this.Executer.NonQuery("update [(class)] set  [(uid)]={0},[(upass)]={1} where [(uid)]={2}", target.[[uid]], target.[[upass]], target.[[uid]]);
+        }
+        
+         public [[class]] Login([[class]] target)
+        {
+            target.[[upass]]=Encode(target.[[upass]]);
+            DataRow dataRow = this.Executer.QueryRow("select * from [(class)] where [(uid)]={0} and [(upass)]={1}", target.[[uid]],target.[[upass]]);
+            if (dataRow != null)
+            {
+                [[class]] result = new [[class]](dataRow);
+                return result;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// MD5的编码器。
+        /// </summary>
+        private static System.Security.Cryptography.MD5 m_MD5Provider = new MD5CryptoServiceProvider();
+        /// <summary>
+        /// MD5编码。
+        /// </summary>
+        /// <param name="data">待编码字符串数据。</param>
+        /// <returns>编码结果。</returns>
+        public static string Encode(string data)
+        {
+            if (data == null || data.Length == 0)
+                return null;
+            else
+            {
+                byte[] input = Encoding.Default.GetBytes(data);
+                m_MD5Provider.Initialize();
+                return Convert.ToBase64String(m_MD5Provider.ComputeHash(input, 0, input.Length));
+            }
+        }
+        [#
+        /// <summary>
+        /// 获取[[proptxt]]。
+        /// </summary>
+        public [[class]] GetFirstBy[[prop]]([[proptype]] [[prop]])
+        {
+           
+           DataRow dataRow = this.Executer.QueryRow("select * from [(class)] where [(prop)]={0}",[[prop]]);
+            if (dataRow != null)
+            {
+                [[class]] result=new [[class]](dataRow);
+                return result;
+            }
+            else
+            {
+                return null;
+            }
+           
+           
+        }
+        #]
+        [#
+        /// <summary>
+        /// 获取[[proptxt]]。
+        /// </summary>
+        public [[class]][] GetAllBy[[prop]]([[proptype]] [[prop]])
+        {
+            DataTable dataTable = this.Executer.QueryTable("select * from [(class)] where [(prop)]={0}",[[prop]]);
+            List<[[class]]> [(class)]List=new List<[[class]]>();
+            if (dataTable != null)
+            {
+                foreach(DataRow dataRow in dataTable.Rows)
+                {
+                   [[class]] taget=new [[class]](dataRow);
+                    [(class)]List.Add(taget);
+                }
+                return [(class)]List.ToArray();
+            }
+            else
+            {
+                return null;
+            }
+        }
+        #]
+        
+        
+        /// <summary>
+        /// MD5编码。
+        /// </summary>
+        /// <param name="data">待编码数据。</param>
+        /// <returns>编码结果。(16字节)</returns>
+        public static byte[] Encode(byte[] data)
+        {
+            if (data == null || data.Length == 0)
+                return null;
+            else
+            {
+                m_MD5Provider.Initialize();
+                return m_MD5Provider.ComputeHash(data, 0, data.Length);
+            }
+        }
+    }
+}

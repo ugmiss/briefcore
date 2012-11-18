@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using BusinessLogic;
+using IBusinessLogic;
+
+namespace Adapter
+{
+    public class Proxy
+    {
+        static Dictionary<string, Type> Mapping = new Dictionary<string, Type>();
+
+        [#//IBusinessLogic.I[[prop]]Service  _I[[prop]]Service = Adapter.Proxy.GetService(typeof(IBusinessLogic.I[[prop]]Service).Name) as IBusinessLogic.I[[prop]]Service;
+	    #]
+        static Proxy()
+        {
+            [#Mapping.Add(typeof(I[[prop]]Service).Name, typeof([[prop]]Service));
+            #]
+        }
+
+        public static object GetService(string tname)
+        {
+            object instance = Activator.CreateInstance(Mapping[tname]);
+
+            return instance;
+        }
+    }
+}
