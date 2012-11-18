@@ -1,0 +1,16 @@
+F:\FastText\TelerikUsing\obj\Debug\ResolveAssemblyReference.cache
+F:\FastText\TelerikUsing\obj\Debug\TelerikUsing.csproj.GenerateResource.Cache
+F:\FastText\TelerikUsing\bin\Debug\TelerikUsing.dll
+F:\FastText\TelerikUsing\bin\Debug\TelerikUsing.pdb
+F:\FastText\TelerikUsing\obj\Debug\TelerikUsing.dll
+F:\FastText\TelerikUsing\obj\Debug\TelerikUsing.pdb
+F:\FastText\TelerikUsing\obj\Debug\TelerikUsing.AboutBox.resources
+F:\FastText\TelerikUsing\obj\Debug\TelerikUsing.ExBoxForm.resources
+H:\FastText\TelerikUsing\bin\Debug\TelerikUsing.dll
+H:\FastText\TelerikUsing\bin\Debug\TelerikUsing.pdb
+H:\FastText\TelerikUsing\obj\Debug\ResolveAssemblyReference.cache
+H:\FastText\TelerikUsing\obj\Debug\TelerikUsing.AboutBox.resources
+H:\FastText\TelerikUsing\obj\Debug\TelerikUsing.ExBoxForm.resources
+H:\FastText\TelerikUsing\obj\Debug\TelerikUsing.csproj.GenerateResource.Cache
+H:\FastText\TelerikUsing\obj\Debug\TelerikUsing.dll
+H:\FastText\TelerikUsing\obj\Debug\TelerikUsing.pdb
