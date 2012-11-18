@@ -157,7 +157,7 @@
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(139, 22);
             this.txtPwd.TabIndex = 24;
-            this.txtPwd.Text = "123456";
+            this.txtPwd.Text = "sa";
             // 
             // label7
             // 
