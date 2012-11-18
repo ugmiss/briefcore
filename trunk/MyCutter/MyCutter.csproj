@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7D61207F-B3FC-4516-B022-8BD2409A0577}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyCutter</RootNamespace>
+    <AssemblyName>MyCutter</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>.\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookForm.Designer.cs">
+      <DependentUpon>BookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="CommonResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CutterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CutterForm.Designer.cs">
+      <DependentUpon>CutterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ActionDetail.cs" />
+    <Compile Include="Model\Block.cs" />
+    <Compile Include="Model\Book.cs" />
+    <Compile Include="Model\Page.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Telerik\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telerik\AboutBox.designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telerik\CtrlUsing.cs" />
+    <Compile Include="Telerik\ExBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telerik\ExBoxForm.designer.cs">
+      <DependentUpon>ExBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telerik\FormUsing.cs" />
+    <Compile Include="Telerik\Localization.cs" />
+    <Compile Include="Telerik\MsgBox.cs" />
+    <Compile Include="Telerik\Validator.cs" />
+    <Compile Include="PageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageForm.Designer.cs">
+      <DependentUpon>PageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BlockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlockForm.Designer.cs">
+      <DependentUpon>BlockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailForm.Designer.cs">
+      <DependentUpon>DetailForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BookForm.resx">
+      <DependentUpon>BookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CutterForm.resx">
+      <DependentUpon>CutterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PageForm.resx">
+      <DependentUpon>PageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlockForm.resx">
+      <DependentUpon>BlockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telerik\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telerik\ExBoxForm.resx">
+      <DependentUpon>ExBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailForm.resx">
+      <DependentUpon>DetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon\保存图书.png" />
+    <Content Include="icon\关于.png" />
+    <Content Include="icon\帮助.png" />
+    <Content Include="icon\打开图书.png" />
+    <Content Include="icon\新建图书.png" />
+    <Content Include="icon\新建块.png" />
+    <Content Include="icon\设置背景.png" />
+    <Content Include="images\yoyo.png" />
+    <Content Include="images\保存.gif" />
+    <Content Include="images\关于.gif" />
+    <Content Include="images\关闭.gif" />
+    <Content Include="images\发布.gif" />
+    <Content Include="images\复制.gif" />
+    <Content Include="images\帮助.gif" />
+    <Content Include="images\帮助文档.gif" />
+    <Content Include="images\打开.gif" />
+    <Content Include="images\文件.gif" />
+    <Content Include="images\粘贴.gif" />
+    <Content Include="images\维护历史文档.gif" />
+    <Content Include="images\退出.gif" />
+    <Content Include="images\配置.gif" />
+    <EmbeddedResource Include="Newtonsoft.Json.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{8D45C50B-B6AF-4E1D-BB1B-23AD9ACA1A69}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
