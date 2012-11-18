@@ -1,0 +1,29 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using DataAccess;
+using BusinessObject;
+using BusinessLogic;
+
+/// <summary>
+/// 业务。
+/// </summary>
+public class Factory 
+{
+	[#/// <summary>
+	/// <summary>
+	/// 获取[[proptxt]]。
+	/// </summary>
+	private static [[prop]]Service _[[prop]]Service;
+   
+	public static [[prop]]Service [[prop]]Service
+	{
+		get {
+		 if(_[[prop]]Service==null)
+			_[[prop]]Service = new [[prop]]Service(); 
+		 return _[[prop]]Service;
+		 }
+	}
+	#]
+}
+

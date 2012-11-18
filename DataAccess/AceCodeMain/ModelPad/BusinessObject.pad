@@ -1,0 +1,43 @@
+﻿using System;
+using System.Data;
+
+namespace BusinessObject
+{
+    /// <summary>
+    /// [[classtxt]]
+    /// </summary>
+    public class [[class]]
+    {
+        [#/// <summary>
+        /// [[proptxt]]。
+        /// </summary>
+        private [[proptype]] [(prop)];
+        /// <summary>
+        /// 设置和获取[[proptxt]]。
+        /// </summary>
+        public [[proptype]] [[prop]]
+        {
+            get { return  [(prop)]; }
+            set { [(prop)] = value; }
+        }
+        #]/// <summary>
+        /// 构造方法。
+        /// </summary>
+        public [[class]]()
+        { 
+        }
+        /// <summary>
+        /// 数据行构造方法。
+        /// </summary>
+        /// <param name="dataRow">数据行。</param>
+        public [[class]](DataRow dataRow)
+        {
+            if (dataRow != null)
+            {
+                [#if (!(dataRow["[(prop)]"] is DBNull))
+                    this.[(prop)] = Convert.[[propconvert]](dataRow["[(prop)]"]);
+                #]
+            }
+        }
+    }
+}

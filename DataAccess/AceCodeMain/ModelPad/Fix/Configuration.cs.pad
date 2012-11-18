@@ -1,0 +1,38 @@
+﻿using System;
+using System.IO;
+using System.Data;
+using System.Data.SqlClient;
+using DataAccess;
+
+namespace BusinessLogic
+{
+    public class Configuration
+    {
+        public static string connectionString;
+        public static SqlConnection _connection;
+        static Configuration()
+        {
+            connectionString = "[[conn]]";
+            _connection = new SqlConnection(connectionString);
+        }
+        private static SqlExecuter _Executer = null;
+
+        public static SqlExecuter Executer
+        {
+            get { return Configuration._Executer; }
+            set { Configuration._Executer = value; }
+        }
+        public static SqlExecuter GetExecuter()
+        {
+            if (Executer == null)
+            {
+                Executer = new SqlExecuter();
+                Executer.Connection = Configuration._connection;
+                Executer.Connection.Close();
+                Executer.Connection.Open();
+            }
+            return Executer;
+        }
+
+    }
+}
