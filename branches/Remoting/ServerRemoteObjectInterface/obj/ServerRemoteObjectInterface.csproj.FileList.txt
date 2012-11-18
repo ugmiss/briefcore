@@ -1,0 +1,7 @@
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\ServerRemoteObjectInterface.dll
+bin\Debug\ServerRemoteObjectInterface.pdb
+bin\Debug\Entities.dll
+bin\Debug\Entities.pdb
+obj\Debug\ServerRemoteObjectInterface.dll
+obj\Debug\ServerRemoteObjectInterface.pdb
