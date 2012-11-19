@@ -20,6 +20,27 @@ namespace System
                 return Conn.Database;
             }
         }
+        /// <summary>
+        /// 测试数据库连接
+        /// </summary>
+        /// <param name="second">超时秒数</param>
+        /// <returns></returns>
+        public bool TestConnection(int second)
+        {
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(ConnectionString + ";Connection Timeout=" + second))
+                {
+                    Connection.Open();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         // 事务对象
         SqlTransaction Transaction { get; set; }
         // 构造

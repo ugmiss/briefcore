@@ -134,6 +134,8 @@ namespace SlideWindowDemo
                 {
                     cboCol.SelectedIndex = 0;
                 }
+                lisIndex.Items.Clear();
+
             }
         }
 
@@ -171,14 +173,11 @@ namespace SlideWindowDemo
                 Pwd = txtPwd.Text,
                 DBName = txtDBName.Text
             };
-            try
+
+            exec = new BussinessExecuter(setting.ConnectionString);
+            if (!exec.TestConnection(1))
             {
-                exec = new BussinessExecuter(setting.ConnectionString);
-                exec.QueryDataRow("select 1");
-            }
-            catch
-            {
-                e.ErrorText = "数据库连接失败。";
+                MsgBox.Show("数据库连接失败。");
                 e.Valid = false;
             }
         }
