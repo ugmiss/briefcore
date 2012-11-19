@@ -60,6 +60,8 @@
             this.cboCol = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cboTable = new System.Windows.Forms.ComboBox();
+            this.lisIndex = new System.Windows.Forms.ListBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.wizardControl1.SuspendLayout();
@@ -157,7 +159,7 @@
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(139, 22);
             this.txtPwd.TabIndex = 24;
-            this.txtPwd.Text = "sa";
+            this.txtPwd.Text = "123456";
             // 
             // label7
             // 
@@ -342,6 +344,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.lisIndex);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.cboCol);
             this.groupBox3.Controls.Add(this.label9);
@@ -376,9 +380,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(14, 27);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(164, 14);
+            this.label9.Size = new System.Drawing.Size(168, 14);
             this.label9.TabIndex = 5;
-            this.label9.Text = "分区表        （Table Name）";
+            this.label9.Text = "分区表         （Table Name）";
             // 
             // cboTable
             // 
@@ -387,6 +391,24 @@
             this.cboTable.Name = "cboTable";
             this.cboTable.Size = new System.Drawing.Size(140, 22);
             this.cboTable.TabIndex = 0;
+            // 
+            // lisIndex
+            // 
+            this.lisIndex.FormattingEnabled = true;
+            this.lisIndex.ItemHeight = 14;
+            this.lisIndex.Location = new System.Drawing.Point(216, 82);
+            this.lisIndex.Name = "lisIndex";
+            this.lisIndex.Size = new System.Drawing.Size(140, 144);
+            this.lisIndex.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(14, 82);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(169, 14);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "索引            （Index Name）";
             // 
             // MainForm
             // 
@@ -451,5 +473,7 @@
         private System.Windows.Forms.ComboBox cboCol;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboTable;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ListBox lisIndex;
     }
 }
