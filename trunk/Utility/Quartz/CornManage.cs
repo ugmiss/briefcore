@@ -11,12 +11,22 @@ namespace Utility.Quartz
     public class CornManage
     {
         /// <summary>
-        /// 验证Corn表达式的时间。
+        /// 验证Corn表达式的时间。5+1位，首位分
         /// </summary>
         /// <param name="cornRule"></param>
         /// <param name="datetime"></param>
         /// <returns></returns>
-        public static bool ValidateCornDate(string cornRule, DateTime datetime)
+        public static bool ValidateCornDateByMinute(string cornRule, DateTime datetime)
+        {
+            return ValidateCornDateBySecond("* " + cornRule, datetime);
+        }
+        /// <summary>
+        /// 验证Corn表达式的时间。6+1位，首位秒
+        /// </summary>
+        /// <param name="cornRule"></param>
+        /// <param name="datetime"></param>
+        /// <returns></returns>
+        public static bool ValidateCornDateBySecond(string cornRule, DateTime datetime)
         {
             string[] arr = cornRule.Split(' ');
             //秒 0-59 , - * / 
