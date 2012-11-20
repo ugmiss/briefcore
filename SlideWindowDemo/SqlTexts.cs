@@ -274,7 +274,7 @@ alter table {0} add  constraint {1} primary key nonclustered
         public static string UpdateIX(string tablename, string pkname, string cols,
             string DbName, string col)
         {
-            return @"{
+            return @"
 CREATE CLUSTERED INDEX {0} ON {1} 
 (
 	{2} ASC
