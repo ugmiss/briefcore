@@ -1,0 +1,13 @@
+#summary sql优化的方方面面
+
+ * 开启IO统计，在查询分析器中观察扫描和读取的次数
+set statistics io on
+ * 查看表的索引碎片
+select index_type_desc,alloc_unit_type_desc,avg_fragmentation_in_percent,fragment_count,avg_fragment_size_in_pages,page_count,record_count,avg_page_space_used_in_percent
+FROM sys.dm_db_index_physical_stats(DB_ID(''),OBJECT_ID('table1'),NULL,NULL,'Sampled')
+
+avg_fragmentation_in_percent超过40%需要索引重建，减少IO
+ * 索引重建:
+alter index IX_table1 on table1 rebuild
+ * 更新这些统计信息，当随着表数据量的增大，当执行计划中估计行数和实际表的行数有出入时使用:
+update statistics 表名
