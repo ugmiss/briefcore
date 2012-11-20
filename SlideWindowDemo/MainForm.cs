@@ -103,12 +103,26 @@ namespace SlideWindowDemo
             setting.TName = cboTable.Text;
             setting.ColName = cboCol.Text;
             // 追加分区
-            exec.ExecuteNonQuery(SqlTexts.AppendGroup(setting));
+            try
+            {
+                exec.ExecuteNonQuery(SqlTexts.AppendGroup(setting));
+            }
+            catch
+            {
+
+            }
             // 添加分区函数
             exec.ExecuteNonQuery(SqlTexts.RemovePartitionFunc(setting));
-            exec.ExecuteNonQuery(SqlTexts.CreatePartitionFunc(setting));
-            // 添加分区架构
-            exec.ExecuteNonQuery(SqlTexts.CreatePartitionScheme(setting));
+            try
+            {
+                exec.ExecuteNonQuery(SqlTexts.CreatePartitionFunc(setting));
+                // 添加分区架构
+                exec.ExecuteNonQuery(SqlTexts.CreatePartitionScheme(setting));
+            }
+            catch
+            {
+            }
+           
             // 修改表 移除主键
             string tablename = cboTable.SelectedItem.ToString();
             string col = cboCol.SelectedItem.ToString();
