@@ -275,13 +275,13 @@ alter table {0} add  constraint {1} primary key nonclustered
             string DbName, string col)
         {
             return @"{
-CREATE CLUSTERED INDEX {1} ON {0} 
+CREATE CLUSTERED INDEX {0} ON {1} 
 (
 	{2} ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, 
 SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = ON, 
 ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON {3}_Partition_Scheme({4})"
-.FormatWith(tablename, pkname, cols);
+.FormatWith(pkname, tablename, cols, DbName, col);
         }
     }
 }
