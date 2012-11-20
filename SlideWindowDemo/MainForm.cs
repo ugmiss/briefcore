@@ -70,50 +70,7 @@ namespace SlideWindowDemo
             if (cboTable.SelectedItem.ToString() != "")
             {
                 string tablename = cboTable.SelectedItem.ToString();
-                string sql =
-                     @"select isnull(identity_columns.is_identity ,0) is_identity,
-                 isnull(pk.is_primary_key,0) pk,Col.is_nullable is_nullable,
-                 (CASE
-                 WHEN Type.name = 'uniqueidentifier' THEN 'string'
-                 WHEN Type.name = 'char' THEN 'string'
-                 WHEN Type.name = 'nchar' THEN 'string'
-                 WHEN Type.name = 'varchar' THEN 'string'
-                 WHEN Type.name = 'nvarchar' THEN 'string'
-                 WHEN Type.name = 'text' THEN 'string'
-                 WHEN Type.name = 'ntext' THEN 'string'
-                 WHEN Type.name = 'xml' THEN 'string'
-                 WHEN Type.name = 'image' THEN 'byte[]'
-                 WHEN Type.name = 'timestamp' THEN 'byte[]'
-                 WHEN Type.name = 'binary' THEN 'byte[]'
-                 WHEN Type.name = 'varbinary' THEN 'byte[]'
-                 WHEN Type.name = 'tinyint' THEN 'byte'
-                 WHEN Type.name = 'int' THEN 'int'
-                 WHEN Type.name = 'smallint' THEN 'short'
-                 WHEN Type.name = 'bigint' THEN 'long'
-                 WHEN Type.name = 'float' THEN 'double'
-                 WHEN Type.name = 'real' THEN 'float'
-                 WHEN Type.name = 'money' THEN 'decimal'
-                 WHEN Type.name = 'smallmoney' THEN 'decimal'
-                 WHEN Type.name = 'decimal' THEN 'decimal'
-                 WHEN Type.name = 'numeric' THEN 'decimal'
-                 WHEN Type.name = 'time' THEN 'DateTime'
-                 WHEN Type.name = 'datetime' THEN 'DateTime'
-                 WHEN Type.name = 'smalldatetime' THEN 'DateTime'
-                 WHEN Type.name = 'bit' THEN 'bool'
-                 WHEN Type.name = 'sql_variant' THEN 'object'
-                 ELSE Type.name
-                 END) [type], 
-                 STUFF(Col.Name,1,1,UPPER(SUBSTRING(Col.Name,1,1))) [propname] 
-                 from sys.objects Tab inner join sys.columns Col on Tab.object_id =Col.object_id
-                 inner join sys.types Type on Col.system_type_id = Type.system_type_id
-                 left join sys.identity_columns identity_columns on  Tab.object_id = identity_columns.object_id and Col.column_id = identity_columns.column_id
-                 left join(
-                 select index_columns.object_id,index_columns.column_id,indexes.is_primary_key 
-                 from sys.indexes  indexes inner join sys.index_columns index_columns 
-                 on indexes.object_id = index_columns.object_id and indexes.index_id = index_columns.index_id
-                 where indexes.is_primary_key = 1
-               ) PK on Tab.object_id = PK.object_id AND Col.column_id = PK.column_id
-               where Type.Name <> 'sysname' and (Tab.type = 'U' or Tab.type='V')  and Tab.Name<>'sysdiagrams' and Tab.Name='" + tablename + "'  order by Col.object_id";
+                string sql = SqlTexts.GetTableInfo(tablename);
                 List<string> fields = new List<string>();
                 foreach (DataRow dr in exec.QueryDataTable(sql).Rows)
                 {
@@ -139,6 +96,8 @@ namespace SlideWindowDemo
             }
         }
 
+
+
         private void wizardPage3_PageCommit(object sender, EventArgs e)
         {
             setting.TName = cboTable.Text;
@@ -146,10 +105,39 @@ namespace SlideWindowDemo
             // 追加分区
             exec.ExecuteNonQuery(SqlTexts.AppendGroup(setting));
             // 添加分区函数
+            exec.ExecuteNonQuery(SqlTexts.RemovePartitionFunc(setting));
+            exec.ExecuteNonQuery(SqlTexts.CreatePartitionFunc(setting));
             // 添加分区架构
+            exec.ExecuteNonQuery(SqlTexts.CreatePartitionScheme(setting));
             // 修改表 移除主键
+            string tablename = cboTable.SelectedItem.ToString();
+            string col = cboCol.SelectedItem.ToString();
+            DataTable dtindex = exec.QueryDataTable(SqlTexts.GetTableIndexInfo(tablename));
+            bool flag = false;
+            foreach (DataRow dr in dtindex.Rows)
+            {
+                string cluster = dr.Field<string>("cluster");
+                string cols = dr.Field<string>("Co_Names");
+                if (cluster.ToLower() == "clustered")
+                {
+                    string ixName = dr.Field<string>("Index_Name");
+                    bool ispk = dr.Field<bool>("is_primary_key");
+                    if (ispk)
+                    {
+                        exec.ExecuteNonQuery(SqlTexts.UpdatePK(tablename, ixName, cols));
+                    }
+                    else
+                    {
+                        exec.ExecuteNonQuery(SqlTexts.UpdateIX(tablename, ixName, cols, setting.DBName, col));
+                        flag = true;
+                    }
+                }
+            }
             // 修改表 为分区表
-            //"alter table test DROP CONSTRAINT PK_test with (move to DataCenter_Partition_Scheme(times))";
+            if (!flag)
+            {
+                exec.ExecuteNonQuery(SqlTexts.UpdateIX(tablename, "IX_" + tablename + col, col, setting.DBName, col));
+            }
             setting.TScript = "";
         }
 
