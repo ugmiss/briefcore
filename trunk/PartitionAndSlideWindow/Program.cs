@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace SlideWindowDemo
+namespace PartitionAndSlideWindow
 {
     static class Program
     {

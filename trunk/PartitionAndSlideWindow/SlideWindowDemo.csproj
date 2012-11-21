@@ -8,8 +8,8 @@
     <ProjectGuid>{BE441B5B-3B93-40BF-84FE-3D69F478C10F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SlideWindowDemo</RootNamespace>
-    <AssemblyName>SlideWindowDemo</AssemblyName>
+    <RootNamespace>PartitionAndSlideWindow</RootNamespace>
+    <AssemblyName>PartitionAndSlideWindow</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

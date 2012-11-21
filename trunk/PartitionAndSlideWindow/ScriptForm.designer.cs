@@ -1,4 +1,4 @@
-﻿namespace SlideWindowDemo
+﻿namespace PartitionAndSlideWindow
 {
     partial class ScriptForm
     {
