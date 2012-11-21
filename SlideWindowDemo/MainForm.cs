@@ -92,7 +92,6 @@ namespace SlideWindowDemo
                     cboCol.SelectedIndex = 0;
                 }
                 lisIndex.Items.Clear();
-
             }
         }
 
@@ -122,7 +121,7 @@ namespace SlideWindowDemo
             catch
             {
             }
-           
+
             // 修改表 移除主键
             string tablename = cboTable.SelectedItem.ToString();
             string col = cboCol.SelectedItem.ToString();
@@ -150,9 +149,10 @@ namespace SlideWindowDemo
             // 修改表 为分区表
             if (!flag)
             {
-                exec.ExecuteNonQuery(SqlTexts.UpdateIX(tablename, "IX_" + tablename + col, col, setting.DBName, col));
+                exec.ExecuteNonQuery(SqlTexts.CreateIX(tablename, "IX_" + tablename + col, col, setting.DBName, col));
             }
-            setting.TScript = "";
+            setting.TScript = SqlTexts.GetScript(setting);
+            new ScriptForm(setting.TScript).ShowDialog();
         }
 
         private void wizardControl1_FinishClick(object sender, CancelEventArgs e)

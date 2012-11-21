@@ -283,5 +283,131 @@ SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = ON,
 ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON {3}_Partition_Scheme({4})"
 .FormatWith(pkname, tablename, cols, DbName, col);
         }
+        public static string CreateIX(string tablename, string pkname, string cols,
+           string DbName, string col)
+        {
+            return @"
+CREATE CLUSTERED INDEX {0} ON {1} 
+(
+	{2}
+)WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON {3}_Partition_Scheme({4})"
+                .FormatWith(pkname, tablename, cols, DbName, col);
+        }
+
+        public static string GetScript(InitSetting setting)
+        {
+            string intervalName = "";
+            switch (setting.IntervalType)
+            {
+                case EnumIntervalType.Month:
+                    intervalName = "month";
+                    break;
+                case EnumIntervalType.Day:
+                    intervalName = "day";
+                    break;
+                case EnumIntervalType.Hour:
+                    intervalName="hour";
+                    break;
+                case EnumIntervalType.Minute:
+                    intervalName = "minute";
+                    break;
+                case EnumIntervalType.Second:
+                    intervalName = "second";
+                    break;
+            }
+            string sql = @"--创建分区状态临时表
+select  p.partition_number No, 
+ds2.name as filegroup, 
+convert(varchar(19), isnull(v.value, ''), 120) as range_boundary, 
+str(p.rows, 9) as rows
+into #snap
+from sys.indexes i 
+join sys.partition_schemes ps on i.data_space_id = ps.data_space_id 
+join sys.destination_data_spaces dds
+on ps.data_space_id = dds.partition_scheme_id 
+join sys.data_spaces ds2 on dds.data_space_id = ds2.data_space_id 
+join sys.partitions p on dds.destination_id = p.partition_number
+and p.object_id = i.object_id and p.index_id = i.index_id 
+join sys.partition_functions pf on ps.function_id = pf.function_id 
+LEFT JOIN sys.Partition_Range_values v on pf.function_id = v.function_id
+and v.boundary_id = p.partition_number - pf.boundary_value_on_right 
+WHERE i.object_id = object_id('{0}')
+and i.index_id in (0, 1)
+order by No
+
+--边界开始时间
+declare @startime datetime
+--边界结束时间
+declare @endtime datetime
+--边界结束时间
+declare @newendtime datetime
+--边界开始文件组（一般为第二个文件组）
+declare @first_filegroup nvarchar(50)
+--边界结束文件组
+declare @last_filegroup nvarchar(50)
+--间隔-1
+declare @count int
+select @count=(count(1)-2) from #snap
+
+select top 1 
+@startime=cast( range_boundary as datetime),
+@first_filegroup=[filegroup] 
+from #snap where range_boundary<>''
+
+select top 1 
+@endtime=cast( range_boundary as datetime),
+@last_filegroup=[filegroup] 
+from #snap where range_boundary<>''
+order by cast( range_boundary as datetime) desc
+drop table #snap
+
+--select @startime
+--select @endtime
+--select @first_filegroup
+--select @last_filegroup
+--计算新分割点
+select  @newendtime=dateadd({2},datediff({2},@startime,@endtime)/@count,@endtime)
+
+--select  @newendtime
+
+select * into Temp from {0} where 1=0
+--select * from Temp
+CREATE CLUSTERED INDEX TempIxName ON Temp 
+(
+	{3}
+)
+WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) 
+on [{1}_Partition_Scheme]({3})
+--switch
+alter table {0} switch partition 1 to Temp partition 1
+alter table {0} switch partition 2 to Temp partition 2
+drop table Temp
+--merge
+alter partition function {1}_Partition_Func()merge range (cast(@startime as nvarchar(50)))  
+--next use
+EXECUTE (N'alter partition scheme {1}_Partition_Scheme next used '+@first_filegroup) 
+--split 
+alter partition function {1}_Partition_Func()split range (cast(@newendtime as nvarchar(50)))
+
+select  p.partition_number No, 
+ds2.name as filegroup, 
+convert(varchar(19), isnull(v.value, ''), 120) as range_boundary, 
+str(p.rows, 9) as rows
+from sys.indexes i 
+join sys.partition_schemes ps on i.data_space_id = ps.data_space_id 
+join sys.destination_data_spaces dds
+on ps.data_space_id = dds.partition_scheme_id 
+join sys.data_spaces ds2 on dds.data_space_id = ds2.data_space_id 
+join sys.partitions p on dds.destination_id = p.partition_number
+and p.object_id = i.object_id and p.index_id = i.index_id 
+join sys.partition_functions pf on ps.function_id = pf.function_id 
+LEFT JOIN sys.Partition_Range_values v on pf.function_id = v.function_id
+and v.boundary_id = p.partition_number - pf.boundary_value_on_right 
+WHERE i.object_id = object_id('{0}')
+and i.index_id in (0, 1)
+order by No
+";
+            return sql.FormatWith(setting.TName, setting.DBName, intervalName, setting.ColName);
+        }
     }
 }

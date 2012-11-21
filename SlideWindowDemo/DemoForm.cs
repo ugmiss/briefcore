@@ -371,12 +371,7 @@ go", Color.Blue, Color.White);
             };
             t.Start();
         }
-
-
-
     }
-
-
    
     [Description("IsTable")]
     public class Orders
