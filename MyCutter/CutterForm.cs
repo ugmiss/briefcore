@@ -291,16 +291,16 @@ namespace MyCutter
             {
                 if (CurrentPage == null) return;
                 Graphics g = e.Graphics;
-                if (!CurrentPage.BackgroundImage.IsEmpty())
+                if (!CurrentPage.BackgroundImage.IsNullOrEmpty())
                     e.Graphics.DrawImage(Image.FromFile(Common.GetResouce(CurrentBook.BookName + "\\resources\\", CurrentPage.BackgroundImage)), 0, 0, CurrentBook.Width, CurrentBook.Height);
-                else if (!CurrentBook.Background.IsEmpty())
+                else if (!CurrentBook.Background.IsNullOrEmpty())
                     e.Graphics.DrawImage(Image.FromFile(Common.GetResouce(CurrentBook.BookName + "\\resources\\", CurrentBook.Background)), 0, 0, CurrentBook.Width, CurrentBook.Height);
 
 
                 if (CurrentPage.Blocks != null)
                     foreach (Block block in CurrentPage.Blocks)
                     {
-                        if (block.BlockType == "Pic" && block.BlockResource.NotEmpty())
+                        if (block.BlockType == "Pic" && block.BlockResource.IsNullOrEmpty())
                         {
                             e.Graphics.DrawImage(Image.FromFile(Common.GetResouce(CurrentBook.BookName + "\\resources\\", block.BlockResource)), block.X, block.Y, block.Width, block.Height);
                         }
@@ -354,7 +354,7 @@ namespace MyCutter
                 //Directory.CreateDirectory(path);
                 Directory.CreateDirectory(path);
                 Directory.CreateDirectory(path2);
-                if (!bf.Book.Background.IsEmpty())
+                if (!bf.Book.Background.IsNullOrEmpty())
                 {
                     bf.Book.Background = Common.AddResouce(bf.Book.BookName, bf.Book.Background, path2 + Common.GetShortFileName(bf.Book.Background));
                 }
@@ -420,7 +420,7 @@ namespace MyCutter
             {
                 PageInfo info = new PageInfo();
                 info.Index = page.Index;
-                info.PageJsonFileName = page.Name + "."+Comb.NewStringGuid()+".json";
+                info.PageJsonFileName = page.Name + "." + Comb.NewGuid() + ".json";
                 Newtonsoft.Json.JsonConvert.SerializeObject(page).WriteToFile(path + "\\" + info.PageJsonFileName);
                 li.Add(info.PageJsonFileName);
             }

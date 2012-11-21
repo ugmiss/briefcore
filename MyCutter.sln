@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "yoyoHelper", "yoyoHelper\yoyoHelper.vdproj", "{40CD1A39-656F-4AA1-8D8A-7614DCEDDF8D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,12 +47,6 @@ Global
 		{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}.Release|x86.ActiveCfg = Release|Any CPU
-		{40CD1A39-656F-4AA1-8D8A-7614DCEDDF8D}.Debug|Any CPU.ActiveCfg = Debug
-		{40CD1A39-656F-4AA1-8D8A-7614DCEDDF8D}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{40CD1A39-656F-4AA1-8D8A-7614DCEDDF8D}.Debug|x86.ActiveCfg = Debug
-		{40CD1A39-656F-4AA1-8D8A-7614DCEDDF8D}.Release|Any CPU.ActiveCfg = Release
-		{40CD1A39-656F-4AA1-8D8A-7614DCEDDF8D}.Release|Mixed Platforms.ActiveCfg = Release
-		{40CD1A39-656F-4AA1-8D8A-7614DCEDDF8D}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

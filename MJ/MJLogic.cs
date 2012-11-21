@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Collections;
+using System.Windows.Forms;
 
 namespace MJClient
 {
@@ -21,13 +22,13 @@ namespace MJClient
                 {
                     for (int i = 1; i <= 9; i++)
                     {
-                        MJ mj=new MJ();
-                        mj.mcount=i;
-                        switch(j)
+                        MJ mj = new MJ();
+                        mj.mcount = i;
+                        switch (j)
                         {
                             case 1: mj.mclass = "万"; break;
                             case 2: mj.mclass = "条"; break;
-                            case 3: mj.mclass = "饼"; break;                           
+                            case 3: mj.mclass = "饼"; break;
                         }
                         MJList.Add(mj);
                     }
@@ -48,13 +49,13 @@ namespace MJClient
                 }
 
             }
-            for (int x = 1; x <= 8; x++)
-            {
-                MJ mj = new MJ();
-                mj.mcount = x;
-                mj.mclass = "花";
-                MJList.Add(mj);
-            }
+            //for (int x = 1; x <= 8; x++)
+            //{
+            //    MJ mj = new MJ();
+            //    mj.mcount = x;
+            //    mj.mclass = "花";
+            //    MJList.Add(mj);
+            //}
 
             return Shuttle(Shuttle(Shuttle(MJList)));
         }
@@ -69,11 +70,11 @@ namespace MJClient
             MJ[] MJarray = list.ToArray();
             for (int i = count; i >= 1; i--)
             {
-                Random rnd = new Random(System.DateTime.Now.Millisecond);
-                Thread.Sleep(7);
-                int x=rnd.Next(i);
-                MJ temp = MJarray[i-1];
-                MJarray[i-1] = MJarray[x];
+                Random rnd = new Random(Guid.NewGuid().GetHashCode());
+
+                int x = rnd.Next(i);
+                MJ temp = MJarray[i - 1];
+                MJarray[i - 1] = MJarray[x];
                 MJarray[x] = temp;
             }
             return new List<MJ>(MJarray);
@@ -84,9 +85,9 @@ namespace MJClient
         public void Fapai()
         {
             MJCache.ClearForNewGame();
-            MJCache.Wall =this.XiPai();
-            
-            for (int i = 1; i <= 14; i++)
+            MJCache.Wall = this.XiPai();
+
+            for (int i = 1; i <= 13; i++)
             {
                 MJCache.H1.Add(MJCache.Wall[0]);
                 MJCache.Wall.Remove(MJCache.Wall[0]);
@@ -106,15 +107,55 @@ namespace MJClient
                 MJCache.H4.Add(MJCache.Wall[0]);
                 MJCache.Wall.Remove(MJCache.Wall[0]);
             }
+            Sort(MJCache.H1);
+            Sort(MJCache.H2);
+            Sort(MJCache.H3);
+            Sort(MJCache.H4);
         }
+        public void FapaiOne(int person)
+        {
+            switch (person % 4)
+            {
+                case 1:
+                    MJCache.H1.Add(MJCache.Wall[0]);
+                    break;
+                case 2:
+                    MJCache.H2.Add(MJCache.Wall[0]);
+                    break;
+                case 3:
+                    MJCache.H3.Add(MJCache.Wall[0]);
+                    break;
+                case 0:
+                    MJCache.H4.Add(MJCache.Wall[0]);
+                    break;
+            }
+            Sort(MJCache.H1);
+            Sort(MJCache.H2);
+            Sort(MJCache.H3);
+            Sort(MJCache.H4);
+            if (TryLogic.TryPuTong(MJCache.H1))
+                MessageBox.Show("Win");
+            if (TryLogic.TryPuTong(MJCache.H2))
+                MessageBox.Show("Win");
+            if (TryLogic.TryPuTong(MJCache.H3))
+                MessageBox.Show("Win");
+            if (TryLogic.TryPuTong(MJCache.H4))
+                MessageBox.Show("Win");
+            MJCache.Wall.Remove(MJCache.Wall[0]);
+
+        }
+
+
+
+
         /// <summary>
         /// 补花。
         /// </summary>
         /// <param name="handlist"></param>
         /// <param name="flowerlist"></param>
-        public void Buhua(List<MJ>handlist,List<MJ>flowerlist)
-        { 
-            for(int i=0;i<handlist.Count;i++)
+        public void Buhua(List<MJ> handlist, List<MJ> flowerlist)
+        {
+            for (int i = 0; i < handlist.Count; i++)
             {
                 if (handlist[i].mclass == "花")
                 {
@@ -143,7 +184,7 @@ namespace MJClient
             result = ObjectCompare.Compare(info1.MWeight, info2.MWeight);
             return result;
         }
-        
+
 
     }
 }

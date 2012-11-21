@@ -38,7 +38,7 @@ namespace MyCutter
                     break;
             }
             dialog.ShowDialog();
-            if (!dialog.FileName.IsEmpty())
+            if (!dialog.FileName.IsNullOrEmpty())
             {
                 return dialog.FileName;
             }
