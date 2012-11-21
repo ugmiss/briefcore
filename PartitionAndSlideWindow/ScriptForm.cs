@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SlideWindowDemo
+namespace PartitionAndSlideWindow
 {
     public partial class ScriptForm : Form
     {

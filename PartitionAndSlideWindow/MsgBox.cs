@@ -5,7 +5,7 @@ using System.Text;
 using DevExpress.XtraEditors;
 using System.Windows.Forms;
 
-namespace SlideWindowDemo
+namespace PartitionAndSlideWindow
 {
     public class MsgBox
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace SlideWindowDemo
+namespace PartitionAndSlideWindow
 {
     public partial class MainForm : XtraForm
     {
