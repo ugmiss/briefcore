@@ -23,7 +23,7 @@ namespace MyCutter
         private void radButton3_Click(object sender, EventArgs e)
         {
             CurActionDetail = new ActionDetail();
-            CurActionDetail.ID = Comb.NewStringGuid();
+            CurActionDetail.ID = Comb.NewGuid();
             CurActionDetail.TagX = txtX.Text.ParseTo<int>();
             CurActionDetail.ActionType = GetActionType(ddlBlockType.SelectedItem.Text);
             CurActionDetail.TagY = txtY.Text.ParseTo<int>();
