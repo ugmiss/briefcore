@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlideWindowDemo", "SlideWin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCoder", "CoreCoder\CoreCoder.csproj", "{FB66A4C5-1103-47BD-8DCE-DB120C3414C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartitionAndSlideWindow", "PartitionAndSlideWindow\PartitionAndSlideWindow.csproj", "{99B4668C-0560-4FC0-BB61-4A9E04D69E95}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Brief.vsmdi
@@ -62,6 +64,16 @@ Global
 		{FB66A4C5-1103-47BD-8DCE-DB120C3414C2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{FB66A4C5-1103-47BD-8DCE-DB120C3414C2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{FB66A4C5-1103-47BD-8DCE-DB120C3414C2}.Release|x86.ActiveCfg = Release|Any CPU
+		{99B4668C-0560-4FC0-BB61-4A9E04D69E95}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{99B4668C-0560-4FC0-BB61-4A9E04D69E95}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{99B4668C-0560-4FC0-BB61-4A9E04D69E95}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{99B4668C-0560-4FC0-BB61-4A9E04D69E95}.Debug|x86.ActiveCfg = Debug|x86
+		{99B4668C-0560-4FC0-BB61-4A9E04D69E95}.Debug|x86.Build.0 = Debug|x86
+		{99B4668C-0560-4FC0-BB61-4A9E04D69E95}.Release|Any CPU.ActiveCfg = Release|x86
+		{99B4668C-0560-4FC0-BB61-4A9E04D69E95}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{99B4668C-0560-4FC0-BB61-4A9E04D69E95}.Release|Mixed Platforms.Build.0 = Release|x86
+		{99B4668C-0560-4FC0-BB61-4A9E04D69E95}.Release|x86.ActiveCfg = Release|x86
+		{99B4668C-0560-4FC0-BB61-4A9E04D69E95}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

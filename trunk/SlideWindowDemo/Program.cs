@@ -18,7 +18,7 @@ namespace SlideWindowDemo
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new MainForm());
+                Application.Run(new DemoForm());
             }
             catch (ThreadAbortException ex)
             {
