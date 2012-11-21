@@ -1,0 +1,69 @@
+.PrintBookTitle {
+	DISPLAY: block; FONT-WEIGHT: normal; FONT-SIZE: 9pt; PAGE-BREAK-BEFORE: always; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: verdana, ËÎÌו, Arial, Helvetica, Sans Serif
+}
+.BookTitleA {
+	DISPLAY: none
+}
+.BookTitleARTL {
+	DISPLAY: none
+}
+.BookTitleB {
+	DISPLAY: none
+}
+.BookTitleBRTL {
+	DISPLAY: none
+}
+H1 {
+	MARGIN-TOP: 3em
+}
+H2 {
+	MARGIN-TOP: 3em
+}
+H3 {
+	MARGIN-TOP: 3em
+}
+P.proclabel {
+	MARGIN-TOP: 30px
+}
+.hiderel {
+	DISPLAY: none
+}
+P.right {
+	MARGIN-TOP: 30px
+}
+SPAN.expand {
+	DISPLAY: block
+}
+DIV.expand {
+	DISPLAY: block
+}
+DIV.expand2 {
+	DISPLAY: block
+}
+.alert {
+	MARGIN-TOP: -1.2em; MARGIN-LEFT: 1.5em
+}
+DD.level1 {
+	MARGIN-TOP: 0em
+}
+.popup {
+	DISPLAY: none
+}
+IMG.thumbnail {
+	WIDTH: 90%
+}
+DIV.thumbnail {
+	WIDTH: 100%
+}
+SPAN.linkedfile {
+	DISPLAY: block
+}
+DIV.bannerrow2 {
+	DISPLAY: none
+}
+DIV.nsbanner {
+	DISPLAY: none
+}
+SPAN.StartOfFile {
+	DISPLAY: none
+}

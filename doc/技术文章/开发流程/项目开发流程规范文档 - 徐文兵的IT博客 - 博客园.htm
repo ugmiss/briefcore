@@ -1,0 +1,1828 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0067)http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html -->
+<HTML><HEAD><TITLE>项目开发流程规范文档 - 徐文兵的IT博客 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=软件分析和设计,项目开发流程规范文档 name=keywords><LINK 
+href="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK id=MainCss 
+href="http://www.cnblogs.com/Skins/绿野仙踪/style.css" type=text/css 
+rel=stylesheet><LINK href="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK href="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/macroxu-1982/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/macroxu-1982/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1528955.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/urchin.js" type=text/javascript>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+_uacct = "UA-2381056-1";
+urchinTracker();
+</SCRIPT>
+
+<DIV id=top>
+<H1><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/macroxu-1982/">徐文兵的IT博客</A></H1>
+<P id=tagline>(全力支持博客实名化) </P></DIV>
+<DIV id=leftmenu style="DISPLAY: none">
+<H3>导航</H3>
+<UL>
+  <LI><A id=MyLinks1_HomeLink href="http://www.cnblogs.com/">博客园</A> 
+  <LI><A id=MyLinks1_MyHomeLink 
+  href="http://www.cnblogs.com/macroxu-1982/">首页</A> 
+  <LI><A id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/macroxu-1982/admin/EditPosts.aspx?opt=1">新随笔</A> 
+  <LI><A id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/å¾æåµ">联系</A> 
+  <LI><A id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/macroxu-1982/rss">订阅</A><A id=MyLinks1_XMLLink 
+  href="http://www.cnblogs.com/macroxu-1982/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/xml.gif"></A> 
+  <LI><A id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/macroxu-1982/admin/EditPosts.aspx">管理</A> 
+</LI></UL>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: silver" colSpan=7>
+      <TABLE class=CalTitle style="WIDTH: 100%; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev style="WIDTH: 15%"><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3439')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2009年7月</TD>
+          <TD class=CalNextPrev style="WIDTH: 15%" align=right><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3500')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>28</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>29</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle>1</TD>
+    <TD style="WIDTH: 14%" align=middle>2</TD>
+    <TD style="WIDTH: 14%" align=middle>3</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>4</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>5</TD>
+    <TD style="WIDTH: 14%" align=middle>6</TD>
+    <TD style="WIDTH: 14%" align=middle>7</TD>
+    <TD style="WIDTH: 14%" align=middle>8</TD>
+    <TD style="WIDTH: 14%" align=middle>9</TD>
+    <TD style="WIDTH: 14%" align=middle>10</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>11</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>12</TD>
+    <TD style="WIDTH: 14%" align=middle>13</TD>
+    <TD style="WIDTH: 14%" align=middle>14</TD>
+    <TD style="WIDTH: 14%" align=middle>15</TD>
+    <TD style="WIDTH: 14%" align=middle>16</TD>
+    <TD style="WIDTH: 14%" align=middle>17</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>18</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>19</TD>
+    <TD style="WIDTH: 14%" align=middle>20</TD>
+    <TD style="WIDTH: 14%" align=middle>21</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/macroxu-1982/archive/2009/7/22.html"><U>22</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>23</TD>
+    <TD style="WIDTH: 14%" align=middle>24</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>25</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>26</TD>
+    <TD style="WIDTH: 14%" align=middle>27</TD>
+    <TD style="WIDTH: 14%" align=middle>28</TD>
+    <TD style="WIDTH: 14%" align=middle>29</TD>
+    <TD style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle>31</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>1</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>2</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>6</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>7</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" 
+align=middle>8</TD></TR></TBODY></TABLE>
+<H3>公告</H3><BR><A title=纤云工作室 href="http://www.下料机.net/"><IMG 
+id=ViewPicture1_GalleryImage title=纤云工作室 
+src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/r_logo.gif" href="http://www.下料机.net"> 
+</A><BR>
+<DIV style="TEXT-ALIGN: center">
+<SCRIPT type=text/JavaScript> 
+alimama_pid="mm_11343326_1210110_2715970"; 
+alimama_titlecolor="0000FF"; 
+alimama_descolor ="000000"; 
+alimama_bgcolor="FFFFFF"; 
+alimama_bordercolor="E6E6E6"; 
+alimama_linkcolor="008000"; 
+alimama_bottomcolor="FFFFFF"; 
+alimama_anglesize="0"; 
+alimama_bgpic="0"; 
+alimama_icon="0"; 
+alimama_sizecode="22"; 
+alimama_width=140; 
+alimama_height=190; 
+alimama_type=2; 
+</SCRIPT>
+
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/inf.js" type=text/javascript> 
+</SCRIPT>
+</DIV><BR>
+<DIV>站点统计
+<SCRIPT language=javascript src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/3213087.js" 
+type=text/javascript></SCRIPT>
+ <NOSCRIPT><A href="http://www.51.la/?3213087" target=_blank><IMG 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+alt=我要啦免费统计 src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/go.htm"></A></NOSCRIPT></DIV>
+<SCRIPT type=text/javascript><!--
+google_ad_client = "pub-9320623206993159";
+/* 120x240, created 1/14/10 */
+google_ad_slot = "6505142295";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</SCRIPT>
+
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/show_ads.js" 
+type=text/javascript>
+</SCRIPT>
+
+<SCRIPT type=text/javascript><!--
+google_ad_client = "pub-9320623206993159";
+/* 200x200, 创建于 10-1-15 */
+google_ad_slot = "5342639413";
+google_ad_width = 200;
+google_ad_height = 200;
+//-->
+</SCRIPT>
+
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/show_ads.js" 
+type=text/javascript>
+</SCRIPT>
+
+<DIV id=profile_block><A href="http://home.cnblogs.com/macroxu-1982/" 
+target=_blank>我的主页</A>&nbsp; <A 
+href="http://home.cnblogs.com/macroxu-1982/detail/" target=_blank>个人资料</A><BR><A 
+href="http://home.cnblogs.com/macroxu-1982/ing/" target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/å¾æåµ" target=_blank>发短消息</A></DIV>
+<H3>留言簿</H3>
+<UL>
+  <LI><A id=MyMessages1_lnkMessages 
+  href="http://www.cnblogs.com/macroxu-1982/Contact.aspx?id=1">给我留言</A> 
+  <LI><A id=MyMessages1_lnkPublicMsgView 
+  href="http://www.cnblogs.com/macroxu-1982/default.aspx?opt=msg">查看公开留言</A> 
+  <LI><A id=MyMessages1_lnkPrivateMsgView 
+  href="http://www.cnblogs.com/macroxu-1982/admin/MyMessages.aspx">查看私人留言</A> 
+  </LI></UL>
+<H3>随笔分类<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(35)</SPAN></H3>
+<UL>
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/57248.html">ASP.net(4)</A> 
+  <A id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to ASP.net(4)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/57248.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/62363.html">JavaScript And 
+  Ajax(1)</A> <A 
+  id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to JavaScript And Ajax(1)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/62363.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/78227.html">报表的专栏(5)</A> <A 
+  id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to 报表的专栏(5)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/78227.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/166720.html">开源组件 (3)</A> 
+  <A id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to 开源组件 (3)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/166720.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/63906.html">人生的剧本(1)</A> <A 
+  id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to 人生的剧本(1)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/63906.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/88165.html">软件分析和设计(13)</A> 
+  <A id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to 软件分析和设计(13)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/88165.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/83991.html">数据库和XML技术(8)</A> 
+  <A id=ArchiveLinks1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to 数据库和XML技术(8)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/83991.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+  </LI></UL>
+<H3>文章分类<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(18)</SPAN></H3>
+<UL>
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/54482.html">ADO.net(2)</A> 
+  <A id=ArchiveLinks1_Categories_CatList_ctl01_LinkList_ctl01_RssLink 
+  title="Subscribe to ADO.net(2)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/54482.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/54213.html">C#(ASP.net)(4)</A> 
+  <A id=ArchiveLinks1_Categories_CatList_ctl01_LinkList_ctl02_RssLink 
+  title="Subscribe to C#(ASP.net)(4)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/54213.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/165229.html">创业文集(3)</A> <A 
+  id=ArchiveLinks1_Categories_CatList_ctl01_LinkList_ctl03_RssLink 
+  title="Subscribe to 创业文集(3)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/165229.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/109697.html">人生随笔(1)</A> <A 
+  id=ArchiveLinks1_Categories_CatList_ctl01_LinkList_ctl04_RssLink 
+  title="Subscribe to 人生随笔(1)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/109697.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/macroxu-1982/category/202178.html">网络游戏开发(8)</A> 
+  <A id=ArchiveLinks1_Categories_CatList_ctl01_LinkList_ctl05_RssLink 
+  title="Subscribe to 网络游戏开发(8)" 
+  onclick="open_link('http://www.cnblogs.com/macroxu-1982/category/202178.html/rss');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html###">(rss)</A> 
+  </LI></UL>
+<H3>随笔档案<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(35)</SPAN></H3>
+<UL>
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/05.html">2010年5月 
+  (2)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/04.html">2010年4月 
+  (4)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/03.html">2010年3月 
+  (2)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/02.html">2010年2月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/01.html">2010年1月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/12.html">2009年12月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/08.html">2009年8月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07.html">2009年7月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/04.html">2009年4月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/02.html">2009年2月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2008/12.html">2008年12月 
+  (2)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2008/09.html">2008年9月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2008/08.html">2008年8月 
+  (2)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2008/07.html">2008年7月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2008/06.html">2008年6月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2008/05.html">2008年5月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2008/04.html">2008年4月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2007/08.html">2007年8月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2007/05.html">2007年5月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl20_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2007/04.html">2007年4月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl21_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2007/03.html">2007年3月 
+  (3)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl22_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2007/02.html">2007年2月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl23_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2006/12.html">2006年12月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl24_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2006/11.html">2006年11月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl25_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2006/05.html">2006年5月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl02_LinkList_ctl26_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2006/04.html">2006年4月 
+  (1)</A> </LI></UL>
+<H3>文章档案<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(22)</SPAN></H3>
+<UL>
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2010/04.html">2010年4月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2010/01.html">2010年1月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2009/10.html">2009年10月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2009/08.html">2009年8月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2009/07.html">2009年7月 
+  (8)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2009/03.html">2009年3月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2008/12.html">2008年12月 
+  (2)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2008/11.html">2008年11月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2008/10.html">2008年10月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2007/10.html">2007年10月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2007/04.html">2007年4月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2007/03.html">2007年3月 
+  (1)</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl03_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/macroxu-1982/archives/2006/04.html">2006年4月 
+  (2)</A> </LI></UL>
+<H3>相册</H3>
+<UL>
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl04_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/macroxu-1982/gallery/71688.html">BLogPhotos</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl04_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/macroxu-1982/gallery/139790.html">BolgImages</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl04_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/macroxu-1982/gallery/57192.html">my photo</A> 
+  <LI><A id=ArchiveLinks1_Categories_CatList_ctl04_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/macroxu-1982/gallery/243073.html">纤云工作室中文Logo</A> 
+  </LI></UL>
+<H3>阅读排行榜</H3>
+<DIV class=RecentComment>
+<UL style="WIDTH: 100%; WORD-BREAK: break-all">
+  <LI><A id=TopViewPosts_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2006/11/21/567305.html">1.&nbsp;Office编程在dot 
+  Net环境中总结(Excel篇)(8722)</A> 
+  <LI><A id=TopViewPosts_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html">2.&nbsp;项目开发流程规范文档(5787)</A> 
+
+  <LI><A id=TopViewPosts_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2007/03/22/683852.html">3.&nbsp;uniqueidentifier数据类型在系统设计中的应用(3902)</A> 
+
+  <LI><A id=TopViewPosts_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2008/12/04/1347407.html">4.&nbsp;Log4Net 
+  开发文档(3542)</A> 
+  <LI><A id=TopViewPosts_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/01/14/1648122.html">5.&nbsp;在谷歌中国撤离危机到来之前，赶快备份Gmail吧（完全手册）(3282)</A> 
+  </LI></UL></DIV>
+<H3>评论排行榜</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=TopFeedbackPosts1_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/01/14/1648122.html">1.&nbsp;在谷歌中国撤离危机到来之前，赶快备份Gmail吧（完全手册）(36)</A> 
+
+  <LI><A id=TopFeedbackPosts1_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/04/15/1712449.html">2.&nbsp;软件框架设计中的新猜想，你有答案吗？（挑战精神）---已有答案(26)</A> 
+
+  <LI><A id=TopFeedbackPosts1_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html">3.&nbsp;项目开发流程规范文档(21)</A> 
+
+  <LI><A id=TopFeedbackPosts1_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/12/23/1630415.html">4.&nbsp;通过HttpWebRequest在后台对WebService进行调用(15)</A> 
+
+  <LI><A id=TopFeedbackPosts1_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/04/11/1709692.html">5.&nbsp;一次系统性能优化笔记(15)</A> 
+  </LI></UL></DIV></DIV>
+<DIV id=rightmenu>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=BlogCustomControl1_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/macroxu-1982/MyPosts.html">我的随笔</A> 
+  <LI><A id=BlogCustomControl1_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/macroxu-1982/">我的空间</A> 
+  <LI><A id=BlogCustomControl1_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=BlogCustomControl1_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/macroxu-1982/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=BlogCustomControl1_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/macroxu-1982/OtherPosts.html">我的参与</A> 
+  <LI><A id=BlogCustomControl1_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/macroxu-1982/MyNews.html">我的新闻</A> 
+  <LI><A id=BlogCustomControl1_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/macroxu-1982/RecentComments.html">最新评论</A> 
+  <LI><A id=BlogCustomControl1_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/macroxu-1982/tag/">我的标签</A> </LI></UL></DIV>
+<H3>统计</H3>
+<UL>
+  <LI>随笔 - 34 
+  <LI>文章 - 22 
+  <LI>评论 - 219 
+  <LI>引用 - 2 </LI></UL>
+<H3>积分与排名</H3>
+<UL>
+  <LI>积分 - 73873 
+  <LI>排名 - 1093 </LI></UL>
+<H3>Tech WebSite</H3>
+<UL>
+  <LI><A id=CategoryDisplay1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.open-lib.com/">WebControls</A> 
+  <LI style="MARGIN-TOP: 2px">which website contained much js controls 
+  <LI><A id=CategoryDisplay1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://deleket.deviantart.com/">图标网站</A> 
+  <LI style="MARGIN-TOP: 2px">图标网站 
+  <LI><A id=CategoryDisplay1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://blog.csai.cn/user1/18062/index.html">温昱的Blog</A> 
+  <LI style="MARGIN-TOP: 2px">资深咨询顾问，CSAL高级顾问 </LI></UL>
+<H3>商务网站</H3>
+<UL>
+  <LI><A id=CategoryDisplay1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.ä¸ææº.net/">个体工商户进销存--纤云工作室</A> 
+  <LI style="MARGIN-TOP: 2px">鞋店进销存研发中 </LI></UL>
+<H3>兄弟连</H3>
+<UL>
+  <LI><A id=CategoryDisplay1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://love-hu.cnblogs.com/">周燕军</A> 
+  <LI style="MARGIN-TOP: 2px">地方军出生 </LI></UL>
+<H3>最新评论 <A id=RecentComments1_RSSHyperlink1 
+href="http://www.cnblogs.com/macroxu-1982/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/xml.gif"></A></H3>
+<DIV class=RecentComment>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=RecentComments1_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/05/26/1744156.html#1833200">1.&nbsp;Re:在C#中对中文域名判断和解析</A> 
+
+  <LI style="WORD-BREAK: break-all">哈哈 估计网站又挂了 现在好了 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--徐文兵 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=RecentComments1_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/05/26/1744156.html#1833188">2.&nbsp;Re:在C#中对中文域名判断和解析</A> 
+
+  <LI style="WORD-BREAK: break-all">无法找到该页您正在搜索的页面可能已经删除、更名或暂时不可用。 请尝试以下操作： * 
+  确保浏览器的地址栏中显示的网站地址的拼写和格式正确无误。 * 如果通过单击链接而到达了该网页，... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--longware 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=RecentComments1_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/05/12/1733649.html#1822614">3.&nbsp;Re:软件复用性概述和基于组件的系统开发</A> 
+
+  <LI style="WORD-BREAK: break-all">sofa 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Aaron_Aanubis 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=RecentComments1_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/04/15/1712449.html#1810663">4.&nbsp;Re:软件框架设计中的新猜想，你有答案吗？（挑战精神）---已有答案</A> 
+
+  <LI style="WORD-BREAK: break-all">@韦恩卑鄙 v-zhewg @waynebaby T4? = Text Template 
+  Syntax and transformation ? [code=csharp] &lt;#@ tem... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--辰 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=RecentComments1_CommentList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/04/26/1721047.html#1810596">5.&nbsp;Re:底层逻辑层发起，数据流向上一级逻辑层 
+  的几种方式</A> 
+  <LI style="WORD-BREAK: break-all">最好来一个DOME 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--elwin.wang 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=RecentComments1_CommentList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/04/26/1721047.html#1810365">6.&nbsp;Re:底层逻辑层发起，数据流向上一级逻辑层 
+  的几种方式</A> 
+  <LI style="WORD-BREAK: break-all">哈哈 也算 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--徐文兵 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=RecentComments1_CommentList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/04/26/1721047.html#1810361">7.&nbsp;Re:底层逻辑层发起，数据流向上一级逻辑层 
+  的几种方式</A> 
+  <LI style="WORD-BREAK: break-all">还可以用MessageQueue 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--青羽 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=RecentComments1_CommentList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/04/11/1709692.html#1803696">8.&nbsp;Re:一次系统性能优化笔记</A> 
+
+  <LI style="WORD-BREAK: break-all">感谢 兄弟们关注 在百万级表中 你去模糊查一个东东时，是要扫整张表的， 
+  假设在实际应用中有一个like需求。 这个也是要很客户讲明 查询的效率 和相应时间。 同... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--徐文兵 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=RecentComments1_CommentList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/04/11/1709692.html#1803643">9.&nbsp;Re:一次系统性能优化笔记</A> 
+
+  <LI style="WORD-BREAK: break-all">学习，我也关心模糊查询. 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Net205 Blog 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=RecentComments1_CommentList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/macroxu-1982/archive/2010/04/15/1712449.html#1802604">10.&nbsp;Re:软件框架设计中的新猜想，你有答案吗？（挑战精神）---已有答案</A> 
+
+  <LI style="WORD-BREAK: break-all">@辰不知道辰桑对 EF4 的自定义T4模板有什么独到见解啊 等您发文呢 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--韦恩卑鄙 v-zhewg @waynebaby 
+  </LI></UL></DIV></DIV>
+<DIV id=main>
+<DIV class=post>
+<H2><A id=ctl10_TitleUrl 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html">项目开发流程规范文档</A> 
+</H2>
+<DIV 
+style="BORDER-RIGHT: medium none; PADDING-RIGHT: 0cm; BORDER-TOP: medium none; PADDING-LEFT: 0cm; PADDING-BOTTOM: 3pt; MARGIN-LEFT: 0cm; BORDER-LEFT: medium none; MARGIN-RIGHT: 0.75pt; PADDING-TOP: 0cm; BORDER-BOTTOM: gray 4.5pt solid">&nbsp; 
+
+<DIV 
+style="BORDER-RIGHT: medium none; PADDING-RIGHT: 0cm; BORDER-TOP: medium none; PADDING-LEFT: 0cm; PADDING-BOTTOM: 3pt; MARGIN-LEFT: 0cm; BORDER-LEFT: medium none; MARGIN-RIGHT: 0.75pt; PADDING-TOP: 0cm; BORDER-BOTTOM: gray 4.5pt solid">
+<H1><SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 18pt">1 </SPAN><SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 18pt; FONT-FAMILY: 宋体">概述</SPAN><SPAN 
+style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体"></SPAN></H1></DIV>
+<H2><SPAN style="FONT-SIZE: 14pt; FONT-FAMILY: 宋体">目的与概述</SPAN></H2>
+<P style="TEXT-INDENT: 21pt; LINE-HEIGHT: normal"><SPAN 
+style="FONT-SIZE: 10.5pt">本文档为XX公司的开发规范文档，给开发团队提供开发标准和规范。</SPAN></P>
+<H2><SPAN style="FONT-SIZE: 14pt; FONT-FAMILY: 宋体">整体说明</SPAN></H2>
+<P><SPAN>&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">在开发规范中包含了两个部分，第一部分是项目开发流程规范，主要阐述在项目开发过程中的各个阶段的规范。第二部分为</SPAN>Coding<SPAN 
+style="FONT-FAMILY: 宋体">开发规范，</SPAN>Coding<SPAN 
+style="FONT-FAMILY: 宋体">开发规范阐述了在一个框架中的各个层的开发规范</SPAN></P>
+<P><SPAN>&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">（注：在第一版中不包含对工作流开发的规范制定）</SPAN></P>
+<H2><SPAN style="FONT-SIZE: 14pt; FONT-FAMILY: 宋体">覆盖范围</SPAN></H2>
+<H2><SPAN style="FONT-SIZE: 14pt; FONT-FAMILY: 宋体">阅读对象</SPAN></H2>
+<P style="MARGIN-LEFT: 21pt; TEXT-INDENT: -21pt; LINE-HEIGHT: normal"><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 'Times New Roman','serif'">1.<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN style="FONT-SIZE: 10.5pt">项目管理人员</SPAN></P>
+<P style="MARGIN-LEFT: 21pt; TEXT-INDENT: -21pt; LINE-HEIGHT: normal"><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 'Times New Roman','serif'">2.<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN style="FONT-SIZE: 10.5pt">系统设计人员</SPAN></P>
+<P style="MARGIN-LEFT: 21pt; TEXT-INDENT: -21pt; LINE-HEIGHT: normal"><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 'Times New Roman','serif'">3.<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN style="FONT-SIZE: 10.5pt">系统开发人员</SPAN></P>
+<H2><SPAN style="FONT-SIZE: 14pt; FONT-FAMILY: 宋体">参考资料</SPAN></H2>
+<P><SPAN style="FONT-FAMILY: 宋体">略</SPAN></P>
+<P>&nbsp;<STRONG><SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 18pt">2 
+</SPAN><SPAN 
+style="FONT-SIZE: 18pt; FONT-FAMILY: 宋体">项目开发流程规范</SPAN></STRONG></P>
+<H2><SPAN style="FONT-SIZE: 14pt">2.1 </SPAN><SPAN 
+style="FONT-SIZE: 14pt; FONT-FAMILY: 宋体">业务需求调研阶段</SPAN></H2>
+<P style="MARGIN-LEFT: 31.05pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">调研的目标</SPAN></STRONG></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">系统层面：</SPAN> <SPAN 
+style="FONT-FAMILY: 宋体">客户的系统运行环境</SPAN></P>
+<P style="TEXT-INDENT: 31.5pt"><SPAN 
+style="FONT-FAMILY: 宋体">业务层面：了解客户需要什么样的系统，具体了解业务目的，业务逻辑，业务数据，客户的操作习惯，页面风格习惯等。</SPAN></P>
+<P>&nbsp;<SPAN style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">调研的准备工作：</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 31.05pt"><SPAN 
+style="FONT-FAMILY: 宋体">行业知识的准备：</SPAN></P>
+<P><STRONG><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></STRONG><SPAN 
+style="FONT-FAMILY: 宋体">了解客户的行业背景，行业领域的业务术语，含义。结合客户行业背景，了解客户的业务知识。</SPAN><SPAN>&nbsp;&nbsp;&nbsp; 
+</SPAN></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">业务专家需求</SPAN></STRONG><SPAN 
+style="FONT-FAMILY: 宋体">：</SPAN></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-FAMILY: 宋体">在行业领域的复杂度不高的情况下，业务分析人员直接收集并学习行业知识就可以了，但行业知识的准备工作还是要做的</SPAN></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">在行业领域业务复杂度高的情况下，需要业务专家对客户的业务的进行整理。</SPAN></P>
+<P style="MARGIN-LEFT: 31.05pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">调研的流程：</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 31.05pt"><SPAN style="FONT-FAMILY: 宋体">第一步</SPAN> <SPAN 
+style="FONT-FAMILY: 宋体">，项目启动阶段</SPAN> <SPAN 
+style="FONT-FAMILY: 宋体">了解客户的</SPAN>IT<SPAN 
+style="FONT-FAMILY: 宋体">环境。</SPAN></P>
+<P style="MARGIN-LEFT: 31.05pt"><SPAN style="FONT-FAMILY: 宋体">第二步，</SPAN> <SPAN 
+style="FONT-FAMILY: 宋体">讨论并具体确定客户系统的范围，并获得客户业务功能点的原始的单据。在这个过程中准备一个本和一只笔记录讨论的业务信息</SPAN></P>
+<P style="MARGIN-LEFT: 31.05pt"><SPAN style="FONT-FAMILY: 宋体">第三步，</SPAN> <SPAN 
+style="FONT-FAMILY: 宋体">整理业务信息，和原始表单，抽取出有效业务信息，并对于不明确的业务信息进行整理和归类，并制作成问卷形式进一步调研。</SPAN></P>
+<P style="MARGIN-LEFT: 31.05pt"><SPAN style="FONT-FAMILY: 宋体">第四步，</SPAN> <SPAN 
+style="FONT-FAMILY: 宋体">发放调研问卷，再次进行业务调研（直接转到三）</SPAN></P>
+<P style="MARGIN-LEFT: 31.05pt"><SPAN 
+style="FONT-FAMILY: 宋体">第五步，卷写调研问卷，并内部评审</SPAN></P>
+<P style="MARGIN-LEFT: 31.05pt"><SPAN 
+style="FONT-FAMILY: 宋体">第六步，调研问卷客户评审并确认。</SPAN></P>
+<P style="MARGIN-LEFT: 31.05pt">&nbsp;</P>
+<P>&nbsp;</P>
+<P style="MARGIN-LEFT: 36.8pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">调研阶段的交付项（可配置项）</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 36.8pt"><SPAN style="FONT-FAMILY: 宋体">软件需求说明书</SPAN></P>
+<P style="MARGIN-LEFT: 36.8pt">&nbsp;</P>
+<P style="MARGIN-LEFT: 36.8pt"><SPAN 
+style="FONT-FAMILY: 宋体">软件需求说明书的目录：</SPAN></P>
+<P style="MARGIN-LEFT: 36.8pt">1 <SPAN style="FONT-FAMILY: 宋体">客户行业背景</SPAN></P>
+<P style="MARGIN-LEFT: 36.8pt">2 <SPAN 
+style="FONT-FAMILY: 宋体">客户系统的意义</SPAN></P>
+<P style="MARGIN-LEFT: 36.8pt">3 <SPAN 
+style="FONT-FAMILY: 宋体">客户系统运行的环境</SPAN></P>
+<P style="MARGIN-LEFT: 36.8pt">4 <SPAN 
+style="FONT-FAMILY: 宋体">业务功能点描述（业务目的，业务逻辑，业务数据，优先级别，使用频率等）</SPAN></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5 </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">客户的操作习惯，页面风格习惯。</SPAN></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></P>
+<H2><SPAN style="FONT-SIZE: 14pt">2.2 </SPAN><SPAN 
+style="FONT-SIZE: 14pt; FONT-FAMILY: 宋体">概要设计阶段</SPAN></H2>
+<P><SPAN style="FONT-FAMILY: 宋体">概要设计阶段主要分两个步骤：</SPAN> 1 <SPAN 
+style="FONT-FAMILY: 宋体">框架设计</SPAN><SPAN>&nbsp;&nbsp; 2 </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">业务模块概要设计</SPAN> ,<SPAN 
+style="FONT-FAMILY: 宋体">下面分别对两个步骤进行描述：</SPAN></P>
+<P><STRONG>2.2.1</STRONG><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">框架设计</SPAN></STRONG></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">（<SPAN 
+style="COLOR: red">注：这边的框架设计是按照传统的开发方式进行阐述，基于平台的开发方式待补）</SPAN></SPAN></P>
+<P style="MARGIN-LEFT: 36.8pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">框架设计的目标：</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 36.8pt"><SPAN 
+style="FONT-FAMILY: 宋体">根据客户需求，设计系统的后台架构，前台界面框架，数据模型。在设计之前要考虑客户的业务特点，性能要求，已有的</SPAN>IT<SPAN 
+style="FONT-FAMILY: 宋体">环境，同时还要考虑将来业务的增长，保证系统一定得可扩展性。</SPAN></P>
+<P>&nbsp;</P>
+<P style="MARGIN-LEFT: 36.8pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">框架设计包含的内容：</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 15.7pt; TEXT-INDENT: 21.1pt"><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">后台框架：</SPAN></STRONG> <SPAN 
+style="FONT-FAMILY: 宋体">各层的职能划分，技术实现的方式，层之间的交互规则，异常处理规则，目录定义规则</SPAN></P>
+<P style="TEXT-INDENT: 21.1pt"><STRONG><SPAN>&nbsp;&nbsp; 
+</SPAN></STRONG><STRONG><SPAN style="FONT-FAMILY: 宋体">界面框架：</SPAN></STRONG><SPAN 
+style="FONT-FAMILY: 宋体">操作主界面定义</SPAN></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="FONT-FAMILY: 宋体">页面整体风格的定义，页面流转关系等</SPAN></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <STRONG></STRONG></SPAN></P>
+<P style="TEXT-INDENT: 21.1pt"><STRONG><SPAN>&nbsp;&nbsp; 
+</SPAN></STRONG><STRONG><SPAN style="FONT-FAMILY: 宋体">数据模型：</SPAN></STRONG> 
+<SPAN style="FONT-FAMILY: 宋体">系统基础数据（组织人员结构，权限设置，字典参数设置）</SPAN></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="FONT-FAMILY: 宋体">业务数据</SPAN><STRONG></STRONG></P>
+<P style="TEXT-INDENT: 21.1pt"><STRONG></STRONG>&nbsp;</P>
+<P style="MARGIN-LEFT: 36.8pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">框架设计阶段交付项：</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 36.8pt"><STRONG><SPAN style="FONT-FAMILY: 宋体">文档</SPAN> 
+</STRONG><STRONG><SPAN style="FONT-FAMILY: 宋体">：系统架构</SPAN></STRONG></P>
+<P 
+style="MARGIN-LEFT: 36.8pt"><STRONG><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></STRONG><STRONG><SPAN style="FONT-FAMILY: 宋体">界面框架</SPAN></STRONG></P>
+<P 
+style="MARGIN-LEFT: 36.8pt"><STRONG><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></STRONG><STRONG><SPAN style="FONT-FAMILY: 宋体">数据模型</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 36.8pt"><SPAN 
+style="FONT-FAMILY: 宋体">注：三份文档可以融合在一份文档之中。</SPAN></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P><STRONG>2.2.2</STRONG><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">业务模块概要设计</SPAN></STRONG></P>
+<P>&nbsp;</P>
+<P><SPAN 
+style="FONT-FAMILY: 宋体">系统设计人员根据业务分析人员的业务需求文档，进行概要设计。在概要设计过程中主要关注三个关键点</SPAN></P>
+<P>1<SPAN style="FONT-FAMILY: 宋体">）</SPAN> <SPAN 
+style="FONT-FAMILY: 宋体">业务模块的页面显示内容：信息显示的内容，显示的方式；交互接口的定义，等</SPAN></P>
+<P><SPAN>&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">举例：查询人员信息模块</SPAN></P>
+<P><SPAN>&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">操作说明，查询条件，显示字段，排序和显示方式。</SPAN></P>
+<P>&nbsp;</P>
+<P>2<SPAN style="FONT-FAMILY: 宋体">）业务逻辑描述</SPAN></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">对业务逻辑进行详细的描述。</SPAN></P>
+<P>&nbsp;</P>
+<P>3<SPAN style="FONT-FAMILY: 宋体">）业务数据项</SPAN></P>
+<P><SPAN>&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">业务模块涉及到数据的描述。</SPAN></P>
+<P><SPAN>&nbsp;&nbsp; </SPAN><SPAN style="FONT-FAMILY: 宋体">具体的描述包含</SPAN></P>
+<P><SPAN>&nbsp;&nbsp; </SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">数据项名称</SPAN>&nbsp;</STRONG><SPAN 
+style="FONT-FAMILY: 宋体">，<STRONG>显示方式</STRONG>，<STRONG>是否必填</STRONG>，<STRONG>输入方式</STRONG>，<STRONG>相关逻辑</STRONG></SPAN><STRONG></STRONG></P>
+<P>&nbsp;</P>
+<P style="MARGIN-LEFT: 21pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">概要设计阶段的交付项</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 21pt"><SPAN style="FONT-FAMILY: 宋体">概要设计文档</SPAN></P>
+<P style="MARGIN-LEFT: 21pt">&nbsp;</P>
+<H2><SPAN style="FONT-SIZE: 14pt">2.3 </SPAN><SPAN 
+style="FONT-SIZE: 14pt; FONT-FAMILY: 宋体">业务需求理解阶段</SPAN><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></H2>
+<P>2.3.1<SPAN style="FONT-FAMILY: 宋体">系统设计人员理解需求</SPAN></P>
+<P style="MARGIN-LEFT: 21.25pt"><SPAN 
+style="FONT-FAMILY: 宋体">在系统设计人员理解需求之前，业务分析人员必须提供相关模块的客户需求文档。</SPAN> <SPAN 
+style="FONT-FAMILY: 宋体">系统设计人员阅读并理解客户需求文档。</SPAN></P>
+<P style="MARGIN-LEFT: 42.25pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">理解需求文档的交付结果（可配置项）</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 42.25pt"><SPAN 
+style="FONT-FAMILY: 宋体">业务需求对于客户来讲，目的是什么，解决什么问题，有什么意义？</SPAN></P>
+<P style="MARGIN-LEFT: 42.25pt"><SPAN 
+style="FONT-FAMILY: 宋体">具体业务的执行逻辑是什么？</SPAN></P>
+<P style="MARGIN-LEFT: 42.25pt"><SPAN 
+style="FONT-FAMILY: 宋体">在业务流转过程中的业务数据有哪些？</SPAN></P>
+<P style="MARGIN-LEFT: 21.25pt">&nbsp;</P>
+<P style="MARGIN-LEFT: 42.25pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">需求理解时间要求：</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 21.2pt; TEXT-INDENT: 10.5pt"><SPAN 
+style="FONT-FAMILY: 宋体">简单的需求，理解时间为</SPAN>2-3 <SPAN 
+style="FONT-FAMILY: 宋体">小时</SPAN></P>
+<P style="MARGIN-LEFT: 21.2pt; TEXT-INDENT: 10.5pt"><SPAN 
+style="FONT-FAMILY: 宋体">复杂需求：理解需求时间</SPAN>4-8<SPAN 
+style="FONT-FAMILY: 宋体">小时</SPAN></P>
+<P style="MARGIN-LEFT: 21.2pt; TEXT-INDENT: 10.5pt">&nbsp;</P>
+<P style="MARGIN-LEFT: 42.25pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">复杂的业务需求需要需求分析人员确认。</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 9.95pt; TEXT-INDENT: 24.55pt"><SPAN 
+style="FONT-FAMILY: 宋体">复杂的业务需求按照涉及到的业务的复杂度来决定的。</SPAN></P>
+<P style="MARGIN-LEFT: 9.95pt; TEXT-INDENT: 11.35pt">&nbsp;</P>
+<H2><SPAN style="FONT-SIZE: 14pt">2.4 </SPAN><SPAN 
+style="FONT-SIZE: 14pt; FONT-FAMILY: 宋体">详细设计阶段</SPAN></H2>
+<P><SPAN>&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">详细设计阶段分两个步骤</SPAN></P>
+<P style="MARGIN-LEFT: 42.25pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><SPAN 
+style="FONT-FAMILY: 宋体">第一步骤，系统设计人员根据业务需求的理解</SPAN>,<SPAN 
+style="FONT-FAMILY: 宋体">详细设计业务模块，并出详细设计文档</SPAN></P>
+<P style="MARGIN-LEFT: 42.25pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><SPAN 
+style="FONT-FAMILY: 宋体">第二步骤，核心设计人员对系统设计人员的详细设计文档进行技术评审。</SPAN></P>
+<P>&nbsp;&nbsp;</P>
+<P>2.4.1<SPAN style="FONT-FAMILY: 宋体">系统设计人员详细设计阶段</SPAN></P>
+<P style="MARGIN-LEFT: 21pt; TEXT-INDENT: 0.3pt"><SPAN 
+style="FONT-FAMILY: 宋体">系统设计人员根据业务需求，详细设计模块。</SPAN></P>
+<P style="MARGIN-LEFT: 42.3pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">详细设计阶段的交付结果（可配置项）</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 42.3pt"><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">详细设计文档：</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 42.3pt"><SPAN style="FONT-FAMILY: 宋体">业务接口定义</SPAN></P>
+<P style="MARGIN-LEFT: 42.3pt"><SPAN 
+style="FONT-FAMILY: 宋体">数据库的数据项定义</SPAN></P>
+<P style="MARGIN-LEFT: 42.3pt">Web<SPAN 
+style="FONT-FAMILY: 宋体">页面和</SPAN>Js<SPAN 
+style="FONT-FAMILY: 宋体">接口定义等</SPAN></P>
+<P style="MARGIN-LEFT: 10pt">&nbsp;</P>
+<P style="MARGIN-LEFT: 42.3pt"><SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体">注：对于复杂的模块可以在详细设计文档中可以包含了</SPAN><SPAN 
+style="COLOR: red">UML</SPAN><SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体">类图，和时序图</SPAN> <SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体">，从而进一步描述设计的内容</SPAN></P>
+<P style="MARGIN-LEFT: 42.3pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">详细设计时间要求：</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 42.3pt"><SPAN 
+style="FONT-FAMILY: 宋体">简单的业务需求：</SPAN>2-4<SPAN 
+style="FONT-FAMILY: 宋体">小时</SPAN></P>
+<P style="MARGIN-LEFT: 42.3pt"><SPAN 
+style="FONT-FAMILY: 宋体">复杂的业务需求</SPAN>4-12<SPAN 
+style="FONT-FAMILY: 宋体">小时</SPAN></P>
+<P style="MARGIN-LEFT: 42.3pt">&nbsp;</P>
+<P style="MARGIN-LEFT: 42.3pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">详细设计文档的书写原则：</SPAN></STRONG></P>
+<P style="MARGIN-LEFT: 42.2pt"><SPAN 
+style="FONT-FAMILY: 宋体">系统设计人员在文档中能描述清楚业务模块的详细设计，不拘泥于格式。</SPAN></P>
+<P style="MARGIN-LEFT: 21pt; TEXT-INDENT: 0.3pt">&nbsp;</P>
+<P style="MARGIN-LEFT: 21.25pt">2.4.2 <SPAN 
+style="FONT-FAMILY: 宋体">技术评审阶段</SPAN></P>
+<P style="MARGIN-LEFT: 42.3pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">技术评审流程</SPAN></STRONG><SPAN 
+style="FONT-FAMILY: 宋体">：</SPAN></P>
+<P><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</SPAN><SPAN 
+style="FONT-FAMILY: 宋体">）系统设计人员在技术评审之前，将自己的详细设计文档分发给技术评审的与会人员。</SPAN></P>
+<P style="TEXT-INDENT: 21pt">2<SPAN 
+style="FONT-FAMILY: 宋体">）在技术评审过程中，系统设计人员首先讲述详细设计文档</SPAN></P>
+<P style="TEXT-INDENT: 21pt">3<SPAN 
+style="FONT-FAMILY: 宋体">）评审人员对详细设计中各个环节进行询问和确认，提出修改方案。</SPAN></P>
+<P style="TEXT-INDENT: 21pt">4<SPAN 
+style="FONT-FAMILY: 宋体">）最后项目技术负责人确认调整后的设计方案。</SPAN></P>
+<P><SPAN>&nbsp;&nbsp; </SPAN></P>
+<P style="MARGIN-LEFT: 42.3pt; TEXT-INDENT: -21pt"><SPAN 
+style="FONT-FAMILY: Wingdings">l&nbsp;</SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">技术阶段的交付结果（可配置项）</SPAN></STRONG></P>
+<P style="TEXT-INDENT: 21pt"><SPAN 
+style="FONT-FAMILY: 宋体">业务确定的详细设计文档。</SPAN></P>
+<P style="TEXT-INDENT: 21pt"><SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体">注：此文档是交付确认的标准之一。</SPAN></P>
+<H2>2.5 Coding<SPAN style="FONT-FAMILY: 宋体">阶段</SPAN></H2>
+<P style="TEXT-INDENT: 15.75pt"><SPAN 
+style="FONT-FAMILY: 宋体">系统开发人员根据业务的项目详细设计文档，进行实际</SPAN>Coding<SPAN 
+style="FONT-FAMILY: 宋体">过程。</SPAN></P>
+<P style="TEXT-INDENT: 5.25pt"><SPAN style="FONT-FAMILY: 宋体">在</SPAN>Coding<SPAN 
+style="FONT-FAMILY: 宋体">过程中的注意事项</SPAN></P>
+<P style="TEXT-INDENT: 5.25pt">1<SPAN style="FONT-FAMILY: 宋体">）</SPAN> <SPAN 
+style="FONT-FAMILY: 宋体">在</SPAN>Coding<SPAN 
+style="FONT-FAMILY: 宋体">过程中严格按照</SPAN>Coding<SPAN 
+style="FONT-FAMILY: 宋体">开发规范来执行。</SPAN></P>
+<P style="TEXT-INDENT: 5.25pt">2<SPAN 
+style="FONT-FAMILY: 宋体">）在</SPAN>Coding<SPAN 
+style="FONT-FAMILY: 宋体">过程中，发现详细设计文档中的严重缺陷，则需要和项目设计人员确认，如非常复杂，则需重新技术评审。</SPAN></P>
+<P style="TEXT-INDENT: 5.25pt">3<SPAN 
+style="FONT-FAMILY: 宋体">）在详细设计发生改变时，需要及时更新详细设计文档。</SPAN></P>
+<P>&nbsp;</P>
+<H2>2.6 <SPAN style="FONT-FAMILY: 宋体">业务模块确认交付阶段</SPAN></H2>
+<P style="TEXT-INDENT: 21pt"><SPAN 
+style="FONT-FAMILY: 宋体">项目技术负责人和业务分析人员共同对业务模块进行验收。</SPAN></P>
+<P style="TEXT-INDENT: 21pt">&nbsp;</P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="FONT-FAMILY: 宋体">验收步骤：</SPAN></P>
+<P style="TEXT-INDENT: 21pt">1<SPAN 
+style="FONT-FAMILY: 宋体">）业务分析人员确认功能模块实现功能和客户需求一致</SPAN></P>
+<P style="TEXT-INDENT: 21pt">2<SPAN 
+style="FONT-FAMILY: 宋体">）技术负责人对功能模块进行技术上的确认。</SPAN></P>
+<P style="TEXT-INDENT: 21pt">3<SPAN 
+style="FONT-FAMILY: 宋体">）测试人员的测试报告</SPAN></P>
+<P style="TEXT-INDENT: 21pt">&nbsp;</P>
+<P style="TEXT-INDENT: 21pt"><SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体">注：第三步主要看公司的具体的情况和业务复杂度，</SPAN></P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="COLOR: red">&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: red; FONT-FAMILY: 宋体">第三步完成流程如下：</SPAN></P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="COLOR: red">&nbsp;&nbsp; 1</SPAN><SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体">）准备测试阶段</SPAN><SPAN 
+style="COLOR: red">&nbsp;</SPAN><SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体">测试人员根据业务需求，设定一个业务环境，写成测试脚本，</SPAN></P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="COLOR: red">&nbsp;&nbsp; 2</SPAN><SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体">）测试阶段</SPAN><SPAN 
+style="COLOR: red">&nbsp;&nbsp; </SPAN><SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体">根据测试环境和业务需求</SPAN> <SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体">进行测试</SPAN></P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="COLOR: red">&nbsp;&nbsp; 3</SPAN><SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体">）根据测试的结果，出测试报告。</SPAN></P>
+<P style="TEXT-INDENT: 21pt">&nbsp;</P>
+<P style="TEXT-INDENT: 21pt">&nbsp;</P>
+<H2>2.7 <SPAN style="FONT-FAMILY: 宋体">系统集成测试</SPAN></H2>
+<P style="TEXT-INDENT: 21pt"><SPAN 
+style="FONT-FAMILY: 宋体">根据客户业务需求，测试人员设定一个测试环境，编写测试脚本，在测试服务器上部署好系统。按照测试用例进行业务功能上测试。</SPAN></P>
+<P style="TEXT-INDENT: 21pt">&nbsp;</P>
+<P style="TEXT-INDENT: 21pt"><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">测试人员准备工作清单：</SPAN></STRONG></P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="FONT-FAMILY: 宋体">测试用例</SPAN></P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="FONT-FAMILY: 宋体">测试脚本</SPAN></P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="FONT-FAMILY: 宋体">当前实现模块</SPAN></P>
+<P style="TEXT-INDENT: 21pt">&nbsp;</P>
+<P style="TEXT-INDENT: 21pt"><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">硬件设备</SPAN></STRONG><SPAN 
+style="FONT-FAMILY: 宋体">：</SPAN></P>
+<P style="TEXT-INDENT: 21pt"><SPAN 
+style="FONT-FAMILY: 宋体">等同条件的客户运行环境</SPAN></P>
+<P style="TEXT-INDENT: 21pt">&nbsp;</P>
+<P style="TEXT-INDENT: 21pt"><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">系统集成测试阶段交付项（可配置项）：</SPAN></STRONG></P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="FONT-FAMILY: 宋体">系统集成测试报告</SPAN></P>
+<P style="TEXT-INDENT: 21pt">&nbsp;</P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="FONT-FAMILY: 宋体">系统集成测试报告格式</SPAN></P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="FONT-FAMILY: 宋体">功能点</SPAN>&nbsp;<SPAN 
+style="FONT-FAMILY: 宋体">测试人</SPAN> <SPAN 
+style="FONT-FAMILY: 宋体">测试脚本</SPAN>&nbsp;<SPAN 
+style="FONT-FAMILY: 宋体">测试结果</SPAN><SPAN>&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">异常原因</SPAN></P>
+<P style="TEXT-INDENT: 21pt"><STRONG></STRONG>&nbsp;</P>
+<H2>2.8 <SPAN style="FONT-FAMILY: 宋体">系统打包部署</SPAN></H2>
+<P><SPAN>&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">客服安装人员将系统打包成一个安装文件，供在客户的系统环境中部署系统</SPAN></P>
+<P style="TEXT-INDENT: 21pt"><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">系统集成测试阶段交付项（可配置项）：</SPAN></STRONG></P>
+<P style="TEXT-INDENT: 21pt"><SPAN style="FONT-FAMILY: 宋体">系统安装文件</SPAN></P>
+<P 
+style="TEXT-INDENT: 21pt"><BR>&nbsp;</P>注：&nbsp;网页看的不是太清晰，<BR>下面是文档的连接，可以直接下载看<BR><A 
+href="http://files.cnblogs.com/macroxu-1982/项目开发规范文档.doc">/Files/macroxu-1982/项目开发规范文档.doc</A>&nbsp;&nbsp;&nbsp;&nbsp; 
+徐文兵&nbsp; 整理于2009-07-18&nbsp;&nbsp; <BR></DIV>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/macroxu-1982/" 
+target=_blank>徐文兵</A><BR>关注 - 2<BR>粉丝 - 3<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1528955,17858,1)><SPAN class=diggnum 
+id=digg_count_1528955>12</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1528955,17858,2)><SPAN class=burynum 
+id=bury_count_1528955>3</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1528955 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1528955>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/04/10/1432917.html">« 
+</A>上一篇：<A title="发布于2009-04-10 10:21" 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/04/10/1432917.html">未来五年程序员应当具备的十项技能</A><BR><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/08/24/1552586.html">» 
+</A>下一篇：<A title="发布于2009-08-24 00:21" 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/08/24/1552586.html">参加IBM 
+Rational高峰论坛的会议笔记</A><BR></DIV>
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '2952360b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+
+<P class=postfoot>posted on 2009-07-22 23:17 <A 
+href="http://www.cnblogs.com/macroxu-1982/">徐文兵</A> 阅读(5787) <A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">评论(21)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/macroxu-1982/admin/EditPosts.aspx?postid=1528955">编辑</A> 
+<A onclick="AddToWz(1528955);return false;" 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#">收藏</A> 
+所属分类: <A 
+href="http://www.cnblogs.com/macroxu-1982/category/88165.html">软件分析和设计</A> 
+</P></DIV><IMG height=1 src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/1528955.jpg" 
+width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html"
+dc:identifier="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/macroxu-1982/services/trackbacks/1528955.aspx" />
+</rdf:RDF>
+--><A name=pagedcomment></A><A name=评论>
+<DIV id=comments>
+<H3>评论</H3><SPAN id=span_comment_maxid style="DISPLAY: none">1593973</SPAN> 
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593168">#1楼</A><A 
+id=comment_anchor_1593168 name=1593168></A> <SPAN>2009-07-23 08:58 </SPAN><A 
+id=Comments1_CommentList_ctl00_NameLink 
+href="http://www.cnblogs.com/wuxiaoqqqq/" target=_blank>wuxiaoqqqq</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/wuxiaoqqqq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_1593168>我也在整理，但我写来写去也没写出什么东西出来。</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("wuxiaoqqqq",1593168,"PEvUSnZdeiVfTV6zMqwjUEM69SfK8QAPnJf1x9yzYNk9SbCf7XPzew==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593168,"PEvUSnZdeiVfTV6zMqwjUEM69SfK8QAPnJf1x9yzYNk9SbCf7XPzew==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=wuxiaoqqqq" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593174">#2楼</A><A 
+id=comment_anchor_1593174 name=1593174></A> <SPAN>2009-07-23 09:04 </SPAN><A 
+id=Comments1_CommentList_ctl01_NameLink href="http://www.cnblogs.com/wuli00/" 
+target=_blank>D调dě浪漫</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Dè°dÄæµªæ¼«">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593174>谢谢分享</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("D调dě浪漫",1593174,"uef2J3L6jNw0JfAXRWkDdtVsrdkl72wgyw5Em5zNGtdRGmf3rrfJZw==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593174,"uef2J3L6jNw0JfAXRWkDdtVsrdkl72wgyw5Em5zNGtdRGmf3rrfJZw==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=D%e8%b0%83d%c4%9b%e6%b5%aa%e6%bc%ab" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593201">#3楼</A><A 
+id=comment_anchor_1593201 name=1593201></A> <SPAN>2009-07-23 09:23 </SPAN><A 
+id=Comments1_CommentList_ctl02_NameLink 
+href="http://www.cnblogs.com/weidagang2046/" target=_blank>Todd Wei</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Todd+Wei">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593201>谢谢分享</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("Todd Wei",1593201,"y+2Ocl1SIK1VnaNMGgswpSzzHj7pB2wELbaxqX7FG+Rg4BmNntzsLw==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593201,"y+2Ocl1SIK1VnaNMGgswpSzzHj7pB2wELbaxqX7FG+Rg4BmNntzsLw==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Todd+Wei" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593212">#4楼</A><A 
+id=comment_anchor_1593212 name=1593212></A> <SPAN>2009-07-23 09:33 </SPAN><A 
+id=Comments1_CommentList_ctl03_NameLink target=_blank>cococoli[未注册用户]</A> </H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593212>挺山寨，不过实用为王！</SPAN> 
+&nbsp;&nbsp;<A onclick='ReplyComment("cococoli",1593212,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593212,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593217">#5楼</A><A 
+id=comment_anchor_1593217 name=1593217></A> <SPAN>2009-07-23 09:36 </SPAN><A 
+id=Comments1_CommentList_ctl04_NameLink href="http://www.cnblogs.com/asidy/" 
+target=_blank>Asidy</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Asidy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593217>嗯 ，比较详细了</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("Asidy",1593217,"oAtAy58F+czoFKBIGBo8miM+rqnW7WJ6Z5rInhCK9qpZpxtcCsyk9w==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593217,"oAtAy58F+czoFKBIGBo8miM+rqnW7WJ6Z5rInhCK9qpZpxtcCsyk9w==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Asidy" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593220">#6楼</A><A 
+id=comment_anchor_1593220 name=1593220></A> <SPAN>2009-07-23 09:38 </SPAN><A 
+id=Comments1_CommentList_ctl05_NameLink target=_blank>9743[未注册用户]</A> </H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593220>离职了才整理这个? 
+平时开发怎么管理?<BR><BR>小企业的通病...</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("9743",1593220,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593220,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl05_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl05$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl05_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593245">#7楼</A><A 
+id=comment_anchor_1593245 name=1593245></A> <SPAN>2009-07-23 09:56 </SPAN><A 
+id=Comments1_CommentList_ctl06_NameLink href="http://www.cnblogs.com/mqsuper/" 
+target=_blank>莫贝特(MBetter)</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/è«è´ç¹(MBetter)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593245>收藏啦</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("莫贝特(MBetter)",1593245,"UHwhucLMSurZIwjpY3ttqaAkVw/pZvroddJimaEOHrtohn+rLOYfDA==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593245,"UHwhucLMSurZIwjpY3ttqaAkVw/pZvroddJimaEOHrtohn+rLOYfDA==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e8%8e%ab%e8%b4%9d%e7%89%b9(MBetter)" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl06_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl06$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl06_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593247">#8楼</A><A 
+id=comment_anchor_1593247 name=1593247></A> <SPAN>2009-07-23 09:56 </SPAN><A 
+id=Comments1_CommentList_ctl07_NameLink href="http://home.cnblogs.com/69723/" 
+target=_blank>秋雨</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/ç§é¨">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593247>谢谢分享</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("秋雨",1593247,"Uwsya5I3/GKQi0MJLrfSFqt4Gk91q+SvWCsmzV8LEB6/eTo+4oE1yA==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593247,"Uwsya5I3/GKQi0MJLrfSFqt4Gk91q+SvWCsmzV8LEB6/eTo+4oE1yA==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e7%a7%8b%e9%9b%a8" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl07_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl07$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl07_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593250">#9楼</A><A 
+id=comment_anchor_1593250 name=1593250></A> <SPAN>2009-07-23 09:58 </SPAN><A 
+id=Comments1_CommentList_ctl08_NameLink target=_blank>vzxcvx32452342[未注册用户]</A> 
+</H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_1593250>看文档应该是三五个人的小作坊公司吧<BR>也好意思发出来</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("vzxcvx32452342",1593250,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593250,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl08_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl08$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl08_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593251">#10楼</A><A 
+id=comment_anchor_1593251 name=1593251></A> <SPAN>2009-07-23 09:58 </SPAN><A 
+id=Comments1_CommentList_ctl09_NameLink target=_blank>vzxcvx32452342[未注册用户]</A> 
+</H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_1593251>看文档应该是三五个人的小作坊公司吧<BR>也好意思发出来</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("vzxcvx32452342",1593251,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593251,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl09_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl09$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl09_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593261">#11楼</A><A 
+id=comment_anchor_1593261 name=1593261></A> <SPAN>2009-07-23 10:07 </SPAN><A 
+id=Comments1_CommentList_ctl10_NameLink target=_blank>極速[未注册用户]</A> </H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_1593261>9743<BR>vzxcvx32452342<BR>像你們這種人，真是少見啊。把你們好的東西共享一下啊！就知道說別人的東西不行，自已又不發好東東！</SPAN> 
+&nbsp;&nbsp;<A onclick='ReplyComment("極速",1593261,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593261,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl10_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl10$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl10_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593262">#12楼</A><A 
+id=comment_anchor_1593262 name=1593262></A> <SPAN>2009-07-23 10:07 </SPAN><A 
+id=Comments1_CommentList_ctl11_NameLink target=_blank>極速[未注册用户]</A> </H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_1593262>9743<BR>vzxcvx32452342<BR>像你們這種人，真是少見啊。把你們好的東西共享一下啊！就知道說別人的東西不行，自已又不發好東東！</SPAN> 
+&nbsp;&nbsp;<A onclick='ReplyComment("極速",1593262,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593262,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl11_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl11$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl11_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593271">#13楼</A><A 
+id=comment_anchor_1593271 name=1593271></A>[<SPAN class=louzhu>楼主</SPAN>] 
+<SPAN>2009-07-23 10:13 </SPAN><A id=Comments1_CommentList_ctl12_NameLink 
+href="http://www.cnblogs.com/macroxu-1982/" target=_blank>徐文兵</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å¾æåµ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593271>这个也是平时的总结 
+，在实际的开发过程中也是这么搞的。对于小企业的开发管理来讲，其实呢，我们从另外一种角度来看，因为小，项目的规模和复杂度也不是像大公司那样大，搞的手段也就白花齐放。谈不上什么通病，因为他还活着。</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("徐文兵",1593271,"IJLR/szI9AtA/zKDSB4wjn6vtKeyWKth180tE64xSIJdeCxDE2bTpg==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593271,"IJLR/szI9AtA/zKDSB4wjn6vtKeyWKth180tE64xSIJdeCxDE2bTpg==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%be%90%e6%96%87%e5%85%b5" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl12_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl12$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl12_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593275">#14楼</A><A 
+id=comment_anchor_1593275 name=1593275></A> <SPAN>2009-07-23 10:15 </SPAN><A 
+id=Comments1_CommentList_ctl13_NameLink href="http://www.cnblogs.com/zmicesea/" 
+target=_blank>雪舞天琊恋噬魂</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/éªèå¤©çæå¬é&shy;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593275>鼓励分享，交流</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("雪舞天琊恋噬魂",1593275,"Sh3OqJYurEJGChlKoXuIh3VGXHsGXQKkItw/hCn6hx5EOuwvInkCrw==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593275,"Sh3OqJYurEJGChlKoXuIh3VGXHsGXQKkItw/hCn6hx5EOuwvInkCrw==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e9%9b%aa%e8%88%9e%e5%a4%a9%e7%90%8a%e6%81%8b%e5%99%ac%e9%ad%82" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl13_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl13$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl13_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593404">#15楼</A><A 
+id=comment_anchor_1593404 name=1593404></A> <SPAN>2009-07-23 11:40 </SPAN><A 
+id=Comments1_CommentList_ctl14_NameLink 
+href="http://www.cnblogs.com/alixingxing/" target=_blank>alixingxing</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/alixingxing">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593404><A 
+href="http://www.168moyu.com/" target=_blank>学习了！</A></SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("alixingxing",1593404,"vPvFHCsdGx5TVYQh+P4OktLFtUEait117zkxPR07xpGlP4TVVh/6Vg==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593404,"vPvFHCsdGx5TVYQh+P4OktLFtUEait117zkxPR07xpGlP4TVVh/6Vg==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=alixingxing" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl14_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl14$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl14_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593455">#16楼</A><A 
+id=comment_anchor_1593455 name=1593455></A> <SPAN>2009-07-23 12:40 </SPAN><A 
+id=Comments1_CommentList_ctl15_NameLink href="http://www.cnblogs.com/ttzhang/" 
+target=_blank>上不了岸的鱼</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/ä¸ä¸äºå²¸çé±¼">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593455>支持一下楼主</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("上不了岸的鱼",1593455,"emoAu1CnVxcbZz0GIoBZB0ApcAT4SxEj8P7zrpeZa6LLst2zVUjMOQ==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593455,"emoAu1CnVxcbZz0GIoBZB0ApcAT4SxEj8P7zrpeZa6LLst2zVUjMOQ==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e4%b8%8a%e4%b8%8d%e4%ba%86%e5%b2%b8%e7%9a%84%e9%b1%bc" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl15_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl15$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl15_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593594">#17楼</A><A 
+id=comment_anchor_1593594 name=1593594></A>[<SPAN class=louzhu>楼主</SPAN>] 
+<SPAN>2009-07-23 15:17 </SPAN><A id=Comments1_CommentList_ctl16_NameLink 
+href="http://www.cnblogs.com/macroxu-1982/" target=_blank>徐文兵</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å¾æåµ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_1593594>其实在这边,我想来想去，在需求调研阶段，还是缺一部分，<BR>怎么过滤客户的需求，在技术评审中，方法可行性低的情况下，如何说服客户pass 
+掉这样的业务等等 ，我在这个方面还是很薄弱的，还请兄弟们 ，多出宝贵意见 ，这样大家提高！</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("徐文兵",1593594,"IJLR/szI9AtA/zKDSB4wjn6vtKeyWKth180tE64xSIJdeCxDE2bTpg==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593594,"IJLR/szI9AtA/zKDSB4wjn6vtKeyWKth180tE64xSIJdeCxDE2bTpg==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%be%90%e6%96%87%e5%85%b5" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl16_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl16$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl16_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593675">#18楼</A><A 
+id=comment_anchor_1593675 name=1593675></A> <SPAN>2009-07-23 16:36 </SPAN><A 
+id=Comments1_CommentList_ctl17_NameLink 
+href="http://www.cnblogs.com/haifeng19988/" target=_blank>海风1998</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æµ·é£1998">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593675>感谢分享。</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("海风1998",1593675,"5mc5PYq8+Jo5a7d2YY+/Lue43EisilV0u+e77W1wr9FG42YQa/JBNw==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593675,"5mc5PYq8+Jo5a7d2YY+/Lue43EisilV0u+e77W1wr9FG42YQa/JBNw==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%b5%b7%e9%a3%8e1998" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl17_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl17$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl17_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593689">#19楼</A><A 
+id=comment_anchor_1593689 name=1593689></A> <SPAN>2009-07-23 16:42 </SPAN><A 
+id=Comments1_CommentList_ctl18_NameLink target=_blank>傻子林[未注册用户]</A> </H4>
+<P><SPAN class=blog_comment_body id=comment_body_1593689>感谢分享，取长补短</SPAN> 
+&nbsp;&nbsp;<A onclick='ReplyComment("傻子林",1593689,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593689,"")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl18_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl18$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl18_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593697">#20楼</A><A 
+id=comment_anchor_1593697 name=1593697></A> <SPAN>2009-07-23 16:46 </SPAN><A 
+id=Comments1_CommentList_ctl19_NameLink href="http://www.cnblogs.com/sql4me/" 
+target=_blank>Yongq wong</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Yongq+wong">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_1593697>谢谢分享!<BR>每个人的水平都有限,而且博客就是一个重在于分享的地方.大家互相学习,才会有进步!</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("Yongq wong",1593697,"uJNREqVsZDPq+ad/6gghbSq4nb1bDFGJfCjJK68iKuUNKv6+K1VrSQ==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593697,"uJNREqVsZDPq+ad/6gghbSq4nb1bDFGJfCjJK68iKuUNKv6+K1VrSQ==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Yongq+wong" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl19_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl19$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl19_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#1593973">#21楼</A><A 
+id=comment_anchor_1593973 name=1593973></A><A name=Post></A> <SPAN>2009-07-23 
+22:44 </SPAN><A id=Comments1_CommentList_ctl20_NameLink 
+href="http://www.cnblogs.com/longqi293/" target=_blank>Jack Fan</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Jack+Fan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_1593973>感谢分享，最近我也体会到小公司的这些流程不规范，的确急需在早期建立一个类似的流程规章，虽然兄台写的“山寨”了点，不过很容易懂！所谓实用至上！先收下了！<BR>祝你能尽快找到满意的工作！</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("Jack Fan",1593973,"8NPYB7JMoFyt30FoMs5++mCERcmGKI1p9PFUMb+f2RmTM3wLNAH6SQ==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1593973,"8NPYB7JMoFyt30FoMs5++mCERcmGKI1p9PFUMb+f2RmTM3wLNAH6SQ==")' 
+href="http://www.cnblogs.com/macroxu-1982/archive/2009/07/22/1528955.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Jack+Fan" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl20_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl20$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl20_EditLink></A> </P></DIV>
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl11_comment_form>
+<DIV id=ctl11_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fmacroxu-1982%2farchive%2f2009%2f07%2f22%2f1528955.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fmacroxu-1982%2farchive%2f2009%2f07%2f22%2f1528955.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A class=site_hot 
+href="http://a4.yeshj.com/rd/35182/" target=_blank>有道难题开锣头奖8万！</A><BR><A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+href="http://news.cnblogs.com/n/65098/" 
+target=_blank>甲骨文收购eServGlobal预付费软件部门</A><BR>· <A 
+href="http://news.cnblogs.com/n/65090/" 
+target=_blank>BitTorrent官方将"绅士型"BT新协议uTP开源</A><BR>· <A 
+href="http://news.cnblogs.com/n/65089/" target=_blank>宽带速度最快的十个城市</A><BR>· <A 
+href="http://news.cnblogs.com/n/65088/" 
+target=_blank>卓越亚马逊总裁王汉华：垂直帝国的水平进化</A><BR>· <A 
+href="http://news.cnblogs.com/n/65086/" target=_blank>你会选谁：Red Hat还是Ubuntu 
+KVM虚拟化？</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+alt="" src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=%e8%bd%af%e4%bb%b6%e5%88%86%e6%9e%90%e5%92%8c%e8%ae%be%e8%ae%a1" 
+target=_blank>软件分析和设计</A> </DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/1528955/">项目开发流程规范文档</A></DIV></DIV></DIV>
+<P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" href="http://www.cnblogs.com/" 
+name=Hyperlink1>博客园</A> <BR>Copyright © 徐文兵 </P>
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/urchin.js" type=text/javascript>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+_uacct = "UA-2381056-1";
+urchinTracker();
+</SCRIPT>
+
+<DIV style="TEXT-ALIGN: center">
+<SCRIPT type=text/JavaScript> 
+alimama_pid="mm_11343326_1210110_3025294"; 
+alimama_titlecolor="0000FF"; 
+alimama_descolor ="000000"; 
+alimama_bgcolor="FFFFFF"; 
+alimama_bordercolor="E6E6E6"; 
+alimama_linkcolor="008000"; 
+alimama_bottomcolor="FFFFFF"; 
+alimama_anglesize="0"; 
+alimama_bgpic="0"; 
+alimama_icon="0"; 
+alimama_sizecode="14"; 
+alimama_width=500; 
+alimama_height=90; 
+alimama_type=2; 
+</SCRIPT>
+
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/inf.js" type=text/javascript> 
+</SCRIPT>
+</DIV>
+<DIV style="TEXT-ALIGN: center">
+<SCRIPT type=text/javascript><!--
+google_ad_client = "pub-9320623206993159";
+/* 728x90, 创建于 10-1-15 */
+google_ad_slot = "4405245337";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</SCRIPT>
+
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/show_ads.js" 
+type=text/javascript>
+</SCRIPT>
+</DIV>
+<SCRIPT type=text/javascript>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+try {
+var pageTracker = _gat._getTracker("UA-12544387-2");
+pageTracker._trackPageview();
+} catch(err) {}</SCRIPT>
+</FORM>
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="项目开发流程规范文档 - 徐文兵的IT博客 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

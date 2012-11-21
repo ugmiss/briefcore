@@ -1,0 +1,1671 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0060)http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=DHTML,Javascript,jQuery入门,构造函数 name=keywords><LINK 
+href="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK id=MainCss 
+href="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK 
+href="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/common2.css" type=text/css 
+rel=stylesheet><LINK href="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/shCore.css" 
+type=text/css rel=stylesheet><LINK 
+href="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/think/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/think/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1091816.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<!--done-->
+<DIV id=home>
+<DIV id=header>
+<DIV style="DISPLAY: none"><IMG 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/header.jpg"><IMG 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/body.gif"> <IMG 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/footer.jpg"> </DIV>
+<DIV id=blogTitle><A id=lnkBlogLogo href="http://www.cnblogs.com/think/"><IMG 
+id=blogLogo alt=返回主页 src=""></A> <!--done-->
+<H1><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/think/">THINK(谭振林)</A></H1>
+<H2>
+<SCRIPT src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/urchin.js" 
+type=text/javascript>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+_uacct = "UA-3285591-1";
+urchinTracker();
+</SCRIPT>
+本来我差钱，但我更渴求智慧，所以就不那么觉得差钱了！<BR></H2></DIV><!--end: blogTitle 博客的标题和副标题 -->
+<DIV id=navigator><!--done-->
+<UL id=navList>
+  <LI><A class=menu id=MyLinks1_HomeLink href="http://www.cnblogs.com/">博客园</A> 
+  </LI>
+  <LI><A class=menu id=MyLinks1_SpaceLink 
+  href="http://space.cnblogs.com/">社区</A> </LI>
+  <LI><A class=menu id=MyLinks1_MyHomeLink 
+  href="http://www.cnblogs.com/think/">首页</A> </LI>
+  <LI><A class=menu id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/think/admin/EditPosts.aspx?opt=1">新随笔</A> </LI>
+  <LI><A class=menu id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/Think">联系</A> </LI>
+  <LI><A class=menu id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/think/admin/EditPosts.aspx">管理</A> </LI>
+  <LI><A class=menu id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/think/rss">订阅</A> <A class=aHeaderXML 
+  id=MyLinks1_XMLLink href="http://www.cnblogs.com/think/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/rss.gif"></A> </LI></UL>
+<DIV class=clear></DIV>
+<DIV class=blogStats><!--done-->随笔- 347&nbsp; 文章- 4&nbsp; 评论- 4139&nbsp; 
+<DIV style="DISPLAY: none"><IMG src=""></DIV></DIV><!--end: blogStats --></DIV><!--end: navigator 博客导航栏 --></DIV><!--end: header 头部 -->
+<DIV id=main>
+<DIV id=topicList>
+<DIV class=forFlow><!--done-->
+<DIV id=topics>
+<DIV class=post>
+<H1 class=postTitle><A class=postTitle2 id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/think/archive/2008/03/05/1091816.html">jQuery入门[1]－构造函数</A> 
+</H1>
+<DIV class=clear></DIV>
+<DIV class=postBody><A class=titlelink 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html">jQuery入门[1]－构造函数</A><BR><A 
+class=titlelink 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091863.html">jQuery入门[2]－选择器</A><BR><A 
+class=titlelink 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1092011.html">jQuery入门[3]－事件</A><BR><A 
+class=titlelink 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1092044.html">jQuery入门[4]－链式代码</A> 
+<BR><A class=titlelink 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1092101.html">jQuery入门[5]－AJAX</A> 
+<BR><A class=titlelink 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1092149.html">jQuery入门[6]－动画</A><BR><A 
+href="http://www.jquery.com/">JQuery</A>优点<BR>◦体积小（v1.2.3&nbsp;15kb）<BR>◦丰富的DOM选择器(CSS1-3&nbsp;+&nbsp;XPath)&nbsp;◦跨浏览器（IE6,FF,Safari,Opera）<BR>◦链式代码<BR>◦强大的事件、样式支持<BR>◦强大的AJAX功能<BR>◦易于扩展，插件丰富<BR><BR>jQuery的构造函数接收四种类型的参数： 
+
+<UL>
+  <LI>jQuery(expression,context) 
+  <LI>jQuery(html) 
+  <LI>jQuery(elements) 
+  <LI>jQuery(fn) 
+</LI></UL><BR>第一种根据表达式（ID，DOM元素名，CSS表达式，XPath表达式）找出文档中的元素，并组装成一个jQuery对象返回。<BR>DEMO:<BR>
+<DIV 
+style="BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 13px; PADDING-BOTTOM: 4px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 98%; PADDING-TOP: 4px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #eeeeee"><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN style="COLOR: #0000ff">&lt;!</SPAN><SPAN 
+style="COLOR: #ff00ff">DOCTYPE&nbsp;html&nbsp;PUBLIC&nbsp;"-//W3C//DTD&nbsp;XHTML&nbsp;1.0&nbsp;Transitional//EN"&nbsp;"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN 
+style="COLOR: #800000">html&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">xmlns</SPAN><SPAN 
+style="COLOR: #0000ff">="http://www.w3.org/1999/xhtml"</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN style="COLOR: #800000">head</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN style="COLOR: #800000">title</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000">jQuery&nbsp;basic</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN 
+style="COLOR: #800000">title</SPAN><SPAN style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN 
+style="COLOR: #800000">style&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">type</SPAN><SPAN 
+style="COLOR: #0000ff">="text/css"</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #800000; BACKGROUND-COLOR: #f5f5f5"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.selected&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #000000; BACKGROUND-COLOR: #f5f5f5">{</SPAN><SPAN 
+style="COLOR: #ff0000; BACKGROUND-COLOR: #f5f5f5"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color</SPAN><SPAN 
+style="COLOR: #000000; BACKGROUND-COLOR: #f5f5f5">:</SPAN><SPAN 
+style="COLOR: #0000ff; BACKGROUND-COLOR: #f5f5f5">Yellow</SPAN><SPAN 
+style="COLOR: #000000; BACKGROUND-COLOR: #f5f5f5">;</SPAN><SPAN 
+style="COLOR: #ff0000; BACKGROUND-COLOR: #f5f5f5"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #000000; BACKGROUND-COLOR: #f5f5f5">}</SPAN><SPAN 
+style="COLOR: #800000; BACKGROUND-COLOR: #f5f5f5"><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN 
+style="COLOR: #800000">style</SPAN><SPAN style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN 
+style="COLOR: #800000">script&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">src</SPAN><SPAN 
+style="COLOR: #0000ff">="../scripts/jquery-1.2.3.intellisense.js"</SPAN><SPAN 
+style="COLOR: #ff0000">&nbsp;type</SPAN><SPAN 
+style="COLOR: #0000ff">="text/javascript"</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;&lt;/</SPAN><SPAN 
+style="COLOR: #800000">script</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN style="COLOR: #800000">head</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN style="COLOR: #800000">body</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN style="COLOR: #800000">h3</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000">jQuery构造函数</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN style="COLOR: #800000">h3</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN style="COLOR: #800000">ul</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN style="COLOR: #800000">li</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000">jQuery(expression,context)</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN style="COLOR: #800000">li</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN style="COLOR: #800000">li</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000">jQuery(html)</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN style="COLOR: #800000">li</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN style="COLOR: #800000">li</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000">jQuery(elements)</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN style="COLOR: #800000">li</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN style="COLOR: #800000">li</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000">jQuery(fn)</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN style="COLOR: #800000">li</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN style="COLOR: #800000">ul</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;</SPAN><SPAN 
+style="COLOR: #800000">script&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">type</SPAN><SPAN 
+style="COLOR: #0000ff">="text/javascript"</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN 
+style="COLOR: #000000; BACKGROUND-COLOR: #f5f5f5"><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN 
+style="COLOR: #800000">script</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN style="COLOR: #800000">body</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">&lt;/</SPAN><SPAN style="COLOR: #800000">html</SPAN><SPAN 
+style="COLOR: #0000ff">&gt;</SPAN></DIV><BR>将以下jQuery代码加入文末的脚本块中：<BR>
+<DIV 
+style="BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 13px; PADDING-BOTTOM: 4px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 98%; PADDING-TOP: 4px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #eeeeee"><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN style="COLOR: #000000">jQuery(</SPAN><SPAN 
+style="COLOR: #000000">"</SPAN><SPAN 
+style="COLOR: #000000">ul&gt;li:first</SPAN><SPAN 
+style="COLOR: #000000">"</SPAN><SPAN 
+style="COLOR: #000000">).addClass(</SPAN><SPAN 
+style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">selected</SPAN><SPAN 
+style="COLOR: #000000">"</SPAN><SPAN 
+style="COLOR: #000000">);</SPAN></DIV>页面运行效果如下：<BR><IMG height=157 alt="" 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/jquery1.gif" 
+width=262><BR>其中jQuery()可替换为快捷方式$()，如果$被其它对象占用，可使用jQuery.noConflict()函数取消快捷方式。<BR>"ul&gt;li:first"中ul&gt;li表示所有位于ul下的li元素（为CSS表达式，XPath方式可用ul/li），:first表示其中的第一个。addClass()为jQuery对象用来添加CSS样式类的函数，相反的函数为removeClass()。<BR>再加入以下代码：<BR>
+<DIV 
+style="BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 13px; PADDING-BOTTOM: 4px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 98%; PADDING-TOP: 4px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #eeeeee"><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN style="COLOR: #000000">$(</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN style="COLOR: #000000">ul</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN 
+style="COLOR: #000000">).append($(</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN 
+style="COLOR: #000000">&lt;li&gt;new&nbsp;item&lt;/li&gt;</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN 
+style="COLOR: #000000">));</SPAN></DIV>运行效果如下：<BR><IMG height=180 alt="" 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/jquery2.gif" 
+width=257><BR>其中$('&lt;li&gt;new 
+item&lt;/li&gt;')将其中的字符串转换为DOM对象，然后通过append()函数加入ul对象的最后。<BR>接下来：<BR>
+<DIV 
+style="BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 13px; PADDING-BOTTOM: 4px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 98%; PADDING-TOP: 4px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #eeeeee"><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(</SPAN><SPAN 
+style="COLOR: #0000ff">function</SPAN><SPAN 
+style="COLOR: #000000">(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN style="COLOR: #000000">ul</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN style="COLOR: #000000">).css(</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN style="COLOR: #000000">color</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN style="COLOR: #000000">red</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN 
+style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</SPAN></DIV>则效果如：<BR><IMG 
+height=174 alt="" src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/jquery3.gif" 
+width=266><BR>jQuery构造函数中还可以真接传入DOM对象，如document，或jQuery对象（当然就没什么意义）。ready()函数为document添加事件处理函数，将ul的颜色设为红色。<BR>$(document).ready()由于应用场景众多，所以可以直接用$(fn)来代替，fn表示处理函数。（ready处理函数貌似在文档内容载入完成后执行，无需等待相关其它图片等资源载入完成，所以比load事件要更早执行，对于这点，没有具体证实）<BR>
+<DIV 
+style="BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 13px; PADDING-BOTTOM: 4px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 98%; PADDING-TOP: 4px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #eeeeee"><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(</SPAN><SPAN 
+style="COLOR: #0000ff">function</SPAN><SPAN 
+style="COLOR: #000000">(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN 
+style="COLOR: #000000">welcome&nbsp;to&nbsp;jQuery</SPAN><SPAN 
+style="COLOR: #000000">'</SPAN><SPAN 
+style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</SPAN></DIV>以上代码的效果是页面一载入，就弹出一个对话框。<BR><BR>reference:<BR><A 
+href="http://docs.jquery.com/Core" 
+target=_new>http://docs.jquery.com/Core</A><BR><A 
+href="http://docs.jquery.com/Core和http://docs.jquery.com/Selectors">http://docs.jquery.com/Core和http://docs.jquery.com/Selectors</A><BR><BR><BR>--未完待续--<BR>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/think/" 
+target=_blank><IMG class=author_avatar alt="" 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/u7232.jpg"></A> 
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/think/" 
+target=_blank>Think</A><BR>关注 - 3<BR>粉丝 - 39<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1091816,10620,1)><SPAN class=diggnum 
+id=digg_count_1091816>4</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1091816,10620,2)><SPAN class=burynum 
+id=bury_count_1091816>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1091816 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1091816>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/think/archive/2008/03/05/1091277.html">« </A>上一篇：<A 
+title="发布于2008-03-05 10:13" 
+href="http://www.cnblogs.com/think/archive/2008/03/05/1091277.html">赢在中国（08-03-04）</A><BR><A 
+href="http://www.cnblogs.com/think/archive/2008/03/05/1091863.html">» </A>下一篇：<A 
+title="发布于2008-03-05 14:39" 
+href="http://www.cnblogs.com/think/archive/2008/03/05/1091863.html">jQuery入门[2]－选择器</A><BR></DIV>
+<SCRIPT src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '0c99310b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+</DIV>
+<DIV class=postDesc>posted @ 2008-03-05 14:13 <A 
+href="http://www.cnblogs.com/think/">Think</A> 阅读(31286) <A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">评论(20)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/think/admin/EditPosts.aspx?postid=1091816">编辑</A> 
+<A onclick="AddToWz(1091816);return false;" 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#">收藏</A> 
+所属分类: <A href="http://www.cnblogs.com/think/category/22345.html">DHTML &amp; 
+Javascript</A></DIV></DIV><IMG height=1 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/1091816.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/think/archive/2008/03/05/1091816.html"
+dc:identifier="http://www.cnblogs.com/think/archive/2008/03/05/1091816.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/think/services/trackbacks/1091816.aspx" />
+</rdf:RDF>
+--></DIV><!--end: topics 文章、评论容器--><A name=pagedcomment></A><!--done--><BR>
+<DIV class=feedback_area_title>发表评论</DIV>
+<DIV class=feedbackNoItems><SPAN id=span_comment_maxid 
+style="DISPLAY: none">1729677</SPAN></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("THIN",1091819,"H8osJQJI4DxB7zogmV8SHzpkjeFRoyWEZpIPMmjzkTQon4kU1RxMdA==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1091819,"H8osJQJI4DxB7zogmV8SHzpkjeFRoyWEZpIPMmjzkTQon4kU1RxMdA==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=THIN" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1091819">#1楼</A><A 
+id=comment_anchor_1091819 name=1091819></A>[<SPAN 
+class=louzhu>楼主</SPAN>]2008-03-05 14:14 | <A 
+id=Comments1_CommentList_ctl00_NameLink href="http://www.cnblogs.com/think/" 
+target=_blank>THIN</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/THIN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1091819>参看<A href="http://docs.jquery.com/Core" 
+target=_new>http://docs.jquery.com/Core</A>和http://docs.jquery.com/Selectors</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("万一",1092397,"M+7kV6OTFl062eGkJ4qz20WRBGjwBgWIPInFtTYGk/ruvvqkbVh2DQ==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1092397,"M+7kV6OTFl062eGkJ4qz20WRBGjwBgWIPInFtTYGk/ruvvqkbVh2DQ==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e4%b8%87%e4%b8%80" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1092397">#2楼</A><A 
+id=comment_anchor_1092397 name=1092397></A>2008-03-05 18:09 | <A 
+id=Comments1_CommentList_ctl01_NameLink href="http://www.cnblogs.com/del/" 
+target=_blank>万一</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/ä¸ä¸">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1092397>拜托楼主给宏观地讲讲 jQuery 吧. <BR>现在到处见到这个名字, 估计应该是对 JavaScript 
+一些基本功能的封装吧? <BR>是仅此而已, 还是有更多来头?</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Zhuang miao",1092657,"eayqCfDrk8QNnDM/iIeI8wZhtM2D11UvlZZJ+mXdZVfhFob1FfsyHg==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1092657,"eayqCfDrk8QNnDM/iIeI8wZhtM2D11UvlZZJ+mXdZVfhFob1FfsyHg==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Zhuang+miao" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1092657">#3楼</A><A 
+id=comment_anchor_1092657 name=1092657></A>2008-03-05 22:32 | <A 
+id=Comments1_CommentList_ctl02_NameLink href="http://www.cnblogs.com/mz121star/" 
+target=_blank>Zhuang miao</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Zhuang+miao">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1092657>谢谢楼主文章，让我对jquery入门了~呵呵</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("梁逸晨",1092758,"i+KcUMADGd0JA97l6ikHVvtJiERaIkGEAHrR0fgphwOkhxa1As3w2g==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1092758,"i+KcUMADGd0JA97l6ikHVvtJiERaIkGEAHrR0fgphwOkhxa1As3w2g==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%a2%81%e9%80%b8%e6%99%a8" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1092758">#4楼</A><A 
+id=comment_anchor_1092758 name=1092758></A>2008-03-06 00:57 | <A 
+id=Comments1_CommentList_ctl03_NameLink href="http://www.cnblogs.com/kvspas/" 
+target=_blank>梁逸晨</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æ¢é¸æ¨">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1092758>回二楼：功能封装、算法封装、改善开发效率。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("万一",1092918,"M+7kV6OTFl062eGkJ4qz20WRBGjwBgWIPInFtTYGk/ruvvqkbVh2DQ==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1092918,"M+7kV6OTFl062eGkJ4qz20WRBGjwBgWIPInFtTYGk/ruvvqkbVh2DQ==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e4%b8%87%e4%b8%80" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1092918">#5楼</A><A 
+id=comment_anchor_1092918 name=1092918></A>2008-03-06 09:03 | <A 
+id=Comments1_CommentList_ctl04_NameLink href="http://www.cnblogs.com/del/" 
+target=_blank>万一</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/ä¸ä¸">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1092918>谢谢.</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("designbook",1128991,"FnWX5HiGfWwiadxewNtA2HCz3M2E2+nMnGKy/S6CvlJxRn5ODdX47Q==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1128991,"FnWX5HiGfWwiadxewNtA2HCz3M2E2+nMnGKy/S6CvlJxRn5ODdX47Q==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=designbook" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl05_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl05$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl05_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1128991">#6楼</A><A 
+id=comment_anchor_1128991 name=1128991></A>2008-03-29 17:04 | <A 
+id=Comments1_CommentList_ctl05_NameLink 
+href="http://www.cnblogs.com/designbook/" target=_blank>designbook</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/designbook">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1128991>哇，又有新作了。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Anders Cui",1223890,"KfSIE8k8sPr1I6zPjcq8QlbBNjh/GVHi8xpZ8J4PI7l+nflUO3Ashw==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1223890,"KfSIE8k8sPr1I6zPjcq8QlbBNjh/GVHi8xpZ8J4PI7l+nflUO3Ashw==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Anders+Cui" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl06_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl06$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl06_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1223890">#7楼</A><A 
+id=comment_anchor_1223890 name=1223890></A>2008-06-12 13:04 | <A 
+id=Comments1_CommentList_ctl06_NameLink href="http://www.cnblogs.com/anderslly/" 
+target=_blank>Anders Cui</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Anders+Cui">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1223890>--引用-------------------------------------------------- 
+<BR>ready处理函数貌似在文档内容载入完成后执行，无需等待相关其它图片等资源载入完成，所以比load事件要更早执行，对于这点，没有具体证实 
+<BR>-------------------------------------------------------- 
+<BR><BR>同时使用onload和ready，可以看到onload先执行 :P</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("BAsil",1249675,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1249675,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl07_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl07$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl07_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1249675">#8楼</A><A 
+id=comment_anchor_1249675 name=1249675></A>2008-07-09 15:15 | <A 
+id=Comments1_CommentList_ctl07_NameLink href="http://basilwang.cnblogs.com/" 
+target=_blank>BAsil</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1249675>好</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Myhsg",1291436,"lNuDQCTGbImEORqZsIdWPOBI5qi/MN05c1xaPlVoEzx0oPYLa/TD3g==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1291436,"lNuDQCTGbImEORqZsIdWPOBI5qi/MN05c1xaPlVoEzx0oPYLa/TD3g==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Myhsg" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl08_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl08$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl08_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1291436">#9楼</A><A 
+id=comment_anchor_1291436 name=1291436></A>2008-08-19 15:53 | <A 
+id=Comments1_CommentList_ctl08_NameLink href="http://www.cnblogs.com/Myhsg/" 
+target=_blank>Myhsg</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Myhsg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1291436>感谢，学习</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A onclick='ReplyComment("飘过",1343767,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1343767,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl09_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl09$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl09_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1343767">#10楼</A><A 
+id=comment_anchor_1343767 name=1343767></A>2008-10-17 14:56 | <A 
+id=Comments1_CommentList_ctl09_NameLink target=_blank>飘过[未注册用户]</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1343767>其中$('&lt;li&gt;new item&lt;/li&gt;')将其中的字符串转换为DOM对象 
+应该是转换未jquery对象吧</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("SoftWareBoy",1384412,"5pfj7QQ1T96yyO75plLXMCrBA0AzU5eV+bh6G5BHhdHuzJ6h1dMcZg==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1384412,"5pfj7QQ1T96yyO75plLXMCrBA0AzU5eV+bh6G5BHhdHuzJ6h1dMcZg==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=SoftWareBoy" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl10_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl10$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl10_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1384412">#11楼</A><A 
+id=comment_anchor_1384412 name=1384412></A>2008-11-27 21:24 | <A 
+id=Comments1_CommentList_ctl10_NameLink 
+href="http://www.cnblogs.com/abc19830814/" target=_blank>SoftWareBoy</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/SoftWareBoy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1384412>可是我下载了v1.2.3的有53kb那，为什么啊？</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("名刘天下",1463691,"12tbq1RWN5NKSAVkqfy2dr/FOMajvYA96kKT+bpsGfKHl7Rnw8Sg4w==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1463691,"12tbq1RWN5NKSAVkqfy2dr/FOMajvYA96kKT+bpsGfKHl7Rnw8Sg4w==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%90%8d%e5%88%98%e5%a4%a9%e4%b8%8b" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl11_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl11$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl11_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1463691">#12楼</A><A 
+id=comment_anchor_1463691 name=1463691></A>2009-02-27 23:38 | <A 
+id=Comments1_CommentList_ctl11_NameLink href="http://www.cnblogs.com/lzm525/" 
+target=_blank>名刘天下</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/ååå¤©ä¸">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body id=comment_body_1463691>路过 
+！不错 ！</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Archar",1477543,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1477543,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl12_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl12$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl12_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1477543">#13楼</A><A 
+id=comment_anchor_1477543 name=1477543></A>2009-03-15 22:19 | <A 
+id=Comments1_CommentList_ctl12_NameLink href="http://space.cnblogs.com/54296/" 
+target=_blank>Archar</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1477543>对此非常感兴趣~ <BR>路过~</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("twt250",1583089,"FqBZgrSG1UnlqhFTWOSDHkKbn+UoOLz4B/o857nd5qSMWIIrILvZBQ==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1583089,"FqBZgrSG1UnlqhFTWOSDHkKbn+UoOLz4B/o857nd5qSMWIIrILvZBQ==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=twt250" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl13_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl13$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl13_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1583089">#14楼</A><A 
+id=comment_anchor_1583089 name=1583089></A>2009-07-13 11:30 | <A 
+id=Comments1_CommentList_ctl13_NameLink href="http://home.cnblogs.com/70683/" 
+target=_blank>twt250</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/twt250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1583089>非常感谢！！</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("zet",1599038,"oWcCPGz9bC/tBpuVqKPSheqsbH29HpslnvOX6U17mo0ZF0/VegEMfA==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1599038,"oWcCPGz9bC/tBpuVqKPSheqsbH29HpslnvOX6U17mo0ZF0/VegEMfA==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=zet" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl14_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl14$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl14_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1599038">#15楼</A><A 
+id=comment_anchor_1599038 name=1599038></A>2009-07-29 15:46 | <A 
+id=Comments1_CommentList_ctl14_NameLink href="http://www.cnblogs.com/cyrix-wxm/" 
+target=_blank>zet</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/zet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1599038>假如我想把第二个li的背景色设置为红色怎么弄?</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("鹤冲天",1623942,"M6id96rJPqTYUDlY5MX5B3YviJB/4u7etDHNwrqpCYcAvgecLUKCQQ==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1623942,"M6id96rJPqTYUDlY5MX5B3YviJB/4u7etDHNwrqpCYcAvgecLUKCQQ==")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e9%b9%a4%e5%86%b2%e5%a4%a9" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl15_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl15$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl15_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1623942">#16楼</A><A 
+id=comment_anchor_1623942 name=1623942></A>2009-08-24 12:35 | <A 
+id=Comments1_CommentList_ctl15_NameLink href="http://www.cnblogs.com/ldp615/" 
+target=_blank>鹤冲天</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/é¹¤å²å¤©">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1623942>谢谢，学习了！</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("好啊 啊",1632474,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1632474,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl16_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl16$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl16_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1632474">#17楼</A><A 
+id=comment_anchor_1632474 name=1632474></A>2009-09-01 18:53 | <A 
+id=Comments1_CommentList_ctl16_NameLink href="http://thinhunan.cnblogs.com/" 
+target=_blank>好啊 啊</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1632474>好东西不错</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("康节互联",1719169,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1719169,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl17_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl17$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl17_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1719169">#18楼</A><A 
+id=comment_anchor_1719169 name=1719169></A>2009-12-09 16:39 | <A 
+id=Comments1_CommentList_ctl17_NameLink 
+href="http://www.cnitblog.com/r.aspx?url=http://www.comjib.com" target=_blank 
+rel=nofllow>康节互联[未注册用户]</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1719169>非常好，值得学习</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("xuexi2009",1729677,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1729677,"")' 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl18_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl18$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl18_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html#1729677">#19楼</A><A 
+id=comment_anchor_1729677 name=1729677></A><A name=Post></A>2009-12-21 14:02 | 
+<A id=Comments1_CommentList_ctl18_NameLink target=_blank>xuexi2009[未注册用户]</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1729677>到哪里去下载jquery-1.2.3.intellisense.js？</SPAN><BR></DIV></DIV>
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fthinhunan.cnblogs.com%2farchive%2f2008%2f03%2f05%2f1091816.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fthinhunan.cnblogs.com%2farchive%2f2008%2f03%2f05%2f1091816.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A href="http://job.cnblogs.com/offer/7427/" 
+target=_blank>沪江网招聘ASP.NET开发工程师</A><BR><A href="http://a4.yeshj.com/rd/35450/" 
+target=_blank>软件研发团队管理年会(上海，7.10-7.11)</A><BR><A href="http://news.cnblogs.com/" 
+target=_blank>IT新闻</A>:<BR>· <A href="http://news.cnblogs.com/n/65454/" 
+target=_blank>傅盛微博透露可牛杀毒合作方 杀毒引擎为卡巴斯基引擎</A><BR>· <A 
+href="http://news.cnblogs.com/n/65453/" 
+target=_blank>张朝阳：“有资源必成功”在互联网行不通</A><BR>· <A 
+href="http://news.cnblogs.com/n/65452/" target=_blank>Ubuntu 10.10 Alpha1 
+将于本周四发布</A><BR>· <A href="http://news.cnblogs.com/n/65451/" 
+target=_blank>OpenWrap：面向.NET兼容于MSBuild的包管理器</A><BR>· <A 
+href="http://news.cnblogs.com/n/65450/" target=_blank>NVIDIA宣布3D 
+PC计划</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+alt="" 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=DHTML+%26+Javascript" target=_blank>DHTML &amp; 
+Javascript</A> </DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/1091816/">jQuery入门[1]－构造函数</A></DIV></DIV></DIV><!--end: forFlow --></DIV><!--end: topicList 文章列表容器-->
+<DIV id=sideBar>
+<DIV id=sideBarMain><!--done-->
+<DIV class=newsItem>
+<H3 class=catListTitle>公告</H3>
+<H3 class=catListTitle style="MARGIN-TOP: 0px; DISPLAY: block">Think 谭振林</H3>
+<UL>
+  <LI>2006年度微软最有价值专家 
+  <LI>2007年度微软最有价值专家 
+  <LI>2008年度微软最有价值专家 
+  <LI>2009年度微软最有价值专家 
+  <LI>2010年度微软最有价值专家 
+  <LI>2007年度CSDN英雄会受邀专家 
+  <LI>架构师、产品经理、项目经理 </LI></UL><!--p class="leftNav"><img alt="CSDN Hero 2007 Summit" src="http://images.cnblogs.com/cnblogs_com/thinhunan/90323/o_csdnhore2_Small.jpg" /></p-->
+<P class=leftNav><A 
+href="https://mvp.support.microsoft.com/profile=8E3F80A4-5C43-4A04-BEA7-6978D1A1191E" 
+target=_blank><IMG alt=因为只会微软的技术，所以微软给了个MVP…… 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/o_o_MVP_Horizontal_FullColor_182_74.png"></A></P>
+<P class=leftNav style="MARGIN-TOP: 20px; DISPLAY: none"><A 
+href="http://www.cnblogs.com/team/dotnetcontrols.html" target=_bank><FONT 
+color=black size=4>控件开发团队</FONT></A> 欢迎加入 </P>
+<H3 class=catListTitle style="DISPLAY: block">我的著译</H3><A 
+href="http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://union.dangdang.com/transfer/transfer.aspx?from=P-263982&amp;backurl=http://product.dangdang.com/product.aspx?product_id=20037914" 
+target=_blank><IMG class=bookCover alt="道不远人--深入解析ASP.NET 2.0控件开发" 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/cover.jpg"></A> <A 
+href="http://www.dearbook.com/book/231210" target=_blank><IMG class=bookCover 
+alt=超越CSS 
+src="H:\技术文章\jquery\jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files\cover(1).jpg"></A><BR><A 
+href="http://www.dearbook.com/book/213507" target=_blank><IMG class=bookCover 
+alt="ASP.NET 2.0揭秘（卷1）ASP.NET 2.0揭秘（卷1）" 
+src="H:\技术文章\jquery\jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files\cover(2).jpg"></A> 
+<A href="http://www.dearbook.com/book/213508" target=_blank><IMG class=bookCover 
+alt="ASP.NET 2.0揭秘（卷2）" 
+src="H:\技术文章\jquery\jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files\cover(3).jpg"></A> 
+<BR><A href="http://www.china-pub.com/195145" target=_blank><IMG class=bookCover 
+height=110 alt="ASP.NET 3.5揭秘（卷1）" 
+src="H:\技术文章\jquery\jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files\cover(4).jpg" 
+width=84></A> <A href="http://www.china-pub.com/195408" target=_blank><IMG 
+class=bookCover height=110 alt="ASP.NET 3.5揭秘（卷2）" 
+src="H:\技术文章\jquery\jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files\cover(5).jpg" 
+width=84></A> <BR>
+<DIV id=profile_block><A href="http://home.cnblogs.com/think/" 
+target=_blank>我的主页</A>&nbsp; <A href="http://home.cnblogs.com/think/detail/" 
+target=_blank>个人资料</A><BR><A href="http://home.cnblogs.com/think/ing/" 
+target=_blank>我的闪存</A>&nbsp; <A href="http://space.cnblogs.com/msg/send/Think" 
+target=_blank>发短消息</A></DIV></DIV>
+<DIV id=calendar></DIV>
+<DIV id=leftcontentcontainer>
+<DIV id=side_ing_block>
+<H3 class=catListTitle>最新闪存</H3>
+<UL>
+  <LI>4-18去上戏剧院看星际第1人赛，票买好了，哈哈 <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/92451/">04-03 21:18</A>
+  <LI>博客园的闪存能不能直接发到Buzz？Google Buzz有这样的API吗？ <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/92344/">04-02 22:38</A>
+  <LI>房价这么贵，打星际时多造点房子，做包租公 <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/92343/">04-02 22:38</A>
+  <LI>换个大红主题，红红火火 <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/92206/">04-02 13:32</A>
+  <LI>根据协议规定，在未获微软人力资源部主管莉莎布鲁摩尔（Lisa 
+  Brummel）批准的情况下，里德尔……。另外，他还同意永远不再加盟微软。--美国人做事，看不懂 <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/81103/">02-02 09:02</A>
+  <LI><A class=ing_lnk 
+href="http://home.cnblogs.com/think/ing/">更多闪存...</A></LI></UL></DIV>
+<SCRIPT type=text/javascript>
+var blogapp = 'think';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+<DIV class=catListMyTeams>
+<H3 class=catListTitle>我参与的团队</H3>
+<UL>
+  <LI><A id=SingleColumn1__d5e3e6_TeamList_ctl00_lnkTeam 
+  href="http://www.cnblogs.com/team/DesignPattern/">Design &amp; 
+  Pattern团队(0/0)</A> 
+  <LI><A id=SingleColumn1__d5e3e6_TeamList_ctl01_lnkTeam 
+  href="http://www.cnblogs.com/team/DotNetControls/">.NET 控件与组件开发(0/0)</A> 
+  <LI><A id=SingleColumn1__d5e3e6_TeamList_ctl02_lnkTeam 
+  href="http://www.cnblogs.com/team/SHDotNetClub/">上海.NET俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn1__d5e3e6_TeamList_ctl03_lnkTeam 
+  href="http://www.cnblogs.com/team/GZDotNetClub/">广州.NET俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn1__d5e3e6_TeamList_ctl04_lnkTeam 
+  href="http://www.cnblogs.com/team/ShenzhenDotNetClub/">深圳.NET俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn1__d5e3e6_TeamList_ctl05_lnkTeam 
+  href="http://www.cnblogs.com/team/ChengDuDotNetClub/">成都.NET俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn1__d5e3e6_TeamList_ctl06_lnkTeam 
+  href="http://www.cnblogs.com/team/HuNanDotNetClub/">湖南.NET俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn1__d5e3e6_TeamList_ctl07_lnkTeam 
+  href="http://www.cnblogs.com/team/AtlasLearning/">ASP.NET AJAX 
+  (Atlas)学习(0/0)</A> 
+  <LI><A id=SingleColumn1__d5e3e6_TeamList_ctl08_lnkTeam 
+  href="http://www.cnblogs.com/team/mvpteam/">MVP(微软最有价值专家)团队(0/0)</A> 
+  <LI><A id=SingleColumn1__d5e3e6_TeamList_ctl09_lnkTeam 
+  href="http://www.cnblogs.com/team/Headhunters/">IT猎头在线(0/0)</A> </LI></UL></DIV>
+<DIV class=catListPostCategory>
+<H3 class=catListTitle>随笔分类<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(353)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/think/category/44539.html">.net 2.0(9)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to .net 2.0(9)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/44539.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/think/category/65086.html">AOP(5)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to AOP(5)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/65086.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/think/category/22342.html">ASP.net(37)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to ASP.net(37)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/22342.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/think/category/44540.html">asp.net 2.0(9)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to asp.net 2.0(9)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/44540.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/think/category/22344.html">ASP.net server 
+  components and controls(38)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to ASP.net server components and controls(38)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/22344.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/think/category/210946.html">Boring(3)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to Boring(3)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/210946.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/think/category/205454.html">Business(5)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to Business(5)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/205454.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/think/category/27679.html">DateChooser(12)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to DateChooser(12)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/27679.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/think/category/22345.html">DHTML &amp; 
+  Javascript(33)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink 
+  title="Subscribe to DHTML &amp; Javascript(33)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/22345.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/think/category/30258.html">English--Never go 
+  away(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink 
+  title="Subscribe to English--Never go away(2)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/30258.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/think/category/100742.html">HR(12)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink 
+  title="Subscribe to HR(12)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/100742.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/think/category/110552.html">Linq(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink 
+  title="Subscribe to Linq(1)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/110552.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/think/category/239741.html">Management(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_RssLink 
+  title="Subscribe to Management(1)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/239741.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/think/category/100743.html">My Books(6)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_RssLink 
+  title="Subscribe to My Books(6)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/100743.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/think/category/26278.html">OOP(6)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_RssLink 
+  title="Subscribe to OOP(6)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/26278.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/think/category/24257.html">Other(95)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_RssLink 
+  title="Subscribe to Other(95)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/24257.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/think/category/150317.html">Philosophy(3)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_RssLink 
+  title="Subscribe to Philosophy(3)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/150317.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/think/category/57958.html">Reading notes(29)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_RssLink 
+  title="Subscribe to Reading notes(29)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/57958.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/think/category/49054.html">Regex expression 
+  (7)</A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_RssLink 
+  title="Subscribe to Regex expression (7)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/49054.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_Link 
+  href="http://www.cnblogs.com/think/category/26279.html">Smart Client</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_RssLink 
+  title="Subscribe to Smart Client" 
+  onclick="open_link('http://www.cnblogs.com/think/category/26279.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_Link 
+  href="http://www.cnblogs.com/think/category/22347.html">SQL(6)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_RssLink 
+  title="Subscribe to SQL(6)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/22347.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_Link 
+  href="http://www.cnblogs.com/think/category/44541.html">SQL 2005(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_RssLink 
+  title="Subscribe to SQL 2005(1)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/44541.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_Link 
+  href="http://www.cnblogs.com/think/category/241472.html">UE(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_RssLink 
+  title="Subscribe to UE(1)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/241472.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_Link 
+  href="http://www.cnblogs.com/think/category/44544.html">Virtual Studio 2005 
+  (6)</A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_RssLink 
+  title="Subscribe to Virtual Studio 2005 (6)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/44544.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl25_Link 
+  href="http://www.cnblogs.com/think/category/44542.html">Web 2.0 concept(1)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl25_RssLink 
+  title="Subscribe to Web 2.0 concept(1)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/44542.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl26_Link 
+  href="http://www.cnblogs.com/think/category/69141.html">WinForms　编程(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl26_RssLink 
+  title="Subscribe to WinForms　编程(2)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/69141.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl27_Link 
+  href="http://www.cnblogs.com/think/category/22348.html">XML(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl27_RssLink 
+  title="Subscribe to XML(2)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/22348.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl28_Link 
+  href="http://www.cnblogs.com/think/category/105534.html">财经(7)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl28_RssLink 
+  title="Subscribe to 财经(7)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/105534.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl29_Link 
+  href="http://www.cnblogs.com/think/category/124402.html">赢在中国(13)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl29_RssLink 
+  title="Subscribe to 赢在中国(13)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/124402.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl30_Link 
+  href="http://www.cnblogs.com/think/category/130911.html">游戏(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl30_RssLink 
+  title="Subscribe to 游戏(1)" 
+  onclick="open_link('http://www.cnblogs.com/think/category/130911.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListFavoritCategory>
+<H3 class=catListTitle>收藏夹<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(52)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/think/favorite/42604.html">.net 技术(15)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_RssLink 
+  title="Subscribe to .net 技术(15)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/42604.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/think/favorite/50735.html">Ajax technology and 
+  applications(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_RssLink 
+  title="Subscribe to Ajax technology and applications(2)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/50735.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/think/favorite/90013.html">CSDN Hero 2007(2)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_RssLink 
+  title="Subscribe to CSDN Hero 2007(2)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/90013.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/think/favorite/53143.html">Database(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_RssLink 
+  title="Subscribe to Database(1)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/53143.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/think/favorite/46666.html">DHTML + XMLHTTP(3)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_RssLink 
+  title="Subscribe to DHTML + XMLHTTP(3)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/46666.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/think/favorite/55281.html">English(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_RssLink 
+  title="Subscribe to English(1)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/55281.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/think/favorite/42606.html">vs2005 &amp; 
+  asp.net2.0(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_RssLink 
+  title="Subscribe to vs2005 &amp; asp.net2.0(2)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/42606.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/think/favorite/44291.html">Web2.0 conception 
+  site(8)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_RssLink 
+  title="Subscribe to Web2.0 conception site(8)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/44291.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/think/favorite/42607.html">管理(4)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_RssLink 
+  title="Subscribe to 管理(4)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/42607.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/think/favorite/42608.html">其它(7)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_RssLink 
+  title="Subscribe to 其它(7)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/42608.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/think/favorite/58158.html">系列文章(4)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_RssLink 
+  title="Subscribe to 系列文章(4)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/58158.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/think/favorite/43563.html">站点架设(3)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_RssLink 
+  title="Subscribe to 站点架设(3)" 
+  onclick="open_link('http://www.cnblogs.com/think/favorite/43563.html/rss');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catList>
+<H3 class=catListTitle>DotNet</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://robin0925.cnblogs.com/">Robin</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link 
+  href="http://blog.csdn.net/hychieftain">包子</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_RssLink 
+  title="Subscribe to 包子" 
+  onclick="open_link('http://blog.csdn.net/hychieftain/rss.aspx');return false;" 
+  href="http://thinhunan.cnblogs.com/archive/2008/03/05/1091816.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/suxvsheng">旭日东升</A> </LI></UL></DIV>
+<DIV class=catList>
+<H3 class=catListTitle>Friends</H3>
+<UL></UL></DIV>
+<DIV class=catList>
+<H3 class=catListTitle>我的站点</H3>
+<UL></UL></DIV>
+<DIV class=catListBlogRank>
+<H3 class=catListTitle>积分与排名</H3>
+<UL>
+  <LI class=liScore>积分 - 1527811 
+  <LI class=liRank>排名 - 14 </LI></UL></DIV>
+<DIV class=catListComment>
+<H3 class=catListTitle>最新评论<A id=SingleColumn1__2328b92_RSSHyperlink1 
+title=RSS订阅最最新评论 href="http://www.cnblogs.com/think/CommentsRSS.aspx"><IMG 
+title=RSS订阅最最新评论 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/xml.gif"></A></H3>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__2328b92_CommentList_ctl00_Hyperlink2 
+href="http://www.cnblogs.com/think/archive/2005/04/11/135580.html#1834507">1.&nbsp;Re:“图片变幻显示控件”发布</A> 
+</DIV>
+<DIV class=divRecentComment>嗯，我也是这种情况 (lovejean) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__2328b92_CommentList_ctl01_Hyperlink2 
+href="http://www.cnblogs.com/think/archive/2005/04/11/135580.html#1834505">2.&nbsp;Re:“图片变幻显示控件”发布</A> 
+</DIV>
+<DIV class=divRecentComment>只支持IE6 啊， 
+唉，IE7显示不出了，昨天用IE6试了一下，可以，今天换了个系统自带IE7就显示不出了，路径没错滴 (lovejean) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__2328b92_CommentList_ctl02_Hyperlink2 
+href="http://www.cnblogs.com/think/archive/2006/07/26/460361.html#1823592">3.&nbsp;Re:利用消息机制实现.NET 
+AOP(面向方面编程)－－基本概念和实现</A> </DIV>
+<DIV class=divRecentComment>LZ说的.NET的消息和操作系统消息是同一个东西吗 (老子不服) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__2328b92_CommentList_ctl03_Hyperlink2 
+href="http://www.cnblogs.com/think/archive/2005/05/23/160803.html#1818947">4.&nbsp;Re:控件开发团队纲要</A> 
+</DIV>
+<DIV class=divRecentComment>博客园帐户名：zhengwen 电子邮件：zhengwen2003@163.com 
+博客地址：申请加入团队,从事软件开发，现在一直关注组件开发和.net类库方面的知识 (正文) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__2328b92_CommentList_ctl04_Hyperlink2 
+href="http://www.cnblogs.com/think/archive/2010/04/21/1717665.html#1818901">5.&nbsp;Re:事繁勿慌 
+-- 忙啊！</A> </DIV>
+<DIV class=divRecentComment>怎麼週六也有？！ (点点呀) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__2328b92_CommentList_ctl05_Hyperlink2 
+href="http://www.cnblogs.com/think/archive/2005/05/23/160803.html#1817027">6.&nbsp;Re:控件开发团队纲要</A> 
+</DIV>
+<DIV class=divRecentComment>强烈申请加入 ID:qixuejia888 昵称:喵喵 [url=][/url] 
+mail:276844295@qq.com 专注行业:asp.net sql js 备注：工作2年了，一直做软件开发，... (喵 喵) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__2328b92_CommentList_ctl06_Hyperlink2 
+href="http://www.cnblogs.com/think/archive/2010/04/30/1724822.html#1815837">7.&nbsp;Re:80后投资臆想</A> 
+</DIV>
+<DIV class=divRecentComment>房价在这么涨，，中国总有一天会发生暴乱的，，将是有史以来最大的一次 (辉蛇冬天) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__2328b92_CommentList_ctl07_Hyperlink2 
+href="http://www.cnblogs.com/think/archive/2005/05/23/160803.html#1814944">8.&nbsp;Re:控件开发团队纲要</A> 
+</DIV>
+<DIV class=divRecentComment>程序爱好者，希望加入你们团队。 (龙王) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__2328b92_CommentList_ctl08_Hyperlink2 
+href="http://www.cnblogs.com/think/archive/2010/04/30/1724822.html#1814831">9.&nbsp;Re:80后投资臆想</A> 
+</DIV>
+<DIV class=divRecentComment>如果你不打算在股指期货上做空头对冲的话，请慎言入市，中国股市就是一个上市公司的提款机，中小股民的地雷阵。 
+(锦瑟无端五十弦) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__2328b92_CommentList_ctl09_Hyperlink2 
+href="http://www.cnblogs.com/think/archive/2010/04/30/1724822.html#1814496">10.&nbsp;Re:80后投资臆想</A> 
+</DIV>
+<DIV class=divRecentComment>[quote]Think： [quote]Blink182： @Think 
+房子就是包袱啊～～[/quote] 万分诚恳的请求你把这个包袱给我吧，[/quote] [b]十[/b]万分诚恳的请求你把这... (贺爱平) 
+</DIV></DIV>
+<DIV class=catListView>
+<H3 class=catListTitle>阅读排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl05_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2006/04/01/DeveloperNotesForPrototype.html">1.&nbsp;prototype.js　1.4版开发者手册(强烈推荐) 
+  (165337)</A> 
+  <LI><A id=SingleColumn1_ctl05_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2005/04/11/135580.html">2.&nbsp;“图片变幻显示控件”发布(53117)</A> 
+
+  <LI><A id=SingleColumn1_ctl05_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2008/03/05/1092160.html">3.&nbsp;jQuery简单入门(36393)</A> 
+
+  <LI><A id=SingleColumn1_ctl05_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2008/03/05/1091816.html">4.&nbsp;jQuery入门[1]－构造函数(31286)</A> 
+
+  <LI><A id=SingleColumn1_ctl05_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2008/11/19/1336804.html">5.&nbsp;不敢为天下先，敢为人先(18280)</A> 
+
+  <LI><A id=SingleColumn1_ctl05_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2006/04/25/384221.html">6.&nbsp;Prototype.js 
+  1.4中文使用手册PDF版下载(17466)</A> 
+  <LI><A id=SingleColumn1_ctl05_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2005/06/08/170094.html">7.&nbsp;博客园控件开发团队成立以来第一个控件发布＋源码公开！！！(16702)</A> 
+
+  <LI><A id=SingleColumn1_ctl05_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2008/11/19/1336778.html">8.&nbsp;从《士兵突击》中学管理(16651)</A> 
+
+  <LI><A id=SingleColumn1_ctl05_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2006/01/17/319204.html">9.&nbsp;惊喜：vs2005 
+  和 msdn 中文版 已经提供Subscriber 下载，MSDN全球订户可以下中文版爽了(16041)</A> 
+  <LI><A id=SingleColumn1_ctl05_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2005/04/19/140151.html">10.&nbsp;Hashtable,挺爽的一个东西，大家都用烂了吧，我再画蛇添足一下。(15886)</A> 
+  </LI></UL></DIV>
+<DIV class=catListFeedback>
+<H3 class=catListTitle>评论排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2005/05/23/160803.html">1.&nbsp;控件开发团队纲要(576)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2007/08/13/853292.html">2.&nbsp;不仅仅是开发控件--《道不远人--深入解析ASP.NET 
+  2.0控件开发》作者序(181)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2006/04/01/DeveloperNotesForPrototype.html">3.&nbsp;prototype.js　1.4版开发者手册(强烈推荐) 
+  (152)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2005/04/23/143983.html">4.&nbsp;摇滚你的页面。Free:RockUControl控件发布，开源：RevealTransitionImage(135)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2007/09/29/910517.html">5.&nbsp;收到《道不远人--深入解析ASP.NET 
+  2.0控件开发》样书 （面市时间、价格、目录、推荐序）(130)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2006/04/25/384221.html">6.&nbsp;Prototype.js 
+  1.4中文使用手册PDF版下载(111)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2005/06/08/170094.html">7.&nbsp;博客园控件开发团队成立以来第一个控件发布＋源码公开！！！(91)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2007/03/31/695543.html">8.&nbsp;《天气与生活》修正近日总是显示数据有误的问题(72)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2006/12/29/WeatherSidebarGadget.html">9.&nbsp;献给大家的新年礼物，同时祝大家新年愉快　　:)(68)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/think/archive/2007/07/17/821703.html">10.&nbsp;DateChooser控件发布ASP.NET 
+  2.0新版（我的ASP.NET 2.0控件开发书的第二个阶段项目）[请大家一定注意版本的更新，下载最新版](63)</A> 
+</LI></UL></DIV></DIV></DIV><!--end: sideBarMain --></DIV><!--end: sideBar 侧边栏容器 -->
+<DIV class=clear></DIV></DIV><!--end: main -->
+<DIV class=clear></DIV>
+<DIV id=footer></DIV><!--end: footer --></DIV><!--end: home 自定义的最大容器 --><!--
+<script type="text/javascript">
+
+ var imglogo = document.getElementById('blogLogo');
+ imglogo.src = (Math.round(Math.random() * 10) % 2)?'http://thinhunan.cnblogs.com/images/cnblogs_com/thinhunan/logo_elephant.gif':'http://thinhunan.cnblogs.com/images/cnblogs_com/thinhunan/logo_shrek.jpg';
+
+</script>
+--></FORM>
+<SCRIPT src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="jQuery入门[1]－构造函数 - THINK(谭振林) - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

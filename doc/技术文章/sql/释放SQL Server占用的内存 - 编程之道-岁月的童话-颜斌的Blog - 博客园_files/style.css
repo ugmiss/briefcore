@@ -1,0 +1,309 @@
+HTML {
+	BACKGROUND: url(images/bg.gif) #e9f1f8 repeat-x left top; MARGIN: auto; FONT: 12px/150% black verdana; HEIGHT: 100%
+}
+BODY {
+	BACKGROUND: url(images/bg.gif) #e9f1f8 repeat-x left top; MARGIN: auto; FONT: 12px/150% black verdana; HEIGHT: 100%
+}
+DIV {
+	FONT-FAMILY: verdana; WORD-WRAP: break-word
+}
+TD {
+	FONT-SIZE: 12px
+}
+UL {
+	LIST-STYLE-TYPE: circle
+}
+A:link {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #666666; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: red; TEXT-DECORATION: none
+}
+.none {
+	DISPLAY: none
+}
+.floatright {
+	FLOAT: right
+}
+.clear {
+	CLEAR: both
+}
+#banner {
+	BORDER-RIGHT: #000000 0px solid; BORDER-TOP: #000000 0px solid; BACKGROUND: url(images/banner.gif) repeat-x left top; BORDER-LEFT: #000000 0px solid; WIDTH: 100%; BORDER-BOTTOM: #000000 0px solid; HEIGHT: 160px
+}
+#bnr_pic {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; BACKGROUND: url(images/top.gif) no-repeat right center; BORDER-LEFT: red 0px solid; WIDTH: 100%; BORDER-BOTTOM: red 0px solid; HEIGHT: 100%
+}
+#main {
+	BACKGROUND: none transparent scroll repeat 0% 0%; WIDTH: 100%; HEIGHT: 100%
+}
+#left {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; RIGHT: 20px; BACKGROUND: none transparent scroll repeat 0% 0%; LEFT: 240px; BORDER-LEFT: red 0px solid; BORDER-BOTTOM: red 0px solid; POSITION: absolute; TOP: 160px; HEIGHT: 100%
+}
+#right {
+	BORDER-RIGHT: #676767 1px dashed; BORDER-TOP: #676767 1px dashed; BACKGROUND: white; FLOAT: left; PADDING-BOTTOM: 20px; MARGIN-LEFT: 10px; BORDER-LEFT: #676767 1px dashed; WIDTH: 220px; BORDER-BOTTOM: #676767 1px dashed; TEXT-ALIGN: center
+}
+#right_content {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN: 15px auto; BORDER-LEFT: red 0px solid; WIDTH: 90%; BORDER-BOTTOM: red 0px solid; TEXT-ALIGN: left
+}
+#footer {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; BORDER-LEFT: red 0px solid; BORDER-BOTTOM: red 0px solid; TEXT-ALIGN: center
+}
+.listtitle {
+	PADDING-LEFT: 45px; FONT-SIZE: 14px; BACKGROUND: url(images/tit_list.jpg) no-repeat center center; WIDTH: 180px; COLOR: #666666; PADDING-TOP: 3px; HEIGHT: 39px
+}
+.catListTitle {
+	PADDING-LEFT: 45px; FONT-SIZE: 14px; BACKGROUND: url(images/tit_list.jpg) no-repeat center center; WIDTH: 180px; COLOR: #666666; PADDING-TOP: 3px; HEIGHT: 39px
+}
+#leftcontentcontainer H3 {
+	PADDING-LEFT: 45px; FONT-SIZE: 14px; BACKGROUND: url(images/tit_list.jpg) no-repeat center center; WIDTH: 180px; COLOR: #666666; PADDING-TOP: 3px; HEIGHT: 39px
+}
+.catList {
+	MARGIN-LEFT: 10px
+}
+UL {
+	MARGIN-LEFT: 0px
+}
+LI {
+	MARGIN-LEFT: 10px; LIST-STYLE-TYPE: none
+}
+.newsItem {
+	BORDER-RIGHT: red 0px solid; PADDING-RIGHT: 10px; BORDER-TOP: red 0px solid; PADDING-LEFT: 10px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: red 0px solid; WIDTH: 95%; PADDING-TOP: 10px; BORDER-BOTTOM: red 0px solid
+}
+#mylinks {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: url(images/top_menu.gif) no-repeat left top; PADDING-BOTTOM: 10px; MARGIN-LEFT: 15px; PADDING-TOP: 10px
+}
+A.menu:link {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A.menu:visited {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A.menu:hover {
+	COLOR: #666666; TEXT-DECORATION: underline
+}
+A.menu:active {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+#mystats {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FLOAT: right; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.headerText {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; PADDING-LEFT: 50px; BORDER-LEFT: red 0px solid; PADDING-TOP: 20px; BORDER-BOTTOM: red 0px solid
+}
+.headermaintitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: "courier new", verdana, monospace
+}
+A.headermaintitle:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.headermaintitle:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.headermaintitle:hover {
+	COLOR: black; TEXT-DECORATION: underline
+}
+A.headermaintitle:active {
+	COLOR: black; TEXT-DECORATION: none
+}
+.headerDis {
+	BORDER-RIGHT: red 0px solid; PADDING-RIGHT: 10px; BORDER-TOP: red 0px solid; PADDING-LEFT: 50px; OVERFLOW: hidden; BORDER-LEFT: red 0px solid; COLOR: gray; BORDER-BOTTOM: red 0px solid; FONT-FAMILY: "courier new", verdana, monospace; TEXT-ALIGN: left
+}
+#topics {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; MARGIN: 30px 10px auto 30px; BORDER-LEFT: red 0px solid; WIDTH: 100%; BORDER-BOTTOM: red 0px solid
+}
+.day {
+	BORDER-RIGHT: #676767 1px dashed; PADDING-RIGHT: 15px; BORDER-TOP: #676767 1px dashed; PADDING-LEFT: 15px; BACKGROUND: url(images/bg_day.jpg) white no-repeat right top; MARGIN-BOTTOM: 20px; PADDING-BOTTOM: 15px; BORDER-LEFT: #676767 1px dashed; PADDING-TOP: 15px; BORDER-BOTTOM: #676767 1px dashed
+}
+.dayTitle {
+	FONT-WEIGHT: bold; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 10px; COLOR: #666666; FONT-FAMILY: verdana, monospace
+}
+.postTitle {
+	BORDER-RIGHT: red 0px solid; PADDING-RIGHT: 10px; BORDER-TOP: red 0px solid; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 10px; BORDER-LEFT: red 0px solid; PADDING-TOP: 10px; BORDER-BOTTOM: red 0px solid
+}
+.postTitle H1 {
+	BORDER-RIGHT: red 0px solid; PADDING-RIGHT: 10px; BORDER-TOP: red 0px solid; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 10px; BORDER-LEFT: red 0px solid; PADDING-TOP: 10px; BORDER-BOTTOM: red 0px solid
+}
+.postTitle2 {
+	PADDING-BOTTOM: 10px; BORDER-BOTTOM: #efefef 0px dotted
+}
+.post A:link {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.post A:visited {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.post A:hover {
+	COLOR: #a7a7a7; TEXT-DECORATION: underline
+}
+.post A:active {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+A.postTitle2:link {
+	COLOR: #78afd3; TEXT-DECORATION: none
+}
+A.postTitle2:visited {
+	COLOR: #78afd3; TEXT-DECORATION: none
+}
+A.postTitle2:hover {
+	COLOR: #a7a7a7; TEXT-DECORATION: underline
+}
+A.postTitle2:active {
+	COLOR: #78afd3; TEXT-DECORATION: none
+}
+.postCon {
+	BORDER-RIGHT: #efefef 0px dotted; PADDING-RIGHT: 10px; BORDER-TOP: #efefef 0px dotted; PADDING-LEFT: 10px; FONT-SIZE: 14px; PADDING-BOTTOM: 10px; BORDER-LEFT: #efefef 0px dotted; LINE-HEIGHT: 150%; PADDING-TOP: 10px; BORDER-BOTTOM: #efefef 0px dotted
+}
+.postDesc {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; FONT-SIZE: 12px; BORDER-LEFT: red 0px solid; COLOR: gray; BORDER-BOTTOM: red 0px solid; FONT-FAMILY: arial; TEXT-ALIGN: right
+}
+.postDesc A:link {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.postDesc A:visited {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.postDesc A:hover {
+	COLOR: #a7a7a7; TEXT-DECORATION: underline
+}
+.postDesc A:active {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.postSeparator {
+	MARGIN-TOP: 10px; BACKGROUND: url(images/line.jpg) no-repeat center center; MARGIN-BOTTOM: 5px; HEIGHT: 20px
+}
+.post {
+	BORDER-RIGHT: #676767 1px dashed; PADDING-RIGHT: 15px; BORDER-TOP: #676767 1px dashed; PADDING-LEFT: 15px; FONT-SIZE: 14px; BACKGROUND: url(images/bg_day.jpg) white no-repeat right top; PADDING-BOTTOM: 15px; BORDER-LEFT: #676767 1px dashed; LINE-HEIGHT: 150%; PADDING-TOP: 15px; BORDER-BOTTOM: #676767 1px dashed
+}
+.entrylist {
+	BORDER-RIGHT: #676767 1px dashed; PADDING-RIGHT: 15px; BORDER-TOP: #676767 1px dashed; PADDING-LEFT: 15px; BACKGROUND: url(images/bg_day.jpg) white no-repeat right top; PADDING-BOTTOM: 15px; BORDER-LEFT: #676767 1px dashed; PADDING-TOP: 15px; BORDER-BOTTOM: #676767 1px dashed
+}
+.entrylistTitle {
+	BORDER-RIGHT: red 0px solid; PADDING-RIGHT: 10px; BORDER-TOP: red 0px solid; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 10px; BORDER-LEFT: red 0px solid; PADDING-TOP: 10px; BORDER-BOTTOM: red 0px solid; FONT-FAMILY: verdana
+}
+.entrylistDescription {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 15px; COLOR: gray; PADDING-TOP: 15px
+}
+.entrylistItem {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 15px; PADDING-TOP: 15px; BORDER-BOTTOM: #ccc 0px dotted
+}
+.entrylistItemTitle {
+	FONT-SIZE: 14px; FONT-FAMILY: verdana
+}
+.entrylistItemPostDesc {
+	COLOR: gray; FONT-FAMILY: arial; TEXT-ALIGN: right
+}
+.feedback_area_title {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN: 0px 0px 10px; BORDER-BOTTOM: #ccc 1px dotted
+}
+.feedbackListSubtitle {
+	FONT-WEIGHT: bold; MARGIN-BOTTOM: 10px; COLOR: #4f4f4f; BORDER-BOTTOM: #ccc 1px dotted
+}
+.commentform {
+	MARGIN: 0px 20px 10px
+}
+.feedbackItem {
+	MARGIN: 0px 0px 10px
+}
+.feedbackManage {
+	FONT-WEIGHT: normal; FLOAT: right
+}
+.postDesc A:link {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.postDesc A:visited {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.postDesc A:hover {
+	COLOR: #a7a7a7; TEXT-DECORATION: underline
+}
+.postDesc A:active {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.feedbackCon {
+	MARGIN-BOTTOM: 20px
+}
+.calendar {
+	TEXT-ALIGN: center
+}
+.Cal {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; BACKGROUND: url(images/bg_cal.jpg) no-repeat center center; PADDING-BOTTOM: 0px; MARGIN-LEFT: 7px; WIDTH: 100%; LINE-HEIGHT: 22px; PADDING-TOP: 0px; FONT-FAMILY: arial
+}
+.CalTitle {
+	FONT-SIZE: 12px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #0099cc; FONT-FAMILY: verdana; HEIGHT: 30px
+}
+.CalDayHeader {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; FONT-WEIGHT: bold; BORDER-LEFT: red 0px solid; BORDER-BOTTOM: red 0px solid; BACKGROUND-COLOR: transparent
+}
+.CalTodayDay {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; BACKGROUND: #dce7ec; BORDER-LEFT: red 0px solid; BORDER-BOTTOM: red 0px solid
+}
+.CalSelector {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-LEFT: red 0px solid; BORDER-BOTTOM: red 0px solid
+}
+.CalWeekendDay {
+	BACKGROUND: #e9f1f8
+}
+.CalOtherMonthDay {
+	COLOR: gray
+}
+.CalNextPrev {
+	BORDER-RIGHT: red 0px solid; PADDING-RIGHT: 5px; BORDER-TOP: red 0px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; BORDER-LEFT: red 0px solid; PADDING-TOP: 5px; BORDER-BOTTOM: red 0px solid
+}
+.pages {
+	FONT-SIZE: 14px
+}
+.pfl_feedback_area_title {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px
+}
+.pfl_feedback_area_title A:link {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.pfl_feedback_area_title A:visited {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.pfl_feedback_area_title A:hover {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.pfl_feedback_area_title A:unknown {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.pfl_feedbackItem A:link {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.pfl_feedbackItem A:visited {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.pfl_feedbackItem A:hover {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.pfl_feedbackItem A:unknown {
+	COLOR: #78afd3; TEXT-DECORATION: underline
+}
+.pfl_feedbackItem {
+	MARGIN-TOP: 10px
+}
+.pfl_feedbacksubtitle {
+	MARGIN-BOTTOM: 5px; LINE-HEIGHT: 24px; BORDER-BOTTOM: #cccccc 1px dashed; HEIGHT: 24px
+}
+.pfl_feedbackname {
+	FONT-WEIGHT: bold; FLOAT: left; COLOR: #4f4f4f
+}
+.pfl_feedbackManage {
+	FLOAT: right
+}
+.pfl_feedbackCon {
+	PADDING-BOTTOM: 10px
+}
+.pfl_answer {
+	PADDING-BOTTOM: 10px; MARGIN-LEFT: 20px
+}
+.div_my_zzk {
+	PADDING-LEFT: 20px
+}

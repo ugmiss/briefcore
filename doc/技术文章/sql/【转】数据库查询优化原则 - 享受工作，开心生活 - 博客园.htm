@@ -1,0 +1,834 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html -->
+<HTML><HEAD><TITLE>【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=DataBase,数据库查询优化原则 name=keywords><LINK 
+href="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK id=MainCss 
+href="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK href="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK 
+href="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/shThemeDefault.css" type=text/css 
+rel=stylesheet><LINK title=RSS href="http://www.cnblogs.com/wangjisi/rss" 
+type=application/rss+xml rel=alternate><LINK title=RSD 
+href="http://www.cnblogs.com/wangjisi/rsd.xml" type=application/rsd+xml 
+rel=EditURI>
+<SCRIPT src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1736483.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+			    try {
+			        if (screen.availWidth > 1200) {
+			            document.getElementById("MainCss").href = '/Skins/BOOK/style2.css';
+			        }
+			    } catch (e) { }
+			</SCRIPT>
+
+<DIV id=header>
+<DIV id=HeaderTitle>
+<DIV id=Title><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/wangjisi/">享受工作，开心生活</A> </DIV>
+<DIV id=subTitle></DIV></DIV></DIV>
+<DIV id=main>
+<DIV class=post>
+<H2><A id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html">【转】数据库查询优化原则</A> 
+</H2>
+<DIV class=postTitle></DIV>
+<P>&nbsp;&nbsp;&nbsp; 1.对查询进行优化，应尽量避免全表扫描，首先应考虑在 where 及 order by 涉及的列上建立索引。</P>
+<P>&nbsp;&nbsp;&nbsp; 2.应尽量避免在 where 子句中对字段进行 null 值判断，否则将导致引擎放弃使用索引而进行全表扫描，如： 
+<BR>&nbsp;&nbsp;&nbsp; select id from t where num is null <BR>&nbsp;&nbsp;&nbsp; 
+可以在num上设置默认值0，确保表中num列没有null值，然后这样查询： <BR>&nbsp;&nbsp;&nbsp; select id from t 
+where num=0</P>
+<P>&nbsp;&nbsp;&nbsp; 3.应尽量避免在 where 子句中使用!=或&lt;&gt;操作符，否则将引擎放弃使用索引而进行全表扫描。</P>
+<P>&nbsp;&nbsp;&nbsp; 4.应尽量避免在 where 子句中使用 or 来连接条件，否则将导致引擎放弃使用索引而进行全表扫描，如： 
+<BR>&nbsp;&nbsp;&nbsp; select id from t where num=10 or num=20 
+<BR>&nbsp;&nbsp;&nbsp; 可以这样查询： <BR>&nbsp;&nbsp;&nbsp; select id from t where 
+num=10 <BR>&nbsp;&nbsp;&nbsp; union all <BR>&nbsp;&nbsp;&nbsp; select id from t 
+where num=20</P>
+<P>&nbsp;&nbsp;&nbsp; 5.in 和 not in 也要慎用，否则会导致全表扫描，如： <BR>&nbsp;&nbsp;&nbsp; 
+select id from t where num in(1,2,3) <BR>&nbsp;&nbsp;&nbsp; 对于连续的数值，能用 between 
+就不要用 in 了： <BR>&nbsp;&nbsp;&nbsp; select id from t where num between 1 and 3</P>
+<P>&nbsp;&nbsp;&nbsp; 6.下面的查询也将导致全表扫描： <BR>&nbsp;&nbsp;&nbsp; select id from t 
+where name like '%abc%' <BR>&nbsp;&nbsp;&nbsp; 若要提高效率，可以考虑全文检索。</P>
+<P>&nbsp;&nbsp;&nbsp; 7.如果在 where 
+子句中使用参数，也会导致全表扫描。因为SQL只有在运行时才会解析局部变量，但优化程序不能将访问计划的选择推迟到运行时；它必须在编译时进行选择。然而，如果在编译时建立访问计划，变量的值还是未知的，因而无法作为索引选择的输入项。如下面语句将进行全表扫描： 
+<BR>&nbsp;&nbsp;&nbsp; select id from t where <A 
+href="mailto:num=@num">num=@num</A> <BR>&nbsp;&nbsp;&nbsp; 可以改为强制查询使用索引： 
+<BR>&nbsp;&nbsp;&nbsp; select id from t with(index(索引名)) where <A 
+href="mailto:num=@num">num=@num</A></P>
+<P>&nbsp;&nbsp;&nbsp; 8.应尽量避免在 where 子句中对字段进行表达式操作，这将导致引擎放弃使用索引而进行全表扫描。如： 
+<BR>&nbsp;&nbsp;&nbsp; select id from t where num/2=100 <BR>&nbsp;&nbsp;&nbsp; 
+应改为: <BR>&nbsp;&nbsp;&nbsp; select id from t where num=100*2</P>
+<P>&nbsp;&nbsp;&nbsp; 9.应尽量避免在where子句中对字段进行函数操作，这将导致引擎放弃使用索引而进行全表扫描。如： 
+<BR>&nbsp;&nbsp;&nbsp; select id from t where 
+substring(name,1,3)='abc'--name以abc开头的id <BR>&nbsp;&nbsp;&nbsp; select id from t 
+where datediff(day,createdate,'2005-11-30')=0--‘2005-11-30’生成的id 
+<BR>&nbsp;&nbsp;&nbsp; 应改为: <BR>&nbsp;&nbsp;&nbsp; select id from t where name 
+like 'abc%' <BR>&nbsp;&nbsp;&nbsp; select id from t where 
+createdate&gt;='2005-11-30' and createdate&lt;'2005-12-1'</P>
+<P>&nbsp;&nbsp;&nbsp; 10.不要在 where 
+子句中的“=”左边进行函数、算术运算或其他表达式运算，否则系统将可能无法正确使用索引。</P>
+<P>&nbsp;&nbsp;&nbsp; 
+11.在使用索引字段作为条件时，如果该索引是复合索引，那么必须使用到该索引中的第一个字段作为条件时才能保证系统使用该索引，否则该索引将不会被使用，并且应尽可能的让字段顺序与索引顺序相一致。</P>
+<P>&nbsp;&nbsp;&nbsp; 12.不要写一些没有意义的查询，如需要生成一个空表结构： <BR>&nbsp;&nbsp;&nbsp; select 
+col1,col2 into #t from t where 1=0 <BR>&nbsp;&nbsp;&nbsp; 
+这类代码不会返回任何结果集，但是会消耗系统资源的，应改成这样： <BR>&nbsp;&nbsp;&nbsp; create table #t(...)</P>
+<P>&nbsp;&nbsp;&nbsp; 13.很多时候用 exists 代替 in 是一个好的选择： <BR>&nbsp;&nbsp;&nbsp; 
+select num from a where num in(select num from b) <BR>&nbsp;&nbsp;&nbsp; 
+用下面的语句替换： <BR>&nbsp;&nbsp;&nbsp; select num from a where exists(select 1 from b 
+where num=a.num)</P>
+<P>&nbsp;&nbsp;&nbsp; 
+14.并不是所有索引对查询都有效，SQL是根据表中数据来进行查询优化的，当索引列有大量数据重复时，SQL查询可能不会去利用索引，如一表中有字段sex，male、female几乎各一半，那么即使在sex上建了索引也对查询效率起不了作用。 
+<BR>15.索引并不是越多越好，索引固然可以提高相应的 select 的效率，但同时也降低了 insert 及 update 的效率，因为 insert 或 
+update 
+时有可能会重建索引，所以怎样建索引需要慎重考虑，视具体情况而定。一个表的索引数最好不要超过6个，若太多则应考虑一些不常使用到的列上建的索引是否有必要。</P>
+<P>&nbsp;&nbsp;&nbsp; 16.应尽可能的避免更新 clustered 索引数据列，因为 clustered 
+索引数据列的顺序就是表记录的物理存储顺序，一旦该列值改变将导致整个表记录的顺序的调整，会耗费相当大的资源。若应用系统需要频繁更新 clustered 
+索引数据列，那么需要考虑是否应将该索引建为 clustered 索引。</P>
+<P>&nbsp;&nbsp;&nbsp; 
+17.尽量使用数字型字段，若只含数值信息的字段尽量不要设计为字符型，这会降低查询和连接的性能，并会增加存储开销。这是因为引擎在处理查询和连接时会逐个比较字符串中每一个字符，而对于数字型而言只需要比较一次就够了。</P>
+<P>&nbsp;&nbsp;&nbsp; 18.尽可能的使用 varchar/nvarchar 代替 char/nchar 
+，因为首先变长字段存储空间小，可以节省存储空间，其次对于查询来说，在一个相对较小的字段内搜索效率显然要高些。</P>
+<P>&nbsp;&nbsp;&nbsp; 19.任何地方都不要使用 select * from t 
+，用具体的字段列表代替“*”，不要返回用不到的任何字段。</P>
+<P>&nbsp;&nbsp;&nbsp; 20.尽量使用表变量来代替临时表。如果表变量包含大量数据，请注意索引非常有限（只有主键索引）。</P>
+<P>&nbsp;&nbsp;&nbsp; 21.避免频繁创建和删除临时表，以减少系统表资源的消耗。</P>
+<P>&nbsp;&nbsp;&nbsp; 
+22.临时表并不是不可使用，适当地使用它们可以使某些例程更有效，例如，当需要重复引用大型表或常用表中的某个数据集时。但是，对于一次性事件，最好使用导出表。</P>
+<P>&nbsp;&nbsp;&nbsp; 23.在新建临时表时，如果一次性插入数据量很大，那么可以使用 select into 代替 create 
+table，避免造成大量 log ，以提高速度；如果数据量不大，为了缓和系统表的资源，应先create table，然后insert。</P>
+<P>&nbsp;&nbsp;&nbsp; 24.如果使用到了临时表，在存储过程的最后务必将所有的临时表显式删除，先 truncate table ，然后 
+drop table ，这样可以避免系统表的较长时间锁定。</P>
+<P>&nbsp;&nbsp;&nbsp; 25.尽量避免使用游标，因为游标的效率较差，如果游标操作的数据超过1万行，那么就应该考虑改写。</P>
+<P>&nbsp;&nbsp;&nbsp; 26.使用基于游标的方法或临时表方法之前，应先寻找基于集的解决方案来解决问题，基于集的方法通常更有效。</P>
+<P>&nbsp;&nbsp;&nbsp; 27.与临时表一样，游标并不是不可使用。对小型数据集使用 FAST_FORWARD 
+游标通常要优于其他逐行处理方法，尤其是在必须引用几个表才能获得所需的数据时。在结果集中包括“合计”的例程通常要比使用游标执行的速度快。如果开发时间允许，基于游标的方法和基于集的方法都可以尝试一下，看哪一种方法的效果更好。</P>
+<P>&nbsp;&nbsp;&nbsp; 28.在所有的存储过程和触发器的开始处设置 SET NOCOUNT ON ，在结束时设置 SET NOCOUNT 
+OFF 。无需在执行存储过程和触发器的每个语句后向客户端发送 DONE_IN_PROC 消息。</P>
+<P>&nbsp;&nbsp;&nbsp; 29.尽量避免大事务操作，提高系统并发能力。</P>
+<P>&nbsp;&nbsp;&nbsp; 30.尽量避免向客户端返回大数据量，若数据量过大，应该考虑相应需求是否合理。</P>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/wangjisi/" 
+target=_blank><IMG class=author_avatar alt="" 
+src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/u90683.jpg"></A> 
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/wangjisi/" 
+target=_blank>Chrisnda</A><BR>关注 - 2<BR>粉丝 - 2<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1736483,69949,1)><SPAN class=diggnum 
+id=digg_count_1736483>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1736483,69949,2)><SPAN class=burynum 
+id=bury_count_1736483>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1736483 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1736483>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/wangjisi/archive/2010/05/12/1733850.html">« 
+</A>上一篇：<A title="发布于2010-05-12 17:10" 
+href="http://www.cnblogs.com/wangjisi/archive/2010/05/12/1733850.html">【汇总】SQL 
+CODE --- 经典·精彩 （转）</A><BR><A 
+href="http://www.cnblogs.com/wangjisi/archive/2010/05/20/1740235.html">» 
+</A>下一篇：<A title="发布于2010-05-20 17:55" 
+href="http://www.cnblogs.com/wangjisi/archive/2010/05/20/1740235.html">OutputCache各参数的说明【转】</A><BR></DIV>
+<SCRIPT src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '075defda-55aa-de11-ba8f-001cf0cd104b';
+</SCRIPT>
+
+<P class=postfoot>posted on 2010-05-16 00:19 <A 
+href="http://www.cnblogs.com/wangjisi/">Chrisnda</A> 阅读(93) <A 
+href="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html#commentform">评论(0)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/wangjisi/admin/EditPosts.aspx?postid=1736483">编辑</A> 
+<A onclick="AddToWz(1736483);return false;" 
+href="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html#">收藏</A> 
+所属分类: <A 
+href="http://www.cnblogs.com/wangjisi/category/245532.html">DataBase</A> 
+</P></DIV><IMG height=1 src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/1736483.jpg" 
+width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html"
+dc:identifier="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/wangjisi/services/trackbacks/1736483.aspx" />
+</rdf:RDF>
+-->
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fwangjisi%2farchive%2f2010%2f05%2f16%2f1736483.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fwangjisi%2farchive%2f2010%2f05%2f16%2f1736483.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A href="http://job.cnblogs.com/offer/7427/" 
+target=_blank>沪江网招聘ASP.NET开发工程师</A><BR><A href="http://a4.yeshj.com/rd/35450/" 
+target=_blank>软件研发团队管理年会(上海，7.10-7.11)</A><BR><A href="http://news.cnblogs.com/" 
+target=_blank>IT新闻</A>:<BR>· <A href="http://news.cnblogs.com/n/65675/" 
+target=_blank>走进台湾Windows 7主题餐厅</A><BR>· <A 
+href="http://news.cnblogs.com/n/65674/" target=_blank>回顾传闻历程 
+苹果第4代iPhone大纪事(下)</A><BR>· <A href="http://news.cnblogs.com/n/65673/" 
+target=_blank>回顾传闻历程 苹果第4代iPhone大纪事(上)</A><BR>· <A 
+href="http://news.cnblogs.com/n/65672/" target=_blank>1.5GHz处理器 
+HTC新机Scorpion传闻再现</A><BR>· <A href="http://news.cnblogs.com/n/65671/" 
+target=_blank>移动互联将成就谁？</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+alt="" 
+src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=DataBase" target=_blank>DataBase</A> 
+</DIV></DIV>
+<P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" href="http://www.cnblogs.com/" 
+name=Hyperlink1>博客园</A> <BR>Copyright © Chrisnda </P></DIV>
+<DIV id=rightmenu>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: silver" colSpan=7>
+      <TABLE class=CalTitle style="WIDTH: 100%; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev style="WIDTH: 15%"><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3743')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2010年5月</TD>
+          <TD class=CalNextPrev style="WIDTH: 15%" align=right><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3804')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>25</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>26</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>27</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>28</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>29</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>1</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>2</TD>
+    <TD style="WIDTH: 14%" align=middle>3</TD>
+    <TD style="WIDTH: 14%" align=middle>4</TD>
+    <TD style="WIDTH: 14%" align=middle>5</TD>
+    <TD style="WIDTH: 14%" align=middle>6</TD>
+    <TD style="WIDTH: 14%" align=middle>7</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>8</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>9</TD>
+    <TD style="WIDTH: 14%" align=middle>10</TD>
+    <TD style="WIDTH: 14%" align=middle>11</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wangjisi/archive/2010/5/12.html"><U>12</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>13</TD>
+    <TD style="WIDTH: 14%" align=middle>14</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>15</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wangjisi/archive/2010/5/16.html"><U>16</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>17</TD>
+    <TD style="WIDTH: 14%" align=middle>18</TD>
+    <TD style="WIDTH: 14%" align=middle>19</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wangjisi/archive/2010/5/20.html"><U>20</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>21</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>22</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>23</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wangjisi/archive/2010/5/24.html"><U>24</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wangjisi/archive/2010/5/25.html"><U>25</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>26</TD>
+    <TD style="WIDTH: 14%" align=middle>27</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wangjisi/archive/2010/5/28.html"><U>28</U></A></TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>29</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle>31</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>1</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>2</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD class=CalTodayDay style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" 
+align=middle>5</TD></TR></TBODY></TABLE>
+<H3>导航</H3>
+<UL>
+  <LI><A id=MyLinks1_HomeLink href="http://www.cnblogs.com/">博客园</A> 
+  <LI><A id=MyLinks1_MyHomeLink href="http://www.cnblogs.com/wangjisi/">首页</A> 
+  <LI><A id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/wangjisi/admin/EditPosts.aspx?opt=1">新随笔</A> 
+  <LI><A id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/Chrisnda">联系</A> 
+  <LI><A id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/wangjisi/rss">订阅</A><A id=MyLinks1_XMLLink 
+  href="http://www.cnblogs.com/wangjisi/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/xml.gif"></A> 
+  <LI><A id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/wangjisi/admin/EditPosts.aspx">管理</A> </LI></UL>
+<H3>统计</H3>
+<UL>
+  <LI>随笔 - 8 
+  <LI>文章 - 1 
+  <LI>评论 - 3 
+  <LI>引用 - 0 </LI></UL>
+<H3>公告</H3>
+<DIV id=profile_block><A href="http://home.cnblogs.com/wangjisi/" 
+target=_blank>我的主页</A>&nbsp; <A href="http://home.cnblogs.com/wangjisi/detail/" 
+target=_blank>个人资料</A><BR><A href="http://home.cnblogs.com/wangjisi/ing/" 
+target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/Chrisnda" target=_blank>发短消息</A></DIV>
+<SCRIPT type=text/javascript>
+var blogapp = 'wangjisi';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/wangjisi/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/wangjisi/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/wangjisi/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/wangjisi/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/wangjisi/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/wangjisi/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/wangjisi/tag/">我的标签</A> </LI></UL></DIV>
+<H3>随笔分类</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/wangjisi/category/246792.html">ASP.Net(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to ASP.Net(2)" 
+  onclick="open_link('http://www.cnblogs.com/wangjisi/category/246792.html/rss');return false;" 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/wangjisi/category/248928.html">C#(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to C#(1)" 
+  onclick="open_link('http://www.cnblogs.com/wangjisi/category/248928.html/rss');return false;" 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/wangjisi/category/245532.html">DataBase(4)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to DataBase(4)" 
+  onclick="open_link('http://www.cnblogs.com/wangjisi/category/245532.html/rss');return false;" 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/wangjisi/category/247568.html">Design 
+  Pattern(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to Design Pattern(1)" 
+  onclick="open_link('http://www.cnblogs.com/wangjisi/category/247568.html/rss');return false;" 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/wangjisi/category/248832.html">Js&amp;Css(1)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to Js&amp;Css(1)" 
+  onclick="open_link('http://www.cnblogs.com/wangjisi/category/248832.html/rss');return false;" 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html###">(rss)</A> 
+  </LI></UL>
+<H3>随笔档案</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/06.html">2010年6月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05.html">2010年5月 (7)</A> 
+  </LI></UL>
+<H3 class=catListTitle>最新评论 <A id=SingleColumn1__318407a_RSSHyperlink1 
+href="http://www.cnblogs.com/wangjisi/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/xml.gif"></A></H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/28/1746557.html#1835215">1.&nbsp;Re:表反转的两种方式</A> 
+
+  <LI style="WORD-BREAK: break-all">SELECT AccountID, fail,exception,ok FROM ( 
+  SELECT q.AccountID, count(*), SUBSTRING(q.ResponseString... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--尘尘 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/12/1733850.html#1822796">2.&nbsp;Re:【汇总】SQL 
+  CODE --- 经典·精彩 （转）</A> 
+  <LI style="WORD-BREAK: break-all">@zengxiangzhan 你这篇文章真的非常实用，谢谢前辈啦！ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Chrisnda 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/12/1733850.html#1822783">3.&nbsp;Re:【汇总】SQL 
+  CODE --- 经典·精彩 （转）</A> 
+  <LI style="WORD-BREAK: break-all">呵呵 果然够快 ！ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--zengxiangzhan 
+</LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/28/1746557.html">1.&nbsp;表反转的两种方式(855)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/12/1733850.html">2.&nbsp;【汇总】SQL 
+  CODE --- 经典·精彩 （转）(145)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/16/1736483.html">3.&nbsp;【转】数据库查询优化原则(93)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/25/1743792.html">4.&nbsp;ASP.NET页面刷新方法大集合(85)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/24/1742895.html">5.&nbsp;UNION和UNION 
+  ALL【转】(67)</A> </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/12/1733850.html">1.&nbsp;【汇总】SQL 
+  CODE --- 经典·精彩 （转）(2)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/28/1746557.html">2.&nbsp;表反转的两种方式(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/25/1743846.html">3.&nbsp;小菜大鸟系列(0)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/25/1743792.html">4.&nbsp;ASP.NET页面刷新方法大集合(0)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/wangjisi/archive/2010/05/24/1742895.html">5.&nbsp;UNION和UNION 
+  ALL【转】(0)</A> </LI></UL></DIV></DIV></FORM>
+<SCRIPT src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="【转】数据库查询优化原则 - 享受工作，开心生活 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

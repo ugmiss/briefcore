@@ -1,0 +1,24 @@
+P {
+	MARGIN: 5px auto; TEXT-INDENT: 0px
+}
+.postBody P {
+	MARGIN: 5px auto
+}
+.postCon P {
+	MARGIN: 5px auto
+}
+.postBody P {
+	TEXT-INDENT: 0px
+}
+.postCon P {
+	TEXT-INDENT: 0px
+}
+.login_tips A {
+	TEXT-DECORATION: underline
+}
+#div_digg .diggnum {
+	LINE-HEIGHT: 1.5em
+}
+#div_digg .burynum {
+	LINE-HEIGHT: 1.5em
+}

@@ -1,0 +1,18 @@
+declare @Path nvarchar(255)
+declare @Name nvarchar(255)
+
+declare @fileName nvarchar(255)
+select @fileName = N'C:\Program Files\Microsoft SQL Server\MSSQL.1\MSSQL\Data\ace2011.mdf'
+
+declare @command nvarchar(300)
+select @command = 'dbcc checkprimaryfile (N''' + @fileName + ''' , 3)'
+create table #SmoPrimayChildren(status INT,fileid INT,name sysname,filename nvarchar(512))
+insert #SmoPrimayChildren exec (@command)
+
+SELECT
+CAST(case when (s.status & 0x40) = 0 then 1 else 0 end AS bit) AS [IsFile],
+RTRIM(s.filename) AS [FileName]
+FROM
+#SmoPrimayChildren s
+
+drop table #SmoPrimayChildren

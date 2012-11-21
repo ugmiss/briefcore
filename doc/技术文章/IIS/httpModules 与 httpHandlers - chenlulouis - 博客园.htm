@@ -1,0 +1,1053 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0259)http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f73260878e482a958448e435061e5a37b9ec7b7c575a8e8227261cfc090db0ab72252a0322b590d58b4ac0b898352c8c27307b1f8c5612a443e9941831847dd00ce6f55fa1f8af6fc5e98c849e&p=873bc54ad7c71aee07be9b7f4752&user=baidu -->
+<!--STATUS OK--><HTML><HEAD><TITLE>httpModules 与 httpHandlers - chenlulouis - 博客园</TITLE>
+<META http-equiv=Content-Type content=text/html;charset=gb2312>
+<STYLE>BODY {
+	MARGIN: 4px 0px
+}
+#bd_sn_h {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+#bd_sn_h #p1 {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 2px; FONT: 14px Arial; PADDING-TOP: 4px
+}
+#bd_sn_h A {
+	COLOR: #0000ff; TEXT-DECORATION: underline
+}
+#bd_sn_h #p1 A {
+	FONT-WEIGHT: bold
+}
+#baidu DIV {
+	POSITION: static
+}
+</STYLE>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<TABLE id=baidu cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV style="COLOR: #000000; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">
+      <DIV style="FLOAT: left; MARGIN: 6px 18px 0px 10px"><A 
+      href="http://www.baidu.com/"><IMG 
+      style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+      alt=到百度首页 
+      src="httpModules 与 httpHandlers - chenlulouis - 博客园_files/logo-kz.gif"></A></DIV>
+      <DIV style="FLOAT: left; MARGIN: 27px 0px 0px">
+      <FORM 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px" 
+      action=http://www.baidu.com/s><INPUT style="FONT: 16px Arial" size=35 
+      name=wd> <INPUT type=submit value=百度一下> <INPUT type=hidden value=3 
+      name=cl> </FORM></DIV>
+      <P 
+      style="CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 2px; FONT: 14px Arial; WIDTH: 100%; COLOR: #000000; PADDING-TOP: 4px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">您查询的关键词是：<B 
+      style="COLOR: black; BACKGROUND-COLOR: #ffff66"><A 
+      href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f73260878e482a958448e435061e5a37b9ec7b7c575a8e8227261cfc090db0ab72252a0322b590d58b4ac0b898352c8c27307b1f8c5612a443e9941831847dd00ce6f55fa1f8af6fc5e98c849e&amp;p=873bc54ad7c71aee07be9b7f4752&amp;user=baidu#baidusnap0">httpmodules</A>&nbsp;</B> 
+      。如果打开速度慢，可以尝试<A 
+      style="FONT-WEIGHT: bold; COLOR: #0000ff; TEXT-DECORATION: underline" 
+      href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f73260878e482a958448e435061e5a37b9ec7b7c575a8e8227261cfc090db0ab72252a0322b590d58b4ac0b898352c8c27307b1f8c5612a443e9941831847dd00ce6f55fa1f8af6fc5e98c849e&amp;p=873bc54ad7c71aee07be9b7f4752&amp;user=baidu&amp;fast=y">快速版</A>；如果想保存快照，可以<A 
+      style="FONT-WEIGHT: bold; COLOR: #0000ff; TEXT-DECORATION: underline" 
+      onclick="window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(document.title)+'&amp;iu='+encodeURIComponent(location.href)+'&amp;fr=ps#nw=1','_s','scrollbars=no,width=600,height=450,right=75,top=20,status=no,resizable=yes'); return false;" 
+      href="http://cang.baidu.com/do/add" target=_blank>添加到搜藏</A>。</P>
+      <P 
+      style="MARGIN: 0px 2px; FONT: 12px Arial; COLOR: gray; BACKGROUND-COLOR: #ffffff">(百度和网页<A 
+      style="COLOR: #0000ff; TEXT-DECORATION: underline" 
+      href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html">http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html</A>的作者无关，不对其内容负责。百度快照谨为网络故障时之索引，不代表被搜索网站的即时页面。)</P>
+      <HR style="MARGIN: 8px 0px; WIDTH: 100%">
+      </DIV></TD></TR></TBODY></TABLE>
+<DIV style="POSITION: relative">
+<META content=httpModules,httpHandlers name=keywords><LINK 
+href="httpModules 与 httpHandlers - chenlulouis - 博客园_files/common.css" 
+type=text/css rel=stylesheet><LINK id=MainCss 
+href="httpModules 与 httpHandlers - chenlulouis - 博客园_files/style.css" 
+type=text/css rel=stylesheet><LINK 
+href="httpModules 与 httpHandlers - chenlulouis - 博客园_files/brown.css" 
+type=text/css rel=stylesheet><LINK 
+href="httpModules 与 httpHandlers - chenlulouis - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="httpModules 与 httpHandlers - chenlulouis - 博客园_files/shCore.css" 
+type=text/css rel=stylesheet><LINK 
+href="httpModules 与 httpHandlers - chenlulouis - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/chenlulouis/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/chenlulouis/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<FORM id=Form1 name=Form1 action=1626918.html method=post><INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> 
+<DIV id=top>
+<H1><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/chenlulouis/">chenlulouis</A></H1>
+<P id=tagline></P></DIV>
+<DIV id=leftmenu style="DISPLAY: none">
+<H3>导航</H3>
+<UL>
+  <LI><A id=MyLinks1_HomeLink href="http://www.cnblogs.com/">博客园</A> 
+  <LI><A id=MyLinks1_MyHomeLink 
+  href="http://www.cnblogs.com/chenlulouis/">首页</A> 
+  <LI><A id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/chenlulouis/admin/EditPosts.aspx?opt=1">新随笔</A> 
+  <LI><A id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/chenlulouis">联系</A> 
+  <LI><A id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/chenlulouis/rss">订阅</A><A id=MyLinks1_XMLLink 
+  href="http://www.cnblogs.com/chenlulouis/rss"><IMG alt=订阅 
+  src="httpModules 与 httpHandlers - chenlulouis - 博客园_files/xml.gif" 
+  border=0></A> 
+  <LI><A id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/chenlulouis/admin/EditPosts.aspx">管理</A> </LI></UL>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar cellSpacing=0 
+cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=silver colSpan=7>
+      <TABLE class=CalTitle cellSpacing=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev width="15%"><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3592')">&lt;</A></TD>
+          <TD align=middle width="70%">2009年12月</TD>
+          <TD class=CalNextPrev align=right width="15%"><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3653')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle width="14%">29</TD>
+    <TD class=CalOtherMonthDay align=middle width="14%">30</TD>
+    <TD align=middle width="14%">1</TD>
+    <TD align=middle width="14%"><A 
+      href="http://www.cnblogs.com/chenlulouis/archive/2009/12/2.html"><U>2</U></A></TD>
+    <TD align=middle width="14%">3</TD>
+    <TD align=middle width="14%">4</TD>
+    <TD class=CalWeekendDay align=middle width="14%">5</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle width="14%">6</TD>
+    <TD align=middle width="14%">7</TD>
+    <TD align=middle width="14%">8</TD>
+    <TD align=middle width="14%"><A 
+      href="http://www.cnblogs.com/chenlulouis/archive/2009/12/9.html"><U>9</U></A></TD>
+    <TD align=middle width="14%">10</TD>
+    <TD align=middle width="14%">11</TD>
+    <TD class=CalWeekendDay align=middle width="14%">12</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle width="14%">13</TD>
+    <TD align=middle width="14%">14</TD>
+    <TD align=middle width="14%">15</TD>
+    <TD align=middle width="14%">16</TD>
+    <TD align=middle width="14%"><A 
+      href="http://www.cnblogs.com/chenlulouis/archive/2009/12/17.html"><U>17</U></A></TD>
+    <TD align=middle width="14%"><A 
+      href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18.html"><U>18</U></A></TD>
+    <TD class=CalWeekendDay align=middle width="14%">19</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle width="14%"><A 
+      href="http://www.cnblogs.com/chenlulouis/archive/2009/12/20.html"><U>20</U></A></TD>
+    <TD align=middle width="14%">21</TD>
+    <TD align=middle width="14%">22</TD>
+    <TD align=middle width="14%">23</TD>
+    <TD align=middle width="14%"><A 
+      href="http://www.cnblogs.com/chenlulouis/archive/2009/12/24.html"><U>24</U></A></TD>
+    <TD align=middle width="14%">25</TD>
+    <TD class=CalWeekendDay align=middle width="14%">26</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle width="14%">27</TD>
+    <TD align=middle width="14%">28</TD>
+    <TD align=middle width="14%">29</TD>
+    <TD align=middle width="14%">30</TD>
+    <TD align=middle width="14%">31</TD>
+    <TD class=CalOtherMonthDay align=middle width="14%">1</TD>
+    <TD class=CalOtherMonthDay align=middle width="14%">2</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle width="14%">3</TD>
+    <TD class=CalOtherMonthDay align=middle width="14%">4</TD>
+    <TD class=CalOtherMonthDay align=middle width="14%">5</TD>
+    <TD class=CalOtherMonthDay align=middle width="14%">6</TD>
+    <TD class=CalOtherMonthDay align=middle width="14%">7</TD>
+    <TD class=CalOtherMonthDay align=middle width="14%">8</TD>
+    <TD class=CalOtherMonthDay align=middle width="14%">9</TD></TR></TBODY></TABLE>
+<H3>统计</H3>
+<UL>
+  <LI>随笔 - 66 
+  <LI>文章 - 0 
+  <LI>评论 - 35 
+  <LI>引用 - 0 </LI></UL>
+<H3>公告</H3>
+<DIV id=profile_block><A href="http://home.cnblogs.com/chenlulouis/" 
+target=_blank>我的主页</A>&nbsp; <A 
+href="http://home.cnblogs.com/chenlulouis/detail/" target=_blank>个人资料</A><BR><A 
+href="http://home.cnblogs.com/chenlulouis/ing/" target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/chenlulouis" 
+target=_blank>发短消息</A></DIV>
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/chenlulouis/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/chenlulouis/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/chenlulouis/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/chenlulouis/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/chenlulouis/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/chenlulouis/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/chenlulouis/tag/">我的标签</A> </LI></UL></DIV>
+<H3 class=catListTitle>我的标签</H3>
+<DIV id=MyTag>
+<UL>
+  <LI><A href="http://www.cnblogs.com/chenlulouis/tag/asp.net/">asp.net</A>(2)
+  <LI><A href="http://www.cnblogs.com/chenlulouis/tag/&aelig;&#158;&para;&aelig;&#158;&#132;/">架构</A>(1)
+  <LI><A href="http://www.cnblogs.com/chenlulouis/tag/é&laquo;&#152;&aring;&sup1;&para;&aring;&#143;&#145;/">高并发</A>(1)
+  <LI><A href="http://www.cnblogs.com/chenlulouis/tag/é&laquo;&#152;è&acute;&#159;è&frac12;&frac12;/">高负载</A>(1)
+  <LI><A href="http://www.cnblogs.com/chenlulouis/tag/http/">http</A>(1)
+  <LI><A href="http://www.cnblogs.com/chenlulouis/tag/linux/">linux</A>(1) 
+</LI></UL></DIV>
+<H3>随笔档案</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05.html">2010年5月 
+  (12)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/03.html">2010年3月 (5)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/01.html">2010年1月 (5)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/12.html">2009年12月 
+  (12)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/11.html">2009年11月 
+  (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/10.html">2009年10月 
+  (12)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/09.html">2009年9月 (1)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/08.html">2009年8月 (8)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/07.html">2009年7月 (5)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/06.html">2009年6月 (1)</A> 
+  </LI></UL>
+<H3>收藏夹</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/chenlulouis/favorite/200371.html">Architecture(2)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_RssLink 
+  title="Subscribe to Architecture(2)" 
+  onclick="open_link('http://www.cnblogs.com/chenlulouis/favorite/200371.html/rss');return false;" 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/chenlulouis/favorite/197193.html">IIS(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_RssLink 
+  title="Subscribe to IIS(2)" 
+  onclick="open_link('http://www.cnblogs.com/chenlulouis/favorite/197193.html/rss');return false;" 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/chenlulouis/favorite/200735.html">linux(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_RssLink 
+  title="Subscribe to linux(2)" 
+  onclick="open_link('http://www.cnblogs.com/chenlulouis/favorite/200735.html/rss');return false;" 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/chenlulouis/favorite/200737.html">oracle(2)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_RssLink 
+  title="Subscribe to oracle(2)" 
+  onclick="open_link('http://www.cnblogs.com/chenlulouis/favorite/200737.html/rss');return false;" 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/chenlulouis/favorite/200736.html">vmware(1)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_RssLink 
+  title="Subscribe to vmware(1)" 
+  onclick="open_link('http://www.cnblogs.com/chenlulouis/favorite/200736.html/rss');return false;" 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html###">(rss)</A> 
+  </LI></UL>
+<H3>blog</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://www.chenjiliang.com/Article/Default.aspx?TypeID=0" 
+  target=_blank>.NET源码</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link 
+  href="http://www.toplee.com/blog/" target=_blank>Michael's blog</A> </LI></UL>
+<H3>community</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link 
+  href="http://www.codeproject.com/" target=_blank>codeproject</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl02_Link 
+  href="http://msdn.microsoft.com/zh-cn/default.aspx">msdn</A> </LI></UL>
+<H3>dictionary</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl01_Link 
+  href="http://www.iciba.com/" target=_blank>iciba</A> </LI></UL>
+<H3>forum</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl05_LinkList_ctl01_Link 
+  href="http://www.boobooke.com/bbs/" target=_blank>boobooke</A> </LI></UL>
+<H3 class=catListTitle>最新评论 <A id=SingleColumn1__1fcb242_RSSHyperlink1 
+href="http://www.cnblogs.com/chenlulouis/CommentsRSS.aspx"><IMG 
+src="httpModules 与 httpHandlers - chenlulouis - 博客园_files/xml.gif" 
+border=0></A></H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__1fcb242_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05/11/1732655.html#1823735">1.??Re:采用软件负载均衡器实现web服务器集群</A> 
+
+  <LI style="WORD-BREAK: break-all">[quote]Net泡：能否再说一下数据库服务器集器呢？ 
+  zourinet@hotmail.com[/quote] 有时间会补上 请留意 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--chenlulouis 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__1fcb242_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05/11/1732655.html#1823733">2.??Re:采用软件负载均衡器实现web服务器集群</A> 
+
+  <LI style="WORD-BREAK: break-all">后面会补上 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--chenlulouis 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__1fcb242_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05/11/1732655.html#1823477">3.??Re:采用软件负载均衡器实现web服务器集群</A> 
+
+  <LI style="WORD-BREAK: break-all">能否再说一下数据库服务器集器呢？ zourinet@hotmail.com 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Net泡 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__1fcb242_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05/11/1732655.html#1822769">4.??Re:采用软件负载均衡器实现web服务器集群</A> 
+
+  <LI style="WORD-BREAK: break-all">负载是可以，问题是你的WEB不是全是静态的啊，能否说下WEB文件同步？ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--jamin 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__1fcb242_CommentList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05/11/1732655.html#1822397">5.??Re:采用软件负载均衡器实现web服务器集群</A> 
+
+  <LI style="WORD-BREAK: break-all">F5太贵了，我觉得这个解决方案的确又便宜又好用 :-) 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--WebClerk </LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05/11/1732655.html">1.??采用软件负载均衡器实现web服务器集群(1974)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/07/19/1526498.html">2.??话说大型高并发高负载网站的系统架构(317)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/10/19/1585992.html">3.??ASP.NET 
+  抓取网页内容(189)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/08/27/1554983.html">4.??linux最新分区方案(154)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/10/19/1585751.html">5.??addEventListener(143)</A> 
+  </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05/11/1732655.html">1.??采用软件负载均衡器实现web服务器集群(28)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/07/19/1526498.html">2.??话说大型高并发高负载网站的系统架构(4)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/03/31/1701197.html">3.??Web.config配置文件详解(2)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/10/19/1585751.html">4.??addEventListener(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2009/09/03/1559330.html">5.??DOS(0)</A> 
+  </LI></UL></DIV>
+<H3 class=catListTitle>60天内阅读排行</H3>
+<DIV class=RecentComment>
+<UL>
+  <LI><A id=SingleColumn1__103035a_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05/11/1732655.html">1.??采用软件负载均衡器实现web服务器集群(1974)</A> 
+
+  <LI><A id=SingleColumn1__103035a_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05/07/1729515.html">2.??Attribute在.net编程中的应用（二）(94)</A> 
+
+  <LI><A id=SingleColumn1__103035a_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05/07/1729693.html">3.??Attribute在.NET编程中的应用（四）(93)</A> 
+
+  <LI><A id=SingleColumn1__103035a_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/05/07/1729486.html">4.??Attribute在.net编程中的应用（一）(91)</A> 
+
+  <LI><A id=SingleColumn1__103035a_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/chenlulouis/archive/2010/03/31/1701197.html">5.??Web.config配置文件详解(89)</A> 
+  </LI></UL></DIV></DIV>
+<DIV id=main>
+<DIV class=post>
+<H2><A name=baidusnap0></A><A id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html"><B 
+style="COLOR: black; BACKGROUND-COLOR: #ffff66">httpModules</B> 与 
+httpHandlers</A> </H2>
+<P><STRONG><FONT 
+size=3>ASP.NET对请求处理的过程：</FONT></STRONG><BR>当请求一个*.aspx文件的时候，这个请求会被inetinfo.exe进程截获，它判断文件的后缀（aspx）之后，将这个请求转交给ASPNET_ISAPI.dll，ASPNET_ISAPI.dll会通过http管道（Http 
+PipeLine）将请求发送给ASPNET_WP.exe进程，在ASPNET_WP.exe进程中通过HttpRuntime来处理这个请求，处理完毕将结果返回客户端。<BR>&nbsp;&nbsp;&nbsp; 
+<STRONG>inetinfo.exe进程：</STRONG>是www服务的进程，IIS服务和ASPNET_ISAPI.DLL都寄存在此进程中。<BR>&nbsp;&nbsp;&nbsp; 
+<STRONG>ASPNET_ISAPI.DLL</STRONG>：是处理.aspx文件的win32组件。其实IIS服务器是只能识别.html文件的，当IIS服务器发现被请求的文件是.aspx文件时，IIS服务器将其交给aspnet_isapi.dll来处理。<BR>&nbsp;&nbsp;&nbsp; 
+<STRONG>aspnet_wp.exe进程：</STRONG>ASP.NET框架进程，提供.net运行的托管环境，.net的CLR(公共语言运行时)就是寄存在此进程中。</P>
+<P>ASP.NET Framework处理一个Http Request的流程：<BR>&nbsp;&nbsp;&nbsp; 
+HttpRequest--&gt;inetinfo.exe--&gt;ASPNET_ISAPI.dll--&gt;ASPNET_WP.exe--&gt;HttpRuntime--&gt;HttpApplication 
+Factory--&gt;HttpApplication--&gt;HttpModule--&gt;HttpHandler 
+Factory--&gt;HttpHandler--&gt;HttpHandler.ProcessRequest()<BR><BR><STRONG>ASP.NET请求处理过程是基于管道模型的，这个管道模型是由多个HttpModule和HttpHandler组成，ASP.NET把http请求依次传递给管道中各个HttpModule，最终被HttpHandler处理，处理完成后，再次经过管道中的HTTP模块，把结果返回给客户端。我们可以在每个HttpModule中都可以干预请求的处理过程。</STRONG></P>
+<P><IMG height=277 alt="" 
+src="httpModules 与 httpHandlers - chenlulouis - 博客园_files/11c997c447dc47c539db49d8.gif" 
+width=199>&nbsp;</P>
+<P> </P>
+<P><STRONG>注意：在http请求的处理过程中，只能调用一个HttpHandler，但可以调用多个HttpModule。</STRONG> 
+<BR>当请求到达HttpModule的时候，系统还没有对这个请求真正处理，但是我们可以在这个请求传递到处理中心（HttpHandler）之前附加一些其它信息，或者截获的这个请求并作一些额外的工作，也或者终止请求等。在HttpHandler处理完请求之后，我们可以再在相应的HttpModule中把请求处理的结果进行再次加工返回客户端。</P>
+<P><STRONG><FONT size=3>HttpModule</FONT></STRONG><BR>&nbsp;&nbsp;&nbsp; 
+HTTP模块是实现了System.Web.IhttpModule接口的类。<BR>&nbsp;&nbsp;&nbsp; 
+IHttpModule接口的声明：<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT 
+color=#0000ff>public interface 
+IHttpModule<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void 
+Init (HttpApplication 
+context);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+void Dispose ();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<STRONG> Init 
+方法：系统初始化的时候自动调用，这个方法允许HTTP模块向HttpApplication 
+对象中的事件注册自己的事件处理程序。<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Dispose方法： 这个方法给予HTTP模块在对象被垃圾收集之前执行清理的机会。此方法一般无需编写代码。<BR>&nbsp;&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp; 
+HTTP模块可以向System.Web.HttpApplication对象注册下面一系列事件：<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>AcquireRequestState</STRONG> 当ASP.NET运行时准备好接收当前HTTP请求的对话状态的时候引发这个事件。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>AuthenticateRequest</STRONG> 当ASP.NET 运行时准备验证用户身份的时候引发这个事件。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <STRONG>AuthorizeRequest</STRONG> 
+当ASP.NET运行时准备授权用户访问资源的时候引发这个事件。 <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>BeginRequest</STRONG> 当ASP.NET运行时接收到新的HTTP请求的时候引发这个事件。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <STRONG>Disposed</STRONG> 
+当ASP.NET完成HTTP请求的处理过程时引发这个事件。 <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>EndRequest</STRONG> 把响应内容发送到客户端之前引发这个事件。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <STRONG>Error</STRONG> 
+在处理HTTP请求的过程中出现未处理异常的时候引发这个事件。 <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>PostRequestHandlerExecute</STRONG> 在HTTP处理程序结束执行的时候引发这个事件。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>PreRequestHandlerExecute</STRONG> 
+在ASP.NET开始执行HTTP请求的处理程序之前引发这个事件。在这个事件之后，ASP.NET 把该请求转发给适当的HTTP处理程序。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>PreSendRequestContent</STRONG> 
+在ASP.NET把响应内容发送到客户端之前引发这个事件。这个事件允许我们在内容到达客户端之前改变响应内容。我们可以使用这个事件给页面输出添加用于所有页面的内容。例如通用菜单、头信息或脚信息。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>PreSendRequestHeaders</STRONG> 
+在ASP.NET把HTTP响应头信息发送给客户端之前引发这个事件。在头信息到达客户端之前，这个事件允许我们改变它的内容。我们可以使用这个事件在头信息中添加cookie和自定义数据。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>ReleaseRequestState</STRONG> 当ASP.NET结束所搜有的请求处理程序执行的时候引发这个事件。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>ResolveRequestCache</STRONG> 
+我们引发这个事件来决定是否可以使用从输出缓冲返回的内容来结束请求。这依赖于Web应用程序的输出缓冲时怎样设置的。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>UpdateRequestCache</STRONG> 
+当ASP.NET完成了当前的HTTP请求的处理，并且输出内容已经准备好添加给输出缓冲的时候，引发这个事件。这依赖于Web应用程序的输出缓冲是如何设置的。</P>
+<P>&nbsp;&nbsp;&nbsp; 上面这么多的事件，我们看起来可能会有些眼晕，但没关系，下面一步一步地看。<BR>&nbsp;&nbsp;&nbsp; 
+HttpModule生命周期示意图</P>
+<P><IMG height=768 alt="" 
+src="httpModules 与 httpHandlers - chenlulouis - 博客园_files/85a66b3f05edbee255e723fe.gif" 
+width=543>&nbsp;</P>
+<P>下面是事件的触发顺序：</P>
+<P><IMG height=429 alt="" 
+src="httpModules 与 httpHandlers - chenlulouis - 博客园_files/cf57c802754b61014afb51fe.gif" 
+width=510>&nbsp;</P>
+<P>BeginRequest和PreRequestHandlerExecute之间的事件是在服务器执行HttpHandler处理之前触发。<BR>&nbsp;&nbsp;&nbsp; 
+PostRequestHandlerExecute和PreSendRequestContent之间的事件是在服务器执行Handler处理之后触发。<BR></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;下面我们看一下如何使用HttpModule来实现我们日常的应用：<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+HttpModule通过在某些事件中注册，把自己插入ASP.NET请求处理管道。当这些事件发生的时候，ASP.NET调用对相应的HTTP模块，这样该模块就能处理请求了。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>1、向每个页面动态添加一些备注或说明性的文字：<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+有的网站每一个页面都会弹出一个广告或在每个页面都以注释形式（&lt;!-- 
+--&gt;）加入网站的版权信息。如果在每个页面教编写这样的JS代码的话，对于大一点的网站，这种JS代码的编写与维护可是一个很繁琐枯燥的工作。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+有了HttpModule我们就可以很简单地解决这个问题了。HttpModule是客户端发出请求到客户端接收到服务器响应之间的一段必经之路。我们完全可以在服务器处理完请求之后，并在向客户端发送响应文本之前这段时机，把这段注释文字添加到页面文本之后。这样，每一个页面请求都会被附加上这段注释文字。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+这段代码究竟该在哪个事件里实现呢？ 
+PostRequestHandlerExecute和PreSendRequestContent之间的任何一个事件都可以，但我比较喜欢在EndRequest事件里编写代码。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<FONT 
+color=#800080>第一步：创建一个类库ClassLibrary831。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+第二步：编写一个类实现IHttpModule接口<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<STRONG> 
+</STRONG><FONT color=#0000ff><STRONG>class 
+TestModule:IHttpModule<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+public void 
+Dispose()<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+public void Init(HttpApplication 
+context)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} <BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+第三步：在Init事件中注册EndRequest事件，并实现事件处理方法<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<FONT color=#0000ff><STRONG>class 
+TestModule:IHttpModule<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+public void 
+Dispose(){}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+public void Init(HttpApplication 
+context)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>context.EndRequest += new 
+EventHandler(context_EndRequest);<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>void context_EndRequest(object sender, EventArgs 
+e)<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+HttpApplication ha = 
+(HttpApplication)sender;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ha.Response.Write("&lt;!--这是每个页面都会动态生成的文字。--grayworm--&gt;");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} <BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+第四步：在Web.Conofig中注册一下这个HttpModule模块<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+color=#0000ff><STRONG>&lt;<B 
+style="COLOR: black; BACKGROUND-COLOR: #ffff66">httpModules</B>&gt;</STRONG><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<STRONG> 
+&lt;add name="TestModule" 
+type="ClassLibrary831.TestModule,ClassLibrary831"</STRONG>&gt;&lt;/add&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/<B style="COLOR: black; BACKGROUND-COLOR: #ffff66">httpModules</B>&gt; 
+<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+name：模块名称，一般是类名<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type：有两部分组成，前半部分是命名空间和类名组成的全名，后半部分是程序集名称，如果类是直接放在App_Code文件夹中，那程序名称是App_Code。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+这样在Web站点是添加该类库的引用后，运行每个页面，会发现其源文件中都会加入“&lt;!--这是每个页面都会动态生成的文字。--grayworm--&gt;”这句话。同样的方法你也可以在其中加入JS代码。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>2、身份检查<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+大家在作登录时，登录成功后，一般要把用户名放在Session中保存，在其它每一个页面的Page_Load事件中都检查Session中是否存在用户名，如果不存在就说明用户未登录，就不让其访问其中的内容。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+在比较大的程序中，这种做法实在是太笨拙，因为你几乎要在每一个页面中都加入检测Session的代码，导致难以开发和维护。下面我们看看如何使用HttpModule来减少我们的工作量<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+由于在这里我们要用到Session中的内容，我们只能在AcquireRequestState和PreRequestHandlerExecute事件中编写代码，因为在HttpModule中只有这两事件中可以访问Session。这里我们选择PreRequestHandlerExecute事件编写代码。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<FONT 
+color=#800080>第一步：创建一个类库ClassLibrary831。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+第二步：编写一个类实现IHttpModule接口<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<FONT color=#0000ff><STRONG>class 
+TestModule:IHttpModule<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+public void 
+Dispose()<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+public void Init(HttpApplication 
+context)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} <BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+第三步：在Init事件中注册PreRequestHandlerExecute事件，并实现事件处理方法<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<FONT color=#0000ff><STRONG>class 
+AuthenticModule:IHttpModule<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+public void 
+Dispose(){}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+public void Init(HttpApplication 
+context)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>context.PreRequestHandlerExecute += new 
+EventHandler(context_PreRequestHandlerExecute);<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>void context_PreRequestHandlerExecute(object sender, EventArgs 
+e)<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+HttpApplication ha = 
+(HttpApplication)sender;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string path = 
+ha.Context.Request.Url.ToString();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+int n = path.ToLower().IndexOf("Login.aspx"); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if (n == -1) 
+//是否是登录页面，不是登录页面的话则进入{}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if (ha.Context.Session["user"] == null) 
+//是否Session中有用户名，若是空的话，转向登录页。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ha.Context.Response.Redirect("Login.aspx?source=" + 
+path);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} <BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+第四步：在Login.aspx页面的“登录”按钮中加入下面代码<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<FONT color=#0000ff>protected void Button1_Click(object sender, EventArgs 
+e)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(true)&nbsp;&nbsp;&nbsp; 
+//判断用户名密码是否正确<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{ 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if (Request.QueryString["source"] != 
+null)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string s = Request.QueryString["source"].ToLower().ToString();&nbsp;&nbsp; 
+//取出从哪个页面转来的<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Session["user"] = 
+txtUID.Text;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Response.Redirect(s); 
+//转到用户想去的页面<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+else<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Response.Redirect("main.aspx");&nbsp;&nbsp;&nbsp; 
+//默认转向main.aspx<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} <BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+第五步：在Web.Conofig中注册一下这个HttpModule模块<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+color=#0000ff>&lt;<B 
+style="COLOR: black; BACKGROUND-COLOR: #ffff66">httpModules</B>&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;add name="TestModule" 
+type="ClassLibrary831.TestModule,ClassLibrary831"&gt;&lt;/add&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/<B style="COLOR: black; BACKGROUND-COLOR: #ffff66">httpModules</B>&gt; 
+<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3、多模块的操作 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+如果定义了多个HttpModule，在web.config文件中引入自定义HttpModule的顺序就决定了多个自定义HttpModule在处理一个HTTP请求的接管顺序。<BR><IMG 
+height=661 alt="" 
+src="httpModules 与 httpHandlers - chenlulouis - 博客园_files/caae013618a0e8d3a3cc2ba2.gif" 
+width=519> <BR></P>
+<P><STRONG><FONT size=3>HttpHandler</FONT></STRONG><BR>&nbsp;&nbsp;&nbsp; 
+HttpHandler是HTTP请求的处理中心，真正地对客户端请求的服务器页面做出编译和执行，并将处理过后的信息附加在HTTP请求信息流中再次返回到HttpModule中。<BR>&nbsp;&nbsp;&nbsp; 
+HttpHandler与HttpModule不同，一旦定义了自己的HttpHandler类，那么它对系统的HttpHandler的关系将是“覆盖”关系。<BR>&nbsp;&nbsp;&nbsp; 
+IHttpHandler接口声明<BR>&nbsp;&nbsp;&nbsp;<FONT color=#0000ff> public interface 
+IHttpHandler<BR>&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bool IsReusable { get; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void 
+ProcessRequest(HttpContext context); //请求处理函数<BR>&nbsp;&nbsp;&nbsp; 
+}<BR></FONT>&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp; 
+示例：把硬盘上的图片以流的方式写在页面上<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+color=#0000ff><STRONG> class TestHandler : 
+IHttpHandler<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>public void ProcessRequest(HttpContext 
+context)<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+FileStream fs = new FileStream(context.Server.MapPath("worm.jpg"), 
+FileMode.Open);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte[] b = new 
+byte[fs.Length];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+fs.Read(b, 0, 
+(int)fs.Length);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+fs.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+context.Response.OutputStream.Write(b, 0, 
+b.Length);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+bool 
+IsReusable<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+get<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return 
+true;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Web.Config配置文件<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color=#0000ff> 
+<STRONG>&lt;httpHandlers&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;add 
+verb="*" path="*" 
+type="ClassLibrary831.TestHandler,ClassLibrary831"&gt;&lt;/add&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/httpHandlers&gt; 
+<BR></STRONG></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<STRONG>Verb属性</STRONG>：指定了处理程序支持的HTTP动作。*－支持所有的HTTP动作;“GET”－支持Get操作;“POST”－支持Post操作;“GET, 
+POST”－支持两种操作。 
+<BR>　　<STRONG>Path属性</STRONG>：指定了需要调用处理程序的路径和文件名（可以包含通配符）。“*”、“*.aspx”、“showImage.aspx”、“test1.aspx,test2.aspx”<BR>　　<STRONG>Type属性</STRONG>：用名字空间、类名称和程序集名称的组合形式指定处理程序或处理程序工厂的实际类型。ASP.NET运行时首先搜索bin目录中的DLL，接着在GAC中搜索。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+这样程序运行的效果是该网站的任何一个页面都会显示worm.jpg图片。如何只让一个页面（default21.aspx）执行HttpHandler中的ProcessRequest方法呢？最简单的办法是在Web.Config文件中把path配置信息设为default21.aspx。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+根据这个例子大家可以考虑一下如何编写“验证码”了。</P>
+<P><STRONG><FONT size=3>IHttpHandler工厂</FONT></STRONG><BR>&nbsp;&nbsp;&nbsp; 
+IHttpHandlerFactory的作用是对IHttpHandler进行管理。工厂的作用请见<A 
+href="http://hi.baidu.com/grayworm/blog/item/4a832160f8c9de46eaf8f8c1.html" 
+target=_blank>http://hi.baidu.com/grayworm/blog/item/4a832160f8c9de46eaf8f8c1.html</A>"<BR>&nbsp;&nbsp;&nbsp; 
+IHttpHandlerFactory接口的声明：<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT 
+color=#0000ff>public interface 
+IHttpHandlerFactory<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+IHttpHandler GetHandler (HttpContext context,string requestType,string 
+url,string 
+pathTranslated);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+void ReleaseHandler (IHttpHandler 
+handler);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GetHandler返回实现IHttpHandler接口的类的实例，ReleaseHandler使工厂可以重用现有的处理程序实例。 
+<BR>&nbsp;&nbsp;&nbsp; 
+示例：两个用IHttpHandlerFactory来实现对不同HttpHandler的调用。<BR>&nbsp;&nbsp;&nbsp; 
+有两个HttpHandler：将图片显示在页面上的HttpHandler和生成验证码的Handler<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//将图片显示在页面上的Handler<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT 
+color=#0000ff>class TestHandler : 
+IHttpHandler<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+void ProcessRequest(HttpContext 
+context)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+FileStream fs = new FileStream(context.Server.MapPath("worm.jpg"), 
+FileMode.Open);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte[] b = new 
+byte[fs.Length];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+fs.Read(b, 0, 
+(int)fs.Length);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+fs.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+context.Response.OutputStream.Write(b, 0, 
+b.Length);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+bool 
+IsReusable<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+get<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return 
+true;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //生成验证码的Handler 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color=#0000ff>class 
+CodeHandler:IHttpHandler<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+bool 
+IsReusable<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+get<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return 
+true;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+void ProcessRequest(HttpContext 
+context)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Image b = new 
+Bitmap(50,20);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Graphics g = 
+Graphics.FromImage(b);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SolidBrush sb = new 
+SolidBrush(Color.White);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Font f = new Font("宋体", 
+12);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string str = 
+"";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Random r = new 
+Random();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+for (int i = 0; i &lt; 4; 
+i++)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+str += 
+r.Next(10);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+g.DrawString(str,f,sb,0,0);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+b.Save(context.Response.OutputStream, 
+System.Drawing.Imaging.ImageFormat.Jpeg);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+IHttpHandler工厂<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT 
+color=#0000ff>class TestHandlerFactory : 
+IHttpHandlerFactory<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+IHttpHandler GetHandler(HttpContext context, string requestType, string url, 
+string 
+pathTranslated)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string fname = url.Substring(url.IndexOf('/') + 
+1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+while (fname.IndexOf('/') != 
+-1)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+fname = fname.Substring(fname.IndexOf('/') + 
+1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string cname = fname.Substring(0, 
+fname.IndexOf('.'));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string className ="";</FONT></P>
+<P><FONT 
+color=#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+className = 
+"ClassLibrary831.CodeHandler";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+object h = 
+null;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+try<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//h = new 
+TestHandler();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+h = 
+Activator.CreateInstance(Type.GetType(className));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+catch (Exception 
+e)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+throw new HttpException("工厂不能为类型" + cname + "创建实例。", 
+e);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return 
+(IHttpHandler)h;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+void ReleaseHandler(IHttpHandler 
+handler)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<FONT 
+color=#ffffff>(车延禄)</FONT><BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+配置文件<BR><FONT color=#0000ff>&nbsp;&nbsp;&nbsp; 
+&lt;httpHandlers&gt;<BR>&nbsp;&nbsp;&nbsp; &lt;add verb="*" 
+path="default21.aspx,default22.aspx" 
+type="ClassLibrary831.TestHandlerFactory,ClassLibrary831"&gt;&lt;/add&gt;<BR>&nbsp;&nbsp; 
+&lt;/httpHandlers&gt;</FONT><BR>&nbsp;&nbsp; 
+这样TestHandlerFactory就会根据请求的不同页面执行不同的HttpHandler处理程序了。</P>
+<P><STRONG><FONT size=3>HttpHandler使用会话</FONT></STRONG><BR>&nbsp;&nbsp;&nbsp; 
+如果要在处理程序中使用Session，那必须把该HttpHandler实现IRequiresSessionState接口，,IRequiresSessionState接口是个空接口，它没有抽象方法，只是一个标记。此处就不作例子验证了</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>
+<TABLE style="TABLE-LAYOUT: fixed; WIDTH: 100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=cnt id=blog_text>
+      <P>ASP.Net处理Http Request时，使用Pipeline（管道）方式，由各个HttpModule对请求进行处理，然后到达 
+      HttpHandler，HttpHandler处理完之后，仍经过Pipeline中各个HttpModule的处理，最后将HTML发送到客户端浏览 
+      器中。</P>
+      <P>生命周期中涉及到几个非常重要的对象：HttpHandler,HttpModule,IHttpHandlerFactory，他们的执行(顺序)大致的执行过程是这样的：client端发送页面请求，被IIS的某个进程截获，它根据申请的页 
+      面后缀(.aspx)不同，调用不同的页面处理程序(.asp-&gt;asp.dll; 
+      .aspx-&gt;ISAPI.dll).而页面处理程序在处理过程中，则要经历HttpModule,HttpHandler的处理：前者<FONT 
+      color=#ff0000>HttpModule用于页面处理前和处理后的一些事件的处理</FONT>，<FONT 
+      color=#ff0000>后者HttpHandler进行真正的页面的处理</FONT>。<BR>如前所说，HttpModule会在页面处理前和后对页面进行处理，所以它不会影响真正的页面请求。通常用在给每个页面的头部或者尾部添加一些信息（如版 
+      权声明）等.曾经见过一些免费的空间，我们的页面上传上去后，浏览的时候发现，在每个页面的头部和尾部多了很多小广告....,如果理解了 
+      HttpModule的原理，要做这个就不是很难了~</P>
+      <P><BR>IHttpModule与IHttpHandler的区别整理<BR>&nbsp;&nbsp;&nbsp; 
+      1.先后次序.先IHttpModule,后IHttpHandler. <FONT 
+      color=#ff0000>注:</FONT>Module要看你响应了哪个事件，一些事件是在Handler之前运行的，一些是在Handler之后运行的<BR>&nbsp;&nbsp;&nbsp; 
+      2.对请求的处理上:<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+      IHttpModule是属于大小通吃类型,无论客户端请求的是什么文件,都会调用到它;例如aspx,rar,html的请求.<BR>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp; 
+      IHttpHandler则属于挑食类型,只有ASP.net注册过的文件类型(例如aspx,asmx等等)才会轮到调用它.<BR>&nbsp;&nbsp; 
+      3.IHttpHandler按照你的请求 
+      生成响应的内容，IHttpModule对请求进行预处理，如验证、修改、过滤等等，同时也可以对响应进行处理</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>ASP.Net系统本身配置有很多HttpHandler和HttpModule，以处理aspx等.Net标准的页面文件，以及这些页面文件中标 
+      准的事件处理等。查看%System%/Microsoft.NET\Framework\v2.0.50727\CONFIG目录下的 
+      web.config文件中的httpHandlers和<B 
+      style="COLOR: black; BACKGROUND-COLOR: #ffff66">httpModules</B>节点，可以看到这些配置。如果有兴趣，可以使用Reflector查 
+      看.Net系统中相关的类和方法，了解.Net如何处理以及做了什么处理。</P>
+      <P>.Net也提供了一套机制来开发自定义的HttpHandler和 
+      HttpModule，均可以用于对HttpRequest的截取，完成自定义的处理。 HttpModule 
+      继承System.Web.IHttpModule接口，实现自己的HttpModule类。必须要实现接口的两个方法：Init和Dispose。在 
+      Init中，可以添加需要截取的事件；Dispose用于资源的释放，如果在Init中创建了自己的资源对象，请在Dispose中进行释放。</P>
+      <P>namespace MyModule<BR>{<BR>public class MyHttpModule : 
+      IHttpModule<BR>{<BR>&nbsp;&nbsp;&nbsp; public 
+      MyHttpModule()<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp; }</P>
+      <P>&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp; <SPAN 
+      style="COLOR: rgb(0,128,0)">//</SPAN><SPAN 
+      style="COLOR: rgb(0,128,0)">Init方法用来注册HttpApplication 
+      事件。</SPAN><BR>&nbsp;&nbsp; public void Init(HttpApplication 
+      r_objApplication)<BR>&nbsp;&nbsp;&nbsp; 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r_objApplication.BeginRequest += new 
+      EventHandler(this.BeginRequest);<BR>&nbsp;&nbsp;&nbsp; 
+      }&nbsp;&nbsp;&nbsp;&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>public void Dispose()<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp; 
+      }&nbsp;&nbsp;&nbsp;&nbsp;</P>
+      <P>private void BeginRequest(object r_objSender, EventArgs 
+      r_objEventArgs)<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      HttpApplication objApp = 
+      (HttpApplication)r_objSender;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      objApp.Response.Write("您请求的URL为" + 
+      objApp.Request.Path);<BR>&nbsp;&nbsp;&nbsp; }<BR>}</P>
+      <P><BR>}&nbsp;&nbsp;&nbsp;</P>
+      <P>将编译的dll文件拷贝到web项目的bin目录下，在web项目的web.config文件system.web节点中配置： 
+      <BR>&nbsp;&nbsp;&nbsp; 
+      这样就将自定义的HttpModule类MyHttpModule插入到了当前web的HttpModule的Pipeline中。 <FONT 
+      color=#ff0000>HttpModule</FONT>主要功能是<FONT 
+      color=#ff0000>对</FONT>Application的<FONT 
+      color=#ff0000>各个事件进行截取</FONT>，在这些事件中完成自己的处理。其实如果自己开发一些项目，直接在 <FONT 
+      color=#ff0000>Global.asax</FONT>中处理已经足够了。如果是开发一个Framework或者是某些方面的组件，需要在事件中添加处理，开发自定义的 
+      HttpModule，可以避免使用Framework或者组件时，还得手工在Global.asax中添加代码。&nbsp;&nbsp;&nbsp;&nbsp; 
+      目前想到的开发自定义HttpModule的用途，有全局的身份/权限验证、自定义网站访问/操作日志的记录、处于管理/调试等目的对站点进行监控追踪 
+      等。当然，如果是结合自定义的HttpHandler进行Framework的开发，HttpModule可以用于其它的一些特殊的处理。</P>
+      <P>&nbsp;&nbsp; &nbsp;&nbsp; &lt;<B 
+      style="COLOR: black; BACKGROUND-COLOR: #ffff66">httpModules</B>&gt;<BR>&nbsp;&nbsp; 
+      &nbsp;&nbsp; &nbsp;&nbsp; &lt;add name="test" 
+      type="MyHttpModuleTest.MyHttpModule,MyHttpModule"/&gt;<BR>&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp; &lt;/<B 
+      style="COLOR: black; BACKGROUND-COLOR: #ffff66">httpModules</B>&gt;<BR>&nbsp;&nbsp; 
+      注意要区分大小写，因为web.config作为一个XML文件是大小写敏感的。“type=MyHttpModuleTest.MyHttpModule,MyHttpModule”告诉我们<BR>&nbsp;&nbsp; 
+      系统将会将http 
+      request请求交给位于MyHttpModule.dll文件中的MyHttpModuleTest.MyHttpModule类去处理。</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P>HttpHandler是完全的对Http Request的截取。<BR>&nbsp;&nbsp;&nbsp; 
+      首先，继承System.Web.IHttpHandler接口，实现自己的HttpHandler类。必须要实现接口的ProcessRequest方 
+      法和IsReusable属性。ProcessRequest方法中完成对每个Http 
+      Request的处理，发送处理结果的HTML到输出缓存中。IsReusable属性被.Net 
+      Framework调用，用以确定这个HttpHandler的实例是否可以被重用于同类型其它的Request处理。<BR>&nbsp;&nbsp;&nbsp; 
+      如果你在自己的HttpHandler类中，需要读取或者是写Session值，需要再继承一个接口IRequiresSessionState。这个接 
+      口没有任何方法，只是一个标记接口。继承这个接口之后，就可以在自己的HttpHandler中访问Session，可以在Session中写入值。<BR>namespace 
+      MyHandler<BR>{<BR>public class MyHttpHandler : IHttpHandler, 
+      IRequiresSessionState<BR>{<BR>&nbsp;&nbsp;&nbsp; public MyHttpHandler() 
+      {}<BR>&nbsp;&nbsp;&nbsp; public bool IsReusable<BR>&nbsp;&nbsp;&nbsp; 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get { return true; 
+      }<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public void 
+      ProcessRequest(HttpContext context)<BR>&nbsp;&nbsp;&nbsp; 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HttpResponse objResponse = 
+      context.Response ;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objResponse.Write(" 
+      <BR>This request is handled by MyHttpHandler<BR>");<BR>&nbsp;&nbsp;&nbsp; 
+      }<BR>}<BR>}<BR>&nbsp;&nbsp;&nbsp; 
+      把编译的dll文件拷贝到web项目的bin目录下。<BR>&nbsp;&nbsp;&nbsp; 
+      接下来，这样来测试一下MyHttpHandler。我们为IIS配置一个以.cc为后缀名的文件类型，用我们写的MyHttpHandler来处理。<BR>&nbsp;&nbsp;&nbsp; 
+      首先，在IIS站点的Configuration配置里面，添加一个对.cc后缀名处理的Application Extention 
+      Mapping项。&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp; 
+      然后，在web项目的web.config节点节点中配置：</P>
+      <P>MyHttpHandler, MyHandler"/&gt;</P>
+      <P>&nbsp;&nbsp;&nbsp; 
+      verb属性配置这个HttpHandler处理那些HTTP方法，例如GET、POST等，如果是处理所有方法，就用*。path属性配置HttpHandler对哪些文件进行处理，例如可以是myfile.cc，如果是处理所有的.cc文件，就用*.cc。<BR>&nbsp;&nbsp;&nbsp; 
+      这样，这个站点上所有.cc类型文件的访问，都由MyHttpHandler处理。使用<A href="http://localhost/" 
+      target=_blank>http://localhost/</A>站点虚拟目录/a.cc访问测试站点，可以看到测试效果。当然，a.cc这个文件在Web服务器上是并不存在的。</P>
+      <P>&nbsp;&nbsp;&nbsp; 对HttpHandler的使用，比较典型的有.Net的Web 
+      MVC开源项目Maverick。Maverick使用一个Dispatcher类对所有的Http 
+      Request进行截取，他以.m作为后缀名向Web服务器提交请求，在Dispatcher中，将.m的后缀去掉，提取Command 
+      Name，然后以这个command 
+      name从配置文件中加载处理的flow，形成一个chain，依次对chain上的各个command和view进行处理，对各个command和 
+      view的处理结果可能会在chain中选择不同的处理分支，每个处理的Step中将处理结果的HTML写入Response的缓存中进行输出。<BR>&nbsp;&nbsp;&nbsp; 
+      总体来说，Maverick的框架架构概念很不错，但也存在明显的缺陷，以后有时间再详细的写写它的架构和需要改进之处。</P>
+      <P>&nbsp;&nbsp;&nbsp; 
+      总之，将HttpModule、HttpHandler，以及使用Ajax等将客户端进行封装结合起来，能够给web项目的开发带来非常大的改善空间。</P>
+      <P>Asp.Net HttpHandler实现URL重写的<BR>我们经常看到很多网站访问文章的时候才用的是***.html 或***.shtml 
+      (如本blog的日志访问效果)，其时这写文件在服务器上不存在的，那为什么会出现这样的效果呢，是因为Web服务器上对URL执行了重写，把访问的 
+      URL根据特定的格式重写成内部访问页面来实现的，它的好处是便于用户理解，同时搜索引擎也能更好地收入你的网站，当然其它的好处也很多，这里不做一一介 
+      绍了。 
+      <BR>本文所讲的是使用Asp.Net中的HttpHandler实现URL重写的，它所实现的原理请看这里，本程序可以处理任何Url，因为我在程序中使用了URL过虑，只有访问文件名是数字的才进行处理，并指在内部执行一个新的页面，并输出数据，代码如下：<BR>public 
+      void ProcessRequest(HttpContext Context)<BR>{&nbsp;&nbsp;&nbsp; <BR>try 
+      {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      //申明Request&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>HttpRequest Request = Context.Request; 
+      <BR>//取来路Url的绝对路径&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>string Url 
+      = Request.Url.AbsolutePath; <BR>//取访问的Web文件的开始字符间隔数<BR>int RegStart = 
+      Url.LastIndexOf("/") + 1; <BR>//申明一个确定Web文件名是否全是数字<BR>Regex Reg = new 
+      Regex(@"\d+"); <BR>//用正则表达式进行匹配 <BR>if (Reg.IsMatch(Url, RegStart)) <BR>{ 
+      <BR>// 
+      如果web文件名是数字，则判定是查询相关文章，执行指定页面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Context.Server.Execute("~/PermaLink.aspx?id=" + Reg.Match(Url, 
+      RegStart).Value);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <BR>}&nbsp;&nbsp;&nbsp; 
+      <BR>}<BR>catch<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Context.Response.Redirect(Context.Request.Url.ToString()); 
+      <BR>}<BR>}<BR>当然你首先要做的是先建一个类，并继承自IHttpHandler，然后把这段代码拷入，并编译。在Web项目中若要使用此功能，需要在web.config里面加上如下语句：<BR>&lt;httpHandlers&gt;<BR>&nbsp;&nbsp;&nbsp; 
+      &lt;add verb="*" path="*.shtml" type="HttpHandle.UrlRewrite" 
+      /&gt;<BR>&lt;/httpHandlers&gt;<BR>同时，还要在IIS中对Web项目进行配置，在Web项目的属性中，在主目录选项卡里，把执行权限改为"脚本和可执行文件"，然后打开配置，在应用程序扩展里加上需重写的文件格式的扩展，好了，成事具备，只欠运行了。</P></DIV></TD></TR></TBODY></TABLE></P>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/chenlulouis/" 
+target=_blank>chenlulouis</A><BR>关注 - 0<BR>粉丝 - 3<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1626918,38619,1)><SPAN class=diggnum 
+id=digg_count_1626918>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1626918,38619,2)><SPAN class=burynum 
+id=bury_count_1626918>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1626918 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1626918>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/chenlulouis/archive/2009/12/17/1626214.html">?? 
+</A>上一篇：<A title="发布于2009-12-17 11:11" 
+href="http://www.cnblogs.com/chenlulouis/archive/2009/12/17/1626214.html">eclipse 
+Java Build Path</A><BR><A 
+href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1627024.html">?? 
+</A>下一篇：<A title="发布于2009-12-18 11:27" 
+href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1627024.html">NET体系结构图</A><BR></DIV>
+<P class=postfoot>posted on 2009-12-18 10:20 <A 
+href="http://www.cnblogs.com/chenlulouis/">chenlulouis</A> 阅读(88) <A 
+href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html#commentform">评论(0)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/chenlulouis/admin/EditPosts.aspx?postid=1626918">编辑</A> 
+<A onclick="AddToWz(1626918);return false;" 
+href="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html#">收藏</A> 
+</P></DIV><IMG height=1 
+src="httpModules 与 httpHandlers - chenlulouis - 博客园_files/1626918.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html"
+dc:identifier="http://www.cnblogs.com/chenlulouis/archive/2009/12/18/1626918.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/chenlulouis/services/trackbacks/1626918.aspx" />
+</rdf:RDF>
+-->
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fchenlulouis%2farchive%2f2009%2f12%2f18%2f1626918.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fchenlulouis%2farchive%2f2009%2f12%2f18%2f1626918.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A class=site_hot 
+href="http://a4.yeshj.com/rd/35182/" target=_blank>有道难题开锣头奖8万！</A><BR><A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+href="http://news.cnblogs.com/n/64242/" target=_blank>iPhone无线同步程序Wi-Fi 
+Sync操作视频</A><BR>· <A href="http://news.cnblogs.com/n/64241/" 
+target=_blank>为什么无法弃用 Flash</A><BR>· <A href="http://news.cnblogs.com/n/64240/" 
+target=_blank>新品测评：SharePoint Server 2010与Office 2010结合更完美</A><BR>· <A 
+href="http://news.cnblogs.com/n/64239/" 
+target=_blank>微软改变生活云计算：胖就是瘦，瘦却是胖</A><BR>· <A 
+href="http://news.cnblogs.com/n/64238/" 
+target=_blank>5款最佳Linux上网本操作系统</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px"></DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="httpModules 与 httpHandlers - chenlulouis - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV></DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> &nbsp;<A 
+href="http://wz.cnblogs.com/" target=_blank>网摘</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+alt="" 
+src="httpModules 与 httpHandlers - chenlulouis - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV></DIV></DIV>
+<P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+href="http://www.cnblogs.com/" name=Hyperlink1><FONT face=Verdana>博客园</FONT></A> 
+<BR>Copyright &copy; chenlulouis </P></FORM></DIV></BODY></HTML>

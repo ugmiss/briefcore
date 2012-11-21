@@ -1,0 +1,1280 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0065)http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html -->
+<HTML><HEAD><TITLE>为程序设置快捷键 - 韩天伟 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=.NET,为程序设置快捷键 name=keywords><LINK 
+href="为程序设置快捷键 - 韩天伟 - 博客园_files/common.css" type=text/css rel=stylesheet><LINK 
+id=MainCss href="为程序设置快捷键 - 韩天伟 - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK href="为程序设置快捷键 - 韩天伟 - 博客园_files/common2.css" type=text/css 
+rel=stylesheet><LINK href="为程序设置快捷键 - 韩天伟 - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK href="为程序设置快捷键 - 韩天伟 - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/hantianwei/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/hantianwei/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="为程序设置快捷键 - 韩天伟 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="为程序设置快捷键 - 韩天伟 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="为程序设置快捷键 - 韩天伟 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1674466.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<TABLE class=Framework cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV id=top>
+      <H1><A class=headermaintitle id=Header1_HeaderTitle 
+      href="http://www.cnblogs.com/hantianwei/">韩天伟</A></H1>
+      <DIV id=subtitle>每天比别人多工作、学习两个小时，就等于比别人多活了两个小时！~</DIV></DIV>
+      <DIV id=sub>
+      <DIV class=BlogStats>随笔 - 119, 文章 - 0, 评论 - 22, 引用 - 
+  0</DIV></DIV></TD></TR></TBODY></TABLE>
+<TABLE class=Framework cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=LeftCell rowSpan=2>
+      <DIV id=leftmenu>数据加载中…… </DIV></TD>
+    <TD class=MainCell>
+      <DIV id=main>
+      <DIV class=post>
+      <H2><A id=ctl03_TitleUrl 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html">为程序设置快捷键</A> 
+      </H2>
+      <DIV class=postbody>
+      <DIV class=cnblogs_code 
+      onclick="cnblogs_code_show('668270c5-a0b6-4d47-8e69-fa0ef1262d36')"><IMG 
+      class=code_img_closed 
+      id=code_img_closed_668270c5-a0b6-4d47-8e69-fa0ef1262d36 alt="" 
+      src="为程序设置快捷键 - 韩天伟 - 博客园_files/ContractedBlock.gif"><IMG 
+      class=code_img_opened 
+      id=code_img_opened_668270c5-a0b6-4d47-8e69-fa0ef1262d36 
+      style="DISPLAY: none" 
+      onclick="cnblogs_code_hide('668270c5-a0b6-4d47-8e69-fa0ef1262d36',event)" 
+      src="为程序设置快捷键 - 韩天伟 - 博客园_files/ExpandedBlockStart.gif"><SPAN 
+      class=cnblogs_code_collapse>代码</SPAN> 
+      <DIV class=cnblogs_code_hide 
+      id=cnblogs_code_open_668270c5-a0b6-4d47-8e69-fa0ef1262d36>
+      <DIV><!--<br/ /><br/ />Code highlighting produced by Actipro CodeHighlighter (freeware)<br/ />http://www.CodeHighlighter.com/<br/ /><br/ />--><SPAN 
+      style="COLOR: #000000">注册系统热键&nbsp;<BR></SPAN><SPAN 
+      style="COLOR: #0000ff">using</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;System;<BR></SPAN><SPAN 
+      style="COLOR: #0000ff">using</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;System.Runtime.InteropServices;<BR></SPAN><SPAN 
+      style="COLOR: #0000ff">using</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;System.Windows.Forms;<BR><BR></SPAN><SPAN 
+      style="COLOR: #0000ff">namespace</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;Utility.Form<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">public</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">class</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;HotKey<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;summary&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;注册系统热键<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;/summary&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;example&gt;</SPAN><SPAN 
+      style="COLOR: #008000">注册后，按如下方法重写WndProc方法，写入快捷键的作用<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;code&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;protected&nbsp;override&nbsp;void&nbsp;WndProc(ref&nbsp;Message&nbsp;m)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;(m.Msg)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;0x0312:&nbsp;//表示按快捷键<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;(m.WParam.ToInt32())<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;100:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//do&nbsp;something<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;&nbsp;base.WndProc(ref&nbsp;m);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;/code&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;/example&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;param&nbsp;name="hWnd"&gt;</SPAN><SPAN 
+      style="COLOR: #008000">Handle</SPAN><SPAN 
+      style="COLOR: #808080">&lt;/param&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;param&nbsp;name="id"&gt;</SPAN><SPAN 
+      style="COLOR: #008000">ID，不重复即可</SPAN><SPAN 
+      style="COLOR: #808080">&lt;/param&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;param&nbsp;name="fsModifiers"&gt;&lt;/param&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;param&nbsp;name="vk"&gt;&lt;/param&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;returns&gt;</SPAN><SPAN 
+      style="COLOR: #008000">如果函数执行成功，返回值不为0。如果函数执行失败，返回值为0。要得到扩展错误信息，调用GetLastError。</SPAN><SPAN 
+      style="COLOR: #808080">&lt;/returns&gt;</SPAN><SPAN 
+      style="COLOR: #808080"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(</SPAN><SPAN 
+      style="COLOR: #800000">"</SPAN><SPAN 
+      style="COLOR: #800000">user32.dll</SPAN><SPAN 
+      style="COLOR: #800000">"</SPAN><SPAN 
+      style="COLOR: #000000">,&nbsp;SetLastError&nbsp;</SPAN><SPAN 
+      style="COLOR: #000000">=</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">true</SPAN><SPAN 
+      style="COLOR: #000000">)]<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">public</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">static</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">extern</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">bool</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;RegisterHotKey(<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntPtr&nbsp;hWnd,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000">//</SPAN><SPAN 
+      style="COLOR: #008000">要定义热键的窗口的句柄&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">int</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;id,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000">//</SPAN><SPAN 
+      style="COLOR: #008000">定义热键ID（不能与其它ID重复）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyModifiers&nbsp;fsModifiers,&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000">//</SPAN><SPAN 
+      style="COLOR: #008000">标识热键是否在按Alt、Ctrl、Shift、Windows等键时才会生效&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Keys&nbsp;vk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000">//</SPAN><SPAN 
+      style="COLOR: #008000">定义热键的内容&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;summary&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;取消注册系统热键<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;/summary&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;param&nbsp;name="hWnd"&gt;</SPAN><SPAN 
+      style="COLOR: #008000">Handle</SPAN><SPAN 
+      style="COLOR: #808080">&lt;/param&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;param&nbsp;name="id"&gt;</SPAN><SPAN 
+      style="COLOR: #008000">ID</SPAN><SPAN 
+      style="COLOR: #808080">&lt;/param&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;returns&gt;</SPAN><SPAN 
+      style="COLOR: #008000">取消是否成功</SPAN><SPAN 
+      style="COLOR: #808080">&lt;/returns&gt;</SPAN><SPAN 
+      style="COLOR: #808080"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(</SPAN><SPAN 
+      style="COLOR: #800000">"</SPAN><SPAN 
+      style="COLOR: #800000">user32.dll</SPAN><SPAN 
+      style="COLOR: #800000">"</SPAN><SPAN 
+      style="COLOR: #000000">,&nbsp;SetLastError&nbsp;</SPAN><SPAN 
+      style="COLOR: #000000">=</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">true</SPAN><SPAN 
+      style="COLOR: #000000">)]<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">public</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">static</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">extern</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">bool</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;UnregisterHotKey(<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntPtr&nbsp;hWnd,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000">//</SPAN><SPAN 
+      style="COLOR: #008000">要取消热键的窗口的句柄&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">int</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000">//</SPAN><SPAN 
+      style="COLOR: #008000">要取消热键的ID&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;summary&gt;</SPAN><SPAN 
+      style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;定义了辅助键的名称（将数字转变为字符以便于记忆，也可去除此枚举而直接使用数值）<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">///</SPAN><SPAN 
+      style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #808080">&lt;/summary&gt;</SPAN><SPAN 
+      style="COLOR: #808080"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Flags()]<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">public</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">enum</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;KeyModifiers<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None&nbsp;</SPAN><SPAN 
+      style="COLOR: #000000">=</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">0</SPAN><SPAN 
+      style="COLOR: #000000">,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alt&nbsp;</SPAN><SPAN 
+      style="COLOR: #000000">=</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">1</SPAN><SPAN 
+      style="COLOR: #000000">,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ctrl&nbsp;</SPAN><SPAN 
+      style="COLOR: #000000">=</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">2</SPAN><SPAN 
+      style="COLOR: #000000">,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shift&nbsp;</SPAN><SPAN 
+      style="COLOR: #000000">=</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">4</SPAN><SPAN 
+      style="COLOR: #000000">,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WindowsKey&nbsp;</SPAN><SPAN 
+      style="COLOR: #000000">=</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">8</SPAN><SPAN 
+      style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>}<BR><BR></SPAN></DIV></DIV></DIV>
+      <P>这个在网上一搜，到处都是，我在窗体show时注册热键</P>
+      <P>&nbsp;</P>
+      <DIV class=cnblogs_code 
+      onclick="cnblogs_code_show('782ff2fe-4ae3-404a-8d8f-e626abb88b5e')"><IMG 
+      class=code_img_closed 
+      id=code_img_closed_782ff2fe-4ae3-404a-8d8f-e626abb88b5e alt="" 
+      src="为程序设置快捷键 - 韩天伟 - 博客园_files/ContractedBlock.gif"><IMG 
+      class=code_img_opened 
+      id=code_img_opened_782ff2fe-4ae3-404a-8d8f-e626abb88b5e 
+      style="DISPLAY: none" 
+      onclick="cnblogs_code_hide('782ff2fe-4ae3-404a-8d8f-e626abb88b5e',event)" 
+      src="为程序设置快捷键 - 韩天伟 - 博客园_files/ExpandedBlockStart.gif"><SPAN 
+      class=cnblogs_code_collapse>代码</SPAN> 
+      <DIV class=cnblogs_code_hide 
+      id=cnblogs_code_open_782ff2fe-4ae3-404a-8d8f-e626abb88b5e>
+      <DIV><!--<br/ /><br/ />Code highlighting produced by Actipro CodeHighlighter (freeware)<br/ />http://www.CodeHighlighter.com/<br/ /><br/ />--><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Utility.Form.HotKey.RegisterHotKey(Handle,&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">101</SPAN><SPAN 
+      style="COLOR: #000000">,&nbsp;Utility.Form.HotKey.KeyModifiers.None,&nbsp;Keys.F1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Utility.Form.HotKey.RegisterHotKey(Handle,&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">102</SPAN><SPAN 
+      style="COLOR: #000000">,&nbsp;Utility.Form.HotKey.KeyModifiers.None,&nbsp;Keys.F2);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Utility.Form.HotKey.RegisterHotKey(Handle,&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">103</SPAN><SPAN 
+      style="COLOR: #000000">,&nbsp;Utility.Form.HotKey.KeyModifiers.Alt,&nbsp;Keys.A);</SPAN></DIV></DIV></DIV>
+      <P>&nbsp;</P>
+      <P>并且窗体重写WndProc方法</P>
+      <P>&nbsp;</P>
+      <DIV class=cnblogs_code 
+      onclick="cnblogs_code_show('a5071bc0-143c-4997-a8f7-46cf46c4f15f')"><IMG 
+      class=code_img_closed 
+      id=code_img_closed_a5071bc0-143c-4997-a8f7-46cf46c4f15f alt="" 
+      src="为程序设置快捷键 - 韩天伟 - 博客园_files/ContractedBlock.gif"><IMG 
+      class=code_img_opened 
+      id=code_img_opened_a5071bc0-143c-4997-a8f7-46cf46c4f15f 
+      style="DISPLAY: none" 
+      onclick="cnblogs_code_hide('a5071bc0-143c-4997-a8f7-46cf46c4f15f',event)" 
+      src="为程序设置快捷键 - 韩天伟 - 博客园_files/ExpandedBlockStart.gif"><SPAN 
+      class=cnblogs_code_collapse>代码</SPAN> 
+      <DIV class=cnblogs_code_hide 
+      id=cnblogs_code_open_a5071bc0-143c-4997-a8f7-46cf46c4f15f>
+      <DIV><!--<br/ /><br/ />Code highlighting produced by Actipro CodeHighlighter (freeware)<br/ />http://www.CodeHighlighter.com/<br/ /><br/ />--><SPAN 
+      style="COLOR: #0000ff">protected</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">override</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">void</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;WndProc(</SPAN><SPAN 
+      style="COLOR: #0000ff">ref</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;Message&nbsp;m)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">base</SPAN><SPAN 
+      style="COLOR: #000000">.WndProc(</SPAN><SPAN 
+      style="COLOR: #0000ff">ref</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;m);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">switch</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;(m.Msg)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">case</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">0x0312</SPAN><SPAN 
+      style="COLOR: #000000">:&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000">//</SPAN><SPAN 
+      style="COLOR: #008000">表示按快捷键</SPAN><SPAN 
+      style="COLOR: #008000"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">switch</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;(m.WParam.ToInt32())<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">case</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">101</SPAN><SPAN 
+      style="COLOR: #000000">:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000">//</SPAN><SPAN 
+      style="COLOR: #008000">...</SPAN><SPAN 
+      style="COLOR: #008000"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">break</SPAN><SPAN 
+      style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">case</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">102</SPAN><SPAN 
+      style="COLOR: #000000">:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000">//</SPAN><SPAN 
+      style="COLOR: #008000">...</SPAN><SPAN 
+      style="COLOR: #008000"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">break</SPAN><SPAN 
+      style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">case</SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+      style="COLOR: #800080">103</SPAN><SPAN 
+      style="COLOR: #000000">:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #008000">//</SPAN><SPAN 
+      style="COLOR: #008000">...</SPAN><SPAN 
+      style="COLOR: #008000"><BR></SPAN><SPAN 
+      style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">break</SPAN><SPAN 
+      style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">default</SPAN><SPAN 
+      style="COLOR: #000000">:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">break</SPAN><SPAN 
+      style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: #0000ff">break</SPAN><SPAN 
+      style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></DIV></DIV></DIV>
+      <P>&nbsp;</P>
+      <P>发现已经可以使用了，但是F1，F2这些热键是系统中也要用的，一旦你的程序启动，发现其它程序的这些快捷键已经不起作用了。所以应该在窗体有焦点时才注册，离开焦点时要取消注册，也就是说在Form的Activated方法里注册，而在Deactivate时取消注册就OK了。&nbsp;</P>
+      <P>&nbsp;</P>
+      <DIV id=digg_block>
+      <DIV id=author_profile>
+      <DIV class=author_profile_info>
+      <DIV class=author_profile_info><A 
+      href="http://home.cnblogs.com/hantianwei/" target=_blank>韩天伟</A><BR>关注 - 
+      1<BR>粉丝 - 1<BR></DIV></DIV>
+      <DIV class=clear></DIV>
+      <DIV id=author_profile_follow><A onclick="login();return false;" 
+      href="javascript:void(0);">关注博主</A></DIV></DIV>
+      <DIV id=div_digg>
+      <DIV class=diggit onclick=DiggIt(1674466,55427,1)><SPAN class=diggnum 
+      id=digg_count_1674466>0</SPAN> </DIV>
+      <DIV class=buryit onclick=DiggIt(1674466,55427,2)><SPAN class=burynum 
+      id=bury_count_1674466>0</SPAN> </DIV>
+      <DIV class=clear></DIV><SPAN id=span_isdigged_1674466 
+      style="DISPLAY: none">0</SPAN> 
+      <DIV class=diggword id=digg_word_1674466>(请您对文章做出评价)</DIV></DIV></DIV>
+      <DIV class=clear></DIV>
+      <DIV id=post_next_prev><A 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674448.html">« 
+      </A>上一篇：<A title="发布于2010-02-26 17:23" 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674448.html">C# 
+      移动窗口 适用于有标题栏和无标题栏窗体 超级简单版</A><BR><A 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674470.html">» 
+      </A>下一篇：<A title="发布于2010-02-26 17:39" 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674470.html">C# 
+      WinForm开发系列 - DataGrid/DataGridView</A><BR></DIV>
+      <SCRIPT src="为程序设置快捷键 - 韩天伟 - 博客园_files/google_service.js" 
+      type=text/javascript></SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '7e95bab1-9f2d-de11-9510-001cf0cd104b';
+</SCRIPT>
+      </DIV>
+      <P class=postfoot>posted on 2010-02-26 17:36 <A 
+      href="http://www.cnblogs.com/hantianwei/">韩天伟</A> 阅读(49) <A 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#commentform">评论(3)</A> 
+      &nbsp;<A 
+      href="http://www.cnblogs.com/hantianwei/admin/EditPosts.aspx?postid=1674466">编辑</A> 
+      <A onclick="AddToWz(1674466);return false;" 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#">收藏</A> 
+      所属分类: <A 
+      href="http://www.cnblogs.com/hantianwei/category/199385.html">.NET</A> 
+      </P></DIV><IMG height=1 src="为程序设置快捷键 - 韩天伟 - 博客园_files/1674466.jpg" 
+      width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html"
+dc:identifier="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/hantianwei/services/trackbacks/1674466.aspx" />
+</rdf:RDF>
+--><A name=pagedcomment></A><A name=评论>
+      <DIV id=comments>
+      <H3>评论</H3><SPAN id=span_comment_maxid 
+      style="DISPLAY: none">1775190</SPAN> 
+      <DIV class=post>
+      <H2><A 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#1775188">#1楼</A><A 
+      id=comment_anchor_1775188 name=1775188></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("Console.C#",1775188,"yizmfHZJQdu8zwNGdq4gN/CBpfd0MBtf7gpnP/hWEFWsNjzgEIRDnw==")' 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1775188,"yizmfHZJQdu8zwNGdq4gN/CBpfd0MBtf7gpnP/hWEFWsNjzgEIRDnw==")' 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Console.C%23" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl00_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl00_EditLink></A> </H2><SPAN 
+      class=blog_comment_body id=comment_body_1775188>嗯..貌似比钩子好用.!!!</SPAN> 
+      <DIV class=postfoot>2010-03-06 21:40 | <A 
+      id=Comments1_CommentList_ctl00_NameLink 
+      href="http://home.cnblogs.com/61724/" target=_blank>Console.C#</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/Console.C#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV></DIV>
+      <DIV class=post>
+      <H2><A 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#1775189">#2楼</A><A 
+      id=comment_anchor_1775189 name=1775189></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("Console.C#",1775189,"yizmfHZJQdu8zwNGdq4gN/CBpfd0MBtf7gpnP/hWEFWsNjzgEIRDnw==")' 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1775189,"yizmfHZJQdu8zwNGdq4gN/CBpfd0MBtf7gpnP/hWEFWsNjzgEIRDnw==")' 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Console.C%23" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl01_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl01_EditLink></A> </H2><SPAN 
+      class=blog_comment_body id=comment_body_1775189>不知道 那些游戏外挂 可否是用类似实现的 
+      </SPAN>
+      <DIV class=postfoot>2010-03-06 21:41 | <A 
+      id=Comments1_CommentList_ctl01_NameLink 
+      href="http://home.cnblogs.com/61724/" target=_blank>Console.C#</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/Console.C#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV></DIV>
+      <DIV class=post>
+      <H2><A 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#1775190">#3楼</A><A 
+      id=comment_anchor_1775190 name=1775190></A><A name=Post></A> 
+      &nbsp;&nbsp;<A 
+      onclick='ReplyComment("Console.C#",1775190,"yizmfHZJQdu8zwNGdq4gN/CBpfd0MBtf7gpnP/hWEFWsNjzgEIRDnw==")' 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1775190,"yizmfHZJQdu8zwNGdq4gN/CBpfd0MBtf7gpnP/hWEFWsNjzgEIRDnw==")' 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Console.C%23" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl02_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl02_EditLink></A> </H2><SPAN 
+      class=blog_comment_body id=comment_body_1775190>貌似比用 
+系统钩子来的简单!!!<BR></SPAN>
+      <DIV class=postfoot>2010-03-06 21:41 | <A 
+      id=Comments1_CommentList_ctl02_NameLink 
+      href="http://home.cnblogs.com/61724/" target=_blank>Console.C#</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/Console.C#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV></DIV></DIV>
+      <SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+      <DIV class=commentform id=ctl04_comment_form>
+      <DIV id=ctl04_divLoginPannel>
+      <DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+      href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fhantianwei%2farchive%2f2010%2f02%2f26%2f1674466.html%3flogin%3d1%23commentform">登录</A> 
+      或 <A class=underline 
+      href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fhantianwei%2farchive%2f2010%2f02%2f26%2f1674466.html%23Bottom2">注册</A> 
+      。</DIV>
+      <DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+      target=_blank>返回博客园首页</A></DIV></DIV>
+      <DIV class="itnews c_ad_block"><A 
+      href="http://job.cnblogs.com/offer/7427/" 
+      target=_blank>沪江网招聘ASP.NET开发工程师</A><BR><A 
+      href="http://a4.yeshj.com/rd/35450/" 
+      target=_blank>软件研发团队管理年会(上海，7.10-7.11)</A><BR><A 
+      href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+      href="http://news.cnblogs.com/n/65383/" 
+      target=_blank>周鸿祎：学大互联网公司没有出路</A><BR>· <A 
+      href="http://news.cnblogs.com/n/65382/" target=_blank>赶集网获得2000万美元投资 
+      重点布局手机领域</A><BR>· <A href="http://news.cnblogs.com/n/65381/" 
+      target=_blank>难道无聊不是一种快乐？</A><BR>· <A 
+      href="http://news.cnblogs.com/n/65380/" target=_blank>关于云应用的六个误解</A><BR>· 
+      <A href="http://news.cnblogs.com/n/65379/" target=_blank>64位Firefox现身 
+      Flash插件将成阻碍</A><BR></DIV>
+      <DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+      target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+      href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+      <DIV style="MARGIN-TOP: 5px">
+      <SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+      </DIV>
+      <DIV style="MARGIN-TOP: 5px"><A 
+      href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG 
+      alt="" src="为程序设置快捷键 - 韩天伟 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+      <DIV class="itnews c_ad_block" id=job_block><A 
+      href="http://job.cnblogs.com/" target=_blank>推荐职位</A>:<BR>
+      <DIV id=job_list></DIV>
+      <SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+      </DIV></DIV>
+      <DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+      href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+      href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+      href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+      href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+      href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+      href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+      href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+      <DIV class=c_ad_block id=ad_under_comment2><A 
+      href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+      target=_blank><IMG 
+      style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+      alt="" src="为程序设置快捷键 - 韩天伟 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+      href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+      计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+      href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+      target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+      <DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+      href="http://zzk.cnblogs.com/s?w=.NET" target=_blank>.NET</A> 
+      </DIV></DIV></DIV></TD></TR>
+  <TR>
+    <TD class=FooterCell>
+      <P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+      style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" 
+      href="http://www.cnblogs.com/" name=Hyperlink1>博客园</A> <BR>Copyright © 韩天伟 
+      </P></TD></TR></TBODY></TABLE>
+<DIV id=lefttemp style="DISPLAY: none">
+<H3>导航</H3>
+<UL>
+  <LI><A id=MyLinks1_HomeLink href="http://www.cnblogs.com/">博客园</A> 
+  <LI><A id=MyLinks1_MyHomeLink href="http://www.cnblogs.com/hantianwei/">首页</A> 
+
+  <LI><A id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/hantianwei/admin/EditPosts.aspx?opt=1">新随笔</A> 
+  <LI><A id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/é©å¤©ä¼">联系</A> 
+  <LI><A id=MyLinks1_XMLLink href="http://www.cnblogs.com/hantianwei/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="为程序设置快捷键 - 韩天伟 - 博客园_files/xml.gif"></A><A id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/hantianwei/rss">订阅</A> 
+  <LI><A id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/hantianwei/admin/EditPosts.aspx">管理</A> </LI></UL>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: silver" colSpan=7>
+      <TABLE class=CalTitle style="WIDTH: 100%; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev style="WIDTH: 15%"><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3653')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2010年2月</TD>
+          <TD class=CalNextPrev style="WIDTH: 15%" align=right><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3712')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>31</TD>
+    <TD style="WIDTH: 14%" align=middle>1</TD>
+    <TD style="WIDTH: 14%" align=middle>2</TD>
+    <TD style="WIDTH: 14%" align=middle>3</TD>
+    <TD style="WIDTH: 14%" align=middle>4</TD>
+    <TD style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>6</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>7</TD>
+    <TD style="WIDTH: 14%" align=middle>8</TD>
+    <TD style="WIDTH: 14%" align=middle>9</TD>
+    <TD style="WIDTH: 14%" align=middle>10</TD>
+    <TD style="WIDTH: 14%" align=middle>11</TD>
+    <TD style="WIDTH: 14%" align=middle>12</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>13</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/2/14.html"><U>14</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>15</TD>
+    <TD style="WIDTH: 14%" align=middle>16</TD>
+    <TD style="WIDTH: 14%" align=middle>17</TD>
+    <TD style="WIDTH: 14%" align=middle>18</TD>
+    <TD style="WIDTH: 14%" align=middle>19</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>20</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>21</TD>
+    <TD style="WIDTH: 14%" align=middle>22</TD>
+    <TD style="WIDTH: 14%" align=middle>23</TD>
+    <TD style="WIDTH: 14%" align=middle>24</TD>
+    <TD style="WIDTH: 14%" align=middle>25</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/hantianwei/archive/2010/2/26.html"><U>26</U></A></TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>27</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>28</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>1</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>2</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>6</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>7</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>8</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>9</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>10</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>11</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>12</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" 
+align=middle>13</TD></TR></TBODY></TABLE>
+<META content=False name=vs_showGrid>
+<H3>公告</H3>
+<DIV id=profile_block><A href="http://home.cnblogs.com/hantianwei/" 
+target=_blank>我的主页</A>&nbsp; <A 
+href="http://home.cnblogs.com/hantianwei/detail/" target=_blank>个人资料</A><BR><A 
+href="http://home.cnblogs.com/hantianwei/ing/" target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/é©å¤©ä¼" target=_blank>发短消息</A></DIV>
+<SCRIPT type=text/javascript>
+var blogapp = 'hantianwei';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/hantianwei/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/hantianwei/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/hantianwei/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/hantianwei/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/hantianwei/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/hantianwei/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/hantianwei/tag/">我的标签</A> </LI></UL></DIV>
+<H3>随笔分类<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(118)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/hantianwei/category/199385.html">.NET(75)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to .NET(75)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/199385.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/hantianwei/category/199387.html">AJAX(5)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to AJAX(5)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/199387.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/hantianwei/category/207040.html">ASP(4)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to ASP(4)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/207040.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/hantianwei/category/199388.html">ELSE(5)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to ELSE(5)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/199388.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/hantianwei/category/238924.html">Html(1)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to Html(1)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/238924.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/hantianwei/category/247294.html">PHP(1)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to PHP(1)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/247294.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/hantianwei/category/238923.html">SEO优化(1)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to SEO优化(1)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/238923.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/hantianwei/category/213924.html">服务器(3)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to 服务器(3)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/213924.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/hantianwei/category/213926.html">人生感悟</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink 
+  title="Subscribe to 人生感悟" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/213926.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/hantianwei/category/235094.html">软件开发(4)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink 
+  title="Subscribe to 软件开发(4)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/235094.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/hantianwei/category/199386.html">数据库(17)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink 
+  title="Subscribe to 数据库(17)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/199386.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/hantianwei/category/213925.html">系统(1)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink 
+  title="Subscribe to 系统(1)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/213925.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/hantianwei/category/238922.html">正则(1)</A><A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_RssLink 
+  title="Subscribe to 正则(1)" 
+  onclick="open_link('http://www.cnblogs.com/hantianwei/category/238922.html/rss');return false;" 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html###">(rss)</A> 
+  </LI></UL>
+<H3>随笔档案<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(118)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/05.html">2010年5月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/04.html">2010年4月 (6)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/03.html">2010年3月 (13)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02.html">2010年2月 (24)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/01.html">2010年1月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/12.html">2009年12月 (3)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/11.html">2009年11月 (7)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/10.html">2009年10月 (6)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/09.html">2009年9月 (28)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/08.html">2009年8月 (5)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/07.html">2009年7月 (17)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/06.html">2009年6月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/05.html">2009年5月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/04.html">2009年4月 (3)</A> 
+  </LI></UL>
+<H3 class=catListTitle>最新评论 <A id=SingleColumn1__bb3b90_RSSHyperlink1 
+href="http://www.cnblogs.com/hantianwei/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="为程序设置快捷键 - 韩天伟 - 博客园_files/xml.gif"></A></H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__bb3b90_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/04/30/1724656.html#1815947">1.&nbsp;Re:c# 
+  winform 让Form窗体上系统自带的红色关闭按钮失效，点击关闭变为隐藏</A> 
+  <LI style="WORD-BREAK: break-all">楼上正解啊，而且这种方式截断消息处理流程，比较容易出错啊 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Jeason 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__bb3b90_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/04/30/1724656.html#1813775">2.&nbsp;Re:c# 
+  winform 让Form窗体上系统自带的红色关闭按钮失效，点击关闭变为隐藏</A> 
+  <LI style="WORD-BREAK: break-all">在FormClosing事件中处理不就行了吗 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--木鱼 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__bb3b90_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/03/23/1692534.html#1785307">3.&nbsp;Re:asp 
+  .net 中 判断值是否是数字</A> 
+  <LI style="WORD-BREAK: break-all">不用这么麻烦吧正则判断一下,或直接int.Parse一下不就完事儿啦? 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--木鱼 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__bb3b90_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#1775190">4.&nbsp;Re:为程序设置快捷键</A> 
+
+  <LI style="WORD-BREAK: break-all">貌似比用 系统钩子来的简单!!! 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Console.C# 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__bb3b90_CommentList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html#1775189">5.&nbsp;Re:为程序设置快捷键</A> 
+
+  <LI style="WORD-BREAK: break-all">不知道 那些游戏外挂 可否是用类似实现的 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Console.C# </LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/09/20/1570303.html">1.&nbsp;C#创建右键菜单(794)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/06/30/1514227.html">2.&nbsp;asp.net（C#）定时自动发送邮件(462)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/09/18/1569015.html">3.&nbsp;c# 
+  关闭程序(415)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/12/03/1616148.html">4.&nbsp;sql日期格式化(385)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/08/05/1539474.html">5.&nbsp;远程连接超出最大连接数的终极解决方案(355)</A> 
+  </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/02/26/1674466.html">1.&nbsp;为程序设置快捷键(3)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/09/24/1573481.html">2.&nbsp;c#实现程序启动唯一实例的一种方法(3)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2009/09/27/1575136.html">3.&nbsp;常用Web 
+  Service汇总（天气预报、时刻表等）(转)(2)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/04/30/1724656.html">4.&nbsp;c# 
+  winform 让Form窗体上系统自带的红色关闭按钮失效，点击关闭变为隐藏(2)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/03/23/1692534.html">5.&nbsp;asp 
+  .net 中 判断值是否是数字(1)</A> </LI></UL></DIV>
+<H3 class=catListTitle>60天内阅读排行</H3>
+<DIV class=RecentComment>
+<UL>
+  <LI><A id=SingleColumn1__300a1bd_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/04/30/1724656.html">1.&nbsp;c# 
+  winform 让Form窗体上系统自带的红色关闭按钮失效，点击关闭变为隐藏(99)</A> 
+  <LI><A id=SingleColumn1__300a1bd_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/04/21/1717681.html">2.&nbsp;c# 
+  判断远程文件是否存在(91)</A> 
+  <LI><A id=SingleColumn1__300a1bd_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/04/07/1706444.html">3.&nbsp;c#采集网页用得几个函数(81)</A> 
+
+  <LI><A id=SingleColumn1__300a1bd_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/04/20/1715895.html">4.&nbsp;C#中实现拖动无边框窗体Form(76)</A> 
+
+  <LI><A id=SingleColumn1__300a1bd_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/hantianwei/archive/2010/04/29/1723730.html">5.&nbsp;C#加密方法汇总(52)</A> 
+  </LI></UL></DIV></DIV></FORM>
+<SCRIPT src="为程序设置快捷键 - 韩天伟 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="为程序设置快捷键 - 韩天伟 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="为程序设置快捷键 - 韩天伟 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

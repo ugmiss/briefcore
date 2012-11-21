@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0311)http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763104c8c711923d030678197027fa3c215cc790b121c38b8e87b774158ce95223a54b2121abdaf2b77330624b7cbca88408bbbc27e2c8a20322348d64611d61ab8cb317f877fce4eacf259b1b5e743e0b9a3a5c82456dd22026d8180ca195e03cb1fe76532f4d5e85f652907ccec&p=c4769a44938111a05eefc5241549&user=baidu -->
+<!--STATUS OK--><HTML><HEAD><TITLE>sql server 多连接释放问题_劳工的天空</TITLE>
+<META http-equiv=Content-Type content=text/html;charset=gb2312>
+<STYLE>BODY {
+	MARGIN: 4px 0px
+}
+#bd_sn_h {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+#bd_sn_h #p1 {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 2px; FONT: 14px Arial; PADDING-TOP: 4px
+}
+#bd_sn_h A {
+	COLOR: #0000ff; TEXT-DECORATION: underline
+}
+#bd_sn_h #p1 A {
+	FONT-WEIGHT: bold
+}
+#baidu DIV {
+	POSITION: static
+}
+</STYLE>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY onload=formatonlinpic();>
+<TABLE id=baidu cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV style="COLOR: #000000; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">
+      <DIV style="FLOAT: left; MARGIN: 6px 18px 0px 10px"><A 
+      href="http://www.baidu.com/"><IMG 
+      style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+      alt=到百度首页 src="sql server 多连接释放问题_劳工的天空_files/logo-kz.gif"></A></DIV>
+      <DIV style="FLOAT: left; MARGIN: 27px 0px 0px">
+      <FORM 
+      style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px" 
+      action=http://www.baidu.com/s><INPUT style="FONT: 16px Arial" size=35 
+      name=wd> <INPUT type=submit value=百度一下> <INPUT type=hidden value=3 
+      name=cl> </FORM></DIV>
+      <P 
+      style="CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 2px; FONT: 14px Arial; WIDTH: 100%; COLOR: #000000; PADDING-TOP: 4px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">您查询的关键词是：<B 
+      style="COLOR: black; BACKGROUND-COLOR: #ffff66"><A 
+      href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763104c8c711923d030678197027fa3c215cc790b121c38b8e87b774158ce95223a54b2121abdaf2b77330624b7cbca88408bbbc27e2c8a20322348d64611d61ab8cb317f877fce4eacf259b1b5e743e0b9a3a5c82456dd22026d8180ca195e03cb1fe76532f4d5e85f652907ccec&amp;p=c4769a44938111a05eefc5241549&amp;user=baidu#baidusnap0">释放</A>&nbsp;</B><B 
+      style="COLOR: black; BACKGROUND-COLOR: #a0ffff"><A 
+      href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763104c8c711923d030678197027fa3c215cc790b121c38b8e87b774158ce95223a54b2121abdaf2b77330624b7cbca88408bbbc27e2c8a20322348d64611d61ab8cb317f877fce4eacf259b1b5e743e0b9a3a5c82456dd22026d8180ca195e03cb1fe76532f4d5e85f652907ccec&amp;p=c4769a44938111a05eefc5241549&amp;user=baidu#baidusnap1">sql</A>&nbsp;</B><B 
+      style="COLOR: black; BACKGROUND-COLOR: #99ff99"><A 
+      href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763104c8c711923d030678197027fa3c215cc790b121c38b8e87b774158ce95223a54b2121abdaf2b77330624b7cbca88408bbbc27e2c8a20322348d64611d61ab8cb317f877fce4eacf259b1b5e743e0b9a3a5c82456dd22026d8180ca195e03cb1fe76532f4d5e85f652907ccec&amp;p=c4769a44938111a05eefc5241549&amp;user=baidu#baidusnap2">连接</A>&nbsp;</B> 
+      。如果打开速度慢，可以尝试<A 
+      style="FONT-WEIGHT: bold; COLOR: #0000ff; TEXT-DECORATION: underline" 
+      href="http://cache.baidu.com/c?m=9f65cb4a8c8507ed4fece763104c8c711923d030678197027fa3c215cc790b121c38b8e87b774158ce95223a54b2121abdaf2b77330624b7cbca88408bbbc27e2c8a20322348d64611d61ab8cb317f877fce4eacf259b1b5e743e0b9a3a5c82456dd22026d8180ca195e03cb1fe76532f4d5e85f652907ccec&amp;p=c4769a44938111a05eefc5241549&amp;user=baidu&amp;fast=y">快速版</A>；如果想保存快照，可以<A 
+      style="FONT-WEIGHT: bold; COLOR: #0000ff; TEXT-DECORATION: underline" 
+      onclick="window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(document.title)+'&amp;iu='+encodeURIComponent(location.href)+'&amp;fr=ps#nw=1','_s','scrollbars=no,width=600,height=450,right=75,top=20,status=no,resizable=yes'); return false;" 
+      href="http://cang.baidu.com/do/add" target=_blank>添加到搜藏</A>。</P>
+      <P 
+      style="MARGIN: 0px 2px; FONT: 12px Arial; COLOR: gray; BACKGROUND-COLOR: #ffffff">(百度和网页<A 
+      style="COLOR: #0000ff; TEXT-DECORATION: underline" 
+      href="http://hi.baidu.com/bailiangcn/blog/item/76762b028d2bd1054afb5171.html">http://hi.baidu.com/bailiangcn/blog/item/76762b028d2bd1054afb5171.html</A>的作者无关，不对其内容负责。百度快照谨为网络故障时之索引，不代表被搜索网站的即时页面。)</P>
+      <HR style="MARGIN: 8px 0px; WIDTH: 100%">
+      </DIV></TD></TR></TBODY></TABLE>
+<DIV style="POSITION: relative"><!--STATUS OK-->
+<STYLE type=text/css>.error {
+	FONT-SIZE: 12px; COLOR: #ff0000
+}
+</STYLE>
+
+<CENTER><LINK href="sql server 多连接释放问题_劳工的天空_files/mods.css" type=text/css 
+rel=stylesheet><LINK 
+href="sql server 多连接释放问题_劳工的天空_files/0ca57454f213c958d1090680.css" type=text/css 
+rel=stylesheet><LINK href="sql server 多连接释放问题_劳工的天空_files/space.css" 
+type=text/css rel=stylesheet>
+<STYLE type=text/css>#usrbar {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 0px; FONT-SIZE: 12px; BACKGROUND: #ffffff; FILTER: alpha(opacity=65); PADDING-BOTTOM: 3px; WIDTH: 100%; COLOR: #000000; LINE-HEIGHT: 19px; PADDING-TOP: 4px; FONT-FAMILY: Arial; LETTER-SPACING: normal; HEIGHT: 19px; TEXT-ALIGN: right; moz-opacity: 0.5
+}
+#usrbar A {
+	COLOR: #0000cc; TEXT-DECORATION: underline
+}
+#usrbar A:link {
+	COLOR: #0000cc; TEXT-DECORATION: underline
+}
+#usrbar A:visited {
+	COLOR: #0000cc; TEXT-DECORATION: underline
+}
+#ft {
+	CLEAR: both; FONT-SIZE: 12px; COLOR: #666666; LINE-HEIGHT: 20px; FONT-FAMILY: Arial; HEIGHT: 20px; TEXT-ALIGN: center
+}
+#ft A {
+	COLOR: #7777cc; TEXT-DECORATION: underline
+}
+#ft A:link {
+	COLOR: #7777cc; TEXT-DECORATION: underline
+}
+#ft A:visited {
+	COLOR: #7777cc; TEXT-DECORATION: underline
+}
+#usrbar {
+	LETTER-SPACING: normal
+}
+#usrbar A {
+	LETTER-SPACING: normal
+}
+#usrbar A:link {
+	LETTER-SPACING: normal
+}
+#usrbar A:visited {
+	LETTER-SPACING: normal
+}
+#ft {
+	LETTER-SPACING: normal
+}
+#ft A {
+	LETTER-SPACING: normal
+}
+#ft A:link {
+	LETTER-SPACING: normal
+}
+#ft A:visited {
+	LETTER-SPACING: normal
+}
+</STYLE>
+
+<DIV id=usrbar><NOBR><A id=hi_index href="http://hi.baidu.com/" 
+target=_blank>百度空间</A>&nbsp;|&nbsp;<A href="http://www.baidu.com/" 
+target=_blank>百度首页</A>&nbsp; </NOBR></DIV>
+<DIV id=main align=left><!--[if IE]><![endif]-->
+<DIV id=header>
+<DIV class=lc>
+<DIV class=rc></DIV></DIV>
+<DIV class=tit><A class=titlink 
+title="bailiangcn的空间 http://hi.baidu.com/bailiangcn" 
+href="http://hi.baidu.com/bailiangcn">劳工的天空</A></DIV>
+<DIV class=desc>生活和学习的感悟</DIV>
+<DIV id=tabline></DIV>
+<DIV id=tab><A href="http://hi.baidu.com/bailiangcn">主页</A><A class=on 
+href="http://hi.baidu.com/bailiangcn/blog">博客</A><A 
+href="http://hi.baidu.com/bailiangcn/album">相册</A><SPAN>|</SPAN><A 
+href="http://hi.baidu.com/bailiangcn/profile">个人档案</A> <SPAN>|</SPAN><A 
+href="http://hi.baidu.com/bailiangcn/friends">好友</A> </DIV></DIV>
+<DIV class=stage>
+<DIV class=stagepad>
+<DIV style="WIDTH: 100%">
+<TABLE class=modth cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=modtl width=7>&nbsp;</TD>
+    <TD class=modtc noWrap>
+      <DIV class=modhead><SPAN class=modtit>查看文章</SPAN></DIV></TD>
+    <TD class=modtc noWrap align=right></TD>
+    <TD class=modtr width=7>&nbsp;</TD></TR></TBODY></TABLE>
+<DIV class=modbox id=m_blog style="OVERFLOW-X: hidden">
+<DIV class=tit><A name=baidusnap1></A><B 
+style="COLOR: black; BACKGROUND-COLOR: #a0ffff">sql</B> server 多<A 
+name=baidusnap2></A><B style="COLOR: black; BACKGROUND-COLOR: #99ff99">连接</B><A 
+name=baidusnap0></A><B 
+style="COLOR: black; BACKGROUND-COLOR: #ffff66">释放</B>问题</DIV>
+<DIV class=date>2009-10-25 22:26</DIV>
+<TABLE style="TABLE-LAYOUT: fixed; WIDTH: 100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=cnt id=blog_text>偶然检查在用的数据库，发现数据库<B 
+      style="COLOR: black; BACKGROUND-COLOR: #99ff99">连接</B>达到230多个，吓了我一跳，大部分都是sleeping状态<BR>改天弄弄<BR><BR>1. 
+      &nbsp; 如果条件许可, &nbsp; 首先把iis和<B 
+      style="COLOR: black; BACKGROUND-COLOR: #a0ffff">sql</B> &nbsp; 
+      server分到两台服务器中, &nbsp; 这样可以避免两者互相影响, &nbsp; 也有利于查找直接的原因.(例如, &nbsp; 
+      由于IIS工作缓慢, &nbsp; 可能会导致不断的向<B 
+      style="COLOR: black; BACKGROUND-COLOR: #a0ffff">sql</B>发请求, &nbsp; 
+      这样看起来似乎就是<B style="COLOR: black; BACKGROUND-COLOR: #a0ffff">sql</B> &nbsp; 
+      server的问题) &nbsp; <BR><BR>2. &nbsp; 如果要查询是否<B 
+      style="COLOR: black; BACKGROUND-COLOR: #99ff99">连接</B>没有<B 
+      style="COLOR: black; BACKGROUND-COLOR: #ffff66">释放</B>引起的, &nbsp; 
+      你可以用查询分析器<B 
+      style="COLOR: black; BACKGROUND-COLOR: #99ff99">连接</B>到你的数据库服务器, &nbsp; 
+      执行下面的代码: &nbsp; <BR>select &nbsp; * &nbsp; from &nbsp; 
+      master.dbo.sysprocesses &nbsp; <BR>where &nbsp; spid&gt;50 &nbsp; <BR>and 
+      &nbsp; waittype &nbsp; = &nbsp; 0x0000 &nbsp; <BR>and &nbsp; waittime 
+      &nbsp; = &nbsp; 0 &nbsp; <BR>and &nbsp; status &nbsp; = &nbsp; 'sleeping' 
+      &nbsp; <BR>and &nbsp; last_batch &nbsp; &lt; &nbsp; dateadd(minute, &nbsp; 
+      -10, &nbsp; getdate()) &nbsp; <BR>and &nbsp; login_time &nbsp; &lt; &nbsp; 
+      dateadd(minute, &nbsp; -10, &nbsp; getdate()) &nbsp; <BR><BR>如果这样的进程很多, 
+      &nbsp; 则说明<B style="COLOR: black; BACKGROUND-COLOR: #99ff99">连接</B>确实有很多<B 
+      style="COLOR: black; BACKGROUND-COLOR: #99ff99">连接</B>没有<B 
+      style="COLOR: black; BACKGROUND-COLOR: #ffff66">释放</B>(上面的查询查询出已经超过10分钟都没有做任何动作的<B 
+      style="COLOR: black; BACKGROUND-COLOR: #99ff99">连接</B>) &nbsp; 
+      <BR><BR><BR>3. &nbsp; 如果确实是<B 
+      style="COLOR: black; BACKGROUND-COLOR: #99ff99">连接</B>没有<B 
+      style="COLOR: black; BACKGROUND-COLOR: #ffff66">释放</B>的问题, &nbsp; 你可以硬行<B 
+      style="COLOR: black; BACKGROUND-COLOR: #ffff66">释放</B><B 
+      style="COLOR: black; BACKGROUND-COLOR: #99ff99">连接</B>, &nbsp; 不一定要改程序. 
+      &nbsp; 在<B style="COLOR: black; BACKGROUND-COLOR: #a0ffff">sql</B> &nbsp; 
+      server中, &nbsp; 创建一个job, &nbsp; 每10分钟一次, &nbsp; 执行下面的代码来定时检查并<B 
+      style="COLOR: black; BACKGROUND-COLOR: #ffff66">释放</B>掉空<B 
+      style="COLOR: black; BACKGROUND-COLOR: #99ff99">连接</B>就可以了: &nbsp; 
+      <BR>declare &nbsp; hcforeach &nbsp; cursor &nbsp; global &nbsp; <BR>for 
+      &nbsp; <BR>select &nbsp; 'kill &nbsp; ' &nbsp; + &nbsp; rtrim(spid) &nbsp; 
+      from &nbsp; master.dbo.sysprocesses &nbsp; <BR>where &nbsp; spid&gt;50 
+      &nbsp; <BR>and &nbsp; waittype &nbsp; = &nbsp; 0x0000 &nbsp; <BR>and 
+      &nbsp; waittime &nbsp; = &nbsp; 0 &nbsp; <BR>and &nbsp; status &nbsp; = 
+      &nbsp; 'sleeping' &nbsp; <BR>and &nbsp; last_batch &nbsp; &lt; &nbsp; 
+      dateadd(minute, &nbsp; -60, &nbsp; getdate()) &nbsp; <BR>and &nbsp; 
+      login_time &nbsp; &lt; &nbsp; dateadd(minute, &nbsp; -60, &nbsp; 
+      getdate()) &nbsp; <BR>exec &nbsp; sp_msforeach_worker &nbsp; 
+  '?'</DIV></TD></TR></TBODY></TABLE><BR>
+<DIV class=opt><A title=查看该分类中所有文章 
+href="http://hi.baidu.com/bailiangcn/blog/category/&Auml;&not;&Egrave;&Iuml;·&Ouml;&Agrave;à">类别：默认分类</A> | <A 
+title=将此文章添加到百度搜藏 onclick="return addToFavor();" 
+href="http://cang.baidu.com/do/add" target=_blank>添加到搜藏</A> | 浏览(<SPAN 
+id=result></SPAN>) | <A 
+href="http://hi.baidu.com/bailiangcn/blog/item/76762b028d2bd1054afb5171.html#send">评论</A>&nbsp;(0) 
+</DIV>
+<DIV class=line></DIV>
+<STYLE type=text/css>#in_related_doc A {
+	TEXT-DECORATION: none
+}
+</STYLE>
+
+<DIV id=in_related_tmp></DIV>
+<DIV id=in_reader>
+<DIV class=tit>最近读者：</DIV></DIV>
+<DIV class=line></DIV>
+<DIV id=in_comment><A name=comment></A>
+<DIV class=tit>网友评论：</DIV>
+<DIV id=page></DIV></DIV>
+<DIV id=in_send><A name=send></A>
+<FORM id=popFormSubmit name=form1 onsubmit="return checkcmtform()" 
+action=/bailiangcn/commit method=post><INPUT type=hidden name=bdstoken> <INPUT 
+type=hidden value=8 name=ct> <INPUT type=hidden value=1 name=cm> <INPUT 
+type=hidden value=76762b028d2bd1054afb5171 name=spBlogID> <INPUT id=spRefURL 
+type=hidden name=spRefURL> 
+<DIV class=tit>发表评论：</DIV>
+<TABLE cellSpacing=5 cellPadding=0 width=620 border=0>
+  <TBODY>
+  <TR>
+    <TD class=f14>姓　名：</TD>
+    <TD><INPUT id=spBlogCmtor style="WIDTH: 220px" onfocus=hidErr(1); 
+      maxLength=49 onchange="checkname('spBlogCmtor')" name=spBlogCmtor> 
+      <DIV id=nmerror style="DISPLAY: none">*姓名最长为50字节</DIV></TD></TR>
+  <TR id=1_err style="DISPLAY: none">
+    <TD>&nbsp;</TD>
+    <TD>
+      <DIV class=error id=1_err_con></DIV></TD></TR>
+  <TR>
+    <TD class=f14>网址或邮箱：</TD>
+    <TD><INPUT id=spBlogCmtURL style="WIDTH: 360px" onfocus=hidErr(2); 
+      maxLength=128 onchange="checkeandu('spBlogCmtURL')" name=spBlogCmtURL> 
+    (选填)</TD></TR>
+  <TR id=2_err style="DISPLAY: none">
+    <TD>&nbsp;</TD>
+    <TD>
+      <DIV class=error id=2_err_con></DIV></TD></TR>
+  <TR>
+    <TD class=f14 id=reTitle vAlign=top>内　容：</TD>
+    <TD><TEXTAREA id=spBlogCmtText style="WIDTH: 520px; HEIGHT: 155px" onfocus=hidErr(3); name=spBlogCmtText></TEXTAREA> 
+    </TD></TR>
+  <TR id=3_err style="DISPLAY: none">
+    <TD>&nbsp;</TD>
+    <TD>
+      <DIV class=error id=3_err_con></DIV></TD></TR>
+  <TR id=vercode>
+    <TD class=f14 vAlign=top>验证码：</TD>
+    <TD vAlign=top><INPUT type=hidden name=spVcode> <INPUT id=spVerifyKey 
+      onfocus=f_focus() tabIndex=4 maxLength=4 size=6 name=spVerifyKey 
+      autocomplete="off"> 请点击后输入四位验证码，字母不区分大小写<BR>
+      <DIV id=yanzheng style="DISPLAY: none"><IMG id=verifypic height=40 
+      width=120><WBR><A title=看不清左边的字符 onfocus=this.blur(); 
+      onclick="return newverifypic();" 
+      href="http://hi.baidu.com/bailiangcn/blog/item/76762b028d2bd1054afb5171.html#">看不清?</A> 
+      </DIV></TD></TR>
+  <TR>
+    <TD class=f14 vAlign=top>&nbsp;</TD>
+    <TD class=f14 vAlign=top><INPUT id=btn_ok tabIndex=5 type=submit value=发表评论 name=btn_ok>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+      id=cancleReLink style="DISPLAY: none; FONT-SIZE: 12px; COLOR: #666" 
+      onclick="canclereply(); return false;" 
+      href="http://hi.baidu.com/bailiangcn/blog/item/76762b028d2bd1054afb5171.html#">取消回复</A></TD></TR></TBODY></TABLE></FORM></DIV><BR></DIV>
+<TABLE height=8 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=modbl width=7>&nbsp;</TD>
+    <TD class=modbc>&nbsp;</TD>
+    <TD class=modbr 
+width=7>&nbsp;</TD></TR></TBODY></TABLE></DIV></DIV></DIV></DIV><BR>
+<CENTER>
+<DIV id=ft>&copy;2009 Baidu</DIV></CENTER></CENTER><IMG style="DISPLAY: none" src=""> 
+<IFRAME id=submitiframe style="DISPLAY: none" name=submitiframe 
+src="sql server 多连接释放问题_劳工的天空_files/blank.htm"></IFRAME><LINK 
+href="sql server 多连接释放问题_劳工的天空_files/ucard.css" type=text/css 
+rel=stylesheet></DIV></BODY></HTML>

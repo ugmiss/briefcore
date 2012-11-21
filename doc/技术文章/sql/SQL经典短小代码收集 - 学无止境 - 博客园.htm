@@ -1,0 +1,3268 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0068)http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>SQL经典短小代码收集 - 学无止境 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=SQL,SQL经典短小代码收集 name=keywords><LINK 
+href="SQL经典短小代码收集 - 学无止境 - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK href="SQL经典短小代码收集 - 学无止境 - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="SQL经典短小代码收集 - 学无止境 - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK href="SQL经典短小代码收集 - 学无止境 - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK 
+href="SQL经典短小代码收集 - 学无止境 - 博客园_files/customcss.css" type=text/css 
+rel=stylesheet><LINK title=RSS href="http://www.cnblogs.com/zengxiangzhan/rss" 
+type=application/rss+xml rel=alternate><LINK title=RSD 
+href="http://www.cnblogs.com/zengxiangzhan/rsd.xml" type=application/rsd+xml 
+rel=EditURI>
+<SCRIPT src="SQL经典短小代码收集 - 学无止境 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="SQL经典短小代码收集 - 学无止境 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="SQL经典短小代码收集 - 学无止境 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1565320.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<LINK href="SQL经典短小代码收集 - 学无止境 - 博客园_files/style.css" type=text/css 
+rel=Stylesheet>
+<SCRIPT src="SQL经典短小代码收集 - 学无止境 - 博客园_files/zengxiangzhan1.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="SQL经典短小代码收集 - 学无止境 - 博客园_files/mootools-1.2.4-core-jm.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="SQL经典短小代码收集 - 学无止境 - 博客园_files/zengxiangzhan.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+document.writeln("<style type=\"text\/css\">#loading{width:100px;height:20px;background:#A0DB0E;padding:5px;position:fixed;left:50%;top:0px}#loading div{width:1px;height:20px;background:#F1FF4D;font:10px/20px Arial}<\/style>")
+</SCRIPT>
+<!--done-->
+<DIV id=home>
+<DIV id=header>
+<DIV id=blogTitle><A id=lnkBlogLogo 
+href="http://www.cnblogs.com/zengxiangzhan/"><IMG id=blogLogo alt=返回主页 
+src="SQL经典短小代码收集 - 学无止境 - 博客园_files/logo.gif"></A> <!--done-->
+<H1><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/zengxiangzhan/">学无止境</A></H1>
+<H2>IT开发 曾祥展 
+<DIV id=loading>
+<DIV></DIV></DIV>
+<SCRIPT type=text/javascript>$("#loading div").animate({width:"31px"}).text("31%")</SCRIPT>
+
+<STYLE type=text/css>.syntaxhighlighter {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter DIV {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter CODE {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE TD {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE TR {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE TBODY {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter .color1 {
+	COLOR: #008200! important
+}
+.syntaxhighlighter .color1 A {
+	COLOR: #008200! important
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading div").animate({width:"65px"}).text("65%")},1000)</SCRIPT>
+</H2></DIV><!--end: blogTitle 博客的标题和副标题 -->
+<DIV id=navigator><!--done-->
+<UL id=navList>
+  <LI>
+  <LI><A class=menu id=MyLinks1_SpaceLink 
+  href="http://space.cnblogs.com/">社区</A> 
+  <LI><A class=menu id=MyLinks1_MyHomeLink 
+  href="http://www.cnblogs.com/zengxiangzhan/">首页</A> 
+  <LI><A class=menu id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/zengxiangzhan/admin/EditPosts.aspx?opt=1">新随笔</A> 
+
+  <LI><A class=menu id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/zengxiangzhan">联系</A> 
+  <LI><A class=menu id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/zengxiangzhan/admin/EditPosts.aspx">管理</A> 
+  <LI><A class=menu id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/zengxiangzhan/rss">订阅</A> <A class=aHeaderXML 
+  id=MyLinks1_XMLLink href="http://www.cnblogs.com/zengxiangzhan/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="SQL经典短小代码收集 - 学无止境 - 博客园_files/rss.gif"></A> </LI></UL>
+<DIV class=blogStats><!--done-->随笔- 256&nbsp; 文章- 31&nbsp; 评论- 343&nbsp; </DIV><!--end: blogStats --></DIV><!--end: navigator 博客导航栏 --></DIV><!--end: header 头部 -->
+<DIV id=main>
+<DIV id=mainContent>
+<DIV class=forFlow><!--done-->
+<DIV id=topics>
+<DIV class=post>
+<H1 class=postTitle><A class=postTitle2 id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html">SQL经典短小代码收集</A> 
+</H1>
+<DIV class=clear></DIV>
+<DIV class=postBody>
+<P></SPAN><SPAN style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">SQL&nbsp;Server：</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">Select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">TOP</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;N&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">From</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">TABLE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">By</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">NewID</SPAN><SPAN 
+style="COLOR: #000000">()&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN style="COLOR: #008080">Access：</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">Select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">TOP</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;N&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">From</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">TABLE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">By</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;Rnd(ID)&nbsp;&nbsp;<BR>Rnd(ID)&nbsp;其中的ID是自动编号字段，可以利用其他任何数值来完成，比如用姓名字段(UserName)&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">Select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">TOP</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;N&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">From</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">TABLE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">BY</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;Rnd(</SPAN><SPAN 
+style="COLOR: #ff00ff">Len</SPAN><SPAN 
+style="COLOR: #000000">(UserName))&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN style="COLOR: #008080">MySql：</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">Select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">From</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">TABLE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">By</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">Rand</SPAN><SPAN 
+style="COLOR: #000000">()&nbsp;Limit&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">10</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN style="COLOR: #008080">开头到N条记录</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">Select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">Top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;N&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">From</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;表<BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">N到M条记录(要有主索引ID)</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">Select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">Top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;M</SPAN><SPAN style="COLOR: #808080">-</SPAN><SPAN 
+style="COLOR: #000000">N&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">From</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;表Where&nbsp;ID&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">in</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="COLOR: #0000ff">Select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">Top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;M&nbsp;ID&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">From</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;表)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;ID&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Desc</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">选择10从到15的记录</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">5</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">15</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">table</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;id&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">asc</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;table_别名order&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;id&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">desc</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN style="COLOR: #008080">N到结尾记录</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">Select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">Top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;N&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">From</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;表Order&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;ID&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Desc</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;</SPAN></P>
+<P><SPAN style="COLOR: #000000"></SPAN>&nbsp;</P>
+<P><SPAN style="COLOR: #000000"><SPAN style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">显示最后5条记录,但是显示的顺序必须为5,6,7,8,9,10,而不是10,9,8,7,6,5 
+如下解决方法:</SPAN><SPAN style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #0000ff">top</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">5</SPAN><SPAN style="COLOR: #000000"> 
+</SPAN><SPAN style="COLOR: #0000ff">from</SPAN><SPAN style="COLOR: #000000"> 
+test </SPAN><SPAN style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000"> id </SPAN><SPAN style="COLOR: #808080">in</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000"> </SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">5</SPAN><SPAN style="COLOR: #000000"> 
+</SPAN><SPAN style="COLOR: #0000ff">from</SPAN><SPAN style="COLOR: #000000"> 
+test </SPAN><SPAN style="COLOR: #0000ff">order</SPAN><SPAN 
+style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000"> id </SPAN><SPAN style="COLOR: #0000ff">desc</SPAN><SPAN 
+style="COLOR: #000000">) </SPAN><SPAN style="COLOR: #0000ff">order</SPAN><SPAN 
+style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000"> id </SPAN><SPAN style="COLOR: #0000ff">asc</SPAN><SPAN 
+style="COLOR: #000000"> <BR><BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">通过这个问题也能总结出4-10条,5-100条这种限定一定范围内的sql语句的写法:</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #0000ff">top</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #808080">&lt;</SPAN><SPAN style="COLOR: #000000">末端ID</SPAN><SPAN 
+style="COLOR: #808080">-</SPAN><SPAN style="COLOR: #000000">顶端ID</SPAN><SPAN 
+style="COLOR: #808080">+</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #808080">&gt;</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #808080">&lt;</SPAN><SPAN style="COLOR: #000000">表名</SPAN><SPAN 
+style="COLOR: #808080">&gt;</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN style="COLOR: #000000"> ID </SPAN><SPAN 
+style="COLOR: #808080">not</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #808080">in</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #0000ff">top</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #808080">&lt;</SPAN><SPAN style="COLOR: #000000">顶端ID</SPAN><SPAN 
+style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #808080">&gt;</SPAN><SPAN style="COLOR: #000000">) ID </SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #808080">&lt;</SPAN><SPAN style="COLOR: #000000">表名</SPAN><SPAN 
+style="COLOR: #808080">&gt;</SPAN><SPAN 
+style="COLOR: #000000">)<BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">例如:4-10条就应该写成</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="COLOR: #0000ff">top</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">10</SPAN><SPAN 
+style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">4</SPAN><SPAN 
+style="COLOR: #808080">+</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN style="COLOR: #000000"> 
+</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000"> 
+</SPAN><SPAN style="COLOR: #0000ff">from</SPAN><SPAN style="COLOR: #000000"> 
+test </SPAN><SPAN style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000"> id </SPAN><SPAN style="COLOR: #808080">not</SPAN><SPAN 
+style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #808080">in</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000"> </SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">4</SPAN><SPAN 
+style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN style="COLOR: #000000"> 
+id </SPAN><SPAN style="COLOR: #0000ff">from</SPAN><SPAN style="COLOR: #000000"> 
+test)<BR></SPAN></SPAN></P>
+<P><SPAN style="COLOR: #000000"></SPAN>&nbsp;</P>
+<P><SPAN style="COLOR: #000000">&nbsp;上一篇: select top 1 * from [news_table] 
+where [新闻标识列]&lt;当前id号 where ......<BR>&nbsp;下一篇: select top 1 * from 
+[news_table] where [新闻标识列]&gt;当前id号 where ...... order by [新闻标识列] desc </P>
+<P><BR><BR></SPAN><SPAN style="COLOR: #008080"><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 12.0pt; mso-ascii-font-family: 'Courier New'; mso-hansi-font-family: 'Courier New'; mso-bidi-font-family: 'Courier New'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">一个表中的</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 12.0pt; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-fareast-font-family: 宋体">Id</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 12.0pt; mso-ascii-font-family: 'Courier New'; mso-hansi-font-family: 'Courier New'; mso-bidi-font-family: 'Courier New'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">有多个记录，把所有这个</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 12.0pt; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-fareast-font-family: 宋体">id</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 12.0pt; mso-ascii-font-family: 'Courier New'; mso-hansi-font-family: 'Courier New'; mso-bidi-font-family: 'Courier New'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">的记录查出来，并显示共有多少条记录数。</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 12.0pt; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-fareast-font-family: 宋体"><BR>------------------------------------------<BR>select 
+id, Count</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 12.0pt; mso-ascii-font-family: 'Courier New'; mso-hansi-font-family: 'Courier New'; mso-bidi-font-family: 'Courier New'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">（</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 'Courier New'; mso-bidi-font-size: 12.0pt; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-fareast-font-family: 宋体">*) 
+from tb group by id having count(*)&gt;1<BR><BR 
+style="mso-special-character: line-break"><BR 
+style="mso-special-character: line-break"></SPAN>--</SPAN><SPAN 
+style="COLOR: #008080">两条记录完全相同，如何删除其中一条</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN style="COLOR: #0000ff">set</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">rowcount</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">delete</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;thetablename&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;id</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #008000">@duplicate_id</SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">@duplicate_id为重复值的id&nbsp;</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #000000"><BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN style="COLOR: #008080">模糊查询</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;product&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;detail&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">like</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">%123.jpg%</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">替换字段里面部分内容</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">update</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;product&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">set</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;detail</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN style="COLOR: #ff00ff">replace</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">cast</SPAN><SPAN 
+style="COLOR: #000000">(detail&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">as</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">8000</SPAN><SPAN 
+style="COLOR: #000000">)),</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">abc.jpg</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">efg.jpg</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;<BR><BR>&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">日期转换参数,值得收藏</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">CONVERT</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN 
+style="COLOR: #000000">,&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">(),&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">120</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;)<BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2004</SPAN><SPAN 
+style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">09</SPAN><SPAN 
+style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">12</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">11</SPAN><SPAN 
+style="COLOR: #000000">:</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">06</SPAN><SPAN 
+style="COLOR: #000000">:</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">08</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">replace</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">replace</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">replace</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">CONVERT</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN 
+style="COLOR: #000000">,&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">(),&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">120</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;),</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">-</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff0000">''</SPAN><SPAN 
+style="COLOR: #000000">),</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">&nbsp;</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff0000">''</SPAN><SPAN 
+style="COLOR: #000000">),</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">:</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff0000">''</SPAN><SPAN 
+style="COLOR: #000000">)<BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">20040912110608</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">CONVERT</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">12</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;,&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">(),&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">111</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;)<BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2004</SPAN><SPAN 
+style="COLOR: #808080">/</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">09</SPAN><SPAN 
+style="COLOR: #808080">/</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">12</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">CONVERT</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">12</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;,&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">(),&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">112</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;)<BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">20040912</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">CONVERT</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">12</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;,&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">(),&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">102</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;)<BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2004.09</SPAN><SPAN 
+style="COLOR: #000000">.</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">12</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR>&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN style="COLOR: #008080">一个月第一天</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(mm,&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(mm,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">&nbsp;&nbsp;2009-06-01&nbsp;00:00:00.000</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN style="COLOR: #008080">当天</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;product&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DateDiff</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">day</SPAN><SPAN 
+style="COLOR: #000000">,modiDate,</SPAN><SPAN 
+style="COLOR: #ff00ff">GetDate</SPAN><SPAN 
+style="COLOR: #000000">())</SPAN><SPAN style="COLOR: #808080">&gt;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">如何查询本日、本月、本年的记录SQL</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #000000">本年：<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;loanInfo&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">year</SPAN><SPAN 
+style="COLOR: #000000">(date)</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">year</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;<BR>本月：<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;loanInfo&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">year</SPAN><SPAN 
+style="COLOR: #000000">(date)</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">year</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">getDate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">And</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">month</SPAN><SPAN 
+style="COLOR: #000000">(date)</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">month</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;<BR>本日：<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;loanInfo&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">year</SPAN><SPAN 
+style="COLOR: #000000">(date)</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">year</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">getDate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">And</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">month</SPAN><SPAN 
+style="COLOR: #000000">(date)</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">month</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">and</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">Day</SPAN><SPAN style="COLOR: #000000">(date)</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN style="COLOR: #ff00ff">Day</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">getDate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;&nbsp;&nbsp;<BR><BR><BR>本周的星期一&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(wk,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(wk,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;<BR>&nbsp;<BR>一年的第一天&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(yy,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(yy,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;<BR>&nbsp;<BR>季度的第一天&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(qq,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(qq,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;<BR>&nbsp;<BR>当天的半夜&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(dd,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(dd,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;<BR>&nbsp;<BR>上个月的最后一天&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是一个计算上个月最后一天的例子。它通过从一个月的最后一天这个例子上减去毫秒来获得。有一点要记住，在Sql&nbsp;&nbsp;Server中时间是精确到毫秒。这就是为什么我需要减去毫秒来获得我要的日期和时间。&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(ms,</SPAN><SPAN style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(mm,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(mm,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">))&nbsp;&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;计算出来的日期的时间部分包含了一个Sql&nbsp;&nbsp;Server可以记录的一天的最后时刻(“:</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">59</SPAN><SPAN 
+style="COLOR: #000000">:</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">59</SPAN><SPAN 
+style="COLOR: #000000">:</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">997</SPAN><SPAN 
+style="COLOR: #000000">”)的时间。&nbsp;<BR>&nbsp;<BR>去年的最后一天&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;连接上面的例子，为了要得到去年的最后一天，你需要在今年的第一天上减去毫秒。&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(ms,</SPAN><SPAN style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(yy,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(yy,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">))&nbsp;&nbsp;<BR>&nbsp;<BR>本月的最后一天&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现在，为了获得本月的最后一天，我需要稍微修改一下获得上个月的最后一天的语句。修改需要给用DATEDIFF比较当前日期和“</SPAN><SPAN 
+style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">01</SPAN><SPAN 
+style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">01</SPAN><SPAN 
+style="COLOR: #000000">”返回的时间间隔上加。通过加个月，我计算出下个月的第一天，然后减去毫秒，这样就计算出了这个月的最后一天。这是计算本月最后一天的SQL脚本。&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(ms,</SPAN><SPAN style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(mm,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(m,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">,&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">))&nbsp;&nbsp;<BR>&nbsp;<BR>本年的最后一天&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你现在应该掌握这个的做法，这是计算本年最后一天脚本&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(ms,</SPAN><SPAN style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(yy,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(yy,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">,&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">))。&nbsp;<BR>&nbsp;<BR>本月的第一个星期一&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好了，现在是最后一个例子。这里我要计算这个月的第一个星期一。这是计算的脚本。&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(wk,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(wk,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(dd,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">6</SPAN><SPAN 
+style="COLOR: #808080">-</SPAN><SPAN style="COLOR: #ff00ff">datepart</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">day</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这个例子里，我使用了“本周的星期一”的脚本，并作了一点点修改。修改的部分是把原来脚本中“</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()”部分替换成计算本月的第天，在计算中用本月的第天来替换当前日期使得计算可以获得这个月的第一个星期一。&nbsp;<BR><BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">删除一个月前,三个月前,&nbsp;6个月前,一年前的数据&nbsp;</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">DELETE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">FROM</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;表名WHERE&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN 
+style="COLOR: #000000">(MM,&nbsp;AddTime,</SPAN><SPAN 
+style="COLOR: #ff00ff">GETDATE</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&gt;</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">DELETE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">FROM</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;表名WHERE&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN 
+style="COLOR: #000000">(MM,&nbsp;AddTime,</SPAN><SPAN 
+style="COLOR: #ff00ff">GETDATE</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&gt;</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">DELETE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">FROM</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;表名WHERE&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN 
+style="COLOR: #000000">(MM,&nbsp;AddTime,</SPAN><SPAN 
+style="COLOR: #ff00ff">GETDATE</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&gt;</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">6</SPAN><SPAN 
+style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">DELETE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">FROM</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;表名WHERE&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN 
+style="COLOR: #000000">(YY,&nbsp;AddTime,</SPAN><SPAN 
+style="COLOR: #ff00ff">GETDATE</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&gt;</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">-------------------------------------------------------------&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #000000">附录，其他日期处理方法&nbsp;<BR>&nbsp;<BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">)去掉时分秒&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">declare</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;@&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">datetime</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">set</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;@&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">'2003-7-1&nbsp;&nbsp;10:00:00'&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;@,</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEADD</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">day</SPAN><SPAN 
+style="COLOR: #000000">,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">day</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,@),&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;<BR>&nbsp;<BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2</SPAN><SPAN 
+style="COLOR: #000000">）显示星期几&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">datename</SPAN><SPAN 
+style="COLOR: #000000">(weekday,</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;<BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">）如何取得某个月的天数&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">declare</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">int</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">set</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@m</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">月份&nbsp;</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">day</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">2003-</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff00ff">cast</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">as</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">)</SPAN><SPAN 
+style="COLOR: #808080">+</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">-15</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;,</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">2003-</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff00ff">cast</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #008000">@m</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">as</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">)</SPAN><SPAN 
+style="COLOR: #808080">+</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">-15</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;<BR><BR>另外，取得本月天数&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">day</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #ff00ff">cast</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">month</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">GetDate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">as</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">)</SPAN><SPAN 
+style="COLOR: #808080">+</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">-</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #808080">+</SPAN><SPAN style="COLOR: #ff00ff">cast</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">month</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">GetDate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">as</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">)</SPAN><SPAN 
+style="COLOR: #808080">+</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">-15</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;,</SPAN><SPAN 
+style="COLOR: #ff00ff">cast</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">month</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">GetDate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">as</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">)</SPAN><SPAN 
+style="COLOR: #808080">+</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">-</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #808080">+</SPAN><SPAN style="COLOR: #ff00ff">cast</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">month</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">GetDate</SPAN><SPAN 
+style="COLOR: #000000">())</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">as</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">)</SPAN><SPAN 
+style="COLOR: #808080">+</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">-15</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;<BR><BR>任意月份的最大天数<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">day</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(dd,</SPAN><SPAN style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(mm,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">Dateadd</SPAN><SPAN 
+style="COLOR: #000000">(mm,</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN 
+style="COLOR: #000000">(mm,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">))))&nbsp;<BR><BR><BR>或者使用计算本月的最后一天的脚本，然后用DAY函数区最后一天&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">Day</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(ms,</SPAN><SPAN style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(mm,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(m,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">,&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">)))&nbsp;&nbsp;<BR>&nbsp;<BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">4</SPAN><SPAN 
+style="COLOR: #000000">）判断是否闰年：&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">case</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">day</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(mm,&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2</SPAN><SPAN 
+style="COLOR: #000000">,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(ms,</SPAN><SPAN style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(yy,&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(yy,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">))))&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">when</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">28</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">then</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">平年</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">else</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">闰年</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">end</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR><BR>或者&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">case</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">day</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #ff00ff">datename</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">year</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">-02-01</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(mm,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">datename</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">year</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">-02-01</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">))&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">when</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">28</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">then</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">平年</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">else</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">闰年</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">end</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR>&nbsp;<BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">5</SPAN><SPAN 
+style="COLOR: #000000">）一个季度多少天&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">declare</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">tinyint</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #008000">@time</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">smalldatetime</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@m</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">month</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@m</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">case</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">when</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">between</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">and</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">then</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">when</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">between</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">4</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">and</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">6</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">then</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">4</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">when</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">between</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">7</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">and</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">9</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">then</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">7</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">else</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">10</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">end</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@time</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">datename</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">year</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">-</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff00ff">convert</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">10</SPAN><SPAN 
+style="COLOR: #000000">),</SPAN><SPAN style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">)</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">-01</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">day</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #008000">@time</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(mm,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #008000">@time</SPAN><SPAN 
+style="COLOR: #000000">))&nbsp;&nbsp;&nbsp;<BR><BR><BR>&nbsp;<BR><BR>&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">、确定某年某月有多少天<BR><BR>实现原理：先利用DATEDIFF取得当前月的第一天，再将月份加一取得下月第一天，然后减去分钟，再取日期的天数部分，即为当月最大日期，也即当月天数<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">CREATE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">FUNCTION</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;DaysInMonth&nbsp;(&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@date</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">datetime</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Returns</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">int</SPAN><SPAN 
+style="COLOR: #000000"><BR></SPAN><SPAN style="COLOR: #0000ff">AS</SPAN><SPAN 
+style="COLOR: #000000"><BR></SPAN><SPAN style="COLOR: #0000ff">BEGIN</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">RETURN</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff00ff">Day</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(mi,</SPAN><SPAN style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(m,&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(m,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #008000">@date</SPAN><SPAN 
+style="COLOR: #000000">)</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">)))<BR></SPAN><SPAN 
+style="COLOR: #0000ff">END</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR>调用示例：<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;dbo.DaysInMonth&nbsp;(</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">2006-02-03</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;<BR><BR>(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2</SPAN><SPAN 
+style="COLOR: #000000">)计算哪一天是本周的星期一<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(week,&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(week,</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">1900-01-01</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">1900-01-01</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">返回-11-06&nbsp;00:00:00.000</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN style="COLOR: #000000">或<BR></SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(week,&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(week,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR><BR>(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">)当前季度的第一天<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEADD</SPAN><SPAN 
+style="COLOR: #000000">(quarter,&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DATEDIFF</SPAN><SPAN 
+style="COLOR: #000000">(quarter,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()),&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">)—返回</SPAN><SPAN style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">10</SPAN><SPAN 
+style="COLOR: #808080">-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">01</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">00</SPAN><SPAN 
+style="COLOR: #000000">:</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">00</SPAN><SPAN 
+style="COLOR: #000000">:</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">00.000</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR>(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">4</SPAN><SPAN 
+style="COLOR: #000000">)一个季度多少天<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">declare</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">tinyint</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #008000">@time</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">smalldatetime</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN style="COLOR: #ff00ff">month</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN style="COLOR: #ff00ff">case</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">when</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">between</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">and</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">then</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">when</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">between</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">4</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">and</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">6</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">then</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">4</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">when</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">between</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">7</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">and</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">9</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">then</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">7</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">else</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">10</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">end</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@time</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">datename</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">year</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">-</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff00ff">convert</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">10</SPAN><SPAN 
+style="COLOR: #000000">),</SPAN><SPAN style="COLOR: #008000">@m</SPAN><SPAN 
+style="COLOR: #000000">)</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">-01</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">day</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #008000">@time</SPAN><SPAN style="COLOR: #000000">,</SPAN><SPAN 
+style="COLOR: #ff00ff">dateadd</SPAN><SPAN 
+style="COLOR: #000000">(mm,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #008000">@time</SPAN><SPAN 
+style="COLOR: #000000">))&nbsp;—返回<BR><BR><BR><BR>&nbsp;<BR><BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">.按姓氏笔画排序:&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">Select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">From</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;TableName&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">By</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;CustomerName&nbsp;Collate&nbsp;Chinese_PRC_Stroke_ci_as&nbsp;<BR><BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2</SPAN><SPAN 
+style="COLOR: #000000">.分页SQL语句<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;(row_number()&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">OVER</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="COLOR: #0000ff">ORDER</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">BY</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tab.ID&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Desc</SPAN><SPAN 
+style="COLOR: #000000">))&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">as</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;rownum,tab.</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;表名As&nbsp;tab)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">As</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;t&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;rownum&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">between</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;起始位置And&nbsp;结束位置<BR><BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">8</SPAN><SPAN 
+style="COLOR: #000000">.如何修改数据库的名称:<BR><BR>sp_renamedb&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">old_name</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #000000">,&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">new_name</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR><BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">.获取当前数据库中的所有用户表<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;sysobjects&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;xtype</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">U</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">and</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;category</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">4</SPAN><SPAN 
+style="COLOR: #000000">.获取某一个表的所有字段<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;name&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;syscolumns&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;id</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">object_id</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">表名</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;<BR><BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">5</SPAN><SPAN 
+style="COLOR: #000000">.查看与某一个表相关的视图、存储过程、函数<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a.</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;sysobjects&nbsp;a,&nbsp;syscomments&nbsp;b&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a.id&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b.id&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">and</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b.</SPAN><SPAN 
+style="COLOR: #0000ff">text</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">like</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">%表名%</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">6</SPAN><SPAN 
+style="COLOR: #000000">.查看当前数据库中所有存储过程<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;name&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">as</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;存储过程名称from&nbsp;sysobjects&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;xtype</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">P</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">7</SPAN><SPAN 
+style="COLOR: #000000">.查询用户创建的所有数据库<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;master..sysdatabases&nbsp;D&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;sid&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">not</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">in</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;sid&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;master..syslogins&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;name</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">sa</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;<BR>或者<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;dbid,&nbsp;name&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">AS</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">DB_NAME</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;master..sysdatabases&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;sid&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&lt;&gt;</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0x01</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">8</SPAN><SPAN 
+style="COLOR: #000000">.查询某一个表的字段和数据类型<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;column_name,data_type&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;information_schema.columns&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;table_name&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">表名</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR>&nbsp;<BR><BR>&nbsp;<BR><BR></SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">9</SPAN><SPAN 
+style="COLOR: #000000">.使用事务<BR>在使用一些对数据库表的临时的SQL语句操作时，可以采用SQL&nbsp;SERVER事务处理，防止对数据操作后发现误操作问题<BR><BR>开始事务<BR></SPAN><SPAN 
+style="COLOR: #0000ff">Begin</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">tran</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">Insert</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;TableName&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">Values</SPAN><SPAN 
+style="COLOR: #000000">(…)&nbsp;<BR>SQL语句操作不正常，则回滚事务。<BR><BR>回滚事务<BR></SPAN><SPAN 
+style="COLOR: #0000ff">Rollback</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">tran</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR>SQL语句操作正常，则提交事务，数据提交至数据库。<BR><BR>提交事务<BR></SPAN><SPAN 
+style="COLOR: #0000ff">Commit</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">tran</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR><BR>计算执行SQL语句查询时间<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">declare</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #008000">@d</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">datetime</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">set</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@d</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">()&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;SYS_ColumnProperties&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff0000">[</SPAN><SPAN 
+style="COLOR: #ff0000">语句执行花费时间(毫秒)</SPAN><SPAN 
+style="COLOR: #ff0000">]</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN 
+style="COLOR: #000000">(ms,</SPAN><SPAN style="COLOR: #008000">@d</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())&nbsp;<BR><BR><BR><BR>【关闭SQL&nbsp;Server&nbsp;数据库所有使用连接】<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">use</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;master&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">go</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">create</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">proc</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;KillSpByDbName(</SPAN><SPAN 
+style="COLOR: #008000">@dbname</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">20</SPAN><SPAN 
+style="COLOR: #000000">))&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">as</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">begin</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">declare</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@sql</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">nvarchar</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">500</SPAN><SPAN 
+style="COLOR: #000000">),</SPAN><SPAN style="COLOR: #008000">@temp</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">varchar</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1000</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">declare</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@spid</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">int</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">set</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@sql</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">declare&nbsp;&nbsp;getspid&nbsp;&nbsp;cursor&nbsp;&nbsp;for&nbsp;&nbsp;&nbsp;&nbsp;<BR>select&nbsp;&nbsp;spid&nbsp;&nbsp;from&nbsp;&nbsp;sysprocesses&nbsp;&nbsp;where&nbsp;&nbsp;dbid=db_id(</SPAN><SPAN 
+style="COLOR: #ff0000">'''</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #008000">@dbname</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff0000">'''</SPAN><SPAN style="COLOR: #ff0000">)</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">exec</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;(</SPAN><SPAN 
+style="COLOR: #008000">@sql</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">open</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;getspid&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">fetch</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">next</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;getspid&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@spid</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">while</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #008000">@@fetch_status</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&lt;&gt;-</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">begin</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR>&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">set</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@temp</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">kill&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #808080">+</SPAN><SPAN 
+style="COLOR: #ff00ff">rtrim</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #008000">@spid</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;<BR>&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">exec</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #008000">@temp</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">fetch</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">next</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;getspid&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #008000">@spid</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">end</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">close</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;getspid&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">deallocate</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;getspid&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">end</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">举例使用，关闭数据库下的所有连接操作</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN style="COLOR: #0000ff">Use</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;master&nbsp;&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">Exec</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;KillSpByDbName&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">数据库名称</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR><BR>（一）挂起操作<BR>在安装Sql或sp补丁的时候系统提示之前有挂起的安装操作，要求重启，这里往往重启无用，解决办法：<BR>到HKEY_LOCAL_MACHINESYSTEMCurrentControlSetControlSession&nbsp;Manager<BR>删除PendingFileRenameOperations<BR><BR>（二）收缩数据库<BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN style="COLOR: #008080">重建索引</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN style="COLOR: #0000ff">DBCC</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;REINDEX<BR></SPAN><SPAN 
+style="COLOR: #0000ff">DBCC</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;INDEXDEFRAG<BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN style="COLOR: #008080">收缩数据和日志</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN style="COLOR: #0000ff">DBCC</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;SHRINKDB<BR></SPAN><SPAN 
+style="COLOR: #0000ff">DBCC</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;SHRINKFILE<BR><BR>（三）压缩数据库<BR></SPAN><SPAN 
+style="COLOR: #0000ff">dbcc</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;shrinkdatabase(dbname)<BR><BR>（四）转移数据库给新用户以已存在用户权限<BR></SPAN><SPAN 
+style="COLOR: #0000ff">exec</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;sp_change_users_login&nbsp;update_one,newname,oldname<BR></SPAN><SPAN 
+style="COLOR: #0000ff">go</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR>（五）检查备份集<BR></SPAN><SPAN 
+style="COLOR: #0000ff">RESTORE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;VERIFYONLY&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">disk</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">Evbbs.bak<BR><BR>（六）修复数据库<BR></SPAN><SPAN 
+style="COLOR: #0000ff">ALTER</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">DATABASE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff0000">[</SPAN><SPAN 
+style="COLOR: #ff0000">dvbbs</SPAN><SPAN style="COLOR: #ff0000">]</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">SET</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;SINGLE_USER<BR></SPAN><SPAN 
+style="COLOR: #0000ff">GO</SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">DBCC</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;CHECKDB(dvbbs,repair_allow_data_loss)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">WITH</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;TABLOCK<BR></SPAN><SPAN 
+style="COLOR: #0000ff">GO</SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">ALTER</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">DATABASE</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff0000">[</SPAN><SPAN 
+style="COLOR: #ff0000">dvbbs</SPAN><SPAN style="COLOR: #ff0000">]</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">SET</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;MULTI_USER<BR></SPAN><SPAN 
+style="COLOR: #0000ff">GO</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR>&nbsp;<BR><BR>&nbsp;<BR><BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;m&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;id&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">not</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">in</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;n&nbsp;id&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename)&nbsp;<BR><BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;m&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;临时表(或表变量)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;columnname&nbsp;</SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">&nbsp;将top&nbsp;m笔插入</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN style="COLOR: #0000ff">set</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">rowcount</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;n&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;表变量order&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;columnname&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">desc</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;n&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR>(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;m&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;columnname)&nbsp;a&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;columnname&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">desc</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR><BR>如果tablename里没有其他identity列，那么：<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">identity</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">int</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;id0,</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;#</SPAN><SPAN 
+style="COLOR: #0000ff">temp</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename&nbsp;<BR><BR>取n到m条的语句为：<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;#</SPAN><SPAN 
+style="COLOR: #0000ff">temp</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;id0&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&gt;=</SPAN><SPAN 
+style="COLOR: #000000">n&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">and</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;id0&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&lt;=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;m&nbsp;<BR><BR>如果你在执行select&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">identity</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">int</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;id0,</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;#</SPAN><SPAN 
+style="COLOR: #0000ff">temp</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename这条语句的时候报错,那是因为你的DB中间的select&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN style="COLOR: #808080">/</SPAN><SPAN 
+style="COLOR: #000000">bulkcopy属性没有打开要先执行：<BR></SPAN><SPAN 
+style="COLOR: #0000ff">exec</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;sp_dboption&nbsp;你的DB名字,</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">select&nbsp;into/bulkcopy</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">,true&nbsp;<BR><BR><BR>如果表里有identity属性，那么简单：<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">identitycol</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">between</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;n&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">and</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;m&nbsp;<BR><BR>如果是sql&nbsp;server&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2005</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;可以这样写：<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">20</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;T&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;col&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">except</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;T&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;col&nbsp;<BR><BR><BR><BR>复制表(只复制结构,源表名：a&nbsp;新表名：b)&nbsp;(Access可用)&nbsp;<BR>法一：</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&lt;&gt;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR>法二：</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;<BR><BR>拷贝表(拷贝数据,源表名：a&nbsp;目标表名：b)&nbsp;(Access可用)&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">insert</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b(a,&nbsp;b,&nbsp;c)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;d,e,f&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b;&nbsp;<BR><BR>跨数据库之间表的拷贝(具体数据使用绝对路径)&nbsp;(Access可用)&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">insert</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b(a,&nbsp;b,&nbsp;c)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;d,e,f&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">in</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;‘具体数据库’</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;条件<BR>例子：..</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">in</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">"&amp;Server.MapPath(".")&amp;"\data.mdb"&nbsp;&amp;"</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">..&nbsp;<BR><BR>子查询(表名：a&nbsp;表名：b)&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a,b,c&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">IN</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;d&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b&nbsp;)&nbsp;或者:&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a,b,c&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">IN</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;<BR><BR>显示文章、提交人和最后回复时间<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a.title,a.username,b.adddate&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">table</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a,(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff00ff">max</SPAN><SPAN 
+style="COLOR: #000000">(adddate)&nbsp;adddate&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">table</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">table</SPAN><SPAN 
+style="COLOR: #000000">.title</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">a.title)&nbsp;b&nbsp;<BR><BR>外连接查询(表名：a&nbsp;表名：b)&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a.a,&nbsp;a.b,&nbsp;a.c,&nbsp;b.c,&nbsp;b.d,&nbsp;b.f&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">LEFT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;OUT&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">JOIN</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">ON</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a.a&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b.c&nbsp;<BR><BR>在线视图查询(表名：a&nbsp;)&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a,b,c&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">FROM</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a)&nbsp;T&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;t.a&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&gt;</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">;&nbsp;<BR><BR>between的用法,between限制查询数据范围时包括了边界值,</SPAN><SPAN 
+style="COLOR: #808080">not</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;between不包括<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;table1&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;time&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">between</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;time1&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">and</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;time2&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a,b,c,&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;table1&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">not</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">between</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;数值and&nbsp;数值<BR><BR></SPAN><SPAN 
+style="COLOR: #808080">in</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;的使用方法<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;table1&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #ff0000">[</SPAN><SPAN style="COLOR: #ff0000">not</SPAN><SPAN 
+style="COLOR: #ff0000">]</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">in</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;(‘值’,’值’,’值’,’值’)&nbsp;<BR><BR>两张关联表，删除主表中已经在副表中没有的信息<BR></SPAN><SPAN 
+style="COLOR: #0000ff">delete</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;table1&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">not</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">exists</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;(&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;table2&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;table1.field1</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">table2.field1&nbsp;)&nbsp;<BR><BR>四表联查问题：<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">left</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">inner</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">join</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">on</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a.a</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">b.b&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">right</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">inner</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">join</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;c&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">on</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a.a</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">c.c&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">inner</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">join</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;d&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">on</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a.a</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">d.d&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;..&nbsp;<BR><BR>日程安排提前五分钟提醒<BR>SQL:&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;日程安排where&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">datediff</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #ff0000">minute</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN style="COLOR: #000000">,f开始时间,</SPAN><SPAN 
+style="COLOR: #ff00ff">getdate</SPAN><SPAN 
+style="COLOR: #000000">())</SPAN><SPAN style="COLOR: #808080">&gt;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">5</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR>一条sql&nbsp;语句搞定数据库分页<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">10</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b.</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">20</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;主键字段,排序字段from&nbsp;表名order&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;排序字段desc)&nbsp;a,表名b&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b.主键字段</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a.主键字段order&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a.排序字段<BR><BR><BR>选择在每一组b值相同的数据中对应的a最大的记录的所有信息(类似这样的用法可以用于论坛每月排行榜,每月热销产品分析,按科目成绩排名,等等.)&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a,b,c&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename&nbsp;ta&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff00ff">max</SPAN><SPAN 
+style="COLOR: #000000">(a)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename&nbsp;tb&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tb.b</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">ta.b)&nbsp;<BR><BR>包括所有在TableA&nbsp;中但不在TableB和TableC&nbsp;中的行并消除所有重复行而派生出一个结果表<BR>(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tableA&nbsp;)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">except</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tableB)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">except</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;a&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tableC)&nbsp;<BR><BR>随机取出条数据<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">top</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">10</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">order</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">newid</SPAN><SPAN 
+style="COLOR: #000000">()&nbsp;<BR><BR>随机选择记录<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">newid</SPAN><SPAN 
+style="COLOR: #000000">()&nbsp;<BR><BR>删除重复记录<BR></SPAN><SPAN 
+style="COLOR: #0000ff">Delete</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;id&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">not</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">in</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff00ff">max</SPAN><SPAN 
+style="COLOR: #000000">(id)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">group</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;col1,col2,)&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">distinct</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;#Tmp&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;TB<BR></SPAN><SPAN 
+style="COLOR: #0000ff">drop</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">table</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;TB<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;TB&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;#Tmp<BR></SPAN><SPAN 
+style="COLOR: #0000ff">drop</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">table</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;#Tmp<BR><BR>&nbsp;<BR><BR><BR>列出数据库里所有的表名<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;name&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;sysobjects&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;type</SPAN><SPAN 
+style="COLOR: #808080">=</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">U</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR>列出表里的所有的<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;name&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;syscolumns&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;id</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #ff00ff">object_id</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">TableName</SPAN><SPAN 
+style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;<BR><BR>列示type、vender、pcs字段，以type字段排列，case可以方便地实现多重选择，类似select&nbsp;中的case。<BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;type,</SPAN><SPAN 
+style="COLOR: #ff00ff">sum</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #ff00ff">case</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;vender&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">when</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">A</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">then</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;pcs&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">else</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">end</SPAN><SPAN 
+style="COLOR: #000000">),</SPAN><SPAN style="COLOR: #ff00ff">sum</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">case</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;vender&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">when</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">C</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">then</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;pcs&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">else</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">end</SPAN><SPAN 
+style="COLOR: #000000">),</SPAN><SPAN style="COLOR: #ff00ff">sum</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #ff00ff">case</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;vender&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">when</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">B</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">then</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;pcs&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">else</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">end</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">FROM</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;tablename&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">group</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">by</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;type&nbsp;<BR>显示结果：<BR>type&nbsp;vender&nbsp;pcs&nbsp;<BR>电脑A&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR>电脑A&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR>光盘B&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR>光盘A&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">2</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR>手机B&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR>手机C&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">3</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;<BR><BR><BR><BR><BR><BR>复制表结构，而不复制内容<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">into</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;#table1&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;admin&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">where</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&lt;&gt;</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">不会复制数据</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #808080">*</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;#table1&nbsp;<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">drop</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">table</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;#table1&nbsp;<BR><BR>这样#table1就有了admin&nbsp;的所有字段了<BR><BR><BR><BR>比较A,B表是否相等:<BR></SPAN><SPAN 
+style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;checksum_agg(binary_checksum(</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">))&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;A)</SPAN><SPAN style="COLOR: #808080">=</SPAN><SPAN 
+style="COLOR: #000000">(</SPAN><SPAN style="COLOR: #0000ff">select</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;checksum_agg(binary_checksum(</SPAN><SPAN 
+style="COLOR: #808080">*</SPAN><SPAN style="COLOR: #000000">))&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">from</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;B)<BR></SPAN><SPAN 
+style="COLOR: #0000ff">print</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">相等</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000"><BR></SPAN><SPAN style="COLOR: #0000ff">else</SPAN><SPAN 
+style="COLOR: #000000"><BR></SPAN><SPAN style="COLOR: #0000ff">print</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #ff0000">不相等</SPAN><SPAN style="COLOR: #ff0000">'</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR><BR><BR></SPAN><SPAN 
+style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">float字段保留一位小数，四舍五入</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #0000ff">SELECT</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #ff00ff">CONVERT</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="COLOR: #0000ff">DECIMAL</SPAN><SPAN style="COLOR: #000000">(</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">18</SPAN><SPAN 
+style="COLOR: #000000">,</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1</SPAN><SPAN 
+style="COLOR: #000000">),</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">1024.791454</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;</SPAN><SPAN style="COLOR: #008080">--</SPAN><SPAN 
+style="COLOR: #008080">-----&nbsp;1024.8&nbsp;（所影响的行数为1&nbsp;行）</SPAN><SPAN 
+style="COLOR: #008080"><BR></SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&lt;%</SPAN><SPAN 
+style="COLOR: #000000">#&nbsp;Eval("字段")</SPAN><SPAN 
+style="COLOR: #808080">==</SPAN><SPAN style="COLOR: #0000ff">null</SPAN><SPAN 
+style="COLOR: #000000">?"":Eval("字段").toString("</SPAN><SPAN 
+style="FONT-WEIGHT: bold; COLOR: #800000">0.0</SPAN><SPAN 
+style="COLOR: #000000">")&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">%&gt;</SPAN><SPAN 
+style="COLOR: #000000"><BR><BR></P></SPAN>
+<DIV id=MySignature>
+<DIV>作者：<A href="http://zengxiangzhan.cnblogs.com/" target=_blank>曾祥展</A></DIV>
+<DIV>出处：<A href="http://zengxiangzhan.cnblogs.com/" 
+target=_blank>http://zengxiangzhan.cnblogs.com/</A></DIV>
+<DIV>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 
+</DIV></DIV>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/zengxiangzhan/" 
+target=_blank><IMG class=author_avatar alt="" 
+src="SQL经典短小代码收集 - 学无止境 - 博客园_files/u82235.jpg"></A> 
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/zengxiangzhan/" 
+target=_blank>zengxiangzhan</A><BR>关注 - 1<BR>粉丝 - 12<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1565320,59868,1)><SPAN class=diggnum 
+id=digg_count_1565320>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1565320,59868,2)><SPAN class=burynum 
+id=bury_count_1565320>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1565320 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1565320>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565313.html">« 
+</A>上一篇：<A title="发布于2009-09-12 15:17" 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565313.html">分页存储</A><BR><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565323.html">» 
+</A>下一篇：<A title="发布于2009-09-12 15:33" 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565323.html">图片会自动按比例缩小（js版和css版）</A><BR></DIV>
+<SCRIPT src="SQL经典短小代码收集 - 学无止境 - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '1abd8e52-a689-de11-be36-001cf0cd104b';
+</SCRIPT>
+</DIV>
+<DIV class=postDesc>posted @ 2009-09-12 15:28 <A 
+href="http://www.cnblogs.com/zengxiangzhan/">zengxiangzhan</A> 阅读(1248) <A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html#commentform">评论(0)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/zengxiangzhan/admin/EditPosts.aspx?postid=1565320">编辑</A> 
+<A onclick="AddToWz(1565320);return false;" 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html#">收藏</A> 
+所属分类: <A 
+href="http://www.cnblogs.com/zengxiangzhan/category/209689.html">SQL</A></DIV></DIV><IMG 
+height=1 src="SQL经典短小代码收集 - 学无止境 - 博客园_files/1565320.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html"
+dc:identifier="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/zengxiangzhan/services/trackbacks/1565320.aspx" />
+</rdf:RDF>
+--></DIV><!--end: topics 文章、评论容器-->
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fzengxiangzhan%2farchive%2f2009%2f09%2f12%2f1565320.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fzengxiangzhan%2farchive%2f2009%2f09%2f12%2f1565320.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A href="http://job.cnblogs.com/offer/7427/" 
+target=_blank>沪江网招聘ASP.NET开发工程师</A><BR><A href="http://a4.yeshj.com/rd/35450/" 
+target=_blank>软件研发团队管理年会(上海，7.10-7.11)</A><BR><A href="http://news.cnblogs.com/" 
+target=_blank>IT新闻</A>:<BR>· <A href="http://news.cnblogs.com/n/65676/" 
+target=_blank>谁是全球最优秀的技术领导者？2010 Top25 CTO揭晓</A><BR>· <A 
+href="http://news.cnblogs.com/n/65675/" target=_blank>走进台湾Windows 7主题餐厅</A><BR>· 
+<A href="http://news.cnblogs.com/n/65674/" target=_blank>回顾传闻历程 
+苹果第4代iPhone大纪事(下)</A><BR>· <A href="http://news.cnblogs.com/n/65673/" 
+target=_blank>回顾传闻历程 苹果第4代iPhone大纪事(上)</A><BR>· <A 
+href="http://news.cnblogs.com/n/65672/" target=_blank>1.5GHz处理器 
+HTC新机Scorpion传闻再现</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="SQL经典短小代码收集 - 学无止境 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+alt="" src="SQL经典短小代码收集 - 学无止境 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=SQL" target=_blank>SQL</A> </DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/1565320/">SQL经典短小代码收集</A></DIV></DIV></DIV><!--end: forFlow --></DIV><!--end: mainContent 主体内容容器-->
+<DIV id=sideBar>
+<DIV id=sideBarMain>
+<DIV id=calendar>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar cellSpacing=0 
+cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=7>
+      <TABLE class=CalTitle cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev><A title="Go to the previous month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3500')">&lt;</A></TD>
+          <TD align=middle>2009年9月</TD>
+          <TD class=CalNextPrev align=right><A title="Go to the next month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3561')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>30</TD>
+    <TD class=CalOtherMonthDay align=middle>31</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>2</TD>
+    <TD align=middle>3</TD>
+    <TD align=middle>4</TD>
+    <TD class=CalWeekendDay align=middle>5</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>6</TD>
+    <TD align=middle>7</TD>
+    <TD align=middle>8</TD>
+    <TD align=middle>9</TD>
+    <TD align=middle>10</TD>
+    <TD align=middle>11</TD>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/12.html"><U>12</U></A></TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/13.html"><U>13</U></A></TD>
+    <TD align=middle>14</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/15.html"><U>15</U></A></TD>
+    <TD align=middle>16</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/17.html"><U>17</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/18.html"><U>18</U></A></TD>
+    <TD class=CalWeekendDay align=middle>19</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/20.html"><U>20</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/21.html"><U>21</U></A></TD>
+    <TD align=middle>22</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/23.html"><U>23</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/24.html"><U>24</U></A></TD>
+    <TD align=middle>25</TD>
+    <TD class=CalWeekendDay align=middle>26</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/27.html"><U>27</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/28.html"><U>28</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2009/9/29.html"><U>29</U></A></TD>
+    <TD align=middle>30</TD>
+    <TD class=CalOtherMonthDay align=middle>1</TD>
+    <TD class=CalOtherMonthDay align=middle>2</TD>
+    <TD class=CalOtherMonthDay align=middle>3</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>4</TD>
+    <TD class=CalOtherMonthDay align=middle>5</TD>
+    <TD class=CalOtherMonthDay align=middle>6</TD>
+    <TD class=CalOtherMonthDay align=middle>7</TD>
+    <TD class=CalOtherMonthDay align=middle>8</TD>
+    <TD class=CalOtherMonthDay align=middle>9</TD>
+    <TD class=CalOtherMonthDay align=middle>10</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<SCRIPT type=text/javascript>
+var blogapp = 'zengxiangzhan';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV></DIV>
+<DIV class=catListPostCategory>
+<H3 class=catListTitle>随笔分类<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(257)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209693.html">Ajax(9)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to Ajax(9)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209693.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209688.html">ASP.NET(61)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to ASP.NET(61)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209688.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/212155.html">C#(14)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to C#(14)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/212155.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/243872.html">Cloud 开发</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to Cloud 开发" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/243872.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209692.html">DIV+CSS(5)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to DIV+CSS(5)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209692.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209694.html">ExtJs(2)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to ExtJs(2)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209694.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/246700.html">iPhone/Android平台开发</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to iPhone/Android平台开发" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/246700.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209690.html">JavaScript(13)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to JavaScript(13)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209690.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209691.html">jQuery(16)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink 
+  title="Subscribe to jQuery(16)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209691.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/227307.html">JSON(6)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink 
+  title="Subscribe to JSON(6)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/227307.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/226398.html">MVC</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink 
+  title="Subscribe to MVC" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/226398.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/216093.html">Plugin 
+  (9)</A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink 
+  title="Subscribe to Plugin (9)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/216093.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/234039.html">SEO优化(2)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_RssLink 
+  title="Subscribe to SEO优化(2)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/234039.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/243869.html">SharePoint 
+  &amp; Office</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_RssLink 
+  title="Subscribe to SharePoint &amp; Office" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/243869.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/234037.html">Silverlight</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_RssLink 
+  title="Subscribe to Silverlight" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/234037.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209689.html">SQL(64)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_RssLink 
+  title="Subscribe to SQL(64)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209689.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/231586.html">WPF WCF 
+  WF</A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_RssLink 
+  title="Subscribe to WPF WCF WF" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/231586.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/227605.html">XML(9)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_RssLink 
+  title="Subscribe to XML(9)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/227605.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/210026.html">解决方案(11)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_RssLink 
+  title="Subscribe to 解决方案(11)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/210026.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/210025.html">前端技术(13)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_RssLink 
+  title="Subscribe to 前端技术(13)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/210025.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/231599.html">上传下载(12)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_RssLink 
+  title="Subscribe to 上传下载(12)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/231599.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/210030.html">设计·管理(3)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_RssLink 
+  title="Subscribe to 设计·管理(3)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/210030.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/234038.html">水晶报表</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_RssLink 
+  title="Subscribe to 水晶报表" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/234038.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/211401.html">网络技术(4)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_RssLink 
+  title="Subscribe to 网络技术(4)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/211401.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl25_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/243871.html">移动与嵌入式</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl25_RssLink 
+  title="Subscribe to 移动与嵌入式" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/243871.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl26_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/221883.html">正则表达式(4)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl26_RssLink 
+  title="Subscribe to 正则表达式(4)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/221883.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html###">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListPostArchive>
+<H3 class=catListTitle>随笔档案<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(189)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/06.html">2010年6月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05.html">2010年5月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04.html">2010年4月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03.html">2010年3月 
+  (10)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02.html">2010年2月 
+  (18)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01.html">2010年1月 
+  (52)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12.html">2009年12月 
+  (26)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11.html">2009年11月 
+  (18)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/10.html">2009年10月 
+  (9)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09.html">2009年9月 
+  (51)</A> </LI></UL></DIV>
+<DIV class=catListEssay>
+<H3 class=catListTitle>最新随笔</H3>
+<UL>
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl00_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/06/02/1749858.html">1.&nbsp;激活 
+  Microsoft® Office 2010 MSDN专业版（简单）</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl01_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/13/1734773.html">2.&nbsp;百度或者Google---SEO优化</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl02_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/12/1733758.html">3.&nbsp;【汇总】SQL 
+  CODE --- 经典·精彩</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl03_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html">4.&nbsp;.net面试问答（大汇总）</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl04_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/16/1713565.html">5.&nbsp;关键字“拖曳搜索”之“拖曳”以及 
+  图片“提示自适应放大”效果 的实现</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl05_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/21/1691051.html">6.&nbsp;国内最新最全面IP数据库</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl06_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/17/1688097.html">7.&nbsp;新闻标题 
+  静态分页 (无刷新)</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl07_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/14/1685386.html">8.&nbsp;IE无法显示.shtml格式网页</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl08_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/12/1684100.html">9.&nbsp;jquery-galleryview-2.0 
+  漂亮多样化的图片特效（多项自定义）</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl09_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html">10.&nbsp;CKEditor3.2+CKFinder1.4.3结合 
+  打造"帅"的编辑器 For .Net</A> </LI></UL></DIV>
+<DIV class=catListComment>
+<H3 class=catListTitle>最新评论<A id=SingleColumn1__6795ce_RSSHyperlink1 
+title=RSS订阅最最新评论 
+href="http://www.cnblogs.com/zengxiangzhan/CommentsRSS.aspx"><IMG 
+title=RSS订阅最最新评论 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="SQL经典短小代码收集 - 学无止境 - 博客园_files/xml.gif"></A></H3>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl00_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/13/1623158.html#1836360">1.&nbsp;Re:仿Google自动提示 
+SearchSuggess</A> </DIV>
+<DIV class=divRecentComment>感谢楼主,不知道能否给份源码? 290476058@qq.com (orient22) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl01_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/21/1628726.html#1835933">2.&nbsp;Re:UI 
+upload 多文件上传</A> </DIV>
+<DIV class=divRecentComment>也给我来一份吧 谢谢楼主! zhuer0632@qq.com (Master zhu) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl02_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html#1835518">3.&nbsp;Re:CKEditor3.2+CKFinder1.4.3结合 
+打造"帅"的编辑器 For .Net</A> </DIV>
+<DIV class=divRecentComment>我的情况跟#28的一样，按照LZ的步骤，就是没有浏览按钮的出现，莫非是我下载的版本太高？ 
+--------------------------------- 改用 ckfinder_aspnet_... (卓伯虎) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl03_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html#1831917">4.&nbsp;Re:CKEditor3.2+CKFinder1.4.3结合 
+打造"帅"的编辑器 For .Net</A> </DIV>
+<DIV class=divRecentComment>@cr225 看不到图片 (zengxiangzhan) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl04_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html#1831499">5.&nbsp;Re:CKEditor3.2+CKFinder1.4.3结合 
+打造"帅"的编辑器 For .Net</A> </DIV>
+<DIV 
+class=divRecentComment>还是不行！我按你的操作是一步一步来的，不肯能错！而且几天前跟你发过信息说有问题，今天我重新搞还是不行。我把截图发出来。 
+[img][/img] (cr225) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl05_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/28/1675137.html#1830213">6.&nbsp;Re:文件上传 
+带进度条（多种风格）</A> </DIV>
+<DIV class=divRecentComment>蛮好的 (MiCow) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl06_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/04/1663632.html#1830168">7.&nbsp;Re:漂亮 
+表单验证 密码强度</A> </DIV>
+<DIV class=divRecentComment>LZ,也给我个吧，谢谢！ loveheping16@123.com (spin) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl07_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/04/1663632.html#1829405">8.&nbsp;Re:漂亮 
+表单验证 密码强度</A> </DIV>
+<DIV class=divRecentComment>已收到谢谢 (涛涛帅) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl08_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636871.html#1829345">9.&nbsp;Re:数据操作类 
+SQLHelper.cs</A> </DIV>
+<DIV class=divRecentComment>[quote]2and1：楼主,好像不全啊.是否可以发一份给我.谢谢! 
+jasonliangcn#gmail.com 另外问一下.你上面有两条是执行存储过程的.但是是直接带content参数的.请... (spin) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl09_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11/07/1598194.html#1829258">10.&nbsp;Re:FileUploaderAJAX 
+无刷新上传</A> </DIV>
+<DIV class=divRecentComment>[quote]zengxiangzhan： @Super_Dang 已发![/quote] 谢谢楼主 
+(Super_Dang) </DIV></DIV>
+<DIV class=catListView>
+<H3 class=catListTitle>阅读排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/28/1675137.html">1.&nbsp;文件上传 
+  带进度条（多种风格）(7008)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/21/1691051.html">2.&nbsp;国内最新最全面IP数据库(4739)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/05/1679286.html">3.&nbsp;IIS配置PHP环境（快速最新版）(4383)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/14/1647866.html">4.&nbsp;大文件上传 
+  进度条显示 （仿csdn资源上传效果）(4048)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html">5.&nbsp;CKEditor3.2+CKFinder1.4.3结合 
+  打造"帅"的编辑器 For .Net(3570)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html">6.&nbsp;.net面试问答（大汇总）(3267)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/12/1733758.html">7.&nbsp;【汇总】SQL 
+  CODE --- 经典·精彩(2942)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/03/1677460.html">8.&nbsp;AspNetPager 
+  样式以及使用（漂亮）(2935)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/21/1670646.html">9.&nbsp;jQueryJSON 
+  无刷新三级联动(2642)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/13/1623158.html">10.&nbsp;仿Google自动提示 
+  SearchSuggess(2532)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl11_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/12/1684100.html">11.&nbsp;jquery-galleryview-2.0 
+  漂亮多样化的图片特效（多项自定义）(2431)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl12_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/22/1671379.html">12.&nbsp;FlyTreeView 
+  for asp.net （4.4.1.2最新破解版）(2269)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl13_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636871.html">13.&nbsp;数据操作类 
+  SQLHelper.cs(1947)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl14_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/14/1623221.html">14.&nbsp;Uploadify 
+  jquery+falsh+UploadHandler.ashx(1575)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl15_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/16/1713565.html">15.&nbsp;关键字“拖曳搜索”之“拖曳”以及 
+  图片“提示自适应放大”效果 的实现(1298)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl16_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/08/1681107.html">16.&nbsp;ComponentArt. 
+  Web.UI 《2009.3版~破解》(1261)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl17_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html">17.&nbsp;SQL经典短小代码收集(1248)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl18_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/25/1673687.html">18.&nbsp;模拟产品展示 
+  Flash无法展示的追踪过程(1224)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl19_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/25/1673150.html">19.&nbsp;漂亮的后台 
+  模板(1203)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl20_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/04/1639220.html">20.&nbsp;无限级分类 
+  存储过程(1146)</A> </LI></UL></DIV>
+<DIV class=catListFeedback>
+<H3 class=catListTitle>评论排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/14/1647866.html">1.&nbsp;大文件上传 
+  进度条显示 （仿csdn资源上传效果）(35)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/28/1675137.html">2.&nbsp;文件上传 
+  带进度条（多种风格）(33)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html">3.&nbsp;CKEditor3.2+CKFinder1.4.3结合 
+  打造"帅"的编辑器 For .Net(32)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/21/1691051.html">4.&nbsp;国内最新最全面IP数据库(30)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/21/1628726.html">5.&nbsp;UI 
+  upload 多文件上传(26)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/14/1623221.html">6.&nbsp;Uploadify 
+  jquery+falsh+UploadHandler.ashx(19)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/04/1663632.html">7.&nbsp;漂亮 
+  表单验证 密码强度(18)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html">8.&nbsp;.net面试问答（大汇总）(17)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/13/1623158.html">9.&nbsp;仿Google自动提示 
+  SearchSuggess(15)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/05/1679286.html">10.&nbsp;IIS配置PHP环境（快速最新版）(15)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl11_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/21/1670646.html">11.&nbsp;jQueryJSON 
+  无刷新三级联动(13)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl12_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/03/1677460.html">12.&nbsp;AspNetPager 
+  样式以及使用（漂亮）(12)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl13_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/22/1671379.html">13.&nbsp;FlyTreeView 
+  for asp.net （4.4.1.2最新破解版）(10)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl14_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/12/1733758.html">14.&nbsp;【汇总】SQL 
+  CODE --- 经典·精彩(10)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl15_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11/07/1598194.html">15.&nbsp;FileUploaderAJAX 
+  无刷新上传(7)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl16_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/09/1666791.html">16.&nbsp;汉字转拼音(5)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl17_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11/24/1609299.html">17.&nbsp;c# 
+  图片插入Excel(4)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl18_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636871.html">18.&nbsp;数据操作类 
+  SQLHelper.cs(4)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl19_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636818.html">19.&nbsp;C#取真实IP地址--多个代理背后的ip地址(3)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl20_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/17/1688097.html">20.&nbsp;新闻标题 
+  静态分页 (无刷新)(3)</A> </LI></UL></DIV></DIV></DIV><!--end: sideBarMain --></DIV><!--end: sideBar 侧边栏容器 -->
+<DIV class=clear></DIV></DIV><!--end: main -->
+<DIV class=clear></DIV>
+<DIV id=footer><!--done-->Copyright ©2010 zengxiangzhan </DIV><!--end: footer --></DIV><!--end: home 自定义的最大容器 -->
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading div").animate({width:"89px"}).text("89%")},500)</SCRIPT>
+
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading div").animate({width:"100px"}).text("100%")},1000)</SCRIPT>
+
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading").hide(500)},1500)</SCRIPT>
+
+<SCRIPT type=text/javascript>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+try {
+var pageTracker = _gat._getTracker("UA-15774770-2");
+pageTracker._trackPageview();
+} catch(err) {}</SCRIPT>
+</FORM>
+<SCRIPT src="SQL经典短小代码收集 - 学无止境 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="SQL经典短小代码收集 - 学无止境 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="SQL经典短小代码收集 - 学无止境 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

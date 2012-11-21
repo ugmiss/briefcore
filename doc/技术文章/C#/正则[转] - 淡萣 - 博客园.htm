@@ -1,0 +1,1081 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0061)http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html -->
+<HTML><HEAD><TITLE>正则[转] - 淡萣 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=正则 name=keywords><LINK 
+href="http://www.cnblogs.com/css/common.css" type=text/css rel=stylesheet><LINK 
+id=MainCss href="http://www.cnblogs.com/Skins/nature/style.css" type=text/css 
+rel=stylesheet><LINK href="http://www.cnblogs.com/css/common2.css" type=text/css 
+rel=stylesheet><LINK href="正则[转] - 淡萣 - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK href="正则[转] - 淡萣 - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/zenglb/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/zenglb/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="正则[转] - 淡萣 - 博客园_files/jquery.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="正则[转] - 淡萣 - 博客园_files/common.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="正则[转] - 淡萣 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4696" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1637453.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<!--done-->
+<DIV id=banner>
+<DIV id=bnr_pic><!--done-->
+<DIV class=header>
+<DIV class=headerText><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/zenglb/">淡萣</A><BR></DIV><BR>
+<DIV class=headerDis>云淡风轻~</DIV></DIV></DIV></DIV>
+<DIV id=main><!-- left starts -->
+<DIV id=left>
+<DIV id=mystats><BR><!--done-->
+<DIV class=blogStats>随笔 - 13&nbsp; 文章 - 0&nbsp; 评论 - 3&nbsp; </DIV></DIV>
+<DIV id=mylinks><!--done--><A class=menu id=MyLinks1_HomeLink 
+href="http://www.cnblogs.com/">博客园</A>&nbsp;&nbsp;<A class=menu 
+id=MyLinks1_MyHomeLink 
+href="http://www.cnblogs.com/zenglb/">首页</A>&nbsp;&nbsp;<A class=menu 
+id=MyLinks1_NewPostLink 
+href="http://www.cnblogs.com/zenglb/admin/EditPosts.aspx?opt=1">新随笔</A>&nbsp;&nbsp;<A 
+class=menu id=MyLinks1_ContactLink accessKey=9 
+href="http://space.cnblogs.com/msg/send/æ·¡è£">联系</A>&nbsp;&nbsp;<A class=menu 
+id=MyLinks1_Admin 
+href="http://www.cnblogs.com/zenglb/admin/EditPosts.aspx">管理</A>&nbsp;&nbsp;<A 
+class=menu id=MyLinks1_Syndication 
+href="http://www.cnblogs.com/zenglb/rss">订阅</A>&nbsp;<A id=MyLinks1_XMLLink 
+href="http://www.cnblogs.com/zenglb/rss"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+alt=订阅 src="正则[转] - 淡萣 - 博客园_files/xml.gif"></A></DIV>
+<DIV id=topics>
+<DIV class=post>
+<DIV class=postTitle>
+<H1><A class=postTitle2 id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html">正则[转]</A></H1></DIV>
+<P>今天使用了比较多的正则表达式，这篇挺详细的，转之~&nbsp; <A 
+href="http://blog.csdn.net/flyerwing/archive/2009/08/20/4465126.aspx" 
+target=_blank>原文</A> 
+<P>邮箱地址正则：<BR>^[\w-\.]{2,25}\@[\w-]{2,35}(?:(?:\.(?:com|net|org|gov))|(?:\.[a-z]{2}(?=\.cn)))?\.(?:com|cn|mobi|tel|asia|net|org|name|me|tv|cc|hk|biz|info)$ 
+
+<P>匹配中文字符的正则表达式： 
+[\u4e00-\u9fa5]<BR>评注：匹配中文还真是个头疼的事，有了这个表达式就好办了<BR>匹配双字节字符(包括汉字在内)：[^\x00-\xff]<BR>评注：可以用来计算字符串的长度（一个双字节字符长度计2，ASCII字符计1）<BR>匹配空白行的正则表达式：\n\s*\r<BR>评注：可以用来删除空白行<BR>匹配HTML标记的正则表达式：&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? 
+/&gt;<BR>评注：网上流传的版本太糟糕，上面这个也仅仅能匹配部分，对于复杂的嵌套标记依旧无能为力<BR>匹配首尾空白字符的正则表达式：^\s*|\s*$<BR>评注：可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式<BR>匹配Email地址的正则表达式：\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*<BR>评注：表单验证时很实用<BR>匹配网址URL的正则表达式：[a-zA-z]+://[^\s]*<BR>评注：网上流传的版本功能很有限，上面这个基本可以满足需求<BR>匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$<BR>评注：表单验证时很实用<BR>匹配国内电话号码：\d{3}-\d{8}|\d{4}-\d{7}<BR>评注：匹配形式如 
+0511-4405222 或 
+021-87888822<BR>匹配腾讯QQ号：[1-9][0-9]{4,}<BR>评注：腾讯QQ号从10000开始<BR>匹配中国邮政编码：[1-9]\d{5}(?!\d)<BR>评注：中国邮政编码为6位数字<BR>匹配身份证：\d{15}|\d{18}<BR>评注：中国的身份证为15位或18位<BR>匹配ip地址：\d+\.\d+\.\d+\.\d+<BR>评注：提取ip地址时有用<BR>匹配特定数字：<BR>^[1-9]\d*$　 
+　 //匹配正整数<BR>^-[1-9]\d*$ 　 //匹配负整数<BR>^-?[1-9]\d*$　　 //匹配整数<BR>^[1-9]\d*|0$　 
+//匹配非负整数（正整数 + 0）<BR>^-[1-9]\d*|0$　　 //匹配非正整数（负整数 + 
+0）<BR>^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$　　 
+//匹配正浮点数<BR>^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$　 
+//匹配负浮点数<BR>^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$　 
+//匹配浮点数<BR>^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$　　 //匹配非负浮点数（正浮点数 + 
+0）<BR>^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$　　//匹配非正浮点数（负浮点数 + 
+0）<BR>匹配特定字符串：<BR>^[A-Za-z]+$　　//匹配由26个英文字母组成的字符串<BR>^[A-Z]+$　　//匹配由26个英文字母的大写组成的字符串<BR>^[a-z]+$　　//匹配由26个英文字母的小写组成的字符串<BR>^[A-Za-z0-9]+$　　//匹配由数字和26个英文字母组成的字符串<BR>^\w+$　　//匹配由数字、26个英文字母或者下划线组成的字符串 
+
+<P>winform 倒出EXCEL 
+<P>using (FileStream fileStream = new FileStream(filePath, 
+FileMode.OpenOrCreate))<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+using (StreamWriter streamWriter = new StreamWriter(fileStream, 
+Encoding.Unicode))<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+StringBuilder rowWriter = new StringBuilder(); 
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+rowWriter.Append("姓名\t性别\t年龄\n");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+foreach (DataSetView.UserRow row in 
+dt.Rows)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+rowWriter.Append(row.UserName).Append("\t");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+rowWriter.Append(row.UserSex.ToString()).Append("\t");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+rowWriter.Append(row.UserAge.ToString()).Append("\n");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} 
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+streamWriter.Write(rowWriter.ToString());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<P>&lt;html&gt;..........................................................................&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//乱七八糟我不需要的东西<BR>&lt;a href="<A 
+href='http://xxxx.com"/'>http://xxxx.com"/</A>&gt;titile&lt;/a&gt;&nbsp;&nbsp;&nbsp;&nbsp; 
+//我需要的URL和Title..........................................................................&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//乱七八糟我不需要的东西&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<BR>&lt;a href="<A 
+href='http://xxxx.com"/'>http://xxxx.com"/</A>&gt;titile&lt;/a&gt;//我需要的URL和Title<BR>.......................................................................... 
+&lt;a href="<A 
+href='http://xxxx.com"/'>http://xxxx.com"/</A>&gt;titile&lt;/a&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<BR>.......................................................................&nbsp;&nbsp;&nbsp; 
+&lt;a href="<A 
+href='http://xxxx.com"/'>http://xxxx.com"/</A>&gt;titile&lt;/a&gt;&nbsp;&nbsp; 
+<BR>.......................................................................&nbsp;&nbsp;&nbsp; 
+&lt;a href="<A 
+href='http://xxxx.com"/'>http://xxxx.com"/</A>&gt;titile&lt;/a&gt;&nbsp;&nbsp; 
+<BR>&lt;/html&gt; 
+<P>MatchCollection mc = Regex.Matches(yourStr, 
+@"(?is)&lt;a(?:(?!href=).)*href=(['""]?)(?&lt;url&gt;[^""'\s&gt;]*)\1[^&gt;]*&gt;(?&lt;text&gt;(?:(?!&lt;/a&gt;).)*)&lt;/a&gt;");<BR>foreach 
+(Match m in mc)<BR>{<BR>&nbsp;&nbsp;&nbsp; richTextBox2.Text += 
+m.Groups["url"].Value + "\n";<BR>&nbsp;&nbsp;&nbsp; richTextBox2.Text += 
+m.Groups["text"].Value + "\n";<BR>} 
+<P>利用正则删除字符串中的HTML标记 <BR>Posted on 2009-08-03 21:34 緗灵 阅读(55) 评论(0)&nbsp; 编辑 收藏 
+网摘&nbsp; Body:62.5,BeforeCate:15.625,421.875,Total:671.875 <BR>public static 
+string NoHTML(string Htmlstring)&nbsp; //替换HTML标记<BR>{<BR>&nbsp;&nbsp;&nbsp; 
+//删除脚本<BR>&nbsp;&nbsp;&nbsp; Htmlstring = Regex.Replace(Htmlstring, 
+@"&lt;script[^&gt;]*?&gt;.*?&lt;/script&gt;", "", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; //删除HTML<BR>&nbsp;&nbsp;&nbsp; 
+Htmlstring = Regex.Replace(Htmlstring, @"&lt;(.[^&gt;]*)&gt;", "", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"([\r\n])[\s]+", "", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"--&gt;", "", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&lt;!--.*", "", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&amp;(quot|#34);", "\"", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&amp;(amp|#38);", "&amp;", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&amp;(lt|#60);", "&lt;", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&amp;(gt|#62);", "&gt;", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&amp;(nbsp|#160);", " ", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&amp;(iexcl|#161);", "\xa1", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&amp;(cent|#162);", "\xa2", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&amp;(pound|#163);", "\xa3", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&amp;(copy|#169);", "\xa9", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&amp;#(\d+);", "", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+Regex.Replace(Htmlstring, @"&lt;img[^&gt;]*&gt;;", "", 
+RegexOptions.IgnoreCase);<BR>&nbsp;&nbsp;&nbsp; Htmlstring.Replace("&lt;", 
+"");<BR>&nbsp;&nbsp;&nbsp; Htmlstring.Replace("&gt;", "");<BR>&nbsp;&nbsp;&nbsp; 
+Htmlstring.Replace("\r\n", "");<BR>&nbsp;&nbsp;&nbsp; Htmlstring = 
+HttpContext.Current.Server.HtmlEncode(Htmlstring).Trim();<BR>&nbsp;&nbsp;&nbsp; 
+return Htmlstring;<BR>} 0 0 0 
+<P>匹配中文字符的正则表达式： 
+[\u4e00-\u9fa5]<BR>匹配双字节字符(包括汉字在内)：[^\x00-\xff]<BR>应用：计算字符串的长度（一个双字节字符长度计2，ASCII字符计1）<BR>String.prototype.len=function(){return 
+this.replace([^\x00-\xff]/g,"aa").length;}<BR>匹配空行的正则表达式：\n[\s| 
+]*\r<BR>匹配HTML标记的正则表达式：/&lt;(.*)&gt;.*&lt;\/\1&gt;|&lt;(.*) 
+\/&gt;/<BR>匹配首尾空格的正则表达式：(^\s*)|(\s*$)<BR>匹配中文字符的正则表达式： 
+[\u4e00-\u9fa5]<BR>评注：匹配中文还真是个头疼的事，有了这个表达式就好办了<BR>匹配双字节字符(包括汉字在内)：[^\x00-\xff]<BR>评注：可以用来计算字符串的长度（一个双字节字符长度计2，ASCII字符计1）<BR>匹配空白行的正则表达式：\n\s*\r<BR>评注：可以用来删除空白行<BR>匹配HTML标记的正则表达式：&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? 
+/&gt;<BR>评注：网上流传的版本太糟糕，上面这个也仅仅能匹配部分，对于复杂的嵌套标记依旧无能为力<BR>匹配首尾空白字符的正则表达式：^\s*|\s*$<BR>评注：可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式<BR>匹配Email地址的正则表达式：\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*<BR>评注：表单验证时很实用<BR>匹配网址URL的正则表达式：[a-zA-z]+://[^\s]*<BR>评注：网上流传的版本功能很有限，上面这个基本可以满足需求<BR>匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_] 
+
+<P>{4,15}$<BR>评注：表单验证时很实用<BR>匹配国内电话号码：\d{3}-\d{8}|\d{4}-\d{7}<BR>评注：匹配形式如 
+0511-4405222 或 
+021-87888822<BR>匹配腾讯QQ号：[1-9][0-9]{4,}<BR>评注：腾讯QQ号从10000开始<BR>匹配中国邮政编码：[1-9]\d{5}(?!\d)<BR>评注：中国邮政编码为6位数字<BR>匹配身份证：\d{15}|\d{18}<BR>评注：中国的身份证为15位或18位<BR>匹配ip地址：\d+\.\d+\.\d+\.\d+<BR>评注：提取ip地址时有用<BR>匹配特定数字：<BR>^[1-9]\d*$　 
+　 //匹配正整数<BR>^-[1-9]\d*$ 　 //匹配负整数<BR>^-?[1-9]\d*$　　 //匹配整数<BR>^[1-9]\d*|0$　 
+//匹配非负整数（正整数 + 0）<BR>^-[1-9]\d*|0$　　 //匹配非正整数（负整数 + 
+0）<BR>^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$　　 
+//匹配正浮点数<BR>^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$　 
+//匹配负浮点数<BR>^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$　 
+//匹配浮点数<BR>^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$　　 //匹配非负浮点数（正浮点数 + 
+0）<BR>^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$　　//匹配非正浮点数（负浮点数 + 
+0）<BR>评注：处理大量数据时有用，具体应用时注意修正<BR>匹配特定字符串：<BR>^[A-Za-z]+$　　//匹配由26个英文字母组成的字符串<BR>^[A-Z]+$　　//匹配由26个英文字母的大写组成的字符串<BR>^[a-z]+$　　//匹配由26个英文字母的小写组成的字符串<BR>^[A-Za-z0-9]+$　　//匹配由数字和26个英文字母组成的字符串<BR>^\w+$　　//匹配由数字、26个英文字母或者下划线组成的字符串<BR>在使用RegularExpressionValidator验证控件时的验证功能及其验证表达式介绍如下:<BR>只能输入数字：“^[0-9]*$”<BR>只能输入n位的数字：“^d{n}$”<BR>只能输入至少n位数字：“^d{n,}$”<BR>只能输入m-n位的数字：“^d{m,n}$”<BR>只能输入零和非零开头的数字：“^(0|[1-9][0-9]*)$”<BR>只能输入有两位小数的正实数：“^[0-9]+(.[0-9]{2})?$”<BR>只能输入有1-3位小数的正实数：“^[0-9]+(.[0-9]{1,3})?$”<BR>只能输入非零的正整数：“^+?[1-9][0-9]*$”<BR>只能输入非零的负整数：“^-[1-9][0-9]*$”<BR>只能输入长度为3的字符：“^.{3}$”<BR>只能输入由26个英文字母组成的字符串：“^[A-Za-z]+$”<BR>只能输入由26个大写英文字母组成的字符串：“^[A-Z]+$”<BR>只能输入由26个小写英文字母组成的字符串：“^[a-z]+$”<BR>只能输入由数字和26个英文字母组成的字符串：“^[A-Za-z0-9]+$”<BR>只能输入由数字、26个英文字母或者下划线组成的字符串：“^w+$”<BR>验证用户密码:“^[a-zA-Z]w{5,17}$”正确格式为：以字母开头，长度在6-18之间，<BR>只能包含字符、数字和下划线。<BR>验证是否含有^%&amp;',;=?$"等字符：“[^%&amp;',;=?$x22]+”<BR>只能输入汉字：“^[u4e00-u9fa5],{0,}$”<BR>验证Email地址：“^w+[-+.]w+)*@w+([-.]w+)*.w+([-.]w+)*$”<BR>验证InternetURL：“^<A 
+href="http://([w-]+.)+[w-]+(/[w-./?%&amp;=]*)?">http://([w-]+.)+[w-]+(/[w-./?%&amp;=]*)?</A>$”<BR>验证电话号码：“^((d{3,4})|d{3,4}-)?d{7,8}$”<BR>正确格式为：“XXXX-XXXXXXX”，“XXXX-XXXXXXXX”，“XXX-XXXXXXX”，<BR>“XXX-XXXXXXXX”，“XXXXXXX”，“XXXXXXXX”。<BR>验证身份证号（15位或18位数字）：“^d{15}|d{}18$”<BR>验证一年的12个月：“^(0?[1-9]|1[0-2])$”正确格式为：“01”-“09”和“1”“12”<BR>验证一个月的31天：“^((0?[1-9])|((1|2)[0-9])|30|31)$”<BR>正确格式为：“01”“09”和“1”“31”。<BR>匹配中文字符的正则表达式： 
+[u4e00-u9fa5]<BR>匹配双字节字符(包括汉字在内)：[^x00-xff]<BR>匹配空行的正则表达式：n[s| 
+]*r<BR>匹配HTML标记的正则表达式：/&lt;(.*)&gt;.*&lt;/1&gt;|&lt;(.*) /&gt;/ 
+<BR>匹配首尾空格的正则表达式：(^s*)|(s*$)<BR>匹配Email地址的正则表达式：w+([-+.]w+)*@w+([-.]w+)*.w+([-.]w+)*<BR>匹配网址URL的正则表达式：<A 
+href="http://([w-]+.)+[w-]+(/[w-">http://([w-]+.)+[w-]+(/[w-</A> 
+./?%&amp;=]*)?<BR>(1)应用：计算字符串的长度（一个双字节字符长度计2，ASCII字符计1） 
+<BR>String.prototype.len=function(){return 
+this.replace([^x00-xff]/g,"aa").length;}<BR>(2)应用：javascript中没有像vbscript那样的trim函数，我们就可以利用这个表达式来实现<BR>String.prototype.trim 
+= function()<BR>{<BR>return this.replace(/(^s*)|(s*$)/g, 
+"");<BR>}<BR>(3)应用：利用正则表达式分解和转换IP地址<BR>function IP2V(ip) 
+//IP地址转换成对应数值<BR>{<BR>re=/(d+).(d+).(d+).(d+)/g 
+//匹配IP地址的正则表达式<BR>if(re.test(ip))<BR>{<BR>return 
+RegExp.$1*Math.pow(255,3))+RegExp.$2*Math.pow(255,2)) 
+<P>+RegExp.$3*255+RegExp.$4*1<BR>}<BR>else<BR>{<BR>throw new Error("Not a valid 
+IP address!")<BR>}<BR>}<BR>(4)应用：从URL地址中提取文件名的javascript程序<BR>s="<A 
+href='http://hi.baidu.com/maguru";'>http://hi.baidu.com/maguru";</A><BR>s=s.replace(/(.*/){0,}([^.]+).*/ig,"$2") 
+; 
+//Page1.htm<BR>(5)应用：利用正则表达式限制网页表单里的文本框输入内容<BR>用正则表达式限制只能输入中文：onkeyup="value=value.replace(/[^u4E00-u9FA5]/g,'') 
+" 
+<P>onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/ 
+
+<P>[^u4E00-u9FA5]/g,''))"<BR>用正则表达式限制只能输入全角字符： 
+onkeyup="value=value.replace(/[^uFF00-uFFFF]/g,'') 
+<P>" 
+onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace 
+
+<P>(/[^uFF00-uFFFF]/g,''))"<BR>用正则表达式限制只能输入数字：onkeyup="value=value.replace(/[^d]/g,'') 
+
+<P>"onbeforepaste= 
+"clipboardData.setData('text',clipboardData.getData('text').replace 
+<P>(/[^d]/g,''))"<BR>用正则表达式限制只能输入数字和英文：onkeyup="value=value.replace(/[W]/g,'') 
+<P>"onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/ 
+
+<P>[^d]/g,''<BR>新添加：<BR>合法E-mail地址：<BR>1. 必须包含一个并且只有一个符号“@” <BR>2. 
+第一个字符不得是“@”或者“.” <BR>3. 不允许出现“@.”或者.@ <BR>4. 结尾不得是字符“@”或者“.” <BR>5. 
+允许“@”前的字符中出现“＋”<BR>6. 
+不允许“＋”在最前面，或者“＋@”<BR>正则表达式如下：<BR>-----------------------------------------------------------------------<BR>^(\w+((-\w+)|(\.\w+))*)\+\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A 
+
+<P>-Za-z0-9]+$<BR>新添加：<BR>这里是判断YYYY-MM-DD这种格式的，基本上把闰年和2月等的情况都考虑进去了。<BR>^((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9] 
+
+<P>\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2- 
+
+<P>(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468] 
+
+<P>[048]|[3579][26])00))-0?2-29-))$<BR>下面的是加了时间验证的^((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3 
+
+<P>[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9] 
+
+<P>|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})- 
+
+<P>(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1 
+
+<P>\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]| 
+
+<P>[3579][26])00))-0?2-29-))$ </P>
+<DIV id=c_jquery_test style="DISPLAY: none"></DIV>
+<SCRIPT type=text/javascript>
+if ($ != jQuery) {
+	$ = jQuery.noConflict();
+}
+</SCRIPT>
+
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/zenglb/" 
+target=_blank><IMG class=author_avatar alt="" 
+src="正则[转] - 淡萣 - 博客园_files/u106082.jpg"></A> 
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/zenglb/" 
+target=_blank>淡萣</A><BR>关注 - 3<BR>粉丝 - 3<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1637453,64802,1)><SPAN class=diggnum 
+id=digg_count_1637453>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1637453,64802,2)><SPAN class=burynum 
+id=bury_count_1637453>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1637453 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1637453>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637263.html">« 
+</A>上一篇：<A title="发布于2010-01-01 01:04" 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637263.html">搜索框实现探讨2--文字数据库</A><BR><A 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637526.html">» 
+</A>下一篇：<A title="发布于2010-01-01 20:03" 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637526.html">搜索框实现探讨3--文字转拼音的实现（唉，悲剧）</A><BR></DIV>
+<SCRIPT src="正则[转] - 淡萣 - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var c_enable_dfp = true;
+    if (navigator.userAgent.indexOf("Chrome/6.0.401.1") > 0) {
+        c_enable_dfp = false;
+    }
+    if (c_enable_dfp) {
+        try {
+            GS_googleAddAdSenseService("ca-pub-4210569241504288");
+            GS_googleEnableAllServices();
+        }
+        catch (e) { }
+    }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    if (c_enable_dfp) {
+        try {
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+        }
+        catch (e) { }
+    }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    if (c_enable_dfp) {
+        try {
+            GA_googleFetchAds();
+        } catch (e) { }
+    }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+	var blog_ad_has_shown = false;
+	var cb_c_u_id = '';
+	var cb_blog_uid = '0b43ca1e-b4f2-de11-ba8f-001cf0cd104b';
+</SCRIPT>
+
+<DIV class=postDesc>posted on 2010-01-01 17:00 <A 
+href="http://www.cnblogs.com/zenglb/">淡萣</A> 阅读(28) <A 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html#commentform">评论(0)</A> 
+<A 
+onclick="open_link('http://www.cnblogs.com/zenglb/admin/EditPosts.aspx?postid=1637453')" 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html#">编辑</A> <A 
+onclick="AddToWz(1637453);return false;" 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html#">收藏</A> 
+</DIV></DIV><IMG height=1 src="" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html"
+dc:identifier="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/zenglb/services/trackbacks/1637453.aspx" />
+</rdf:RDF>
+-->
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fzenglb%2farchive%2f2010%2f01%2f01%2f1637453.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fzenglb%2farchive%2f2010%2f01%2f01%2f1637453.html%23Bottom2">注册</A>，<A 
+href="http://www.cnblogs.com/" target=_blank>返回博客园首页</A>。</DIV></DIV>
+<DIV class="itnews c_ad_block">推荐链接：<BR><A class=site_hot 
+href="http://job.cnblogs.com/offer/8237/" 
+target=_blank>沪江网诚聘中高级.NET程序员</A><BR><A 
+href="http://www.cnblogs.com/cmt/archive/2010/06/08/1753881.html" 
+target=_blank>购买博客园2010T恤，留下2010年的纪念</A><BR><A 
+href="http://space.cnblogs.com/q/" target=_blank>博客园程序员问答平台</A><BR><A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+href="http://news.cnblogs.com/n/68970/" target=_blank>.NET代码转换器</A><BR>· <A 
+href="http://news.cnblogs.com/n/68969/" target=_blank>浏览器正则表达式检查插件</A><BR>· <A 
+href="http://news.cnblogs.com/n/68968/" target=_blank>苹果季报大胜，微软应否在乎？</A><BR>· <A 
+href="http://news.cnblogs.com/n/68967/" target=_blank>iPhone 4陀螺仪助阵 
+增强现实应用发威</A><BR>· <A href="http://news.cnblogs.com/n/68965/" target=_blank>3年1亿台 
+iPad销售预期大幅调高</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    if (c_enable_dfp) {
+        try {
+            GA_googleFillSlot("cnblogs_blogpost_bottom");
+        }
+        catch (e) { }
+    }
+</SCRIPT>
+</DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block><A href="http://www.feifanit.com.cn/productFlow.htm" 
+target=_blank><IMG alt="" src="正则[转] - 淡萣 - 博客园_files/e8_net_468x60.gif"></A> 
+</DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/1005/zh_loving_100528.asp" 
+target=_blank><IMG 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+alt="" src="正则[转] - 淡萣 - 博客园_files/china_pub_20100610.gif"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV></DIV></DIV></DIV><!-- left ends --><!-- right starts -->
+<DIV id=right><!-- 右侧工具部分 -->
+<DIV id=right_content><!--done-->
+<H1 class=listtitle>公告</H1>
+<DIV class=newsItem>
+<SCRIPT language=javascript src="正则[转] - 淡萣 - 博客园_files/js_wrap.htm"></SCRIPT>
+<A title=点击安装小d划词 href="http://dict.hjenglish.com/snipper.aspx#wrap" 
+target=_blank>划词</A><A id=hjdict_power title=小D划词翻译开/关 
+onclick="return ShiftDictEnable();" 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html###">......</A>
+<DIV id=profile_block>粉丝 - 3<BR>关注 - 3<BR><A 
+href="http://home.cnblogs.com/zenglb/" target=_blank>我的主页</A>&nbsp; <A 
+href="http://home.cnblogs.com/zenglb/detail/" target=_blank>个人资料</A><BR><A 
+href="http://home.cnblogs.com/zenglb/ing/" target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/æ·¡è£" 
+target=_blank>发短消息</A></DIV></DIV>
+<DIV id=calendar>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; COLOR: darkgray; BORDER-BOTTOM: 0px; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: white" colSpan=7>
+      <TABLE class=CalTitle 
+      style="WIDTH: 100%; COLOR: darkgray; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev style="WIDTH: 15%"><A 
+            title="Go to the previous month" style="COLOR: darkgray" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3622')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2010年1月</TD>
+          <TD class=CalNextPrev style="WIDTH: 15%" align=right><A 
+            title="Go to the next month" style="COLOR: darkgray" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3684')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>27</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>28</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>29</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>31</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/zenglb/archive/2010/1/1.html"><U>1</U></A></TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>2</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD style="WIDTH: 14%" align=middle>4</TD>
+    <TD style="WIDTH: 14%" align=middle>5</TD>
+    <TD style="WIDTH: 14%" align=middle>6</TD>
+    <TD style="WIDTH: 14%" align=middle>7</TD>
+    <TD style="WIDTH: 14%" align=middle>8</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>9</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>10</TD>
+    <TD style="WIDTH: 14%" align=middle>11</TD>
+    <TD style="WIDTH: 14%" align=middle>12</TD>
+    <TD style="WIDTH: 14%" align=middle>13</TD>
+    <TD style="WIDTH: 14%" align=middle>14</TD>
+    <TD style="WIDTH: 14%" align=middle>15</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>16</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>17</TD>
+    <TD style="WIDTH: 14%" align=middle>18</TD>
+    <TD style="WIDTH: 14%" align=middle>19</TD>
+    <TD style="WIDTH: 14%" align=middle>20</TD>
+    <TD style="WIDTH: 14%" align=middle>21</TD>
+    <TD style="WIDTH: 14%" align=middle>22</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>23</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>24</TD>
+    <TD style="WIDTH: 14%" align=middle>25</TD>
+    <TD style="WIDTH: 14%" align=middle>26</TD>
+    <TD style="WIDTH: 14%" align=middle>27</TD>
+    <TD style="WIDTH: 14%" align=middle>28</TD>
+    <TD style="WIDTH: 14%" align=middle>29</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>30</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>31</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>1</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>2</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" 
+align=middle>6</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<DIV id=side_ing_block>
+<H3 class=catListTitle>最新闪存</H3>
+<UL>
+  <LI>再次悲剧了~ <A class=ing_lnk href="http://home.cnblogs.com/ing/89194/">03-20 
+  20:36</A>
+  <LI><A class=ing_lnk 
+  href="http://home.cnblogs.com/zenglb/ing/">更多闪存...</A></LI></UL></DIV>
+<SCRIPT type=text/javascript>
+var blogapp = 'zenglb';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/zenglb/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/zenglb/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/zenglb/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/zenglb/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/zenglb/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/zenglb/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/zenglb/tag/">我的标签</A> </LI></UL></DIV><!--done-->
+<H1 class=catListTitle>随笔档案</H1>
+<DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+onclick="return open_link('http://www.cnblogs.com/zenglb/archive/2010/06.html');" 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html#">2010年6月 
+(1)</A> </DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+onclick="return open_link('http://www.cnblogs.com/zenglb/archive/2010/03.html');" 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html#">2010年3月 
+(1)</A> </DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+onclick="return open_link('http://www.cnblogs.com/zenglb/archive/2010/02.html');" 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html#">2010年2月 
+(1)</A> </DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+onclick="return open_link('http://www.cnblogs.com/zenglb/archive/2010/01.html');" 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html#">2010年1月 
+(3)</A> </DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+onclick="return open_link('http://www.cnblogs.com/zenglb/archive/2009/12.html');" 
+href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637453.html#">2009年12月 
+(7)</A> </DIV></DIV>
+<H3 class=catListTitle>最新评论</H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI><A id=SingleColumn1__2923b1c_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2010/06/24/1764509.html#1856171">1.&nbsp;Re:vbs开发心得（这篇文章999个字符，呵呵~）</A> 
+
+  <LI>不错的东西，哎 还是支持咯 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--吕飞 
+  <LI><A id=SingleColumn1__2923b1c_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2009/12/28/1634158.html#1735774">2.&nbsp;Re:初来咋到~</A> 
+
+  <LI>哈哈~ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--淡萣 
+  <LI><A id=SingleColumn1__2923b1c_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2009/12/28/1634158.html#1735773">3.&nbsp;Re:初来咋到~</A> 
+
+  <LI>哈哈 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">-- 灰机 </LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2009/12/28/1634107.html">1.&nbsp;[转]具体学习ASP.NET的步骤(220)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2009/12/28/1634087.html">2.&nbsp;学习笔记2--应用程序打包技术（exe篇）(90)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637526.html">3.&nbsp;搜索框实现探讨3--文字转拼音的实现（唉，悲剧）(78)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637263.html">4.&nbsp;搜索框实现探讨2--文字数据库(32)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2009/12/28/1634100.html">5.&nbsp;学习笔记3-websevice+ajax(32)</A> 
+  </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2009/12/28/1634158.html">1.&nbsp;初来咋到~(2)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2010/06/24/1764509.html">2.&nbsp;vbs开发心得（这篇文章999个字符，呵呵~）(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2010/03/19/1689939.html">3.&nbsp;winfrom调用webservice~(0)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2010/02/18/1669251.html">4.&nbsp;委托和匿名方法学习小结~(0)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/zenglb/archive/2010/01/01/1637526.html">5.&nbsp;搜索框实现探讨3--文字转拼音的实现（唉，悲剧）(0)</A> 
+  </LI></UL></DIV></DIV></DIV><!-- //右侧工具部分 -->
+<DIV id=footer><!--done-->Copyright ©2010 淡萣 </DIV></DIV><!-- right ends -->
+<DIV class=clear></DIV></DIV>
+<SCRIPT language=JavaScript>
+dCol='#ff3333';//date colour.
+fCol='#00cc66';//face colour.
+sCol='#9900cc';//seconds colour.
+mCol='#0066ff';//minutes colour.
+hCol='#cc0000';//hours colour.
+ClockHeight=25;
+ClockWidth=25;
+ClockFromMouseY=0;
+ClockFromMouseX=100;
+
+//Alter nothing below! Alignments will be lost!
+
+d=new Array("SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY");
+m=new Array("JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER");
+date=new Date();
+day=date.getDate();
+year=date.getYear();
+if (year < 2000) year=year+1900;
+TodaysDate=" "+d[date.getDay()]+" "+day+" "+m[date.getMonth()]+" "+year;
+D=TodaysDate.split('');
+H='...';
+H=H.split('');
+M='....';
+M=M.split('');
+S='.....';
+S=S.split('');
+Face='1 2 3 4 5 6 7 8 9 10 11 12';
+font='Arial';
+size=1;
+speed=0.6;
+ns=(document.layers);
+ie=(document.all);
+Face=Face.split(' ');
+n=Face.length;
+a=size*10;
+ymouse=0;
+xmouse=0;
+scrll=0;
+props="<font face="+font+" size="+size+" color="+fCol+"><B>";
+props2="<font face="+font+" size="+size+" color="+dCol+"><B>";
+Split=360/n;
+Dsplit=360/D.length;
+HandHeight=ClockHeight/4.5
+HandWidth=ClockWidth/4.5
+HandY=-7;
+HandX=-2.5;
+scrll=0;
+
+
+step=0.06;
+currStep=0;
+
+
+y=new Array();x=new Array();Y=new Array();X=new Array();
+for (i=0; i < n; i++){y[i]=0;x[i]=0;Y[i]=0;X[i]=0}
+Dy=new Array();Dx=new Array();DY=new Array();DX=new Array();
+for (i=0; i < D.length; i++){Dy[i]=0;Dx[i]=0;DY[i]=0;DX[i]=0}
+if (ns){
+for (i=0; i < D.length; i++)
+document.write('<layer name="nsDate'+i+'" top=0 left=0 height='+a+' width='+a+'><center>'+props2+D[i]+'</font></center></layer>');
+for (i=0; i < n; i++)
+document.write('<layer name="nsFace'+i+'" top=0 left=0 height='+a+' width='+a+'><center>'+props+Face[i]+'</font></center></layer>');
+for (i=0; i < S.length; i++)
+document.write('<layer name=nsSeconds'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+sCol+'><center><b>'+S[i]+'</b></center></font></layer>');
+for (i=0; i < M.length; i++)
+document.write('<layer name=nsMinutes'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+mCol+'><center><b>'+M[i]+'</b></center></font></layer>');
+for (i=0; i < H.length; i++)
+document.write('<layer name=nsHours'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+hCol+'><center><b>'+H[i]+'</b></center></font></layer>');
+}
+if (ie){
+document.write('<div id="Od" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < D.length; i++)
+document.write('<div id="ieDate" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props2+D[i]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Of" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < n; i++)
+document.write('<div id="ieFace" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props+Face[i]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Oh" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < H.length; i++)
+document.write('<div id="ieHours" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+hCol+';text-align:center;font-weight:bold">'+H[i]
+
++'</div>');
+document.write('</div></div>');
+document.write('<div id="Om" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < M.length; i++)
+document.write('<div id="ieMinutes" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+mCol+';text-align:center;font-weight:bold">'+M[i]
+
++'</div>');
+document.write('</div></div>')
+document.write('<div id="Os" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < S.length; i++)
+document.write('<div id="ieSeconds" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+sCol+';text-align:center;font-weight:bold">'+S[i]
+
++'</div>');
+document.write('</div></div>')
+}
+(ns)?window.captureEvents(Event.MOUSEMOVE):0;
+function Mouse(evnt){
+ymouse = (ns)?evnt.pageY+ClockFromMouseY-(window.pageYOffset):event.y+ClockFromMouseY;
+xmouse = (ns)?evnt.pageX+ClockFromMouseX:event.x+ClockFromMouseX;
+}
+(ns)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
+function ClockAndAssign(){
+time = new Date ();
+secs = time.getSeconds();
+sec = -1.57 + Math.PI * secs/30;
+mins = time.getMinutes();
+min = -1.57 + Math.PI * mins/30;
+hr = time.getHours();
+hrs = -1.575 + Math.PI * hr/6+Math.PI*parseInt(time.getMinutes())/360;
+if (ie){
+Od.style.top=window.document.body.scrollTop;
+Of.style.top=window.document.body.scrollTop;
+Oh.style.top=window.document.body.scrollTop;
+Om.style.top=window.document.body.scrollTop;
+Os.style.top=window.document.body.scrollTop;
+}
+for (i=0; i < n; i++){
+ var F=(ns)?document.layers['nsFace'+i]:ieFace[i].style;
+ F.top=y[i] + ClockHeight*Math.sin(-1.0471 + i*Split*Math.PI/180)+scrll;
+ F.left=x[i] + ClockWidth*Math.cos(-1.0471 + i*Split*Math.PI/180);
+ }
+for (i=0; i < H.length; i++){
+ var HL=(ns)?document.layers['nsHours'+i]:ieHours[i].style;
+ HL.top=y[i]+HandY+(i*HandHeight)*Math.sin(hrs)+scrll;
+ HL.left=x[i]+HandX+(i*HandWidth)*Math.cos(hrs);
+ }
+for (i=0; i < M.length; i++){
+ var ML=(ns)?document.layers['nsMinutes'+i]:ieMinutes[i].style;
+ ML.top=y[i]+HandY+(i*HandHeight)*Math.sin(min)+scrll;
+ ML.left=x[i]+HandX+(i*HandWidth)*Math.cos(min);
+ }
+for (i=0; i < S.length; i++){
+ var SL=(ns)?document.layers['nsSeconds'+i]:ieSeconds[i].style;
+ SL.top=y[i]+HandY+(i*HandHeight)*Math.sin(sec)+scrll;
+ SL.left=x[i]+HandX+(i*HandWidth)*Math.cos(sec);
+ }
+for (i=0; i < D.length; i++){
+ var DL=(ns)?document.layers['nsDate'+i]:ieDate[i].style;
+ DL.top=Dy[i] + ClockHeight*1.5*Math.sin(currStep+i*Dsplit*Math.PI/180)+scrll;
+ DL.left=Dx[i] + ClockWidth*1.5*Math.cos(currStep+i*Dsplit*Math.PI/180);
+ }
+currStep-=step;
+}
+function Delay(){
+scrll=(ns)?window.pageYOffset:0;
+Dy[0]=Math.round(DY[0]+=((ymouse)-DY[0])*speed);
+Dx[0]=Math.round(DX[0]+=((xmouse)-DX[0])*speed);
+for (i=1; i < D.length; i++){
+Dy[i]=Math.round(DY[i]+=(Dy[i-1]-DY[i])*speed);
+Dx[i]=Math.round(DX[i]+=(Dx[i-1]-DX[i])*speed);
+}
+y[0]=Math.round(Y[0]+=((ymouse)-Y[0])*speed);
+x[0]=Math.round(X[0]+=((xmouse)-X[0])*speed);
+for (i=1; i < n; i++){
+y[i]=Math.round(Y[i]+=(y[i-1]-Y[i])*speed);
+x[i]=Math.round(X[i]+=(x[i-1]-X[i])*speed);
+}
+ClockAndAssign();
+setTimeout('Delay()',20);
+}
+if (ns||ie)window.onload=Delay;
+</SCRIPT>
+</FORM>
+<SCRIPT src="正则[转] - 淡萣 - 博客园_files/shCore.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="正则[转] - 淡萣 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="正则[转] - 淡萣 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

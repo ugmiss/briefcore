@@ -1,0 +1,954 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0061)http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html -->
+<HTML><HEAD><TITLE>数据库优化锦集 - 无名 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=数据库优化锦集 name=keywords><LINK 
+href="数据库优化锦集 - 无名 - 博客园_files/common.css" type=text/css rel=stylesheet><LINK 
+id=MainCss href="数据库优化锦集 - 无名 - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK href="数据库优化锦集 - 无名 - 博客园_files/common2.css" type=text/css 
+rel=stylesheet><LINK href="数据库优化锦集 - 无名 - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK href="数据库优化锦集 - 无名 - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/wuming/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/wuming/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="数据库优化锦集 - 无名 - 博客园_files/jquery.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="数据库优化锦集 - 无名 - 博客园_files/common.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="数据库优化锦集 - 无名 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1238838.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<DIV id=top>
+<DIV>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD class=HeaderTitles>
+      <H1 class=HeaderTitle><A class=HeaderMainTitle id=Header1_HeaderTitle 
+      href="http://www.cnblogs.com/wuming/">无名 </A></H1>
+      <P id=tagline>长风破浪会有时，直挂云帆济沧海！</P></TD></TR></TBODY></TABLE></DIV>
+<DIV class=HeaderBar>
+<TABLE class=HeaderBar id=HeaderBar cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD class=HeaderBarTab noWrap>&nbsp; <A id=Header1_MyLinks1_HomeLink 
+      href="http://www.cnblogs.com/">博客园</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_MyHomeLink 
+      href="http://www.cnblogs.com/wuming/">首页</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_NewPostLink 
+      href="http://www.cnblogs.com/wuming/admin/EditPosts.aspx?opt=1">新随笔</A>&nbsp;:: 
+      <A id=Header1_MyLinks1_ContactLink accessKey=9 
+      href="http://space.cnblogs.com/msg/send/æ&nbsp;å">联系</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_Syndication 
+      href="http://www.cnblogs.com/wuming/rss">订阅</A> <A class=XMLLink 
+      id=Header1_MyLinks1_XMLLink href="http://www.cnblogs.com/wuming/rss"><IMG 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      alt=订阅 src="数据库优化锦集 - 无名 - 博客园_files/xml.gif"></A>&nbsp;:: <A 
+      id=Header1_MyLinks1_Admin 
+      href="http://www.cnblogs.com/wuming/admin/EditPosts.aspx">管理</A>&nbsp;:: 
+    </TD>
+    <TD><IMG id=Header1_BlueTab 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="数据库优化锦集 - 无名 - 博客园_files/BlueTabRight.gif" align=absMiddle></TD>
+    <TD class=HeaderBarTabBack noWrap width="100%">
+      <DIV class=BlogStatsBar>
+      <TABLE class=BlogStatsBar>
+        <TBODY>
+        <TR>
+          <TD width="100%"></TD>
+          <TD class=BlogStatsBar noWrap>&nbsp; 138 随笔&nbsp;:: 1 文章 :: 13 评论 :: 
+            0 引用 </TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id=leftmenu></DIV>
+<DIV id=main>
+<DIV class=post>
+<DIV class=postTitle><A id=ctl03_TitleUrl 
+href="http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html">数据库优化锦集</A> 
+</DIV>
+<DIV class=postText>
+<DIV class=postTitle><SPAN style="FONT-SIZE: 14pt"><SPAN 
+style="FONT-SIZE: 10pt"><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="FONT-SIZE: 12pt"><SPAN 
+style="FONT-SIZE: 10pt">来源：</SPAN></SPAN></SPAN></SPAN></SPAN><A 
+href="http://zhidao.baidu.com/question/1236568.html"><SPAN 
+style="FONT-SIZE: 14pt"><SPAN style="FONT-SIZE: 10pt"><SPAN 
+style="FONT-SIZE: 12pt"><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="FONT-SIZE: 10pt">http://zhidao.baidu.com/question/1236568.html</SPAN></SPAN></SPAN></SPAN></SPAN></A></DIV><BR><SPAN 
+style="FONT-SIZE: 14pt"><SPAN style="FONT-SIZE: 10pt"><SPAN 
+style="FONT-SIZE: 12pt"><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="FONT-SIZE: 10pt">本文首先讨论了基于第三范式的数据库表的基本设计，着重论述了建立主键和索引的策略和方案，然后从数据库表的扩展设计和库表对象的放置等角度概述了数据库管理系统的优化方案。 
+<BR>关键词： 优化（Optimizing） 第三范式（3NF） 冗余数据（Redundant Data） 索引（Index） 数据分割（Data 
+Partitioning） 对象放置（Object Placement） <BR><SPAN style="COLOR: red">1</SPAN>、 引言 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+数据库优化的目标无非是避免磁盘I/O瓶颈、减少CPU利用率和减少资源竞争。为了便于读者阅读和理解，笔者参阅了Sybase、Informix和 
+Oracle等大型数据库系统参考资料，基于多年的工程实践经验，从基本表设计、扩展设计和数据库表对象放置等角度进行讨论，着重讨论了如何避免磁盘 
+I/O瓶颈和减少资源竞争，相信读者会一目了然。 <BR><SPAN style="COLOR: red">2</SPAN> 、基于第三范式的基本表设计 
+<BR>&nbsp;&nbsp;&nbsp; &nbsp; 
+在基于表驱动的信息管理系统（MIS）中，基本表的设计规范是第三范式（3NF）。第三范式的基本特征是非主键属性只依赖于主键属性。基于第三范式的数据库表设计具有很多优点：<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+（一）、是消除了冗余数据，节省了磁盘存储空间；<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（二）、是有良好的数据完整性限制，即基于主外键的参照完整限制和基于主键的实体完整性限制，这使得数据容易维护，也容易移植和更新；<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+（三）、是数据的可逆性好，在做连接（Join）查询或者合并表时不遗漏、也不重复；<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+（四）、是因消除了冗余数据（冗余列），在查询（Select）时每个数据页存的数据行就多，这样就有效地减少了逻辑I/O，每个Cash存的页面就多，也减少物理I/O；<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+（五）、是对大多数事务(Transaction)而言，运行性能好；<BR>&nbsp;&nbsp;&nbsp;&nbsp; （六）、是物理设计(Physical 
+Design)的机动性较大，能满足日益增长的用户需求。 <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+在基本表设计中，表的主键、外键、索引设计占有非常重要的地位，但系统设计人员往往只注重于满足用户要求，而没有从系统优化的高度来认识和重视它们。实际上，它们与系统的运行性能密切相关。现在从系统数据库优化角度讨论这些基本概念及其重要意义： 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （1）主键(Primary 
+Key)：主键被用于复杂的SQL语句时，频繁地在数据访问中被用到。一个表只有一个主键。主键应该有固定值（不能为Null或缺省值，要有相对稳定性），不含代码信息，易访问。把常用（众所周知）的列作为主键才有意义。短主键最佳（小于25bytes），主键的长短影响索引的大小，索引的大小影响索引页的大小，从而影响磁盘I/O。主键分为自然主键和人为主键。自然主键由实体的属性构成，自然主键可以是复合性的，在形成复合主键时，主键列不能太多，复合主键使得Join*作复杂化、也增加了外键表的大小。人为主键是，在没有合适的自然属性键、或自然属性复杂或灵敏度高时，人为形成的。人为主键一般是整型值（满足最小化要求），没有实际意义，也略微增加了表的大小；但减少了把它作为外键的表的大小。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （2）外键（Foreign 
+Key）：外键的作用是建立关系型数据库中表之间的关系（参照完整性），主键只能从独立的实体迁移到非独立的实体，成为后者的一个属性，被称为外键。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+（3）索引(Index)：利用索引优化系统性能是显而易见的，对所有常用于查询中的Where子句的列和所有用于排序的列创建索引，可以避免整表扫描或访问，在不改变表的物理结构的情况下，直接访问特定的数据列，这样减少数据存取时间；利用索引可以优化或排除耗时的分类*作；把数据分散到不同的页面上，就分散了插入的数据；主键自动建立了唯一索引，因此唯一索引也能确保数据的唯一性（即实体完整性）；索引码越小，定位就越直接；新建的索引效能最好，因此定期更新索引非常必要。索引也有代价：有空间开销，建立它也要花费时间，在进行Insert、Delete和Update*作时，也有维护代价。索引有两种：聚族索引和非聚族索引。一个表只能有一个聚族索引，可有多个非聚族索引。使用聚族索引查询数据要比使用非聚族索引快。在建索引前，应利用数据库系统函数估算索引的大小。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ① 聚族索引（Clustered 
+Index）：聚族索引的数据页按物理有序储存，占用空间小。选择策略是，被用于Where子句的列：包括范围查询、模糊查询或高度重复的列（连续磁盘扫描）；被用于连接Join*作的列；被用于Order 
+by和Group by子句的列。聚族索引不利于插入*作，另外没有必要用主键建聚族索引。 <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp; ② 非聚族索引（Nonclustered 
+Index）：与聚族索引相比，占用空间大，而且效率低。选择策略是，被用于Where子句的列：包括范围查询、模糊查询（在没有聚族索引时）、主键或外键列、点（指针类）或小范围（返回的结果域小于整表数据的20%）查询；被用于连接Join*作的列、主键列（范围查询）；被用于Order 
+by和Group 
+by子句的列；需要被覆盖的列。对只读表建多个非聚族索引有利。索引也有其弊端，一是创建索引要耗费时间，二是索引要占有大量磁盘空间，三是增加了维护代价（在修改带索引的数据列时索引会减缓修改速度）。那么，在哪种情况下不建索引呢？对于小表（数据小于5页）、小到中表（不直接访问单行数据或结果集不用排序）、单值域（返回值密集）、索引列值太长（大于20bitys）、容易变化的列、高度重复的列、Null值列，对没有被用于Where子语句和 
+Join查询的列都不能建索引。另外，对主要用于数据录入的，尽可能少建索引。当然，也要防止建立无效索引，当Where语句中多于5个条件时，维护索引的开销大于索引的效益，这时，建立临时表存储有关数据更有效。 
+<BR>批量导入数据时的注意事项：在实际应用中，大批量的计算（如电信话单计费）用C 
+语言程序做，这种基于主外键关系数据计算而得的批量数据（文本文件），可利用系统的自身功能函数（如Sybase的BCP命令）快速批量导入，在导入数据库表时，可先删除相应库表的索引，这有利于加快导入速度，减少导入时间。在导入后再重建索引以便优化查询。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+（4）锁：锁是并行处理的重要机制，能保持数据并发的一致性，即按事务进行处理；系统利用锁，保证数据完整性。因此，我们避免不了死锁，但在设计时可以充分考虑如何避免长事务，减少排它锁时间，减少在事务中与用户的交互，杜绝让用户控制事务的长短；要避免批量数据同时执行，尤其是耗时并用到相同的数据表。锁的征用：一个表同时只能有一个排它锁，一个用户用时，其它用户在等待。若用户数增加，则Server的性能下降，出现“假死”现象。如何避免死锁呢？从页级锁到行级锁，减少了锁征用；给小表增加无效记录，从页级锁到行级锁没有影响，若在同一页内竞争有影响，可选择合适的聚族索引把数据分配到不同的页面；创建冗余表；保持事务简短；同一批处理应该没有网络交互。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （5）查询优化规则：在访问数据库表的数据(Access 
+Data)时，要尽可能避免排序（Sort）、连接(Join)和相关子查询*作。经验告诉我们，在优化查询时，必须做到： 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ① 尽可能少的行； 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ② 
+避免排序或为尽可能少的行排序，若要做大量数据排序，最好将相关数据放在临时表中*作；用简单的键（列）排序，如整型或短字符串排序； 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ③ 避免表内的相关子查询； 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ④ 
+避免在Where子句中使用复杂的表达式或非起始的子字符串、用长字符串连接； 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⑤ 
+在Where子句中多使用“与”（And）连接，少使用“或”(Or)连接； 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⑥ 
+利用临时数据库。在查询多表、有多个连接、查询复杂、数据要过滤时，可以建临时表（索引）以减少I/O。但缺点是增加了空间开销。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; 除非每个列都有索引支持，否则在有连接的查询时分别找出两个动态索引，放在工作表中重新排序。 
+<BR><SPAN style="COLOR: red">3、</SPAN> 基本表扩展设计 <BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+基于第三范式设计的库表虽然有其优越性（见本文第一部分），然而在实际应用中有时不利于系统运行性能的优化：如需要部分数据时而要扫描整表，许多过程同时竞争同一数据，反复用相同行计算相同的结果，过程从多表获取数据时引发大量的连接*作，当数据来源于多表时的连接*作；这都消耗了磁盘I/O和CPU时间。 
+<BR>尤其在遇到下列情形时，我们要对基本表进行扩展设计：许多过程要频繁访问一个表、子集数据访问、重复计算和冗余数据，有时用户要求一些过程优先或低的响应时间。 
+<BR>如何避免这些不利因素呢？根据访问的频繁程度对相关表进行分割处理、存储冗余数据、存储衍生列、合并相关表处理，这些都是克服这些不利因素和优化系统运行的有效途径。 
+<BR>3.1 分割表或储存冗余数据 <BR>&nbsp;&nbsp;&nbsp; 分割表分为水平分割表和垂直分割表两种。分割表增加了维护数据完整性的代价。 
+<BR>水平分割表：一种是当多个过程频繁访问数据表的不同行时，水平分割表，并消除新表中的冗余数据列；若个别过程要访问整个数据，则要用连接*作，这也无妨分割表；典型案例是电信话单按月分割存放。另一种是当主要过程要重复访问部分行时，最好将被重复访问的这些行单独形成子集表（冗余储存），这在不考虑磁盘空间开销时显得十分重要；但在分割表以后，增加了维护难度，要用触发器立即更新、或存储过程或应用代码批量更新，这也会增加额外的磁盘I/O开销。 
+<BR>垂直分割表（不破坏第三范式），一种是当多个过程频繁访问表的不同列时，可将表垂直分成几个表，减少磁盘I/O（每行的数据列少，每页存的数据行就多，相应占用的页就少），更新时不必考虑锁，没有冗余数据。缺点是要在插入或删除数据时要考虑数据的完整性，用存储过程维护。另一种是当主要过程反复访问部分列时，最好将这部分被频繁访问的列数据单独存为一个子集表（冗余储存），这在不考虑磁盘空间开销时显得十分重要；但这增加了重叠列的维护难度，要用触发器立即更新、或存储过程或应用代码批量更新，这也会增加额外的磁盘I/O开销。垂直分割表可以达到最大化利用Cache的目的。 
+<BR>总之，为主要过程分割表的方法适用于：各个过程需要表的不联结的子集，各个过程需要表的子集，访问频率高的主要过程不需要整表。在主要的、频繁访问的主表需要表的子集而其它主要频繁访问的过程需要整表时则产生冗余子集表。 
+<BR>注意，在分割表以后，要考虑重新建立索引。 <BR>3.2 存储衍生数据 <BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+对一些要做大量重复性计算的过程而言，若重复计算过程得到的结果相同（源列数据稳定，因此计算结果也不变），或计算牵扯多行数据需额外的磁盘I/O开销，或计算复杂需要大量的CPU时间，就考虑存储计算结果（冗余储存）。现予以分类说明： 
+<BR>若在一行内重复计算，就在表内增加列存储结果。但若参与计算的列被更新时，必须要用触发器更新这个新列。 
+<BR>若对表按类进行重复计算，就增加新表（一般而言，存放类和结果两列就可以了）存储相关结果。但若参与计算的列被更新时，就必须要用触发器立即更新、或存储过程或应用代码批量更新这个新表。 
+<BR>若对多行进行重复性计算（如排名次），就在表内增加列存储结果。但若参与计算的列被更新时，必须要用触发器或存储过程更新这个新列。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+总之，存储冗余数据有利于加快访问速度；但违反了第三范式，这会增加维护数据完整性的代价，必须用触发器立即更新、或存储过程或应用代码批量更新，以维护数据的完整性。 
+<BR>3.3 消除昂贵结合 <BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+对于频繁同时访问多表的一些主要过程，考虑在主表内存储冗余数据，即存储冗余列或衍生列（它不依赖于主键），但破坏了第三范式，也增加了维护难度。在源表的相关列发生变化时，必须要用触发器或存储过程更新这个冗余列。当主要过程总同时访问两个表时可以合并表，这样可以减少磁盘I/O*作，但破坏了第三范式，也增加了维护难度。对父子表和1：1关系表合并方法不同：合并父子表后，产生冗余表；合并1：1关系表后，在表内产生冗余数据。 
+<BR><SPAN style="COLOR: red">4</SPAN> 、数据库对象的放置策略 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 数据库对象的放置策略是均匀地把数据分布在系统的磁盘中，平衡I/O访问，避免I/O瓶颈。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;⑴ 
+访问分散到不同的磁盘，即使用户数据尽可能跨越多个设备，多个I/O运转，避免I/O竞争，克服访问瓶颈；分别放置随机访问和连续访问数据。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; ⑵ 
+分离系统数据库I/O和应用数据库I/O。把系统审计表和临时库表放在不忙的磁盘上。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⑶ 
+把事务日志放在单独的磁盘上，减少磁盘I/O开销，这还有利于在障碍后恢复，提高了系统的安全性。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⑷ 
+把频繁访问的“活性”表放在不同的磁盘上；把频繁用的表、频繁做Join*作的表分别放在单独的磁盘上，甚至把把频繁访问的表的字段放在不同的磁盘上，把访问分散到不同的磁盘上，避免I/O争夺； 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⑸ 
+利用段分离频繁访问的表及其索引（非聚族的）、分离文本和图像数据。段的目的是平衡I/O，避免瓶颈，增加吞吐量，实现并行扫描，提高并发度，最大化磁盘的吞吐量。利用逻辑段功能，分别放置“活性”表及其非聚族索引以平衡I/O。当然最好利用系统的默认段。另外，利用段可以使备份和恢复数据更加灵活，使系统授权更加灵活。<BR><BR></SPAN></SPAN></SPAN></SPAN></SPAN>
+<H1><SPAN style="FONT-SIZE: 14pt"><SPAN style="FONT-SIZE: 10pt"><SPAN 
+style="FONT-SIZE: 12pt"><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="FONT-SIZE: 10pt">优化SQL Server数据库的经验总结<BR><BR>来自：<FONT 
+face=Verdana>http://www.enet.com.cn/article/2008/0108/A20080108997121.shtml</FONT></SPAN></SPAN></SPAN></SPAN></SPAN></H1>
+<P><SPAN style="FONT-SIZE: 14pt"><SPAN style="FONT-SIZE: 10pt"><SPAN 
+style="FONT-SIZE: 12pt"><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="FONT-SIZE: 10pt">优化数据库的注意事项： <BR><BR>　　1、关键字段建立索引。 
+<BR><BR>　　2、使用存储过程，它使SQL变得更加灵活和高效。 <BR><BR>　　3、备份数据库和清除垃圾数据。 
+<BR><BR>　　4、SQL语句语法的优化。（可以用Sybase的SQL Expert，可惜我没找到unexpired的序列号） 
+<BR><BR>　　5、清理删除日志。 <BR><BR>　　SQL语句优化的基本原则： <BR><BR>　　1、使用索引来更快地遍历表。 
+<BR><BR>　　缺省情况下建立的索引是非群集索引，但有时它并不是最佳的。在非群集索引下，数据在物理上随机存放在数据页上。合理的索引设计要建立在对各种查询的分析和预测上。一般来说：①.有大量重复值、且经常有范围查询（between, 
+&gt;,&lt; ，&gt;=,&lt; =）和order by、group 
+by发生的列，可考虑建立群集索引；②.经常同时存取多列，且每列都含有重复值可考虑建立组合索引；③.组合索引要尽量使关键查询形成索引覆盖，其前导列一定是使用最频繁的列。 
+<BR><BR>　　2、IS NULL 与 IS NOT NULL 
+<BR><BR>　　不能用null作索引，任何包含null值的列都将不会被包含在索引中。即使索引有多列这样的情况下，只要这些列中有一列含有null，该列就会从索引中排除。也就是说如果某列存在空值，即使对该列建索引也不会提高性能。任何在where子句中使用is 
+null或is not null的语句优化器是不允许使用索引的。 <BR><BR>　　3、IN和EXISTS 
+<BR><BR>　　EXISTS要远比IN的效率高。里面关系到full table scan和range 
+scan。几乎将所有的IN操作符子查询改写为使用EXISTS的子查询。 <BR><BR>　　4、在海量查询时尽量少用格式转换。 
+<BR><BR>　　5、当在SQL SERVER 
+2000中，如果存储过程只有一个参数，并且是OUTPUT类型的，必须在调用这个存储过程的时候给这个参数一个初始的值，否则会出现调用错误。 
+<BR><BR>　　6、ORDER BY和GROPU BY <BR><BR>　　使用ORDER BY和GROUP 
+BY短语，任何一种索引都有助于SELECT的性能提高。注意如果索引列里面有NULL值，Optimizer将无法优化。 
+<BR><BR>　　7、任何对列的操作都将导致表扫描，它包括数据库函数、计算表达式等等，查询时要尽可能将操作移至等号右边。 
+<BR><BR>　　8、IN、OR子句常会使用工作表，使索引失效。如果不产生大量重复值，可以考虑把子句拆开。拆开的子句中应该包含索引。 
+<BR><BR>　　9、SET SHOWPLAN_ALL ON 查看执行方案。DBCC检查数据库数据完整性。DBCC(DataBase Consistency 
+Checker）是一组用于验证SQL Server数据库完整性的程序。 <BR><BR>　　10、谨慎使用游标 
+<BR><BR>　　在某些必须使用游标的场合，可考虑将符合条件的数据行转入临时表中，再对临时表定义游标进行操作，这样可使性能得到明显提高。 
+<BR><BR>　　注释：所谓的优化就是WHERE子句利用了索引，不可优化即发生了表扫描或额外开销。经验显示，SQL 
+Server性能的最大改进得益于逻辑的数据库设计、索引设计和查询设计方面。反过来说，最大的性能问题常常是由其中这些相同方面中的不足引起的。其实SQL优化的实质就是在结果正确的前提下，用优化器可以识别的语句，充份利用索引，减少表扫描的I/O次数，尽量避免表搜索的发生。其实SQL的性能优化是一个复杂的过程，上述这些只是在应用层次的一种体现，深入研究还会涉及数据库层的资源配置、网络层的流量控制以及操作系统层的总体设计。<A 
+href="http://www.enet.com.cn/"><IMG height=11 alt="" 
+src="数据库优化锦集 - 无名 - 博客园_files/end.gif" width=11 align=absMiddle border=0 
+target="_blank"></A><BR><BR><A 
+href="http://blog.csdn.net/sirfei/archive/2005/07/26/434994.aspx"><STRONG 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Verdana">数据库设计中的14个技巧</STRONG></A><BR><BR></P>
+<P>随着计算机技术越来越广泛地应用于国民经济的各个领域，在计算机硬件不断微型化的同时，应用系统向着复杂化、大型化的方向发展。数据库是整个系统的核心，它的设计直接关系系统执行的效率和系统的稳定性。因此在软件系统开发中，数据库设计应遵循必要的数据库范式理论，以减少冗余、保证数据的完整性与正确性。只有在合适的数据库产品上设计出合理的数据库模型，才能降低整个系统的编程和维护难度，提高系统的实际运行效率。虽然对于小项目或中等规模的项目开发人员可以很容易地利用范式理论设计出一套符合要求的数据库，但对于一个包含大型数据库的软件项目，就必须有一套完整的设计原则与技巧。</P>
+<P>一、成立数据小组<BR>&nbsp;<BR>大型数据库数据元素多，在设计上有必要成立专门的数据小组。由于数据库设计者不一定是使用者，对系统设计中的数据元素不可能考虑周全，数据库设计出来后，往往难以找到所需的库表，因此数据小组最好由熟悉业务的项目骨干组成。<BR>&nbsp;<BR>数据小组的职能并非是设计数据库，而是通过需求分析，在参考其他相似系统的基础上，提取系统的基本数据元素，担负对数据库的审核。审核内容包括审核新的数据库元素是否完全、能否实现全部业务需求；对旧数据库（如果存在旧系统）的分析及数据转换；数据库设计的审核、控制及必要调整。</P>
+<P>二、设计原则</P>
+<P><BR>１．规范命名。所有的库名、表名、域名必须遵循统一的命名规则，并进行必要说明，以方便设计、维护、查询。<BR>&nbsp;<BR>２．控制字段的引用。在设计时，可以选择适当的数据库设计管理工具，以方便开发人员的分布式设计和数据小组的集中审核管理。采用统一的命名规则，如果设计的字段已经存在，可直接引用；否则，应重新设计。<BR>&nbsp;<BR>３．库表重复控制。在设计过程中，如果发现大部分字段都已存在，开发人员应怀疑所设计的库表是否已存在。通过对字段所在库表及相应设计人员的查询，可以确认库表是否确实重复。<BR>&nbsp;<BR>４．并发控制。设计中应进行并发控制，即对于同一个库表，在同一时间只有一个人有控制权，其他人只能进行查询。<BR>&nbsp;<BR>５．必要的讨论。数据库设计完成后，数据小组应与相关人员进行讨论，通过讨论来熟悉数据库，从而对设计中存在的问题进行控制或从中获取数据库设计的必要信息。<BR>&nbsp;<BR>６．数据小组的审核。库表的定版、修改最终都要通过数据小组的审核，以保证符合必要的要求。<BR>&nbsp;<BR>７．头文件处理。每次数据修改后，数据小组要对相应的头文件进行修改（可由管理软件自动完成），并通知相关的开发人员，以便进行相应的程序修改。</P>
+<P>三、设计技巧</P>
+<P>１．分类拆分数据量大的表。对于经常使用的表（如某些参数表或代码对照表），由于其使用频率很高，要尽量减少表中的记录数量。例如，银行的户主账表原来设计成一张表，虽然可以方便程序的设计与维护，但经过分析发现，由于数据量太大，会影响数据的迅速定位。如果将户主账表分别设计为活期户主账、定期户主账及对公户主账等，则可以大大提高查询效率。<BR>&nbsp;<BR>２．索引设计。对于大的数据库表，合理的索引能够提高整个数据库的操作效率。在索引设计中，索引字段应挑选重复值较少的字段；在对建有复合索引的字段进行检索时，应注意按照复合索引字段建立的顺序进行。例如，如果对一个５万多条记录的流水表以日期和流水号为序建立复合索引，由于在该表中日期的重复值接近整个表的记录数，用流水号进行查询所用的时间接近３秒；而如果以流水号为索引字段建立索引进行相同的查询，所用时间不到１秒。因此在大型数据库设计中，只有进行合理的索引字段选择，才能有效提高整个数据库的操作效率。<BR>&nbsp;<BR>３．数据操作的优化。在大型数据库中，如何提高数据操作效率值得关注。例如，每在数据库流水表中增加一笔业务，就必须从流水控制表中取出流水号，并将其流水号的数值加一。正常情况下，单笔操作的反应速度尚属正常，但当用它进行批量业务处理时，速度会明显减慢。经过分析发现，每次对流水控制表中的流水号数值加一时都要锁定该表，而该表却是整个系统操作的核心，有可能在操作时被其他进程锁定，因而使整个事务操作速度变慢。对这一问题的解决的办法是，根据批量业务的总笔数批量申请流水号，并对流水控制表进行一次更新，即可提高批量业务处理的速度。另一个例子是对插表的优化。对于大批量的业务处理，如果在插入数据库表时用普通的Ｉｎｓｅｒｔ语句，速度会很慢。其原因在于，每次插表都要进行一次Ｉ/Ｏ操作，花费较长的时间。改进后，可以用Ｐｕｔ语句等缓冲区形式等满页后再进行Ｉ/Ｏ操作，从而提高效率。对大的数据库表进行删除时，一般会直接用Ｄｅｌｅｔｅ语句，这个语句虽然可以进行小表操作，但对大表却会因带来大事务而导致删除速度很慢甚至失败。解决的方法是去掉事务，但更有效的办法是先进行Ｄｒｏｐ操作再进行重建。<BR>&nbsp;<BR>４．数据库参数的调整。数据库参数的调整是一个经验不断积累的过程，应由有经验的系统管理员完成。以Ｉｎｆｏｒｍｉｘ数据库为例，记录锁的数目太少会造成锁表的失败；逻辑日志的文件数目太少会造成插入大表失败等，这些问题都应根据实际情况进行必要的调整。<BR>&nbsp;<BR>５．必要的工具。在整个数据库的开发与设计过程中，可以先开发一些小的应用工具，如自动生成库表的头文件、插入数据的初始化、数据插入的函数封装、错误跟踪或自动显示等，以此提高数据库的设计与开发效率。<BR>&nbsp;<BR>６．避免长事务。对单个大表的删除或插入操作会带来大事务，解决的办法是对参数进行调整，也可以在插入时对文件进行分割。对于一个由一系列小事务顺序操作共同构成的长事务（如银行交易系统的日终交易），可以由一系列操作完成整个事务，但其缺点是有可能因整个事务太大而使不能完成，或者，由于偶然的意外而使事务重做所需的时间太长。较好的解决方法是，把整个事务分解成几个较小的事务，再由应用程序控制整个系统的流程。这样，如果其中某个事务不成功，则只需重做该事务，因而既可节约时间，又可避免长事务。<BR>&nbsp;<BR>７．适当超前。计算机技术发展日新月异，数据库的设计必须具有一定前瞻性，不但要满足当前的应用要求，还要考虑未来的业务发展，同时必须有利于扩展或增加应用系统的处理功能。</P>
+<P>&nbsp;相对于中小型数据库，大型数据库的设计与开发要复杂得多，因此在设计、开发过程中，除了要遵循数据库范式理论、增加系统的一致性和完整性外，还要在总体上根据具体情况进行分布式设计，紧紧把握集中控制、统一审核的基本原则，保证数据库设计结构紧凑、分布平衡、定位迅速。在数据库操作上，要采用一定的技巧提高整个应用系统的执行效率，并注意适当超前，以适应不断变化的应用及系统发展的要求。<BR></P>
+<P><BR></SPAN></SPAN></SPAN></SPAN></SPAN>&nbsp;</P>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/wuming/" 
+target=_blank>无名</A><BR>关注 - 1<BR>粉丝 - 0<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1238838,37329,1)><SPAN class=diggnum 
+id=digg_count_1238838>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1238838,37329,2)><SPAN class=burynum 
+id=bury_count_1238838>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1238838 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1238838>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/wuming/archive/2008/06/24/1228662.html">« 
+</A>上一篇：<A title="发布于2008-06-24 10:09" 
+href="http://www.cnblogs.com/wuming/archive/2008/06/24/1228662.html">图灵Ajax图书阅读路线图</A><BR><A 
+href="http://www.cnblogs.com/wuming/archive/2008/07/14/1242294.html">» 
+</A>下一篇：<A title="发布于2008-07-14 10:57" 
+href="http://www.cnblogs.com/wuming/archive/2008/07/14/1242294.html">BTree,B-Tree,B+Tree,B*Tree都是什么</A><BR></DIV>
+<SCRIPT src="数据库优化锦集 - 无名 - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '463b420b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+</DIV>
+<DIV class=postfoot>posted on 2008-07-09 14:49 <A 
+href="http://www.cnblogs.com/wuming/">无名</A> 阅读(112) <A 
+href="http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html#commentform">评论(0)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/wuming/admin/EditPosts.aspx?postid=1238838">编辑</A> 
+<A onclick="AddToWz(1238838);return false;" 
+href="http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html#">收藏</A> 
+</DIV></DIV><IMG height=1 src="数据库优化锦集 - 无名 - 博客园_files/1238838.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html"
+dc:identifier="http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/wuming/services/trackbacks/1238838.aspx" />
+</rdf:RDF>
+-->
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl04_comment_form>
+<DIV id=ctl04_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fwuming%2farchive%2f2008%2f07%2f09%2f1238838.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fwuming%2farchive%2f2008%2f07%2f09%2f1238838.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A href="http://job.cnblogs.com/offer/7427/" 
+target=_blank>沪江网招聘ASP.NET开发工程师</A><BR><A href="http://a4.yeshj.com/rd/35450/" 
+target=_blank>软件研发团队管理年会(上海，7.10-7.11)</A><BR><A href="http://news.cnblogs.com/" 
+target=_blank>IT新闻</A>:<BR>· <A href="http://news.cnblogs.com/n/65668/" 
+target=_blank>科技视频：HTC EVO 4G首部创意广告-科技史缩略</A><BR>· <A 
+href="http://news.cnblogs.com/n/65667/" target=_blank>传完美时空闪电裁员2千人 
+或为营造亮丽财报</A><BR>· <A href="http://news.cnblogs.com/n/65666/" 
+target=_blank>唐骏要拍“新三级片” 请大佬跑龙套</A><BR>· <A 
+href="http://news.cnblogs.com/n/65665/" 
+target=_blank>谢文：杀毒软件已成用户电脑里不安定因素</A><BR>· <A 
+href="http://news.cnblogs.com/n/65664/" target=_blank>微软：Windows 
+7每秒钟卖出七份</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="数据库优化锦集 - 无名 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+alt="" src="数据库优化锦集 - 无名 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/1238838/">数据库优化锦集</A></DIV></DIV></DIV>
+<DIV id=lefttemp style="DISPLAY: none">
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: silver" colSpan=7>
+      <TABLE class=CalTitle style="WIDTH: 100%; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev style="WIDTH: 15%"><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3074')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2008年7月</TD>
+          <TD class=CalNextPrev style="WIDTH: 15%" align=right><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3135')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>29</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle>1</TD>
+    <TD style="WIDTH: 14%" align=middle>2</TD>
+    <TD style="WIDTH: 14%" align=middle>3</TD>
+    <TD style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>5</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>6</TD>
+    <TD style="WIDTH: 14%" align=middle>7</TD>
+    <TD style="WIDTH: 14%" align=middle>8</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wuming/archive/2008/7/9.html"><U>9</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>10</TD>
+    <TD style="WIDTH: 14%" align=middle>11</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>12</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>13</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wuming/archive/2008/7/14.html"><U>14</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>15</TD>
+    <TD style="WIDTH: 14%" align=middle>16</TD>
+    <TD style="WIDTH: 14%" align=middle>17</TD>
+    <TD style="WIDTH: 14%" align=middle>18</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>19</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>20</TD>
+    <TD style="WIDTH: 14%" align=middle>21</TD>
+    <TD style="WIDTH: 14%" align=middle>22</TD>
+    <TD style="WIDTH: 14%" align=middle>23</TD>
+    <TD style="WIDTH: 14%" align=middle>24</TD>
+    <TD style="WIDTH: 14%" align=middle>25</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>26</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>27</TD>
+    <TD style="WIDTH: 14%" align=middle>28</TD>
+    <TD style="WIDTH: 14%" align=middle>29</TD>
+    <TD style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle>31</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>1</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>2</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>6</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>7</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>8</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" 
+align=middle>9</TD></TR></TBODY></TABLE>
+<H3>公告</H3>
+<DIV class=News>
+<DIV align=center><A href="http://www.amazingcounter.com/"><IMG 
+alt="Download Web Counters" src="数据库优化锦集 - 无名 - 博客园_files/counter.png" 
+border=0></A><BR><A 
+href="http://www.quality-singles.com/local/arizona.htm"><FONT color=#909090 
+size=2></FONT></A><A 
+href="http://www.quality-singles.com/local/mesa-az.htm"><FONT color=#909090 
+size=2></FONT></A></DIV><EMBED 
+src=http://www.clocklink.com/clocks/0012-silver.swf?TimeZone=GMT0800&amp; 
+width=150 height=150 type=application/x-shockwave-flash wmode="transparent">
+<DIV id=profile_block><A href="http://home.cnblogs.com/wuming/" 
+target=_blank>我的主页</A>&nbsp; <A href="http://home.cnblogs.com/wuming/detail/" 
+target=_blank>个人资料</A><BR><A href="http://home.cnblogs.com/wuming/ing/" 
+target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/æ&nbsp;å" 
+target=_blank>发短消息</A></DIV></DIV>
+<SCRIPT type=text/javascript>
+var blogapp = 'wuming';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/wuming/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/wuming/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/wuming/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/wuming/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/wuming/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/wuming/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/wuming/tag/">我的标签</A> </LI></UL></DIV>
+<H3 class=catListTitle>我的标签</H3>
+<DIV id=MyTag>
+<UL>
+  <LI><A href="http://www.cnblogs.com/wuming/tag/SQL+Server/">SQL Server</A>(12)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/Asp.net/">Asp.net</A>(12)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/SQL/">SQL</A>(10)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/SQLServer/">SQLServer</A>(8)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/C#/">C#</A>(4)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/web/">web</A>(4)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/SQL+SERVER+å³é®å&shy;/">SQL 
+  SERVER 关键字</A>(3)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/XML/">XML</A>(3)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/vs2005/">vs2005</A>(2)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/Other/">Other</A>(2)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/">更多</A> </LI></UL></DIV>
+<H3>随笔档案</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/wuming/archive/2010/05.html">2010年5月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/wuming/archive/2010/04.html">2010年4月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/wuming/archive/2010/03.html">2010年3月 (8)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/wuming/archive/2010/02.html">2010年2月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/wuming/archive/2010/01.html">2010年1月 (4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/12.html">2009年12月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/11.html">2009年11月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/10.html">2009年10月 (4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/08.html">2009年8月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/07.html">2009年7月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/06.html">2009年6月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/05.html">2009年5月 (6)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/04.html">2009年4月 (4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/03.html">2009年3月 (6)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/02.html">2009年2月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/wuming/archive/2008/10.html">2008年10月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/wuming/archive/2008/09.html">2008年9月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/wuming/archive/2008/07.html">2008年7月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/wuming/archive/2008/06.html">2008年6月 (9)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_Link 
+  href="http://www.cnblogs.com/wuming/archive/2008/05.html">2008年5月 (7)</A> 
+</LI></UL>
+<H3>收藏夹</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/wuming/favorite/141881.html">My Category(1)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_RssLink 
+  title="Subscribe to My Category(1)" 
+  onclick="open_link('http://www.cnblogs.com/wuming/favorite/141881.html/rss');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html###">(rss)</A> 
+  </LI></UL>
+<H3>好友</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://dflying.cnblogs.com/">dflying</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_RssLink 
+  title="Subscribe to dflying" 
+  onclick="open_link('http://dflying.cnblogs.com/rss');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link 
+  href="http://tuyile006.cnblogs.com/">DotNet</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_RssLink 
+  title="Subscribe to DotNet" 
+  onclick="open_link('http://tuyile006.cnblogs.com/rss');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_Link 
+  href="http://skylaugh.cnblogs.com/">skylaugh</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_RssLink 
+  title="Subscribe to skylaugh" 
+  onclick="open_link('http://skylaugh.cnblogs.com/rss');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_Link 
+  href="http://terrylee.cnblogs.com/">TerryLee </A><A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_RssLink 
+  title="Subscribe to TerryLee " 
+  onclick="open_link('http://terrylee.cnblogs.com/rss');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2008/07/09/1238838.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl05_Link 
+  href="http://xhan.cnblogs.com/">韩杰</A> </LI></UL>
+<H3 class=catListTitle>最新评论 <A id=SingleColumn1__318407a_RSSHyperlink1 
+href="http://www.cnblogs.com/wuming/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="数据库优化锦集 - 无名 - 博客园_files/xml.gif"></A></H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/07/1452029.html#1647949">1.&nbsp;Re:js 
+  获取鼠标的绝对位置</A> 
+  <LI style="WORD-BREAK: break-all">good 搜藏了 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Jacky001 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/10/09/1306992.html#1642577">2.&nbsp;Re:c# 
+  Settings.settings 设置</A> 
+  <LI style="WORD-BREAK: break-all">很好很强大 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Shuke 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#1521860">3.&nbsp;re: 
+  SQL Server中存储过程比直接运行SQL语句慢的原因</A> 
+  <LI 
+  style="WORD-BREAK: break-all">@温景良(Jason)<BR>上面的解决方案可能只是用多表链接的时候。如果是表比较少应该不会出现这种情况。 
+
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">-- 无名 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#1521233">4.&nbsp;re: 
+  SQL Server中存储过程比直接运行SQL语句慢的原因</A> 
+  <LI style="WORD-BREAK: break-all">收藏 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--温景良(Jason) 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/07/03/1230964.html#1243408">5.&nbsp;re: 
+  简历</A> 
+  <LI style="WORD-BREAK: break-all">第一个项目好强大!!! 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--高某 </LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/10/09/1306992.html">1.&nbsp;c# 
+  Settings.settings 设置(2950)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/05/30/1210856.html">2.&nbsp;怎样编写注册表reg文件(2059)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/03/26/1422304.html">3.&nbsp;UTC时间(1654)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/02/26/1398931.html">4.&nbsp;C#获取当前路径的方法集合 
+  (1088)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/06/19/1226026.html">5.&nbsp;Sql选择字段唯一值并上后面的字段 
+  (906)</A> </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html">1.&nbsp;SQL 
+  Server中存储过程比直接运行SQL语句慢的原因(2)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/06/19/file.html">2.&nbsp;Asp.Net 
+  文件操作基类(1)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/10/09/1306992.html">3.&nbsp;c# 
+  Settings.settings 设置(1)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/07/1452029.html">4.&nbsp;js 
+  获取鼠标的绝对位置(1)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/06/07/1215541.html">5.&nbsp;揭开Socket编程的面纱(1)</A> 
+  </LI></UL></DIV></DIV>
+<DIV class=footer>
+<P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" href="http://www.cnblogs.com/" 
+name=Hyperlink1>博客园</A> <BR>Copyright © 无名 </P></DIV></FORM>
+<SCRIPT src="数据库优化锦集 - 无名 - 博客园_files/shCore.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="数据库优化锦集 - 无名 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="数据库优化锦集 - 无名 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

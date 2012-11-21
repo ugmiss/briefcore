@@ -1,0 +1,1070 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0061)http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=IE插件开发 name=keywords><LINK 
+href="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK id=MainCss 
+href="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK href="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK 
+href="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/shThemeDefault.css" type=text/css 
+rel=stylesheet><LINK title=RSS href="http://www.cnblogs.com/slave2/rss" 
+type=application/rss+xml rel=alternate><LINK title=RSD 
+href="http://www.cnblogs.com/slave2/rsd.xml" type=application/rsd+xml 
+rel=EditURI>
+<SCRIPT src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1322520.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<!--done-->
+<CENTER>
+<DIV id=home>
+<DIV id=header>
+<DIV id=blogTitle><A id=lnkBlogLogo href="http://www.cnblogs.com/slave2/"><IMG 
+id=blogLogo alt="" src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/logo.gif"></A> <!--done-->
+<H1><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/slave2/">拒绝潜水的鱼</A></H1>
+<H2>NET http:\\www.nextlist.cn</H2></DIV><!--end: blogTitle 博客的标题和副标题 -->
+<DIV id=navigator><!--done-->
+<UL id=navList>
+  <LI><A class=menu id=MyLinks1_HomeLink href="http://www.cnblogs.com/">博客园</A> 
+  </LI>
+  <LI><A class=menu id=MyLinks1_SpaceLink 
+  href="http://space.cnblogs.com/">社区</A> </LI>
+  <LI><A class=menu id=MyLinks1_MyHomeLink 
+  href="http://www.cnblogs.com/slave2/">首页</A> </LI>
+  <LI><A class=menu id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/slave2/admin/EditPosts.aspx?opt=1">新随笔</A> </LI>
+  <LI><A class=menu id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/æç»æ½æ°´çé±¼">联系</A> </LI>
+  <LI><A class=menu id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/slave2/admin/EditPosts.aspx">管理</A> </LI>
+  <LI><A class=menu id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/slave2/rss">订阅</A> <A class=aHeaderXML 
+  id=MyLinks1_XMLLink href="http://www.cnblogs.com/slave2/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/rss.gif"></A> </LI></UL>
+<DIV class=blogStats><!--done-->随笔- 88&nbsp; 文章- 6&nbsp; 评论- 52&nbsp; </DIV><!--end: blogStats --></DIV><!--end: navigator 博客导航栏 --></DIV><!--end: header 头部 -->
+<DIV class=clear></DIV>
+<DIV id=topicList><!--done-->
+<DIV id=topics>
+<DIV class=post>
+<H1 class=postTitle><A class=postTitle2 id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html">C#开发BHO插件UrlTrack</A> 
+</H1>
+<DIV class=clear></DIV>
+<DIV class=postBody>
+<P>from:<A href="http://dohkoos.name/?p=429">http://dohkoos.name/?p=429</A></P>
+<P>最近忽然突发奇想，想统计一下我最经常上的网站是哪些，并且在这些网站上都停留了多久。为此决定写一个BHO插件来做这件事。</P>
+<P>BHO(Browser Help 
+Objects)是实现了特定接口(IObjectWithSite)的COM组件。开发好的BHO插件除了要在注册表中注册为COM 
+Server外，还必须将它的CLSID在HKLMSOFTWARE...Browser Helper 
+Objects下注册为子键。每当浏览器[1]启动时，首先会在上述注册表位置查看是否有注册的BHO 
+CLSID，如果有则分别创建一个实例，并对BHO实例进行初始化。BHO实例运行在浏览器的地址空间内，能对可访问的对象(如窗口、模块等等)执行任何操作，且因为它依附于浏览器的主窗口，所以其生命周期与浏览器实例的生命周期一致。下图演示了BHO的创建过程：<BR><A 
+title=bho-process.png 
+href="http://dohkoos.name/wp-content/uploads/bho-process.png"></A></P>
+<P><IMG height=209 alt="" 
+src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/bho-process.png" width=318 
+border=0>下面就来介绍一下如何开发BHO插件。首先创建一个C#项目，类型为Class 
+Library。然后将Class1.cs改名为IObjectWithSite.cs，还要给IObjectWithSite添加两个功能：GetSite和SetSite。<BR>Public 
+Interface Iobjectwithsite<BR>{<BR>&nbsp;&nbsp;&nbsp; 
+[Preservesig]<BR>&nbsp;&nbsp;&nbsp; Int 
+Setsite([Marshalas(Unmanagedtype.Iunknown)]Object Site);<BR>&nbsp;&nbsp;&nbsp; 
+[Preservesig]<BR>&nbsp;&nbsp;&nbsp; Int Getsite(Ref Guid Guid, Out Intptr 
+Ppvsite);<BR>}</P>
+<P>添加一个cs文件UrlTrack.cs，并且实现IObjectWithSite接口。使用BHO还需要添加两个引用SHDocVw.dll和MSHTML.dll，可以在WindowsSystem32目录下找到。<BR></P>
+<P><IMG height=188 alt="" 
+src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/bho-references.png" width=194 
+border=0></P>
+<P>在IObjectWithSite.cs中，还需要为我们的程序指出IE的GUID，使得它可以挂接(attach)到IE上<BR>[<BR>ComVisible(true),<BR>InterfaceType(ComInterfaceType.InterfaceIsIUnknown),<BR>Guid("FC4801A3-2BA9-11CF-A229-00AA003D7352")<BR>]</P>
+<P>另外，还需要给BHO程序分配一个GUID，这个可以通过System.Guid.NewGuid()方法得到<BR>[<BR>ComVisible(true),<BR>Guid("e90da13b-117a-4178-8111-0f712da09ff9"),<BR>ClassInterface(ClassInterfaceType.None)<BR>]</P>
+<P>在UrlTrack.cs中，我们还需要写两个方法用来DLL注册和移除注册<BR>public static string BHOKEYNAME = 
+@"SOFTWARE...Browser Helper Objects";</P>
+<P>[ComRegisterFunction]<BR>public static void RegisterBHO(Type 
+type)<BR>{<BR>&nbsp;&nbsp;&nbsp; RegistryKey registryKey = 
+Registry.LocalMachine.OpenSubKey(BHO_KEY_NAME, true);<BR>&nbsp;&nbsp;&nbsp; if 
+(registryKey == null)<BR>&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; registryKey = 
+Registry.LocalMachine.CreateSubKey(BHO_KEY_NAME);<BR>&nbsp;&nbsp;&nbsp; }</P>
+<P>&nbsp;&nbsp;&nbsp; string guid = 
+type.GUID.ToString("B");<BR>&nbsp;&nbsp;&nbsp; RegistryKey bhoKey = 
+registryKey.OpenSubKey(guid, true);<BR>&nbsp;&nbsp;&nbsp; if (bhoKey == 
+null)<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+bhoKey = registryKey.CreateSubKey(guid);<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; // NoExplorer: dword = 1 prevents the BHO to be loaded 
+by Explorer.exe<BR>&nbsp;&nbsp;&nbsp; bhoKey.SetValue("NoExplorer", 
+1);<BR>&nbsp;&nbsp;&nbsp; bhoKey.Close();</P>
+<P>&nbsp;&nbsp;&nbsp; registryKey.Close();<BR>}</P>
+<P>[ComUnregisterFunction]<BR>public static void UnregisterBHO(Type 
+type)<BR>{<BR>&nbsp;&nbsp;&nbsp; RegistryKey registryKey = 
+Registry.LocalMachine.OpenSubKey(BHO_KEY_NAME, true);<BR>&nbsp;&nbsp;&nbsp; 
+string guid = type.GUID.ToString("B");</P>
+<P>&nbsp;&nbsp;&nbsp; if (registryKey != 
+null)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+registryKey.DeleteSubKey(guid, false);<BR>}</P>
+<P>接下来就是实现具体的统计功能了。考虑一下，当输入网址后，我们需要记录下网址以及当前的时间；当在同一浏览窗口中切换网址时，不仅需要记录下网址和当前时间，还要设置前一个浏览记录的结束时间；并且在关闭浏览器时，也要记下结束时间。所以在SetSite中需要挂载NavigateComplete2和OnQuit事件。<BR>private 
+void NavigateComplete2(object pDisp, ref object URL)<BR>{<BR>&nbsp;&nbsp;&nbsp; 
+string url = URL as string;<BR>&nbsp;&nbsp;&nbsp; if (url.IndexOf("about:blank") 
+&gt;= 0)<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; if (visitHists.Count &gt; 
+0)<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+VisitHist currentHist = visitHists[visitHists.Count - 
+1];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (currentHist.VisitUrl != 
+url)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+currentHist.EndTime = 
+System.DateTime.Now;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+else<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; VisitHist newHist = new 
+VisitHist();<BR>&nbsp;&nbsp;&nbsp; newHist.StartTime = 
+System.DateTime.Now;<BR>&nbsp;&nbsp;&nbsp; newHist.VisitUrl = 
+url;<BR>&nbsp;&nbsp;&nbsp; visitHists.Add(newHist);<BR>}</P>
+<P>private void OnQuit()<BR>{<BR>&nbsp;&nbsp;&nbsp; if (visitHists.Count &gt; 
+0)<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+VisitHist currentHist = visitHists[visitHists.Count - 
+1];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; currentHist.EndTime = 
+System.DateTime.Now;<BR>&nbsp;&nbsp;&nbsp; }</P>
+<P>&nbsp;&nbsp;&nbsp; // 输出统计记录<BR>&nbsp;&nbsp;&nbsp; ...<BR>}</P>
+<P>开始编译，然后就可以在bin目录下找到项目的dll文件了。在Console中使用regasm /codebase 
+"UrlTrack.dll"注册dll。打开注册表，在HKLMSOFTWARE...Browser Helper 
+Object可以看到多出了一个子项{E90DA13B-117A-4178-8111-0F712DA09FF9}。</P>
+<P>需要注意的是，需要将AssemblyInfo.cs文件中的ComVisible属性设为true，否则在注册BHO时会得到这样的信息：<BR>RegAsm 
+: warning RA0000 : No types were registered.</P>
+<P>更多的BHO资料可以看这里：<A 
+href="http://msdn2.microsoft.com/en-us/library/aa753587.aspx">Browser 
+Extensions</A></P>
+<P>[1] 
+在Windows操作系统上有两种浏览器：资源浏览器(explorer.exe，应用于文件系统)和Internet浏览器(IEXPLORE.EXE，应用于互联网资源)。</P>
+<P><A title=urltrack.zip 
+href="http://dohkoos.name/wp-content/uploads/urltrack.zip">代码下载</A></P>
+<DIV id=MySignature>
+<STYLE>#MySignature {
+	BORDER-RIGHT: #e5e5e5 1px solid; PADDING-RIGHT: 20px; BORDER-TOP: #e5e5e5 1px solid; PADDING-LEFT: 80px; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/slave2/169941/t_Security_010.jpg) #fffefe no-repeat 1% 50%; PADDING-BOTTOM: 20px; BORDER-LEFT: #e5e5e5 1px solid; PADDING-TOP: 20px; BORDER-BOTTOM: #e5e5e5 1px solid
+}
+#MySignature A:link {
+	COLOR: #f60
+}
+#MySignature A:visited {
+	COLOR: #f60
+}
+#MySignature A:active {
+	COLOR: #f60
+}
+#MySignature A:hover {
+	COLOR: #f60; TEXT-DECORATION: underline
+}
+</STYLE>
+作者：拒绝潜水的鱼<BR>出处：<A 
+href="http://slave2.cnblogs.com/">http://slave2.cnblogs.com/</A> 
+<BR>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </DIV>
+<DIV id=EntryTag>Tag标签: <A 
+href="http://www.cnblogs.com/slave2/tag/IEæä»¶å¼å/">IE插件开发</A></DIV>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/slave2/" 
+target=_blank><IMG class=author_avatar alt="" 
+src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/u17365.jpg"></A> 
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/slave2/" 
+target=_blank>拒绝潜水的鱼</A><BR>关注 - 5<BR>粉丝 - 2<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1322520,20924,1)><SPAN class=diggnum 
+id=digg_count_1322520>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1322520,20924,2)><SPAN class=burynum 
+id=bury_count_1322520>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1322520 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1322520>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/slave2/archive/2008/10/26/1319743.html">« 
+</A>上一篇：<A title="发布于2008-10-26 11:10" 
+href="http://www.cnblogs.com/slave2/archive/2008/10/26/1319743.html">C#开发COM组件2</A><BR><A 
+href="http://www.cnblogs.com/slave2/archive/2008/10/30/1323015.html">» 
+</A>下一篇：<A title="发布于2008-10-30 14:39" 
+href="http://www.cnblogs.com/slave2/archive/2008/10/30/1323015.html">EVC开发实例三：浏览器窗口</A><BR></DIV>
+<SCRIPT src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = 'ff5d360b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+</DIV>
+<DIV class=postDesc>posted @ 2008-10-29 22:50 <A 
+href="http://www.cnblogs.com/slave2/">拒绝潜水的鱼</A> 阅读(1898) <A 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#commentform">评论(5)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/slave2/admin/EditPosts.aspx?postid=1322520">编辑</A> 
+<A onclick="AddToWz(1322520);return false;" 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#">收藏</A> 
+</DIV></DIV><IMG height=1 
+src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/1322520.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html"
+dc:identifier="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/slave2/services/trackbacks/1322520.aspx" />
+</rdf:RDF>
+--></DIV><!--end: topics 文章、评论容器--><A name=pagedcomment></A><!--done--><BR>
+<DIV class=feedback_area_title>发表评论</DIV>
+<DIV class=feedbackNoItems><SPAN id=span_comment_maxid 
+style="DISPLAY: none">1542867</SPAN></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("iceberg99",1372490,"")' 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1372490,"")' 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#1372490">#1楼</A><A 
+id=comment_anchor_1372490 name=1372490></A>2008-11-17 15:12 | <A 
+id=Comments1_CommentList_ctl00_NameLink 
+href="http://www.cnitblog.com/r.aspx?url=http://looooking.cn" target=_blank 
+rel=nofllow>iceberg99[未注册用户]</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body id=comment_body_1372490>你好 
+最近我想用asp调用dll生成的ActionX但是就是注册不了 <BR>可否指教下 我找不到你的联系方式 我的QQ：46111806 
+希望你可以帮我解决下</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("拒绝潜水的鱼",1376143,"66DbhdqpEpFX1lnw+TdS7GnzZNSVRTM5AHCyOE7mPB34s6y+xD6YGg==")' 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1376143,"66DbhdqpEpFX1lnw+TdS7GnzZNSVRTM5AHCyOE7mPB34s6y+xD6YGg==")' 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%8b%92%e7%bb%9d%e6%bd%9c%e6%b0%b4%e7%9a%84%e9%b1%bc" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#1376143">#2楼</A><A 
+id=comment_anchor_1376143 name=1376143></A>[<SPAN 
+class=louzhu>楼主</SPAN>]2008-11-20 17:49 | <A 
+id=Comments1_CommentList_ctl01_NameLink href="http://www.cnblogs.com/slave2/" 
+target=_blank>拒绝潜水的鱼</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æç»æ½æ°´çé±¼">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1376143>@iceberg99 <BR>asp 不是很清楚 谢谢关注 
+本文为转载，但代码已经编译通过并更改</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("phenix-burn",1450119,"")' 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1450119,"")' 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#1450119">#3楼</A><A 
+id=comment_anchor_1450119 name=1450119></A>2009-02-13 11:23 | <A 
+id=Comments1_CommentList_ctl02_NameLink target=_blank>phenix-burn[未注册用户]</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1450119>你好，这个例子发布时，要装.NET FrameWork吗？</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("emil",1505490,"7/ezfac7pPOqWNqqtNd1EP/7Fueg765lw9qbztU5Um/25We3YPUO+A==")' 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1505490,"7/ezfac7pPOqWNqqtNd1EP/7Fueg765lw9qbztU5Um/25We3YPUO+A==")' 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=emil" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#1505490">#4楼</A><A 
+id=comment_anchor_1505490 name=1505490></A>2009-04-17 12:31 | <A 
+id=Comments1_CommentList_ctl03_NameLink 
+href="http://www.cnblogs.com/yimengsoft/" target=_blank>emil</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/emil">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1505490>我想问一下 ，这个插件如何发布，能否像其他网站似的 提示用户是否安装此插件 
+。谢谢</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("hongchaoxing",1542867,"")' 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1542867,"")' 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#1542867">#5楼</A><A 
+id=comment_anchor_1542867 name=1542867></A><A name=Post></A>2009-05-31 16:14 | 
+<A id=Comments1_CommentList_ctl04_NameLink 
+href="http://www.cnitblog.com/r.aspx?url=http://www.pages114.com" target=_blank 
+rel=nofllow>hongchaoxing[未注册用户]</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body id=comment_body_1542867>用 
+Dotnet 开发的话 和得用到 .NET FrameWork 。如果客户机上没有 .NET FrameWork,比较烦咯。等于 xp与 
+2003的用户使用不了</SPAN><BR></DIV></DIV>
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fslave2%2farchive%2f2008%2f10%2f29%2f1322520.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fslave2%2farchive%2f2008%2f10%2f29%2f1322520.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A href="http://job.cnblogs.com/offer/7427/" 
+target=_blank>沪江网招聘ASP.NET开发工程师</A><BR><A href="http://a4.yeshj.com/rd/35450/" 
+target=_blank>软件研发团队管理年会(上海，7.10-7.11)</A><BR><A href="http://news.cnblogs.com/" 
+target=_blank>IT新闻</A>:<BR>· <A href="http://news.cnblogs.com/n/65693/" 
+target=_blank>盛大微博，综合还是垂直？</A><BR>· <A href="http://news.cnblogs.com/n/65692/" 
+target=_blank>推荐五个jQuery图片画廊插件</A><BR>· <A 
+href="http://news.cnblogs.com/n/65691/" target=_blank>剖析 Google 的 Wi-Fi 
+误收集危机</A><BR>· <A href="http://news.cnblogs.com/n/65690/" 
+target=_blank>微软改变生活：3G时代，Windows Mobile</A><BR>· <A 
+href="http://news.cnblogs.com/n/65689/" target=_blank>苹果WWDC 
+10峰会十点预测</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+alt="" 
+src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=IE%e6%8f%92%e4%bb%b6%e5%bc%80%e5%8f%91" 
+target=_blank>IE插件开发</A> </DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/1322520/">C#开发BHO插件UrlTrack</A></DIV></DIV></DIV><!--end: topicList 文章列表容器-->
+<DIV id=sideBar>
+<DIV id=sideBarMain><!--done-->
+<DIV class=newsItem>
+<H3 class=catListTitle>公告</H3>本人现在一直从事于ＮＥＴ　Ｃ＃的开发和研究，特别是ＷＥＢ领域的开发工作． blog-- 
+http:\\www.nextlist.cn
+<DIV id=profile_block><A href="http://home.cnblogs.com/slave2/" 
+target=_blank>我的主页</A>&nbsp; <A href="http://home.cnblogs.com/slave2/detail/" 
+target=_blank>个人资料</A><BR><A href="http://home.cnblogs.com/slave2/ing/" 
+target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/æç»æ½æ°´çé±¼" 
+target=_blank>发短消息</A></DIV></DIV>
+<DIV id=calendar>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar cellSpacing=0 
+cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=7>
+      <TABLE class=CalTitle cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev><A title="Go to the previous month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3166')">&lt;</A></TD>
+          <TD align=middle>2008年10月</TD>
+          <TD class=CalNextPrev align=right><A title="Go to the next month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3227')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>28</TD>
+    <TD class=CalOtherMonthDay align=middle>29</TD>
+    <TD class=CalOtherMonthDay align=middle>30</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>2</TD>
+    <TD align=middle>3</TD>
+    <TD class=CalWeekendDay align=middle>4</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/slave2/archive/2008/10/5.html"><U>5</U></A></TD>
+    <TD align=middle>6</TD>
+    <TD align=middle>7</TD>
+    <TD align=middle>8</TD>
+    <TD align=middle>9</TD>
+    <TD align=middle>10</TD>
+    <TD class=CalWeekendDay align=middle>11</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>12</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/slave2/archive/2008/10/13.html"><U>13</U></A></TD>
+    <TD align=middle>14</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/slave2/archive/2008/10/15.html"><U>15</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/slave2/archive/2008/10/16.html"><U>16</U></A></TD>
+    <TD align=middle>17</TD>
+    <TD class=CalWeekendDay align=middle>18</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>19</TD>
+    <TD align=middle>20</TD>
+    <TD align=middle>21</TD>
+    <TD align=middle>22</TD>
+    <TD align=middle>23</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/slave2/archive/2008/10/24.html"><U>24</U></A></TD>
+    <TD class=CalWeekendDay align=middle>25</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/slave2/archive/2008/10/26.html"><U>26</U></A></TD>
+    <TD align=middle>27</TD>
+    <TD align=middle>28</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/slave2/archive/2008/10/29.html"><U>29</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/slave2/archive/2008/10/30.html"><U>30</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/slave2/archive/2008/10/31.html"><U>31</U></A></TD>
+    <TD class=CalOtherMonthDay align=middle>1</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>2</TD>
+    <TD class=CalOtherMonthDay align=middle>3</TD>
+    <TD class=CalOtherMonthDay align=middle>4</TD>
+    <TD class=CalOtherMonthDay align=middle>5</TD>
+    <TD class=CalOtherMonthDay align=middle>6</TD>
+    <TD class=CalOtherMonthDay align=middle>7</TD>
+    <TD class=CalOtherMonthDay align=middle>8</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<SCRIPT type=text/javascript>
+var blogapp = 'slave2';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+<DIV class=catListLink>
+<H3 class=catListTitle>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/slave2/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/slave2/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/slave2/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl00_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/slave2/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem 
+  href="http://www.cnblogs.com/slave2/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/slave2/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/slave2/tag/">我的标签</A> </LI></UL></DIV></DIV>
+<DIV class=catListMyTeams>
+<H3 class=catListTitle>我参与的团队</H3>
+<UL>
+  <LI><A id=SingleColumn1__c02645_TeamList_ctl00_lnkTeam 
+  href="http://www.cnblogs.com/team/SHDotNetClub/">上海.NET俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn1__c02645_TeamList_ctl01_lnkTeam 
+  href="http://www.cnblogs.com/team/nanjing/">南京程序员俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn1__c02645_TeamList_ctl02_lnkTeam 
+  href="http://www.cnblogs.com/team/officedev/">Office专业开发团队(0/0)</A> 
+  <LI><A id=SingleColumn1__c02645_TeamList_ctl03_lnkTeam 
+  href="http://www.cnblogs.com/team/reportcontrol/">报表与图表团队(0/0)</A> 
+</LI></UL></DIV>
+<DIV class=catListTag>
+<H3 class=catListTitle>我的标签</H3>
+<UL>
+  <LI><A href="http://www.cnblogs.com/slave2/tag/IEæä»¶å¼å/">IE插件开发(9)</A>
+  <LI><A href="http://www.cnblogs.com/slave2/tag/å¤å²/">勤哲(7)</A>
+  <LI><A href="http://www.cnblogs.com/slave2/tag/C#/">C#(4)</A>
+  <LI><A href="http://www.cnblogs.com/slave2/tag/æ³¢å½¢æ¾ç¤º/">波形显示(2)</A>
+  <LI><A href="http://www.cnblogs.com/slave2/tag/èæä»ªå¨/">虚拟仪器(2)</A>
+  <LI><A href="http://www.cnblogs.com/slave2/tag/NET/">NET(2)</A>
+  <LI><A href="http://www.cnblogs.com/slave2/tag/C#+PDF+iTextSharp/">C# PDF 
+  iTextSharp(2)</A>
+  <LI><A href="http://www.cnblogs.com/slave2/tag/C#+è°è¯/">C# 调试(2)</A>
+  <LI><A href="http://www.cnblogs.com/slave2/tag/å·¥ä½æµå¼æ/">工作流引擎(2)</A>
+  <LI><A href="http://www.cnblogs.com/slave2/tag/Excel/">Excel(1)</A> 
+</LI></UL></DIV>
+<DIV class=catListPostCategory>
+<H3 class=catListTitle>随笔分类</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/slave2/category/115704.html">IM通讯</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to IM通讯" 
+  onclick="open_link('http://www.cnblogs.com/slave2/category/115704.html/rss');return false;" 
+  href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/slave2/category/133895.html">MeasurementStudioVS2003(1)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to MeasurementStudioVS2003(1)" 
+  onclick="open_link('http://www.cnblogs.com/slave2/category/133895.html/rss');return false;" 
+  href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/slave2/category/120974.html">电子商务B2C实战</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to 电子商务B2C实战" 
+  onclick="open_link('http://www.cnblogs.com/slave2/category/120974.html/rss');return false;" 
+  href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/slave2/category/74200.html">项目的实践(7)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to 项目的实践(7)" 
+  onclick="open_link('http://www.cnblogs.com/slave2/category/74200.html/rss');return false;" 
+  href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html###">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListPostArchive>
+<H3 class=catListTitle>随笔档案</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/slave2/archive/2009/10.html">2009年10月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/slave2/archive/2009/04.html">2009年4月 (4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/slave2/archive/2009/03.html">2009年3月 (7)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/12.html">2008年12月 (5)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/11.html">2008年11月 (5)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/10.html">2008年10月 (15)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/09.html">2008年9月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/08.html">2008年8月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/07.html">2008年7月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/06.html">2008年6月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/05.html">2008年5月 (6)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/04.html">2008年4月 (4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/03.html">2008年3月 (10)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/02.html">2008年2月 (6)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/slave2/archive/2008/01.html">2008年1月 (6)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/slave2/archive/2007/12.html">2007年12月 (4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/slave2/archive/2006/10.html">2006年10月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/slave2/archive/2006/09.html">2006年9月 (3)</A> 
+</LI></UL></DIV>
+<DIV class=catListArticleCategory>
+<H3 class=catListTitle>文章分类</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/slave2/category/115055.html">ASP.NET应用(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_RssLink 
+  title="Subscribe to ASP.NET应用(1)" 
+  onclick="open_link('http://www.cnblogs.com/slave2/category/115055.html/rss');return false;" 
+  href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/slave2/category/115054.html">大型WEB应用</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_RssLink 
+  title="Subscribe to 大型WEB应用" 
+  onclick="open_link('http://www.cnblogs.com/slave2/category/115054.html/rss');return false;" 
+  href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/slave2/category/115053.html">网上引用文章(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_RssLink 
+  title="Subscribe to 网上引用文章(1)" 
+  onclick="open_link('http://www.cnblogs.com/slave2/category/115053.html/rss');return false;" 
+  href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html###">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListImageCategory>
+<H3 class=catListTitle>相册</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/slave2/gallery/169941.html">mypic</A> 
+</LI></UL></DIV>
+<DIV class="catListMy Friends">
+<H3 class=catListTitle>My Friends</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl01_Link 
+  href="http://www.fishpro.cn/">地方性WEB2.0</A> 
+  <LI style="MARGIN-TOP: 2px">地方性WEB2.0 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl02_Link 
+  href="http://www.njpro.cn/">南京程序员俱乐部</A> 
+  <LI style="MARGIN-TOP: 2px">南京程序员俱乐部 </LI></UL></DIV>
+<DIV class=catListComment>
+<H3 class=catListTitle>最新评论<A id=SingleColumn1__7694fb_RSSHyperlink1 
+title=RSS订阅最最新评论 href="http://www.cnblogs.com/slave2/CommentsRSS.aspx"><IMG 
+title=RSS订阅最最新评论 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/xml.gif"></A></H3>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__7694fb_CommentList_ctl00_Hyperlink2 
+href="http://www.cnblogs.com/slave2/archive/2008/05/28/1209191.html#1745292">1.&nbsp;Re:iTextSharp 
+批量修改PDF</A> </DIV>
+<DIV class=divRecentComment>不错，学习了。 (zqonline) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__7694fb_CommentList_ctl01_Hyperlink2 
+href="http://www.cnblogs.com/slave2/archive/2008/10/26/1319743.html#1677894">2.&nbsp;Re:C#开发COM组件2</A> 
+</DIV>
+<DIV class=divRecentComment>请问C#开发的COM如何开放事件，如何在VC中使用呢？谢谢 (begtostudy) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__7694fb_CommentList_ctl02_Hyperlink2 
+href="http://www.cnblogs.com/slave2/archive/2009/10/20/1586816.html#1676937">3.&nbsp;Re:10月25号-第六届南京程序员技术大会（Tech2009）</A> 
+</DIV>
+<DIV class=divRecentComment>8错，南京终于和时代同步了，不过还是二线啊，跟北京上海广州深圳一线还有很大距离。 (Prime Li) 
+</DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__7694fb_CommentList_ctl03_Hyperlink2 
+href="http://www.cnblogs.com/slave2/archive/2009/10/20/1586816.html#1676766">4.&nbsp;Re:10月25号-第六届南京程序员技术大会（Tech2009）</A> 
+</DIV>
+<DIV class=divRecentComment>好，这个好！ (lovko) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__7694fb_CommentList_ctl04_Hyperlink2 
+href="http://www.cnblogs.com/slave2/archive/2009/10/20/1586816.html#1676660">5.&nbsp;Re:10月25号-第六届南京程序员技术大会（Tech2009）</A> 
+</DIV>
+<DIV class=divRecentComment>参加 (老鼠) </DIV></DIV>
+<DIV class=catListView>
+<H3 class=catListTitle>阅读排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/slave2/archive/2006/09/16/506195.html">1.&nbsp;C#编写OWC11组件源代码(4798)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/slave2/archive/2006/09/16/506196.html">2.&nbsp;C#编写OWC11组件源代码[2](3456)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/slave2/archive/2009/03/24/1420744.html">3.&nbsp;ERROR 
+  2003:Can't connect to MySQL server on 'localhost' (10061)(3129)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/slave2/archive/2006/09/14/503988.html">4.&nbsp;C#利用DCOM组件动态生成WORD模板(2227)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html">5.&nbsp;C#开发BHO插件UrlTrack(1898)</A> 
+  </LI></UL></DIV>
+<DIV class=catListFeedback>
+<H3 class=catListTitle>评论排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/slave2/archive/2006/09/16/506195.html">1.&nbsp;C#编写OWC11组件源代码(13)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/slave2/archive/2009/10/20/1586816.html">2.&nbsp;10月25号-第六届南京程序员技术大会（Tech2009）(9)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/slave2/archive/2008/10/29/1322520.html">3.&nbsp;C#开发BHO插件UrlTrack(5)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/slave2/archive/2006/09/16/506196.html">4.&nbsp;C#编写OWC11组件源代码[2](5)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/slave2/archive/2008/10/31/1324027.html">5.&nbsp;园内ORM讨论的经典文章及评论 
+  (2)</A> </LI></UL></DIV></DIV></DIV><!--end: sideBarMain -->
+<DIV class=clear></DIV></DIV><!--end: sideBar 侧边栏容器 --></DIV><!--end: home 自定义的最大容器 -->
+<DIV class=clear></DIV>
+<DIV id=footer><!--done-->Copyright ©2010 拒绝潜水的鱼 
+</DIV><!--end: footer --></CENTER></FORM>
+<SCRIPT src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="C#开发BHO插件UrlTrack - 拒绝潜水的鱼 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

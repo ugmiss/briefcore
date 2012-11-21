@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.yesky.com/imagesnew/software/tsql/ts_sys-p_3kmr.htm -->
+<HTML dir=ltr><HEAD><TITLE>sysprocesses</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META http-equiv=Content-Language content=zh-CN>
+<META content=all name=robots>
+<META content="index, follow" name=googlebot>
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR>
+<META content=网页陶吧-龙犊(luokel@chinabyte.com) name=author>
+<META content=天极Yesky-全球中文IT第一门户 name=Copyright>
+<META 
+content="sql server,sql server 2000,sql server 下载,sql server 2005,sql 2000,sql教程,sql数据库,sql update,sql sever,sql下载,sql server2000下载,sql语言,pl sql developer,my sql,asp sql,sql like,sql注入,sql语法,sql server 教程,sql查询语句,sql insert,网页陶吧" 
+name=keywords><LINK href="sysprocesses_files/coUA_Ex.css" type=text/css 
+rel=stylesheet><LINK media=SCREEN href="sysprocesses_files/mailto.css" 
+type=text/css rel=stylesheet><LINK media=PRINT 
+href="sysprocesses_files/coUA_Print.css" type=text/css rel=stylesheet>
+<SCRIPT language=JScript src="sysprocesses_files/shared.js"></SCRIPT>
+
+<SCRIPT language=JScript src="sysprocesses_files/mailto.js"></SCRIPT>
+</HEAD>
+<BODY>
+<DIV style="DISPLAY: none">
+<OBJECT id=hhobj_1 type=application/x-oleobject 
+classid=clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11><PARAM NAME="Command" VALUE="ALink,MENU"><PARAM NAME="Item1" VALUE=""><PARAM NAME="Item2" VALUE="_client_and_server_net-libraries"></OBJECT></DIV><SPAN 
+class=StartOfFile id=StartOfFile>Transact-SQL 参考</SPAN> 
+<DIV id=nstext valign="top">
+<H1><A name=_helpsysprocesses></A>sysprocesses</H1>
+<P><B>sysprocesses</B> 表中保存关于运行在 Microsoft&reg; SQL Server&#8482; 
+上的进程的信息。这些进程可以是客户端进程或系统进程。<B>sysprocesses</B> 只存储在 <B>master</B> 数据库中。</P>
+<TABLE cols=3 cellPadding=2 rules=all width=587 border=1 frame=box>
+  <TBODY>
+  <TR vAlign=top>
+    <TH class=label width="24%">列名</TH>
+    <TH class=label width="24%">数据类型</TH>
+    <TH class=label width="52%">描述</TH></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>spid</B></TD>
+    <TD width="24%"><B>smallint</B></TD>
+    <TD width="52%">SQL Server 进程 ID。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>kpid</B></TD>
+    <TD width="24%"><B>smallint</B></TD>
+    <TD width="52%">Microsoft Windows NT 4.0&reg; 线程 ID。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>blocked</B></TD>
+    <TD width="24%"><B>smallint</B></TD>
+    <TD width="52%">分块进程的进程 ID (<B>spid</B>)。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>waittype</B></TD>
+    <TD width="24%"><B>binary(2)</B></TD>
+    <TD width="52%">保留。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>waittime</B></TD>
+    <TD width="24%"><B>int</B></TD>
+    <TD width="52%">当前等待时间（以毫秒为单位）。当进程不处于等待时，为 0。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>lastwaittype</B></TD>
+    <TD width="24%"><B>nchar(32)</B></TD>
+    <TD width="52%">表示上次或当前等待类型名称的字符串。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>waitresource</B></TD>
+    <TD width="24%"><B>nchar(32)</B></TD>
+    <TD width="52%">锁资源的文本化表示法。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>dbid</B></TD>
+    <TD width="24%"><B>smallint</B></TD>
+    <TD width="52%">当前正由进程使用的数据库 ID。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>uid</B></TD>
+    <TD width="24%"><B>smallint</B></TD>
+    <TD width="52%">执行命令的用户 ID。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>cpu</B></TD>
+    <TD width="24%"><B>int</B></TD>
+    <TD width="52%">进程的累计 CPU 时间。无论 SET STATISTICS TIME ON 选项是 ON 还是 
+      OFF，都为所有进程更新该条目。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>physical_io</B></TD>
+    <TD width="24%"><B>int</B></TD>
+    <TD width="52%">进程的累计磁盘读取和写入。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>memusage</B></TD>
+    <TD width="24%"><B>int</B></TD>
+    <TD width="52%">当前分配给该进程的过程高速缓存中的页数。一个负数，表示进程正在释放由另一个进程分配的内存。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>login_time</B></TD>
+    <TD width="24%"><B>datetime</B></TD>
+    <TD width="52%">客户端进程登录到服务器的时间。对于系统进程，是存储 SQL Server 启动发生的时间。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>last_batch</B></TD>
+    <TD width="24%"><B>datetime</B></TD>
+    <TD width="52%">客户端进程上次执行远程存储过程调用或 EXECUTE 语句的时间。对于系统进程，是存储 SQL Server 
+      启动发生的时间。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>ecid</B></TD>
+    <TD width="24%"><B>smallint</B></TD>
+    <TD width="52%">用于唯一标识代表单个进程进行操作的子线程的执行上下文 ID。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>open_tran</B></TD>
+    <TD width="24%"><B>smallint</B></TD>
+    <TD width="52%">进程的打开事务数。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>status</B></TD>
+    <TD width="24%"><B>nchar(30)</B></TD>
+    <TD width="52%">进程 ID 状态（如运行、休眠等）。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>sid</B></TD>
+    <TD width="24%"><B>binary(85)</B></TD>
+    <TD width="52%">用户的全局唯一标识符 (GUID)。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>hostname</B></TD>
+    <TD width="24%"><B>nchar(128)</B></TD>
+    <TD width="52%">工作站的名称。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>program_name</B></TD>
+    <TD width="24%"><B>nchar(128)</B></TD>
+    <TD width="52%">应用程序的名称。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>hostprocess</B></TD>
+    <TD width="24%"><B>nchar(8)</B></TD>
+    <TD width="52%">工作站进程 ID 号。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>cmd</B></TD>
+    <TD width="24%"><B>nchar(16)</B></TD>
+    <TD width="52%">当前正在执行的命令。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>nt_domain</B></TD>
+    <TD width="24%"><B>nchar(128)</B></TD>
+    <TD width="52%">客户端的 Windows NT 4.0 域（如果使用 Windows 身份验证）或信任连接的 Windows NT 
+      4.0 域。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>nt_username</B></TD>
+    <TD width="24%"><B>nchar(128)</B></TD>
+    <TD width="52%">进程的 Windows NT 4.0用户名（如果使用 Windows 身份验证）或信任连接的 Windows NT 
+      4.0 用户名。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>net_address</B></TD>
+    <TD width="24%"><B>nchar(12)</B></TD>
+    <TD width="52%">指派给每个用户工作站上的网络接口卡唯一标识符。当用户登录时，该标识符插入 <B>net_address</B> 
+    列。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>net_library</B></TD>
+    <TD width="24%"><B>nchar(12)</B></TD>
+    <TD 
+      width="52%">用于存储客户端网络库的列。每个客户端进程都在网络连接上进入。网络连接有一个与这些进程关联的网络库，该网络库使得这些进程可以建立连接。有关更多信息，请参见<A 
+      href="javascript:hhobj_1.Click()">客户端和服务器 Net-Library</A>。</TD></TR>
+  <TR vAlign=top>
+    <TD width="24%"><B>loginame</B></TD>
+    <TD width="24%"><B>nchar(128)</B></TD>
+    <TD width="52%">登录名。</TD></TR></TBODY></TABLE><BR><!--END--><SPAN 
+id=EndOfFile></SPAN>
+<SCRIPT language=Javascript>
+document.write("<img src='http://counter.yesky.com/counter.shtml?CID=54197&amp;AID=-1&amp;refer="+escape(document.referrer)+"&amp;cur="+escape(document.URL)+"' border='0' alt='' width='0' height='0'>");
+</SCRIPT>
+<NOSCRIPT><IMG height=0 src="sysprocesses_files/counter.shtml" width=0 border=0> 
+</NOSCRIPT><IFRAME src="sysprocesses_files/b_contentsd.htm" frameBorder=0 
+width=600 scrolling=no height=170></IFRAME>
+<SCRIPT type=javascript>var __sitemap_id=4197;var _aid=-1;</SCRIPT>
+<!-- Counter 2010-->
+<SCRIPT src="sysprocesses_files/web-utils.js"></SCRIPT>
+
+<SCRIPT type=text/javascript> 
+    initCookie();
+    var re = new RegExp(".*/(\\d+)(_(\\d+))?\\.shtml","ig");
+    var _aid = _aid || -1;
+    if(_aid == -1 && re.exec(document.location.href) != null){
+       _aid = RegExp.$1
+    }
+    var __sitemap_id = parseInt(__sitemap_id||0) + 700000000;
+    sentParamter(parseInt(_aid),'1',__sitemap_id||0);
+</SCRIPT>
+<!-- START GA.js -->
+<SCRIPT type=text/javascript>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+try {
+var _ga = _gat._getTracker("UA-11613621-1");
+_ga._setDomainName(".yesky.com");
+_ga._addOrganic("soso","w");
+_ga._addOrganic("3721","name");
+_ga._addOrganic("yodao","q");
+_ga._addOrganic("vnet","kw");
+_ga._addOrganic("sogou","query");
+_ga._trackPageview();
+} catch(err) {}</SCRIPT>
+<!-- END GA.js --><!-- pv -->
+<SCRIPT language=javascript src="sysprocesses_files/pv.js"></SCRIPT>
+<!-- Crazyegg -->
+<SCRIPT src="sysprocesses_files/7010.js" type=text/javascript></SCRIPT>
+</DIV></BODY></HTML>

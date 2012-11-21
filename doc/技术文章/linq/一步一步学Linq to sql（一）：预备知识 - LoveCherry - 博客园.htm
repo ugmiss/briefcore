@@ -1,0 +1,2602 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0064)http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html -->
+<HTML><HEAD><TITLE>一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=webform,.net,3.5,一步一步学Linq,to,sql,预备知识 name=keywords>
+<META content=隐含类型局部变量、匿名类型、扩展方法、自动属性、对象初始化器、集合初始化器、Lambda表达式、查询句法 
+name=description><LINK 
+href="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/common.css" 
+type=text/css rel=stylesheet><LINK id=MainCss 
+href="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK 
+href="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/shCore.css" 
+type=text/css rel=stylesheet><LINK 
+href="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/lovecherry/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/lovecherry/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=855681.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<DIV id=top>
+<DIV>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD class=HeaderTitles>
+      <H1 class=HeaderTitle><A class=HeaderMainTitle id=Header1_HeaderTitle 
+      href="http://www.cnblogs.com/lovecherry/"><FONT 
+      size=+2>LoveCherry</FONT></A></H1>
+      <P id=tagline><FONT size=+1>技术无极限</FONT></P></TD></TR></TBODY></TABLE></DIV>
+<DIV class=HeaderBar>
+<TABLE class=HeaderBar id=HeaderBar>
+  <TBODY>
+  <TR>
+    <TD class=HeaderBarTab noWrap><IMG id=Header1_StartButton 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/WinXP-Olive_Spacer.gif" 
+      align=absMiddle> <A id=Header1_MyLinks1_HomeLink 
+      href="http://www.cnblogs.com/">博客园</A><IMG id=Header1_MyLinks1_Divider1 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/WinXP-Olive_Divider.gif" 
+      align=absMiddle> <A id=Header1_MyLinks1_MyHomeLink 
+      href="http://www.cnblogs.com/lovecherry/">首页</A><IMG 
+      id=Header1_MyLinks1_Image1 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/WinXP-Olive_Divider.gif" 
+      align=absMiddle> <A id=Header1_MyLinks1_NewPostLink 
+      href="http://www.cnblogs.com/lovecherry/admin/EditPosts.aspx?opt=1">新随笔</A><IMG 
+      id=Header1_MyLinks1_Image2 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/WinXP-Olive_Divider.gif" 
+      align=absMiddle> <A id=Header1_MyLinks1_ContactLink accessKey=9 
+      href="http://space.cnblogs.com/msg/send/lovecherry">联系</A><IMG 
+      id=Header1_MyLinks1_Divider2 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/WinXP-Olive_Divider.gif" 
+      align=absMiddle> <A id=Header1_MyLinks1_Syndication 
+      href="http://www.cnblogs.com/lovecherry/rss" target=_blank>订阅</A><IMG 
+      id=Header1_MyLinks1_Divider3 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/WinXP-Olive_Divider.gif" 
+      align=absMiddle> <!--<a id="Header1_MyLinks1_Syndication2" href="../../../../../Atom.aspx" target="_blank">Syndicate this Site (Atom)</a><img id="Header1_MyLinks1_Divider6" src="../../../../../Skins/WinXPOlive/Images/WinXP-Olive_Divider.gif" align="absmiddle" style="border-width:0px;" />
+<a id="Header1_MyLinks1_XMLLink" class="XMLLink" href="http://www.cnblogs.com/lovecherry/rss" target="_blank"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" style="border-width:0px;" /></a>--><A 
+      id=Header1_MyLinks1_Admin 
+      href="http://www.cnblogs.com/lovecherry/admin/EditPosts.aspx">管理</A><IMG 
+      id=Header1_MyLinks1_Divider5 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/WinXP-Olive_Divider.gif" 
+      align=absMiddle> </TD>
+    <TD class=HeaderBarTabBack noWrap width="100%">
+      <DIV class=BlogStatsBar>
+      <TABLE class=BlogStatsBar>
+        <TBODY>
+        <TR>
+          <TD width="100%"></TD>
+          <TD class=BlogStatsBar noWrap>&nbsp; 200 Posts&nbsp;:: 0 Stories :: 
+            3066 Comments :: 656 Trackbacks 
+  </TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id=leftmenu style="DISPLAY: none">
+<H3>公告</H3>
+<DIV class=News><BR><SPAN 
+style="FONT-SIZE: 12pt">MSN:lovecherry_1983@hotmail.com<BR></SPAN><A 
+href="https://mvp.support.microsoft.com/profile/Ye.Zhu" target=_blank><IMG 
+height=144 alt="" 
+src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/o_MVP_NewLogo.jpg" 
+width=92 border=0></A> <A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/06/18/788171.html"><IMG 
+height=192 alt="" 
+src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/aspnet.jpg" 
+width=150></A>
+<SCRIPT language=javascript> 
+//设置广告块 
+var divLeft=0;
+var divTop=-100;
+var divWidth=100;
+var divHeight=100;
+var divImg="http://images.cnblogs.com/cnblogs_com/lovecherry/aspnet.jpg"; 
+var divUrl="http://www.cnblogs.com/lovecherry/archive/2007/06/18/788171.html";
+var divTitle=""; 
+document.write("<DIV id=\"adDiv\" style=\"position:absolute; left:"+divLeft); 
+document.write("px; top:"+divTop+"px; width:"+divWidth+"px; height:"+divHeight); 
+document.write("px; z-index:1;\" onMouseOver=\"javascript:window.clearInterval(varId)\""); 
+document.write(" onMouseOut=\"javascript:beginMoveAd();\"><a target=\"_blank\" href=\""+divUrl+"\">"); 
+document.write("<img width=75 height=96 src=\""+divImg+"\" border=\"0\" alt=\""+divTitle+"\" /></a></DIV>") 
+var _stepx=1;_stepy=1; 
+var moveSpeed=40;
+var varId; 
+function moveAd(){ 
+var adLeft=parseInt(adDiv.style.left); 
+var adTop=parseInt(adDiv.style.top); 
+var adWidth=parseInt(adDiv.style.width); 
+var adHeight=parseInt(adDiv.style.height) 
+var _bodyLeft=document.body.scrollLeft; 
+var _bodyTop=document.body.scrollTop; 
+var _bodyHeight=document.body.clientHeight+_bodyTop; 
+var _bodyWidth=document.body.clientWidth+_bodyLeft; 
+if(adLeft<=_bodyLeft){ 
+_stepx=2; 
+} 
+if(adTop<=_bodyTop){ 
+_stepy=0; 
+} 
+if((adLeft+adWidth)>=_bodyWidth){ 
+_stepx=-2 
+} 
+if((adTop+adHeight)>=_bodyHeight){ 
+_stepy=0
+} 
+adDiv.style.left=adLeft+_stepx; 
+adDiv.style.top=adTop+_stepy; 
+} 
+function beginMoveAd(){
+varId=window.setInterval("moveAd()",moveSpeed) ;
+} 
+window.onload=beginMoveAd;
+</SCRIPT>
+ 
+<DIV id=profile_block><A href="http://home.cnblogs.com/lovecherry/" 
+target=_blank>我的主页</A>&nbsp; <A 
+href="http://home.cnblogs.com/lovecherry/detail/" target=_blank>个人资料</A><BR><A 
+href="http://home.cnblogs.com/lovecherry/ing/" target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/lovecherry" 
+target=_blank>发短消息</A></DIV></DIV>
+<SCRIPT type=text/javascript>
+var blogapp = 'lovecherry';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/lovecherry/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/lovecherry/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/lovecherry/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/lovecherry/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/lovecherry/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/lovecherry/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/lovecherry/tag/">我的标签</A> </LI></UL></DIV>
+<H3 class=catListTitle>我参与的团队</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1__3a86a94_TeamList_ctl01_lnkTeam 
+  href="http://team.cnblogs.com/DesignPattern/">Design &amp; Pattern团队(0/0)</A> 
+  <LI><A id=SingleColumn1__3a86a94_TeamList_ctl02_lnkTeam 
+  href="http://team.cnblogs.com/DotNetControls/">.NET 控件与组件开发(0/0)</A> 
+  <LI><A id=SingleColumn1__3a86a94_TeamList_ctl03_lnkTeam 
+  href="http://team.cnblogs.com/BJDotNetClub/">北京.NET俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn1__3a86a94_TeamList_ctl04_lnkTeam 
+  href="http://team.cnblogs.com/mvpteam/">MVP(微软最有价值专家)团队(0/0)</A> 
+  <LI><A id=SingleColumn1__3a86a94_TeamList_ctl05_lnkTeam 
+  href="http://team.cnblogs.com/fwdesign/">框架设计团队(0/0)</A> </LI></UL></DIV>
+<H3>随笔分类<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(203)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to .net 3.5(19)" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/103176.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/lovecherry/category/103176.html">.net 3.5(19)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to .NET 4.0(1)" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/205954.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/lovecherry/category/205954.html">.NET 4.0(1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to Design Pattern(23)" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/108156.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/lovecherry/category/108156.html">Design 
+  Pattern(23)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to sql" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/103458.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/lovecherry/category/103458.html">sql</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to webform(91)" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/20742.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/lovecherry/category/20742.html">webform(91)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to webservice&amp;remoting&amp;WCF(15)" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/20743.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/lovecherry/category/20743.html">webservice&amp;remoting&amp;WCF(15)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to winform(4)" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/20744.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/lovecherry/category/20744.html">winform(4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to 翻译文章(13)" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/25564.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/lovecherry/category/25564.html">翻译文章(13)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink 
+  title="Subscribe to 非技术(17)" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/20745.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/lovecherry/category/20745.html">非技术(17)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink 
+  title="Subscribe to 构架相关(5)" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/112382.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/lovecherry/category/112382.html">构架相关(5)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink 
+  title="Subscribe to 其他(15)" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/20746.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/lovecherry/category/20746.html">其他(15)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink 
+  title="Subscribe to 英文" 
+  onclick="open_link('http://www.cnblogs.com/lovecherry/category/112124.html/rss');return false;" 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html###"><IMG 
+  src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/xml.gif" align=center 
+  border=0></A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/lovecherry/category/112124.html">英文</A> </LI></UL>
+<H3>随笔档案<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(193)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2010/04.html">2010年4月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2010/02.html">2010年2月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2009/08.html">2009年8月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2009/07.html">2009年7月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2009/05.html">2009年5月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2009/03.html">2009年3月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2009/01.html">2009年1月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2008/12.html">2008年12月 (3)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2008/11.html">2008年11月 (1)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2008/10.html">2008年10月 (1)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2008/09.html">2008年9月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2008/08.html">2008年8月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2008/06.html">2008年6月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2008/05.html">2008年5月 (5)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2008/04.html">2008年4月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2008/03.html">2008年3月 (5)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2008/01.html">2008年1月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/12.html">2007年12月 (1)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/11.html">2007年11月 (4)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl20_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/10.html">2007年10月 
+  (25)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl21_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/09.html">2007年9月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl22_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08.html">2007年8月 (11)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl23_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/07.html">2007年7月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl24_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/06.html">2007年6月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl25_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/05.html">2007年5月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl26_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/04.html">2007年4月 (6)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl27_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/02.html">2007年2月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl28_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/12.html">2006年12月 (1)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl29_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/11.html">2006年11月 (2)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl30_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/10.html">2006年10月 (3)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl31_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/09.html">2006年9月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl32_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/08.html">2006年8月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl33_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/07.html">2006年7月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl34_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/06.html">2006年6月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl35_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/05.html">2006年5月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl36_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/04.html">2006年4月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl37_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/03.html">2006年3月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl38_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/01.html">2006年1月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl39_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/12.html">2005年12月 (4)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl40_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/11.html">2005年11月 (2)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl41_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/10.html">2005年10月 (2)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl42_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/09.html">2005年9月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl43_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/07.html">2005年7月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl44_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/06.html">2005年6月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl45_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/05.html">2005年5月 (18)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl46_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/04.html">2005年4月 (28)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl47_Link 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/03.html">2005年3月 (21)</A> 
+  </LI></UL>
+<H3>相册</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/lovecherry/gallery/21836.html">csdn记录</A> 
+</LI></UL>
+<H3>友情链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/lovecindywang/">lovecindywang</A> </LI></UL>
+<H3>积分与排名</H3>
+<UL>
+  <LI>积分 - 1317797 
+  <LI>排名 - 17 </LI></UL>
+<H3 class=catListTitle>最新评论 <A id=SingleColumn1__2bc5653_RSSHyperlink1 
+href="http://www.cnblogs.com/lovecherry/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="C:\Documents and Settings\Administrator\桌面\linq\一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files\xml(1).gif"></A></H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2bc5653_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/17/859826.html#1822684">1.&nbsp;Re:一步一步学Linq 
+  to sql（四）：查询句法</A> 
+  <LI style="WORD-BREAK: break-all">不错，收藏了 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--PointNet 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2bc5653_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1822659">2.&nbsp;Re:一步一步学Linq 
+  to sql（一）：预备知识</A> 
+  <LI style="WORD-BREAK: break-all">让编译器做更多的事情，会不会编译很慢啊 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--PointNet 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2bc5653_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1821477">3.&nbsp;Re:一步一步学Linq 
+  to sql（一）：预备知识</A> 
+  <LI style="WORD-BREAK: break-all">顶。。希望以后再接再厉发表更多的好文章！ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--小毕 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2bc5653_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/13/853754.html#1817850">4.&nbsp;Re:（原创）一步一步学Linq 
+  to sql系列文章</A> 
+  <LI style="WORD-BREAK: break-all">支持了。。 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--邹泽栋 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2bc5653_CommentList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/05/19/158784.html#1816907">5.&nbsp;Re:(原创)一步一步学Remoting之一：从简单开始</A> 
+
+  <LI style="WORD-BREAK: break-all">你的主机是同时充当客户端和服务器吧我把代码放在两台主机上端口信息是：查看端口信息： 
+  TCP 192.168.1.108:9999(local) 192.168.1.105:4070... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--T_cookie 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2bc5653_CommentList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/10/28/940555.html#1815615">6.&nbsp;Re:不要迷失在技术的海洋中</A> 
+
+  <LI 
+  style="WORD-BREAK: break-all">不管做什么，都要有一个好的心态，适当的给自己些压力，让自己每天都有些收获，而不是每天在打晕。不要抱怨，不要发牢骚。那样是在欺骗自己，浪费自己。同时要注重自己各方面的综合发展。而不是钻进去出不来。记住，... 
+
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--一生有you 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2bc5653_CommentList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/05/19/158784.html#1813142">7.&nbsp;Re:(原创)一步一步学Remoting之一：从简单开始</A> 
+
+  <LI style="WORD-BREAK: break-all">这个文章很通俗，谢谢博主啊。正在学Remoting、、、 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--zhumingyang 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2bc5653_CommentList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/16/858009.html#1811217">8.&nbsp;Re:一步一步学Linq 
+  to sql（三）：增删改</A> 
+  <LI style="WORD-BREAK: break-all">请问下gb.ID = 
+  Guid.NewGuid();怎么能将一个方法赋值给一个字段嫩呢，应该会报类型转换的错误吧。还有问下 ctx.tbGuestBooks.Add(gb); 
+  这个Add()方法引用的... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--失落感动 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2bc5653_CommentList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/10/05/914653.html#1799171">9.&nbsp;Re:（原创）无废话C#设计模式之二：Singleton</A> 
+
+  <LI style="WORD-BREAK: break-all">@angellinby 加这个关键字才能实现单态呀 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--爱吃猫的老鼠 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2bc5653_CommentList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2010/04/01/1701997.html#1792929">10.&nbsp;Re:httpmodule和httphandler配合的又一应用——合并脚本样式</A> 
+
+  <LI style="WORD-BREAK: break-all">功能很全 压缩 精简 过滤器 缓存 修改监视 
+  都有了，我直接在这个基础上再加上一些自己需要的功能 顺便把webclient下载远程资源改为异步方式 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--lovecherry </LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/07/02/440840.html">1.&nbsp;【翻译】Scott 
+  Mitchell的ASP.NET2.0数据指南中文版索引(68045)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/03/25/125519.html">2.&nbsp;(原创)datagrid数据导出到excel文件给客户端下载的几种方法 
+  (48628)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/13/853754.html">3.&nbsp;（原创）一步一步学Linq 
+  to sql系列文章(43669)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/04/13/136523.html">4.&nbsp;(下载)C#设计模式电子书(包括示例)和ASP.NET服务器控件与组件开发 
+  (30763)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html">5.&nbsp;一步一步学Linq 
+  to sql（一）：预备知识(29313)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/06/20/430040.html">6.&nbsp;Scott 
+  Mitchell的ASP.NET2.0教程(25597)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/03/25/125525.html">7.&nbsp;(原创)DataGrid和DropDownList的一些配合以及使用css定制DataGrid 
+  (25516)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/12/05/291092.html">8.&nbsp;（翻译）怎么在ASP.NET 
+  2.0中使用Membership(23715)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/03/25/125487.html">9.&nbsp;(原创)代码分析－DataGrid实现增删（带提示）改和分页 
+  (23673)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/08/15/856977.html">10.&nbsp;一步一步学Linq 
+  to sql（二）：DataContext与实体(21394)</A> </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/07/02/440840.html">1.&nbsp;【翻译】Scott 
+  Mitchell的ASP.NET2.0数据指南中文版索引(217)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/06/18/788171.html">2.&nbsp;清华大学出版社《ASP.NET第一步—基于C#和ASP.NET 
+  2.0》试读&amp;出版(192)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/10/28/940555.html">3.&nbsp;不要迷失在技术的海洋中(142)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/03/25/125519.html">4.&nbsp;(原创)datagrid数据导出到excel文件给客户端下载的几种方法 
+  (106)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2006/06/20/430040.html">5.&nbsp;Scott 
+  Mitchell的ASP.NET2.0教程(95)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/04/13/136523.html">6.&nbsp;(下载)C#设计模式电子书(包括示例)和ASP.NET服务器控件与组件开发 
+  (91)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/03/25/125525.html">7.&nbsp;(原创)DataGrid和DropDownList的一些配合以及使用css定制DataGrid 
+  (71)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2008/06/18/1224496.html">8.&nbsp;大型互联网网站架构心得之一：分(71)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2007/11/02/947321.html">9.&nbsp;是什么限制了我们面向对象（的开发）(65)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/lovecherry/archive/2005/03/25/125487.html">10.&nbsp;(原创)代码分析－DataGrid实现增删（带提示）改和分页 
+  (62)</A> </LI></UL></DIV></DIV>
+<DIV id=main>
+<DIV class=post>
+<DIV class=postTitle><A id=ctl03_TitleUrl 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html">一步一步学Linq 
+to sql（一）：预备知识</A> </DIV>
+<DIV class=postText>
+<P>&nbsp;<STRONG style="mso-bidi-font-weight: normal"><SPAN 
+lang=EN-US><O:P>&nbsp;</O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">什么是</SPAN><SPAN 
+lang=EN-US>Linq to sql<O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Linq to 
+sql</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">（或者叫</SPAN><SPAN 
+lang=EN-US>DLINQ</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">）是</SPAN><SPAN 
+lang=EN-US>LINQ</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">（</SPAN><SPAN 
+lang=EN-US>.NET</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">语言集成查询）的一部分，全称基于关系数据的</SPAN><SPAN 
+lang=EN-US> .NET </SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">语言集成查询，用于以对象形式管理关系数据，并提供了丰富的查询功能，它和</SPAN><SPAN 
+lang=EN-US>Linq to xml</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">、</SPAN><SPAN 
+lang=EN-US>Linq to objects</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">、</SPAN><SPAN 
+lang=EN-US>Linq to dataset</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">、</SPAN><SPAN 
+lang=EN-US>Linq to entities</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">等组成了强大的</SPAN><SPAN 
+lang=EN-US>LINQ</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">。</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">要学好</SPAN><SPAN 
+lang=EN-US>LINQ</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">查询语法，就不得不先理解</SPAN><SPAN 
+lang=EN-US>C# 3.0</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的一些新特性，下面一一简单介绍。</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">隐含类型局部变量</SPAN><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P>
+<P>
+<TABLE class=MsoTableGrid 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 1pt solid; WIDTH: 426.1pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 1pt solid; mso-border-alt: solid windowtext .5pt" 
+    vAlign=top width=568>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">var</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      age = 26;<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">var</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      username = <SPAN 
+      style="COLOR: #a31515">"zhuye"</SPAN>;<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">var</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      userlist = <SPAN style="COLOR: blue">new</SPAN> [] {<SPAN 
+      style="COLOR: #a31515">"a"</SPAN>,<SPAN 
+      style="COLOR: #a31515">"b"</SPAN>,<SPAN 
+      style="COLOR: #a31515">"c"</SPAN>};<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">foreach</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">(<SPAN 
+      style="COLOR: blue">var</SPAN> user <SPAN style="COLOR: blue">in</SPAN> 
+      userlist)<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Console</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">.WriteLine(user);<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><V:SHAPETYPE 
+      id=_x0000_t75 coordsize="21600,21600" o:spt="75" o:preferrelative="t" 
+      path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f"><V:STROKE 
+      joinstyle="miter"></V:STROKE><V:FORMULAS><V:F 
+      eqn="if lineDrawn pixelLineWidth 0"></V:F><V:F eqn="sum @0 1 0"></V:F><V:F 
+      eqn="sum 0 0 @1"></V:F><V:F eqn="prod @2 1 2"></V:F><V:F 
+      eqn="prod @3 21600 pixelWidth"></V:F><V:F 
+      eqn="prod @3 21600 pixelHeight"></V:F><V:F eqn="sum @0 0 1"></V:F><V:F 
+      eqn="prod @6 1 2"></V:F><V:F eqn="prod @7 21600 pixelWidth"></V:F><V:F 
+      eqn="sum @8 21600 0"></V:F><V:F eqn="prod @7 21600 pixelHeight"></V:F><V:F 
+      eqn="sum @10 21600 0"></V:F></V:FORMULAS><V:PATH o:extrusionok="f" 
+      gradientshapeok="t" o:connecttype="rect"></V:PATH><O:LOCK v:ext="edit" 
+      aspectratio="t"></O:LOCK></V:SHAPETYPE><V:SHAPE id=_x0000_i1025 
+      style="WIDTH: 14.25pt; HEIGHT: 37.5pt" type="#_x0000_t75"><V:IMAGEDATA 
+      src="file:///C:\DOCUME~1\yzhu\LOCALS~1\Temp\msohtml1\01\clip_image001.png" 
+      o:title=""></V:IMAGEDATA></V:SHAPE><O:P></O:P></SPAN></P></TD></TR></TBODY></TABLE></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">纯粹给懒人用的</SPAN><SPAN 
+lang=EN-US>var</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">关键字，告诉编译器（对于</SPAN><SPAN 
+lang=EN-US>CLR</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">来说，它是不会知道你是否使用了</SPAN><SPAN 
+lang=EN-US>var</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，苦力是编译器出的），你自己推断它的类型吧，我不管了。但是既然让编译器推断类型就必须声明的时候赋值，而且不能是</SPAN><SPAN 
+lang=EN-US>null</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">值。注意，这只能用于局部变量，用于字段是不可以的。</SPAN><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">匿名类型</SPAN><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P>
+<P>
+<TABLE class=MsoTableGrid 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 1pt solid; WIDTH: 426.1pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 1pt solid; mso-border-alt: solid windowtext .5pt" 
+    vAlign=top width=568>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">var</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      data = <SPAN style="COLOR: blue">new</SPAN> {username = <SPAN 
+      style="COLOR: #a31515">"zhuye"</SPAN>,age = 26};<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Console</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">.WriteLine(<SPAN 
+      style="COLOR: #a31515">"username:{0} age:{1}"</SPAN>, data.username, 
+      data.age);<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><V:SHAPE 
+      id=_x0000_i1026 style="WIDTH: 132.75pt; HEIGHT: 11.25pt" 
+      type="#_x0000_t75"><V:IMAGEDATA 
+      src="file:///C:\DOCUME~1\yzhu\LOCALS~1\Temp\msohtml1\01\clip_image003.png" 
+      o:title=""></V:IMAGEDATA></V:SHAPE><O:P></O:P></SPAN></P></TD></TR></TBODY></TABLE></P>
+<P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">匿名类型允许开发人员定义行内类型，无须显式定义类型。常和</SPAN><SPAN 
+lang=EN-US>var</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">配合使用，</SPAN><SPAN 
+lang=EN-US>var</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">用于声明匿名类型。定义一个临时的匿名类型在</SPAN><SPAN 
+lang=EN-US>LINQ</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">查询句法中非常常见，我们可以很方便的实现对象的转换和投影。</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">扩展方法</SPAN><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P>
+<P>
+<TABLE class=MsoTableGrid 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 1pt solid; WIDTH: 426.1pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 1pt solid; mso-border-alt: solid windowtext .5pt" 
+    vAlign=top width=568>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">public</SPAN> <SPAN style="COLOR: blue">static</SPAN> 
+      <SPAN style="COLOR: blue">class</SPAN> <SPAN 
+      style="COLOR: #2b91af">helper<O:P></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: blue">public</SPAN> <SPAN style="COLOR: blue">static</SPAN> 
+      <SPAN style="COLOR: blue">string</SPAN> MD5Hash(<SPAN 
+      style="COLOR: blue">this</SPAN> <SPAN style="COLOR: blue">string</SPAN> 
+      s)<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">return</SPAN> System.Web.Security.<SPAN 
+      style="COLOR: #2b91af">FormsAuthentication</SPAN>.HashPasswordForStoringInConfigFile(s,<SPAN 
+      style="COLOR: #a31515">"MD5"</SPAN>);<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>}<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">public</SPAN> <SPAN 
+      style="COLOR: blue">static</SPAN> <SPAN style="COLOR: blue">bool</SPAN> 
+      In(<SPAN style="COLOR: blue">this</SPAN> <SPAN 
+      style="COLOR: blue">object</SPAN> o, <SPAN 
+      style="COLOR: #2b91af">IEnumerable</SPAN> b)<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+      style="COLOR: blue">foreach</SPAN>(<SPAN style="COLOR: blue">object</SPAN> 
+      obj <SPAN style="COLOR: blue">in</SPAN> b)<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">if</SPAN>(obj==o)<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">return</SPAN> <SPAN 
+      style="COLOR: blue">true</SPAN>;<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>}<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">return</SPAN> <SPAN 
+      style="COLOR: blue">false</SPAN>;<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>}<SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">}<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: green; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">// 
+      </SPAN><SPAN 
+      style="FONT-SIZE: 9pt; COLOR: green; FONT-FAMILY: 宋体; mso-ascii-font-family: Consolas; mso-hansi-font-family: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">调用扩展方法</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: green; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Console</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">.WriteLine(<SPAN 
+      style="COLOR: #a31515">"123456"</SPAN>.MD5Hash());<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Console</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">.WriteLine(<SPAN 
+      style="COLOR: #a31515">"1"</SPAN>.In(<SPAN 
+      style="COLOR: blue">new</SPAN>[]{<SPAN 
+      style="COLOR: #a31515">"1"</SPAN>,<SPAN 
+      style="COLOR: #a31515">"2"</SPAN>,<SPAN 
+      style="COLOR: #a31515">"3"</SPAN>}));<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><V:SHAPE 
+      id=_x0000_i1027 style="WIDTH: 195pt; HEIGHT: 20.25pt" 
+      type="#_x0000_t75"><V:IMAGEDATA 
+      src="file:///C:\DOCUME~1\yzhu\LOCALS~1\Temp\msohtml1\01\clip_image005.png" 
+      o:title=""></V:IMAGEDATA></V:SHAPE><O:P></O:P></SPAN></P></TD></TR></TBODY></TABLE></P>
+<P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">很多时候我们需要对</SPAN><SPAN 
+lang=EN-US>CLR</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">类型进行一些操作，苦于无法扩展</SPAN><SPAN 
+lang=EN-US>CLR</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">类型的方法，只能创建一些</SPAN><SPAN 
+lang=EN-US>helper</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">方法，或者生成子类。扩展方法使得这些需求得意实现，同时也是实现</SPAN><SPAN 
+lang=EN-US>LINQ</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的基础。定义扩展方法需要注意，只能在静态类中定义并且是静态方法，如果扩展方法名和原有方法名发生冲突，那么扩展方法将失效。</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">自动属性</SPAN><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P>
+<P>
+<TABLE class=MsoTableGrid 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 1pt solid; WIDTH: 426.1pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 1pt solid; mso-border-alt: solid windowtext .5pt" 
+    vAlign=top width=568>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">public</SPAN> <SPAN style="COLOR: blue">class</SPAN> 
+      <SPAN style="COLOR: #2b91af">Person<O:P></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">public</SPAN> <SPAN 
+      style="COLOR: blue">string</SPAN> username { <SPAN 
+      style="COLOR: blue">get</SPAN>; <SPAN style="COLOR: blue">protected</SPAN> 
+      <SPAN style="COLOR: blue">set</SPAN>; }<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">public</SPAN> <SPAN 
+      style="COLOR: blue">int</SPAN> age { <SPAN style="COLOR: blue">get</SPAN>; 
+      <SPAN style="COLOR: blue">set</SPAN>; }<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">public</SPAN> 
+      Person()<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">this</SPAN>.username = <SPAN 
+      style="COLOR: #a31515">"zhuye"</SPAN>;<SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>}<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">}<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Person</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      p = <SPAN style="COLOR: blue">new</SPAN> <SPAN 
+      style="COLOR: #2b91af">Person</SPAN>();<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: green; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">//p.username 
+      = "aa";<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Console</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">.WriteLine(p.username);<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><O:P></O:P></SPAN></P></TD></TR></TBODY></TABLE></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">意义不是很大，纯粹解决机械劳动。编译器自动为你生成</SPAN><SPAN 
+lang=EN-US>get</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">、</SPAN><SPAN 
+lang=EN-US>set</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">操作以及字段，并且你不能使用字段也不能自定义</SPAN><SPAN 
+lang=EN-US>get</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">、</SPAN><SPAN 
+lang=EN-US>set</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">操作，不过你可以分别定义</SPAN><SPAN 
+lang=EN-US>get</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">和</SPAN><SPAN 
+lang=EN-US>set</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的访问级别。</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">对象初始化器</SPAN><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P>
+<P>
+<TABLE class=MsoTableGrid 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 1pt solid; WIDTH: 426.1pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 1pt solid; mso-border-alt: solid windowtext .5pt" 
+    vAlign=top width=568>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">public</SPAN> <SPAN style="COLOR: blue">class</SPAN> 
+      <SPAN style="COLOR: #2b91af">Person<O:P></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">public</SPAN> <SPAN 
+      style="COLOR: blue">string</SPAN> username { <SPAN 
+      style="COLOR: blue">get</SPAN>; <SPAN style="COLOR: blue">set</SPAN>; 
+      }<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">public</SPAN> <SPAN 
+      style="COLOR: blue">int</SPAN> age { <SPAN style="COLOR: blue">get</SPAN>; 
+      <SPAN style="COLOR: blue">set</SPAN>; }<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">public</SPAN> <SPAN 
+      style="COLOR: blue">override</SPAN> <SPAN 
+      style="COLOR: blue">string</SPAN><SPAN style="mso-spacerun: yes">&nbsp; 
+      </SPAN>ToString()<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+      style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">return</SPAN> <SPAN 
+      style="COLOR: blue">string</SPAN>.Format(<SPAN 
+      style="COLOR: #a31515">"username:{0} age:{1}"</SPAN>, <SPAN 
+      style="COLOR: blue">this</SPAN>.username, <SPAN 
+      style="COLOR: blue">this</SPAN>.age);<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>}<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">} 
+      <O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Person</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      p = <SPAN style="COLOR: blue">new</SPAN> <SPAN 
+      style="COLOR: #2b91af">Person</SPAN>() {username = <SPAN 
+      style="COLOR: #a31515">"zhuye"</SPAN>, age=26};<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Console</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">.WriteLine(p.ToString());<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><V:SHAPE 
+      id=_x0000_i1028 style="WIDTH: 131.25pt; HEIGHT: 9pt" 
+      type="#_x0000_t75"><V:IMAGEDATA 
+      src="file:///C:\DOCUME~1\yzhu\LOCALS~1\Temp\msohtml1\01\clip_image007.png" 
+      o:title=""></V:IMAGEDATA></V:SHAPE><O:P></O:P></SPAN></P></TD></TR></TBODY></TABLE></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">编译器会自动为你做</SPAN><SPAN 
+lang=EN-US>setter</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">操作，使得原本几行的属性赋值操作能在一行中完成。这里需要注意：</SPAN></P>
+<P class=MsoNormal 
+style="MARGIN-LEFT: 42pt; TEXT-INDENT: -21pt; LINE-HEIGHT: 150%; mso-list: l0 level1 lfo1; tab-stops: list 42.0pt"><SPAN 
+lang=EN-US 
+style="FONT-FAMILY: Wingdings; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><SPAN 
+style="mso-list: Ignore">l<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">允许只给一部分属性赋值，包括</SPAN><SPAN 
+lang=EN-US>internal</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">访问级别</SPAN></P>
+<P class=MsoNormal 
+style="MARGIN-LEFT: 42pt; TEXT-INDENT: -21pt; LINE-HEIGHT: 150%; mso-list: l0 level1 lfo1; tab-stops: list 42.0pt"><SPAN 
+lang=EN-US 
+style="FONT-FAMILY: Wingdings; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><SPAN 
+style="mso-list: Ignore">l<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">可以结合构造函数一起使用，并且构造函数初始化先于对象初始化器执行</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">集合初始化器</SPAN><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P>
+<P>
+<TABLE class=MsoTableGrid 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 1pt solid; WIDTH: 426.1pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 1pt solid; mso-border-alt: solid windowtext .5pt" 
+    vAlign=top width=568>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">public</SPAN> <SPAN style="COLOR: blue">class</SPAN> 
+      <SPAN style="COLOR: #2b91af">Person<O:P></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">public</SPAN> <SPAN 
+      style="COLOR: blue">string</SPAN> username { <SPAN 
+      style="COLOR: blue">get</SPAN>; <SPAN style="COLOR: blue">set</SPAN>; 
+      }<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">public</SPAN> <SPAN 
+      style="COLOR: blue">int</SPAN> age { <SPAN style="COLOR: blue">get</SPAN>; 
+      <SPAN style="COLOR: blue">set</SPAN>; }<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">public</SPAN> <SPAN 
+      style="COLOR: blue">override</SPAN> <SPAN 
+      style="COLOR: blue">string</SPAN><SPAN style="mso-spacerun: yes">&nbsp; 
+      </SPAN>ToString()<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+      style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">return</SPAN> <SPAN 
+      style="COLOR: blue">string</SPAN>.Format(<SPAN 
+      style="COLOR: #a31515">"username:{0} age:{1}"</SPAN>, <SPAN 
+      style="COLOR: blue">this</SPAN>.username, <SPAN 
+      style="COLOR: blue">this</SPAN>.age);<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>}<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">} 
+      <O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">var</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      persons = <SPAN style="COLOR: blue">new</SPAN> <SPAN 
+      style="COLOR: #2b91af">List</SPAN>&lt;<SPAN 
+      style="COLOR: #2b91af">Person</SPAN>&gt; {<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">new</SPAN> <SPAN style="COLOR: #2b91af">Person</SPAN> 
+      {username = <SPAN style="COLOR: #a31515">"a"</SPAN>, age=1}, 
+      <O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">new</SPAN> <SPAN style="COLOR: #2b91af">Person</SPAN> 
+      {username = <SPAN style="COLOR: #a31515">"b"</SPAN>, 
+      age=2}};<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">foreach</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">(<SPAN 
+      style="COLOR: blue">var</SPAN> p <SPAN style="COLOR: blue">in</SPAN> 
+      persons)<O:P></O:P></SPAN></P>
+      <P class=MsoNormal 
+      style="TEXT-INDENT: 18pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Console</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">.WriteLine(p.ToString());<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><V:SHAPE 
+      id=_x0000_i1029 style="WIDTH: 98.25pt; HEIGHT: 19.5pt" 
+      type="#_x0000_t75"><V:IMAGEDATA 
+      src="file:///C:\DOCUME~1\yzhu\LOCALS~1\Temp\msohtml1\01\clip_image009.png" 
+      o:title=""></V:IMAGEDATA></V:SHAPE><O:P></O:P></SPAN></P></TD></TR></TBODY></TABLE></P>
+<P class=MsoNormal style="TEXT-INDENT: 21pt; LINE-HEIGHT: 150%"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">编译器会自动为你做集合插入操作。如果你为</SPAN><SPAN 
+lang=EN-US>Hashtable</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">初始化的话就相当于使用了两个对象初始化器。</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+lang=EN-US>Lambda</SPAN></STRONG><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">表达式</SPAN><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P>
+<P>
+<TABLE class=MsoTableGrid 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 1pt solid; WIDTH: 426.1pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 1pt solid; mso-border-alt: solid windowtext .5pt" 
+    vAlign=top width=568>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">var</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      list = <SPAN style="COLOR: blue">new</SPAN> [] { <SPAN 
+      style="COLOR: #a31515">"aa"</SPAN>, <SPAN 
+      style="COLOR: #a31515">"bb"</SPAN>, <SPAN 
+      style="COLOR: #a31515">"ac"</SPAN> };<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">var</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      result = <SPAN style="COLOR: #2b91af">Array</SPAN>.FindAll(list, s =&gt; 
+      (s.IndexOf(<SPAN style="COLOR: #a31515">"a"</SPAN>) &gt; 
+      -1));<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">foreach</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      (<SPAN style="COLOR: blue">var</SPAN> v <SPAN 
+      style="COLOR: blue">in</SPAN> result)<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Console</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">.WriteLine(v);<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><V:SHAPE 
+      id=_x0000_i1030 style="WIDTH: 12pt; HEIGHT: 18.75pt" 
+      type="#_x0000_t75"><V:IMAGEDATA 
+      src="file:///C:\DOCUME~1\yzhu\LOCALS~1\Temp\msohtml1\01\clip_image011.png" 
+      o:title=""></V:IMAGEDATA></V:SHAPE><O:P></O:P></SPAN></P></TD></TR></TBODY></TABLE></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">其实和</SPAN><SPAN 
+lang=EN-US>2.0</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">中的匿名方法差不多，都是用于产生内联方法，只不过</SPAN><SPAN 
+lang=EN-US>Lambda</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">表达式的语法更为简洁。语法如下：</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>(</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">参数列表</SPAN><SPAN 
+lang=EN-US>) =&gt; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">表达式或者语句块</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">其中：</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">参数个数：可以有多个参数，一个参数，或者无参数。</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">表达式或者语句块：这部分就是我们平常写函数的实现部分（函数体）。</SPAN></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">前面的示例分别是</SPAN><SPAN 
+lang=EN-US>1</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">个参数的例子，下面结合扩展方法来一个复杂的例子：</SPAN></P>
+<P>
+<TABLE class=MsoTableGrid 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 1pt solid; WIDTH: 426.1pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 1pt solid; mso-border-alt: solid windowtext .5pt" 
+    vAlign=top width=568>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">public</SPAN> <SPAN 
+      style="COLOR: blue">delegate</SPAN> <SPAN style="COLOR: blue">int</SPAN> 
+      <SPAN style="COLOR: #2b91af">mydg</SPAN>(<SPAN 
+      style="COLOR: blue">int</SPAN> a, <SPAN style="COLOR: blue">int</SPAN> 
+      b);<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">public</SPAN> <SPAN style="COLOR: blue">static</SPAN> 
+      <SPAN style="COLOR: blue">class</SPAN> <SPAN 
+      style="COLOR: #2b91af">LambdaTest<O:P></O:P></SPAN></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">public</SPAN> <SPAN 
+      style="COLOR: blue">static</SPAN> <SPAN style="COLOR: blue">int</SPAN> 
+      oper(<SPAN style="COLOR: blue">this</SPAN> <SPAN 
+      style="COLOR: blue">int</SPAN> a, <SPAN style="COLOR: blue">int</SPAN> b, 
+      <SPAN style="COLOR: #2b91af">mydg</SPAN> dg)<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>{<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN><SPAN style="COLOR: blue">return</SPAN> dg(a, 
+      b);<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>}<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>}<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Console</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">.WriteLine(1.oper(2, 
+      (a, b) =&gt; a + b));<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: #2b91af; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">Console</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">.WriteLine(2.oper(1, 
+      (a, b) =&gt; a - b));<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US><V:SHAPE 
+      id=_x0000_i1031 style="WIDTH: 7.5pt; HEIGHT: 22.5pt" 
+      type="#_x0000_t75"><V:IMAGEDATA 
+      src="file:///C:\DOCUME~1\yzhu\LOCALS~1\Temp\msohtml1\01\clip_image013.png" 
+      o:title=""></V:IMAGEDATA></V:SHAPE></SPAN></P></TD></TR></TBODY></TABLE></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">查询句法</SPAN><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P>
+<P>
+<TABLE class=MsoTableGrid 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 1pt solid; WIDTH: 426.1pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 1pt solid; mso-border-alt: solid windowtext .5pt" 
+    vAlign=top width=568>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">var</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      persons = <SPAN style="COLOR: blue">new</SPAN> <SPAN 
+      style="COLOR: #2b91af">List</SPAN>&lt;<SPAN 
+      style="COLOR: #2b91af">Person</SPAN>&gt; {<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">new</SPAN> <SPAN style="COLOR: #2b91af">Person</SPAN> 
+      {username = <SPAN style="COLOR: #a31515">"a"</SPAN>, age=19}, 
+      <O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">new</SPAN> <SPAN style="COLOR: #2b91af">Person</SPAN> 
+      {username = <SPAN style="COLOR: #a31515">"b"</SPAN>, 
+      age=20},<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: blue">new</SPAN> <SPAN style="COLOR: #2b91af">Person</SPAN> 
+      {username = <SPAN style="COLOR: #a31515">"a"</SPAN>, age=21}, 
+      <O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+      </SPAN>};<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">var</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      selectperson = <SPAN style="COLOR: blue">from</SPAN> p <SPAN 
+      style="COLOR: blue">in</SPAN> persons <SPAN 
+      style="COLOR: blue">where</SPAN> p.age &gt;= 20 <SPAN 
+      style="COLOR: blue">select</SPAN> 
+      p.username.ToUpper();<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: left; mso-layout-grid-align: none" 
+      align=left><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">foreach</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">(<SPAN 
+      style="COLOR: blue">var</SPAN> p <SPAN style="COLOR: blue">in</SPAN> 
+      selectperson)<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+      style="COLOR: #2b91af">Console</SPAN>.WriteLine(p);<O:P></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"><V:SHAPE 
+      id=_x0000_i1032 style="WIDTH: 6.75pt; HEIGHT: 21.75pt" 
+      type="#_x0000_t75"><V:IMAGEDATA 
+      src="file:///C:\DOCUME~1\yzhu\LOCALS~1\Temp\msohtml1\01\clip_image015.png" 
+      o:title=""></V:IMAGEDATA></V:SHAPE><O:P></O:P></SPAN></P></TD></TR></TBODY></TABLE></P>
+<P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">查询句法是使用标准的</SPAN><SPAN 
+lang=EN-US>LINQ</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">查询运算符来表达查询时一个方便的声明式简化写法。该句法能在代码里表达查询时增进可读性和简洁性，读起来容易，也容易让人写对。</SPAN><SPAN 
+lang=EN-US>Visual Studio </SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">对查询句法提供了完整的智能感应和编译时检查支持。编译器在底层把查询句法的表达式翻译成明确的方法调用代码，代码通过新的扩展方法和</SPAN><SPAN 
+lang=EN-US>Lambda</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">表达式语言特性来实现。上面的查询句法等价于下面的代码：</SPAN></P>
+<P>
+<TABLE class=MsoTableGrid 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 1pt solid; WIDTH: 426.1pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 1pt solid; mso-border-alt: solid windowtext .5pt" 
+    vAlign=top width=568>
+      <P class=MsoNormal style="LINE-HEIGHT: 150%"><SPAN lang=EN-US 
+      style="FONT-SIZE: 9pt; COLOR: blue; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes">var</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Consolas; mso-font-kerning: 0pt; mso-no-proof: yes"> 
+      selectperson = 
+      persons.Where(p=&gt;p.age&gt;=20).Select(p=&gt;p.username.ToUpper());</SPAN></P></TD></TR></TBODY></TABLE></P>
+<P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US>LINQ</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">查询句法可以实现</SPAN><SPAN 
+lang=EN-US>90</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">％以上</SPAN><SPAN 
+lang=EN-US>T-SQL</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的功能（由于</SPAN><SPAN 
+lang=EN-US>T-SQL</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">是基于二维表的，所以</SPAN><SPAN 
+lang=EN-US>LINQ</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的查询语法会比</SPAN><SPAN 
+lang=EN-US>T-SQL</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">更简单和灵活），但是由于智能感应的原因，</SPAN><SPAN 
+lang=EN-US>select</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">不能放在一开始就输入。</SPAN></P>
+<P class=MsoNormal style="TEXT-INDENT: 18pt; LINE-HEIGHT: 150%"><SPAN 
+lang=EN-US></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">今天就说到这里，再见！</SPAN></P>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/lovecherry/" 
+target=_blank><IMG class=author_avatar alt="" 
+src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/u6839.jpg"></A> 
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/lovecherry/" 
+target=_blank>lovecherry</A><BR>关注 - 1<BR>粉丝 - 30<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(855681,10191,1)><SPAN class=diggnum 
+id=digg_count_855681>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(855681,10191,2)><SPAN class=burynum 
+id=bury_count_855681>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_855681 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_855681>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/13/853754.html">« 
+</A>上一篇：<A title="发布于2007-08-13 15:03" 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/13/853754.html">（原创）一步一步学Linq 
+to sql系列文章</A><BR><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/15/856977.html">» 
+</A>下一篇：<A title="发布于2007-08-15 17:24" 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/15/856977.html">一步一步学Linq 
+to sql（二）：DataContext与实体</A><BR></DIV>
+<SCRIPT 
+src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '8a97310b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+</DIV>
+<DIV class=postfoot>posted on 2007-08-14 18:07 <A 
+href="http://www.cnblogs.com/lovecherry/">lovecherry</A> 阅读(29313) <A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">评论(41)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/lovecherry/admin/EditPosts.aspx?postid=855681">编辑</A> 
+<A onclick="AddToWz(855681);return false;" 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#">收藏</A> 
+所属分类: <A 
+href="http://www.cnblogs.com/lovecherry/category/20742.html">webform</A>, <A 
+href="http://www.cnblogs.com/lovecherry/category/103176.html">.net 3.5</A> 
+</DIV></DIV><IMG height=1 
+src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/855681.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html"
+dc:identifier="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/lovecherry/services/trackbacks/855681.aspx" />
+</rdf:RDF>
+--><A name=pagedcomment></A><A name=feedback><BR>
+<DIV id=comments>
+<H3>Feedback</H3><SPAN id=span_comment_maxid 
+style="DISPLAY: none">1822659</SPAN> 
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#855757">#1楼</A><A 
+id=comment_anchor_855757 name=855757></A> <SPAN>2007-08-14 19:43 </SPAN><A 
+id=Comments1_CommentList_ctl00_NameLink target=_blank>wooooo[未注册用户]</A> </DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_855757>var..成js了？？ @,@</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("wooooo",855757,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(855757,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#855761">#2楼</A><A 
+id=comment_anchor_855761 name=855761></A> <SPAN>2007-08-14 19:49 </SPAN><A 
+id=Comments1_CommentList_ctl01_NameLink href="http://www.cnblogs.com/beyondjay/" 
+target=_blank>beyondjay</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/beyondjay">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_855761>和楼主打过一次电话，那时候楼主还在Uxxsoft吧，嘿嘿，我本来去面试得，后来没成行。</SPAN> 
+<BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("beyondjay",855761,"Wd4/4gVVGi4xQiCjd3EaDbEIG2OTF9VrKhle0xrtYI7VXMr/d5gNFg==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(855761,"Wd4/4gVVGi4xQiCjd3EaDbEIG2OTF9VrKhle0xrtYI7VXMr/d5gNFg==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=beyondjay" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#855771">#3楼</A><A 
+id=comment_anchor_855771 name=855771></A>[<SPAN class=louzhu>楼主</SPAN>] 
+<SPAN>2007-08-14 19:53 </SPAN><A id=Comments1_CommentList_ctl02_NameLink 
+href="http://www.cnblogs.com/lovecherry/" target=_blank>lovecherry</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/lovecherry">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_855771>现在我们公司也招人哦，发简历到 yzhu@magicgrids.com <BR>公司网站 
+www.qwd1.com</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("lovecherry",855771,"exBVS0XvotIDZKI44GTag4HcT+R5ZoKwmao9hubrDgtTGeLBRK+ZAA==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(855771,"exBVS0XvotIDZKI44GTag4HcT+R5ZoKwmao9hubrDgtTGeLBRK+ZAA==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=lovecherry" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#855798">#4楼</A><A 
+id=comment_anchor_855798 name=855798></A> <SPAN>2007-08-14 20:35 </SPAN><A 
+id=Comments1_CommentList_ctl03_NameLink target=_blank>zzticzh[未注册用户]</A> </DIV>
+<DIV class=postText><SPAN class=blog_comment_body id=comment_body_855798>不错 
+支持</SPAN> <BR>&nbsp;&nbsp;<A onclick='ReplyComment("zzticzh",855798,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(855798,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#855951">#5楼</A><A 
+id=comment_anchor_855951 name=855951></A> <SPAN>2007-08-14 22:55 </SPAN><A 
+id=Comments1_CommentList_ctl04_NameLink 
+href="http://www.cnitblog.com/r.aspx?url=http://www.sy555.com" target=_blank 
+rel=nofllow>sy555[未注册用户]</A> </DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_855951>楼主打过一次电话，那时候楼主还在Uxxsoft吧， 
+<BR>------------------------------------------------- <BR><A 
+href="http://www.sy555.com/" target=_new 
+rel=nofollow>http://www.sy555.com/</A></SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("sy555",855951,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(855951,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#856038">#6楼</A><A 
+id=comment_anchor_856038 name=856038></A> <SPAN>2007-08-15 00:02 </SPAN><A 
+id=Comments1_CommentList_ctl05_NameLink 
+href="http://www.cnblogs.com/antony1029/" target=_blank>antony.net</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/antony.net">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_856038>又有新作了啊！关注！</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("antony.net",856038,"0LWWkUcci2wwbEwJY2gTQ5OiN+XTXcrsMpAtkT0uDX+WtreajsfZ5g==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(856038,"0LWWkUcci2wwbEwJY2gTQ5OiN+XTXcrsMpAtkT0uDX+WtreajsfZ5g==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=antony.net" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl05_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl05$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl05_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#856089">#7楼</A><A 
+id=comment_anchor_856089 name=856089></A> <SPAN>2007-08-15 06:49 </SPAN><A 
+id=Comments1_CommentList_ctl06_NameLink href="http://www.cnblogs.com/jyk/" 
+target=_blank>金色海洋（jyk）</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/éè²æµ·æ´ï¼jykï¼">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_856089>这个东东和直接使用SQL有什么区别呢？难道学了那么多的SQL就没有用了吗？</SPAN> 
+<BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("金色海洋（jyk）",856089,"V/dqXdQi03KJPW4bw/RblbuLu8ua83uBRcqdAzW4GElUl56KjCE04Q==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(856089,"V/dqXdQi03KJPW4bw/RblbuLu8ua83uBRcqdAzW4GElUl56KjCE04Q==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e9%87%91%e8%89%b2%e6%b5%b7%e6%b4%8b%ef%bc%88jyk%ef%bc%89" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl06_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl06$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl06_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#856135">#8楼</A><A 
+id=comment_anchor_856135 name=856135></A> <SPAN>2007-08-15 08:53 </SPAN><A 
+id=Comments1_CommentList_ctl07_NameLink href="http://www.cnblogs.com/cangying/" 
+target=_blank>随风流月</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/éé£æµæ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_856135>@金色海洋（jyk） <BR>在高难度操作，或是高性能要求的情况下，T-SQL 还是有用的。 <BR>LINQ 
+提供的是面向对象的查询方式，你可以使用继承，关联或是其他的面向对象技巧。如果愿意自己写 Entity 代码，还可以使用接口之类的咚咚。 <BR>当然，DLINQ 
+还提供了持久化对象的功能，你可以让他们都变成可序列化的 :-) <BR></SPAN><BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("随风流月",856135,"T5WSHJ/dYFlClw57S/Jl5wyZQPpZ+ckv/pSEMWr3WrHnVLol9GVqWA==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(856135,"T5WSHJ/dYFlClw57S/Jl5wyZQPpZ+ckv/pSEMWr3WrHnVLol9GVqWA==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e9%9a%8f%e9%a3%8e%e6%b5%81%e6%9c%88" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl07_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl07$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl07_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#856221">#9楼</A><A 
+id=comment_anchor_856221 name=856221></A> <SPAN>2007-08-15 09:38 </SPAN><A 
+id=Comments1_CommentList_ctl08_NameLink href="http://www.cnblogs.com/wellay/" 
+target=_blank>张卫林</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å¼&nbsp;å«æ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_856221>认真学习中……</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("张卫林",856221,"VL+i9vkvevc7/F/WMh7pN7zgmzV81gzzlhinOWsKEzR8EvJZMMS8pw==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(856221,"VL+i9vkvevc7/F/WMh7pN7zgmzV81gzzlhinOWsKEzR8EvJZMMS8pw==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%bc%a0%e5%8d%ab%e6%9e%97" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl08_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl08$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl08_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#856226">#10楼</A><A 
+id=comment_anchor_856226 name=856226></A> <SPAN>2007-08-15 09:39 </SPAN><A 
+id=Comments1_CommentList_ctl09_NameLink 
+href="http://www.cnblogs.com/clarkzheng/" target=_blank>Clark Zheng</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Clark+Zheng">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_856226>不错，期待下篇！</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Clark Zheng",856226,"vw3z6Rgl6jgl2/1KgbYadkQ2VZfpCgb3UsqaE/GL2Oo3VAREt4MRfA==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(856226,"vw3z6Rgl6jgl2/1KgbYadkQ2VZfpCgb3UsqaE/GL2Oo3VAREt4MRfA==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Clark+Zheng" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl09_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl09$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl09_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#856325">#11楼</A><A 
+id=comment_anchor_856325 name=856325></A> <SPAN>2007-08-15 10:33 </SPAN><A 
+id=Comments1_CommentList_ctl10_NameLink 
+href="http://www.cnblogs.com/zhouyinhui/" target=_blank>周银辉</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å¨é¶è¾">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_856325>有相关书籍吗?</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("周银辉",856325,"6wrAZKGOIyXkPOlMmEb0u06FSn0oZ2BVtvmaruwrBUq7rCo85sV5Jw==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(856325,"6wrAZKGOIyXkPOlMmEb0u06FSn0oZ2BVtvmaruwrBUq7rCo85sV5Jw==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%91%a8%e9%93%b6%e8%be%89" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl10_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl10$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl10_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#856368">#12楼</A><A 
+id=comment_anchor_856368 name=856368></A>[<SPAN class=louzhu>楼主</SPAN>] 
+<SPAN>2007-08-15 10:56 </SPAN><A id=Comments1_CommentList_ctl11_NameLink 
+href="http://www.cnblogs.com/lovecherry/" target=_blank>lovecherry</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/lovecherry">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_856368>现在可能还买不到相关书籍</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("lovecherry",856368,"exBVS0XvotIDZKI44GTag4HcT+R5ZoKwmao9hubrDgtTGeLBRK+ZAA==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(856368,"exBVS0XvotIDZKI44GTag4HcT+R5ZoKwmao9hubrDgtTGeLBRK+ZAA==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=lovecherry" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl11_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl11$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl11_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#856992">#13楼</A><A 
+id=comment_anchor_856992 name=856992></A> <SPAN>2007-08-15 17:31 </SPAN><A 
+id=Comments1_CommentList_ctl12_NameLink 
+href="http://www.cnblogs.com/Alexander-Lee/" target=_blank>亚历山大同志</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/äºåå±±å¤§åå¿">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_856992>@lovecherry<BR>出书的赶紧了，先出本小册子，保证大卖</SPAN> 
+<BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("亚历山大同志",856992,"A0HWFeL2VzPLtePG9xKLxYe123aPyflYe0acI+TfojLceT0pSrwf3g==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(856992,"A0HWFeL2VzPLtePG9xKLxYe123aPyflYe0acI+TfojLceT0pSrwf3g==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e4%ba%9a%e5%8e%86%e5%b1%b1%e5%a4%a7%e5%90%8c%e5%bf%97" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl12_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl12$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl12_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#880172">#14楼</A><A 
+id=comment_anchor_880172 name=880172></A> <SPAN>2007-09-03 14:08 </SPAN><A 
+id=Comments1_CommentList_ctl13_NameLink href="http://www.cnblogs.com/jingtao/" 
+target=_blank>镜涛</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/éæ¶">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body id=comment_body_880172>学习中 
+</SPAN><BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("镜涛",880172,"tDHJw/kHYy3LElSJScyBrTtEkHqEEgbHmOB1qSuzaFIXbCFyOG79yw==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(880172,"tDHJw/kHYy3LElSJScyBrTtEkHqEEgbHmOB1qSuzaFIXbCFyOG79yw==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e9%95%9c%e6%b6%9b" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl13_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl13$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl13_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#970002">#15楼</A><A 
+id=comment_anchor_970002 name=970002></A> <SPAN>2007-11-23 15:33 </SPAN><A 
+id=Comments1_CommentList_ctl14_NameLink target=_blank>KG[未注册用户]</A> </DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_970002>老实说，上面的例子也只能当例子而已. 
+<BR>学开发要知所以然，lz写的并没有把细节写出来.只是把C#3.0,和linq的形式写出来而已.. 
+<BR></SPAN><BR>&nbsp;&nbsp;<A onclick='ReplyComment("KG",970002,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(970002,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl14_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl14$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl14_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#973677">#16楼</A><A 
+id=comment_anchor_973677 name=973677></A> <SPAN>2007-11-27 10:25 </SPAN><A 
+id=Comments1_CommentList_ctl15_NameLink target=_blank>sddsf[未注册用户]</A> </DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_973677>--引用-------------------------------------------------- 
+<BR>KG: 老实说，上面的例子也只能当例子而已. <BR>学开发要知所以然，lz写的并没有把细节写出来.只是把C#3.0,和linq的形式写出来而已.. 
+<BR><BR>-------------------------------------------------------- 
+<BR><BR><BR>形式都写出来了，所以然还不出来了？ <BR><BR>其实都很清楚了，这都是编译器做的功劳。</SPAN> 
+<BR>&nbsp;&nbsp;<A onclick='ReplyComment("sddsf",973677,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(973677,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl15_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl15$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl15_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#976677">#17楼</A><A 
+id=comment_anchor_976677 name=976677></A> <SPAN>2007-11-29 11:31 </SPAN><A 
+id=Comments1_CommentList_ctl16_NameLink target=_blank>游客[未注册用户]</A> </DIV>
+<DIV class=postText><SPAN class=blog_comment_body id=comment_body_976677>C# 3.0 
+锐利体验系列课程 的翻改,说的没错吧,楼主!</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("游客",976677,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(976677,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl16_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl16$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl16_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1094832">#18楼</A><A 
+id=comment_anchor_1094832 name=1094832></A> <SPAN>2008-03-07 11:40 </SPAN><A 
+id=Comments1_CommentList_ctl17_NameLink href="http://www.cnblogs.com/huacn/" 
+target=_blank>李华顺</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æåé¡º">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1094832>不错，基本看明白，并弄过了</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("李华顺",1094832,"sB46ostk/CQl946kkygsKkOtmrYKH7NTbZbCpaace57ZbL6YvSQDww==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1094832,"sB46ostk/CQl946kkygsKkOtmrYKH7NTbZbCpaace57ZbL6YvSQDww==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%9d%8e%e5%8d%8e%e9%a1%ba" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl17_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl17$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl17_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1116576">#19楼</A><A 
+id=comment_anchor_1116576 name=1116576></A> <SPAN>2008-03-21 15:43 </SPAN><A 
+id=Comments1_CommentList_ctl18_NameLink target=_blank>warewing[未注册用户]</A> </DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1116576>看到楼主的文章，似乎回忆起仿佛在WebCast里面听过楼主的课程。。。。</SPAN> 
+<BR>&nbsp;&nbsp;<A onclick='ReplyComment("warewing",1116576,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1116576,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl18_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl18$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl18_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1131932">#20楼</A><A 
+id=comment_anchor_1131932 name=1131932></A> <SPAN>2008-03-31 23:47 </SPAN><A 
+id=Comments1_CommentList_ctl19_NameLink target=_blank>raymon610[未注册用户]</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1131932>学习。。</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("raymon610",1131932,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1131932,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl19_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl19$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl19_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1151315">#21楼</A><A 
+id=comment_anchor_1151315 name=1151315></A> <SPAN>2008-04-13 15:59 </SPAN><A 
+id=Comments1_CommentList_ctl20_NameLink target=_blank>zhmvb[未注册用户]</A> </DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1151315>楼主的文章通俗容懂，简洁精炼，真是很好的学习资料</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("zhmvb",1151315,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1151315,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl20_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl20$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl20_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1174439">#22楼</A><A 
+id=comment_anchor_1174439 name=1174439></A> <SPAN>2008-04-28 12:53 </SPAN><A 
+id=Comments1_CommentList_ctl21_NameLink target=_blank>DrEdison[未注册用户]</A> </DIV>
+<DIV class=postText><SPAN class=blog_comment_body id=comment_body_1174439>支持一下楼主 
+的确不错啊！～</SPAN> <BR>&nbsp;&nbsp;<A onclick='ReplyComment("DrEdison",1174439,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1174439,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl21_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl21$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl21_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1203077">#23楼</A><A 
+id=comment_anchor_1203077 name=1203077></A> <SPAN>2008-05-19 17:41 </SPAN><A 
+id=Comments1_CommentList_ctl22_NameLink 
+href="http://www.cnblogs.com/linyechengwei/" 
+target=_blank>lichengwei</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/lichengwei">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1203077>学习了！！！！！！！！ <BR><BR>楼主也是搞.net开发的吗？</SPAN> 
+<BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("lichengwei",1203077,"lD5uAI8MslvDVElvgA6IWB70thkCMxYw/ETpxA+JQCLcyM3AM9CB4g==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1203077,"lD5uAI8MslvDVElvgA6IWB70thkCMxYw/ETpxA+JQCLcyM3AM9CB4g==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=lichengwei" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl22_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl22$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl22_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1329667">#24楼</A><A 
+id=comment_anchor_1329667 name=1329667></A> <SPAN>2008-09-29 16:18 </SPAN><A 
+id=Comments1_CommentList_ctl23_NameLink href="http://www.cnblogs.com/ljb8664/" 
+target=_blank>booer</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/booer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1329667>很好，支持。</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("booer",1329667,"9uwUKVGIJ+KIdZGMwJmzcx50FpyWPU/FeW2nOXcJDQ1TfjnlQ5oWng==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1329667,"9uwUKVGIJ+KIdZGMwJmzcx50FpyWPU/FeW2nOXcJDQ1TfjnlQ5oWng==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=booer" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl23_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl23$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl23_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1358227">#25楼</A><A 
+id=comment_anchor_1358227 name=1358227></A> <SPAN>2008-11-01 18:13 </SPAN><A 
+id=Comments1_CommentList_ctl24_NameLink 
+href="http://www.cnitblog.com/r.aspx?url=http://fsd" target=_blank 
+rel=nofllow>fsd[未注册用户]</A> </DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1358227>什么玩意啊</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("fsd",1358227,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1358227,"")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl24_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl24$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl24_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1361685">#26楼</A><A 
+id=comment_anchor_1361685 name=1361685></A> <SPAN>2008-11-05 11:17 </SPAN><A 
+id=Comments1_CommentList_ctl25_NameLink href="http://www.cnblogs.com/khler/" 
+target=_blank>He,YuanHui - khler</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/He,YuanHui+-+khler">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1361685>不错～～～～～～ <BR><BR></SPAN><BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("He,YuanHui - khler",1361685,"lGO6NlMAVha1PL626JMtt0kMYs1GSnduSJf8983hfDKLWnow8hb+ng==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1361685,"lGO6NlMAVha1PL626JMtt0kMYs1GSnduSJf8983hfDKLWnow8hb+ng==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=He%2cYuanHui+-+khler" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl25_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl25$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl25_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1430052">#27楼</A><A 
+id=comment_anchor_1430052 name=1430052></A> <SPAN>2009-01-13 16:11 </SPAN><A 
+id=Comments1_CommentList_ctl26_NameLink href="http://www.cnblogs.com/n12345b/" 
+target=_blank>N12345B</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/N12345B">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1430052>3.5的确让我们用更少的代码，实现更多的功能。</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("N12345B",1430052,"agl6QLtp11O5+xFH7Y7uj/y5MqwRGIcg0vQVqHk2UFPScdCRnAGMJw==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1430052,"agl6QLtp11O5+xFH7Y7uj/y5MqwRGIcg0vQVqHk2UFPScdCRnAGMJw==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=N12345B" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl26_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl26$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl26_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1617755">#28楼</A><A 
+id=comment_anchor_1617755 name=1617755></A> <SPAN>2009-08-18 09:16 </SPAN><A 
+id=Comments1_CommentList_ctl27_NameLink href="http://www.cnblogs.com/Kid-Wang/" 
+target=_blank>Kid Wang</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Kid+Wang">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1617755>雁过拔毛，哦不，雁过留声。</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Kid Wang",1617755,"lWDHya+wLElNEpfbMsqaOAesb5mNS2eDMYEajwcd9Wh8Kz71MvuIyg==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1617755,"lWDHya+wLElNEpfbMsqaOAesb5mNS2eDMYEajwcd9Wh8Kz71MvuIyg==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Kid+Wang" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl27_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl27$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl27_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1678762">#29楼</A><A 
+id=comment_anchor_1678762 name=1678762></A> <SPAN>2009-10-22 17:20 </SPAN><A 
+id=Comments1_CommentList_ctl28_NameLink href="http://www.cnblogs.com/deymmtd/" 
+target=_blank>幽境仼孓</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å¹½å¢ä»¼å&shy;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1678762>使用自动属性，我们失去了对变量进行判断的能力，而且两个要同时定义。</SPAN> 
+<BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("幽境仼孓",1678762,"VRWVH/lEmdKwV58XANJWnC47omiuwiuRZdYs2z74M7eQEAThZzIgCg==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1678762,"VRWVH/lEmdKwV58XANJWnC47omiuwiuRZdYs2z74M7eQEAThZzIgCg==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%b9%bd%e5%a2%83%e4%bb%bc%e5%ad%93" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl28_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl28$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl28_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1821477">#30楼</A><A 
+id=comment_anchor_1821477 name=1821477></A> <SPAN>2010-05-11 11:17 </SPAN><A 
+id=Comments1_CommentList_ctl29_NameLink href="http://home.cnblogs.com/66519/" 
+target=_blank>小毕</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å°æ¯">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1821477>顶。。希望以后再接再厉发表更多的好文章！</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("小毕",1821477,"pLsxdTR5AIh2ralNIx+ZkF85vlpzZCRfWR6/WyRhCuPvxXcIlUPC1w==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1821477,"pLsxdTR5AIh2ralNIx+ZkF85vlpzZCRfWR6/WyRhCuPvxXcIlUPC1w==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%b0%8f%e6%af%95" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl29_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl29$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl29_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#1822659">#31楼</A><A 
+id=comment_anchor_1822659 name=1822659></A><A name=Post></A> <SPAN>2010-05-12 
+14:48 </SPAN><A id=Comments1_CommentList_ctl30_NameLink 
+href="http://www.cnblogs.com/goody9807/" target=_blank>PointNet</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/PointNet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1822659>让编译器做更多的事情，会不会编译很慢啊</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("PointNet",1822659,"ae2Nbc/z6WJ7NG9y9WBXXNqBR1UWGQRhFecUOHyCCkFcO5N0oN49gg==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1822659,"ae2Nbc/z6WJ7NG9y9WBXXNqBR1UWGQRhFecUOHyCCkFcO5N0oN49gg==")' 
+href="http://www.cnblogs.com/lovecherry/archive/2007/08/14/855681.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=PointNet" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl30_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl30$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl30_EditLink></A> </DIV></DIV><BR></DIV>
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl04_comment_form>
+<DIV id=ctl04_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2flovecherry%2farchive%2f2007%2f08%2f14%2f855681.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2flovecherry%2farchive%2f2007%2f08%2f14%2f855681.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A class=site_hot 
+href="http://a4.yeshj.com/rd/35182/" target=_blank>有道难题开锣头奖8万！</A><BR><A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+href="http://news.cnblogs.com/n/64114/" target=_blank>关于商业模式的那些迷思</A><BR>· <A 
+href="http://news.cnblogs.com/n/64113/" target=_blank>诺基亚的“以人为本”</A><BR>· <A 
+href="http://news.cnblogs.com/n/64112/" target=_blank>Messenger等Windows Live 
+Wave 3最后一次升级 Live</A><BR>· <A href="http://news.cnblogs.com/n/64111/" 
+target=_blank>读者来信：互联网业将不再“以量取胜”</A><BR>· <A 
+href="http://news.cnblogs.com/n/64110/" target=_blank>HTML5 到底是什么？</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> &nbsp;<A 
+href="http://wz.cnblogs.com/" target=_blank>网摘</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+alt="" 
+src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=webform" target=_blank>webform</A> <A 
+href="http://zzk.cnblogs.com/s?w=.net+3.5" target=_blank>.net 3.5</A> </DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/855681/">一步一步学Linq to 
+sql（一）：预备知识</A></DIV></DIV></DIV>
+<P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" href="http://www.cnblogs.com/" 
+name=Hyperlink1>博客园</A> <BR>Copyright © lovecherry </P><!-- Start of StatCounter Code -->
+<SCRIPT type=text/javascript>
+var sc_project=2924848; 
+var sc_invisible=0; 
+var sc_partition=30; 
+var sc_security="8f71cf97"; 
+</SCRIPT>
+
+<SCRIPT src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/counter_xhtml.js" 
+type=text/javascript></SCRIPT>
+<NOSCRIPT></NOSCRIPT><!-- End of StatCounter Code -->
+<SCRIPT src="" type=text/javascript></SCRIPT>
+<NOSCRIPT><A href="http://tongji.cn.yahoo.com/"><IMG 
+src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/search_web.htm"></A></NOSCRIPT> 
+</FORM>
+<SCRIPT src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="一步一步学Linq to sql（一）：预备知识 - LoveCherry - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

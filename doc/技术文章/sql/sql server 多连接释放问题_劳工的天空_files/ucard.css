@@ -1,0 +1,144 @@
+.clearfix:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; LINE-HEIGHT: 0; HEIGHT: 0px; content: "."
+}
+UNKNOWN {
+	DISPLAY: inline-block; WIDTH: 100%
+}
+ HTML .clearfix {
+	HEIGHT: 1%
+}
+UNKNOWN {
+	MIN-HEIGHT: 1%
+}
+#tangram_ucard {
+	BORDER-TOP: #989898 1px solid; FONT-SIZE: 12px; Z-INDEX: 10000; BACKGROUND: url(http://img.baidu.com/hi/img/ucard/ucardbg.gif) right bottom; BORDER-LEFT: #989898 1px solid; COLOR: #000! important
+}
+.tangram_ucard_l {
+	
+}
+.tangram_ucard_l A:link {
+	FILTER: none; COLOR: #0062f7! important; TEXT-DECORATION: none
+}
+.tangram_ucard_l A:visited {
+	FILTER: none; COLOR: #0062f7! important; TEXT-DECORATION: none
+}
+.tangram_ucard_l A:hover {
+	FILTER: none; COLOR: #0062f7! important; TEXT-DECORATION: none
+}
+.tangram_ucard_r EM {
+	FONT-STYLE: normal
+}
+.tangram_ucard_rt P {
+	MARGIN: 5px 0px 4px
+}
+.tangram_ucard_rb P {
+	MARGIN: 5px 0px 0px
+}
+.tangram_ucard_img {
+	BORDER-RIGHT: 0px; TABLE-LAYOUT: fixed; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px
+}
+.tangram_ucard_img TD {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #999 1px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; FONT: 0px/0 Arial; VERTICAL-ALIGN: middle; BORDER-LEFT: #999 1px solid; WIDTH: 80px; PADDING-TOP: 0px; BORDER-BOTTOM: #999 1px solid; HEIGHT: 80px; TEXT-ALIGN: center
+}
+.tangram_ucard_img IMG {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FILTER: none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; max-width: 80px; max-height: 80px
+}
+.tangram_ucard_uid {
+	MARGIN: 8px 0px; TEXT-ALIGN: center
+}
+.tangram_ucard_l {
+	DISPLAY: inline; FLOAT: left; MARGIN: 8px; OVERFLOW: hidden; WIDTH: 90px; WORD-WRAP: break-word
+}
+.tangram_ucard_l IMG {
+	FILTER: none
+}
+.tangram_ucard_lb IMG {
+	FILTER: none; WIDTH: 78px; HEIGHT: 21px
+}
+.tangram_ucard_lb A {
+	outline: none
+}
+.tangram_ucard_r {
+	DISPLAY: inline; FLOAT: right; MARGIN: 8px 4px 0px 0px; OVERFLOW: hidden; WIDTH: 205px; TEXT-ALIGN: left
+}
+.tangram_ucard_r A {
+	WHITE-SPACE: nowrap
+}
+#tangram_ucard .tangram_ucard_rt {
+	FILTER: none; MARGIN: -2px 0px 4px; COLOR: #000! important
+}
+.tangram_ucard_r A:link {
+	FILTER: none; COLOR: #000! important; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+.tangram_ucard_r A:visited {
+	FILTER: none; COLOR: #000! important; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+.tangram_ucard_r A:hover {
+	FILTER: none; COLOR: #000! important; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+.tangram_ucard_rt IMG {
+	FILTER: none
+}
+.tangram_ucard_rt P STRONG {
+	FLOAT: left; MARGIN-RIGHT: 6px
+}
+.tangram_ucard_rt P .tangram_ucard_addr {
+	OVERFLOW: hidden; WIDTH: 4.5em; WHITE-SPACE: nowrap
+}
+.tangram_ucard_rt P.tangram_ucard_attr A {
+	FLOAT: right; MARGIN-RIGHT: 7px
+}
+.tangram_ucard_r .tangram_ucard_datanum {
+	WHITE-SPACE: nowrap
+}
+.tangram_ucard_r .tangram_ucard_datanum A {
+	MARGIN-RIGHT: 8px
+}
+.tangram_ucard_r .tangram_ucard_datanum A:hover {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+.tangram_ucard_r .tangram_ucard_datanum A EM {
+	COLOR: #0062f7! important
+}
+.tangram_ucard_r .tangram_ucard_datanum A:hover EM {
+	COLOR: #0062f7! important; TEXT-DECORATION: underline
+}
+.tangram_ucard_rb {
+	BORDER-TOP: #cdcdcd 1px solid; PADDING-TOP: 4px
+}
+.tangram_ucard_rb IMG {
+	FILTER: none; MARGIN-RIGHT: 1em
+}
+.tangram_ucard_new {
+	OVERFLOW: hidden; COLOR: #000! important; LINE-HEIGHT: 20px
+}
+.tangram_ucard_new A {
+	WHITE-SPACE: nowrap
+}
+.tangram_ucard_new P {
+	COLOR: #727272! important
+}
+.tangram_ucard_new EM {
+	COLOR: #6c6c6c; MARGIN-RIGHT: 8px
+}
+.tangram_ucard_new A:link {
+	COLOR: #0062f7! important; TEXT-DECORATION: none
+}
+.tangram_ucard_new A:visited {
+	COLOR: #0062f7! important; TEXT-DECORATION: none
+}
+.tangram_ucard_new A:hover {
+	COLOR: #0062f7! important; TEXT-DECORATION: underline
+}
+.tangram_ucard_new P A:link {
+	COLOR: #727272! important; WHITE-SPACE: normal; TEXT-DECORATION: none
+}
+.tangram_ucard_new P A:visited {
+	COLOR: #727272! important; WHITE-SPACE: normal; TEXT-DECORATION: none
+}
+.tangram_ucard_new P A:hover {
+	COLOR: #727272! important; WHITE-SPACE: normal; TEXT-DECORATION: none
+}
+.tangram_ucard_newc {
+	PADDING-TOP: 5px
+}

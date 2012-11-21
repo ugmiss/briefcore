@@ -1,0 +1,1157 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.cnblogs.com/13590/archive/2006/05/24/407806.html -->
+<HTML><HEAD><TITLE>根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=C#编程,根据程序进程名杀死进程 name=keywords><LINK 
+href="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK id=MainCss 
+href="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK href="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK 
+href="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/shThemeDefault.css" type=text/css 
+rel=stylesheet><LINK href="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/customcss.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/13590/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/13590/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=407806.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<TABLE class=Framework cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD colSpan=2>
+      <DIV id=top>
+      <TABLE cellSpacing=0 cellPadding=8 width="100%">
+        <TBODY>
+        <TR>
+          <TD noWrap>
+            <H1><A class=headermaintitle id=Header1_HeaderTitle 
+            href="http://www.cnblogs.com/13590/">13590--北极燕鸥</A></H1><BR>　　　<FONT 
+            color=#009300 size=+2>博采众长，信誉卓著</FONT> </TD></TR></TBODY></TABLE></DIV>
+      <DIV id=sub>
+      <DIV class=BlogStats>posts - 45, comments - 101, trackbacks - 3, articles 
+      - 8</DIV></DIV></TD></TR>
+  <TR>
+    <TD class=LeftCell>
+      <DIV id=leftmenu></DIV></TD>
+    <TD class=MainCell width="100%">
+      <DIV id=main>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A class=singleposttitle id=ctl03_TitleUrl 
+      href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html">根据程序进程名杀死进程</A> 
+      </H2>Posted on 2006-05-24 11:01 <A 
+      href="http://www.cnblogs.com/13590/">北极燕鸥</A> 阅读(1450) <A 
+      href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html#commentform">评论(2)</A> 
+      &nbsp;<A 
+      href="http://www.cnblogs.com/13590/admin/EditPosts.aspx?postid=407806">编辑</A> 
+      <A onclick="AddToWz(407806);return false;" 
+      href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html#">收藏</A> 
+      所属分类: <A href="http://www.cnblogs.com/13590/category/36465.html">C#编程</A> 
+      <IMG height=1 src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/407806.jpg" 
+      width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html"
+dc:identifier="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/13590/services/trackbacks/407806.aspx" />
+</rdf:RDF>
+--></DIV>
+      <DIV class=postbody>
+      <P>　　有时候我们需要强制退出某个运行程序，就是关闭某个运行的程序进程。例如，关闭系统运行的Excel进程。<BR>　　首先确定Excel程序的进程名：<BR>　　　<IMG 
+      src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/excel.jpg" 
+      border=0><BR>　　在VS.Net2003里，名字空间里引用：<BR>　　　　<SPAN 
+      style="COLOR: #008000">using 
+      System.Diagnostics;<BR></SPAN>　　编写过程：<BR>private void KillProcess(string 
+      processName)<BR>&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp; 
+      &nbsp;System.Diagnostics.Process myproc= new 
+      System.Diagnostics.Process();<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;//得到所有打开的进程<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;try<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;foreach (Process 
+      thisproc in 
+      Process.GetProcessesByName(processName))&nbsp;<BR>　　//循环查找<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;if(!thisproc.CloseMainWindow())<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;thisproc.Kill();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp; 
+      &nbsp;}<BR>&nbsp;&nbsp;&nbsp;catch<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;Memo1.Text+= 
+      "杀死" + processName + "失败！";&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp; 
+      }</P>
+      <P>&nbsp;&nbsp;}<BR><BR>调用过程：<BR>private void button1_Click(object sender, 
+      System.EventArgs e)<BR>&nbsp;&nbsp;{ 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN 
+      style="COLOR: #008000">KillProcess("excel");</SPAN><BR>&nbsp;&nbsp; 
+      }<BR><BR>以上程序在vs.net2003(C#)，windows 2003(SP1)平台上测试通过。</P>
+      <DIV id=digg_block>
+      <DIV id=author_profile>
+      <DIV class=author_profile_info>
+      <DIV class=author_profile_info><A href="http://home.cnblogs.com/13590/" 
+      target=_blank>北极燕鸥</A><BR>关注 - 0<BR>粉丝 - 1<BR></DIV></DIV>
+      <DIV class=clear></DIV>
+      <DIV id=author_profile_follow><A onclick="login();return false;" 
+      href="javascript:void(0);">关注博主</A></DIV></DIV>
+      <DIV id=div_digg>
+      <DIV class=diggit onclick=DiggIt(407806,14159,1)><SPAN class=diggnum 
+      id=digg_count_407806>0</SPAN> </DIV>
+      <DIV class=buryit onclick=DiggIt(407806,14159,2)><SPAN class=burynum 
+      id=bury_count_407806>0</SPAN> </DIV>
+      <DIV class=clear></DIV><SPAN id=span_isdigged_407806 
+      style="DISPLAY: none">0</SPAN> 
+      <DIV class=diggword id=digg_word_407806>(请您对文章做出评价)</DIV></DIV></DIV>
+      <DIV class=clear></DIV>
+      <DIV id=post_next_prev><A 
+      href="http://www.cnblogs.com/13590/archive/2006/05/23/407286.html">« 
+      </A>上一篇：<A title="发布于2006-05-23 16:59" 
+      href="http://www.cnblogs.com/13590/archive/2006/05/23/407286.html">修改Terminal 
+      Server默认的端口</A><BR><A 
+      href="http://www.cnblogs.com/13590/archive/2006/05/24/407967.html">» 
+      </A>下一篇：<A title="发布于2006-05-24 14:04" 
+      href="http://www.cnblogs.com/13590/archive/2006/05/24/407967.html">抓取Web网页数据分析</A><BR></DIV>
+      <SCRIPT src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/google_service.js" 
+      type=text/javascript></SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = 'cb43360b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+      </DIV></DIV><A name=pagedcomment></A>
+      <H3>Feedback</H3>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html#1101702">#1楼</A><A 
+      id=comment_anchor_1101702 name=1101702></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("地球人",1101702,"")' 
+      href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1101702,"")' 
+      href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl00_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl00_EditLink></A> </H2>2008-03-12 10:39 by <A 
+      id=Comments1_CommentList_ctl00_NameLink target=_blank>地球人[未注册用户]</A> 
+</DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1101702>谢谢，刚好要用到！</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html#1141392">#2楼</A><A 
+      id=comment_anchor_1141392 name=1141392></A><A name=Post></A> 
+      &nbsp;&nbsp;<A 
+      onclick='ReplyComment("蓝奇高级验证码识别引擎QQ:631753663",1141392,"")' 
+      href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1141392,"")' 
+      href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl01_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl01_EditLink></A> </H2>2008-04-08 06:25 by <A 
+      id=Comments1_CommentList_ctl01_NameLink 
+      href="http://www.cnitblog.com/r.aspx?url=http://***/yzm" target=_blank 
+      rel=nofllow>蓝奇高级验证码识别引擎QQ:631753663[未注册用户]</A> </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1141392>出售蓝奇高级验证码识别引擎，可准确识别新浪动网淘宝CSDN等多种复杂验证码。 
+      <BR><BR>输出为一个标准DLL，可供VB,VC,Delphi,C#.NET,VB.NET,模拟精灵,按键精灵等多平台调用，调用方法简单，几行代码即可完成。独具特色的边缘检测字符分离、旋转倾斜纠正和通用字符匹配算法（无论字体和大小）， 
+      使得该引擎对于像新浪、动网、淘宝、CSDN等多种验证码均有不错的识别率，是一款效果较为理想的验证码识别引擎。附详细的调用实例和代码注释等相关技术文档。 
+      <BR><BR>官方网站 - <A href="http://***/yzm_advocr" target=_new 
+      rel=nofollow>http://***/yzm_advocr</A> <BR>识别效果怎么样一试就知道 - DEMO下载 <A 
+      href="http://***/yzm_advocr" target=_new 
+      rel=nofollow>http://***/yzm_advocr</A>/advocr.rar <BR></SPAN></DIV></DIV>
+      <SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+      <DIV class=commentform id=ctl04_comment_form>
+      <DIV id=ctl04_divLoginPannel>
+      <DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+      href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2f13590%2farchive%2f2006%2f05%2f24%2f407806.html%3flogin%3d1%23commentform">登录</A> 
+      或 <A class=underline 
+      href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2f13590%2farchive%2f2006%2f05%2f24%2f407806.html%23Bottom2">注册</A> 
+      。</DIV>
+      <DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+      target=_blank>返回博客园首页</A></DIV></DIV>
+      <DIV class="itnews c_ad_block"><A class=site_hot 
+      href="http://a4.yeshj.com/rd/35182/" target=_blank>有道难题开锣头奖8万！</A><BR><A 
+      href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+      href="http://news.cnblogs.com/n/64718/" target=_blank>Android 
+      2.2数据共享功能开启与否将由运营商自主决定</A><BR>· <A href="http://news.cnblogs.com/n/64717/" 
+      target=_blank>Google Custom Search 也开始支持自动联想</A><BR>· <A 
+      href="http://news.cnblogs.com/n/64716/" 
+      target=_blank>2020年欧盟50%居民将享受到30M宽带</A><BR>· <A 
+      href="http://news.cnblogs.com/n/64715/" target=_blank>谷歌宣布已收购初创企业Simplify 
+      Media</A><BR>· <A href="http://news.cnblogs.com/n/64714/" 
+      target=_blank>Android 2.2率先应用WiFi tethering技术</A><BR></DIV>
+      <DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+      target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+      href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+      <DIV style="MARGIN-TOP: 5px">
+      <SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+      </DIV>
+      <DIV style="MARGIN-TOP: 5px"><A 
+      href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG 
+      alt="" 
+      src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+      <DIV class="itnews c_ad_block" id=job_block><A 
+      href="http://job.cnblogs.com/" target=_blank>推荐职位</A>:<BR>
+      <DIV id=job_list></DIV>
+      <SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+      </DIV></DIV>
+      <DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+      href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+      href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+      href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+      href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+      href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+      href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+      href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+      <DIV class=c_ad_block id=ad_under_comment2><A 
+      href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+      target=_blank><IMG 
+      style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+      alt="" 
+      src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+      href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+      计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+      href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+      target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+      <DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+      href="http://zzk.cnblogs.com/s?w=C%23%e7%bc%96%e7%a8%8b" 
+      target=_blank>C#编程</A> </DIV>
+      <DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+      href="http://kb.cnblogs.com/a/407806/">根据程序进程名杀死进程</A></DIV></DIV></DIV></TD></TR>
+  <TR>
+    <TD class=FooterCell colSpan=2>
+      <P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+      style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" 
+      href="http://www.cnblogs.com/" name=Hyperlink1>博客园</A> <BR>Copyright © 
+      北极燕鸥 </P></TD></TR></TBODY></TABLE>
+<DIV id=lefttemp style="DISPLAY: none">
+<H3>导航</H3>
+<UL>
+  <LI>
+  <LI><A id=MyLinks2_MyHomeLink href="http://www.cnblogs.com/13590/">首页</A> 
+  <LI><A id=MyLinks2_NewPostLink 
+  href="http://www.cnblogs.com/13590/admin/EditPosts.aspx?opt=1">新随笔</A> 
+  <LI><A id=MyLinks2_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/åæçé¸¥">联系</A> 
+  <LI><A id=MyLinks2_XMLLink href="http://www.cnblogs.com/13590/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml.gif"></A><A 
+  id=MyLinks2_Syndication href="http://www.cnblogs.com/13590/rss">订阅</A> 
+  <LI><A id=MyLinks2_Admin 
+  href="http://www.cnblogs.com/13590/admin/EditPosts.aspx">管理</A> </LI></UL>
+<H3>公告</H3>
+<DIV id=news>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=10>&nbsp;</TD>
+    <TD height=30>&nbsp;<A 
+      href="http://wpa.qq.com/msgrd?V=1&amp;Uin=476408321&amp;Site=无悔&amp;Menu=yes" 
+      target=blank><IMG alt=点击这里给我发消息 
+      src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/qq_offline.gif" 
+      border=0></A>476408321 </TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD height=25>&nbsp;Email:Z13590@163.com</TD></TR>
+  <TR>
+    <TD height=44>&nbsp;</TD>
+    <TD>&nbsp;<A href="http://www.chengdujob.net/"><IMG height=31 
+      alt=成都人才网—打造成都最好的人才网站！ src="" width=88></A></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<IMG 
+      style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+      height=0 alt="" src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/go.htm" 
+width=0>
+      <SCRIPT language=javascript 
+      src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/quote.users.51.htm" 
+      type=text/javascript></SCRIPT>
+       </TD></TR></TBODY></TABLE>
+<DIV id=profile_block><A href="http://home.cnblogs.com/13590/" 
+target=_blank>我的主页</A>&nbsp; <A href="http://home.cnblogs.com/13590/detail/" 
+target=_blank>个人资料</A><BR><A href="http://home.cnblogs.com/13590/ing/" 
+target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/åæçé¸¥" 
+target=_blank>发短消息</A></DIV></DIV>
+<TABLE class=Cal id=Calendar2_entryCal title=Calendar 
+style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: silver" colSpan=7>
+      <TABLE class=CalTitle style="WIDTH: 100%; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev style="WIDTH: 15%"><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar2$entryCal','V2282')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2006年5月</TD>
+          <TD class=CalNextPrev style="WIDTH: 15%" align=right><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar2$entryCal','V2343')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle>1</TD>
+    <TD style="WIDTH: 14%" align=middle>2</TD>
+    <TD style="WIDTH: 14%" align=middle>3</TD>
+    <TD style="WIDTH: 14%" align=middle>4</TD>
+    <TD style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>6</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/13590/archive/2006/5/7.html"><U>7</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>8</TD>
+    <TD style="WIDTH: 14%" align=middle>9</TD>
+    <TD style="WIDTH: 14%" align=middle>10</TD>
+    <TD style="WIDTH: 14%" align=middle>11</TD>
+    <TD style="WIDTH: 14%" align=middle>12</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>13</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>14</TD>
+    <TD style="WIDTH: 14%" align=middle>15</TD>
+    <TD style="WIDTH: 14%" align=middle>16</TD>
+    <TD style="WIDTH: 14%" align=middle>17</TD>
+    <TD style="WIDTH: 14%" align=middle>18</TD>
+    <TD style="WIDTH: 14%" align=middle>19</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>20</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>21</TD>
+    <TD style="WIDTH: 14%" align=middle>22</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/13590/archive/2006/5/23.html"><U>23</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/13590/archive/2006/5/24.html"><U>24</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/13590/archive/2006/5/25.html"><U>25</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>26</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>27</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>28</TD>
+    <TD style="WIDTH: 14%" align=middle>29</TD>
+    <TD style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle>31</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>1</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>2</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>3</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>6</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>7</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>8</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>9</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" 
+align=middle>10</TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+var blogapp = '13590';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn2_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/13590/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn2_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/13590/">我的空间</A> 
+  <LI><A id=SingleColumn2_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn2_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/13590/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn2_ctl02_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/13590/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn2_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/13590/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn2_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/13590/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn2_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/13590/tag/">我的标签</A> </LI></UL></DIV>
+<H3 class=catListTitle>我参与的团队</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn2__15a619c_TeamList_ctl01_lnkTeam 
+  href="http://team.cnblogs.com/WMAP/">Windows Mobile 应用开发(0/0)</A> 
+  <LI><A id=SingleColumn2__15a619c_TeamList_ctl02_lnkTeam 
+  href="http://team.cnblogs.com/AjaxAndAtlas%20/">Ajax&amp;Atlas技术团队(0/0)</A> 
+  <LI><A id=SingleColumn2__15a619c_TeamList_ctl03_lnkTeam 
+  href="http://team.cnblogs.com/ChengDuDotNetClub/">成都.NET俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn2__15a619c_TeamList_ctl04_lnkTeam 
+  href="http://team.cnblogs.com/AtlasLearning/">ASP.NET AJAX (Atlas)学习(0/0)</A> 
+  <LI><A id=SingleColumn2__15a619c_TeamList_ctl05_lnkTeam 
+  href="http://team.cnblogs.com/chongqing/">重庆.NET俱乐部(0/0)</A> </LI></UL></DIV>
+<H3 class=catListTitle>我的标签</H3>
+<DIV id=MyTag>
+<UL>
+  <LI><A href="http://www.cnblogs.com/13590/tag/Asp.Net/">Asp.Net</A>(1)
+  <LI><A href="http://www.cnblogs.com/13590/tag/å®å¨æ¼æ´/">安全漏洞</A>(1)
+  <LI><A href="http://www.cnblogs.com/13590/tag/å¯¹ç&shy;/">对策</A>(1) 
+</LI></UL></DIV>
+<H3>随笔分类<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(41)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/13590/category/205725.html">AIX(1)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to AIX(1)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/205725.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to AIX(1)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/13590/category/132144.html">AS400/DB2(6)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to AS400/DB2(6)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/132144.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to AS400/DB2(6)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/13590/category/36465.html">C#编程(13)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to C#编程(13)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/36465.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to C#编程(13)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/13590/category/89345.html">Delphi(3)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to Delphi(3)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/89345.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to Delphi(3)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/13590/category/36466.html">Ms Sql Server2000 
+  &amp; 2005(7)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to Ms Sql Server2000 &amp; 2005(7)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/36466.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to Ms Sql Server2000 &amp; 2005(7)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/13590/category/36467.html">MS数据仓库(1)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to MS数据仓库(1)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/36467.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to MS数据仓库(1)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/13590/category/36468.html">Oracle数据库(6)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to Oracle数据库(6)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/36468.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to Oracle数据库(6)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/13590/category/36469.html">OWB</A><A 
+  id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to OWB" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/36469.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to OWB" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/13590/category/101386.html">VC++(1)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl09_RssLink 
+  title="Subscribe to VC++(1)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/101386.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to VC++(1)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/13590/category/58874.html">系统管理(3)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl10_RssLink 
+  title="Subscribe to 系统管理(3)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/58874.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to 系统管理(3)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/13590/category/61689.html">项目管理</A><A 
+  id=SingleColumn2_Categories_CatList_ctl00_LinkList_ctl11_RssLink 
+  title="Subscribe to 项目管理" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/61689.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to 项目管理" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> </LI></UL>
+<H3>随笔档案<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(45)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/13590/archive/2010/04.html">2010年4月 (1)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/13590/archive/2010/03.html">2010年3月 (2)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/13590/archive/2009/09.html">2009年9月 (1)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/13590/archive/2009/08.html">2009年8月 (2)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/13590/archive/2009/06.html">2009年6月 (2)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/13590/archive/2009/05.html">2009年5月 (5)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/13590/archive/2008/04.html">2008年4月 (2)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/13590/archive/2008/03.html">2008年3月 (2)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/13590/archive/2008/02.html">2008年2月 (3)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/13590/archive/2007/09.html">2007年9月 (2)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/13590/archive/2007/08.html">2007年8月 (4)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/13590/archive/2007/07.html">2007年7月 (4)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/13590/archive/2007/05.html">2007年5月 (1)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/13590/archive/2007/04.html">2007年4月 (4)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/13590/archive/2007/03.html">2007年3月 (1)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/13590/archive/2006/10.html">2006年10月 (1)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/13590/archive/2006/07.html">2006年7月 (1)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/13590/archive/2006/06.html">2006年6月 (2)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl01_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/13590/archive/2006/05.html">2006年5月 (5)</A> 
+</LI></UL>
+<H3>文章分类<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(7)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn2_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/13590/category/37089.html">C#(3)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl02_LinkList_ctl01_RssLink 
+  title="Subscribe to C#(3)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/37089.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to C#(3)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl02_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/13590/category/62066.html">Oracle(1)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl02_LinkList_ctl02_RssLink 
+  title="Subscribe to Oracle(1)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/62066.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to Oracle(1)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl02_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/13590/category/37120.html">Sql Server(3)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl02_LinkList_ctl03_RssLink 
+  title="Subscribe to Sql Server(3)" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/37120.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to Sql Server(3)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl02_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/13590/category/61687.html">项目管理</A><A 
+  id=SingleColumn2_Categories_CatList_ctl02_LinkList_ctl04_RssLink 
+  title="Subscribe to 项目管理" 
+  onclick="open_link('http://www.cnblogs.com/13590/category/61687.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to 项目管理" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> </LI></UL>
+<H3>文章档案<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(8)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn2_Categories_CatList_ctl03_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/13590/archives/2007/07.html">2007年7月 (1)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl03_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/13590/archives/2006/06.html">2006年6月 (4)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl03_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/13590/archives/2005/11.html">2005年11月 (1)</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl03_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/13590/archives/2005/10.html">2005年10月 (2)</A> 
+  </LI></UL>
+<H3>相册</H3>
+<UL>
+  <LI><A id=SingleColumn2_Categories_CatList_ctl04_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/13590/gallery/115154.html">个人照片</A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl04_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/13590/gallery/58882.html">集体照</A> </LI></UL>
+<H3>收藏夹<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(37)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn2_Categories_CatList_ctl05_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/13590/favorite/36471.html">C#(34)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl05_LinkList_ctl01_RssLink 
+  title="Subscribe to C#(34)" 
+  onclick="open_link('http://www.cnblogs.com/13590/favorite/36471.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to C#(34)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl05_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/13590/favorite/60547.html">Sql Server 
+  2005(1)</A><A id=SingleColumn2_Categories_CatList_ctl05_LinkList_ctl02_RssLink 
+  title="Subscribe to Sql Server 2005(1)" 
+  onclick="open_link('http://www.cnblogs.com/13590/favorite/60547.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to Sql Server 2005(1)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl05_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/13590/favorite/61688.html">项目管理(2)</A><A 
+  id=SingleColumn2_Categories_CatList_ctl05_LinkList_ctl03_RssLink 
+  title="Subscribe to 项目管理(2)" 
+  onclick="open_link('http://www.cnblogs.com/13590/favorite/61688.html/rss');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to 项目管理(2)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> </LI></UL>
+<H3>.Net</H3>
+<UL>
+  <LI><A id=SingleColumn2_Categories_CatList_ctl06_LinkList_ctl01_Link 
+  href="http://beartang.cnblogs.com/">DearTang</A><A 
+  id=SingleColumn2_Categories_CatList_ctl06_LinkList_ctl01_RssLink 
+  title="Subscribe to DearTang" 
+  onclick="open_link('http://beartang.cnblogs.com/Rss.aspx');return false;" 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407806.html###"><IMG 
+  title="Subscribe to DearTang" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml_small.gif"></A> 
+  <LI><A id=SingleColumn2_Categories_CatList_ctl06_LinkList_ctl02_Link 
+  href="http://www.netfx3.com/" target=_blank>NetFX3</A> </LI></UL>
+<H3>其他</H3>
+<UL>
+  <LI><A id=SingleColumn2_Categories_CatList_ctl07_LinkList_ctl01_Link 
+  href="http://www.microsoft.com/china/msdn/">MSDN</A> </LI></UL>
+<H3>人才</H3>
+<UL>
+  <LI><A id=SingleColumn2_Categories_CatList_ctl08_LinkList_ctl01_Link 
+  href="http://www.chengdujob.net/">成都人才网</A> </LI></UL>
+<H3 class=catListTitle>最新随笔</H3>
+<DIV class=RecentComment id=RecentPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2010/04/17/1714157.html">1.&nbsp;c# 
+  连接MySQL中文乱码问题的解决方法</A> 
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl01_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2010/03/29/1699757.html">2.&nbsp;url 
+  编码问题</A> 
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl02_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2010/03/10/1682642.html">3.&nbsp;DB2 
+  export和import</A> 
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl03_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2009/09/05/1560748.html">4.&nbsp;Xmanager连接AIX 
+  5L</A> 
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl04_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2009/08/19/1550098.html">5.&nbsp;RedHat 
+  Enterprise Linux 基本网络配置</A> 
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl04_RecentPostsList2_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2009/08/19/1549806.html">6.&nbsp;AIX 
+  :卷组、逻辑卷、物理卷的操作命令</A> 
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl05_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2009/06/26/1511365.html">7.&nbsp;ArcGIS 
+  9.3 sp1 下载更新</A> 
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl06_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2009/06/09/1499595.html">8.&nbsp;三种地理参考信息模型:WMS,WFS,WCS</A> 
+
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl07_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2009/05/27/1490844.html">9.&nbsp;DB2应用 
+  常用命令</A> 
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl08_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2009/05/21/1486470.html">10.&nbsp;Oracle 
+  常用命令</A> 
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl08_RecentPostsList2_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2009/05/21/1486452.html">11.&nbsp;Oracle数据字典 
+  </A>
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl08_RecentPostsList2_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2009/05/21/1486313.html">12.&nbsp;DB2备份命名（转）</A> 
+
+  <LI><A 
+  id=SingleColumn2_ctl05_RecentPostsList_ctl09_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2009/05/18/1459227.html">13.&nbsp;理解CCSID,LANGID对系统内码的影响(转)</A> 
+  </LI></UL></DIV>
+<H3>积分与排名</H3>
+<UL>
+  <LI>积分 - 67480 
+  <LI>排名 - 1197 </LI></UL>
+<H3 class=catListTitle>最新评论 <A id=SingleColumn2__94f20b_RSSHyperlink1 
+href="http://www.cnblogs.com/13590/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/xml.gif"></A></H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn2__94f20b_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2007/07/09/810770.html#1761508">1.&nbsp;Re:SQL 
+  Server 2005利用分区对海量数据的处理</A> 
+  <LI style="WORD-BREAK: break-all">希望可以加msn聊一下 msn:jorden008@hotmail.com 祝新年快乐 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--virus 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn2__94f20b_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2007/07/09/810770.html#1761507">2.&nbsp;Re:SQL 
+  Server 2005利用分区对海量数据的处理</A> 
+  <LI 
+  style="WORD-BREAK: break-all">我想知道，分区之后，你操作数据的sql语句还是原来的吗，操作数据的select，insert，update，delete有没有变化呢？原来的这些语句不用修改还可以用吗？ 
+
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--virus 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn2__94f20b_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407967.html#1605849">3.&nbsp;Re:抓取Web网页数据分析</A> 
+
+  <LI 
+  style="WORD-BREAK: break-all">大家都在分头写各种各样的爬虫和提取程序，我从三年前开始开发一个通用的，免费的，代码可阅读的信息提取工具包，不仅仅为提取网页内容这个目的，还是一个下一代Web 
+  3.0（语义网络）的内容格式化和搜索工具。... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--geo898 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn2__94f20b_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2007/04/09/705830.html#1504992">4.&nbsp;re: 
+  通过Web Services实现统一身份识别</A> 
+  <LI 
+  style="WORD-BREAK: break-all">请问下：就是现在校园网里面存在几个网站，需要进行统一身份认证，该怎么做。每个网站都有自己的数据库，并且同一个人的用户信息在各个网站有可能不同，应该怎么做？？ 
+
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--龙潜冰风悄林 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn2__94f20b_CommentList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2007/08/06/844532.html#1494459">5.&nbsp;re: 
+  转： C#实现的18位身份证格式验证算法 </A>
+  <LI style="WORD-BREAK: break-all">good! 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--一挣一闭一天过去了 </LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn2_ctl08_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2006/06/13/424655.html">1.&nbsp;CVS相关工具下载地址总结(12207)</A> 
+
+  <LI><A id=SingleColumn2_ctl08_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407967.html">2.&nbsp;抓取Web网页数据分析(8874)</A> 
+
+  <LI><A id=SingleColumn2_ctl08_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2007/08/01/838677.html">3.&nbsp;用ATL开发和部署ActiveX网页控件(6010)</A> 
+
+  <LI><A id=SingleColumn2_ctl08_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2007/07/09/810770.html">4.&nbsp;SQL 
+  Server 2005利用分区对海量数据的处理(5893)</A> 
+  <LI><A id=SingleColumn2_ctl08_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2007/08/06/844532.html">5.&nbsp;转： 
+  C#实现的18位身份证格式验证算法 (3756)</A> </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn2_ctl09_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2006/05/24/407967.html">1.&nbsp;抓取Web网页数据分析(41)</A> 
+
+  <LI><A id=SingleColumn2_ctl09_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2006/05/25/408956.html">2.&nbsp;通过System.Web.Mail程序发邮件(17)</A> 
+
+  <LI><A id=SingleColumn2_ctl09_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2007/08/01/838677.html">3.&nbsp;用ATL开发和部署ActiveX网页控件(13)</A> 
+
+  <LI><A id=SingleColumn2_ctl09_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2007/07/09/810770.html">4.&nbsp;SQL 
+  Server 2005利用分区对海量数据的处理(6)</A> 
+  <LI><A id=SingleColumn2_ctl09_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/13590/archive/2007/04/03/697789.html">5.&nbsp;DLL封装登录框架实现代码复用(5)</A> 
+  </LI></UL></DIV></DIV>
+<SCRIPT src="" type=text/javascript></SCRIPT>
+</FORM>
+<SCRIPT src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="根据程序进程名杀死进程 - 13590--北极燕鸥 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

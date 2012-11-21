@@ -1,0 +1,189 @@
+.syntaxhighlighter {
+	BORDER-BOTTOM: 0px; POSITION: static !important; TEXT-ALIGN: left !important; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px !important; LINE-HEIGHT: 1.1em !important; FONT-STYLE: normal !important; MARGIN: 0px; OUTLINE-STYLE: none !important; OUTLINE-COLOR: invert !important; MIN-HEIGHT: auto !important; PADDING-LEFT: 0px !important; OUTLINE-WIDTH: 0px !important; WIDTH: auto !important; BOTTOM: auto !important; PADDING-RIGHT: 0px !important; FONT-FAMILY: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: none !important; HEIGHT: auto !important; FONT-SIZE: 1em !important; VERTICAL-ALIGN: baseline !important; BORDER-TOP: 0px; TOP: auto !important; RIGHT: auto !important; FONT-WEIGHT: normal !important; BORDER-RIGHT: 0px; PADDING-TOP: 0px !important; LEFT: auto !important
+}
+.syntaxhighlighter DIV {
+	BORDER-BOTTOM: 0px; POSITION: static !important; TEXT-ALIGN: left !important; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px !important; LINE-HEIGHT: 1.1em !important; FONT-STYLE: normal !important; MARGIN: 0px; OUTLINE-STYLE: none !important; OUTLINE-COLOR: invert !important; MIN-HEIGHT: auto !important; PADDING-LEFT: 0px !important; OUTLINE-WIDTH: 0px !important; WIDTH: auto !important; BOTTOM: auto !important; PADDING-RIGHT: 0px !important; FONT-FAMILY: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: none !important; HEIGHT: auto !important; FONT-SIZE: 1em !important; VERTICAL-ALIGN: baseline !important; BORDER-TOP: 0px; TOP: auto !important; RIGHT: auto !important; FONT-WEIGHT: normal !important; BORDER-RIGHT: 0px; PADDING-TOP: 0px !important; LEFT: auto !important
+}
+.syntaxhighlighter CODE {
+	BORDER-BOTTOM: 0px; POSITION: static !important; TEXT-ALIGN: left !important; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px !important; LINE-HEIGHT: 1.1em !important; FONT-STYLE: normal !important; MARGIN: 0px; OUTLINE-STYLE: none !important; OUTLINE-COLOR: invert !important; MIN-HEIGHT: auto !important; PADDING-LEFT: 0px !important; OUTLINE-WIDTH: 0px !important; WIDTH: auto !important; BOTTOM: auto !important; PADDING-RIGHT: 0px !important; FONT-FAMILY: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: none !important; HEIGHT: auto !important; FONT-SIZE: 1em !important; VERTICAL-ALIGN: baseline !important; BORDER-TOP: 0px; TOP: auto !important; RIGHT: auto !important; FONT-WEIGHT: normal !important; BORDER-RIGHT: 0px; PADDING-TOP: 0px !important; LEFT: auto !important
+}
+.syntaxhighlighter TABLE {
+	BORDER-BOTTOM: 0px; POSITION: static !important; TEXT-ALIGN: left !important; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px !important; LINE-HEIGHT: 1.1em !important; FONT-STYLE: normal !important; MARGIN: 0px; OUTLINE-STYLE: none !important; OUTLINE-COLOR: invert !important; MIN-HEIGHT: auto !important; PADDING-LEFT: 0px !important; OUTLINE-WIDTH: 0px !important; WIDTH: auto !important; BOTTOM: auto !important; PADDING-RIGHT: 0px !important; FONT-FAMILY: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: none !important; HEIGHT: auto !important; FONT-SIZE: 1em !important; VERTICAL-ALIGN: baseline !important; BORDER-TOP: 0px; TOP: auto !important; RIGHT: auto !important; FONT-WEIGHT: normal !important; BORDER-RIGHT: 0px; PADDING-TOP: 0px !important; LEFT: auto !important
+}
+.syntaxhighlighter TABLE TD {
+	BORDER-BOTTOM: 0px; POSITION: static !important; TEXT-ALIGN: left !important; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px !important; LINE-HEIGHT: 1.1em !important; FONT-STYLE: normal !important; MARGIN: 0px; OUTLINE-STYLE: none !important; OUTLINE-COLOR: invert !important; MIN-HEIGHT: auto !important; PADDING-LEFT: 0px !important; OUTLINE-WIDTH: 0px !important; WIDTH: auto !important; BOTTOM: auto !important; PADDING-RIGHT: 0px !important; FONT-FAMILY: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: none !important; HEIGHT: auto !important; FONT-SIZE: 1em !important; VERTICAL-ALIGN: baseline !important; BORDER-TOP: 0px; TOP: auto !important; RIGHT: auto !important; FONT-WEIGHT: normal !important; BORDER-RIGHT: 0px; PADDING-TOP: 0px !important; LEFT: auto !important
+}
+.syntaxhighlighter TABLE TR {
+	BORDER-BOTTOM: 0px; POSITION: static !important; TEXT-ALIGN: left !important; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px !important; LINE-HEIGHT: 1.1em !important; FONT-STYLE: normal !important; MARGIN: 0px; OUTLINE-STYLE: none !important; OUTLINE-COLOR: invert !important; MIN-HEIGHT: auto !important; PADDING-LEFT: 0px !important; OUTLINE-WIDTH: 0px !important; WIDTH: auto !important; BOTTOM: auto !important; PADDING-RIGHT: 0px !important; FONT-FAMILY: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: none !important; HEIGHT: auto !important; FONT-SIZE: 1em !important; VERTICAL-ALIGN: baseline !important; BORDER-TOP: 0px; TOP: auto !important; RIGHT: auto !important; FONT-WEIGHT: normal !important; BORDER-RIGHT: 0px; PADDING-TOP: 0px !important; LEFT: auto !important
+}
+.syntaxhighlighter TABLE TBODY {
+	BORDER-BOTTOM: 0px; POSITION: static !important; TEXT-ALIGN: left !important; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px !important; LINE-HEIGHT: 1.1em !important; FONT-STYLE: normal !important; MARGIN: 0px; OUTLINE-STYLE: none !important; OUTLINE-COLOR: invert !important; MIN-HEIGHT: auto !important; PADDING-LEFT: 0px !important; OUTLINE-WIDTH: 0px !important; WIDTH: auto !important; BOTTOM: auto !important; PADDING-RIGHT: 0px !important; FONT-FAMILY: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: none !important; HEIGHT: auto !important; FONT-SIZE: 1em !important; VERTICAL-ALIGN: baseline !important; BORDER-TOP: 0px; TOP: auto !important; RIGHT: auto !important; FONT-WEIGHT: normal !important; BORDER-RIGHT: 0px; PADDING-TOP: 0px !important; LEFT: auto !important
+}
+.syntaxhighlighter {
+	POSITION: relative !important; PADDING-BOTTOM: 1px !important; MARGIN: 1em 0px; PADDING-LEFT: 1px !important; WIDTH: 99% !important; PADDING-RIGHT: 1px !important; PADDING-TOP: 1px !important
+}
+.syntaxhighlighter .bold {
+	FONT-WEIGHT: bold !important
+}
+.syntaxhighlighter .italic {
+	FONT-STYLE: italic !important
+}
+.syntaxhighlighter .line {
+	
+}
+.syntaxhighlighter .no-wrap .line .content {
+	WHITE-SPACE: pre !important
+}
+.syntaxhighlighter .line TABLE {
+	BORDER-COLLAPSE: collapse !important
+}
+.syntaxhighlighter .line TD {
+	VERTICAL-ALIGN: top !important
+}
+.syntaxhighlighter .line .number {
+	WIDTH: 3em !important
+}
+.syntaxhighlighter .line .number CODE {
+	TEXT-ALIGN: right !important; WIDTH: 2.7em !important; PADDING-RIGHT: 0.3em !important; DISPLAY: block !important
+}
+.syntaxhighlighter .line .content {
+	PADDING-LEFT: 0.5em !important
+}
+.syntaxhighlighter .line .spaces {
+	
+}
+.nogutter .line .content {
+	BORDER-LEFT: medium none
+}
+.syntaxhighlighter .bar {
+	DISPLAY: none !important
+}
+.syntaxhighlighter .show {
+	DISPLAY: block !important
+}
+.collapsed .bar {
+	DISPLAY: block !important
+}
+.collapsed .lines {
+	DISPLAY: none !important
+}
+.syntaxhighlighter .no-wrap {
+	OVERFLOW-Y: hidden !important; OVERFLOW: auto !important
+}
+.syntaxhighlighter .toolbar {
+	POSITION: absolute !important; PADDING-BOTTOM: 8px !important; PADDING-LEFT: 0px !important; PADDING-RIGHT: 8px !important; FONT-SIZE: 1px !important; TOP: 0px !important; RIGHT: 0px !important; PADDING-TOP: 8px !important
+}
+.collapsed .toolbar {
+	POSITION: static !important; PADDING-BOTTOM: 0.5em !important; PADDING-LEFT: 0.5em !important; PADDING-RIGHT: 0px !important; FONT-SIZE: 80% !important; PADDING-TOP: 0.2em !important
+}
+.syntaxhighlighter .toolbar A.item {
+	TEXT-INDENT: -5000px !important; DISPLAY: block !important; BACKGROUND-REPEAT: no-repeat !important; FLOAT: left !important; MARGIN-LEFT: 8px !important; OVERFLOW: hidden !important
+}
+.syntaxhighlighter .toolbar .item {
+	TEXT-INDENT: -5000px !important; DISPLAY: block !important; BACKGROUND-REPEAT: no-repeat !important; FLOAT: left !important; MARGIN-LEFT: 8px !important; OVERFLOW: hidden !important
+}
+.collapsed .toolbar .item {
+	DISPLAY: none !important
+}
+.collapsed .toolbar .expandSource {
+	BACKGROUND-IMAGE: url(magnifier.png) !important; TEXT-INDENT: 0px !important; PADDING-LEFT: 20px !important; WIDTH: auto !important; DISPLAY: inline !important; FLOAT: none !important; HEIGHT: 16px !important
+}
+.syntaxhighlighter .toolbar .viewSource {
+	BACKGROUND-IMAGE: url(page_white_code.png) !important
+}
+.syntaxhighlighter .toolbar .printSource {
+	BACKGROUND-IMAGE: url(printer.png) !important
+}
+.syntaxhighlighter .toolbar .copyToClipboard {
+	TEXT-INDENT: 0px !important; BACKGROUND: none transparent scroll repeat 0% 0%; OVERFLOW: visible !important
+}
+.syntaxhighlighter .toolbar .about {
+	BACKGROUND-IMAGE: url(help.png) !important
+}
+.printing {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.printing .alt1 .content {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.printing .alt2 .content {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.printing .highlighted .number {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.printing .alt1 .content {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.printing .alt2 .content {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.printing .line .number {
+	COLOR: #bbb !important
+}
+.printing .line .content {
+	COLOR: #000 !important
+}
+.printing .toolbar {
+	DISPLAY: none !important
+}
+.printing A {
+	TEXT-DECORATION: none !important
+}
+.printing .plain {
+	COLOR: #000 !important
+}
+.printing .plain A {
+	COLOR: #000 !important
+}
+.printing .comments {
+	COLOR: #008200 !important
+}
+.printing .comments A {
+	COLOR: #008200 !important
+}
+.printing .string {
+	COLOR: blue !important
+}
+.printing .string A {
+	COLOR: blue !important
+}
+.printing .keyword {
+	COLOR: #069 !important; FONT-WEIGHT: bold !important
+}
+.printing .preprocessor {
+	COLOR: gray !important
+}
+.printing .variable {
+	COLOR: #a70 !important
+}
+.printing .value {
+	COLOR: #090 !important
+}
+.printing .functions {
+	COLOR: #ff1493 !important
+}
+.printing .constants {
+	COLOR: #0066cc !important
+}
+.printing .script {
+	FONT-WEIGHT: bold !important
+}
+.printing .color1 {
+	COLOR: #808080 !important
+}
+.printing .color1 A {
+	COLOR: #808080 !important
+}
+.printing .color2 {
+	COLOR: #ff1493 !important
+}
+.printing .color2 A {
+	COLOR: #ff1493 !important
+}
+.printing .color3 {
+	COLOR: red !important
+}
+.printing .color3 A {
+	COLOR: red !important
+}

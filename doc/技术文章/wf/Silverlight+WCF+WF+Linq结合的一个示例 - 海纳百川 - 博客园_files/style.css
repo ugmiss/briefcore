@@ -1,0 +1,498 @@
+#EntryTag {
+	MARGIN-TOP: 20px; COLOR: gray; FONT-SIZE: 9pt
+}
+.topicListFooter {
+	TEXT-ALIGN: right; MARGIN-TOP: 10px; MARGIN-RIGHT: 10px
+}
+#divRefreshComments {
+	TEXT-ALIGN: right; MARGIN-BOTTOM: 5px; FONT-SIZE: 9pt; MARGIN-RIGHT: 10px
+}
+* {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+HTML {
+	HEIGHT: 100%
+}
+BODY {
+	MIN-HEIGHT: 101%; FONT-FAMILY: "verdana", "ms song", "Arial", "Helvetica", "sans-serif"; BACKGROUND: url(/skins/summerGarden/images/bg.jpg) #faf7ef repeat-x; COLOR: #464646; FONT-SIZE: 9pt
+}
+TABLE {
+	BORDER-SPACING: 0; BORDER-COLLAPSE: collapse
+}
+FIELDSET {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+UL {
+	WORD-BREAK: break-all
+}
+LI {
+	LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none
+}
+H1 {
+	FONT-SIZE: 100%; FONT-WEIGHT: normal
+}
+H2 {
+	FONT-SIZE: 100%; FONT-WEIGHT: normal
+}
+H3 {
+	FONT-SIZE: 100%; FONT-WEIGHT: normal
+}
+H4 {
+	FONT-SIZE: 100%; FONT-WEIGHT: normal
+}
+H5 {
+	FONT-SIZE: 100%; FONT-WEIGHT: normal
+}
+H6 {
+	FONT-SIZE: 100%; FONT-WEIGHT: normal
+}
+A:link {
+	COLOR: #464646; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #464646; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #4c4f8b
+}
+A:active {
+	COLOR: #464646; TEXT-DECORATION: none
+}
+.clear {
+	CLEAR: both
+}
+#home {
+	POSITION: relative; MIN-WIDTH: 930px; MARGIN: 0px auto; WIDTH: 95%
+}
+#header {
+	BACKGROUND: url(/skins/summerGarden/images/header.jpg) no-repeat right top; HEIGHT: 146px; PADDING-TOP: 30px
+}
+#blogTitle {
+	HEIGHT: 80px; COLOR: #4c4f8b; CLEAR: both
+}
+#blogTitle A:link {
+	COLOR: #4c4f8b
+}
+#blogTitle A:visited {
+	COLOR: #4c4f8b
+}
+#blogTitle A:active {
+	COLOR: #4c4f8b
+}
+#blogTitle A:hover {
+	COLOR: #ff6600
+}
+#blogTitle H1 {
+	LINE-HEIGHT: 1.5em; MARGIN-TOP: 10px; WIDTH: 50%; FLOAT: left; MARGIN-LEFT: 1em; FONT-SIZE: 200%; FONT-WEIGHT: bold
+}
+#blogTitle H2 {
+	LINE-HEIGHT: 1.5em; WIDTH: 50%; FLOAT: left; MARGIN-LEFT: 4em
+}
+#lnkBlogLogo {
+	DISPLAY: none
+}
+#blogLogo {
+	FLOAT: right
+}
+#navigator {
+	CLEAR: both
+}
+#navList {
+	FLOAT: left
+}
+#navList LI {
+	FLOAT: left
+}
+#navList A {
+	FLOAT: left; MARGIN-LEFT: 20px; PADDING-TOP: 8px
+}
+#navList A:link {
+	COLOR: #666
+}
+#navList A:visited {
+	COLOR: #666
+}
+#navList A:active {
+	COLOR: #666
+}
+#navList A:hover {
+	COLOR: #ff6600
+}
+.aHeaderXML IMG {
+	DISPLAY: none
+}
+.blogStats {
+	TEXT-ALIGN: right; MARGIN-TOP: 8px; FLOAT: left; COLOR: #bbb; MARGIN-RIGHT: 2px
+}
+#main {
+	MIN-WIDTH: 950px; TEXT-ALIGN: left; WIDTH: 100%
+}
+#mainContent .forFlow {
+	WIDTH: auto; FLOAT: none; MARGIN-LEFT: 24em
+}
+#mainContent {
+	PADDING-BOTTOM: 10px; MIN-HEIGHT: 200px; PADDING-LEFT: 0px; WIDTH: 100%; TEXT-OVERFLOW: ellipsis; PADDING-RIGHT: 0px; FLOAT: right; MARGIN-LEFT: -25em; OVERFLOW: hidden; WORD-BREAK: break-all; PADDING-TOP: 0px; -o-text-overflow: ellipsis
+}
+.day {
+	BORDER-BOTTOM: #6466b3 1px dotted; PADDING-BOTTOM: 15px; MIN-HEIGHT: 10px; MARGIN-BOTTOM: 20px; _height: 10px
+}
+.dayTitle {
+	TEXT-ALIGN: center; LINE-HEIGHT: 1.5em; MARGIN-TOP: 3px; WIDTH: 100%; MARGIN-BOTTOM: 10px; COLOR: #6466b3; CLEAR: both; FONT-SIZE: 110%; FONT-WEIGHT: bold
+}
+.postTitle {
+	LINE-HEIGHT: 1.5em; WIDTH: 100%; FLOAT: right; CLEAR: both; FONT-SIZE: 110%; FONT-WEIGHT: bold
+}
+.postTitle A:link {
+	COLOR: #6466b3
+}
+.postTitle A:visited {
+	COLOR: #6466b3
+}
+.postTitle A:active {
+	COLOR: #6466b3
+}
+.postTitle A:hover {
+	COLOR: #ff6600
+}
+.postCon {
+	PADDING-BOTTOM: 10px; LINE-HEIGHT: 1.5em; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; FLOAT: right; CLEAR: both; PADDING-TOP: 10px
+}
+.postDesc {
+	TEXT-ALIGN: right; MARGIN-TOP: 5px; WIDTH: 100%; PADDING-RIGHT: 5px; FLOAT: right; COLOR: #666; CLEAR: both
+}
+.postDesc A:link {
+	COLOR: #666
+}
+.postDesc A:visited {
+	COLOR: #666
+}
+.postDesc A:active {
+	COLOR: #666
+}
+.postDesc A:hover {
+	COLOR: #f60; TEXT-DECORATION: none
+}
+.postSeparator {
+	MARGIN: 0px auto 15px; WIDTH: 100%; FLOAT: right; HEIGHT: 5px; CLEAR: both
+}
+#sideBar {
+	PADDING-BOTTOM: 0px; MIN-HEIGHT: 200px; PADDING-LEFT: 5px; WIDTH: 230px; TEXT-OVERFLOW: ellipsis; PADDING-RIGHT: 0px; FLOAT: left; COLOR: #88866f; OVERFLOW: hidden; WORD-BREAK: break-all; PADDING-TOP: 16px; -o-text-overflow: ellipsis
+}
+.newsItem .catListTitle {
+	DISPLAY: none
+}
+.newsItem {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 8px; PADDING-TOP: 15px
+}
+#calendar {
+	WIDTH: 229px
+}
+#calendar .Cal {
+	LINE-HEIGHT: 1.5em; WIDTH: 100%
+}
+.Cal {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; COLOR: #666; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+#calendar TABLE A:link {
+	FONT-WEIGHT: bold
+}
+#calendar TABLE A:visited {
+	FONT-WEIGHT: bold
+}
+#calendar TABLE A:active {
+	FONT-WEIGHT: bold
+}
+#calendar TABLE A:hover {
+	BACKGROUND-COLOR: #6466b3; COLOR: #6466b3; TEXT-DECORATION: none
+}
+.CalTodayDay {
+	BORDER-BOTTOM: #6466b3 1px dotted; BORDER-LEFT: #6466b3 1px dotted; COLOR: #6466b3; BORDER-TOP: #6466b3 1px dotted; BORDER-RIGHT: #6466b3 1px dotted
+}
+#calendar .CalNextPrev A:link {
+	FONT-WEIGHT: bold
+}
+#calendar .CalNextPrev A:visited {
+	FONT-WEIGHT: bold
+}
+#calendar .CalNextPrev A:active {
+	FONT-WEIGHT: bold
+}
+.CalDayHeader {
+	BORDER-BOTTOM: #ccc 1px solid
+}
+.CalTitle {
+	BORDER-BOTTOM: #666 1px solid; WIDTH: 100%; COLOR: #333
+}
+#leftcontentcontainer UL A:link {
+	COLOR: #88866f
+}
+#leftcontentcontainer UL A:visited {
+	COLOR: #88866f
+}
+#leftcontentcontainer UL A:active {
+	COLOR: #88866f
+}
+#leftcontentcontainer UL A:hover {
+	COLOR: #4c4f8b; TEXT-DECORATION: none
+}
+.catListTitle {
+	TEXT-ALIGN: center; LINE-HEIGHT: 1.5em; MARGIN-TOP: 15px; COLOR: #6466b3; FONT-SIZE: 110%; FONT-WEIGHT: bold
+}
+.catListComment {
+	LINE-HEIGHT: 1.5em
+}
+.divRecentComment {
+	TEXT-INDENT: 1em
+}
+#sideBarMain UL {
+	LINE-HEIGHT: 1.5em
+}
+#topics {
+	PADDING-BOTTOM: 10px; MIN-HEIGHT: 200px; PADDING-LEFT: 0px; WIDTH: 100%; TEXT-OVERFLOW: ellipsis; PADDING-RIGHT: 0px; FLOAT: left; OVERFLOW: hidden; WORD-BREAK: break-all; PADDING-TOP: 0px; -o-text-overflow: ellipsis
+}
+#topics .postTitle {
+	LINE-HEIGHT: 1.5em; PADDING-LEFT: 5px; WIDTH: 100%; MARGIN-BOTTOM: 15px; FLOAT: left; FONT-SIZE: 130%; FONT-WEIGHT: bold
+}
+.postBody {
+	BORDER-BOTTOM: black 1px solid; PADDING-BOTTOM: 5px; LINE-HEIGHT: 1.5em; PADDING-LEFT: 5px; PADDING-RIGHT: 2px; COLOR: #000; PADDING-TOP: 5px
+}
+#EntryTag {
+	
+}
+#EntryTag A {
+	MARGIN-LEFT: 5px
+}
+#EntryTag A:link {
+	COLOR: #4c4f8b
+}
+#EntryTag A:visited {
+	COLOR: #4c4f8b
+}
+#EntryTag A:active {
+	COLOR: #4c4f8b
+}
+#EntryTag A:hover {
+	COLOR: #6466b3
+}
+#topics .postDesc {
+	TEXT-ALIGN: right; MARGIN-TOP: 5px; WIDTH: 100%; PADDING-RIGHT: 5px; FLOAT: right; COLOR: #666
+}
+.feedback_area_title {
+	BORDER-BOTTOM: #333 1px solid; MARGIN-TOP: 20px; PADDING-LEFT: 8px; MARGIN-BOTTOM: 10px; FONT-WEIGHT: bold
+}
+.louzhu {
+	PADDING-RIGHT: 16px; BACKGROUND: url(/skins/summerGarden/images/icoLouZhu.gif) no-repeat right top
+}
+.feedbackListSubtitle {
+	COLOR: #666
+}
+.feedbackListSubtitle A:link {
+	COLOR: #666; FONT-WEIGHT: normal
+}
+.feedbackListSubtitle A:visited {
+	COLOR: #666; FONT-WEIGHT: normal
+}
+.feedbackListSubtitle A:active {
+	COLOR: #666; FONT-WEIGHT: normal
+}
+.feedbackListSubtitle A:hover {
+	COLOR: #f60; TEXT-DECORATION: none
+}
+.feedbackManage {
+	TEXT-ALIGN: right; WIDTH: 200px; FLOAT: right
+}
+.feedbackCon {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 10px; LINE-HEIGHT: 1.5em; MIN-HEIGHT: 35px; PADDING-LEFT: 40px; WIDTH: 95%; PADDING-RIGHT: 18px; MARGIN-BOTTOM: 1em; BACKGROUND: url(/skins/summerGarden/images/comment.gif) no-repeat 5px 0px; PADDING-TOP: 15px; _height: 35px
+}
+#divRefreshComments {
+	TEXT-ALIGN: right; MARGIN-BOTTOM: 10px
+}
+.commenttb {
+	WIDTH: 320px
+}
+.feedbackListSubtitle B {
+	FONT-WEIGHT: normal
+}
+.entrylistTitle {
+	BORDER-BOTTOM: #6466b3 1px solid; TEXT-ALIGN: right; PADDING-BOTTOM: 3px; PADDING-RIGHT: 10px; COLOR: #6466b3; FONT-SIZE: 110%; FONT-WEIGHT: bold
+}
+.PostListTitle {
+	BORDER-BOTTOM: #6466b3 1px solid; TEXT-ALIGN: right; PADDING-BOTTOM: 3px; PADDING-RIGHT: 10px; COLOR: #6466b3; FONT-SIZE: 110%; FONT-WEIGHT: bold
+}
+.thumbTitle {
+	BORDER-BOTTOM: #6466b3 1px solid; TEXT-ALIGN: right; PADDING-BOTTOM: 3px; PADDING-RIGHT: 10px; COLOR: #6466b3; FONT-SIZE: 110%; FONT-WEIGHT: bold
+}
+.entrylistDescription {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 5px; PADDING-RIGHT: 10px; MARGIN-BOTTOM: 10px; COLOR: #666; PADDING-TOP: 5px
+}
+.entrylistItem {
+	PADDING-BOTTOM: 5px; MIN-HEIGHT: 20px; WIDTH: 100%; MARGIN-BOTTOM: 30px; _height: 20px
+}
+.entrylistPosttitle {
+	BORDER-BOTTOM: #6466b3 1px dotted; LINE-HEIGHT: 1.5em; PADDING-LEFT: 5px; WIDTH: 100%; FONT-SIZE: 110%; FONT-WEIGHT: bold
+}
+.entrylistPosttitle A:link {
+	COLOR: #6466b3
+}
+.entrylistPosttitle A:visited {
+	COLOR: #6466b3
+}
+.entrylistPosttitle A:active {
+	COLOR: #6466b3
+}
+.entrylistPosttitle A:hover {
+	COLOR: #4c4f8b
+}
+.entrylistPostSummary {
+	MARGIN-TOP: 5px; PADDING-LEFT: 5px; MARGIN-BOTTOM: 5px
+}
+.entrylistItemPostDesc {
+	TEXT-ALIGN: right; COLOR: #666
+}
+.entrylistItemPostDesc A:link {
+	COLOR: #666
+}
+.entrylistItemPostDesc A:visited {
+	COLOR: #666
+}
+.entrylistItemPostDesc A:active {
+	COLOR: #666
+}
+.entrylistItemPostDesc A:hover {
+	COLOR: #f60
+}
+.entrylist .postSeparator {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 0px; LINE-HEIGHT: 0; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; HEIGHT: 0px; CLEAR: both; FONT-SIZE: 0px; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 0px
+}
+.pager {
+	TEXT-ALIGN: right; MARGIN-RIGHT: 10px
+}
+.PostList {
+	BORDER-BOTTOM: #6466b3 1px dotted; MIN-HEIGHT: 1.5em; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; MARGIN-BOTTOM: 5px; CLEAR: both; PADDING-TOP: 10px; _height: 1.5em
+}
+.postTitl2 {
+	FLOAT: left
+}
+.postDesc2 {
+	FLOAT: right; COLOR: #666
+}
+.postText2 {
+	COLOR: #666; CLEAR: both
+}
+.pfl_feedback_area_title {
+	BORDER-BOTTOM: #666 1px solid; TEXT-ALIGN: right; LINE-HEIGHT: 1.5em; MARGIN-BOTTOM: 10px; FONT-WEIGHT: bold
+}
+.pfl_feedbackItem {
+	BORDER-BOTTOM: black 1px solid; MARGIN-BOTTOM: 20px
+}
+.pfl_feedbacksubtitle {
+	BORDER-BOTTOM: #666 1px dotted; WIDTH: 100%; HEIGHT: 1.5em
+}
+.pfl_feedbackname {
+	FLOAT: left
+}
+.pfl_feedbackManage {
+	FLOAT: right
+}
+.pfl_feedbackCon {
+	PADDING-BOTTOM: 5px; COLOR: black; PADDING-TOP: 5px
+}
+.pfl_feedbackAnswer {
+	TEXT-INDENT: 2em; COLOR: #f40
+}
+.tdSentMessage {
+	TEXT-ALIGN: right
+}
+.errorMessage {
+	WIDTH: 300px; FLOAT: left
+}
+.mySearch #q {
+	WIDTH: 175px; HEIGHT: 1.4em
+}
+.divPhoto {
+	BORDER-BOTTOM: #6466b3 1px solid; BORDER-LEFT: #6466b3 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BORDER-TOP: #6466b3 1px solid; MARGIN-RIGHT: 10px; BORDER-RIGHT: #6466b3 1px solid; PADDING-TOP: 2px
+}
+.thumbDescription {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 5px; PADDING-RIGHT: 10px; MARGIN-BOTTOM: 10px; COLOR: #666; PADDING-TOP: 5px
+}
+#footer {
+	TEXT-ALIGN: center; MARGIN-TOP: 10px; BACKGROUND: url(/skins/summerGarden/images/footer.jpg) no-repeat 220px 0px; HEIGHT: 41px; PADDING-TOP: 40px
+}
+.personInfo {
+	MARGIN-BOTTOM: 20px
+}
+.pages {
+	TEXT-ALIGN: right
+}
+.postBody {
+	LINE-HEIGHT: 1.5em; COLOR: #393939; FONT-SIZE: 14px
+}
+.postBody P {
+	MARGIN: 0px auto 1em
+}
+.postCon P {
+	MARGIN: 0px auto 1em
+}
+.postBody H2 {
+	MARGIN: 15px auto 2px; FONT-SIZE: 150%; FONT-WEIGHT: bold
+}
+.postBody H3 {
+	MARGIN: 15px auto 2px; FONT-SIZE: 120%; FONT-WEIGHT: bold
+}
+.postBody H4 {
+	MARGIN: 15px auto 2px; COLOR: #333; FONT-SIZE: 110%; FONT-WEIGHT: bold
+}
+.postBody H5 {
+	MARGIN: 15px auto 2px; COLOR: #333; FONT-SIZE: 100%; FONT-WEIGHT: bold
+}
+.postBody A:link {
+	COLOR: #6466b3; TEXT-DECORATION: underline
+}
+.postBody A:visited {
+	COLOR: #6466b3; TEXT-DECORATION: underline
+}
+.postBody A:active {
+	COLOR: #6466b3; TEXT-DECORATION: underline
+}
+.postBody A:hover {
+	COLOR: #4c4f8b
+}
+.postCon A:link {
+	TEXT-DECORATION: underline
+}
+.postCon A:visited {
+	TEXT-DECORATION: underline
+}
+.postCon A:active {
+	TEXT-DECORATION: underline
+}
+.postCon A:hover {
+	COLOR: #4c4f8b
+}
+.postBody UL {
+	MARGIN-LEFT: 2em
+}
+.postCon UL {
+	MARGIN-LEFT: 2em
+}
+.postBody LI {
+	LIST-STYLE-TYPE: disc; MARGIN-BOTTOM: 1em
+}
+.postCon LI {
+	LIST-STYLE-TYPE: disc; MARGIN-BOTTOM: 1em
+}
+.postBody BLOCKQUOTE {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 1.6em; MIN-HEIGHT: 35px; PADDING-LEFT: 60px; PADDING-RIGHT: 60px; COLOR: #333; PADDING-TOP: 10px; _height: 35px
+}
+.newsItem FIELDSET {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.input_my_zzk {
+	WIDTH: 140px
+}
+.login_tips A {
+	TEXT-DECORATION: underline
+}

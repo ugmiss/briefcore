@@ -1,0 +1,1280 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0068)http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>c#获取文件MD5的值 - 学无止境 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=c#,曾祥展,文件,MD5的值 name=keywords><LINK 
+href="c#获取文件MD5的值 - 学无止境 - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK href="c#获取文件MD5的值 - 学无止境 - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="c#获取文件MD5的值 - 学无止境 - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK href="c#获取文件MD5的值 - 学无止境 - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK 
+href="c#获取文件MD5的值 - 学无止境 - 博客园_files/customcss.css" type=text/css 
+rel=stylesheet><LINK title=RSS href="http://www.cnblogs.com/zengxiangzhan/rss" 
+type=application/rss+xml rel=alternate><LINK title=RSD 
+href="http://www.cnblogs.com/zengxiangzhan/rsd.xml" type=application/rsd+xml 
+rel=EditURI>
+<SCRIPT src="c#获取文件MD5的值 - 学无止境 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="c#获取文件MD5的值 - 学无止境 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="c#获取文件MD5的值 - 学无止境 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1639875.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<LINK href="c#获取文件MD5的值 - 学无止境 - 博客园_files/style.css" type=text/css 
+rel=Stylesheet>
+<SCRIPT src="c#获取文件MD5的值 - 学无止境 - 博客园_files/zengxiangzhan1.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="c#获取文件MD5的值 - 学无止境 - 博客园_files/mootools-1.2.4-core-jm.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="c#获取文件MD5的值 - 学无止境 - 博客园_files/zengxiangzhan.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+document.writeln("<style type=\"text\/css\">#loading{width:100px;height:20px;background:#A0DB0E;padding:5px;position:fixed;left:50%;top:0px}#loading div{width:1px;height:20px;background:#F1FF4D;font:10px/20px Arial}<\/style>")
+</SCRIPT>
+<!--done-->
+<DIV id=home>
+<DIV id=header>
+<DIV id=blogTitle><A id=lnkBlogLogo 
+href="http://www.cnblogs.com/zengxiangzhan/"><IMG id=blogLogo alt=返回主页 
+src="c#获取文件MD5的值 - 学无止境 - 博客园_files/logo.gif"></A> <!--done-->
+<H1><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/zengxiangzhan/">学无止境</A></H1>
+<H2>IT开发 曾祥展 
+<DIV id=loading>
+<DIV></DIV></DIV>
+<SCRIPT type=text/javascript>$("#loading div").animate({width:"31px"}).text("31%")</SCRIPT>
+
+<STYLE type=text/css>.syntaxhighlighter {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter DIV {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter CODE {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE TD {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE TR {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE TBODY {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter .color1 {
+	COLOR: #008200! important
+}
+.syntaxhighlighter .color1 A {
+	COLOR: #008200! important
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading div").animate({width:"65px"}).text("65%")},1000)</SCRIPT>
+</H2></DIV><!--end: blogTitle 博客的标题和副标题 -->
+<DIV id=navigator><!--done-->
+<UL id=navList>
+  <LI>
+  <LI><A class=menu id=MyLinks1_SpaceLink 
+  href="http://space.cnblogs.com/">社区</A> 
+  <LI><A class=menu id=MyLinks1_MyHomeLink 
+  href="http://www.cnblogs.com/zengxiangzhan/">首页</A> 
+  <LI><A class=menu id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/zengxiangzhan/admin/EditPosts.aspx?opt=1">新随笔</A> 
+
+  <LI><A class=menu id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/zengxiangzhan">联系</A> 
+  <LI><A class=menu id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/zengxiangzhan/admin/EditPosts.aspx">管理</A> 
+  <LI><A class=menu id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/zengxiangzhan/rss">订阅</A> <A class=aHeaderXML 
+  id=MyLinks1_XMLLink href="http://www.cnblogs.com/zengxiangzhan/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="c#获取文件MD5的值 - 学无止境 - 博客园_files/rss.gif"></A> </LI></UL>
+<DIV class=blogStats><!--done-->随笔- 256&nbsp; 文章- 31&nbsp; 评论- 343&nbsp; </DIV><!--end: blogStats --></DIV><!--end: navigator 博客导航栏 --></DIV><!--end: header 头部 -->
+<DIV id=main>
+<DIV id=mainContent>
+<DIV class=forFlow><!--done-->
+<DIV id=topics>
+<DIV class=post>
+<H1 class=postTitle><A class=postTitle2 id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html">c#获取文件MD5的值</A> 
+</H1>
+<DIV class=clear></DIV>
+<DIV class=postBody>using</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;System;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">using</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;System.Collections.Generic;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">using</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;System.Text;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">using</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;System.IO;<BR><BR></SPAN><SPAN 
+style="COLOR: #0000ff">namespace</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;MyHash<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">class</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;md5<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">///</SPAN><SPAN style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&lt;summary&gt;</SPAN><SPAN 
+style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">///</SPAN><SPAN 
+style="COLOR: #008000">&nbsp;实现对一个文件md5的读取，path为文件路径<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">///</SPAN><SPAN style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&lt;/summary&gt;</SPAN><SPAN 
+style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">///</SPAN><SPAN style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&lt;param&nbsp;name="path"&gt;&lt;/param&gt;</SPAN><SPAN 
+style="COLOR: #008000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">///</SPAN><SPAN style="COLOR: #008000">&nbsp;</SPAN><SPAN 
+style="COLOR: #808080">&lt;returns&gt;&lt;/returns&gt;</SPAN><SPAN 
+style="COLOR: #808080"><BR></SPAN><SPAN 
+style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">public</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">string</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;md5_hash(</SPAN><SPAN 
+style="COLOR: #0000ff">string</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;path)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">try</SPAN><SPAN 
+style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FileStream&nbsp;get_file&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">new</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;FileStream(path,&nbsp;FileMode.Open,&nbsp;FileAccess.Read,&nbsp;FileShare.Read);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Security.Cryptography.MD5CryptoServiceProvider&nbsp;get_md5&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">new</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;System.Security.Cryptography.MD5CryptoServiceProvider();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">byte</SPAN><SPAN 
+style="COLOR: #000000">[]&nbsp;hash_byte&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;get_md5.ComputeHash(get_file);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">string</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;resule&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;System.BitConverter.ToString(hash_byte);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resule&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;resule.Replace(</SPAN><SPAN 
+style="COLOR: #800000">"</SPAN><SPAN style="COLOR: #800000">-</SPAN><SPAN 
+style="COLOR: #800000">"</SPAN><SPAN style="COLOR: #000000">,&nbsp;</SPAN><SPAN 
+style="COLOR: #800000">""</SPAN><SPAN 
+style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">return</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;resule;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">catch</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;(Exception&nbsp;e)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">return</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;e.ToString();<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>}<BR>&nbsp;<BR>&nbsp;<BR>&nbsp;<BR>&nbsp;<BR>&nbsp;<BR>&nbsp;<BR></SPAN><SPAN 
+style="COLOR: #000000">===================================================</SPAN><SPAN 
+style="COLOR: #000000"><BR></SPAN><SPAN style="COLOR: #0000ff">using</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;System;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">using</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;System.Collections.Generic;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">using</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;System.Text;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">using</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;System.IO;<BR></SPAN><SPAN 
+style="COLOR: #0000ff">using</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;System.Security.Cryptography;<BR>&nbsp;<BR>&nbsp;<BR>&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">public</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">static</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">void</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;getFileMD5(</SPAN><SPAN 
+style="COLOR: #0000ff">string</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;path)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FileStream&nbsp;fs&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">new</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;FileStream(path,&nbsp;FileMode.Open,&nbsp;FileAccess.Read);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MD5CryptoServiceProvider&nbsp;md5&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">new</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;MD5CryptoServiceProvider();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">byte</SPAN><SPAN 
+style="COLOR: #000000">[]&nbsp;md5byte&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;md5.ComputeHash(fs);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">int</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;i,&nbsp;j;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">foreach</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;(</SPAN><SPAN 
+style="COLOR: #0000ff">byte</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;b&nbsp;</SPAN><SPAN 
+style="COLOR: #0000ff">in</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;md5byte)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;Convert.ToInt32(b);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;i&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">&gt;&gt;</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #800080">4</SPAN><SPAN 
+style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.Write(Convert.ToString(j,&nbsp;</SPAN><SPAN 
+style="COLOR: #800080">16</SPAN><SPAN 
+style="COLOR: #000000">));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;((i&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">&lt;&lt;</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #800080">4</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">&amp;</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN 
+style="COLOR: #800080">0x00ff</SPAN><SPAN 
+style="COLOR: #000000">)&nbsp;</SPAN><SPAN 
+style="COLOR: #000000">&gt;&gt;</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #800080">4</SPAN><SPAN 
+style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.Write(Convert.ToString(j,&nbsp;</SPAN><SPAN 
+style="COLOR: #800080">16</SPAN><SPAN 
+style="COLOR: #000000">));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ReadLine();<BR><BR></SPAN>
+<DIV id=MySignature>
+<DIV>作者：<A href="http://zengxiangzhan.cnblogs.com/" target=_blank>曾祥展</A></DIV>
+<DIV>出处：<A href="http://zengxiangzhan.cnblogs.com/" 
+target=_blank>http://zengxiangzhan.cnblogs.com/</A></DIV>
+<DIV>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 
+</DIV></DIV>
+<DIV id=EntryTag>Tag标签: <A 
+href="http://www.cnblogs.com/zengxiangzhan/tag/c#/">c#</A>,<A 
+href="http://www.cnblogs.com/zengxiangzhan/tag/æ¾ç¥¥å±/">曾祥展</A>,<A 
+href="http://www.cnblogs.com/zengxiangzhan/tag/æä»¶/">文件</A>,<A 
+href="http://www.cnblogs.com/zengxiangzhan/tag/MD5çå¼/">MD5的值</A></DIV>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/zengxiangzhan/" 
+target=_blank><IMG class=author_avatar alt="" 
+src="c#获取文件MD5的值 - 学无止境 - 博客园_files/u82235.jpg"></A> 
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/zengxiangzhan/" 
+target=_blank>zengxiangzhan</A><BR>关注 - 1<BR>粉丝 - 12<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1639875,59868,1)><SPAN class=diggnum 
+id=digg_count_1639875>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1639875,59868,2)><SPAN class=burynum 
+id=bury_count_1639875>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1639875 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1639875>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639766.html">« 
+</A>上一篇：<A title="发布于2010-01-05 16:58" 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639766.html">服务器端返回JSON数据后如何用Javascript进行排序</A><BR><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639886.html">» 
+</A>下一篇：<A title="发布于2010-01-05 20:48" 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639886.html">每个分类取最新的几条的SQL实现</A><BR></DIV>
+<SCRIPT src="c#获取文件MD5的值 - 学无止境 - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '1abd8e52-a689-de11-be36-001cf0cd104b';
+</SCRIPT>
+</DIV>
+<DIV class=postDesc>posted @ 2010-01-05 20:31 <A 
+href="http://www.cnblogs.com/zengxiangzhan/">zengxiangzhan</A> 阅读(17) <A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html#commentform">评论(0)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/zengxiangzhan/admin/EditPosts.aspx?postid=1639875">编辑</A> 
+<A onclick="AddToWz(1639875);return false;" 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html#">收藏</A> 
+所属分类: <A 
+href="http://www.cnblogs.com/zengxiangzhan/category/212155.html">C#</A></DIV></DIV><IMG 
+height=1 src="c#获取文件MD5的值 - 学无止境 - 博客园_files/1639875.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html"
+dc:identifier="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/zengxiangzhan/services/trackbacks/1639875.aspx" />
+</rdf:RDF>
+--></DIV><!--end: topics 文章、评论容器-->
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fzengxiangzhan%2farchive%2f2010%2f01%2f05%2f1639875.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fzengxiangzhan%2farchive%2f2010%2f01%2f05%2f1639875.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A href="http://job.cnblogs.com/offer/7427/" 
+target=_blank>沪江网招聘ASP.NET开发工程师</A><BR><A href="http://a4.yeshj.com/rd/35450/" 
+target=_blank>软件研发团队管理年会(上海，7.10-7.11)</A><BR><A href="http://news.cnblogs.com/" 
+target=_blank>IT新闻</A>:<BR>· <A href="http://news.cnblogs.com/n/65681/" 
+target=_blank>鲍尔默：Silverlight不会出现在iPhone</A><BR>· <A 
+href="http://news.cnblogs.com/n/65680/" 
+target=_blank>周鸿祎揭秘与金山口水战背后的五大秘密</A><BR>· <A 
+href="http://news.cnblogs.com/n/65679/" 
+target=_blank>杀毒软件大战背后：金山毒霸曾想卖给奇虎360</A><BR>· <A 
+href="http://news.cnblogs.com/n/65678/" 
+target=_blank>鲍尔默:“野心流露”还是“画饼充饥”？</A><BR>· <A 
+href="http://news.cnblogs.com/n/65677/" target=_blank>为什么要拿Flash说事</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="c#获取文件MD5的值 - 学无止境 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+alt="" src="c#获取文件MD5的值 - 学无止境 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=c%23" target=_blank>c#</A> <A 
+href="http://zzk.cnblogs.com/s?w=%e6%9b%be%e7%a5%a5%e5%b1%95" 
+target=_blank>曾祥展</A> <A href="http://zzk.cnblogs.com/s?w=%e6%96%87%e4%bb%b6" 
+target=_blank>文件</A> <A href="http://zzk.cnblogs.com/s?w=MD5%e7%9a%84%e5%80%bc" 
+target=_blank>MD5的值</A> <A href="http://zzk.cnblogs.com/s?w=C%23" 
+target=_blank>C#</A> </DIV></DIV></DIV><!--end: forFlow --></DIV><!--end: mainContent 主体内容容器-->
+<DIV id=sideBar>
+<DIV id=sideBarMain>
+<DIV id=calendar>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar cellSpacing=0 
+cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=7>
+      <TABLE class=CalTitle cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev><A title="Go to the previous month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3622')">&lt;</A></TD>
+          <TD align=middle>2010年1月</TD>
+          <TD class=CalNextPrev align=right><A title="Go to the next month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3684')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>27</TD>
+    <TD class=CalOtherMonthDay align=middle>28</TD>
+    <TD class=CalOtherMonthDay align=middle>29</TD>
+    <TD class=CalOtherMonthDay align=middle>30</TD>
+    <TD class=CalOtherMonthDay align=middle>31</TD>
+    <TD align=middle>1</TD>
+    <TD class=CalWeekendDay align=middle>2</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/3.html"><U>3</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/4.html"><U>4</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/5.html"><U>5</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/6.html"><U>6</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/7.html"><U>7</U></A></TD>
+    <TD align=middle>8</TD>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/9.html"><U>9</U></A></TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>10</TD>
+    <TD align=middle>11</TD>
+    <TD align=middle>12</TD>
+    <TD align=middle>13</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/14.html"><U>14</U></A></TD>
+    <TD align=middle>15</TD>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/16.html"><U>16</U></A></TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>17</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/18.html"><U>18</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/19.html"><U>19</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/20.html"><U>20</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/21.html"><U>21</U></A></TD>
+    <TD align=middle>22</TD>
+    <TD class=CalWeekendDay align=middle>23</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/24.html"><U>24</U></A></TD>
+    <TD align=middle>25</TD>
+    <TD align=middle>26</TD>
+    <TD align=middle>27</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/28.html"><U>28</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/29.html"><U>29</U></A></TD>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/1/30.html"><U>30</U></A></TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>31</TD>
+    <TD class=CalOtherMonthDay align=middle>1</TD>
+    <TD class=CalOtherMonthDay align=middle>2</TD>
+    <TD class=CalOtherMonthDay align=middle>3</TD>
+    <TD class=CalOtherMonthDay align=middle>4</TD>
+    <TD class=CalOtherMonthDay align=middle>5</TD>
+    <TD class=CalOtherMonthDay align=middle>6</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<SCRIPT type=text/javascript>
+var blogapp = 'zengxiangzhan';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV></DIV>
+<DIV class=catListPostCategory>
+<H3 class=catListTitle>随笔分类<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(257)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209693.html">Ajax(9)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to Ajax(9)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209693.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209688.html">ASP.NET(61)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to ASP.NET(61)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209688.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/212155.html">C#(14)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to C#(14)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/212155.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/243872.html">Cloud 开发</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to Cloud 开发" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/243872.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209692.html">DIV+CSS(5)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to DIV+CSS(5)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209692.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209694.html">ExtJs(2)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to ExtJs(2)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209694.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/246700.html">iPhone/Android平台开发</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to iPhone/Android平台开发" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/246700.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209690.html">JavaScript(13)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to JavaScript(13)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209690.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209691.html">jQuery(16)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink 
+  title="Subscribe to jQuery(16)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209691.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/227307.html">JSON(6)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink 
+  title="Subscribe to JSON(6)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/227307.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/226398.html">MVC</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink 
+  title="Subscribe to MVC" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/226398.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/216093.html">Plugin 
+  (9)</A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink 
+  title="Subscribe to Plugin (9)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/216093.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/234039.html">SEO优化(2)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_RssLink 
+  title="Subscribe to SEO优化(2)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/234039.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/243869.html">SharePoint 
+  &amp; Office</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_RssLink 
+  title="Subscribe to SharePoint &amp; Office" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/243869.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/234037.html">Silverlight</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_RssLink 
+  title="Subscribe to Silverlight" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/234037.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209689.html">SQL(64)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_RssLink 
+  title="Subscribe to SQL(64)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209689.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/231586.html">WPF WCF 
+  WF</A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_RssLink 
+  title="Subscribe to WPF WCF WF" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/231586.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/227605.html">XML(9)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_RssLink 
+  title="Subscribe to XML(9)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/227605.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/210026.html">解决方案(11)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_RssLink 
+  title="Subscribe to 解决方案(11)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/210026.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/210025.html">前端技术(13)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_RssLink 
+  title="Subscribe to 前端技术(13)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/210025.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/231599.html">上传下载(12)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_RssLink 
+  title="Subscribe to 上传下载(12)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/231599.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/210030.html">设计·管理(3)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_RssLink 
+  title="Subscribe to 设计·管理(3)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/210030.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/234038.html">水晶报表</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_RssLink 
+  title="Subscribe to 水晶报表" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/234038.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/211401.html">网络技术(4)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_RssLink 
+  title="Subscribe to 网络技术(4)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/211401.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl25_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/243871.html">移动与嵌入式</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl25_RssLink 
+  title="Subscribe to 移动与嵌入式" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/243871.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl26_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/221883.html">正则表达式(4)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl26_RssLink 
+  title="Subscribe to 正则表达式(4)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/221883.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/05/1639875.html###">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListPostArchive>
+<H3 class=catListTitle>随笔档案<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(189)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/06.html">2010年6月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05.html">2010年5月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04.html">2010年4月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03.html">2010年3月 
+  (10)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02.html">2010年2月 
+  (18)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01.html">2010年1月 
+  (52)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12.html">2009年12月 
+  (26)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11.html">2009年11月 
+  (18)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/10.html">2009年10月 
+  (9)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09.html">2009年9月 
+  (51)</A> </LI></UL></DIV>
+<DIV class=catListEssay>
+<H3 class=catListTitle>最新随笔</H3>
+<UL>
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl00_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/06/02/1749858.html">1.&nbsp;激活 
+  Microsoft® Office 2010 MSDN专业版（简单）</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl01_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/13/1734773.html">2.&nbsp;百度或者Google---SEO优化</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl02_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/12/1733758.html">3.&nbsp;【汇总】SQL 
+  CODE --- 经典·精彩</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl03_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html">4.&nbsp;.net面试问答（大汇总）</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl04_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/16/1713565.html">5.&nbsp;关键字“拖曳搜索”之“拖曳”以及 
+  图片“提示自适应放大”效果 的实现</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl05_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/21/1691051.html">6.&nbsp;国内最新最全面IP数据库</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl06_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/17/1688097.html">7.&nbsp;新闻标题 
+  静态分页 (无刷新)</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl07_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/14/1685386.html">8.&nbsp;IE无法显示.shtml格式网页</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl08_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/12/1684100.html">9.&nbsp;jquery-galleryview-2.0 
+  漂亮多样化的图片特效（多项自定义）</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl09_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html">10.&nbsp;CKEditor3.2+CKFinder1.4.3结合 
+  打造"帅"的编辑器 For .Net</A> </LI></UL></DIV>
+<DIV class=catListComment>
+<H3 class=catListTitle>最新评论<A id=SingleColumn1__6795ce_RSSHyperlink1 
+title=RSS订阅最最新评论 
+href="http://www.cnblogs.com/zengxiangzhan/CommentsRSS.aspx"><IMG 
+title=RSS订阅最最新评论 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="c#获取文件MD5的值 - 学无止境 - 博客园_files/xml.gif"></A></H3>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl00_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/13/1623158.html#1836360">1.&nbsp;Re:仿Google自动提示 
+SearchSuggess</A> </DIV>
+<DIV class=divRecentComment>感谢楼主,不知道能否给份源码? 290476058@qq.com (orient22) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl01_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/21/1628726.html#1835933">2.&nbsp;Re:UI 
+upload 多文件上传</A> </DIV>
+<DIV class=divRecentComment>也给我来一份吧 谢谢楼主! zhuer0632@qq.com (Master zhu) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl02_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html#1835518">3.&nbsp;Re:CKEditor3.2+CKFinder1.4.3结合 
+打造"帅"的编辑器 For .Net</A> </DIV>
+<DIV class=divRecentComment>我的情况跟#28的一样，按照LZ的步骤，就是没有浏览按钮的出现，莫非是我下载的版本太高？ 
+--------------------------------- 改用 ckfinder_aspnet_... (卓伯虎) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl03_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html#1831917">4.&nbsp;Re:CKEditor3.2+CKFinder1.4.3结合 
+打造"帅"的编辑器 For .Net</A> </DIV>
+<DIV class=divRecentComment>@cr225 看不到图片 (zengxiangzhan) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl04_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html#1831499">5.&nbsp;Re:CKEditor3.2+CKFinder1.4.3结合 
+打造"帅"的编辑器 For .Net</A> </DIV>
+<DIV 
+class=divRecentComment>还是不行！我按你的操作是一步一步来的，不肯能错！而且几天前跟你发过信息说有问题，今天我重新搞还是不行。我把截图发出来。 
+[img][/img] (cr225) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl05_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/28/1675137.html#1830213">6.&nbsp;Re:文件上传 
+带进度条（多种风格）</A> </DIV>
+<DIV class=divRecentComment>蛮好的 (MiCow) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl06_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/04/1663632.html#1830168">7.&nbsp;Re:漂亮 
+表单验证 密码强度</A> </DIV>
+<DIV class=divRecentComment>LZ,也给我个吧，谢谢！ loveheping16@123.com (spin) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl07_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/04/1663632.html#1829405">8.&nbsp;Re:漂亮 
+表单验证 密码强度</A> </DIV>
+<DIV class=divRecentComment>已收到谢谢 (涛涛帅) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl08_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636871.html#1829345">9.&nbsp;Re:数据操作类 
+SQLHelper.cs</A> </DIV>
+<DIV class=divRecentComment>[quote]2and1：楼主,好像不全啊.是否可以发一份给我.谢谢! 
+jasonliangcn#gmail.com 另外问一下.你上面有两条是执行存储过程的.但是是直接带content参数的.请... (spin) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl09_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11/07/1598194.html#1829258">10.&nbsp;Re:FileUploaderAJAX 
+无刷新上传</A> </DIV>
+<DIV class=divRecentComment>[quote]zengxiangzhan： @Super_Dang 已发![/quote] 谢谢楼主 
+(Super_Dang) </DIV></DIV>
+<DIV class=catListView>
+<H3 class=catListTitle>阅读排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/28/1675137.html">1.&nbsp;文件上传 
+  带进度条（多种风格）(7008)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/21/1691051.html">2.&nbsp;国内最新最全面IP数据库(4741)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/05/1679286.html">3.&nbsp;IIS配置PHP环境（快速最新版）(4384)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/14/1647866.html">4.&nbsp;大文件上传 
+  进度条显示 （仿csdn资源上传效果）(4048)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html">5.&nbsp;CKEditor3.2+CKFinder1.4.3结合 
+  打造"帅"的编辑器 For .Net(3572)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html">6.&nbsp;.net面试问答（大汇总）(3267)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/12/1733758.html">7.&nbsp;【汇总】SQL 
+  CODE --- 经典·精彩(2942)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/03/1677460.html">8.&nbsp;AspNetPager 
+  样式以及使用（漂亮）(2935)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/21/1670646.html">9.&nbsp;jQueryJSON 
+  无刷新三级联动(2642)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/13/1623158.html">10.&nbsp;仿Google自动提示 
+  SearchSuggess(2532)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl11_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/12/1684100.html">11.&nbsp;jquery-galleryview-2.0 
+  漂亮多样化的图片特效（多项自定义）(2431)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl12_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/22/1671379.html">12.&nbsp;FlyTreeView 
+  for asp.net （4.4.1.2最新破解版）(2269)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl13_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636871.html">13.&nbsp;数据操作类 
+  SQLHelper.cs(1949)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl14_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/14/1623221.html">14.&nbsp;Uploadify 
+  jquery+falsh+UploadHandler.ashx(1575)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl15_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/16/1713565.html">15.&nbsp;关键字“拖曳搜索”之“拖曳”以及 
+  图片“提示自适应放大”效果 的实现(1298)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl16_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/08/1681107.html">16.&nbsp;ComponentArt. 
+  Web.UI 《2009.3版~破解》(1261)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl17_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html">17.&nbsp;SQL经典短小代码收集(1248)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl18_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/25/1673687.html">18.&nbsp;模拟产品展示 
+  Flash无法展示的追踪过程(1224)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl19_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/25/1673150.html">19.&nbsp;漂亮的后台 
+  模板(1203)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl20_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/04/1639220.html">20.&nbsp;无限级分类 
+  存储过程(1147)</A> </LI></UL></DIV>
+<DIV class=catListFeedback>
+<H3 class=catListTitle>评论排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/14/1647866.html">1.&nbsp;大文件上传 
+  进度条显示 （仿csdn资源上传效果）(35)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/28/1675137.html">2.&nbsp;文件上传 
+  带进度条（多种风格）(33)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html">3.&nbsp;CKEditor3.2+CKFinder1.4.3结合 
+  打造"帅"的编辑器 For .Net(32)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/21/1691051.html">4.&nbsp;国内最新最全面IP数据库(30)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/21/1628726.html">5.&nbsp;UI 
+  upload 多文件上传(26)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/14/1623221.html">6.&nbsp;Uploadify 
+  jquery+falsh+UploadHandler.ashx(19)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/04/1663632.html">7.&nbsp;漂亮 
+  表单验证 密码强度(18)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html">8.&nbsp;.net面试问答（大汇总）(17)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/13/1623158.html">9.&nbsp;仿Google自动提示 
+  SearchSuggess(15)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/05/1679286.html">10.&nbsp;IIS配置PHP环境（快速最新版）(15)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl11_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/21/1670646.html">11.&nbsp;jQueryJSON 
+  无刷新三级联动(13)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl12_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/03/1677460.html">12.&nbsp;AspNetPager 
+  样式以及使用（漂亮）(12)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl13_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/22/1671379.html">13.&nbsp;FlyTreeView 
+  for asp.net （4.4.1.2最新破解版）(10)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl14_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/12/1733758.html">14.&nbsp;【汇总】SQL 
+  CODE --- 经典·精彩(10)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl15_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11/07/1598194.html">15.&nbsp;FileUploaderAJAX 
+  无刷新上传(7)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl16_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/09/1666791.html">16.&nbsp;汉字转拼音(5)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl17_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11/24/1609299.html">17.&nbsp;c# 
+  图片插入Excel(4)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl18_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636871.html">18.&nbsp;数据操作类 
+  SQLHelper.cs(4)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl19_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636818.html">19.&nbsp;C#取真实IP地址--多个代理背后的ip地址(3)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl20_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/17/1688097.html">20.&nbsp;新闻标题 
+  静态分页 (无刷新)(3)</A> </LI></UL></DIV></DIV></DIV><!--end: sideBarMain --></DIV><!--end: sideBar 侧边栏容器 -->
+<DIV class=clear></DIV></DIV><!--end: main -->
+<DIV class=clear></DIV>
+<DIV id=footer><!--done-->Copyright ©2010 zengxiangzhan </DIV><!--end: footer --></DIV><!--end: home 自定义的最大容器 -->
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading div").animate({width:"89px"}).text("89%")},500)</SCRIPT>
+
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading div").animate({width:"100px"}).text("100%")},1000)</SCRIPT>
+
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading").hide(500)},1500)</SCRIPT>
+
+<SCRIPT type=text/javascript>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+try {
+var pageTracker = _gat._getTracker("UA-15774770-2");
+pageTracker._trackPageview();
+} catch(err) {}</SCRIPT>
+</FORM>
+<SCRIPT src="c#获取文件MD5的值 - 学无止境 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="c#获取文件MD5的值 - 学无止境 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="c#获取文件MD5的值 - 学无止境 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

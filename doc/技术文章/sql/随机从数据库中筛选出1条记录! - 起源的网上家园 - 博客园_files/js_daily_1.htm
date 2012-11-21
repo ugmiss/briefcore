@@ -1,0 +1,29 @@
+
+ <!--
+ 
+    function GetFlashCode(id, playerfile, flashvers ,width, height, transparent){
+	    if(transparent==true){
+		    transparent="window";
+	    }else{
+		    transparent="transparent";
+	    }
+	    var str="<object cl"+"assid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' code"+"base='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,22,0'";
+	    str+="width='"+ width+ "' height='"+ height+ "' id='"+ id +"' align='middle' >";
+	    str+="<param name='allowScriptAccess' value='always' />";
+	    str+="<param name='movie' value='"+playerfile+"' />";
+	    str+="<param name='quality' value='high' />";
+	    str+="<param name='scale' value='noScale' />";
+	    str+="<param name='wmode' value='"+transparent+"' />"; 
+	    str+="<param name='flashvars' value='"+flashvers+"' />";
+	    str+="<embed src='"+playerfile+"' quality='high' scale='noScale' bgcolor='#ffffff' width='"+ width+ "' height='"+ height+ "' flashvars='"+flashvers+"' id='"+ id +"' name='"+ id +"' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer'/>";
+	    str+="</object>";
+	    return str;
+    }
+     
+    var html ="<a href='http://dict.hjenglish.com/getdict.aspx#dailysentence' target='_blank'>[6.4]</a>";
+    html+=	GetFlashCode("daily_sentence"+Math.random(),"http://dict.hjenglish.com/speaker_sent.swf", "w=dy_882", 16,18,false);   
+    html+=" <a href='http://bbs.yeshj.com/thread-2-600422.htm' target='_blank' title='&#28857;&#20987;&#21442;&#19982;&#35752;&#35770;' >Do not worry. I will save you the leftovers. &#21035;&#25285;&#2451...</a> ";
+    // 
+    document.getElementById("hjdict_daily").innerHTML=html;
+	
+ //-->

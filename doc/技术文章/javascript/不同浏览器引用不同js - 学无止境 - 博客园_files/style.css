@@ -1,0 +1,534 @@
+#EntryTag {
+	MARGIN-TOP: 20px; FONT-SIZE: 9pt; COLOR: #666
+}
+#EntryTag A {
+	MARGIN-LEFT: 5px
+}
+#divRefreshComments {
+	FONT-SIZE: 9pt; MARGIN-BOTTOM: 10px; MARGIN-RIGHT: 10px; TEXT-ALIGN: right
+}
+ {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+HTML {
+	HEIGHT: 100%
+}
+BODY {
+	FONT-SIZE: 12px; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/bg.jpg) #000 repeat-x center top; MARGIN: auto; FONT-FAMILY: Arial
+}
+#home {
+	MARGIN: 0px auto; MIN-WIDTH: 940px
+}
+TABLE {
+	BORDER-COLLAPSE: collapse; BORDER-SPACING: 0
+}
+UL {
+	WORD-BREAK: break-all
+}
+LI {
+	LIST-STYLE-IMAGE: none; LIST-STYLE-TYPE: none
+}
+#header {
+	Z-INDEX: 298; MARGIN: 15px auto auto; WIDTH: 960px; POSITION: relative; HEIGHT: 234px
+}
+A.headermaintitle {
+	DISPLAY: block; FONT-SIZE: 1.5em; WIDTH: 150px; LINE-HEIGHT: 50px; HEIGHT: 50px; TEXT-DECORATION: none
+}
+#blogLogo {
+	FILTER: Alpha(opacity=60); opacity: .6
+}
+#blogTitle H1 {
+	DISPLAY: none; FLOAT: right
+}
+#blogTitle H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; MARGIN: 9px 0px 0px; WIDTH: 60%; COLOR: #999; LINE-HEIGHT: 1.5em; PADDING-TOP: 0px; TEXT-ALIGN: right
+}
+#navigator {
+	CLEAR: both; Z-INDEX: 10; FONT-FAMILY: verdana, Arial, Helvetica; POSITION: relative; HEIGHT: 39px
+}
+#navList {
+	BORDER-RIGHT: #000 1px solid; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/menu_bg.gif); FILTER: Alpha(opacity=50); LEFT: 0px; LIST-STYLE-IMAGE: none; BORDER-LEFT: #000 1px solid; WIDTH: 100%; LIST-STYLE-TYPE: none; POSITION: absolute; HEIGHT: 39px; opacity: .5
+}
+#navList {
+	Z-INDEX: 300; POSITION: relative
+}
+#navList UL {
+	Z-INDEX: 300; POSITION: relative
+}
+#navList A {
+	DISPLAY: none; OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium
+}
+UNKNOWN {
+	PADDING-LEFT: 2px; Z-INDEX: 9; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/menu_div.gif) no-repeat left 50%; FLOAT: left; POSITION: relative
+}
+UNKNOWN {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UNKNOWN {
+	PADDING-RIGHT: 10px; DISPLAY: block; PADDING-LEFT: 10px; FONT-WEIGHT: 700; FONT-SIZE: 18px; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #d6f24a; LINE-HEIGHT: 48px; PADDING-TOP: 0px; HEIGHT: 48px; OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium
+}
+UNKNOWN {
+	COLOR: #fff
+}
+UNKNOWN {
+	COLOR: #fff
+}
+#navList LI IMG {
+	MARGIN-TOP: 10px
+}
+#navList LI A#MyLinks1_MyHomeLink {
+	MARGIN-TOP: -2px; FONT-WEIGHT: 700; BACKGROUND: url(images/navigator_index.gif) 0px 0px; WIDTH: 62px; POSITION: relative; HEIGHT: 34px
+}
+.blogStats {
+	MARGIN-TOP: 8px; FLOAT: right; COLOR: #ccc; MARGIN-RIGHT: 2px; TEXT-ALIGN: right
+}
+#main {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; MIN-HEIGHT: 250px; BACKGROUND: #000; PADDING-BOTTOM: 10px; MARGIN: auto; WIDTH: 950px; COLOR: #fff; PADDING-TOP: 10px
+}
+#mainContent .forFlow {
+	FLOAT: none; WIDTH: auto
+}
+#mainContent {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 690px
+}
+.dayTitle {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: 700; FONT-SIZE: 21px; PADDING-BOTTOM: 5px; MARGIN: 5px 0px; WIDTH: 100%; COLOR: #fff; LINE-HEIGHT: 1.5em; PADDING-TOP: 5px; BORDER-BOTTOM: #4d4d4d 1px dotted; FONT-FAMILY: Arial
+}
+.postTitle {
+	BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: 700; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 15px; BORDER-BOTTOM-WIDTH: 0px; COLOR: #fff; PADDING-TOP: 10px; BORDER-RIGHT-WIDTH: 0px
+}
+.postTitle A:hover {
+	COLOR: #a0c100; TEXT-DECORATION: none
+}
+.postCon {
+	CLEAR: both; PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FLOAT: left; PADDING-BOTTOM: 10px; COLOR: #fff; LINE-HEIGHT: 1.5em; PADDING-TOP: 10px; TEXT-ALIGN: justify
+}
+.postDesc {
+	CLEAR: both; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/comments_div.gif) repeat-x 50% top; FLOAT: right; PADDING-BOTTOM: 5px; MARGIN: 5px; WIDTH: 100%; COLOR: #999; LINE-HEIGHT: 20px; PADDING-TOP: 2px; TEXT-ALIGN: right
+}
+.postSeparator {
+	CLEAR: both; BORDER-TOP: #666 1px dotted; DISPLAY: none; FLOAT: right; MARGIN: 0px auto 15px; WIDTH: 100%; HEIGHT: 1px
+}
+#topics {
+	PADDING-RIGHT: 19px; MARGIN-TOP: 10px; PADDING-LEFT: 19px; MIN-HEIGHT: 200px; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/news_bg.gif) #222 repeat-x 50% top; FLOAT: none; PADDING-BOTTOM: 19px; OVERFLOW: hidden; WIDTH: auto; WORD-BREAK: break-all; MARGIN-RIGHT: 5px; PADDING-TOP: 19px; POSITION: relative; HEIGHT: 1%; TEXT-OVERFLOW: ellipsis; o-text-overflow: ellipsis; moz-border-radius-topleft: 3px; moz-border-radius-topright: 3px
+}
+#topics .postTitle {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: 700; FONT-SIZE: 21px; FLOAT: left; PADDING-BOTTOM: 5px; MARGIN: 5px 0px; WIDTH: 100%; COLOR: #fff; LINE-HEIGHT: 1.5em; PADDING-TOP: 5px; BORDER-BOTTOM: #4d4d4d 1px dotted; FONT-FAMILY: Arial
+}
+.postBody {
+	PADDING-RIGHT: 2px; DISPLAY: block; PADDING-LEFT: 5px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 5px; OVERFLOW: hidden; COLOR: #333; LINE-HEIGHT: 1.5em; PADDING-TOP: 5px; BACKGROUND-COLOR: #fff
+}
+#topics .postDesc {
+	PADDING-RIGHT: 5px; MARGIN-TOP: 5px; FLOAT: right; WIDTH: 100%; COLOR: #666; TEXT-ALIGN: right
+}
+.feedback_area_title {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FONT-WEIGHT: 700; PADDING-BOTTOM: 5px; MARGIN: auto auto 5px; PADDING-TOP: 5px; BORDER-BOTTOM: #ccc 1px dashed
+}
+.louzhu {
+	PADDING-RIGHT: 16px; BACKGROUND: url(images/icoLouZhu.gif) no-repeat right top
+}
+.feedbackListSubtitle A:hover {
+	COLOR: #a0c100; TEXT-DECORATION: none
+}
+.feedbackManage {
+	FLOAT: right; WIDTH: 200px; TEXT-ALIGN: right
+}
+.feedbackCon {
+	BORDER-RIGHT: #393939 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #393939 1px solid; MARGIN-TOP: 5px; PADDING-LEFT: 21px; FONT-SIZE: 12px; MIN-HEIGHT: 35px; BACKGROUND: #141414; MARGIN-BOTTOM: 15px; PADDING-BOTTOM: 8px; BORDER-LEFT: #393939 1px solid; COLOR: #999; LINE-HEIGHT: 1.5em; PADDING-TOP: 8px; BORDER-BOTTOM: #393939 1px solid; HEIGHT: 35px
+}
+.PostListTitle {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: 700; FONT-SIZE: 21px; PADDING-BOTTOM: 5px; MARGIN: 10px 0px 5px; COLOR: #fff; PADDING-TOP: 5px; BORDER-BOTTOM: #4d4d4d 1px dotted; FONT-FAMILY: Arial; TEXT-ALIGN: right
+}
+.entrylistPosttitle {
+	BORDER-TOP-WIDTH: 0px; PADDING-LEFT: 5px; FONT-WEIGHT: 700; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 15px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 100%; LINE-HEIGHT: 1.5em; PADDING-TOP: 5px; BORDER-RIGHT-WIDTH: 0px
+}
+.entrylistPostSummary {
+	MARGIN-TOP: 5px; PADDING-LEFT: 5px; MARGIN-BOTTOM: 5px; COLOR: #ccc; LINE-HEIGHT: 1.5em; TEXT-ALIGN: justify
+}
+.entrylistItemPostDesc {
+	PADDING-RIGHT: 5px; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/comments_div.gif) repeat-x 50% top; PADDING-BOTTOM: 5px; MARGIN: 2px; WIDTH: auto; COLOR: #999; LINE-HEIGHT: 20px; PADDING-TOP: 5px; TEXT-ALIGN: right
+}
+.entrylist .postSeparator {
+	CLEAR: both; BORDER-RIGHT: medium none; PADDING-RIGHT: 0px; BORDER-TOP: medium none; PADDING-LEFT: 0px; FONT-SIZE: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: medium none; WIDTH: 100%; LINE-HEIGHT: 0; PADDING-TOP: 0px; BORDER-BOTTOM: medium none; HEIGHT: 0px
+}
+.pager {
+	MARGIN-RIGHT: 10px; TEXT-ALIGN: right
+}
+.PostList {
+	CLEAR: both; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; MIN-HEIGHT: 1.5em; MARGIN-BOTTOM: 5px; PADDING-TOP: 10px; BORDER-BOTTOM: #666 1px dotted; HEIGHT: 1.5em
+}
+.postDesc2 {
+	FLOAT: right; COLOR: #666
+}
+.postText2 {
+	CLEAR: both; COLOR: #666
+}
+.pfl_feedback_area_title {
+	FONT-WEIGHT: 700; MARGIN-BOTTOM: 10px; LINE-HEIGHT: 1.5em; BORDER-BOTTOM: #666 1px solid; TEXT-ALIGN: right
+}
+.pfl_feedbackItem {
+	MARGIN-BOTTOM: 20px; BORDER-BOTTOM: #000 1px solid
+}
+.pfl_feedbacksubtitle {
+	WIDTH: 100%; BORDER-BOTTOM: #666 1px dotted; HEIGHT: 1.5em
+}
+.pfl_feedbackManage {
+	FLOAT: right
+}
+.pfl_feedbackCon {
+	PADDING-BOTTOM: 5px; COLOR: #666; PADDING-TOP: 5px
+}
+.pfl_feedbackAnswer {
+	COLOR: #f40; TEXT-INDENT: 2em
+}
+.errorMessage {
+	FLOAT: left; WIDTH: 300px
+}
+.divPhoto {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #ccc 1px solid; MARGIN-RIGHT: 10px; PADDING-TOP: 2px; BORDER-BOTTOM: #ccc 1px solid
+}
+.personInfo {
+	MARGIN-BOTTOM: 20px
+}
+.postBody H2 {
+	FONT-WEIGHT: 700; FONT-SIZE: 150%; MARGIN: 15px auto 2px
+}
+.postBody H3 {
+	FONT-WEIGHT: 700; FONT-SIZE: 120%; MARGIN: 15px auto 2px
+}
+.postBody H4 {
+	FONT-WEIGHT: 700; FONT-SIZE: 110%; MARGIN: 15px auto 2px; COLOR: #333
+}
+.postBody H5 {
+	FONT-WEIGHT: 700; FONT-SIZE: 100%; MARGIN: 15px auto 2px; COLOR: #333
+}
+.postCon A:link {
+	COLOR: #2bb6fe; TEXT-DECORATION: none
+}
+.postBody BLOCKQUOTE {
+	PADDING-RIGHT: 60px; PADDING-LEFT: 60px; MIN-HEIGHT: 35px; BACKGROUND: url(images/comment.gif) no-repeat 25px 0px; PADDING-BOTTOM: 5px; COLOR: #333; LINE-HEIGHT: 1.6em; PADDING-TOP: 10px; HEIGHT: 35px
+}
+.box {
+	BORDER-RIGHT: #8cbced 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #8cbced 1px solid; PADDING-LEFT: 5px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 5px; BORDER-LEFT: #8cbced 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #8cbced 1px solid; BACKGROUND-COLOR: #f5fafe; TEXT-ALIGN: center
+}
+.box H3 {
+	FONT-WEIGHT: 700; FONT-SIZE: 110%; PADDING-BOTTOM: 5px; MARGIN: 5px auto; TEXT-INDENT: 5px; LINE-HEIGHT: 1.5em; BORDER-BOTTOM: #ccc 1px dashed; TEXT-ALIGN: left
+}
+#sideBar {
+	MARGIN-TOP: 10px; MIN-HEIGHT: 200px; FLOAT: right; OVERFLOW: hidden; WIDTH: 240px; WORD-BREAK: break-all; o-text-overflow: ellipsis
+}
+.newsItem {
+	BORDER-RIGHT: #8cbced 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #8cbced 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 10px 0px; BORDER-LEFT: #8cbced 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #8cbced 1px solid; BACKGROUND-COLOR: #f5fafe; TEXT-ALIGN: left
+}
+#sideBar #calendar {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; WIDTH: auto; PADDING-TOP: 5px; BACKGROUND-COLOR: #444
+}
+#calendar .Cal {
+	WIDTH: 100%; LINE-HEIGHT: 1.5em
+}
+.Cal {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; COLOR: #666; BORDER-BOTTOM: medium none
+}
+.CalDayHeader {
+	BORDER-BOTTOM: #ccc 1px solid
+}
+.CalTitle {
+	WIDTH: 100%; COLOR: #fff; BORDER-BOTTOM: #666 1px solid
+}
+#calendar TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: middle; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+#calendar .CalNextPrev A {
+	FONT-WEIGHT: 700; TEXT-ALIGN: right
+}
+#calendar TABLE A:link {
+	COLOR: #ff6eae; TEXT-DECORATION: none
+}
+DIV#leftcontentcontainer DIV {
+	WIDTH: auto
+}
+DIV#leftcontentcontainer .box-bottom {
+	CLEAR: both; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/box_bottom.gif) repeat-x 50% top; MARGIN-BOTTOM: 15px; HEIGHT: 13px; moz-border-radius-bottomleft: 3px; moz-border-radius-bottomright: 3px
+}
+DIV#leftcontentcontainer H3.catListTitle {
+	DISPLAY: block; FONT-WEIGHT: 700; FONT-SIZE: 16px; BACKGROUND-IMAGE: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/heading_right.gif); TEXT-TRANSFORM: uppercase; COLOR: #999; TEXT-INDENT: 10px; LINE-HEIGHT: 40px; BACKGROUND-REPEAT: no-repeat; POSITION: relative; HEIGHT: 42px
+}
+DIV#leftcontentcontainer UL {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; TEXT-JUSTIFY: inter-ideograph; BACKGROUND: #222; PADDING-BOTTOM: 5px; WORD-BREAK: break-all; TEXT-INDENT: 5px; PADDING-TOP: 5px; TEXT-ALIGN: justify; WORD-WRAP: break-word
+}
+DIV#leftcontentcontainer DIV.mySearch DIV {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px auto; BORDER-RIGHT-WIDTH: 0px
+}
+DIV#leftcontentcontainer .div_my_zzk {
+	BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/search_bg.png) #222 no-repeat; WIDTH: 100%; HEIGHT: 32px
+}
+UNKNOWN {
+	BORDER-TOP-WIDTH: 0px; PADDING-LEFT: 27px; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 13px; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 130px; COLOR: #666; PADDING-TOP: 8px; FONT-FAMILY: Arial; BORDER-RIGHT-WIDTH: 0px
+}
+UNKNOWN {
+	FLOAT: right; WIDTH: 60px; HEIGHT: 32px
+}
+DIV#leftcontentcontainer DIV.divRecentCommentAticle {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 5px; MARGIN-TOP: 0px; PADDING-LEFT: 5px; BORDER-LEFT-WIDTH: 0px; BACKGROUND: #222; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BORDER-RIGHT-WIDTH: 0px
+}
+DIV#leftcontentcontainer DIV.divRecentComment {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 5px; MARGIN-TOP: 0px; PADDING-LEFT: 5px; BORDER-LEFT-WIDTH: 0px; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/lnews_div.gif) #222 repeat-x 50% bottom; PADDING-BOTTOM: 5px; COLOR: #999; PADDING-TOP: 5px; BORDER-RIGHT-WIDTH: 0px
+}
+.commentform {
+	PADDING-RIGHT: 19px; MARGIN-TOP: 10px; PADDING-LEFT: 19px; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/news_bg.gif) #222 repeat-x 50% top; FLOAT: none; PADDING-BOTTOM: 19px; WIDTH: auto; MARGIN-RIGHT: 5px; PADDING-TOP: 19px; POSITION: relative; HEIGHT: 1%; moz-border-radius-topleft: 3px; moz-border-radius-topright: 3px
+}
+FIELDSET {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+H1 {
+	FONT-WEIGHT: 400; FONT-SIZE: 100%
+}
+H2 {
+	FONT-WEIGHT: 400; FONT-SIZE: 100%
+}
+H3 {
+	FONT-WEIGHT: 400; FONT-SIZE: 100%
+}
+H4 {
+	FONT-WEIGHT: 400; FONT-SIZE: 100%
+}
+H5 {
+	FONT-WEIGHT: 400; FONT-SIZE: 100%
+}
+H6 {
+	FONT-WEIGHT: 400; FONT-SIZE: 100%
+}
+A:hover {
+	COLOR: #d6f24a; TEXT-DECORATION: none
+}
+.postDesc A:hover {
+	COLOR: #d6f24a; TEXT-DECORATION: none
+}
+.clear {
+	CLEAR: both
+}
+#blogTitle {
+	CLEAR: both
+}
+#navList LI A#MyLinks1_SpaceLink {
+	BACKGROUND-POSITION: 0px 1px
+}
+#navList LI A#MyLinks1_HomeLink {
+	BACKGROUND-POSITION: 0px 1px
+}
+.CalTodayDay {
+	COLOR: #f60
+}
+#EntryTag A:hover {
+	COLOR: #f60
+}
+.entrylistItemPostDesc A:hover {
+	COLOR: #f60
+}
+.catListComment {
+	LINE-HEIGHT: 1.5em
+}
+#sideBarMain UL {
+	LINE-HEIGHT: 1.5em
+}
+.postBody SPAN {
+	LINE-HEIGHT: 1.5em
+}
+.feedbackListSubtitle A:link {
+	FONT-WEIGHT: 400; COLOR: #666
+}
+.feedbackListSubtitle A:visited {
+	FONT-WEIGHT: 400; COLOR: #666
+}
+.feedbackListSubtitle A:active {
+	FONT-WEIGHT: 400; COLOR: #666
+}
+.entrylistTitle {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: 700; FONT-SIZE: 21px; PADDING-BOTTOM: 5px; MARGIN: 5px 0px; COLOR: #fff; PADDING-TOP: 5px; BORDER-BOTTOM: #4d4d4d 1px dotted; FONT-FAMILY: Arial; TEXT-ALIGN: left
+}
+.thumbTitle {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: 700; FONT-SIZE: 21px; PADDING-BOTTOM: 5px; MARGIN: 5px 0px; COLOR: #fff; PADDING-TOP: 5px; BORDER-BOTTOM: #4d4d4d 1px dotted; FONT-FAMILY: Arial; TEXT-ALIGN: left
+}
+.entrylistDescription {
+	PADDING-RIGHT: 10px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 5px; COLOR: #ccc; PADDING-TOP: 5px; TEXT-ALIGN: left
+}
+.thumbDescription {
+	PADDING-RIGHT: 10px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 5px; COLOR: #ccc; PADDING-TOP: 5px; TEXT-ALIGN: left
+}
+.postTitl2 {
+	FLOAT: left
+}
+.pfl_feedbackname {
+	FLOAT: left
+}
+.tdSentMessage {
+	TEXT-ALIGN: right
+}
+.pages {
+	TEXT-ALIGN: right
+}
+.postBody P {
+	MARGIN: 0px auto 5px; TEXT-INDENT: 0px
+}
+.postCon P {
+	MARGIN: 0px auto 5px; TEXT-INDENT: 0px
+}
+.postBody UL {
+	MARGIN-LEFT: 2em
+}
+.postCon UL {
+	MARGIN-LEFT: 2em
+}
+.postBody LI {
+	MARGIN-BOTTOM: 1em; LIST-STYLE-TYPE: disc
+}
+.postCon LI {
+	MARGIN-BOTTOM: 1em; LIST-STYLE-TYPE: disc
+}
+.postTitle A:link {
+	COLOR: #a0c100
+}
+.postTitle A:visited {
+	COLOR: #a0c100
+}
+.postTitle A:active {
+	COLOR: #a0c100
+}
+#AjaxHolder_UpdatePanel1 {
+	PADDING-RIGHT: 5px; MARGIN-TOP: 10px; PADDING-LEFT: 5px; FLOAT: none; PADDING-BOTTOM: 5px; WIDTH: auto; COLOR: #333; MARGIN-RIGHT: 5px; PADDING-TOP: 0px
+}
+.entrylist {
+	PADDING-RIGHT: 5px; MARGIN-TOP: 10px; PADDING-LEFT: 5px; FLOAT: none; PADDING-BOTTOM: 5px; WIDTH: auto; COLOR: #333; MARGIN-RIGHT: 5px; PADDING-TOP: 0px
+}
+.gallery {
+	PADDING-RIGHT: 5px; MARGIN-TOP: 10px; PADDING-LEFT: 5px; FLOAT: none; PADDING-BOTTOM: 5px; WIDTH: auto; COLOR: #333; MARGIN-RIGHT: 5px; PADDING-TOP: 0px
+}
+#profile {
+	PADDING-RIGHT: 5px; MARGIN-TOP: 10px; PADDING-LEFT: 5px; FLOAT: none; PADDING-BOTTOM: 5px; WIDTH: auto; COLOR: #333; MARGIN-RIGHT: 5px; PADDING-TOP: 0px
+}
+.contact {
+	PADDING-RIGHT: 5px; MARGIN-TOP: 10px; PADDING-LEFT: 5px; FLOAT: none; PADDING-BOTTOM: 5px; WIDTH: auto; COLOR: #333; MARGIN-RIGHT: 5px; PADDING-TOP: 0px
+}
+A:link {
+	COLOR: #666; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #666; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #666; TEXT-DECORATION: none
+}
+#calendar TABLE A:visited {
+	COLOR: #666; TEXT-DECORATION: none
+}
+#calendar TABLE A:active {
+	COLOR: #666; TEXT-DECORATION: none
+}
+.entrylistPosttitle A:link {
+	COLOR: #9c0
+}
+.entrylistPosttitle A:visited {
+	COLOR: #9c0
+}
+.entrylistPosttitle A:active {
+	COLOR: #9c0
+}
+.comment_textarea {
+	BORDER-RIGHT: #323232 1px solid; PADDING-RIGHT: 12px; BORDER-TOP: #323232 1px solid; PADDING-LEFT: 12px; FONT-SIZE: 14px; BACKGROUND: #333; PADDING-BOTTOM: 12px; BORDER-LEFT: #323232 1px solid; COLOR: #999; PADDING-TOP: 12px; BORDER-BOTTOM: #323232 1px solid; FONT-FAMILY: Arial
+}
+.commenttb {
+	WIDTH: 320px
+}
+.author {
+	BORDER-RIGHT: #323232 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #323232 1px solid; PADDING-LEFT: 9px; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; BORDER-LEFT: #323232 1px solid; WIDTH: 200px; COLOR: #999; MARGIN-RIGHT: 10px; PADDING-TOP: 2px; BORDER-BOTTOM: #323232 1px solid; HEIGHT: 19px; BACKGROUND-COLOR: #333
+}
+.url {
+	BORDER-RIGHT: #323232 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #323232 1px solid; PADDING-LEFT: 9px; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; BORDER-LEFT: #323232 1px solid; WIDTH: 200px; COLOR: #999; MARGIN-RIGHT: 10px; PADDING-TOP: 2px; BORDER-BOTTOM: #323232 1px solid; HEIGHT: 19px; BACKGROUND-COLOR: #333
+}
+#footer {
+	PADDING-RIGHT: 10px; BACKGROUND-POSITION: center center; BORDER-TOP: #000 1px solid; PADDING-LEFT: 10px; FONT-WEIGHT: 700; FONT-SIZE: 0px; MIN-HEIGHT: 15px; BACKGROUND-IMAGE: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/foot.jpg); PADDING-BOTTOM: 10px; MARGIN: 0px auto; OVERFLOW: hidden; COLOR: #a0c100; LINE-HEIGHT: 0px; PADDING-TOP: 10px; BACKGROUND-REPEAT: no-repeat; FONT-FAMILY: Verdana, Geneva, sans-serif; POSITION: relative; HEIGHT: 15px; BACKGROUND-COLOR: #000; TEXT-ALIGN: center; MIN-WIDTH: 950px; moz-border-radius: 5px; webkit-borderradius: 5px
+}
+.day {
+	PADDING-RIGHT: 5px; MARGIN-TOP: 10px; PADDING-LEFT: 5px; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/news_bg.gif) #222 repeat-x 50% top; PADDING-BOTTOM: 5px; MARGIN-RIGHT: 5px; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 1%; moz-border-radius-topleft: 3px; moz-border-radius-topright: 3px
+}
+.entrylistItem {
+	PADDING-RIGHT: 5px; MARGIN-TOP: 10px; PADDING-LEFT: 5px; BACKGROUND: url(http://www.cnblogs.com/images/cnblogs_com/zengxiangzhan/img/news_bg.gif) #222 repeat-x 50% top; PADDING-BOTTOM: 5px; MARGIN-RIGHT: 5px; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 1%; moz-border-radius-topleft: 3px; moz-border-radius-topright: 3px
+}
+.dayTitle A {
+	COLOR: #666
+}
+.postTitle A {
+	COLOR: #666
+}
+.postDesc A {
+	COLOR: #666
+}
+#EntryTag A:link {
+	COLOR: #666
+}
+#EntryTag A:visited {
+	COLOR: #666
+}
+#EntryTag A:active {
+	COLOR: #666
+}
+.feedbackListSubtitle {
+	COLOR: #666
+}
+.entrylistItemPostDesc A:link {
+	COLOR: #666
+}
+.entrylistItemPostDesc A:visited {
+	COLOR: #666
+}
+.entrylistItemPostDesc A:active {
+	COLOR: #666
+}
+.liScore {
+	COLOR: #666
+}
+.liRank {
+	COLOR: #666
+}
+.newsItem .catListTitle {
+	DISPLAY: none
+}
+#itnews {
+	DISPLAY: none
+}
+#commentform_title {
+	DISPLAY: none
+}
+#relative_search {
+	DISPLAY: none
+}
+#ad_under_comment {
+	DISPLAY: none
+}
+.c_ad_block {
+	DISPLAY: none
+}
+.entrylistPosttitle A:hover {
+	TEXT-DECORATION: none
+}
+.postBody A:link {
+	TEXT-DECORATION: none
+}
+.postBody A:visited {
+	TEXT-DECORATION: none
+}
+.postBody A:active {
+	TEXT-DECORATION: none
+}
+.postCon A:visited {
+	TEXT-DECORATION: none
+}
+.postCon A:active {
+	TEXT-DECORATION: none
+}
+.login_tips A {
+	TEXT-DECORATION: none
+}

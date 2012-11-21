@@ -1,0 +1,1675 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0066)http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html -->
+<HTML><HEAD><TITLE>探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=Office,探索,Word,2007,开发,我的博客 name=keywords><LINK 
+href="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/common.css" 
+type=text/css rel=stylesheet><LINK id=MainCss 
+href="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/style.css" 
+type=text/css rel=stylesheet><LINK 
+href="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/brown.css" 
+type=text/css rel=stylesheet><LINK 
+href="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/shCore.css" 
+type=text/css rel=stylesheet><LINK 
+href="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/allenlooplee/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/allenlooplee/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=898983.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<DIV id=top>
+<H1><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/allenlooplee/">Allen Lee's Magic</A></H1>
+<P id=tagline>这里没有答案，顶多给你几个值得一试的猜想。</P></DIV>
+<DIV id=leftmenu style="DISPLAY: none">
+<H3>导航</H3>
+<UL>
+  <LI><A id=MyLinks1_HomeLink href="http://www.cnblogs.com/">博客园</A> 
+  <LI><A id=MyLinks1_MyHomeLink 
+  href="http://www.cnblogs.com/allenlooplee/">首页</A> 
+  <LI><A id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/allenlooplee/admin/EditPosts.aspx?opt=1">新随笔</A> 
+  <LI><A id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/Allen+Lee">联系</A> 
+  <LI><A id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/allenlooplee/rss">订阅</A><A id=MyLinks1_XMLLink 
+  href="http://www.cnblogs.com/allenlooplee/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 
+  src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/xml.gif"></A> 
+  <LI><A id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/allenlooplee/admin/EditPosts.aspx">管理</A> 
+</LI></UL>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: silver" colSpan=7>
+      <TABLE class=CalTitle style="WIDTH: 100%; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev style="WIDTH: 15%"><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V2769')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2007年9月</TD>
+          <TD class=CalNextPrev style="WIDTH: 15%" align=right><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V2830')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>26</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>27</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>28</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>29</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>31</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>1</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>2</TD>
+    <TD style="WIDTH: 14%" align=middle>3</TD>
+    <TD style="WIDTH: 14%" align=middle>4</TD>
+    <TD style="WIDTH: 14%" align=middle>5</TD>
+    <TD style="WIDTH: 14%" align=middle>6</TD>
+    <TD style="WIDTH: 14%" align=middle>7</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>8</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>9</TD>
+    <TD style="WIDTH: 14%" align=middle>10</TD>
+    <TD style="WIDTH: 14%" align=middle>11</TD>
+    <TD style="WIDTH: 14%" align=middle>12</TD>
+    <TD style="WIDTH: 14%" align=middle>13</TD>
+    <TD style="WIDTH: 14%" align=middle>14</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>15</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>16</TD>
+    <TD style="WIDTH: 14%" align=middle>17</TD>
+    <TD style="WIDTH: 14%" align=middle>18</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/allenlooplee/archive/2007/9/19.html"><U>19</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>20</TD>
+    <TD style="WIDTH: 14%" align=middle>21</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>22</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/allenlooplee/archive/2007/9/23.html"><U>23</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>24</TD>
+    <TD style="WIDTH: 14%" align=middle>25</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/allenlooplee/archive/2007/9/26.html"><U>26</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>27</TD>
+    <TD style="WIDTH: 14%" align=middle>28</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>29</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>1</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>2</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" 
+align=middle>6</TD></TR></TBODY></TABLE>
+<H3>公告</H3>
+<P>
+<TABLE borderColor=#ffffff cellSpacing=0 width=156 align=center bgColor=#3366ff 
+border=1>
+  <TBODY>
+  <TR>
+    <TD width=150>
+      <DIV align=center><FONT face="Arial, Helvetica, sans-serif" color=#ffffff 
+      size=2>These postings are provided "AS IS" with no warranties, and confer 
+      no rights.</FONT></DIV></TD></TR></TBODY></TABLE></P>
+<P align=center><IMG alt="Open my blog within your phone through Microsoft Tag" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/o_MagicTag.png"></P>
+<P>
+<SCRIPT src="" type=text/javascript></SCRIPT>
+</P>
+<DIV id=profile_block><A href="http://home.cnblogs.com/allenlooplee/" 
+target=_blank>我的主页</A>&nbsp; <A 
+href="http://home.cnblogs.com/allenlooplee/detail/" target=_blank>个人资料</A><BR><A 
+href="http://home.cnblogs.com/allenlooplee/ing/" target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/Allen+Lee" target=_blank>发短消息</A></DIV>
+<DIV id=side_ing_block>
+<H3 class=catListTitle>最新闪存</H3>
+<UL>
+  <LI>有人给M8SDK做了一个CF包装！managedmeizusdk.codeplex.com/ <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/97973/">04-28 10:35</A>
+  <LI>入手魅族M8 <A class=ing_lnk href="http://home.cnblogs.com/ing/97968/">04-28 
+  10:20</A>
+  <LI>喜欢Ubuntu 10.4的桌面主题和配色方案。 <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/95332/">04-16 12:59</A>
+  <LI>VS10支持Office 07和10的VSTO开发，03的没看到了。 <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/94505/">04-13 11:17</A>
+  <LI>一个人眼中的不作恶在另一个人看来可能是十恶不赦。 <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/90443/">03-25 20:51</A>
+  <LI><A class=ing_lnk 
+  href="http://home.cnblogs.com/allenlooplee/ing/">更多闪存...</A></LI></UL></DIV>
+<SCRIPT type=text/javascript>
+var blogapp = 'allenlooplee';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/allenlooplee/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/allenlooplee/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/allenlooplee/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/allenlooplee/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/allenlooplee/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/allenlooplee/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/allenlooplee/tag/">我的标签</A> </LI></UL></DIV>
+<H3 class=catListTitle>我参与的团队</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1__17ebf11_TeamList_ctl01_lnkTeam 
+  href="http://www.cnblogs.com/team/BeginnerTraining/">.NET新手training活动(0/0)</A> 
+
+  <LI><A id=SingleColumn1__17ebf11_TeamList_ctl02_lnkTeam 
+  href="http://www.cnblogs.com/team/DotNetControls/">.NET 控件与组件开发(0/0)</A> 
+  <LI><A id=SingleColumn1__17ebf11_TeamList_ctl03_lnkTeam 
+  href="http://www.cnblogs.com/team/WMAP/">Windows Mobile 应用开发(0/0)</A> 
+  <LI><A id=SingleColumn1__17ebf11_TeamList_ctl04_lnkTeam 
+  href="http://www.cnblogs.com/team/mvpteam/">MVP(微软最有价值专家)团队(0/0)</A> 
+  <LI><A id=SingleColumn1__17ebf11_TeamList_ctl05_lnkTeam 
+  href="http://www.cnblogs.com/team/clr/">CLR基础研究团队(0/0)</A> 
+  <LI><A id=SingleColumn1__17ebf11_TeamList_ctl06_lnkTeam 
+  href="http://www.cnblogs.com/team/BlogExcerption/">博客园精华集出版(0/0)</A> 
+</LI></UL></DIV>
+<H3 class=catListTitle>我的标签</H3>
+<DIV id=MyTag>
+<UL>
+  <LI><A 
+  href="http://www.cnblogs.com/allenlooplee/tag/.NET+Compact+Framework/">.NET 
+  Compact Framework</A>(14)
+  <LI><A href="http://www.cnblogs.com/allenlooplee/tag/Windows+Mobile/">Windows 
+  Mobile</A>(14)
+  <LI><A href="http://www.cnblogs.com/allenlooplee/tag/Ruby/">Ruby</A>(6)
+  <LI><A href="http://www.cnblogs.com/allenlooplee/tag/C#+3.0/">C# 3.0</A>(2)
+  <LI><A href="http://www.cnblogs.com/allenlooplee/tag/F#/">F#</A>(2)
+  <LI><A href="http://www.cnblogs.com/allenlooplee/tag/LINQ/">LINQ</A>(1)
+  <LI><A 
+  href="http://www.cnblogs.com/allenlooplee/tag/Functional+Programming/">Functional 
+  Programming</A>(1)
+  <LI><A 
+href="http://www.cnblogs.com/allenlooplee/tag/IronRuby/">IronRuby</A>(1)
+  <LI><A href="http://www.cnblogs.com/allenlooplee/tag/JRuby/">JRuby</A>(1)
+  <LI><A href="http://www.cnblogs.com/allenlooplee/tag/éç¨/">重用</A>(1)
+  <LI><A href="http://www.cnblogs.com/allenlooplee/tag/">更多</A> </LI></UL></DIV>
+<H3>随笔分类<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(126)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/38225.html">.NET(7)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to .NET(7)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/38225.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/38223.html">C#(20)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to C#(20)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/38223.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/38224.html">C++(5)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to C++(5)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/38224.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/38226.html">Design(6)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to Design(6)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/38226.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/147119.html">F#(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to F#(2)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/147119.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/13083.html">Misc(51)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to Misc(51)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/13083.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/167731.html">Mobile(14)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to Mobile(14)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/167731.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/104575.html">Office(7)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to Office(7)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/104575.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/18862.html">Powertoys(4)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink 
+  title="Subscribe to Powertoys(4)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/18862.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/211768.html">Ruby(6)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink 
+  title="Subscribe to Ruby(6)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/211768.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/38229.html">Windows(2)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink 
+  title="Subscribe to Windows(2)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/38229.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/allenlooplee/category/38228.html">XML(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink 
+  title="Subscribe to XML(2)" 
+  onclick="open_link('http://www.cnblogs.com/allenlooplee/category/38228.html/rss');return false;" 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html###">(rss)</A> 
+  </LI></UL>
+<H3>随笔档案<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(120)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2010/01.html">2010年1月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/12.html">2009年12月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/11.html">2009年11月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/10.html">2009年10月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/09.html">2009年9月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/04.html">2009年4月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/03.html">2009年3月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/02.html">2009年2月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/01.html">2009年1月 
+  (4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2008/12.html">2008年12月 
+  (5)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2008/09.html">2008年9月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2008/07.html">2008年7月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2008/06.html">2008年6月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2008/04.html">2008年4月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2008/01.html">2008年1月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/11.html">2007年11月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/10.html">2007年10月 
+  (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/09.html">2007年9月 
+  (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/06.html">2007年6月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl20_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/05.html">2007年5月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl21_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2007/01.html">2007年1月 
+  (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl22_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2006/12.html">2006年12月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl23_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2006/09.html">2006年9月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl24_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2006/07.html">2006年7月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl25_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2006/03.html">2006年3月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl26_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/11.html">2005年11月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl27_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/10.html">2005年10月 
+  (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl28_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/09.html">2005年9月 
+  (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl29_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/08.html">2005年8月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl30_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/07.html">2005年7月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl31_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/06.html">2005年6月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl32_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/04.html">2005年4月 
+  (5)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl33_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/03.html">2005年3月 
+  (9)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl34_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/02.html">2005年2月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl35_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/01.html">2005年1月 
+  (10)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl36_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2004/12.html">2004年12月 
+  (13)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl37_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2004/11.html">2004年11月 
+  (13)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl38_Link 
+  href="http://www.cnblogs.com/allenlooplee/archive/2004/10.html">2004年10月 
+  (15)</A> </LI></UL>
+<H3>译作</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://www.china-pub.com/37188" target=_blank>《C#和.NET实战:平台、语言与框架》</A> 
+  <LI style="MARGIN-TOP: 2px"><IMG height=160 alt=C#和.NET实战:平台、语言与框架 
+  src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/zcover.jpg" 
+  width=128> 
+  <P>由<A href="http://www.cnblogs.com/ninputer">装配脑袋</A>、<A 
+  href="http://www.cnblogs.com/allenlooplee">Allen Lee</A>、<A 
+  href="http://www.cnblogs.com/perhaps/">FantasySoft</A>、<A 
+  href="http://www.cnblogs.com/idior">idior</A>等合作翻译，已于2008年1月上市。 </P>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link 
+  href="http://www.china-pub.com/301695" target=_blank>《VSTO开发者指南》</A> 
+  <LI style="MARGIN-TOP: 2px"><IMG height=160 alt=VSTO开发者指南 
+  src="H:\技术文章\office\探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files\zcover(1).jpg" 
+  width=128> 
+  <P>已于2009年1月上市。</P></LI></UL>
+<H3>阅读</H3>
+<UL></UL>
+<H3 class=catListTitle>最新随笔</H3>
+<DIV class=RecentComment id=RecentPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A 
+  id=SingleColumn1_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2010/01/27/1657164.html">1.&nbsp;Ruby 
+  101：行为驱动</A> 
+  <LI><A 
+  id=SingleColumn1_ctl05_RecentPostsList_ctl01_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/12/14/1623384.html">2.&nbsp;Ruby 
+  101：动态编程</A> 
+  <LI><A 
+  id=SingleColumn1_ctl05_RecentPostsList_ctl02_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/11/30/1613429.html">3.&nbsp;Ruby 
+  101：方法对象</A> 
+  <LI><A 
+  id=SingleColumn1_ctl05_RecentPostsList_ctl03_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/11/03/1595461.html">4.&nbsp;Ruby 
+  101：对象和方法</A> 
+  <LI><A 
+  id=SingleColumn1_ctl05_RecentPostsList_ctl04_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2009/10/15/1583616.html">5.&nbsp;Ruby 
+  101：重用、隐藏和多态</A> </LI></UL></DIV>
+<H3 class=catListTitle>最新评论 <A id=SingleColumn1__354edaa_RSSHyperlink1 
+href="http://www.cnblogs.com/allenlooplee/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/xml.gif"></A></H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__354edaa_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2008/07/25/1251631.html#1827534">1.&nbsp;Re:从C# 
+  3.0到F#</A> 
+  <LI style="WORD-BREAK: break-all">好文！先评论再看下一半 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--崔鹏飞 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__354edaa_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2008/06/01/1211520.html#1797209">2.&nbsp;Re:我眼中的C# 
+  3.0</A> 
+  <LI style="WORD-BREAK: break-all">很有用.喜欢3.0的写法. 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Mr.King 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__354edaa_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/03/26/126271.html#1787786">3.&nbsp;Re:当多态遇上数组 
+  ... [C++, C++/CLI, C#]</A> 
+  <LI style="WORD-BREAK: break-all">无意进来，看到这篇文章，只能说是震憾！ 
+  自以为C++的基础比较扎实，尽管多年不用，但还是看了几遍才明白问题在哪 看来，C++真的不是什么人随便就玩得起的，至少我玩不起…… 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--大石头 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__354edaa_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/04/29/147356.html#1783058">4.&nbsp;Re:从枚举的初始化说起 
+  [C#]</A> 
+  <LI style="WORD-BREAK: break-all">@刘宁Toby 谢谢支持！ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Allen Lee 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__354edaa_CommentList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/04/29/147356.html#1782948">5.&nbsp;Re:从枚举的初始化说起 
+  [C#]</A> 
+  <LI style="WORD-BREAK: break-all">作者确实文笔不错。受教了。 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--刘宁Toby </LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2004/11/14/63453.html">1.&nbsp;尝鲜微软新桌面主题——Energy 
+  Blue(57410)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2004/11/16/64254.html">2.&nbsp;如何把string解析为int？[C#](23608)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2004/12/19/70230.html">3.&nbsp;关于枚举的种种 
+  (Enumeration FAQ) [C#, IL, BCL](15643)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2004/11/02/59519.html">4.&nbsp;今天你多态了吗?(13977)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2004/11/11/62805.html">5.&nbsp;如何判断字符串是否为空串？[C#](11111)</A> 
+  </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2008/06/01/1211520.html">1.&nbsp;我眼中的C# 
+  3.0(114)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2008/07/25/1251631.html">2.&nbsp;从C# 
+  3.0到F#(108)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2004/11/14/63453.html">3.&nbsp;尝鲜微软新桌面主题——Energy 
+  Blue(92)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2008/04/03/1136057.html">4.&nbsp;再获 
+  Microsoft MVP(65)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/allenlooplee/archive/2005/01/04/86026.html">5.&nbsp;我的盖洛普“优势识别器”测试证书(63)</A> 
+  </LI></UL></DIV></DIV>
+<DIV id=main>
+<DIV class=post>
+<H2><A id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html">探索 
+Word 2007 开发（一）：我的博客</A> </H2><FONT face="Arial, Helvetica, sans-serif">
+<P style="TEXT-ALIGN: center"><SPAN 
+style="FONT-SIZE: 20pt; COLOR: #0070c0"><STRONG>探索 Word 2007 开发（一）：我的博客 
+</STRONG></SPAN></P>
+<P>&nbsp;</P>
+<P style="TEXT-ALIGN: right"><SPAN style="COLOR: #0070c0"><STRONG><EM>Written by 
+Allen Lee </EM></STRONG></SPAN></P>
+<P>&nbsp;</P>
+<P><SPAN style="COLOR: #0070c0; TEXT-DECORATION: underline"><STRONG>创建 Word 2007 
+插件项目 </STRONG></SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 这里，我将会使用Visual Studio 2008 Beta 
+2所带的VSTO（Visual Studio Tools for Office）来开发这个插件，此外，Office 2007也是必须的。 </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/0a594df9-b0d0-4e17-a662-7e31202f37ed.png"> 
+</P>
+<P><SPAN style="FONT-SIZE: 9pt; COLOR: #4f81bd"><STRONG>Figure 1 
+</STRONG></SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 如上图所示，你首先需要确保选择了 .NET Framework 
+3.5的项目，接着选择Visual C#\Office\2007\Word Add-in作为项目模板（当然，你也可以选择Visual 
+Basic下面的那个），然后依次输入解决方案名字和项目名字，最后按下OK完成项目的创建。 </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/e785b429-f55a-4b5f-a456-f6a84d0e3c80.png"> 
+</P>
+<P><SPAN style="FONT-SIZE: 9pt; COLOR: #4f81bd"><STRONG>Figure 2 
+</STRONG></SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+我们的项目包含了一个名为ThisAddIn.cs的代码文件，里面的ThisAddIn类就是我们的插件了。现在，我希望为Word 
+2007创建一个像Research那样的侧边栏，里面将包含与我的博客相关的信息： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/7c21e5eb-0e6e-41fb-9c05-ea989c90fba9.png"> 
+</P>
+<P><SPAN style="FONT-SIZE: 9pt; COLOR: #4f81bd"><STRONG>Figure 3 
+</STRONG></SPAN></P>
+<P>&nbsp;</P>
+<P><SPAN style="COLOR: #0070c0; TEXT-DECORATION: underline"><STRONG>创建"我的博客"侧边栏 
+</STRONG></SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+我不清楚以往怎样才能做到这样，但现在有了VSTO，你可以把以往所学的Windows Forms的技巧都用上，实际上，这样一个侧边栏就是一个用户控件（User 
+Control）。现在，我们就来开发"我的博客"侧边栏。首先，在项目里添加一个名为MyBlogsUserControl的用户控件，接着在它上面拖放下列控件： 
+</P>
+<UL>
+  <LI>cbxBlogs：用于显示博客列表 
+  <LI>btnViewBlog：在Internet Explorer中打开选定博客的主页 
+  <LI>lbxRecentPosts：列出选定博客最近发布的帖子 
+  <LI>btnViewPost：在Internet Explorer中打开选定帖子的网页 
+  <LI>lbxDrafts：列出存在本地没有发布的帖子草稿 
+  <LI>btnOpenDraft：在Word 2007中打开选定的帖子草稿 </LI></UL>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyBlogsUserControl在Visual 
+Studio中的设计如下图所示： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/75576dbd-da44-49f3-a102-656dc8b159a2.png"> 
+</P>
+<P><SPAN style="FONT-SIZE: 9pt; COLOR: #4f81bd"><STRONG>Figure 4 
+</STRONG></SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 接下来就是把MyBlogsUserControl嵌到Word 
+2007里了，要做到这样，最简单的办法就是在插件启动的时候，以Custom Task 
+Pane的方式加载控件。回到ThisAddIn.cs，我们可以看到，Visual Studio为我们准备好插件的Startup事件的Event 
+Handler了： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/d2eaa9db-6d08-4acd-ac5f-05db216c076f.png"><SPAN 
+style="FONT-FAMILY: Lucida Console">&nbsp;</SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 这样，我们只需要在方法里面插入下面的代码： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/6f7bf4c8-2a8b-4a1f-be10-07ab710fa73b.png">&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+作为应用程序级别（application-level）的扩展，Office 2007引入了Custom Task Pane这个概念，然而，直接通过Office 
+PIA使用Custom Task Pane比较繁琐，于是，VSTO提供了一个简化方案，正如Code #02所示的那样。 </P>
+<P><STRONG>增值服务区 </STRONG></P>
+<UL>
+  <LI><A href="http://msdn2.microsoft.com/en-us/library/aa722570.aspx">Creating 
+  Custom Task Panes Using Visual Studio Tools for Office</A>，Robert Green 
+  <LI><A href="http://msdn2.microsoft.com/en-us/library/aa338197.aspx">Creating 
+  Custom Task Panes in the 2007 Office System</A>，Mark O'Hara and Frank Rice 
+  </LI></UL>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 当然，别忘了引用VSTO的命名空间： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/7380778f-bde0-4759-9cd0-44815e7f6bcc.png">&nbsp;</P>
+<P><STRONG>考验脑力区 </STRONG></P>
+<UL>
+  <LI>using关键字共有多少种用法？它们分别是什么？ </LI></UL>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现在来看看运行效果： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/155eb813-2139-4a26-b085-96da044d7f7c.png"> 
+</P>
+<P><SPAN style="FONT-SIZE: 9pt; COLOR: #4f81bd"><STRONG>Figure 5 
+</STRONG></SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+到目前为止，"我的博客"侧边栏只是一个"空壳"，接下来就是着手实现里面的逻辑了。 </P>
+<P>&nbsp;</P>
+<P><SPAN style="COLOR: #0070c0; TEXT-DECORATION: underline"><STRONG>填充"我的博客"侧边栏 
+</STRONG></SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 假设"我的博客"侧边栏的相关文件安置在My 
+Blogs文件夹里，该文件夹的结构如下图所示： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/4f497944-bc2d-4a43-a4de-ccc848e69ade.png"> 
+</P>
+<P><SPAN style="FONT-SIZE: 9pt; COLOR: #4f81bd"><STRONG>Figure 6 
+</STRONG></SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 虽然我们可以通过枚举My 
+Blogs的子文件夹来填充cbxBlogs控件，然而我希望设计一个类来表示博客并且实现一定的数据绑定。回顾Figure 4，"我的博客"侧边栏应该具备如下特性： 
+</P>
+<UL>
+  <LI>它会在启动时读取My Blogs文件夹里的相关信息，并且填充 cbxBlogs控件； 
+  <LI>当我们在博客列表中选择某个博客时，它会通过RSS获取该博客最近发布的帖子，并且填充lbxRecentPosts控件； 
+  <LI>当我们在博客列表中选择某个博客时，它会读取该博客帖子草稿文件夹里的数据，并且填充lbxDrafts控件； 
+  <LI>当我们在博客列表中选择某个博客时，按下View Blog按钮将会在Internet Explorer中打开该博客的主页； 
+  <LI>当我们在最近帖子列表中选择某个帖子时，按下View Post按钮将会在Internet Explorer中打开该帖子的网页； 
+  <LI>当我们在草稿列表中选择某个草稿时，按下Open Draft按钮将会在新的Word 2007中打开该草稿。 </LI></UL>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 明确这些需求后，我们就可以着手写代码了： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/959301bf-1450-4751-bbc6-225b7fd75c31.png">&nbsp;</P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/068a656e-25d0-4df7-9610-f2a116e0a408.png">&nbsp;</P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/89faf6b3-5f2f-4c9b-8963-e14254e0ab13.png">&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 对于Code #03，以下几点是需要说明的： </P>
+<UL>
+  <LI>Post、Draft和Blog类都重写了ToString()方法，这是因为ComboBox和ListBox等控件会调用该方法并把返回的字符串用作条目的显示，重写该方法是为了让条目得到正确的显示。当然，如果你结合DataSource和DisplayMember来使用，也可以不重写ToString()方法。 
+
+  <LI>Blog.GetRecentPosts()方法里使用<A 
+  href="http://www.codeplex.com/Argotic">Argotic Syndication 
+  Framework</A>来进行RSS信息处理，所以你需要下载并安装它，然后在项目中引用相关的类库和Argotic.Core.Rss命名空间。 
+  <LI>Blog.GetRecentPosts()方法里对RSS地址进行了假设，这个假设适用于博客园以及旗下其它网站，当然，你可以想出很多方法让它具备普遍适用性。 
+
+  <LI>Blog.GetRecentPosts()方法里使用NetworkInterface. 
+  GetIsNetworkAvailable()方法判断当前网络是否连通，如果连通则获取数据，否则返回空数组。 
+  <LI>Blog.GetDrafts()方法没有进行任何筛选，这里假设文件夹里面只包含.docx和/或.doc文件。由于这些文件将会用Word 
+  2007打开，如果你可能往文件夹里放置Word 2007不能读取的文件，那么你最好为LINQ查询语句加入where来进行必要的过滤。 
+  <LI>在Blog.GetDrafts()方法里，我还假设My 
+  Blogs文件夹是放在"我的文档"里的，并且博客所在的文件夹名字和博客的名字一样，当然，这样我们就不能在博客的名字里面包含非法的路径字符了。 
+</LI></UL>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+我们可以让文件夹的名字和博客的名字相同，但却无法在这里包含博客的URL信息，而这又是很多操作的前提，于是我在My 
+Blogs文件夹里放置一个Blogs.xml文件，里面包含了如下内容： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/13df475d-d604-4cd5-ba53-572dbe2a7092.png">&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+有了这个文件，我们就可以顺利存取博客的URL信息了。另外，如果你希望让博客的名字不受路径的约束，即可以包含非法的路径字符，那么你可以为blog元素扩展一个directory属性用于存放路径，这样name属性就可以专门用于界面上的显示了。 
+</P>
+<P><STRONG>增值服务区 </STRONG></P>
+<UL>
+  <LI>你可以通过 <A 
+  href="http://msdn2.microsoft.com/en-us/library/system.io.path.getinvalidfilenamechars.aspx">Path. 
+  GetInvalidFileNameChars()</A>或<A 
+  href="http://msdn2.microsoft.com/en-us/library/system.io.path.getinvalidpathchars.aspx">Path. 
+  GetInvalidPathChars()</A>方法查看非法的路径字符。 </LI></UL>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+接下来就是把数据填充到"我的博客"侧边栏了，回到MyBlogsUserControl.cs，在构造函数里添加如下所示的代码： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/bfda7a90-de6e-4cd7-9889-bc27a9902a3e.png">&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 对于Code #04，以下几点是需要说明的： </P>
+<UL>
+  <LI>我们使用LINQ to XML获取Blogs.xml中博客的相关数据，并把这些数据绑定到博客列表上。 
+  <LI>我们获取blogs元素的defaultBlog属性的值，并用它来设置cbxBlogs.SelectedText属性，使得它所指定的默认博客成为当前所选定的博客。 
+
+  <LI>如果我们约定第一个blog元素就是默认博客，那么这里就不需要使用defaultBlog属性和设置SelectedText属性了，因为当我们把一个数据源绑定到DataSource属性时，它会在完成绑定后把第一个条目设为当前选定项，当然，此时会引发SelectedValueChanged（和其它相关的）事件。 
+  </LI></UL>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+噢，别忘记cbxBlogs的SelectedValueChanged事件，下面是该事件的Event Handler： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/b3d8b020-4fad-4240-aab9-1d3cf12f2df0.png">&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+值得提醒的是，Blog.GetRecentPosts()方法所返回的数组的元素个数和对应博客的设置相关： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/1c9859d2-bdbc-463f-9d1d-5514b1a39f3d.png"> 
+</P>
+<P><SPAN style="FONT-SIZE: 9pt; COLOR: #4f81bd"><STRONG>Figure 7 
+</STRONG></SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现在来看看运行效果： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/22e8bc11-9619-47ef-adc9-9510df95a69c.png"> 
+</P>
+<P><SPAN style="FONT-SIZE: 9pt; COLOR: #4f81bd"><STRONG>Figure 8 
+</STRONG></SPAN></P>
+<P>&nbsp;</P>
+<P><SPAN 
+style="COLOR: #0070c0; TEXT-DECORATION: underline"><STRONG>查看博客、最近帖子和存档草稿 
+</STRONG></SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 由于查看博客和查看最近帖子这两项操作都是"外包"给Internet 
+Explorer的，我们可以简单地调用System.Diagnostics.Process.Start()方法，并传入选定对象的Url属性的值： </P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/abd50748-675d-4b85-b279-eb5dc7bf1b5e.png">&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 对于存档草稿，我们可以使用<A 
+href="http://msdn2.microsoft.com/en-us/library/bb216319.aspx">Documents.Open()</A>方法来打开，并传递选定存档草稿的Path属性的值： 
+</P>
+<P><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/8f2fb72f-66ce-4c8b-8dad-9c15e1423c61.png">&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+需要说明的是，对于Documents.Open()方法来说，除了第一个参数，其它参数都是可选的，但由于C#不支持这种可选参数，于是我们只好给它们传递Type.Missing。 
+</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+至此，"我的博客"侧边栏的开发要告一段落了，虽然我们还想让它变得更强大。作为一个Word 
+2007扩展插件，现在的"我的博客"侧边栏存在一个不可忽视的问题：它是随Word 
+2007启动而启动，而不是因用户的需要启动，并且一旦关闭就无法再次启动，除非重新打开Word 
+2007，这对于用户来说是无法接受的。下一回，我们将探讨扩展Word 
+2007的Ribbon，并尝试在它上面添加一个按钮来负责"我的博客"侧边栏的启动。</P></FONT>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/allenlooplee/" 
+target=_blank><IMG class=author_avatar alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/u3956.jpg"></A> 
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/allenlooplee/" 
+target=_blank>Allen Lee</A><BR>关注 - 9<BR>粉丝 - 16<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(898983,6996,1)><SPAN class=diggnum 
+id=digg_count_898983>1</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(898983,6996,2)><SPAN class=burynum 
+id=bury_count_898983>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_898983 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_898983>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/06/24/794116.html">« 
+</A>上一篇：<A title="发布于2007-06-24 22:28" 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/06/24/794116.html">探索动态程序集</A><BR><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/23/903520.html">» 
+</A>下一篇：<A title="发布于2007-09-23 21:22" 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/23/903520.html">探索 
+Word 2007 开发（二）：扩展 Ribbon</A><BR></DIV>
+<SCRIPT 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '5b8c310b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+
+<P class=postfoot>posted on 2007-09-19 19:41 <A 
+href="http://www.cnblogs.com/allenlooplee/">Allen Lee</A> 阅读(4654) <A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">评论(25)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/allenlooplee/admin/EditPosts.aspx?postid=898983">编辑</A> 
+<A onclick="AddToWz(898983);return false;" 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#">收藏</A> 
+所属分类: <A 
+href="http://www.cnblogs.com/allenlooplee/category/104575.html">Office</A> 
+</P></DIV><IMG height=1 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/898983.jpg" 
+width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html"
+dc:identifier="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/allenlooplee/services/trackbacks/898983.aspx" />
+</rdf:RDF>
+--><A name=pagedcomment></A><A name=评论>
+<DIV id=comments>
+<H3>评论</H3><SPAN id=span_comment_maxid style="DISPLAY: none">1440530</SPAN> 
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899060">#1楼</A><A 
+id=comment_anchor_899060 name=899060></A> <SPAN>2007-09-19 20:18 </SPAN><A 
+id=Comments1_CommentList_ctl00_NameLink 
+href="http://www.cnblogs.com/jeffersyuan/" target=_blank>Jeffers 
+Yuan</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Jeffers+Yuan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_899060>不错！ 
+<BR>楼主居然把VSTO和LINQ弄得比较熟悉了，可喜可贺！</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("Jeffers Yuan",899060,"q6pFhEIsd4/PfgMohg48kHUzHotDs4W4sZzq3iTcXL0xnrTRcxo3iQ==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899060,"q6pFhEIsd4/PfgMohg48kHUzHotDs4W4sZzq3iTcXL0xnrTRcxo3iQ==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Jeffers+Yuan" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899110">#2楼</A><A 
+id=comment_anchor_899110 name=899110></A> <SPAN>2007-09-19 21:13 </SPAN><A 
+id=Comments1_CommentList_ctl01_NameLink href="http://www.cnblogs.com/gofixiao/" 
+target=_blank>GOFI XIAO</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/GOFI+XIAO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_899110>不错，学习了。</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("GOFI XIAO",899110,"lDYKTLDXIo5IztkMuPJLBWBRFErH/rciYpQw35dM9GwC/VG8SBsojg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899110,"lDYKTLDXIo5IztkMuPJLBWBRFErH/rciYpQw35dM9GwC/VG8SBsojg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=GOFI+XIAO" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899113">#3楼</A><A 
+id=comment_anchor_899113 name=899113></A> <SPAN>2007-09-19 21:16 </SPAN><A 
+id=Comments1_CommentList_ctl02_NameLink target=_blank>yun[未注册用户]</A> </H4>
+<P><SPAN class=blog_comment_body id=comment_body_899113>这个blog看着真舒服</SPAN> 
+&nbsp;&nbsp;<A onclick='ReplyComment("yun",899113,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899113,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899128">#4楼</A><A 
+id=comment_anchor_899128 name=899128></A> <SPAN>2007-09-19 21:26 </SPAN><A 
+id=Comments1_CommentList_ctl03_NameLink 
+target=_blank>Frank[CallFrank@gmail.com][未注册用户]</A> </H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_899128>还是希望看到脱离Offcie开发Word的例子。否则因为Word.exe被当作外部线程调用，会出现很多潜在的问题。</SPAN> 
+&nbsp;&nbsp;<A onclick='ReplyComment("Frank[CallFrank@gmail.com]",899128,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899128,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899154">#5楼</A><A 
+id=comment_anchor_899154 name=899154></A>[<SPAN class=louzhu>楼主</SPAN>] 
+<SPAN>2007-09-19 21:43 </SPAN><A id=Comments1_CommentList_ctl04_NameLink 
+href="http://www.cnblogs.com/allenlooplee/" target=_blank>Allen Lee</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Allen+Lee">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_899154>To 
+Frank[CallFrank@gmail.com]： <BR><BR>一般而言，脱离 Office 的程序进行开发多见于服务器端应用，对于 Office 
+2007 来说，你可以考虑 OOXML（Office Open XML）。</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("Allen Lee",899154,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899154,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Allen+Lee" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899397">#6楼</A><A 
+id=comment_anchor_899397 name=899397></A> <SPAN>2007-09-20 02:50 </SPAN><A 
+id=Comments1_CommentList_ctl05_NameLink target=_blank>ganquan[未注册用户]</A> </H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_899397>你好，请问博主对Office开发的加密和打包发行方面有什么经验吗？希望能看到这方面的文章。</SPAN> 
+&nbsp;&nbsp;<A onclick='ReplyComment("ganquan",899397,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899397,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl05_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl05$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl05_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899441">#7楼</A><A 
+id=comment_anchor_899441 name=899441></A> <SPAN>2007-09-20 08:28 </SPAN><A 
+id=Comments1_CommentList_ctl06_NameLink href="http://www.cnblogs.com/aspnetx/" 
+target=_blank>aspnetx</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/aspnetx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_899441>我们最近也有人在研究类似的东西,但平台是office2003</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("aspnetx",899441,"qIGq01hRF+Zly6/52NvxF6LJwMHUc50GUO1fAzCxoa5R4cjO13iwOg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899441,"qIGq01hRF+Zly6/52NvxF6LJwMHUc50GUO1fAzCxoa5R4cjO13iwOg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=aspnetx" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl06_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl06$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl06_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899453">#8楼</A><A 
+id=comment_anchor_899453 name=899453></A> <SPAN>2007-09-20 08:41 </SPAN><A 
+id=Comments1_CommentList_ctl07_NameLink href="http://www.cnblogs.com/RobertLee/" 
+target=_blank>Robert Lee</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Robert+Lee">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_899453>不错，有时间自己动手实践看看，学习中。 
+<BR>另，Allen兄也是团长的fans吗:D</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("Robert Lee",899453,"KNUkVlHxg4zgvOTTRlA6QfEJjeSZxnN7UPdChWz/pkTmYB5pD7xCSg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899453,"KNUkVlHxg4zgvOTTRlA6QfEJjeSZxnN7UPdChWz/pkTmYB5pD7xCSg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Robert+Lee" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl07_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl07$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl07_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899527">#9楼</A><A 
+id=comment_anchor_899527 name=899527></A> <SPAN>2007-09-20 09:28 </SPAN><A 
+id=Comments1_CommentList_ctl08_NameLink 
+href="http://www.cnblogs.com/xiaoshatian/" target=_blank>笑煞天</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/ç¬çå¤©">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_899527>不错,不错. 
+<BR>不知道Frank兄说的脱离Office开发Word是什么意思?</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("笑煞天",899527,"lwOzNIV252BT8m6PHa5obUfCjjiTqK1D9095O0uCz2+krcCnnhlD2Q==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899527,"lwOzNIV252BT8m6PHa5obUfCjjiTqK1D9095O0uCz2+krcCnnhlD2Q==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e7%ac%91%e7%85%9e%e5%a4%a9" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl08_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl08$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl08_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899532">#10楼</A><A 
+id=comment_anchor_899532 name=899532></A> <SPAN>2007-09-20 09:31 </SPAN><A 
+id=Comments1_CommentList_ctl09_NameLink href="http://www.cnblogs.com/city22/" 
+target=_blank>City22</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/City22">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_899532>关于Word的blog，有很多问题想问博猪啊。 
+<BR><BR>有关于MetaWeblog的资料以及如何在word下进行扩展 
+<BR><BR>Word是用什么方法将doc文件转换为Html的？我以前用document.SaveAs来保存为HTML文件，然后再读这个文件用HtmlAgilityPack分析，但是效果很不理想。 
+<BR><BR>想问问博猪，word下关于Blog这一套API可不可以介绍一下，以及如何扩展，比如发布blog，设置blog的分类和属性等。 
+<BR><BR>还有关于Ribbon的，我只是看到了用Ribbon.xml来添加Tab、Button等，但怎么用代码获得Ribbon的对象？不管用什么方是，我怎么才能将自定义的一个button加入到系统默认的那个博客Tab中？ 
+<BR><BR>感谢博猪分享Word开发经验，期待下一片大作</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("City22",899532,"Cw3UasAarmCq8p32xYzwnEibaL+hCIHoXiat+WyLdAtg+CqGXqJpkw==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899532,"Cw3UasAarmCq8p32xYzwnEibaL+hCIHoXiat+WyLdAtg+CqGXqJpkw==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=City22" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl09_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl09$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl09_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899752">#11楼</A><A 
+id=comment_anchor_899752 name=899752></A>[<SPAN class=louzhu>楼主</SPAN>] 
+<SPAN>2007-09-20 12:20 </SPAN><A id=Comments1_CommentList_ctl10_NameLink 
+href="http://www.cnblogs.com/allenlooplee/" target=_blank>Allen Lee</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Allen+Lee">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_899752>To ganquan： <BR><BR>我对 
+Office 的加密没有研究，至于部署，VSTO Orcas 支持 ClickOnce，你可以看看这篇文章： <BR><BR>VSTO: My Favorite 
+Feature - ClickOnce Deployment（<A 
+href="http://blogs.msdn.com/pstubbs/archive/2007/05/17/vsto-my-favorite-feature-clickonce-deployment.aspx" 
+target=_new>http://blogs.msdn.com/pstubbs/archive/2007/05/17/vsto-my-favorite-feature-clickonce-deployment.aspx</A>） 
+<BR><BR>而本系列文章也会有一篇讲述使用 ClickOnce 部署这个插件的，如果你对此感兴趣，敬请留意本系列文章。 <BR><BR>To City22： 
+<BR><BR>1. 推荐你使用 XML-RPC.NET 进行 MetaWeblog 开发，你可以到 <A 
+href="http://www.xml-rpc.net/" target=_new>http://www.xml-rpc.net/</A> 下载这个类库。 
+<BR><BR>2. 你可以结合 WordProcessingML 和 XSLT 来生成 HTML，这里给你推荐两篇文章： <BR><BR>Using 
+WordProcessingML to Generate Clean HTML from Word（<A 
+href="http://www.informit.com/articles/article.aspx?p=691502&amp;seqNum=1" 
+target=_new>http://www.informit.com/articles/article.aspx?p=691502&amp;seqNum=1</A>） 
+<BR><BR>XHTML in Word 2007's blogging tool（<A 
+href="http://blogs.msdn.com/brian_jones/archive/2006/05/22/602167.aspx" 
+target=_new>http://blogs.msdn.com/brian_jones/archive/2006/05/22/602167.aspx</A>） 
+<BR><BR>3. 关于 Ribbon 开发的细节，请留意本系列文章的下一回。 <BR><BR>4. 对于 Word 2007 
+的博客功能的扩展，本系列文章（可能）会有一篇讲述这个内容。</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("Allen Lee",899752,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899752,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Allen+Lee" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl10_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl10$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl10_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899756">#12楼</A><A 
+id=comment_anchor_899756 name=899756></A>[<SPAN class=louzhu>楼主</SPAN>] 
+<SPAN>2007-09-20 12:21 </SPAN><A id=Comments1_CommentList_ctl11_NameLink 
+href="http://www.cnblogs.com/allenlooplee/" target=_blank>Allen Lee</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Allen+Lee">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_899756>To Robert Lee： 
+<BR><BR>团长确实挺有趣的 ^_^</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("Allen Lee",899756,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899756,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Allen+Lee" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl11_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl11$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl11_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#899798">#13楼</A><A 
+id=comment_anchor_899798 name=899798></A> <SPAN>2007-09-20 12:57 </SPAN><A 
+id=Comments1_CommentList_ctl12_NameLink 
+href="http://www.cnblogs.com/clarkzheng/" target=_blank>Clark Zheng</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Clark+Zheng">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_899798>超棒，收藏了！</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("Clark Zheng",899798,"vw3z6Rgl6jgl2/1KgbYadkQ2VZfpCgb3UsqaE/GL2Oo3VAREt4MRfA==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(899798,"vw3z6Rgl6jgl2/1KgbYadkQ2VZfpCgb3UsqaE/GL2Oo3VAREt4MRfA==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Clark+Zheng" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl12_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl12$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl12_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#900336">#14楼</A><A 
+id=comment_anchor_900336 name=900336></A> <SPAN>2007-09-20 17:30 </SPAN><A 
+id=Comments1_CommentList_ctl13_NameLink href="http://www.cnblogs.com/xiao_p/" 
+target=_blank>xiao_p</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/xiao_p">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_900336>...好久没有看到大大的新文章了</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("xiao_p",900336,"AWqSNvzuiFs8YLu00bIGkNQ80FsaZ0iImfls63Fd0g4J7Sy5B+JFyA==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(900336,"AWqSNvzuiFs8YLu00bIGkNQ80FsaZ0iImfls63Fd0g4J7Sy5B+JFyA==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=xiao_p" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl13_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl13$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl13_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#903797">#15楼</A><A 
+id=comment_anchor_903797 name=903797></A>[<SPAN class=louzhu>楼主</SPAN>] 
+<SPAN>2007-09-24 09:22 </SPAN><A id=Comments1_CommentList_ctl14_NameLink 
+href="http://www.cnblogs.com/allenlooplee/" target=_blank>Allen Lee</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Allen+Lee">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_903797>To City22： <BR><BR>关于 
+Ribbon 开发的细节，请看《探索 Word 2007 开发（二）：扩展 Ribbon》（<A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/23/903520.html" 
+target=_new>http://www.cnblogs.com/allenlooplee/archive/2007/09/23/903520.html</A>）。</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("Allen Lee",903797,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(903797,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Allen+Lee" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl14_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl14$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl14_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#906615">#16楼</A><A 
+id=comment_anchor_906615 name=906615></A> <SPAN>2007-09-26 14:14 </SPAN><A 
+id=Comments1_CommentList_ctl15_NameLink href="http://www.cnblogs.com/island/" 
+target=_blank>落叶舟</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/è½å¶è">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_906615>感谢。</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("落叶舟",906615,"nVxLAkpRFSg9XIrMF9UrpXJI9BaE+1LbwP3ZxKHaVqTb6ENGh/615w==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(906615,"nVxLAkpRFSg9XIrMF9UrpXJI9BaE+1LbwP3ZxKHaVqTb6ENGh/615w==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e8%90%bd%e5%8f%b6%e8%88%9f" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl15_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl15$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl15_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#908416">#17楼</A><A 
+id=comment_anchor_908416 name=908416></A> <SPAN>2007-09-27 19:52 </SPAN><A 
+id=Comments1_CommentList_ctl16_NameLink 
+href="http://www.cnblogs.com/hanxianlong/" target=_blank>韩现龙</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/é©ç°é¾">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_908416>汗，我还在用Framework2.0，楼主都把Frame Work 3.5给研究成这样了... 
+<BR>以后我是不没法再混下去了？</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("韩现龙",908416,"GSGjIORxfUVYMHDZACRiT5w87OeHNuwbku8caUOD6HF0L2ONGUeSYA==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(908416,"GSGjIORxfUVYMHDZACRiT5w87OeHNuwbku8caUOD6HF0L2ONGUeSYA==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e9%9f%a9%e7%8e%b0%e9%be%99" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl16_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl16$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl16_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#1148886">#18楼</A><A 
+id=comment_anchor_1148886 name=1148886></A> <SPAN>2008-04-11 19:06 </SPAN><A 
+id=Comments1_CommentList_ctl17_NameLink 
+href="http://www.cnblogs.com/52knowledge/" target=_blank>留恋星空</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/çææç©º">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1148886>mark</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("留恋星空",1148886,"OBkBAhWKIkO7YEp/T6Hw6kOUoAqn4GSOf6blIjw1+LmyPDI0ghdiHQ==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1148886,"OBkBAhWKIkO7YEp/T6Hw6kOUoAqn4GSOf6blIjw1+LmyPDI0ghdiHQ==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e7%95%99%e6%81%8b%e6%98%9f%e7%a9%ba" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl17_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl17$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl17_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#1222587">#19楼</A><A 
+id=comment_anchor_1222587 name=1222587></A> <SPAN>2008-06-11 01:44 </SPAN><A 
+id=Comments1_CommentList_ctl18_NameLink target=_blank>bddlwzh[未注册用户]</A> </H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_1222587>一定要2007吗？在2003下能做这样的开发吗？</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("bddlwzh",1222587,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1222587,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl18_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl18$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl18_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#1223307">#20楼</A><A 
+id=comment_anchor_1223307 name=1223307></A>[<SPAN class=louzhu>楼主</SPAN>] 
+<SPAN>2008-06-11 19:25 </SPAN><A id=Comments1_CommentList_ctl19_NameLink 
+href="http://www.cnblogs.com/allenlooplee/" target=_blank>Allen Lee</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Allen+Lee">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1223307>@bddlwzh <BR>Office 
+2003不支持Custom Task Pane，不过可以使用Actions Pane。</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("Allen Lee",1223307,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1223307,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Allen+Lee" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl19_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl19$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl19_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#1279907">#21楼</A><A 
+id=comment_anchor_1279907 name=1279907></A> <SPAN>2008-08-06 19:51 </SPAN><A 
+id=Comments1_CommentList_ctl20_NameLink target=_blank>ZHEFU[未注册用户]</A> </H4>
+<P><SPAN class=blog_comment_body id=comment_body_1279907>博主您好: 
+<BR>拜读了您的这篇文章,深受启发。写的由浅入深、通俗易懂。 <BR>互联网上关于这方面的文章比较少，如此精妙的更是难得。 
+<BR><BR>我参照您的自定义任务窗格也做了一个，它的功能是接受一个字符串， <BR>返回一个标准代码文本。然后我新建了一个WORD文档，文档中有一个按钮， 
+<BR>我的问题是如何能在Word文档中访问到我任务窗格中自定义控件的事件？ <BR><BR>谢谢</SPAN> &nbsp;&nbsp;<A 
+onclick='ReplyComment("ZHEFU",1279907,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1279907,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl20_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl20$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl20_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#1279948">#22楼</A><A 
+id=comment_anchor_1279948 name=1279948></A>[<SPAN class=louzhu>楼主</SPAN>] 
+<SPAN>2008-08-06 20:25 </SPAN><A id=Comments1_CommentList_ctl21_NameLink 
+href="http://www.cnblogs.com/allenlooplee/" target=_blank>Allen Lee</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Allen+Lee">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body id=comment_body_1279948>@ZHEFU <BR>如果你创建的是Word 
+2007 
+Add-in项目，那么你可以通过Globals.ThisAddIn.CustomTaskPanes访问到与当前插件相关的所有自定义任务窗格，找到你想要的自定义任务窗格，接着通过CustomTaskPane.Control可以访问到你添加这个自定义任务窗格关联的用户控件，然后通过这个用户控件对象实例访问你想要的事件。 
+<BR><BR>另外，《探索 Word 2007 开发 II（一）：引用 .NET Framework Class Library 在线文档》（<A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/10/20/931494.html" 
+target=_new>http://www.cnblogs.com/allenlooplee/archive/2007/10/20/931494.html</A>）里的Code 
+13给出了查找特定自定义任务窗格的示范代码，你可以在这个代码的基础上做一些修改。 <BR><BR>Hope that helps.</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("Allen Lee",1279948,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1279948,"WbENWcew/hWJKRQ+3/QyRiR7dEVtkfFixAXuGdd+lHRtSG1yjMsrHg==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Allen+Lee" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl21_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl21$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl21_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#1440528">#23楼</A><A 
+id=comment_anchor_1440528 name=1440528></A> <SPAN>2009-02-02 09:17 </SPAN><A 
+id=Comments1_CommentList_ctl22_NameLink target=_blank>吹事员[未注册用户]</A> </H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_1440528>楼主，我想问下，如果想在aspx中调用07office里的组织架构图来显示实现组织架构图功能，是不是要用到owc12？还是有其它的方法呢？请指教！！！在线等。。</SPAN> 
+&nbsp;&nbsp;<A onclick='ReplyComment("吹事员",1440528,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1440528,"")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl22_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl22$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl22_EditLink></A> </P>
+<H4><A 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#1440530">#24楼</A><A 
+id=comment_anchor_1440530 name=1440530></A><A name=Post></A> <SPAN>2009-02-02 
+09:18 </SPAN><A id=Comments1_CommentList_ctl23_NameLink 
+href="http://www.cnblogs.com/xhning/" target=_blank>真正的浪子</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/çæ&shy;£çæµªå&shy;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</H4>
+<P><SPAN class=blog_comment_body 
+id=comment_body_1440530>楼主，我想问下，如果想在aspx中调用07office里的组织架构图来显示实现组织架构图功能，是不是要用到owc12？还是有其它的方法呢？请指教！！！在线等。。</SPAN> 
+&nbsp;&nbsp;<A 
+onclick='ReplyComment("真正的浪子",1440530,"xjlVG2hfu7YECpbb2JSNLXeh4SSvacNYWMpXsqQBDzsy38XHGqrxIw==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1440530,"xjlVG2hfu7YECpbb2JSNLXeh4SSvacNYWMpXsqQBDzsy38XHGqrxIw==")' 
+href="http://www.cnblogs.com/allenlooplee/archive/2007/09/19/898983.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e7%9c%9f%e6%ad%a3%e7%9a%84%e6%b5%aa%e5%ad%90" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl23_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl23$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl23_EditLink></A> </P></DIV>
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fallenlooplee%2farchive%2f2007%2f09%2f19%2f898983.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fallenlooplee%2farchive%2f2007%2f09%2f19%2f898983.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A class=site_hot 
+href="http://a4.yeshj.com/rd/35182/" target=_blank>有道难题开锣头奖8万！</A><BR><A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+href="http://news.cnblogs.com/n/65179/" target=_blank>SNS游戏首次纳入监管 
+开发商出海发展需三思</A><BR>· <A href="http://news.cnblogs.com/n/65178/" 
+target=_blank>希捷发布了GoFlex 首次实现Win及Mac文件共享</A><BR>· <A 
+href="http://news.cnblogs.com/n/65177/" target=_blank>郭台铭：我很害怕凌晨接到电话</A><BR>· <A 
+href="http://news.cnblogs.com/n/65176/" target=_blank>周鸿祎又掀微博战 
+曝“微点造毒传毒案”</A><BR>· <A href="http://news.cnblogs.com/n/65175/" 
+target=_blank>Google 所有街景小车全部回家洗洗睡了</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+alt="" 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=Office" target=_blank>Office</A> </DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/898983/">探索 Word 2007 
+开发（一）：我的博客</A></DIV></DIV></DIV>
+<P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" href="http://www.cnblogs.com/" 
+name=Hyperlink1>博客园</A> <BR>Copyright © Allen Lee </P></FORM>
+<SCRIPT src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT 
+src="探索 Word 2007 开发（一）：我的博客 - Allen Lee's Magic - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

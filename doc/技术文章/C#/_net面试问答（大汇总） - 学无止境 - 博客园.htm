@@ -1,0 +1,2610 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0068)http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>.net面试问答（大汇总） - 学无止境 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=曾祥展,.net面试问答（大汇总） name=keywords><LINK 
+href="_net面试问答（大汇总） - 学无止境 - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK href="_net面试问答（大汇总） - 学无止境 - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="_net面试问答（大汇总） - 学无止境 - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK href="_net面试问答（大汇总） - 学无止境 - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK 
+href="_net面试问答（大汇总） - 学无止境 - 博客园_files/customcss.css" type=text/css 
+rel=stylesheet><LINK title=RSS href="http://www.cnblogs.com/zengxiangzhan/rss" 
+type=application/rss+xml rel=alternate><LINK title=RSD 
+href="http://www.cnblogs.com/zengxiangzhan/rsd.xml" type=application/rsd+xml 
+rel=EditURI>
+<SCRIPT src="_net面试问答（大汇总） - 学无止境 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="_net面试问答（大汇总） - 学无止境 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="_net面试问答（大汇总） - 学无止境 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1718521.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<LINK href="_net面试问答（大汇总） - 学无止境 - 博客园_files/style.css" type=text/css 
+rel=Stylesheet>
+<SCRIPT src="_net面试问答（大汇总） - 学无止境 - 博客园_files/zengxiangzhan1.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="_net面试问答（大汇总） - 学无止境 - 博客园_files/mootools-1.2.4-core-jm.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="_net面试问答（大汇总） - 学无止境 - 博客园_files/zengxiangzhan.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+document.writeln("<style type=\"text\/css\">#loading{width:100px;height:20px;background:#A0DB0E;padding:5px;position:fixed;left:50%;top:0px}#loading div{width:1px;height:20px;background:#F1FF4D;font:10px/20px Arial}<\/style>")
+</SCRIPT>
+<!--done-->
+<DIV id=home>
+<DIV id=header>
+<DIV id=blogTitle><A id=lnkBlogLogo 
+href="http://www.cnblogs.com/zengxiangzhan/"><IMG id=blogLogo alt=返回主页 
+src="_net面试问答（大汇总） - 学无止境 - 博客园_files/logo.gif"></A> <!--done-->
+<H1><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/zengxiangzhan/">学无止境</A></H1>
+<H2>IT开发 曾祥展 
+<DIV id=loading>
+<DIV></DIV></DIV>
+<SCRIPT type=text/javascript>$("#loading div").animate({width:"31px"}).text("31%")</SCRIPT>
+
+<STYLE type=text/css>.syntaxhighlighter {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter DIV {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter CODE {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE TD {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE TR {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter TABLE TBODY {
+	FONT-WEIGHT: normal! important; FONT-SIZE: 12px! important; LINE-HEIGHT: 14px! important; PADDING-TOP: 1px; FONT-FAMILY: "宋体","Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace! important
+}
+.syntaxhighlighter .color1 {
+	COLOR: #008200! important
+}
+.syntaxhighlighter .color1 A {
+	COLOR: #008200! important
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading div").animate({width:"65px"}).text("65%")},1000)</SCRIPT>
+</H2></DIV><!--end: blogTitle 博客的标题和副标题 -->
+<DIV id=navigator><!--done-->
+<UL id=navList>
+  <LI>
+  <LI><A class=menu id=MyLinks1_SpaceLink 
+  href="http://space.cnblogs.com/">社区</A> 
+  <LI><A class=menu id=MyLinks1_MyHomeLink 
+  href="http://www.cnblogs.com/zengxiangzhan/">首页</A> 
+  <LI><A class=menu id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/zengxiangzhan/admin/EditPosts.aspx?opt=1">新随笔</A> 
+
+  <LI><A class=menu id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/zengxiangzhan">联系</A> 
+  <LI><A class=menu id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/zengxiangzhan/admin/EditPosts.aspx">管理</A> 
+  <LI><A class=menu id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/zengxiangzhan/rss">订阅</A> <A class=aHeaderXML 
+  id=MyLinks1_XMLLink href="http://www.cnblogs.com/zengxiangzhan/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="_net面试问答（大汇总） - 学无止境 - 博客园_files/rss.gif"></A> </LI></UL>
+<DIV class=blogStats><!--done-->随笔- 256&nbsp; 文章- 31&nbsp; 评论- 343&nbsp; </DIV><!--end: blogStats --></DIV><!--end: navigator 博客导航栏 --></DIV><!--end: header 头部 -->
+<DIV id=main>
+<DIV id=mainContent>
+<DIV class=forFlow><!--done-->
+<DIV id=topics>
+<DIV class=post>
+<H1 class=postTitle><A class=postTitle2 id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html">.net面试问答（大汇总）</A> 
+</H1>
+<DIV class=clear></DIV>
+<DIV class=postBody>
+<P><STRONG>用.net做B/S结构的系统，您是用几层结构来开发，每一层之间的关系以及为什么要这样分层？ <BR></STRONG>答：<FONT 
+color=#008000></FONT></P>
+<P><FONT color=#008000>从下至上分别为：数据访问层、业务逻辑层（又或成为领域层）、表示层 
+<BR>数据访问层：有时候也称为是持久层，其功能主要是负责数据库的访问 <BR>业务逻辑层：是整个系统的核心，它与这个系统的业务（领域）有关 
+<BR>表示层：是系统的UI部分，负责使用者与整个系统的交互。</FONT>&nbsp;<FONT color=#008000> <BR>优点：&nbsp; 
+分工明确，条理清晰，易于调试，而且具有可扩展性。 <BR>缺点：&nbsp; 增加成本。</FONT> </P>
+<P><STRONG>分层式结构究竟其优势何在？ <BR></STRONG><FONT 
+color=#008000>1、开发人员可以只关注整个结构中的其中某一层； <BR>2、可以很容易的用新的实现来替换原有层次的实现； 
+<BR>3、可以降低层与层之间的依赖； <BR>4、有利于标准化； <BR>5、利于各层逻辑的复用。 
+<BR>概括来说，分层式设计可以达至如下目的：分散关注、松散耦合、逻辑复用、标准定义。</FONT> </P>
+<P><STRONG>分层式结构也不可避免具有一些缺陷：</STRONG> <BR>&nbsp;<FONT 
+color=#008000>1、降低了系统的性能。这是不言而喻的。如果不采用分层式结构，很多业务可以直接造访数据库，以此获取相</FONT><FONT 
+color=#008000>应的数据，如今却必须通过中间层来完成。 
+<BR>2、有时会导致级联的修改。这种修改尤其体现在自上而下的方向。如果在表示层中需要增加一个功能，为保证</FONT><FONT 
+color=#008000>其设计符合分层式结构，可能需要在相应的业务逻辑层和数据访问层中都增加相应的代码。 </FONT></P>
+<P><STRONG>MVC模式 </STRONG></P>
+<P>MVC(Model-View-Controller)把交互系统的组成分解成<FONT color=#008000>模型、视图、控制器</FONT>三种部件 
+</P>
+<P><STRONG>mvc的优点： </STRONG></P>
+<P><FONT color=#008000>1.通过把项目分成model view和controller，使得复杂项目更加容易维护。 </FONT></P>
+<P><FONT color=#008000>2.没有使用view state和服务器表单控件，可以更方便的控制应用程序的行为 </FONT></P>
+<P><FONT color=#008000>3.应用程序通过controller来控制程序请求，可以提供丰富的url重写。 </FONT></P>
+<P><FONT color=#008000>4.对单元测试的支持更加出色 </FONT></P>
+<P><FONT color=#008000>5.在团队开发模式下表现更出众</FONT> </P>
+<P><STRONG>MVC的不足：</STRONG>&nbsp;</P>
+<P><FONT 
+color=#008000>（1）增加了系统结构和实现的复杂性。对于简单的界面，严格遵循MVC，使模型、视图与控制器分离，会增加结构的复杂性，并可能产生过多的更新操作，降低运行效率。&nbsp;&nbsp;&nbsp; 
+<BR>（2）视图与控制器间的过于紧密的连接。视图与控制器是相互分离，但确实联系紧密的部件，视图没有控制器的存在，其应用是很有限的，反之亦然，这样就妨碍了他们的独立重用。&nbsp;&nbsp;&nbsp; 
+<BR>（3）视图对模型数据的低效率访问。依据模型操作接口的不同，视图可能需要多次调用才能获得足够的显示数据。对未变化数据的不必要的频繁访问，也将损害操作性能。</FONT> 
+</P>
+<P><STRONG>asp.net如何实现MVC模式，举例说明！ </STRONG></P>
+<P><FONT color=#008000>web/business/dataaccess</FONT></P>
+<P>&nbsp;</P>
+<P><STRONG>列举ASP.NET 页面之间传递值的几种方式。 <BR></STRONG><FONT 
+color=#008000>1.使用QueryString, 如....?id=1; response. Redirect().... 
+<BR>2.使用Session变量 <BR>3.使用Server.Transfer</FONT> </P>
+<P><STRONG>请说明在.net中常用的几种页面间传递参数的方法，并说出他们的优缺点。</STRONG> <BR><FONT 
+color=#008000>QueryString&nbsp; 传递一个或多个安全性要求不高或是结构简单的数值。但是对于传递数组或对象的话，就不能用这个方法了 
+<BR>session(viewstate) 简单，但易丢失 作用于用户个人,过量的存储会导致服务器内存资源的耗尽。&nbsp; <BR>application 
+对象的作用范围是整个全局，也就是说对所有用户都有效。其常用的方法用Lock和UnLock <BR>cookie 简单，但可能不支持，可能被伪造 
+Cookie是存放在客户端的，而session是存放在服务器端的。而且Cookie的使用要配合ASP.NET内置对象Request来使用 <BR>input 
+ttype="hidden" 简单，可能被伪造 <BR>url参数简单，显示于地址栏，长度有限 <BR>Server.Transfer&nbsp; 
+把流程从当前页面引导到另一个页面中，新的页面使用前一个页面的应答流 <BR>数据库稳定，安全，但性能相对弱</FONT> </P>
+<P> <BR><STRONG>什么是Viewstate？它有什么作用？</STRONG></P>
+<P><FONT color=#008000>ViewState用来保存页面状态，就是说提交之后我们还可以看到文本框里面的内容就是ViewState保存的功劳。 
+<BR>ViewState只维护当前页面的状态，不同页面之间不能共享，Session可以。 
+<BR>ViewState你可以理解为一个隐藏控件。</FONT></P>
+<P><STRONG>ASP.Net页面生命周期 <BR><BR></STRONG><FONT 
+color=#008000>每个页面的生命周期为用户的每一次访问，也就是说每一次客户端与服务器之间的一个往返过程.全局变量的生命周期在此之间.</FONT></P>
+<P><FONT color=#008000>1. Page_Init(); <BR>2. Load ViewState and Postback data; 
+<BR>3. Page_Load(); <BR>4. Handle control events; <BR>5. Page_PreRender(); 
+<BR>6. Page_Render(); <BR>7. Unload event; <BR>8. Dispose method called;</FONT> 
+<BR></P>
+<P><STRONG>ADO.net中常用的对象有哪些？分别描述一下。 <BR></STRONG>答： <BR><FONT 
+color=#008000>Connection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 打开数据库连接 
+<BR>Command&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+执行数据库命令 <BR>DataAdapter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+连接数据，执行数据库命令，填充DataSet 
+<BR>DataSet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+数据在内存中的缓存，数据结构 <BR>DataReader&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+只读向前的读取数据库 </FONT></P>
+<P><STRONG>DataReader和DataSet的异同 <BR></STRONG><FONT 
+color=#008000>DataReader使用时始终占用SqlConnection,在线操作数据库..任何</FONT><FONT 
+color=#008000>对SqlConnection的操作都会引发DataReader的异常..因为DataReader每次只在内存中加载一条数据,所以占用的</FONT><FONT 
+color=#008000>内存是很小的..因为DataReader的特殊性和高性能.所以DataReader是只进的..你读了第一条后就不能再去读取第</FONT><FONT 
+color=#008000>一条了.. 
+<BR>DataSet则是将数据一次性加载在内存中.抛弃数据库连接..读取完毕即放弃数据库连接..因为DataSet将数据全部</FONT><FONT 
+color=#008000>加载在内存中.所以比较消耗内存...但是确比DataReader要灵活..可以动态的添加行,列,数据.对数据库进行回传更</FONT><FONT 
+color=#008000>新操作... </FONT></P>
+<P>&nbsp;</P>
+<P><STRONG>存储过程和sql语句的优缺点 </STRONG></P>
+<P><STRONG>优点：</STRONG> <BR><FONT color=#008000>1.提高性能，减少网络传输，节约时间 </FONT><FONT 
+color=#008000>。 </FONT></P>
+<P><FONT color=#008000>2.减少网络流量&nbsp;&nbsp;&nbsp; 
+存储过程位于服务器上，调用的时候只须传递存储过程的名称以及参数，不用每次访问都传递很长的sql 语句</FONT><FONT color=#008000>。 
+</FONT></P>
+<P><FONT color=#008000>4.安全性&nbsp;&nbsp;&nbsp;&nbsp; 减少sql 注入式攻击</FONT><FONT 
+color=#008000>。 </FONT></P>
+<P><FONT color=#008000>5.可维护性高&nbsp;&nbsp;&nbsp; 
+更新存储过程通常比更改、测试以及重新部署程序集需要较少的时间和精力。 </FONT></P>
+<P><STRONG>缺点：</STRONG> </P>
+<P><FONT color=#008000>1.交互性差 </FONT><FONT color=#008000>。 </FONT></P>
+<P><FONT color=#008000>2.可移植性差 </FONT></P>
+<P><STRONG></STRONG>&nbsp;</P>
+<P><STRONG>说出你所了解的数据库访问组件(例如ADO，至少4种) <BR></STRONG>答：<FONT 
+color=#800040>ADO，ADO.Net，MDAC(Microsoft Data Access Components)，Microsoft SQL 
+Server OLE DB Provider， </FONT></P>
+<P><FONT color=#800040>Microsoft Jet OLE DB Provider，Desktop Database Drivers 
+ODBC Driver，Visual FoxPro ODBC Driver <BR></FONT></P>
+<P><FONT color=#800040></FONT></P>
+<P><FONT color=#008000></FONT></P>
+<P><STRONG></STRONG></P>
+<P><STRONG>什么是面向对象 <BR></STRONG><FONT color=#008000>万物都是对象，其主要特征：封装、继承、多态 
+<BR></FONT></P>
+<P><FONT color=#008000><STRONG>怎样实现多态</STRONG>&nbsp;</FONT> </P>
+<P><FONT color=#008000>1.通过对象直接调用成员函数时，始终默认使用该对象的类的成员函数（除非用::显示指定类名）。</FONT></P>
+<P><FONT color=#008000>2.通过指向对象的指针或引用调用成员函数时：如果该函数是实函数，则调用该指针或引用的类的成员函数；如果该函 
+</FONT></P>
+<P><FONT color=#008000>数是虚函数，则调用该指针或引用指向的对象的类的成员函数。 <BR></FONT></P>
+<P><STRONG>面向对象的思想主要包括什么？ <BR></STRONG>答：<FONT color=#008000>任何事物都可以理解为对象，其主要特征： 
+继承。封装。多态。特点：代码好维护，安全，隐藏信息 <BR></FONT></P><STRONG>什么是装箱和拆箱？</STRONG> <BR>答：<FONT 
+color=#800000>从值类型接口转换到引用类型装箱。从引用类型转换到值类型拆箱。装箱（boxing）是将值类型的数据转化成引用类型，int i=3; 
+object o = i ;便是装箱过程，而拆箱(unboxing)是将饮用类型数据转换值类型,比如int j = (int)o；属于拆箱</FONT> 
+<P><FONT color=#008000><BR></FONT>&nbsp; </P>
+<P><STRONG>什么是Interface？它与Abstract Class有什么区别？ </STRONG></P>
+<P><FONT color=#ff8000>接口(Interface)是用来定义行为规范的，不会有具体实现，而抽象类除定义行为规范外，可以有部分实现，但一 
+</FONT></P>
+<P><FONT color=#ff8000>个类能实现多个接口，但只能继承一个父类</FONT>&nbsp;<FONT 
+color=#ff8000>&nbsp; <BR></FONT></P>
+<P><STRONG>什么时候使用抽象类，什么时候用接口 <BR></STRONG><BR><FONT 
+color=#ff8000>接口用于规范，抽象类用于共性。接口中只能声明方法，属性，事件，索引器。而抽象类中可以有方法的实 </FONT></P>
+<P><FONT color=#ff8000>现，也可以定义非静态的类变量。抽象类是类，所以只能被单继承，但是接口却可以一次实现多个。抽象类可以 
+</FONT></P>
+<P><FONT color=#ff8000>提供某些方法的部分实现，接口不可以.抽象类的实例是它的子类给出的。接口的实例是实现接口的类给出的。 
+</FONT></P>
+<P><FONT color=#ff8000>再抽象类中加入一个方法，那么它的子类就同时有了这个方法。而在接口中加入新的方法，那么实现它的类就要 
+</FONT></P>
+<P><FONT color=#ff8000>重新编写（这就是为什么说接口是一个类的规范了）。接口成员被定义为公共的，但抽象类的成员也可以是私有 
+</FONT></P>
+<P><FONT color=#ff8000>的、受保护的、内部的或受保护的内部成员（其中受保护的内部成员只能在应用程序的代码或派生类中访问）。 
+</FONT></P>
+<P><FONT color=#ff8000>此外接口不能包含字段、构造函数、析构函数、静态成员或常量。 <BR><BR></FONT></P>
+<P><STRONG>什么是抽象类（abstract class）？ <BR></STRONG><FONT 
+color=#800080>一种不可以被实例化的类。抽象类中一般含有抽象方法，当然也可有具体实现。继承类只有实现过所有抽 </FONT></P>
+<P><FONT color=#800080>象类的抽象方法后才能被实例化。</FONT> </P>
+<P><STRONG>何时必须声明一个类为抽象类？ <BR></STRONG><FONT 
+color=#800080>当这个类中包含抽象方法时，或是该类并没有完全实现父类的抽象方法时。</FONT> </P>
+<P>接<STRONG>口（interface）是什么？</STRONG> <BR><FONT color=#800080>只含有共有抽象方法（public 
+abstract method）的类。这些方法必须在子类中被实现。</FONT> </P>
+<P><STRONG>为什么不能指定接口中方法的修饰符？ <BR></STRONG><FONT 
+color=#800080>接口中的方法用来定义对象之间通信的契约，指定接口中的方法为私有或保护没有意义。他们默认为公有方法。 </FONT></P>
+<P><STRONG>可以继承多个接口么？</STRONG> <BR><FONT color=#800080>当然。</FONT> </P>
+<P><STRONG>那么如果这些接口中有重复的方法名称呢？ <BR></STRONG><FONT 
+color=#800080>这种情况中你可以决定如何实现。当然需要特别得小心。但是在编译环节是没有问题的。</FONT> </P>
+<P><STRONG>接口和抽象类的区别是什么？ <BR></STRONG><FONT 
+color=#800080>接口中所有方法必须是抽象的，并且不能指定方法的访问修饰符。抽象类中可以有方法的实现，也可以指 </FONT></P>
+<P><FONT color=#800080>定方法的访问修饰符。</FONT></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P><FONT color=#800080></FONT></P>
+<P><STRONG>详述.NET里class和struct的异同！</STRONG> </P>
+<P><FONT color=#008000><FONT color=#ff8000></FONT></FONT><FONT 
+color=#008000>类是引用类型，可以继承类、接口和被继承，有默认的构造函数，有析构函数，可以使用abstract和sealed，有protected修饰符，必须使用new初始化。<BR>结构是值类型，只能继承接口，不能被继承，没有默认的构造函数，可以创建，没有析构函数，不可以用abstract和sealed，没有protected修饰符，可以不用new初始化。<BR></FONT></P>
+<P><FONT color=#008000><STRONG>如何选择结构还是类 <BR></STRONG>1． 
+堆栈的空间有限，对于大量的逻辑的对象，创建类要比创建结构好一些 <BR>2． 结构表示如点、矩形和颜色这样的轻量对象 <BR>例如，如果声明一个含有 1000 
+个点对象的数组，则将为引用每个对象分配附加的内存。 <BR>在此情况下，结构的成本较低。 <BR>3． 在表现抽象和多级别的对象层次时，类是最好的选择 
+<BR>4． 大多数情况下该类型只是一些数据时，结构时最佳的选择 <BR></FONT></P>
+<P><STRONG>C#中的接口和类有什么异同。</STRONG>&nbsp; <BR><FONT color=#008000><STRONG>异： 
+<BR></STRONG>不能直接实例化接口。 <BR>接口不包含方法的实现。 <BR>接口、类和结构可从多个接口继承。但是C# 
+只支持单继承：类只能从一个基类继承实现。 <BR>类定义可在不同的源文件之间进行拆分。 <BR><STRONG>同： 
+<BR></STRONG>接口、类和结构可从多个接口继承。 <BR>接口类似于抽象基类：继承接口的任何非抽象类型都必须实现接口的所有成员。 
+<BR>接口可以包含事件、索引器、方法和属性。 <BR>一个类可以实现多个接口。 </FONT></P>
+<P><FONT color=#800080></FONT>&nbsp;</P>
+<P><STRONG>const和readonly有什么区别？ <BR></STRONG><FONT 
+color=#008000>const关键字用来声明编译时常量，readonly用来声明运行时常量。</FONT> </P>
+<P><STRONG>用sealed修饰的类有什么特点 </STRONG><BR><FONT color=#008000>sealed 
+修饰符用于防止从所修饰的类派生出其它类。如果一个密封类被指定为其他类的基类，则会发生编译时错误。 <BR>密封类不能同时为抽象类。 <BR>sealed 
+修饰符主要用于防止非有意的派生，但是它还能促使某些运行时优化。具体说来，由于密封类永 </FONT></P>
+<P><FONT color=#008000>远不会有任何派生类，所以对密封类的实例的虚拟函数成员的调用可以转换为非虚拟调用来处理。 
+<BR></FONT></P>
+<P><STRONG>虚函数的用法</STRONG> <BR>答： <BR><FONT 
+color=#008000>1)virtual指明一成员函数为虚函数,而virtual仅用于类的定义里,在类外可不加此关键字. 
+<BR>2)一个类的成员函数被定义为虚函数时,子类该函数仍保持虚函数特征. 
+<BR>3)子类覆盖此函数时,定义里可不加virtual关键字,但函数声明要和基类的完全一致!且此声明是必须的. 
+<BR>4)不是纯虚函数时,父类的虚函数必须要实现; 而若将父类的虚函数设定为纯虚函数时,子类必需要覆盖之而且必</FONT><FONT 
+color=#008000>须要实现之! </FONT><BR></P>
+<P><STRONG>解释virtual、sealed、override和abstract的区别 <BR></STRONG><FONT 
+color=#008000>virtual申明虚方法的关键字，说明该方法可以被重写 <BR>sealed说明该类不可被继承 
+<BR>override重写基</FONT><FONT color=#008000>类的方法 
+<BR>abstract申明抽象类和抽象方法的关键字，抽象方法不提供实现，由子类实现，抽象类不可实</FONT><FONT color=#008000>例化。 
+<BR></FONT></P>
+<P><STRONG>重载和覆写有什么区别？ <BR></STRONG>答：<FONT 
+color=#008000>重载是方法的名称相同,不同的参数类型，不同的参数个数，不同的参数顺序。覆写提供了子类中改变父类方法行为的实现(是进行基类中函数的重写)。</FONT> 
+<BR></P>
+<P><STRONG>在方法定义中，virtual有什么含义？</STRONG> <BR>答：<FONT 
+color=#004000>被virtual修饰的方法可以被子类覆写</FONT> <BR></P>
+<P><STRONG>能够将非静态的方法覆写成静态方法吗？</STRONG> <BR>答：<FONT 
+color=#008000>不能，覆写方法的签名必须与被覆写方法的签名保持一致，除了将virtual改为override。</FONT> <BR></P>
+<P><STRONG>可以覆写私有的虚方法吗？ <BR></STRONG>答：<FONT 
+color=#008000>不可以，甚至子类中无法访问父类中的私有方法</FONT> <BR></P>
+<P><STRONG>能够阻止某一个类被其他类继承吗？ <BR></STRONG>答：<FONT 
+color=#008000>可以，使用关键字sealed</FONT> <BR></P>
+<P><STRONG>能够实现允许某个类别继承，但不允许其中的某个方法被覆写吗？</STRONG> <BR>答：<FONT 
+color=#008000>可以，标记这个类为public，并标记这个方法为sealed。 <BR></FONT></P>
+<P><STRONG>如何区别重载方法？</STRONG> <BR><FONT color=#008000>不同的参数类型，不同的参数个数，不同的参数顺序 
+</FONT></P>
+<P><FONT color=#008000><BR></FONT></P>
+<P><STRONG>C#中的委托是什么？事件是不是一种委托？ </STRONG>&nbsp;&nbsp;&nbsp;&nbsp; <BR><FONT 
+color=#008000>委托可以把一个方法作为参数代入另一个方法。委托可以理解为指向一个函数的引用。是，是一种特殊的委托 </FONT><FONT 
+color=#800080>&nbsp; </FONT></P>
+<P><FONT color=#800080></FONT></P>
+<P><STRONG>C#中的堆和栈</STRONG><FONT color=#800080></FONT> 
+<P>栈（Stack）由系统管理生存期，存储代码执行和调用路径，执行或调用完毕即从栈中清除； 
+<BR>堆（Heap）中保存值和对象，调用完毕之后依然存在，由垃圾回收器查找栈中有无指向该值或对象的引用，无则从堆中删除</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P><STRONG>你对泛型了解吗？简单说明一下泛型的有什么好处？</STRONG></P>
+<P><FONT color=#800080>泛型：通过参数化类型来实现在同一份代码上操作多种数据类型。利用“参数化类型”将类型抽象化，从而实现灵活的复用 
+<BR>好处是——类型安全和减少装箱、拆箱。提高性能、类型安全和质量，减少重复性的编程任务 <BR></FONT></P>
+<P><STRONG>C#中所有对象共同的基类是什么？ <BR></STRONG><FONT 
+color=#ff8000>System.Object.</FONT> <BR></P>
+<P><STRONG>如何在C#中实现继承？ <BR></STRONG><FONT color=#ff8000>在类名后加上一个冒号，再加上基类的名称。 
+<BR></FONT></P>
+<P><STRONG>C#支持多重继承吗？ <BR></STRONG><FONT color=#ff8000>不支持。可以用接口来实现。</FONT> 
+<BR></P>
+<P><STRONG>被protected修饰的属性/方法在何处可以访问？ <BR></STRONG><FONT 
+color=#ff8000>在继承或间接继承与这个类的子类中可以访问。 <BR></FONT></P>
+<P><STRONG>私有成员会被继承么？ <BR></STRONG><FONT 
+color=#ff8000>会，但是不能被访问。所以看上去他们似乎是不能被继承的，但实际上确实被继承了。 <BR></FONT></P>
+<P><STRONG>C#提供一个默认的无参构造函数，当我实现了另外一个有一个参数的构造函数时，还想保留这个无参数的构 </STRONG></P>
+<P><STRONG>造函数。这样我应该写几个构造函数？ <BR></STRONG>答：<FONT 
+color=#008000>两个，一旦你实现了一个构造函数，C#就不会再提供默认的构造函数了，所以需要手动实现那个无参构造 </FONT></P>
+<P><FONT color=#008000>函数。 <BR></FONT></P>
+<P><FONT color=#008000> <BR></FONT>&nbsp; </P>
+<P><STRONG>简述 private、 protected、 public、 internal 修饰符的访问权限。 <BR></STRONG><FONT 
+color=#008000>private : 私有成员, 在类的内部才可以访问。 <BR>protected : 保护成员，该类内部和继承类中可以访问。 
+<BR>public : 公共成员，完全公开，没有访问限制。 <BR>internal: 在同一命名空间内可以访问。</FONT> <BR></P>
+<P><STRONG>new的两种用法</STRONG> <BR>答：<FONT color=#008000>实例话对象，隐藏基类方法。</FONT></P>
+<P><STRONG>.new有几种用法</STRONG> <BR>第一种<FONT color=#ff0000>:new Class();</FONT> 
+</P>
+<P>第二种:<FONT color=#ff0000>覆盖方法</FONT> </P>
+<P>public new XXXX(){} </P>
+<P>第三种:<FONT color=#ff0000>new 约束指定泛型类声明中的任何类型参数都必须有公共的无参数构造函数</FONT>。 <BR></P>
+<P>3.datagrid.datasouse可以连接什么数据源 [dataset,datatable,dataview] </P>
+<P><FONT color=#0000ff>dataset,datatable,dataview , IList</FONT> <BR></P>
+<P><STRONG>类成员有( )种可访问形式</STRONG> </P>
+<P>可访问性：<FONT color=#008000>public ,protected ,private,internal <BR></FONT></P>
+<P><FONT color=#008000><BR></FONT></P>
+<P><STRONG>委托与事件的用法</STRONG> <BR>答：<FONT color=#008000>public delegate void 
+handels();//返回值是void，没有参数 <BR>public event handels eventHandels; 
+<BR>his.eventHandels = new handels(fun); <BR>public void fun() 
+<BR>&nbsp;&nbsp;&nbsp; { } </FONT></P>
+<P>&nbsp;</P>
+<P><STRONG>传入某个属性的SET方法的隐含参数的名称是什么？ <BR></STRONG>答：<FONT 
+color=#008000>value，它的类型和属性所声明的类型相同。 <BR></FONT></P>
+<P><STRONG>string是值类型还是引用类型?</STRONG> </P>
+<P><FONT color=#ff0000>引用类型</FONT> <BR></P>
+<P><STRONG>String类与StringBuilder类有什么区别？为什么在.Net类库中要同时存在这2个类？(简答)</STRONG> </P>
+<P>stringBuilder比string更节约内存,所以stringBuilder更快 </P>
+<P><FONT color=#008000>String 对象是不可改变的。每次使用 System.String 
+类中的方法之一或进行运算时（如赋值、拼接等）时，都要 </FONT></P>
+<P><FONT color=#008000>在内存中创建一个新的字符串对象，这就需要为该新对象分配新的空间。而 StringBuilder 则不会。在需要对字 
+</FONT></P>
+<P><FONT color=#008000>符串执行重复修改的情况下，与创建新的 String 对象相关的系统开销可能会非常昂贵。如果要修改字符串而不 
+</FONT></P>
+<P><FONT color=#008000>创建新的对象，则可以使用 System.Text.StringBuilder 
+类。例如，当在一个循环中将许多字符串连接在一起时 </FONT></P>
+<P><FONT color=#008000>，使用 StringBuilder 类可以提升性能。 <BR></FONT></P>
+<P>&nbsp;</P>
+<P><FONT color=#008000></FONT></P><STRONG>在C＃中，string str = null 与 string str = 
+“” 请尽量使用文字或图象说明其中的区别。 <BR></STRONG>答：<FONT color=#0000ff>string str = null 
+是不给他分配内存空间,而string str = "" 给它分配长度为空字符串的内存空间。 <BR></FONT>
+<P>&nbsp;</P><STRONG>ASP.net的身份验证方式有哪些？分别是什么原理？</STRONG> <BR>答：<FONT 
+color=#0000a0>Windwos(默认)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+用IIS...From(窗体)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 用帐户....Passport(密钥)</FONT> 
+<P><STRONG><BR>Session有什么重大BUG，微软提出了什么方法加以解决？</STRONG> <BR>答：<FONT 
+color=#008000>是iis中由于有进程回收机制，系统繁忙的话Session会丢失，可以用Sate server或SQL 
+Server数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的END事件 <BR></FONT></P>
+<P><STRONG>c#中的三元运算符是 <FONT color=#ff0000>？：</FONT></STRONG> <BR></P>
+<P>.能用foreach遍历访问的对象需要实现<STRONG><FONT color=#ff0000>() </FONT></STRONG>接口或声明 ( 
+<STRONG><FONT color=#ff0000>GetEnumerator</FONT></STRONG>)方法的类型。 <BR></P>
+<P><STRONG>.&lt;%# %&gt; 和 &lt;% %&gt; 有什么区别？</STRONG> </P>
+<P>&lt;%# %&gt;<FONT color=#808000>表示绑定的数据源</FONT> &lt;% %&gt;<FONT 
+color=#808000>是服务器端代码块 常量</FONT> <BR></P>
+<P><STRONG>在.net（C# or vb.net）中如何获得当前窗体或控件的句柄，特别是控件本身的句柄（请列举）</STRONG></P>
+<P>this(C#) Me(vb.net). <BR></P>
+<P><STRONG>.C#可否对内存进行直接的操作？</STRONG> </P>
+<P>在.net下，.net引用了垃圾回收（GC）功能，它替代了程序员 
+不过在C#中，不能直接实现Finalize方法，而是在析构函数中调用基类的Finalize()方法 <BR></P>
+<P><STRONG>DateTime是否可以为null?</STRONG> <FONT 
+color=#008000>不能，因为其为Struct类型，而结构属于值类型，值类型不能为null,只有引用类型才能被赋值null 
+<BR></FONT></P>
+<P><STRONG>DateTime.Parse(myString); 这行代码有什么问题？</STRONG> </P>
+<P><FONT color=#008000>有问题，当myString不能满足时间格式要求的时候，会引发异常，建议使用DateTime.TryParse() 
+<BR><BR></FONT></P>
+<P><STRONG>net的错误处理机制是</STRONG>:</P>
+<P>采用try-&gt;catch-&gt;finally结构， <BR></P>
+<P><STRONG>为什么不提倡catch(Exception) <BR></STRONG><FONT 
+color=#008000>try..catch在出现异常的时候影响性能; 
+应该捕获更具体得异常，比如IOExeception,OutOfMemoryException等 <BR></FONT></P>
+<P><STRONG>catch(Exception e){throw e;}和catch(Exception e){throw;}的区别</STRONG> 
+</P>
+<P><FONT color=#008000>将发生的异常对象抛出，另一个只是抛出异常，并没有抛出原异常对象）</FONT> <BR></P>
+<P><STRONG>error和exception区别：</STRONG> </P>
+<P>error <FONT 
+color=#008000>表示恢复不是不可能但很困难的情况下的一种严重问题。比如说内存溢出。不可能指望程序能处理这样的情况。</FONT> </P>
+<P>exception <FONT 
+color=#008000>表示一种设计或实现问题。也就是说，它表示如果程序运行正常，从不会发生的情况。</FONT></P>
+<P>&nbsp;</P>
+<P><STRONG>GET与POST的区别</STRONG> <BR><FONT 
+color=#008000>在FORM提交的时候，如果不指定Method，则默认为GET请求，Form中提交的数据将会附加在url之后，以?分开与url分开。字母数字字符原样发送，但空格转换为“+“号，其它符号转换为%XX,其中XX为该符号以16进制表示的ASCII（或ISO 
+Latin-1）值。GET请求请提交的数据放置在HTTP请求协议头中，而POST提交的数据则放在实体数据中； </FONT></P>
+<P><FONT color=#008000>在使用 POST 方法的情况下，传输数据时不会将数据作为 URL 
+的一部分；它们会作为一个独立的实体来传输。因此，POST 方法更安全，你也可以用这个方法传输更多的数据。而且用 POST 传输的数据不一定要是文本，用 GET 
+方法传输的却一定要是文本。 </FONT></P>
+<P><FONT color=#008000>（1）get是从服务器上获取数据，post是向服务器传送数据。 </FONT></P>
+<P><FONT color=#008000>（1）在客户端，Get方式在通过URL提交数据，数据在URL中可以看到；POST方式，数据放置在HTML 
+HEADER内提交。 </FONT></P>
+<P><FONT 
+color=#008000>（2）对于get方式，服务器端用Request.QueryString获取变量的值，对于post方式，服务器端用Request.Form获取提交的数据。 
+</FONT></P>
+<P><FONT color=#008000>（2）GET方式提交的数据最多只能有1024字节，而POST则没有此限制。 </FONT></P>
+<P><FONT color=#008000>（3）安全性问题。正如在（1）中提到，使用 Get 的时候，参数会显示在地址栏上，而 Post 
+不会。所以，如果这些数据是中文数据而且是非敏感数据，那么使用 get；如果用户输入的数据不是中文字符而且包含敏感数据，那么还是使用 post为好。 
+</FONT></P>
+<P><FONT color=#008000></FONT></P>
+<P><STRONG>Bind和Eval函数的区别</STRONG> </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 绑定表达式 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;%# Eval("字段名") %&gt; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;%# Bind("字段名") %&gt; <BR><FONT 
+color=#008000>1&nbsp; Eval 单向绑定:数据是只读的 <BR>&nbsp;&nbsp;&nbsp; Bind 
+双向绑定:数据可以更改,并返回服务器端,服务器可以处理更改后的数据,如存入数据库. <BR>2.当对次表达式操作时候，必须用Eval 如&lt;%# 
+Eval("字段名").ToString().Trim() %&gt; <BR>3 绑定控件的属性时要用Bind，而Eval则是其它一些。 
+<BR>&nbsp;&nbsp;&nbsp; 例如：&lt;asp:TextBox ID="First" RunAt="Server" Text='&lt;%# 
+Bind("FirstName") %&gt;' /&gt; <BR>&nbsp;&nbsp;&nbsp; 例如：&lt;td&gt;&lt;%# 
+Eval("ProductID") %&gt;&lt;/td&gt; </FONT></P>
+<P><FONT color=#008000></FONT></P>
+<P><STRONG>Response.Redirect和Server.Transfer <BR></STRONG><FONT 
+color=#008000>请求的过程: 
+<BR></FONT>1)浏览器aspx文件请求---&gt;服务器执行---&gt;遇到Response.Redirect语句-&gt;服务器发送Response.Redirect后面的地址给客户机端的浏览器---&gt;浏览器请求执行新的地址 
+<BR>2)浏览器aspx文件请求-&gt;服务器执行-&gt;遇到Server.Transfer语句-&gt;服务器转向新的文件 
+<BR>可以见Server.Transfer比Response.Redirect少了一次服务器发送回来和客户端再请求的过程. <BR><FONT 
+color=#008000>跳转对象: <BR></FONT>1)Response.Redirect可以切换到任何存在的网页。 
+<BR>2)Server.Transfer只能切换到同目录或者子目录的网页. <BR><FONT color=#008000>数据保密: 
+<BR></FONT>1、Response.Redirect后地址会变成跳转后的页面地址。 
+<BR>2、Server.Transfer后地址不变，隐藏了新网页的地址及附带在地址后边的参数值。具有数据保密功能。 <BR><FONT 
+color=#008000>传递的数据量（网址后附带的参数）：</FONT> 
+<BR>1、Response.Redirect能够传递的数据以2KB(也就是地址栏中地址的最大的长度)为限。 
+<BR>2、传递的数据超过2KB时，务必使用Server.Transfer。</P>
+<P>&nbsp;</P>
+<P><STRONG>Server.UrlEncode、HttpUtility.UrlDecode的区别 
+<BR></STRONG>Server.UrlEncode<FONT 
+color=#008000>的编码方式是按照本地程序设置的编码方式进行编码的</FONT>，而HttpUtility.UrlEncode是<FONT 
+color=#008000>默认的按照.net的utf-8格式进行编码的。</FONT></P>
+<P>&nbsp;</P>
+<P><STRONG>Static 和 非Static的区别：</STRONG> <BR><FONT 
+color=#008000>一、用Static声明的方法和变量，不需要实例化该类就调用； </FONT></P>
+<P><FONT color=#008000>二、Static的，就一定要用实例化的对象来调用，即用new来实例化。 </FONT></P>
+<P><FONT color=#008000>举例说： </FONT></P>
+<P><FONT color=#008000>如果有一个类People，有一个Static的方法MiaoShu(), 调用方法就是 
+People.MisoShu() </FONT></P>
+<P><FONT color=#008000>有一个非Static的方法getName(), 调用方法就是 People p= new People(); 
+p.getName(); <BR></FONT></P>
+<P><FONT color=#008000></FONT></P>
+<P><STRONG>如何实现连接池</STRONG> </P>
+<P>确保你每一次的连接使用相同的连接字符串（和连接池相同）；只有连接字符串相同时连接池才会工作。如果连接字符串不相同，应用程序就不会使用连接池而是创建一个新的连接。 
+</P>
+<P><STRONG>优点</STRONG> </P>
+<P>使用连接池的最主要的优点是性能。创建一个新的数据库连接所耗费的时间主要取决于网络的速度以及应用程序和数据库服务器的（网络）距离，而且这个过程通常是一个很耗时的过程。而采用数据库连接池后，数据库连接请求可以直接通过连接池满足而不需要为该请求重新连接、认证到数据库服务器，这样就节省了时间。 
+</P>
+<P><STRONG>缺点</STRONG> </P>
+<P>数据库连接池中可能存在着多个没有被使用的连接一直连接着数据库（这意味着资源的浪费）。 </P>
+<P>技巧和提示 </P>
+<P>1． 当你需要数据库连接时才去创建连接池，而不是提前建立。一旦你使用完连接立即关闭它，不要等到垃圾收集器来处理它。 </P>
+<P>2． 在关闭数据库连接前确保关闭了所有用户定义的事务。 </P>
+<P>3． 
+不要关闭数据库中所有的连接，至少保证连接池中有一个连接可用。如果内存和其他资源是你必须首先考虑的问题，可以关闭所有的连接，然后在下一个请求到来时创建连接池。 
+</P>
+<P><STRONG><FONT color=#ff0000>连接池FAQ</FONT> </STRONG></P>
+<P>1．<STRONG> 何时创建连接池？ </STRONG></P>
+<P><FONT 
+color=#008000>当第一个连接请求到来时创建连接池；连接池的建立由数据库连接的连接字符创来决定。每一个连接池都与一个不同的连接字符串相关。当一个新的连接请求到来时如果连接字符串和连接池使用的字符串相同，就从连接池取出一个连接；如果不相同，就新建一个连接池。</FONT> 
+</P>
+<P>2． <STRONG>何时关闭连接池？</STRONG> </P>
+<P><FONT color=#008000>当连接池中的所有连接都已经关闭时关闭连接池。 </FONT></P>
+<P>3． <STRONG>当连接池中的连接都已经用完，而有新的连接请求到来时会发生什么？</STRONG> </P>
+<P><FONT 
+color=#008000>当连接池已经达到它的最大连接数目时，有新的连接请求到来时，新的连接请求将放置到连接队列中。当有连接释放给连接池时，连接池将新释放的连接分配给在队列中排队的连接请求。你可以调用close和dispose将连接归还给连接池。</FONT> 
+</P>
+<P>4． <STRONG>我应该如何允许连接池？</STRONG> </P>
+<P><FONT 
+color=#008000>对于.NET应用程序而言，默认为允许连接池。（这意味着你可以不必为这件事情做任何的事情）当然，如果你可以在SQLConnection对象的连接字符串中加进Pooling=true;确保你的应用程序允许连接池的使用。 
+</FONT></P>
+<P>5． <STRONG>我应该如何禁止连接池？</STRONG> </P>
+<P><FONT color=#008000>ADO.NET默认为允许数据库连接池，如果你希望禁止连接池，可以使用如下的方式： </FONT></P>
+<P><FONT color=#008000>1) 使用SQLConnection对象时，往连接字符串加入如下内容：Pooling=False; 
+</FONT></P>
+<P><FONT color=#008000>2) 使用OLEDBConnection对象时，往连接字符串加入如下内容：OLE DB Services=-4; 
+</FONT></P>
+<P>&nbsp;</P>
+<P><STRONG>提高.NET的性能 <BR></STRONG><FONT color=#008000>1 使用异步方式调用Web服务和远程对象 
+</FONT></P>
+<P><FONT color=#008000>只要有可能就要避免在请求的处理过程中对Web服务和远程对象的同步调用，因为它占用的是的ASP.NET 
+线程池中的工作线程，这将直接影响Web服务器响应其它请求的能力。 </FONT></P>
+<P><FONT color=#008000>2 使用适当的Caching策略来提高性能 </FONT></P>
+<P><FONT color=#008000>3 判断字符串，不要用""比较。 </FONT></P>
+<P><FONT color=#008000>//避免 <BR>if(strABC!=null &amp;&amp; strABC!="") <BR>{} 
+</FONT></P>
+<P><FONT color=#008000>//推荐 <BR>if(!strABC.IsNullOrEmpty) <BR>{} </FONT></P>
+<P><FONT color=#008000>4 页面优化 </FONT></P>
+<P><FONT color=#008000>5 用完马上关闭数据库连接 <BR>6 尽量使用存储过程，并优化查询语句 <BR>7 
+只读数据访问用SqlDataReader，不要使用DataSet</FONT></P>
+<P><FONT color=#008000>……….</FONT></P>
+<P>&nbsp;</P>
+<P><STRONG>.UDP连接和TCP连接的异同</STRONG> <BR>答:前者只管传,不管数据到不到,无须建立连接.后者保证传输的数据准确,须要连结. 
+<BR></P>
+<P><STRONG>请解释转发与跳转的区别 <BR></STRONG>转发就是服务端的跳转A页面提交数据到B页面,B页面进行处理然后从服务端跳转到其它页面 
+<BR>跳转就是指客户端的跳转</P>
+<P><STRONG>简述你对XML Web Service的原理的认识？</STRONG> 
+<BR>答：利用SOAP(简单对象访问协议)在http上执行远程方法的调用，也可以使用WSDL（Web服务描述语言）来 </P>
+<P>完成完整的描述Web服务，然后用UDDI注册各个服务提供商提供的服务，以便共享他们。 </P>
+<P><STRONG>什么叫应用程序域？</STRONG> <BR>答：应用程序域可以理解为一种轻量级进程。起到安全的作用。占用资源小。 </P>
+<P><STRONG>CTS、CLS、CLR分别作何解释？ <BR></STRONG>答：CTS：通用语言系统。CLS：通用语言规范。<FONT 
+color=#ff8000>CLR：公共语言运行库。</FONT> </P>
+<P><STRONG>什么是受管制的代码？</STRONG> <BR>答：unsafe：非托管代码。不经过CLR运行。 </P>
+<P><STRONG>什么是强类型系统？</STRONG> <BR>答：RTTI：类型识别系统。 
+</P><STRONG>什么是code-behind技术</STRONG> <BR>codebehind是指代码和用户界面分开 <BR>aspx and cs 
+<P><STRONG>在.net中，配件的意思是？ <BR></STRONG>答：程序集。（中间语言，源数据，资源，装配清单） </P>
+<P><STRONG>常用的调用WebService的方法有哪些？</STRONG> <BR>答：1.使用WSDL.exe命令行工具。 
+<BR>&nbsp;&nbsp;&nbsp; 2.使用VS.NET中的Add Web Reference菜单选项 </P>
+<P><STRONG>net Remoting 的工作原理是什么？ 
+<BR></STRONG>答：服务器端向客户端发送一个进程编号，一个程序域编号，以确定对象的位置。 </P><STRONG>O/R Mapping 的原理 
+<BR></STRONG>答：<FONT color=#008000>利用反射，配置将对象和数据库表映射</FONT> 
+<P><STRONG>remoting和webservice两项技术的理解以及实际中的应用。</STRONG> 
+<BR>答：WS主要是可利用HTTP，穿透防火墙。而Remoting可以利用TCP/IP，二进制传送提高效率。 </P>
+<P><STRONG>out保留字怎么使用，什么时候使用</STRONG> 
+<BR>答：有时为了从一个函数中返回多个值，我们需要使用out关键字，把输出值赋给通过引用传递给方法的变量（也就是参数）。但C#要求变量再被引用的前必须初始化。在调用该方法时，还需要添加out关键字 
+</P>
+<P><STRONG>PDB是什么东西? 在调试中它应该放在哪里？</STRONG> </P>
+<P>PDB是用于保存调试和项目状态信息的文件，在debug的时候将产生pdb文件，调试的时候应该放在和对应应用 </P>
+<P>程序集相同目录。 </P>
+<P>&nbsp;</P>
+<P><STRONG>使用ASMX的XML Web服务与使用SOAP的.NET Remoting的区别?</STRONG> </P>
+<P><FONT color=#008000>Web服务使用的消息机制，而Remoting采用的RPC. Web 
+Service能用于不同平台，不同语言，Remoting只适用 </FONT></P>
+<P><FONT color=#008000>于.Net。效率上Remoting高于Xml Web Service</FONT> </P>
+<P><STRONG>类型系统是由XMLSchema表示的吗？CLS是XMLSchema表示的吗？</STRONG> </P>
+<P>不清楚 </P>
+<P><STRONG>从概念上阐述前期绑定（early-binding）和后期绑定（late-binding）的区别?</STRONG> </P>
+<P>这个就像是强弱类型的比较相似，前期绑定是在编译的时候就确定了要绑定的数据，而后期绑定是在运行的时候 </P>
+<P>才填充数据。所以前期绑定如果失败，会在编译时报编译错误，而后期绑定失败只有在运行时的时候才发生 </P>
+<P><STRONG>调用Assembly.Load算静态引用还是动态引用？</STRONG> </P>
+<P>动态 </P>
+<P>&nbsp;<STRONG>列举一下你所了解的XML技术及其应用</STRONG> <BR>答：保存配置,站与站之间的交流,WEB 
+SERVICE。以及与数据库的数据交互等地方都要用它. <BR>7.如何理解委托？ <BR>答： 
+<BR>相当于函数指针,定义了委托就可以在不调用原方法名称的情况下调用那个方法. <BR>委托具有以下特点： <BR>委托类似于 C++ 
+函数指针，但它是类型安全的。 <BR>委托允许将方法作为参数进行传递。 <BR>委托可用于定义回调方法。 
+<BR>委托可以链接在一起；例如，可以对一个事件调用多个方法。 <BR>方法不需要与委托签名精确匹配。有关更多信息，请参见协变和逆变。 <BR>C# 2.0 
+版引入了匿名方法的概念，此类方法允许将代码块作为参数传递，以代替单独定义的方法。 </P>
+<P>&nbsp;</P>
+<P><FONT color=#008000></FONT>&nbsp;</P>
+<P><STRONG>概述反射和序列化 </STRONG></P>
+<P>反射:<FONT color=#0000ff>程序集包含模块，而模块包含类型，类型又包含成员。反射则提供了封装程序集、模块和类型的对 
+</FONT></P>
+<P><FONT color=#0000ff>象。您可以使用反射动态地创建类型的实例，将类型绑定到现有对象，或从现有对象中获取类型。然后， 
+</FONT></P>
+<P><FONT color=#0000ff>可以调用类型的方法或访问其字段和属性</FONT> </P>
+<P>序列化:<FONT color=#0000a0>序列化是将对象转换为容易传输的格式的过程。例如，可以序列化一个对象，然后使用 HTTP 通 
+</FONT></P>
+<P><FONT color=#0000a0>过 Internet 在客户端和服务器之间传输该对象。在另一端，反序列化将从该流重新构造对象。</FONT> 
+</P>
+<P><STRONG>11)&nbsp; XmlSerializer是如何工作的？使用这个类的进程需要什么ACL权限？</STRONG> </P>
+<P><FONT 
+color=#008000>我只知道XmlSerializer是将对象的属性和字段进行序列化和反序列化的，序列化成为xml数据，反序列化再将xml 
+</FONT></P>
+<P><FONT color=#008000>转换成对象。应该至少需要ACL权限中的读权限. </FONT></P>
+<P><STRONG>23）XmlSerializer使用的针对属性的模式有什么好处？解决了什么问题？ </STRONG></P>
+<P><FONT color=#008000>只序列化有用的数据，而不是序列化整个对象。实现没必要的数据冗余，和提升序列化时的性能。</FONT></P>
+<P>&nbsp;</P>
+<P>26.根据委托(delegate)的知识，请完成以下用户控件中代码片段的填写： <BR>namespace test <BR>{ <BR>public 
+delegate void OnDBOperate(); <BR>public class UserControlBase : 
+System.Windows.Forms.UserControl <BR>{ <BR>public event OnDBOperate OnNew; 
+<BR>privatevoidtoolBar_ButtonClick(objectsender,System.Windows.Forms.ToolBarButtonClickEventArgs 
+e) <BR>{ <BR>if(e.Button.Equals(BtnNew)) <BR>{ 
+<BR>//请在以下补齐代码用来调用OnDBOperate委托签名的OnNew事件。 <BR>} <BR>} <BR>} <BR>答：if( OnNew != 
+null )&nbsp; <BR>&nbsp;&nbsp;&nbsp; OnNew( this, e ); </P>
+<P>27.分析以下代码，完成填空 <BR>string strTmp = "abcdefg某某某"; <BR>int i= 
+System.Text.Encoding.Default.GetBytes(strTmp).Length; <BR>int j= strTmp.Length; 
+<BR>以上代码执行完后，i= j= <BR>答：i=13,j=10 </P>
+<P><STRONG>28.SQLSERVER服务器中，给定表 table1 中有两个字段 ID、LastUpdateDate，ID表示更新的事务号， 
+</STRONG></P>
+<P><STRONG>LastUpdateDate表示更新时的服务器时间，请使用一句SQL语句获得最后更新的事务号 <BR></STRONG>答：<FONT 
+color=#008000>Select ID FROM table1 Where LastUpdateDate = (Select 
+MAX(LastUpdateDate) FROM table1) </FONT></P>
+<P>29.根据线程安全的相关知识，分析以下代码，当调用test方法时i&gt;10时是否会引起死锁?并简要说明理由。 <BR>public void 
+test(int i) <BR>{ <BR>&nbsp;&nbsp; lock(this) <BR>{ <BR>&nbsp;&nbsp; if 
+(i&gt;10) <BR>&nbsp;&nbsp; { <BR>&nbsp;&nbsp;&nbsp;&nbsp; i--; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; test(i); <BR>&nbsp;&nbsp; } <BR>} <BR>} 
+<BR>答：不会发生死锁，（但有一点int是按值传递的，所以每次改变的都只是一个副本，因此不会出现死锁。但如果 </P>
+<P>把int换做一个object，那么死锁会发生） </P>
+<P><STRONG>3） 什么叫圈复杂度（cyclomatic complexity）？为什么它很重要？</STRONG> </P>
+<P>不知道，望指教 ？ </P>
+<P><STRONG>4） 写一个标准的lock()，在访问变量的前后创建临界区，要有"双重检查"，</STRONG></P>
+<P>lock的使用 <BR>&nbsp; public void LockTest() 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Object 
+lockObj = new Object(); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lock 
+(lockObj) <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{ 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</P>
+<P><STRONG>5） 什么叫FullTrust？放入GAC的assembly是否是FullTrust的?</STRONG> </P>
+<P>FullTrust完全信任。放入GAC中的Assembly是否FullTrust我的理解不是。我理解FullTrust是可以通过代码设定的 </P>
+<P><STRONG>6） 代码加上需要安全权限的特性有什么好处？</STRONG> </P>
+<P>可以更加灵活的设置对代码的访问权限，实现代码级保护。？这点不是特清楚，有明白的给讲解下 </P>
+<P><STRONG>7） gacutil /l | find /i "Corillian" 这句命令的作用是什么？</STRONG> </P>
+<P>全局程序集缓存中如果有Corillian就更新该程序集，没有就安装 </P>
+<P><STRONG>8） sn -t foo.dll 这句命令是干嘛的？</STRONG> </P>
+<P>显示程序集foo.dll的公钥标记 </P>
+<P><STRONG>9） DCOM需要防火墙打开哪些端口？端口135是干嘛用的？</STRONG> </P>
+<P>135端口，因为DCOM的端口号是随机分配的，默认情况下，会分配1024以上的端口号，所以默认情况下,DCOM </P>
+<P>不能穿越防火墙。因为根本不晓得开哪个端口。但有解决办法可以使DCOM分配的端口号固定，135是远程过程 </P>
+<P>调用(RPC)的默认端口 </P>
+<P><STRONG>10）对比OOP和SOA，它们的目的分别是什么？</STRONG> </P>
+<P>我想OOP和SOA应该没有对比性吧。OOP是一种编程模型，强调将复杂的逻辑分解出小的模块，特性是继承，封 </P>
+<P>装和多态 。而SOA是一个技术框架，技术框架和编程模型应该说不是一码事吧？SOA的思想是将业务逻辑封装 </P>
+<P>成服务或者中间件提供给应用程序来调用，当然其组件化思想是继承和发扬了OOP的优点。 </P>
+<P>&nbsp;</P>
+<P><STRONG>13）Debug.Write和Trace.Write有什么不同？何时应该使用哪一个？</STRONG> </P>
+<P>Debug.Write是调试的时候向跟踪窗口输出信息。当编译模式为debug的时候才有效，为release的时 </P>
+<P>候Debug.Write在编译的时候会忽略,而Trace则是在debug和release两种模式下均可以向跟踪窗口输出信息。 </P>
+<P><STRONG>14）Debug Build和Release Build的区别，是否会有明显的速度变化？请说明理由。</STRONG> </P>
+<P>Debug会产生pdb文件，release不会。Debug用于开发时的调试，不能要于部署，而release用于部署.debug编 </P>
+<P>译一些特殊代码，比如#IFDEBUG Debug.Write等，而Release则会将那些特殊标记省略 </P>
+<P><STRONG>15）JIT是以assembly为单位发生还是以方法为单位发生？这对于工作区有何影响?</STRONG> </P>
+<P>方法，道理很简单，因为对于一次运行，很可能只用到一个程序集中极少数类型和对象，而大部分可能并不会被 </P>
+<P>使用，此时CLR傻乎乎的给整个程序集都给Compile了，CLR不是傻疯了么&nbsp; </P>
+<P><STRONG>17）a.Equals(b)和a == b一样吗？</STRONG> </P>
+<P>不一样。a.Equals(b)表示a与b一致， a==b表示a与b的值相等 </P>
+<P><STRONG>18）在对象比较中，对象一致和对象相等分别是指什么？</STRONG> </P>
+<P>对象一致是指两个对象是同一个对象，引用相同。而对象相等是指两个对象的值相同，但引用不一定相同 </P>
+<P><STRONG>19）在.NET中如何实现深拷贝（deep copy）？</STRONG> </P>
+<P>实现IClonable接口 </P>
+<P><STRONG>20）请解释一下IClonable</STRONG> </P>
+<P>IClonable方法是实现深度复制的接口，实现它应该能深度复制一个对象出来。深度复制的特征的调用对象的构造 </P>
+<P>方法，创建新的对象，包括创建对象中嵌套的引用对象的新实例。而Shadow复制则不同，是浅表复制，不重新 </P>
+<P>创建新实例。浅表复制的实现是Object.MemberWiseClone(). </P>
+<P>深度复制(Deep Copy)与浅表复制(Shadow Copy)的比较 <BR>&nbsp; public class Name 
+<BR>&nbsp;&nbsp;&nbsp; { <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+string FirstName; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+LastName; <BR>&nbsp;&nbsp;&nbsp; } <BR>&nbsp;&nbsp;&nbsp; public class 
+Person:ICloneable <BR>&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public Name PersonName; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string Email; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /**//// &lt;summary&gt; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// Deep Copy的例子 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;/summary&gt; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;returns&gt;&lt;/returns&gt; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+public Object Clone() <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Person p 
+= new Person(); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.Email = 
+this.Email; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+p.PersonName = new Name(); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+p.PersonName.FirstName = this.PersonName.FirstName; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+p.PersonName.LastName = this.PersonName.LastName; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return p; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void ChangLastName(string 
+lastName) <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+this.PersonName.LastName = lastName; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void Main() 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Person p 
+= new Person(); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+p.PersonName = new Name(); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+p.PersonName.LastName = "jill"; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+p.PersonName.FirstName = "zhang"; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.Email = 
+"jillzhang@126.com"; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Person 
+sameNamePerson = p.Clone() as Person; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sameNamePerson.ChangLastName("clr_"); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Console.WriteLine(p.PersonName.LastName); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Console.WriteLine(sameNamePerson.PersonName.LastName);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Person 
+samePerson = p.MemberwiseClone() as Person; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+samePerson.ChangLastName("Shadow"); </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Console.WriteLine(p.PersonName.LastName); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Console.WriteLine(sameNamePerson.PersonName.LastName); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Console.Read(); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<BR>&nbsp;&nbsp;&nbsp; }</P>
+<P>&nbsp;</P>
+<P><STRONG>24）为什么不应该在.NET中使用out参数？它究竟好不好?</STRONG> </P>
+<P>我挺喜欢用out参数的，特别是当函数需要有多于1个返回的时候，我比较愿意用out，至于它好不好没研究过 ？ </P>
+<P><STRONG>25）特性能够放到某个方法的参数上？如果可以，这有什么用？</STRONG> </P>
+<P>可以，作用可以对参数有进一步限定，比如输入参数为int类型，可以通过允许AttributeTargets=ParameterInfo </P>
+<P>的Attribute自定义实现来限定输入参数的大小，比如当输入参数小于100的时候便抱错。 </P>
+<P>对方法的参数设置Attribute的例子 <BR>&nbsp; [AttributeUsage(AttributeTargets.Parameter)] 
+<BR>&nbsp;&nbsp;&nbsp; public class ParameterAtt : Attribute 
+<BR>&nbsp;&nbsp;&nbsp; { <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+int Min = 100; <BR>&nbsp;&nbsp;&nbsp; } </P>
+<P>&nbsp;&nbsp;&nbsp; public class AttributeTest <BR>&nbsp;&nbsp;&nbsp; 
+{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void 
+TestMethod([ParameterAtt(Min = 100)] int par1) 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ParameterInfo para = MethodInfo.GetCurrentMethod().GetParameters()[0]; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ParameterAtt att = ParameterAtt.GetCustomAttribute(para, typeof(ParameterAtt)) 
+as </P>
+<P>ParameterAtt; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if 
+(att.Min &gt; par1) 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+throw new Exception("要求para1最小为" + att.Min); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <BR>&nbsp;&nbsp;&nbsp; } </P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>9.执行下面代码后： </P>
+<P>String strTemp ="abcdefg 某某某"； </P>
+<P>Int i System.Text.Encoding.Default.GetBytes(strTemp).Length; </P>
+<P>Int j = strTemp.Length; </P>
+<P>问：i=(14 ) ；j=(11 ) </P>
+<P>i=(14 ) ；j=(11 ) 中文两个字节 </P>
+<P><STRONG>12.概述.NET里对 remoting 和 webservice 两项技术的理解和实际中的应用。</STRONG> </P>
+<P>远程逻辑调用，remoing接口只能用在.net中 </P>
+<P>&nbsp;</P>
+<P><STRONG>9.&nbsp; 如何给服务器端控件增加客户端脚本。 <BR></STRONG>答：控件的Attributes </P>
+<P><STRONG>6． 私有程序集与共享程序集有什么区别？ 
+<BR></STRONG>一个私有程序集通常为单个应用程序所使用，并且存储于这个应用程序所在的目录之中，或此目录下面的一个子 </P>
+<P>目录中。共享程序集通常存储在全局程序集缓存（Global Assembly Cache）之中，这是一个由.NET运行时所维 </P>
+<P>护的程序集仓库。共享程序集通常是对许多应用程序都有用的代码库，比如.NET Framework类。 </P>
+<P><STRONG>10 .请解释ASP.NET中以什么方式进行数据验证 <BR></STRONG>Aps.net 
+中有非空验证，比较验证，取值范围验证，正则表达式验证及客户自定义验证五大控件，另还有一个集 </P>
+<P>中验证信息处理控件 </P>
+<P><STRONG>11．WEB控件可以激发服务端事件，请谈谈服务端事件是怎么发生并解释其原理？自动传回是什么？为什么要 </STRONG></P>
+<P><STRONG>使用自动传回。</STRONG> 
+<BR>在web控件发生事件时，客户端采用提交的形式将数据交回服务端，服务端先调用Page_Load事件,然后根据传 </P>
+<P>回的状态信息自动调用服务端事件自动传回是当我们在点击客户端控件时，采用提交表单的形式将数据直接传回 </P>
+<P>到务端 <BR>只有通过自动传回才能实现服务端事件的机制，如果没有自动回传机制就只能调用客户端事件，而不能调用服务 </P>
+<P>端事件 </P>
+<P><STRONG>13．&nbsp; 请解释web.config文件中的重要节点</STRONG> <BR><FONT 
+color=#008000>appSettings包含自定义应用程序设置。 <BR>system.web 系统配置 
+<BR>compilation动态调试编译设置 <BR>customErrors自定义错误信息设置 
+<BR>authentication身份验证,此节设置应用程序的身份验证策略。 <BR>authorization授权, 此节设置应用程序的授权策略. 
+</FONT></P>
+<P><STRONG>14．&nbsp; 请解释ASP。NET中的web页面与其隐藏类之间的关系？</STRONG> 
+<BR>一个ASP.NET页面一般都对应一个隐藏类,一般都在ASP.NET页面的声明中指定了隐藏类例如一个页面Tst1.aspx </P>
+<P>的页面声明如下 <BR>&lt;%@ Page language="c#" Codebehind="Tst1.aspx.cs" 
+AutoEventWireup="false" Inherits="T1.Tst1" %&gt; <BR>Codebehind="Tst1.aspx.cs" 
+表明经编译此页面时使用哪一个代码文件 <BR>Inherits="T1.Tst1" 表用运行时使用哪一个隐藏类 </P>
+<P><STRONG>15．&nbsp; 什么是viewstate，能否禁用？是否所用控件都可以禁用?</STRONG> 
+<BR>Viewstate是保存状态的一种机制，EnableViewState属性设置为false即可禁用 </P>
+<P><STRONG>16．&nbsp; 当发现不能读取页面上的输入的数据时很有可能是什么原因造成的？怎么解决？</STRONG> 
+<BR>很有可能是在Page_Load中数据处理时没有进行Page的IsPostBack属性判断 </P>
+<P><STRONG>17．&nbsp; 请解释什么是上下文对象，在什么情况下要使用上下文对象</STRONG> 
+<BR>上下文对象是指HttpContext类的Current 属性，当我们在一个普通类中要访问内置对 </P>
+<P>象(Response,Request,Session,Server,Appliction等)时就要以使用此对象 </P>
+<P><STRONG></STRONG></P>
+<P><STRONG>16、解释一下ajax及实现原理</STRONG> 
+<BR>答：Ajax的核心是JavaScript对象XmlHttpRequest，它使您可以使用JavaScript向服务器提出请求并处理响应， 
+而不阻塞用户，异步请求。 </P>
+<P>&nbsp;</P>
+<P><STRONG>1、delegate是引用类型还是值类型？enum、int[]和string呢（难度系数40%）？</STRONG> </P>
+<P>答案：delegate引用类型，enum值类型，int[]引用类型，string引用类型。 </P>
+<P><STRONG>3、base这个关键字有哪几种语法？override呢？</STRONG> </P>
+<P>答案：base两个语法，分别是调用基类构造函数和调用基类方法，override用于重写基类方法。 </P>
+<P><STRONG>4、请指出C#中是否有下列关键字？</STRONG>virtual、sealed、abstract、import、as、in、goto、final、Const、signed、 
+</P>
+<P>String（提示，仅指出C#中没有的即可）（难度系数50%）。 </P>
+<P>答案：没有的关键字：import、final、Const、signed、String </P>
+<P><STRONG>5、在循环：for( int i = 0; i &lt; 100; i++ ) Console.WriteLine( i 
+);中，请指出i++的执行时机。</STRONG> </P>
+<P>答案：在Console.WriterLine( i );执行之后 </P>
+<P><STRONG>6、试说明continue关键字的用处。</STRONG> </P>
+<P>答案：马上开始下一次循环，忽略循环体余下的语句 </P>
+<P><STRONG>7、object是C#的关键字吗？请指出C#中有哪些类型关键字，如int、float。（提示，写得越多越好）。 </STRONG></P>
+<P>答案：是，object、int、uint、long、ulong、short、ushort、byte、sbyte、char、float、double、decimal、boo 
+</P>
+<P>l，如回答：enum、struct、class、delegate也算对。 </P>
+<P><STRONG>8、C#的XML文档注释中（以///开头的注释），&lt;summary&gt;标签用于描述什么？&lt;param&gt;标签呢？</STRONG> 
+</P>
+<P>答案：&lt;summary&gt;用于某个元素的概要说明，&lt;param&gt;用于某个方法的参数概要说明。 </P>
+<P><STRONG>9、我们知道[]是数组和索引器的访问操作符，但它还有一个语法，是什么？</STRONG> </P>
+<P>答案：特性（Attribute） </P>
+<P><STRONG>18.请叙述属性与索引器的区别。 <BR></STRONG>属性 索引器&nbsp;&nbsp;&nbsp;&nbsp; 
+<BR>&nbsp; 通过名称标识。 通过签名标识。&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp; 通过简单名称或成员访问来访问。 
+通过元素访问来访问。&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp; 可以为静态成员或实例成员。 
+必须为实例成员。&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp; 属性的&nbsp;&nbsp; get&nbsp;&nbsp; 
+访问器没有参数。 索引器的&nbsp;&nbsp; get&nbsp;&nbsp; 
+访问器具有与索引器相同的形参表。&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp; 属性的&nbsp;&nbsp; 
+set&nbsp;&nbsp; 访问器包含隐式&nbsp;&nbsp; value&nbsp;&nbsp; 参数。 除了&nbsp;&nbsp; 
+value&nbsp;&nbsp; 参数外，索引器的&nbsp;&nbsp; set&nbsp;&nbsp; 访问器还具有与索引 </P>
+<P>器相同的形参表。 </P>
+<P><STRONG>1) 描述线程与进程的区别？</STRONG> </P>
+<P>线程(Thread)与进程（Process）二者都定义了某种边界，不同的是进程定义的是应用程序与应用程序之间的边 </P>
+<P>界，不同的进程之间不能共享代码和数据空间，而线程定义的是代码执行堆栈和执行上下文的边界。一个进程可 </P>
+<P>以包括若干个线程，同时创建多个线程来完成某项任务，便是多线程。而同一进程中的不同线程共享代码和数据 </P>
+<P>空间。用一个比喻来说，如果一个家庭代表一个进程，在家庭内部，各个成员就是线程，家庭中的每个成员都有 </P>
+<P>义务对家庭的财富进行积累，同时也有权利对家庭财富进行消费，当面对一个任务的时候，家庭也可以派出几个 </P>
+<P>成员来协同完成，而家庭之外的人则没有办法直接消费不属于自己家庭的财产。 </P>
+<P><STRONG>2) 什么是Windows服务，它的生命周期与标准的EXE程序有什么不同</STRONG> </P>
+<P>Windows服务是运行在windows后台指定用户下（默认System）的应用程序，它没有标准的UI界面，想比标准 </P>
+<P>的EXE程序，Windows服务是在服务开始的时候创建，而在服务结束的时候销毁，而且可以设置服务是否与操作 </P>
+<P>系统一起启动，一起关闭。它支持三种方式：１）自动方式 2）手动方式 ３）禁用 。自动方式的时 </P>
+<P>候，windows服务将在OS启动后自动启动运行，而手动方式则必须手工启动服务，禁用的情况下服务将不能被 </P>
+<P>启动。另外标准的EXE默认使用的当前登录的用户，而windows服务则默认使用System用户，这在对系统资源访 </P>
+<P>问的时候特别需要注意。 </P>
+<P><STRONG>3)&nbsp; Windows单个进程所能访问的最大内存量是多少？它与系统的最大虚拟内存一样吗？这对于系统设计有什么 
+</STRONG></P>
+<P><STRONG>影响？</STRONG> </P>
+<P>这个需要针对硬件平台，公式为单个进程能访问的最大内存量=2的处理器位数次方/2，比如通常情况下，32位 </P>
+<P>处理器下，单个进程所能访问的最大内存量为:232 /2 = 2G 。单个进程能访问的最大内存量是最大虚拟内存 </P>
+<P>的1/2，因为要分配给操作系统一半虚拟内存。 </P>
+<P><STRONG>4)&nbsp; 什么是强类型，什么是弱类型？哪种更好些？为什么?</STRONG> </P>
+<P>强类型是在编译的时候就确定类型的数据，在执行时类型不能更改，而弱类型在执行的时候才会确定类型。没有 </P>
+<P>好不好，二者各有好处，强类型安全，因为它事先已经确定好了，而且效率高。一般用于编译型编程语 </P>
+<P>言，如c++,java,c#,pascal等,弱类型相比而言不安全，在运行的时候容易出现错误，但它灵活，多用于解释型编 </P>
+<P>程语言，如javascript,vb等 </P>
+<P><STRONG>5)&nbsp; PID是什么？在做系统的故障排除时如何使用它？</STRONG> </P>
+<P>PID是进程编号，在系统发现故障的时候，可以根据它寻找故障所发生的具体进程，并且可通过visual studio.net </P>
+<P>等ide将故障进程附加到进程中进行调试(debug) </P>
+<P><STRONG>6)&nbsp; 单个TCP/IP端口上能够被多少个进程侦听？</STRONG> </P>
+<P>１个 </P>
+<P><STRONG>7)&nbsp; 什么是GAC？它解决了什么问题?</STRONG> </P>
+<P>Gloal Assembly Cache，全局应用程序集缓存。它解决了几个程序共享某一个程序集的问题。不必再将那个被共 </P>
+<P>享的程序集拷贝到应用程序目录了，其实这道理很简单，.net应用程序在加载的时候，会首先查看全局应用程序 </P>
+<P>集缓存，如果有就可以直接使用，没有再到应用程序目录进行查找。 </P>
+<P><STRONG>1.白盒测试和黑盒测试</STRONG> <BR>答：<FONT 
+color=#008000>黑盒测试：已知产品的功能设计规格，可以进行测试证明每个实现了的功能是否符合要求。 </FONT></P>
+<P><FONT color=#008000>白盒测试：已知产品的内部工作过程，可以通过测试证明每种内部操作是否符合设计规格要求，所有内部成 
+</FONT></P>
+<P><FONT color=#008000>分是否以经过检查。 </FONT></P>
+<P><FONT color=#008000>软件的黑盒测试意味着测试要在软件的接口处进行。这种方法是把测试对象看做一个黑盒子，测试人员完全 
+</FONT></P>
+<P><FONT color=#008000>不考虑程序内部的逻辑结构和内部特性，只依据程序的需求规格说明书，检查程序的功能是否符合它的功能说明 
+</FONT></P>
+<P><FONT color=#008000>。因此黑盒测试又叫功能测试或数据驱动测试。黑盒测试主要是为了发现以下几类错误： </FONT></P>
+<P><FONT color=#008000>1、是否有不正确或遗漏的功能？ </FONT></P>
+<P><FONT color=#008000>2、在接口上，输入是否能正确的接受？能否输出正确的结果？ </FONT></P>
+<P><FONT color=#008000>3、是否有数据结构错误或外部信息（例如数据文件）访问错误？ </FONT></P>
+<P><FONT color=#008000>4、性能上是否能够满足要求？ </FONT></P>
+<P><FONT color=#008000>5、是否有初始化或终止性错误？ </FONT></P>
+<P><FONT color=#008000>软件的白盒测试是对软件的过程性细节做细致的检查。这种方法是把测试对象看做一个打开的盒子，它允许 
+</FONT></P>
+<P><FONT color=#008000>测试人员利用程序内部的逻辑结构及有关信息，设计或选择测试用例，对程序所有逻辑路径进行测试。通过在不 
+</FONT></P>
+<P><FONT color=#008000>同点检查程序状态，确定实际状态是否与预期的状态一致。因此白盒测试又称为结构测试或逻辑驱动测试。白盒 
+</FONT></P>
+<P><FONT color=#008000>测试主要是想对程序模块进行如下检查： </FONT></P>
+<P><FONT color=#008000>1、对程序模块的所有独立的执行路径至少测试一遍。 </FONT></P>
+<P><FONT color=#008000>2、对所有的逻辑判定，取“真”与取“假”的两种情况都能至少测一遍。 </FONT></P>
+<P><FONT color=#008000>3、在循环的边界和运行的界限内执行循环体。 </FONT></P>
+<P><FONT color=#008000>4、测试内部数据结构的有效性，等等。</FONT></P>
+<P><STRONG>请简述一下用Socket进行同步通讯编程的详细步骤 <BR></STRONG><FONT 
+color=#0000ff>1、在应用程序和远程设备中使用协议和网络地址初始化套接字 <BR>2、在应用程序中通过指定端口和地址建立监听 
+<BR>3、远程设备发出连接请求 <BR>4、应用程序接受连接产生通信scoket <BR>5、应用程序和远程设备开始通讯（在通讯中应用程序将挂起直到通讯结束） 
+<BR>6、通讯结束，关闭应用程序和远程设备的Socket回收资源</FONT></P>
+<P><STRONG>OSI网络结构的七层模型及其核心思想是什么 <BR></STRONG><FONT color=#008000>第七层：应用层&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; 定义了用于在网络中进行通信和数据传输的接口 - 用户程式；&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; 提供标准服务，比如虚拟终端、文件以及任务的传输和处理； <BR>第六层：表示层 
+<BR>&nbsp;&nbsp;&nbsp; 掩盖不同系统间的数据格式的不同性； <BR>&nbsp;&nbsp;&nbsp; 指定独立结构的数据传输格式； 
+<BR>&nbsp;&nbsp;&nbsp; 数据的编码和解码；加密和解密；压缩和解压缩 <BR>第五层：会话层 <BR>&nbsp;&nbsp;&nbsp; 
+管理用户会话和对话； <BR>&nbsp;&nbsp;&nbsp; 控制用户间逻辑连接的建立和挂断； <BR>&nbsp;&nbsp;&nbsp; 
+报告上一层发生的错误 <BR>第四层：传输层 <BR>&nbsp;&nbsp;&nbsp; 管理网络中端到端的信息传送； 
+<BR>&nbsp;&nbsp;&nbsp; 通过错误纠正和流控制机制提供可靠且有序的数据包传送； <BR>&nbsp;&nbsp;&nbsp; 
+提供面向无连接的数据包的传送； <BR>第三层：网络层 <BR>&nbsp;&nbsp;&nbsp; 定义网络设备间如何传输数据； 
+<BR>&nbsp;&nbsp;&nbsp; 根据唯一的网络设备地址路由数据包； <BR>&nbsp;&nbsp;&nbsp; 
+提供流和拥塞控制以防止网络资源的损耗 <BR>第二层：数据链路层&nbsp; <BR>&nbsp;&nbsp;&nbsp; 定义操作通信连接的程序；&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp; 封装数据包为数据帧；&nbsp; <BR>&nbsp;&nbsp;&nbsp; 监测和纠正数据包传输错误 
+<BR>第一层：物理层&nbsp; <BR>&nbsp;&nbsp;&nbsp; 定义通过网络设备发送数据的物理方式；&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp; 作为网络媒介和设备间的接口； <BR>&nbsp;&nbsp;&nbsp; 定义光学、电气以及机械特性。 
+</FONT></P>
+<P><FONT color=#008000></FONT></P>
+<P><FONT color=#008000></FONT></P>
+<P><STRONG>2 几十上百万行，如何快速查询出表数据 <BR></STRONG>答：用分页存储过程 <BR>/* <BR>&nbsp; 函数名称: 
+GetRecordFromPage <BR>&nbsp; 函数功能: 获取指定页的数据 <BR>&nbsp; 参数说明: 
+@tblName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 包含数据的表名 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+@fldName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 关键字段名 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+@PageSize&nbsp;&nbsp;&nbsp;&nbsp; 每页记录数 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+@PageIndex&nbsp;&nbsp;&nbsp; 要获取的页码 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+@OrderType&nbsp;&nbsp;&nbsp; 排序类型, 0 - 升序, 1 - 降序 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+@strWhere&nbsp;&nbsp;&nbsp;&nbsp; 查询条件 (注意: 不要加 where) <BR>*/ <BR>CREATE 
+PROCEDURE GetRecordFromPage <BR>&nbsp;&nbsp;&nbsp; 
+@tblName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+varchar(255),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 表名 <BR>&nbsp;&nbsp;&nbsp; 
+@fldName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+varchar(255),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 字段名 <BR>&nbsp;&nbsp;&nbsp; 
+@PageSize&nbsp;&nbsp;&nbsp;&nbsp; int = 
+10,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 页尺寸 
+<BR>&nbsp;&nbsp;&nbsp; @PageIndex&nbsp;&nbsp;&nbsp; int = 
+1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 页码 
+<BR>&nbsp;&nbsp;&nbsp; @OrderType&nbsp;&nbsp;&nbsp; bit = 
+0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 设置排序类型, 
+非 0 值则降序 <BR>&nbsp;&nbsp;&nbsp; @strWhere&nbsp;&nbsp;&nbsp;&nbsp; varchar(2000) 
+= ''&nbsp; -- 查询条件 (注意: 不要加 where) <BR>AS </P>
+<P>declare @strSQL&nbsp;&nbsp; varchar(6000)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+-- 主语句 <BR>declare @strTmp&nbsp;&nbsp; 
+varchar(1000)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 临时变量 <BR>declare @strOrder 
+varchar(500)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 排序类型 </P>
+<P>if @OrderType != 0 <BR>begin <BR>&nbsp;&nbsp;&nbsp; set @strTmp = 
+'&lt;(select min' <BR>&nbsp;&nbsp;&nbsp; set @strOrder = ' order by [' + 
+@fldName + '] desc' <BR>end <BR>else <BR>begin <BR>&nbsp;&nbsp;&nbsp; set 
+@strTmp = '&gt;(select max' <BR>&nbsp;&nbsp;&nbsp; set @strOrder = ' order by [' 
++ @fldName +'] asc' <BR>end </P>
+<P>set @strSQL = 'select top ' + str(@PageSize) + ' * from [' 
+<BR>&nbsp;&nbsp;&nbsp; + @tblName + '] where [' + @fldName + ']' + @strTmp + 
+'([' <BR>&nbsp;&nbsp;&nbsp; + @fldName + ']) from (select top ' + 
+str((@PageIndex-1)*@PageSize) + ' [' <BR>&nbsp;&nbsp;&nbsp; + @fldName + '] from 
+[' + @tblName + ']' + @strOrder + ') as tblTmp)' <BR>&nbsp;&nbsp;&nbsp; + 
+@strOrder </P>
+<P>if @strWhere != '' <BR>&nbsp;&nbsp;&nbsp; set @strSQL = 'select top ' + 
+str(@PageSize) + ' * from [' <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + 
+@tblName + '] where [' + @fldName + ']' + @strTmp + '([' 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + @fldName + ']) from (select top 
+' + str((@PageIndex-1)*@PageSize) + ' [' 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + @fldName + '] from [' + 
+@tblName + '] where ' + @strWhere + ' ' 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + @strOrder + ') as tblTmp) and ' 
++ @strWhere + ' ' + @strOrder </P>
+<P>if @PageIndex = 1 <BR>begin <BR>&nbsp;&nbsp;&nbsp; set @strTmp = '' 
+<BR>&nbsp;&nbsp;&nbsp; if @strWhere != '' 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set @strTmp = ' where (' + 
+@strWhere + ')' </P>
+<P>&nbsp;&nbsp;&nbsp; set @strSQL = 'select top ' + str(@PageSize) + ' * from [' 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + @tblName + ']' + @strTmp + ' ' 
++ @strOrder <BR>end </P>
+<P>exec (@strSQL) </P>
+<P>GO </P>
+<P><STRONG>三、数据库查询优化： <BR></STRONG>1、多态性，多种数据库兼容； <BR>2、支持翻页，支持查询总数，页码显示； 
+<BR>3、能处理100万以上数据量； <BR>答： <BR>CREATE&nbsp;&nbsp; PROCEDURE&nbsp;&nbsp; 
+dbo.LSP_SP_SelectElementByPage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp; 
+@SelectFields&nbsp;&nbsp; varchar(200),/*要查询的字段列表*/&nbsp;&nbsp; <BR>&nbsp; 
+@Condition&nbsp;&nbsp; varchar(300),/*查询条件*/&nbsp;&nbsp; <BR>&nbsp; 
+@PageSize&nbsp;&nbsp; int&nbsp;&nbsp; =20,/*页面大小，默认为20*/&nbsp;&nbsp; <BR>&nbsp; 
+@PageNumber&nbsp;&nbsp; int&nbsp;&nbsp; =1/*页号，默认为第一页*/&nbsp;&nbsp; <BR>&nbsp; 
+/*@PageCount&nbsp;&nbsp; int&nbsp;&nbsp; out返回满足条件的总页数*/&nbsp;&nbsp; <BR>&nbsp; 
+AS&nbsp;&nbsp; <BR>&nbsp; begin&nbsp;&nbsp; <BR>&nbsp; declare&nbsp;&nbsp; 
+@count&nbsp;&nbsp; int&nbsp;&nbsp; <BR>&nbsp; select&nbsp;&nbsp; 
+@count&nbsp;&nbsp; =count(*)&nbsp;&nbsp; from&nbsp;&nbsp; 
+lsp_t_elementInfo&nbsp;&nbsp; <BR>&nbsp; if(@count&nbsp;&nbsp; 
+%@PageSize=0)&nbsp;&nbsp; <BR>&nbsp; set&nbsp;&nbsp; @count&nbsp;&nbsp; 
+=&nbsp;&nbsp; @count/@PageSize&nbsp;&nbsp; <BR>&nbsp; else&nbsp;&nbsp; 
+<BR>&nbsp; set&nbsp;&nbsp; @count&nbsp;&nbsp; =&nbsp;&nbsp; 
+@count/@PageSize&nbsp;&nbsp; +1&nbsp;&nbsp; <BR>&nbsp; select&nbsp;&nbsp; 
+@count&nbsp;&nbsp; PageCount&nbsp;&nbsp; <BR>&nbsp; select&nbsp;&nbsp; 
+IDENTITY(int,1,1)&nbsp;&nbsp; as&nbsp;&nbsp; iid,ElementName,Type&nbsp;&nbsp; 
+into&nbsp;&nbsp; #temptable&nbsp;&nbsp; from&nbsp;&nbsp; 
+LSP_T_ElementInfo&nbsp;&nbsp; <BR>&nbsp; select&nbsp;&nbsp;&nbsp;&nbsp; 
+*&nbsp;&nbsp; from&nbsp;&nbsp; #temptable&nbsp;&nbsp; where&nbsp;&nbsp; 
+iid&nbsp;&nbsp; between&nbsp;&nbsp;&nbsp;&nbsp; @PageSize&nbsp;&nbsp; 
+*&nbsp;&nbsp; (@PageNumber&nbsp;&nbsp; -1)&nbsp;&nbsp; and&nbsp;&nbsp; 
+@PageSize&nbsp;&nbsp; *&nbsp;&nbsp; @PageNumber&nbsp;&nbsp; <BR>&nbsp; 
+end&nbsp;&nbsp; <BR>&nbsp; GO </P>
+<P><STRONG>1.两个表，写查询语句，根据两个字段一个是升序，一个将序。 <BR>答：<FONT color=#ff8000>select * from 
+a,b where a.字段1 ＝ b.字段1 order by a.字段2 asc,b.字段2 desc 
+<BR></FONT>2.根据第一题，每页面显示10条记录，在第25页时怎样显示 <BR></STRONG>答： <BR>/* <BR>&nbsp; 函数名称: 
+GetRecordFromPage <BR>&nbsp; 函数功能: 获取指定页的数据 <BR>&nbsp; 参数说明: 
+@tblName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 包含数据的表名 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+@fldName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 关键字段名 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+@PageSize&nbsp;&nbsp;&nbsp;&nbsp; 每页记录数 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+@PageIndex&nbsp;&nbsp;&nbsp; 要获取的页码 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+@OrderType&nbsp;&nbsp;&nbsp; 排序类型, 0 - 升序, 1 - 降序 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+@strWhere&nbsp;&nbsp;&nbsp;&nbsp; 查询条件 (注意: 不要加 where) <BR>*/ <BR>CREATE 
+PROCEDURE GetRecordFromPage <BR>&nbsp;&nbsp;&nbsp; 
+@tblName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+varchar(255),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 表名 <BR>&nbsp;&nbsp;&nbsp; 
+@fldName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+varchar(255),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 字段名 <BR>&nbsp;&nbsp;&nbsp; 
+@PageSize&nbsp;&nbsp;&nbsp;&nbsp; int = 
+10,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 页尺寸 
+<BR>&nbsp;&nbsp;&nbsp; @PageIndex&nbsp;&nbsp;&nbsp; int = 
+1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 页码 
+<BR>&nbsp;&nbsp;&nbsp; @OrderType&nbsp;&nbsp;&nbsp; bit = 
+0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 设置排序类型, 
+非 0 值则降序 <BR>&nbsp;&nbsp;&nbsp; @strWhere&nbsp;&nbsp;&nbsp;&nbsp; varchar(2000) 
+= ''&nbsp; -- 查询条件 (注意: 不要加 where) <BR>AS </P>
+<P>declare @strSQL&nbsp;&nbsp; varchar(6000)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+-- 主语句 <BR>declare @strTmp&nbsp;&nbsp; 
+varchar(1000)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 临时变量 <BR>declare @strOrder 
+varchar(500)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 排序类型 </P>
+<P>if @OrderType != 0 <BR>begin <BR>&nbsp;&nbsp;&nbsp; set @strTmp = 
+'&lt;(select min' <BR>&nbsp;&nbsp;&nbsp; set @strOrder = ' order by [' + 
+@fldName + '] desc' <BR>end <BR>else <BR>begin <BR>&nbsp;&nbsp;&nbsp; set 
+@strTmp = '&gt;(select max' <BR>&nbsp;&nbsp;&nbsp; set @strOrder = ' order by [' 
++ @fldName +'] asc' <BR>end </P>
+<P>set @strSQL = 'select top ' + str(@PageSize) + ' * from [' 
+<BR>&nbsp;&nbsp;&nbsp; + @tblName + '] where [' + @fldName + ']' + @strTmp + 
+'([' <BR>&nbsp;&nbsp;&nbsp; + @fldName + ']) from (select top ' + 
+str((@PageIndex-1)*@PageSize) + ' [' <BR>&nbsp;&nbsp;&nbsp; + @fldName + '] from 
+[' + @tblName + ']' + @strOrder + ') as tblTmp)' <BR>&nbsp;&nbsp;&nbsp; + 
+@strOrder </P>
+<P>if @strWhere != '' <BR>&nbsp;&nbsp;&nbsp; set @strSQL = 'select top ' + 
+str(@PageSize) + ' * from [' <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + 
+@tblName + '] where [' + @fldName + ']' + @strTmp + '([' 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + @fldName + ']) from (select top 
+' + str((@PageIndex-1)*@PageSize) + ' [' 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + @fldName + '] from [' + 
+@tblName + '] where ' + @strWhere + ' ' 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + @strOrder + ') as tblTmp) and ' 
++ @strWhere + ' ' + @strOrder </P>
+<P>if @PageIndex = 1 <BR>begin <BR>&nbsp;&nbsp;&nbsp; set @strTmp = '' 
+<BR>&nbsp;&nbsp;&nbsp; if @strWhere != '' 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set @strTmp = ' where (' + 
+@strWhere + ')' </P>
+<P>&nbsp;&nbsp;&nbsp; set @strSQL = 'select top ' + str(@PageSize) + ' * from [' 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + @tblName + ']' + @strTmp + ' ' 
++ @strOrder <BR>end </P>
+<P>exec (@strSQL) </P>
+<P>GO </P>
+<P><STRONG>2.写出一条Sql语句： 取出表A中第31到第40记录（SQLServer, 以自动增长的ID作为主键,&nbsp; 
+注意：ID可能不是连续的。） <BR></STRONG>select top 10 * from A where id not in (select top 
+30 id from A) <BR>解2: select top 10 * from A where id &gt; (select max(id) from 
+(select top 30 id from A )as A) </P>
+<P><STRONG>3.public class c{ public c(string a) : this() {;}; public c() {;} } 
+解释第一个构造函数中发生了什么？这个构造函数有什么用? <BR></STRONG>（第一个构造函数调用了第二个构造函数，这个构造函数构造了一个c对象的实例。） 
+</P>
+<P><STRONG>4.一个长度为10000的字符串，通过随机从a-z中抽取10000个字符组成。请用c＃语言编写主要程序来实现。 
+<BR></STRONG>答： <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using System.Text; 
+<BR>StringBuilder sb = new StringBuilder(0, 10000); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string strABC = 
+"a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string[] ABC = strABC.Split(','); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int len = ABC.Length; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Random rd = new Random(); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; 10000; 
+i++) <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sb.Append(ABC[rd.Next(len)]); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+</P>
+<P><STRONG>5.产生一个int数组，长度为100，并向其中随机插入1-100，并且不能重复。 <BR></STRONG>int[] 
+intArr=new int[100]; <BR>ArrayList myList=new ArrayList(); <BR>Random rnd=new 
+Random(); <BR>while(myList.Count&lt;100) <BR>{ <BR>int num=rnd.Next(1,101); 
+<BR>if(!myList.Contains(num)) <BR>myList.Add(num); <BR>} <BR>for(int 
+i=0;i&lt;100;i++) <BR>intArr[i]=(int)myList[i];</P>
+<P><STRONG>2.如何把</STRONG><STRONG>一个Array复制到ArrayList里 <BR></STRONG>答： 
+<BR>foreach( object o in array )arrayList.Add(o); </P>
+<P><STRONG>8.用C#写一段选择排序算法，要求用自己的编程风格。 <BR></STRONG>答：private int min; 
+<BR>&nbsp;&nbsp;&nbsp; public void xuanZhe(int[] list)//选择排序 
+<BR>&nbsp;&nbsp;&nbsp; { <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int 
+i = 0; i &lt; list.Length - 1; i++) 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min = i; 
+</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int j 
+= i + 1; j &lt; list.Length; j++) 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if (list[j] &lt; list[min]) </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+min = j; </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int t = 
+list[min]; </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list[min] 
+= list[i]; </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list[i] = 
+t; </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <BR>&nbsp;&nbsp;&nbsp; } </P>
+<P><STRONG>4.写一个函数计算当参数为N的值:1-2+3-4+5-6+7……+N</STRONG> <BR>答：public int 
+returnSum(int n) <BR>&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int sum = 0; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i = 1; i &lt;= n; i++) 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int k = 
+i; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (i 
+% 2 == 0) <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{ 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+k = -k; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sum = sum 
++ k; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return sum; 
+<BR>&nbsp;&nbsp;&nbsp; } </P>
+<P>&nbsp;&nbsp;&nbsp; public int returnSum1(int n) <BR>&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int k = n; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (n == 0) 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (n % 2 == 0) 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = -k; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return aaa(n - 1) + k; 
+<BR>&nbsp;&nbsp;&nbsp; } </P>
+<P>7. 某一密码仅使用K、L、M、N、O共5个字母，密码中的单词从左向右排列，密码单词必须遵循如下规则 ： <BR>（1） 
+密码单词的最小长度是两个字母，可以相同，也可以不同 <BR>（2） K不可能是单词的第一个字母 <BR>（3） 如果L出现，则出现次数不止一次 <BR>（4） 
+M不能使最后一个也不能是倒数第二个字母 <BR>（5） K出现，则N就一定出现 <BR>（6） O如果是最后一个字母，则L一定出现 
+<BR>问题一：下列哪一个字母可以放在LO中的O后面，形成一个3个字母的密码单词？ <BR>A) K B)L C) M D) N <BR>答案:B 
+<BR>问题二：如果能得到的字母是K、L、M，那么能够形成的两个字母长的密码单词的总数是多少？ <BR>A)1个 B)3个 C)6个 D）9个 <BR>答案:A 
+<BR>问题三：下列哪一个是单词密码？ <BR>A) KLLN B) LOML C) MLLO D)NMKO <BR>答案:C </P>
+<P><STRONG>62-63=1 等式不成立，请移动一个数字（不可以移动减号和等于号），使得等式成立，如何移动？ 
+<BR></STRONG>答案:62移动成2的6次方</P>
+<P><STRONG>17、列出常用的使用javascript操作xml的类包</STRONG> <BR>答： <BR>XML.prototype.xmlDoc 
+= new ActiveXObject("Microsoft.XMLDOM"); <BR>XML.prototype.InitXML=InitXML; 
+<BR>XML.prototype.getFirstChild=getFirstChild; 
+<BR>XML.prototype.getLastChild=getLastChild; 
+<BR>XML.prototype.getChild=getChild;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 取得节点值 
+<BR>XML.prototype.getNodeslength=getNodeslength;&nbsp;&nbsp; // 最得节点下的子节点的个数 
+<BR>XML.prototype.getNode=getNode;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 取得指定节点 
+<BR>XML.prototype.delNode=delNode;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 
+删除指定节点,如果节点相同,则删除最前面的节点. 
+<BR>XML.prototype.getNodeAttrib=getNodeAttrib;&nbsp;&nbsp;&nbsp; // 取得节点的指定属性值. 
+<BR>XML.prototype.InsertBeforeChild=InsertBeforeChild;&nbsp; // 在指定节点之前插入一个节点. 
+<BR>XML.prototype.InsertChild=InsertChild;&nbsp;&nbsp;&nbsp;&nbsp; // 
+在指定节点下插入节点. <BR>XML.prototype.setAttrib=setAttrib;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//&nbsp; 设置指定属性的值. 
+<BR>XML.prototype.setNodeValue=setNodeValue;&nbsp;&nbsp;&nbsp; //&nbsp; 
+设置指定节点的值. <BR>XML.prototype.CreateNodeS=CreateNodeS;&nbsp;&nbsp;&nbsp;&nbsp; 
+//&nbsp; 创建一个指定名的节点． 
+<BR>XML.prototype.addAttrib=addAttrib;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp; 
+为指定节点添加指定属性，并设置初值. 
+<BR>XML.prototype.FindString=FindString;&nbsp;&nbsp;&nbsp;&nbsp; // 在指定节点下查找字符串. 
+</P>
+<P><STRONG>给定以下XML文件，完成算法流程图</STRONG>&lt;FileSystem&gt; <BR>&lt; DriverC &gt; 
+<BR>&lt;Dir DirName=”MSDOS622”&gt; <BR>&lt;File FileName =” Command.com” 
+&gt;&lt;/File&gt; <BR>&lt;/Dir&gt; <BR>&lt;File FileName =”MSDOS.SYS” 
+&gt;&lt;/File&gt; <BR>&lt;File FileName =” IO.SYS” &gt;&lt;/File&gt; 
+<BR>&lt;/DriverC&gt; <BR>&lt;/FileSystem&gt; 
+<BR>请画出遍历所有文件名（FileName）的流程图(请使用递归算法)。 <BR>答： <BR>void FindFile( Directory d ) 
+<BR>{ <BR>FileOrFolders = d.GetFileOrFolders(); <BR>foreach( FileOrFolder fof in 
+FileOrFolders ) <BR>{ <BR>if( fof is File ) <BR>You Found a file; <BR>else if ( 
+fof is Directory ) <BR>FindFile( fof ); <BR>} <BR>}</P>
+<P><STRONG>6.C#代码实现，确保windows程序只有一个实例（instance） 
+<BR></STRONG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ///&lt;summary&gt; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ///应用程序的主入口点。 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ///&lt;/summary&gt; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [STAThread] 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; staticvoid Main() 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//防止程序多次运行 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(!OneInstance.IsFirst("GetPayInfo")) 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+MessageBox.Show ("警告:程序正在运行中! 请不要重复打开程序!可在右下角系统栏找到!","程序错误提 </P>
+<P>示:",MessageBoxButtons.OK,MessageBoxIcon.Stop); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Application.Run(new Form1()); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // ******************* 防止程序多次执行 
+************************** <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+publicabstractclass OneInstance <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///&lt;summary&gt; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///判断程序是否正在运行 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///&lt;/summary&gt; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///&lt;param name="appId"&gt;程序名称&lt;/param&gt; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///&lt;returns&gt;如果程序是第一次运行返回True,否则返回False&lt;/returns&gt; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+publicstaticbool IsFirst(string appId) 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+bool ret=false; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(OpenMutex(0x1F0001,0,appId)==IntPtr.Zero) 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{ 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+CreateMutex(IntPtr.Zero,0,appId); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ret=true; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return ret; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+[DllImport("Kernel32.dll",CharSet=CharSet.Auto)] 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+privatestaticextern IntPtr OpenMutex( 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+uint dwDesiredAccess, // access 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+int bInheritHandle,&nbsp;&nbsp;&nbsp; // inheritance option 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string lpName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // object 
+name 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+[DllImport("Kernel32.dll",CharSet=CharSet.Auto)] 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+privatestaticextern IntPtr CreateMutex( 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+IntPtr lpMutexAttributes, // SD 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+int 
+bInitialOwner,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// initial owner 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string 
+lpName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// object name 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp; </P>
+<DIV id=MySignature>
+<DIV>作者：<A href="http://zengxiangzhan.cnblogs.com/" target=_blank>曾祥展</A></DIV>
+<DIV>出处：<A href="http://zengxiangzhan.cnblogs.com/" 
+target=_blank>http://zengxiangzhan.cnblogs.com/</A></DIV>
+<DIV>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 
+</DIV></DIV>
+<DIV id=EntryTag>Tag标签: <A 
+href="http://www.cnblogs.com/zengxiangzhan/tag/æ¾ç¥¥å±/">曾祥展</A>,<A 
+href="http://www.cnblogs.com/zengxiangzhan/tag/.neté¢è¯é®ç&shy;ï¼å¤§æ±æ»ï¼/">.net面试问答（大汇总）</A></DIV>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/zengxiangzhan/" 
+target=_blank><IMG class=author_avatar alt="" 
+src="_net面试问答（大汇总） - 学无止境 - 博客园_files/u82235.jpg"></A> 
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/zengxiangzhan/" 
+target=_blank>zengxiangzhan</A><BR>关注 - 1<BR>粉丝 - 12<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1718521,59868,1)><SPAN class=diggnum 
+id=digg_count_1718521>16</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1718521,59868,2)><SPAN class=burynum 
+id=bury_count_1718521>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1718521 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1718521>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/16/1713565.html">« 
+</A>上一篇：<A title="发布于2010-04-16 14:24" 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/16/1713565.html">关键字“拖曳搜索”之“拖曳”以及 
+图片“提示自适应放大”效果 的实现</A><BR><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/12/1733758.html">» 
+</A>下一篇：<A title="发布于2010-05-12 15:44" 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/12/1733758.html">【汇总】SQL 
+CODE --- 经典·精彩</A><BR></DIV>
+<SCRIPT src="_net面试问答（大汇总） - 学无止境 - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '1abd8e52-a689-de11-be36-001cf0cd104b';
+</SCRIPT>
+</DIV>
+<DIV class=postDesc>posted @ 2010-04-23 12:56 <A 
+href="http://www.cnblogs.com/zengxiangzhan/">zengxiangzhan</A> 阅读(3267) <A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">评论(17)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/zengxiangzhan/admin/EditPosts.aspx?postid=1718521">编辑</A> 
+<A onclick="AddToWz(1718521);return false;" 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#">收藏</A> 
+所属分类: <A 
+href="http://www.cnblogs.com/zengxiangzhan/category/209688.html">ASP.NET</A></DIV></DIV><IMG 
+height=1 src="_net面试问答（大汇总） - 学无止境 - 博客园_files/1718521.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html"
+dc:identifier="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/zengxiangzhan/services/trackbacks/1718521.aspx" />
+</rdf:RDF>
+--></DIV><!--end: topics 文章、评论容器--><A name=pagedcomment></A><!--done--><BR>
+<DIV class=feedback_area_title>发表评论</DIV>
+<DIV class=feedbackNoItems><SPAN id=span_comment_maxid 
+style="DISPLAY: none">1824355</SPAN></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("侯垒",1808418,"Vvn5b7EIjJd7c7ab7XTOmo/i/+mE7dMO+8Keo83bt+AtPzDNgp637g==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808418,"Vvn5b7EIjJd7c7ab7XTOmo/i/+mE7dMO+8Keo83bt+AtPzDNgp637g==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e4%be%af%e5%9e%92" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808418">#1楼</A><A 
+id=comment_anchor_1808418 name=1808418></A>2010-04-23 13:23 | <A 
+id=Comments1_CommentList_ctl00_NameLink href="http://www.cnblogs.com/houleixx/" 
+target=_blank>侯垒</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/ä¾¯å">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808418>好长。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("被偷De贼",1808456,"3oclQpQ+BmT2Zz+y2V5a5mLEL5UOYzDKzikEHbjPiwTwZHyOMWuQig==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808456,"3oclQpQ+BmT2Zz+y2V5a5mLEL5UOYzDKzikEHbjPiwTwZHyOMWuQig==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e8%a2%ab%e5%81%b7De%e8%b4%bc" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808456">#2楼</A><A 
+id=comment_anchor_1808456 name=1808456></A>2010-04-23 13:42 | <A 
+id=Comments1_CommentList_ctl01_NameLink href="http://www.cnblogs.com/robber/" 
+target=_blank>被偷De贼</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/è¢«å·Deè´¼">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808456>面霸~~<BR>+1</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("海上村民",1808460,"JftDuMAqfBjRWcu6ms81BlWwR/mX/A/gIiHF5kF/tGPRMcyzvLfHnA==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808460,"JftDuMAqfBjRWcu6ms81BlWwR/mX/A/gIiHF5kF/tGPRMcyzvLfHnA==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%b5%b7%e4%b8%8a%e6%9d%91%e6%b0%91" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808460">#3楼</A><A 
+id=comment_anchor_1808460 name=1808460></A>2010-04-23 13:45 | <A 
+id=Comments1_CommentList_ctl02_NameLink href="http://www.cnblogs.com/ie139/" 
+target=_blank>海上村民</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æµ·ä¸ææ°">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808460>经典！！</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("icewater",1808470,"+6Z7b/pdKjf1SeWGTiVlSd5+qBWI5GM/pfYoKXW1CMbQHn+HzmZk4Q==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808470,"+6Z7b/pdKjf1SeWGTiVlSd5+qBWI5GM/pfYoKXW1CMbQHn+HzmZk4Q==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=icewater" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808470">#4楼</A><A 
+id=comment_anchor_1808470 name=1808470></A>2010-04-23 13:51 | <A 
+id=Comments1_CommentList_ctl03_NameLink href="http://www.cnblogs.com/pyfhua/" 
+target=_blank>icewater</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/icewater">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808470>太长了，请分类精选一些比较多人不太会的和入门类的，谢谢，</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("喵 喵",1808487,"p+K4KPLDYoCnFlWeJ8wDZRIQT5wRzJnX5XCbkG25Nh5I95BagFy+qw==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808487,"p+K4KPLDYoCnFlWeJ8wDZRIQT5wRzJnX5XCbkG25Nh5I95BagFy+qw==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%96%b5+%e5%96%b5" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808487">#5楼</A><A 
+id=comment_anchor_1808487 name=1808487></A>2010-04-23 14:02 | <A 
+id=Comments1_CommentList_ctl04_NameLink href="http://www.cnblogs.com/qixuejia/" 
+target=_blank>喵 喵</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/åµ+åµ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808487>mark</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("小尾鱼",1808561,"stmsNFa4idsEfwyOd/DWToH7HxoQim+ndpetq5DbS0SA8A/R3rGamg==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808561,"stmsNFa4idsEfwyOd/DWToH7HxoQim+ndpetq5DbS0SA8A/R3rGamg==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%b0%8f%e5%b0%be%e9%b1%bc" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl05_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl05$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl05_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808561">#6楼</A><A 
+id=comment_anchor_1808561 name=1808561></A>2010-04-23 14:44 | <A 
+id=Comments1_CommentList_ctl05_NameLink href="http://www.cnblogs.com/xiaoweiyu/" 
+target=_blank>小尾鱼</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å°å°¾é±¼">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body id=comment_body_1808561>牛啊 
+不过很多重复的</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("景裔",1808601,"aYVCP474m1oisM5QegaqChaLaEgenz9n/UIgHvWYU49IAqh+aD3vEg==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808601,"aYVCP474m1oisM5QegaqChaLaEgenz9n/UIgHvWYU49IAqh+aD3vEg==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%99%af%e8%a3%94" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl06_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl06$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl06_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808601">#7楼</A><A 
+id=comment_anchor_1808601 name=1808601></A>2010-04-23 15:20 | <A 
+id=Comments1_CommentList_ctl06_NameLink href="http://home.cnblogs.com/86529/" 
+target=_blank>景裔</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æ¯è£">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808601>是很长啊</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("我-大熊",1808639,"YdcxUAdOjpt03C1ZGTLkafMbQGJsLY1hP7nXr7UpAXD4c8jDDWH1kQ==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808639,"YdcxUAdOjpt03C1ZGTLkafMbQGJsLY1hP7nXr7UpAXD4c8jDDWH1kQ==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%88%91-%e5%a4%a7%e7%86%8a" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl07_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl07$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl07_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808639">#8楼</A><A 
+id=comment_anchor_1808639 name=1808639></A>2010-04-23 15:44 | <A 
+id=Comments1_CommentList_ctl07_NameLink href="http://www.cnblogs.com/jack86514/" 
+target=_blank>我-大熊</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æ-å¤§ç">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808639>收藏中</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("ffffff",1808659,"BHciGeNrnSwk1Xo9Ri7TzlHv2rBZN13eFRMe7PpeCMETKpm9EUc7hQ==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808659,"BHciGeNrnSwk1Xo9Ri7TzlHv2rBZN13eFRMe7PpeCMETKpm9EUc7hQ==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=ffffff" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl08_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl08$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl08_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808659">#9楼</A><A 
+id=comment_anchor_1808659 name=1808659></A>2010-04-23 15:55 | <A 
+id=Comments1_CommentList_ctl08_NameLink href="http://www.cnblogs.com/sunplay/" 
+target=_blank>ffffff</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808659>顶！</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Fisher WEI",1808686,"Fbnlg3BDaU57HvL44HSeQng2ohybTYAMyNIH9IqGPN2k5XLJLOm9WQ==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808686,"Fbnlg3BDaU57HvL44HSeQng2ohybTYAMyNIH9IqGPN2k5XLJLOm9WQ==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Fisher+WEI" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl09_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl09$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl09_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808686">#10楼</A><A 
+id=comment_anchor_1808686 name=1808686></A>2010-04-23 16:14 | <A 
+id=Comments1_CommentList_ctl09_NameLink href="http://www.cnblogs.com/eclairs/" 
+target=_blank>Fisher WEI</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Fisher+WEI">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808686>请问最后一道题是要求用笔在纸上写的么？？</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("长江e号",1808749,"fHs4HBxZmOWqH/hw/1qJcJuO8QhRQXJlYMDjXw+07eh+QIXj8pnF4A==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808749,"fHs4HBxZmOWqH/hw/1qJcJuO8QhRQXJlYMDjXw+07eh+QIXj8pnF4A==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e9%95%bf%e6%b1%9fe%e5%8f%b7" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl10_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl10$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl10_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808749">#11楼</A><A 
+id=comment_anchor_1808749 name=1808749></A>2010-04-23 16:54 | <A 
+id=Comments1_CommentList_ctl10_NameLink 
+href="http://www.cnblogs.com/gxg2008540/" target=_blank>长江e号</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/é¿æ±eå·">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808749>太好啦，收藏啦。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("zengxiangzhan",1808816,"QIsOFpQzMa/FQZb0mOFu3+GMjp+zOV1qmG1GDcsFTX0Yf9f95+pHjg==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808816,"QIsOFpQzMa/FQZb0mOFu3+GMjp+zOV1qmG1GDcsFTX0Yf9f95+pHjg==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=zengxiangzhan" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl11_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl11$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl11_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808816">#12楼</A><A 
+id=comment_anchor_1808816 name=1808816></A>[<SPAN 
+class=louzhu>楼主</SPAN>]2010-04-23 17:50 | <A 
+id=Comments1_CommentList_ctl11_NameLink 
+href="http://www.cnblogs.com/zengxiangzhan/" 
+target=_blank>zengxiangzhan</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/zengxiangzhan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body id=comment_body_1808816><A 
+title=查看所回复的评论 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808686">@</A>Fisher 
+WEI<BR>一般都是 手写</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("尹少鹏",1808901,"zuA6u90W3b4HD9q7A9XJgqGUiEPpG44B7id22RSH6DZjEyXa6viC8Q==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808901,"zuA6u90W3b4HD9q7A9XJgqGUiEPpG44B7id22RSH6DZjEyXa6viC8Q==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%b0%b9%e5%b0%91%e9%b9%8f" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl12_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl12$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl12_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808901">#13楼</A><A 
+id=comment_anchor_1808901 name=1808901></A>2010-04-23 19:36 | <A 
+id=Comments1_CommentList_ctl12_NameLink href="http://home.cnblogs.com/92146/" 
+target=_blank>尹少鹏</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å°¹å°é¹">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808901>经典！</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("冰の酷龙",1808984,"I/G8EmWWBcAe9bZz4rF+TaQ630ekQNP+E3wqa7hIpWzeddSrzdfEIg==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1808984,"I/G8EmWWBcAe9bZz4rF+TaQ630ekQNP+E3wqa7hIpWzeddSrzdfEIg==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%86%b0%e3%81%ae%e9%85%b7%e9%be%99" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl13_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl13$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl13_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1808984">#14楼</A><A 
+id=comment_anchor_1808984 name=1808984></A>2010-04-23 21:31 | <A 
+id=Comments1_CommentList_ctl13_NameLink href="http://www.cnblogs.com/kulong995/" 
+target=_blank>冰の酷龙</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å°ã®é·é¾">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1808984>真够长的，我也收集了部分，还是分类发好，不然看着够累的。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("skyaspnet",1809319,"+UBC7X6h+3ghAfiO0htzYz1An3cQgcVBTfFyzSxnpucUxLKE1I/Emg==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1809319,"+UBC7X6h+3ghAfiO0htzYz1An3cQgcVBTfFyzSxnpucUxLKE1I/Emg==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=skyaspnet" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl14_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl14$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl14_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1809319">#15楼</A><A 
+id=comment_anchor_1809319 name=1809319></A>2010-04-24 13:21 | <A 
+id=Comments1_CommentList_ctl14_NameLink href="http://www.cnblogs.com/skyaspnet/" 
+target=_blank>skyaspnet</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/skyaspnet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1809319>相当不错，支持</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("奇嘉阁",1818325,"tK7/2+9mBlQIR7/soy7JZNrXltwSK/Ha0J8PMlnymsqdskHJeKzsxw==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1818325,"tK7/2+9mBlQIR7/soy7JZNrXltwSK/Ha0J8PMlnymsqdskHJeKzsxw==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%a5%87%e5%98%89%e9%98%81" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl15_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl15$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl15_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1818325">#16楼</A><A 
+id=comment_anchor_1818325 name=1818325></A>2010-05-06 23:06 | <A 
+id=Comments1_CommentList_ctl15_NameLink href="http://www.cnblogs.com/qijiage/" 
+target=_blank>奇嘉阁</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å¥åé">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1818325>顶，太好了</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("天尊使者",1824355,"x236MlTLgPqQ92Tm0hFQWyoZ0qWHqlSVRnskuIRKybreWBlFMNRS9Q==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1824355,"x236MlTLgPqQ92Tm0hFQWyoZ0qWHqlSVRnskuIRKybreWBlFMNRS9Q==")' 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%a4%a9%e5%b0%8a%e4%bd%bf%e8%80%85" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl16_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl16$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl16_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html#1824355">#17楼</A><A 
+id=comment_anchor_1824355 name=1824355></A><A name=Post></A>2010-05-14 16:38 | 
+<A id=Comments1_CommentList_ctl16_NameLink href="http://home.cnblogs.com/60064/" 
+target=_blank>天尊使者</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å¤©å°ä½¿è">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body id=comment_body_1824355>看哈 
+。應該不錯的 ··</SPAN><BR></DIV></DIV>
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fzengxiangzhan%2farchive%2f2010%2f04%2f23%2f1718521.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fzengxiangzhan%2farchive%2f2010%2f04%2f23%2f1718521.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A href="http://job.cnblogs.com/offer/7427/" 
+target=_blank>沪江网招聘ASP.NET开发工程师</A><BR><A href="http://a4.yeshj.com/rd/35450/" 
+target=_blank>软件研发团队管理年会(上海，7.10-7.11)</A><BR><A href="http://news.cnblogs.com/" 
+target=_blank>IT新闻</A>:<BR>· <A href="http://news.cnblogs.com/n/65684/" 
+target=_blank>苹果Mac mini缺货引发升级猜测</A><BR>· <A 
+href="http://news.cnblogs.com/n/65683/" target=_blank>移动平台应用程序现状</A><BR>· <A 
+href="http://news.cnblogs.com/n/65682/" 
+target=_blank>英特尔Moorestown手机平台演示运行《魔兽世界》</A><BR>· <A 
+href="http://news.cnblogs.com/n/65681/" 
+target=_blank>鲍尔默：Silverlight不会出现在iPhone</A><BR>· <A 
+href="http://news.cnblogs.com/n/65680/" 
+target=_blank>周鸿祎揭秘与金山口水战背后的五大秘密</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="_net面试问答（大汇总） - 学无止境 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+alt="" src="_net面试问答（大汇总） - 学无止境 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=%e6%9b%be%e7%a5%a5%e5%b1%95" 
+target=_blank>曾祥展</A> <A 
+href="http://zzk.cnblogs.com/s?w=.net%e9%9d%a2%e8%af%95%e9%97%ae%e7%ad%94%ef%bc%88%e5%a4%a7%e6%b1%87%e6%80%bb%ef%bc%89" 
+target=_blank>.net面试问答（大汇总）</A> <A href="http://zzk.cnblogs.com/s?w=ASP.NET" 
+target=_blank>ASP.NET</A> </DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/1718521/">.net面试问答（大汇总）</A></DIV></DIV></DIV><!--end: forFlow --></DIV><!--end: mainContent 主体内容容器-->
+<DIV id=sideBar>
+<DIV id=sideBarMain>
+<DIV id=calendar>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar cellSpacing=0 
+cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=7>
+      <TABLE class=CalTitle cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev><A title="Go to the previous month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3712')">&lt;</A></TD>
+          <TD align=middle>2010年4月</TD>
+          <TD class=CalNextPrev align=right><A title="Go to the next month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3773')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>28</TD>
+    <TD class=CalOtherMonthDay align=middle>29</TD>
+    <TD class=CalOtherMonthDay align=middle>30</TD>
+    <TD class=CalOtherMonthDay align=middle>31</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>2</TD>
+    <TD class=CalWeekendDay align=middle>3</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>4</TD>
+    <TD align=middle>5</TD>
+    <TD align=middle>6</TD>
+    <TD align=middle>7</TD>
+    <TD align=middle>8</TD>
+    <TD align=middle>9</TD>
+    <TD class=CalWeekendDay align=middle>10</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>11</TD>
+    <TD align=middle>12</TD>
+    <TD align=middle>13</TD>
+    <TD align=middle>14</TD>
+    <TD align=middle>15</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/4/16.html"><U>16</U></A></TD>
+    <TD class=CalWeekendDay align=middle>17</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>18</TD>
+    <TD align=middle>19</TD>
+    <TD align=middle>20</TD>
+    <TD align=middle>21</TD>
+    <TD align=middle>22</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zengxiangzhan/archive/2010/4/23.html"><U>23</U></A></TD>
+    <TD class=CalWeekendDay align=middle>24</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>25</TD>
+    <TD align=middle>26</TD>
+    <TD align=middle>27</TD>
+    <TD align=middle>28</TD>
+    <TD align=middle>29</TD>
+    <TD align=middle>30</TD>
+    <TD class=CalOtherMonthDay align=middle>1</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>2</TD>
+    <TD class=CalOtherMonthDay align=middle>3</TD>
+    <TD class=CalOtherMonthDay align=middle>4</TD>
+    <TD class=CalOtherMonthDay align=middle>5</TD>
+    <TD class=CalOtherMonthDay align=middle>6</TD>
+    <TD class=CalOtherMonthDay align=middle>7</TD>
+    <TD class=CalOtherMonthDay align=middle>8</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<SCRIPT type=text/javascript>
+var blogapp = 'zengxiangzhan';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV></DIV>
+<DIV class=catListPostCategory>
+<H3 class=catListTitle>随笔分类<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(257)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209693.html">Ajax(9)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to Ajax(9)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209693.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209688.html">ASP.NET(61)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to ASP.NET(61)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209688.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/212155.html">C#(14)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to C#(14)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/212155.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/243872.html">Cloud 开发</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to Cloud 开发" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/243872.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209692.html">DIV+CSS(5)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to DIV+CSS(5)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209692.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209694.html">ExtJs(2)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to ExtJs(2)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209694.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/246700.html">iPhone/Android平台开发</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to iPhone/Android平台开发" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/246700.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209690.html">JavaScript(13)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to JavaScript(13)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209690.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209691.html">jQuery(16)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink 
+  title="Subscribe to jQuery(16)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209691.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/227307.html">JSON(6)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink 
+  title="Subscribe to JSON(6)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/227307.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/226398.html">MVC</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink 
+  title="Subscribe to MVC" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/226398.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/216093.html">Plugin 
+  (9)</A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink 
+  title="Subscribe to Plugin (9)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/216093.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/234039.html">SEO优化(2)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_RssLink 
+  title="Subscribe to SEO优化(2)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/234039.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/243869.html">SharePoint 
+  &amp; Office</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_RssLink 
+  title="Subscribe to SharePoint &amp; Office" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/243869.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/234037.html">Silverlight</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_RssLink 
+  title="Subscribe to Silverlight" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/234037.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/209689.html">SQL(64)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_RssLink 
+  title="Subscribe to SQL(64)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/209689.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/231586.html">WPF WCF 
+  WF</A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_RssLink 
+  title="Subscribe to WPF WCF WF" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/231586.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/227605.html">XML(9)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_RssLink 
+  title="Subscribe to XML(9)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/227605.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/210026.html">解决方案(11)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_RssLink 
+  title="Subscribe to 解决方案(11)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/210026.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/210025.html">前端技术(13)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_RssLink 
+  title="Subscribe to 前端技术(13)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/210025.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/231599.html">上传下载(12)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_RssLink 
+  title="Subscribe to 上传下载(12)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/231599.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/210030.html">设计·管理(3)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_RssLink 
+  title="Subscribe to 设计·管理(3)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/210030.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/234038.html">水晶报表</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_RssLink 
+  title="Subscribe to 水晶报表" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/234038.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/211401.html">网络技术(4)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_RssLink 
+  title="Subscribe to 网络技术(4)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/211401.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl25_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/243871.html">移动与嵌入式</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl25_RssLink 
+  title="Subscribe to 移动与嵌入式" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/243871.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl26_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/category/221883.html">正则表达式(4)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl26_RssLink 
+  title="Subscribe to 正则表达式(4)" 
+  onclick="open_link('http://www.cnblogs.com/zengxiangzhan/category/221883.html/rss');return false;" 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html###">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListPostArchive>
+<H3 class=catListTitle>随笔档案<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(189)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/06.html">2010年6月 
+  (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05.html">2010年5月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04.html">2010年4月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03.html">2010年3月 
+  (10)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02.html">2010年2月 
+  (18)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01.html">2010年1月 
+  (52)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12.html">2009年12月 
+  (26)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11.html">2009年11月 
+  (18)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/10.html">2009年10月 
+  (9)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09.html">2009年9月 
+  (51)</A> </LI></UL></DIV>
+<DIV class=catListEssay>
+<H3 class=catListTitle>最新随笔</H3>
+<UL>
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl00_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/06/02/1749858.html">1.&nbsp;激活 
+  Microsoft® Office 2010 MSDN专业版（简单）</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl01_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/13/1734773.html">2.&nbsp;百度或者Google---SEO优化</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl02_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/12/1733758.html">3.&nbsp;【汇总】SQL 
+  CODE --- 经典·精彩</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl03_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html">4.&nbsp;.net面试问答（大汇总）</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl04_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/16/1713565.html">5.&nbsp;关键字“拖曳搜索”之“拖曳”以及 
+  图片“提示自适应放大”效果 的实现</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl05_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/21/1691051.html">6.&nbsp;国内最新最全面IP数据库</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl06_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/17/1688097.html">7.&nbsp;新闻标题 
+  静态分页 (无刷新)</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl07_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/14/1685386.html">8.&nbsp;IE无法显示.shtml格式网页</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl08_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/12/1684100.html">9.&nbsp;jquery-galleryview-2.0 
+  漂亮多样化的图片特效（多项自定义）</A> 
+  <LI><A 
+  id=SingleColumn1_ctl01_RecentPostsList_ctl09_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html">10.&nbsp;CKEditor3.2+CKFinder1.4.3结合 
+  打造"帅"的编辑器 For .Net</A> </LI></UL></DIV>
+<DIV class=catListComment>
+<H3 class=catListTitle>最新评论<A id=SingleColumn1__6795ce_RSSHyperlink1 
+title=RSS订阅最最新评论 
+href="http://www.cnblogs.com/zengxiangzhan/CommentsRSS.aspx"><IMG 
+title=RSS订阅最最新评论 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="_net面试问答（大汇总） - 学无止境 - 博客园_files/xml.gif"></A></H3>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl00_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/13/1623158.html#1836360">1.&nbsp;Re:仿Google自动提示 
+SearchSuggess</A> </DIV>
+<DIV class=divRecentComment>感谢楼主,不知道能否给份源码? 290476058@qq.com (orient22) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl01_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/21/1628726.html#1835933">2.&nbsp;Re:UI 
+upload 多文件上传</A> </DIV>
+<DIV class=divRecentComment>也给我来一份吧 谢谢楼主! zhuer0632@qq.com (Master zhu) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl02_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html#1835518">3.&nbsp;Re:CKEditor3.2+CKFinder1.4.3结合 
+打造"帅"的编辑器 For .Net</A> </DIV>
+<DIV class=divRecentComment>我的情况跟#28的一样，按照LZ的步骤，就是没有浏览按钮的出现，莫非是我下载的版本太高？ 
+--------------------------------- 改用 ckfinder_aspnet_... (卓伯虎) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl03_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html#1831917">4.&nbsp;Re:CKEditor3.2+CKFinder1.4.3结合 
+打造"帅"的编辑器 For .Net</A> </DIV>
+<DIV class=divRecentComment>@cr225 看不到图片 (zengxiangzhan) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl04_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html#1831499">5.&nbsp;Re:CKEditor3.2+CKFinder1.4.3结合 
+打造"帅"的编辑器 For .Net</A> </DIV>
+<DIV 
+class=divRecentComment>还是不行！我按你的操作是一步一步来的，不肯能错！而且几天前跟你发过信息说有问题，今天我重新搞还是不行。我把截图发出来。 
+[img][/img] (cr225) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl05_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/28/1675137.html#1830213">6.&nbsp;Re:文件上传 
+带进度条（多种风格）</A> </DIV>
+<DIV class=divRecentComment>蛮好的 (MiCow) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl06_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/04/1663632.html#1830168">7.&nbsp;Re:漂亮 
+表单验证 密码强度</A> </DIV>
+<DIV class=divRecentComment>LZ,也给我个吧，谢谢！ loveheping16@123.com (spin) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl07_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/04/1663632.html#1829405">8.&nbsp;Re:漂亮 
+表单验证 密码强度</A> </DIV>
+<DIV class=divRecentComment>已收到谢谢 (涛涛帅) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl08_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636871.html#1829345">9.&nbsp;Re:数据操作类 
+SQLHelper.cs</A> </DIV>
+<DIV class=divRecentComment>[quote]2and1：楼主,好像不全啊.是否可以发一份给我.谢谢! 
+jasonliangcn#gmail.com 另外问一下.你上面有两条是执行存储过程的.但是是直接带content参数的.请... (spin) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__6795ce_CommentList_ctl09_Hyperlink2 
+href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11/07/1598194.html#1829258">10.&nbsp;Re:FileUploaderAJAX 
+无刷新上传</A> </DIV>
+<DIV class=divRecentComment>[quote]zengxiangzhan： @Super_Dang 已发![/quote] 谢谢楼主 
+(Super_Dang) </DIV></DIV>
+<DIV class=catListView>
+<H3 class=catListTitle>阅读排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/28/1675137.html">1.&nbsp;文件上传 
+  带进度条（多种风格）(7009)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/21/1691051.html">2.&nbsp;国内最新最全面IP数据库(4741)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/05/1679286.html">3.&nbsp;IIS配置PHP环境（快速最新版）(4385)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/14/1647866.html">4.&nbsp;大文件上传 
+  进度条显示 （仿csdn资源上传效果）(4049)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html">5.&nbsp;CKEditor3.2+CKFinder1.4.3结合 
+  打造"帅"的编辑器 For .Net(3572)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html">6.&nbsp;.net面试问答（大汇总）(3267)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/12/1733758.html">7.&nbsp;【汇总】SQL 
+  CODE --- 经典·精彩(2942)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/03/1677460.html">8.&nbsp;AspNetPager 
+  样式以及使用（漂亮）(2937)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/21/1670646.html">9.&nbsp;jQueryJSON 
+  无刷新三级联动(2642)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/13/1623158.html">10.&nbsp;仿Google自动提示 
+  SearchSuggess(2532)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl11_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/12/1684100.html">11.&nbsp;jquery-galleryview-2.0 
+  漂亮多样化的图片特效（多项自定义）(2431)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl12_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/22/1671379.html">12.&nbsp;FlyTreeView 
+  for asp.net （4.4.1.2最新破解版）(2269)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl13_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636871.html">13.&nbsp;数据操作类 
+  SQLHelper.cs(1949)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl14_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/14/1623221.html">14.&nbsp;Uploadify 
+  jquery+falsh+UploadHandler.ashx(1576)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl15_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/16/1713565.html">15.&nbsp;关键字“拖曳搜索”之“拖曳”以及 
+  图片“提示自适应放大”效果 的实现(1298)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl16_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/08/1681107.html">16.&nbsp;ComponentArt. 
+  Web.UI 《2009.3版~破解》(1262)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl17_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/09/12/1565320.html">17.&nbsp;SQL经典短小代码收集(1249)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl18_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/25/1673687.html">18.&nbsp;模拟产品展示 
+  Flash无法展示的追踪过程(1224)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl19_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/25/1673150.html">19.&nbsp;漂亮的后台 
+  模板(1203)</A> 
+  <LI><A id=SingleColumn1_ctl03_TopList_ctl20_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/04/1639220.html">20.&nbsp;无限级分类 
+  存储过程(1147)</A> </LI></UL></DIV>
+<DIV class=catListFeedback>
+<H3 class=catListTitle>评论排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/01/14/1647866.html">1.&nbsp;大文件上传 
+  进度条显示 （仿csdn资源上传效果）(35)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/28/1675137.html">2.&nbsp;文件上传 
+  带进度条（多种风格）(33)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/10/1682702.html">3.&nbsp;CKEditor3.2+CKFinder1.4.3结合 
+  打造"帅"的编辑器 For .Net(32)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/21/1691051.html">4.&nbsp;国内最新最全面IP数据库(30)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/21/1628726.html">5.&nbsp;UI 
+  upload 多文件上传(26)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/14/1623221.html">6.&nbsp;Uploadify 
+  jquery+falsh+UploadHandler.ashx(19)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/04/1663632.html">7.&nbsp;漂亮 
+  表单验证 密码强度(18)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/04/23/1718521.html">8.&nbsp;.net面试问答（大汇总）(17)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/13/1623158.html">9.&nbsp;仿Google自动提示 
+  SearchSuggess(15)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/05/1679286.html">10.&nbsp;IIS配置PHP环境（快速最新版）(15)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl11_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/21/1670646.html">11.&nbsp;jQueryJSON 
+  无刷新三级联动(13)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl12_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/03/1677460.html">12.&nbsp;AspNetPager 
+  样式以及使用（漂亮）(12)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl13_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/22/1671379.html">13.&nbsp;FlyTreeView 
+  for asp.net （4.4.1.2最新破解版）(10)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl14_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/05/12/1733758.html">14.&nbsp;【汇总】SQL 
+  CODE --- 经典·精彩(10)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl15_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11/07/1598194.html">15.&nbsp;FileUploaderAJAX 
+  无刷新上传(7)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl16_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/02/09/1666791.html">16.&nbsp;汉字转拼音(5)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl17_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/11/24/1609299.html">17.&nbsp;c# 
+  图片插入Excel(4)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl18_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636871.html">18.&nbsp;数据操作类 
+  SQLHelper.cs(4)</A> 
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl19_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2009/12/31/1636818.html">19.&nbsp;C#取真实IP地址--多个代理背后的ip地址(3)</A> 
+
+  <LI><A id=SingleColumn1_ctl04_TopList_ctl20_Hyperlink1 
+  href="http://www.cnblogs.com/zengxiangzhan/archive/2010/03/17/1688097.html">20.&nbsp;新闻标题 
+  静态分页 (无刷新)(3)</A> </LI></UL></DIV></DIV></DIV><!--end: sideBarMain --></DIV><!--end: sideBar 侧边栏容器 -->
+<DIV class=clear></DIV></DIV><!--end: main -->
+<DIV class=clear></DIV>
+<DIV id=footer><!--done-->Copyright ©2010 zengxiangzhan </DIV><!--end: footer --></DIV><!--end: home 自定义的最大容器 -->
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading div").animate({width:"89px"}).text("89%")},500)</SCRIPT>
+
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading div").animate({width:"100px"}).text("100%")},1000)</SCRIPT>
+
+<SCRIPT type=text/javascript>setTimeout(function(){$("#loading").hide(500)},1500)</SCRIPT>
+
+<SCRIPT type=text/javascript>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+try {
+var pageTracker = _gat._getTracker("UA-15774770-2");
+pageTracker._trackPageview();
+} catch(err) {}</SCRIPT>
+</FORM>
+<SCRIPT src="_net面试问答（大汇总） - 学无止境 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="_net面试问答（大汇总） - 学无止境 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="_net面试问答（大汇总） - 学无止境 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

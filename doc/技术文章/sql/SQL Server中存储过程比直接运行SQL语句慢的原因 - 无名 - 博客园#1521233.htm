@@ -1,0 +1,1459 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0061)http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html -->
+<HTML><HEAD><TITLE>SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="SQLServer,SQL,SQL Server" name=keywords><LINK 
+href="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/common.css" 
+type=text/css rel=stylesheet><LINK id=MainCss 
+href="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/style.css" 
+type=text/css rel=stylesheet><LINK 
+href="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/shCore.css" 
+type=text/css rel=stylesheet><LINK 
+href="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/wuming/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/wuming/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1450980.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<DIV id=top>
+<DIV>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD class=HeaderTitles>
+      <H1 class=HeaderTitle><A class=HeaderMainTitle id=Header1_HeaderTitle 
+      href="http://www.cnblogs.com/wuming/">无名 </A></H1>
+      <P id=tagline>长风破浪会有时，直挂云帆济沧海！</P></TD></TR></TBODY></TABLE></DIV>
+<DIV class=HeaderBar>
+<TABLE class=HeaderBar id=HeaderBar cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD class=HeaderBarTab noWrap>&nbsp; <A id=Header1_MyLinks1_HomeLink 
+      href="http://www.cnblogs.com/">博客园</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_MyHomeLink 
+      href="http://www.cnblogs.com/wuming/">首页</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_NewPostLink 
+      href="http://www.cnblogs.com/wuming/admin/EditPosts.aspx?opt=1">新随笔</A>&nbsp;:: 
+      <A id=Header1_MyLinks1_ContactLink accessKey=9 
+      href="http://space.cnblogs.com/msg/send/æ&nbsp;å">联系</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_Syndication 
+      href="http://www.cnblogs.com/wuming/rss">订阅</A> <A class=XMLLink 
+      id=Header1_MyLinks1_XMLLink href="http://www.cnblogs.com/wuming/rss"><IMG 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      alt=订阅 
+      src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/xml.gif"></A>&nbsp;:: 
+      <A id=Header1_MyLinks1_Admin 
+      href="http://www.cnblogs.com/wuming/admin/EditPosts.aspx">管理</A>&nbsp;:: 
+    </TD>
+    <TD><IMG id=Header1_BlueTab 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/BlueTabRight.gif" 
+      align=absMiddle></TD>
+    <TD class=HeaderBarTabBack noWrap width="100%">
+      <DIV class=BlogStatsBar>
+      <TABLE class=BlogStatsBar>
+        <TBODY>
+        <TR>
+          <TD width="100%"></TD>
+          <TD class=BlogStatsBar noWrap>&nbsp; 138 随笔&nbsp;:: 1 文章 :: 13 评论 :: 
+            0 引用 </TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id=leftmenu></DIV>
+<DIV id=main>
+<DIV class=post>
+<DIV class=postTitle><A id=ctl03_TitleUrl 
+href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html">SQL 
+Server中存储过程比直接运行SQL语句慢的原因</A> </DIV>
+<DIV class=postText><SPAN style="FONT-FAMILY: 宋体">&nbsp;</SPAN><SPAN 
+style="FONT-FAMILY: 宋体">在很多的资料中都描述说SQLSERVER的存储过程较普通的SQL语句有以下优点：</SPAN> 
+<P style="MARGIN-LEFT: 42pt; TEXT-INDENT: -21pt; TEXT-ALIGN: left" 
+align=left><SPAN style="FONT-FAMILY: 宋体">1.<SPAN 
+style="FONT: 7pt 'Times New Roman'; font-size-adjust: none; font-stretch: normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">存储过程只在创造时进行编译即可</SPAN></STRONG><SPAN 
+style="FONT-FAMILY: 宋体">，以后每次执行存储过程都不需再重新编译，而我们通常使用的SQL语句每执行一次就编译一次,所以使用存储过程可提高数据库执行速度。 
+</SPAN></P>
+<P style="MARGIN-LEFT: 42pt; TEXT-INDENT: -21pt; TEXT-ALIGN: left" 
+align=left><SPAN style="FONT-FAMILY: 宋体">2.<SPAN 
+style="FONT: 7pt 'Times New Roman'; font-size-adjust: none; font-stretch: normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">经常会遇到复杂的业务逻辑和对数据库的操作，这个时候就会用SP来封装数据库操作。</SPAN></STRONG><SPAN 
+style="FONT-FAMILY: 宋体">当对数据库进行复杂操作时(如对多个表进行 
+Update,Insert,Query,Delete时），可将此复杂操作用存储过程封装起来与数据库提供的事务处理结合一起使用。可以极大的提高数据 
+库的使用效率，减少程序的执行时间，这一点在较大数据量的数据库的操作中是非常重要的。在代码上看，SQL语句和程序代码语句的分离，可以提高程序代码的 
+可读性。</SPAN></P>
+<P style="MARGIN-LEFT: 42pt; TEXT-INDENT: -21pt; TEXT-ALIGN: left" 
+align=left><SPAN style="FONT-FAMILY: 宋体">3.<SPAN 
+style="FONT: 7pt 'Times New Roman'; font-size-adjust: none; font-stretch: normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">存储过程可以设置参数</SPAN></STRONG><SPAN 
+style="FONT-FAMILY: 宋体">，可以根据传入参数的不同重复使用同一个存储过程，从而高效的提高代码的优化率和可读性。</SPAN></P>
+<P style="MARGIN-LEFT: 42pt; TEXT-INDENT: -21pt; TEXT-ALIGN: left" 
+align=left><SPAN style="FONT-FAMILY: 宋体">4.<SPAN 
+style="FONT: 7pt 'Times New Roman'; font-size-adjust: none; font-stretch: normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><STRONG><SPAN style="FONT-FAMILY: 宋体">安全性高</SPAN></STRONG><SPAN 
+style="FONT-FAMILY: 宋体">,</SPAN><SPAN 
+style="FONT-FAMILY: 宋体">可设定只有某此用户才具有对指定存储过程的使用权存储过程的种类：</SPAN></P>
+<P style="MARGIN-LEFT: 63pt; TEXT-INDENT: -21pt; TEXT-ALIGN: left" 
+align=left><SPAN style="FONT-FAMILY: 宋体">A.<SPAN 
+style="FONT: 7pt 'Times New Roman'; font-size-adjust: none; font-stretch: normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体">系统存储过程：以sp_开头,用来进行系统的各项设定.取得信息.相关管理工作,如 
+sp_help就是取得指定对象的相关信息。</SPAN></P>
+<P style="MARGIN-LEFT: 63pt; TEXT-INDENT: -21pt; TEXT-ALIGN: left" 
+align=left><SPAN style="FONT-FAMILY: 宋体">B.<SPAN 
+style="FONT: 7pt 'Times New Roman'; font-size-adjust: none; font-stretch: normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN style="FONT-FAMILY: 宋体">扩展存储过程 以XP_开头,用来调用操作系统提供的功能<BR>exec 
+master..xp_cmdshell 'ping 10.8.16.1'</SPAN></P>
+<P style="MARGIN-LEFT: 63pt; TEXT-INDENT: -21pt; TEXT-ALIGN: left" 
+align=left><SPAN style="FONT-FAMILY: 宋体">C.<SPAN 
+style="FONT: 7pt 'Times New Roman'; font-size-adjust: none; font-stretch: normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体">用户自定义的存储过程,这是我们所指的存储过程常用格式</SPAN></P>
+<P style="MARGIN-LEFT: 42pt" align=left><SPAN 
+style="FONT-FAMILY: 宋体">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">模版：Create procedure procedue_name [@parameter 
+data_type][output] <BR><SPAN>&nbsp;&nbsp;&nbsp; [with]{recompile|encryption} as 
+sql_statement</SPAN></SPAN></P>
+<P style="MARGIN-LEFT: 42pt" align=left><SPAN 
+style="FONT-FAMILY: 宋体">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">解释：output：表示此参数是可传回的</SPAN></P>
+<P style="MARGIN-LEFT: 42pt" align=left><SPAN style="FONT-FAMILY: 宋体">with 
+{recompile|encryption} recompile:</SPAN><SPAN 
+style="FONT-FAMILY: 宋体">表示每次执行此存储过程时都重新编译一次;encryption:所创建的存储过程的内容会被加密。</SPAN></P>
+<P align=left>&nbsp;</P>
+<P align=left><SPAN style="FONT-FAMILY: 宋体">&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">但是最近我们项目组中有人写了一个存储过程,其计算时间为1个小时47分钟,而有的时候运行时间都超过了两个小时,同事描述说如果将存储过程中的语句拿出来直接运行也就10分钟左右就运行完毕，我没当回事，但是今天我自己写的存储过程也遇到了这个问题，在查找资料后原因终于找到了原因，原来是<SPAN 
+style="PADDING-RIGHT: 0pt; DISPLAY: inline; PADDING-LEFT: 0pt; PADDING-BOTTOM: 0pt; COLOR: black; PADDING-TOP: 0pt; BACKGROUND-COLOR: yellow">Parameter 
+sniffing</SPAN>问题。</SPAN></P>
+<P align=left><SPAN style="FONT-FAMILY: 宋体">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">下面看我是如何将运行一个小时以上的存储过程优化成在一分钟之内完成的：</SPAN></P>
+<P align=left><STRONG><SPAN 
+style="BACKGROUND: silver 0% 50%; FONT-FAMILY: 宋体; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">原存储过程</SPAN></STRONG></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">CREATE</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"> <SPAN 
+style="COLOR: blue">PROCEDURE</SPAN> [dbo]<SPAN 
+style="COLOR: gray">.</SPAN>[pro_ImAnalysis_daily]</SPAN></P>
+<P align=left><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">@THEDATE 
+<SPAN style="COLOR: blue">VARCHAR</SPAN><SPAN 
+style="COLOR: gray">(</SPAN>30<SPAN style="COLOR: gray">)</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">AS</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">BEGIN</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">IF</SPAN> @THEDATE <SPAN style="COLOR: gray">IS</SPAN> <SPAN 
+style="COLOR: gray">NULL</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">BEGIN</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">SET</SPAN> @THEDATE<SPAN 
+style="COLOR: gray">=</SPAN><SPAN style="COLOR: fuchsia">CONVERT</SPAN><SPAN 
+style="COLOR: gray">(</SPAN><SPAN style="COLOR: blue">VARCHAR</SPAN><SPAN 
+style="COLOR: gray">(</SPAN>30<SPAN style="COLOR: gray">),</SPAN><SPAN 
+style="COLOR: fuchsia">GETDATE</SPAN><SPAN style="COLOR: gray">()-</SPAN>1<SPAN 
+style="COLOR: gray">,</SPAN>112<SPAN style="COLOR: gray">);</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">END</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"></SPAN>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"></SPAN>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">DELETE</SPAN> <SPAN style="COLOR: blue">FROM</SPAN> 
+RPT_IM_USERINFO_DAILY <SPAN style="COLOR: blue">WHERE</SPAN> THEDATE<SPAN 
+style="COLOR: gray">=</SPAN>@THEDATE<SPAN 
+style="COLOR: gray">;</SPAN></SPAN></P>
+<P align=left>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">INSERT</SPAN> RPT_IM_USERINFO_DAILY <SPAN 
+style="COLOR: gray">(</SPAN>THEDATE<SPAN 
+style="COLOR: gray">,</SPAN>ALLUSER<SPAN 
+style="COLOR: gray">,</SPAN>NEWUSER<SPAN style="COLOR: gray">)</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">SELECT</SPAN> AA<SPAN 
+style="COLOR: gray">.</SPAN>THEDATE<SPAN 
+style="COLOR: gray">,</SPAN>ALLUSER<SPAN 
+style="COLOR: gray">,</SPAN>NEWUSER</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">FROM</SPAN> </SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: gray">(</SPAN> <SPAN style="COLOR: gray">(</SPAN> <SPAN 
+style="COLOR: blue">SELECT</SPAN> THEDATE<SPAN style="COLOR: gray">,</SPAN><SPAN 
+style="COLOR: fuchsia">COUNT</SPAN><SPAN style="COLOR: gray">(</SPAN><SPAN 
+style="COLOR: blue">DISTINCT</SPAN> USERID<SPAN style="COLOR: gray">)</SPAN> 
+ALLUSER</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">FROM</SPAN> FACT</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">WHERE</SPAN> THEDATE<SPAN 
+style="COLOR: gray">=</SPAN>@THEDATE</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; <SPAN style="COLOR: blue">GROUP</SPAN> <SPAN 
+style="COLOR: blue">BY</SPAN> THEDATE</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: gray">)</SPAN> AA</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: gray">LEFT</SPAN> <SPAN 
+style="COLOR: gray">JOIN</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: gray">(</SPAN><SPAN style="COLOR: blue">SELECT</SPAN> 
+THEDATE<SPAN style="COLOR: gray">,</SPAN><SPAN 
+style="COLOR: fuchsia">COUNT</SPAN><SPAN style="COLOR: gray">(</SPAN><SPAN 
+style="COLOR: blue">DISTINCT</SPAN> USERID<SPAN style="COLOR: gray">)</SPAN> 
+NEWUSER</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<SPAN style="COLOR: blue">FROM</SPAN> FACT T1</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<SPAN style="COLOR: blue">WHERE</SPAN> <SPAN 
+style="COLOR: gray">NOT</SPAN> <SPAN 
+style="COLOR: gray">EXISTS(</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">SELECT</SPAN> 1 </SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">FROM</SPAN> FACT T2</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">WHERE</SPAN> T2<SPAN 
+style="COLOR: gray">.</SPAN>THEDATE<SPAN 
+style="COLOR: gray">&lt;</SPAN>@THEDATE</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<SPAN style="COLOR: gray">AND</SPAN> T1<SPAN 
+style="COLOR: gray">.</SPAN>USERID<SPAN style="COLOR: gray">=</SPAN>T2<SPAN 
+style="COLOR: gray">.</SPAN>USERID<SPAN style="COLOR: gray">)</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: gray">AND</SPAN> T1<SPAN 
+style="COLOR: gray">.</SPAN>THEDATE<SPAN 
+style="COLOR: gray">=</SPAN>@THEDATE</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<SPAN style="COLOR: blue">GROUP</SPAN> <SPAN style="COLOR: blue">BY</SPAN> 
+THEDATE</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<SPAN style="COLOR: gray">)</SPAN> BB</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">ON</SPAN> AA<SPAN 
+style="COLOR: gray">.</SPAN>THEDATE<SPAN style="COLOR: gray">=</SPAN>BB<SPAN 
+style="COLOR: gray">.</SPAN>THEDATE<SPAN 
+style="COLOR: gray">);</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">GO</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; BACKGROUND: silver 0% 50%; FONT-FAMILY: 宋体; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">每日执行</SPAN><SPAN 
+style="FONT-SIZE: 10pt; BACKGROUND: silver 0% 50%; FONT-FAMILY: 'Courier New'; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">:exec 
+pro_ImAnalysis_daily @thedate=null<BR></SPAN><SPAN 
+style="FONT-SIZE: 10pt; BACKGROUND: silver 0% 50%; FONT-FAMILY: 宋体; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">耗时：</SPAN><SPAN 
+style="FONT-SIZE: 10pt; BACKGROUND: silver 0% 50%; FONT-FAMILY: 'Courier New'; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">1</SPAN><SPAN 
+style="FONT-SIZE: 10pt; BACKGROUND: silver 0% 50%; FONT-FAMILY: 宋体; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">小时</SPAN><SPAN 
+style="FONT-SIZE: 10pt; BACKGROUND: silver 0% 50%; FONT-FAMILY: 'Courier New'; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">47</SPAN><SPAN 
+style="FONT-SIZE: 10pt; BACKGROUND: silver 0% 50%; FONT-FAMILY: 宋体; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">分</SPAN><SPAN 
+style="FONT-SIZE: 10pt; BACKGROUND: silver 0% 50%; FONT-FAMILY: 'Courier New'; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">~2</SPAN><SPAN 
+style="FONT-SIZE: 10pt; BACKGROUND: silver 0% 50%; FONT-FAMILY: 宋体; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">小时</SPAN><SPAN 
+style="FONT-SIZE: 10pt; BACKGROUND: silver 0% 50%; FONT-FAMILY: 'Courier New'; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">13</SPAN><SPAN 
+style="FONT-SIZE: 10pt; BACKGROUND: silver 0% 50%; FONT-FAMILY: 宋体; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial">分</SPAN></P>
+<P align=left><SPAN style="FONT-FAMILY: 宋体">经 
+过查找资料，原因如下(由于源文是一篇英文，有些地方写的我不是特别清楚，原文见http://groups.google.com/group 
+/microsoft.public.sqlserver.server/msg/ad37d8aec76e2b8f?hl=en&amp;lr=&amp; 
+amp;ie=UTF-8&amp;oe=UTF-8)：</SPAN></P>
+<P align=left><SPAN style="FONT-FAMILY: 宋体">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">在SQL Server中有一个叫做 “<SPAN 
+style="PADDING-RIGHT: 0pt; DISPLAY: inline; PADDING-LEFT: 0pt; PADDING-BOTTOM: 0pt; COLOR: black; PADDING-TOP: 0pt; BACKGROUND-COLOR: yellow">Parameter 
+sniffing”</SPAN>的特性。SQL 
+Server在存储过程执行之前都会制定一个执行计划。在上面的例子中，SQL在编译的时候并不知道@thedate的值是多少，所以它在执行执行计划的时候就要进行大量的猜测。假设传递给@thedate的参数大部分都是非空字符串，而FACT表中有40%的thedate字段都是null，那么SQL 
+Server就会选择全表扫描而不是索引扫描来对参数@thedate制定执行计划。全表扫描是在参数为空或为0的时候最好的执行计划。但是全表扫描严重影响了性能。</SPAN></P>
+<P align=left><SPAN style="FONT-FAMILY: 宋体">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-FAMILY: 宋体">假设你第一次使用了Exec </SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">pro_ImAnalysis_daily 
+@thedate=’20080312’</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">那么</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">SQL Server</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">就会使用</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">20080312</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">这个值作为下次参数</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">@thedate</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">的执行计划的参考值，而不会进行全表扫描了，但是如果使用</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">@thedate=null,</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">则下次执行计划就要根据全表扫描进行了。</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">有两种方式能够避免出现“</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN 
+style="PADDING-RIGHT: 0pt; DISPLAY: inline; PADDING-LEFT: 0pt; PADDING-BOTTOM: 0pt; COLOR: black; PADDING-TOP: 0pt; BACKGROUND-COLOR: yellow">Parameter 
+</SPAN>sniffing</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">”问题：</SPAN></P>
+<P style="MARGIN-LEFT: 18pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" 
+align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">(1)</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">通过使用</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">declare</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">声明的变量来代替参数：使用</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">set 
+@variable=@thedate</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">的方式，将出现</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">@thedate</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">的</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">sql</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">语句全部用</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">@variable</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">来代替。</SPAN></P>
+<P style="MARGIN-LEFT: 18pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" 
+align=left><SPAN style="FONT-FAMILY: 宋体">(2)&nbsp;</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">将受影响的</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">sql</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">语句隐藏起来，比如：</SPAN></P>
+<P style="MARGIN-LEFT: 42pt; TEXT-INDENT: -21pt; TEXT-ALIGN: left" 
+align=left><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">a)<SPAN 
+style="FONT: 7pt 'Times New Roman'; font-size-adjust: none; font-stretch: normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">将受影响的</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">sql</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">语句放到某个子存储过程中，比如我们在</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">@thedate</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">设置成为今天后再调用一个字存储过程将</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">@thedate</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">作为参数传入就可以了。</SPAN></P>
+<P style="MARGIN-LEFT: 42pt; TEXT-INDENT: -21pt; TEXT-ALIGN: left" 
+align=left><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">b)<SPAN 
+style="FONT: 7pt 'Times New Roman'; font-size-adjust: none; font-stretch: normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">使用</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">sp_executesql</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">来执行受影响的</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">sql</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">。执行计划不会被执行，除非</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">sp_executesql</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">语句执行完。</SPAN></P>
+<P style="MARGIN-LEFT: 42pt; TEXT-INDENT: -21pt; TEXT-ALIGN: left" 
+align=left><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">c)<SPAN 
+style="FONT: 7pt 'Times New Roman'; font-size-adjust: none; font-stretch: normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">使用动态</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">sql</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">（</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">”EXEC(@sql)”</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">来执行受影响的</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">sql</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 宋体">。</SPAN></P>
+<P align=left><SPAN style="FONT-FAMILY: 宋体">采用（1）的方法改造例子中的存储过程，如下：</SPAN></P>
+<P align=left><SPAN style="FONT-FAMILY: 宋体">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">ALTER</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"> <SPAN 
+style="COLOR: blue">PROCEDURE</SPAN> [dbo]<SPAN 
+style="COLOR: gray">.</SPAN>[pro_ImAnalysis_daily]</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">@var_thedate <SPAN 
+style="COLOR: blue">VARCHAR</SPAN><SPAN style="COLOR: gray">(</SPAN>30<SPAN 
+style="COLOR: gray">)</SPAN></SPAN></P>
+<P align=left>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">AS</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">BEGIN</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">declare</SPAN> @THEDATE <SPAN 
+style="COLOR: blue">VARCHAR</SPAN><SPAN style="COLOR: gray">(</SPAN>30<SPAN 
+style="COLOR: gray">)</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">IF</SPAN> @var_thedate <SPAN style="COLOR: gray">IS</SPAN> 
+<SPAN style="COLOR: gray">NULL</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">BEGIN</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">SET</SPAN> @var_thedate<SPAN 
+style="COLOR: gray">=</SPAN><SPAN style="COLOR: fuchsia">CONVERT</SPAN><SPAN 
+style="COLOR: gray">(</SPAN><SPAN style="COLOR: blue">VARCHAR</SPAN><SPAN 
+style="COLOR: gray">(</SPAN>30<SPAN style="COLOR: gray">),</SPAN><SPAN 
+style="COLOR: fuchsia">GETDATE</SPAN><SPAN style="COLOR: gray">()-</SPAN>1<SPAN 
+style="COLOR: gray">,</SPAN>112<SPAN style="COLOR: gray">);</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">END</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"></SPAN>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"></SPAN>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">SET</SPAN> @THEDATE<SPAN 
+style="COLOR: gray">=</SPAN>@var_thedate<SPAN 
+style="COLOR: gray">;</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">DELETE</SPAN> <SPAN style="COLOR: blue">FROM</SPAN> 
+RPT_IM_USERINFO_DAILY <SPAN style="COLOR: blue">WHERE</SPAN> THEDATE<SPAN 
+style="COLOR: gray">=</SPAN>@THEDATE<SPAN 
+style="COLOR: gray">;</SPAN></SPAN></P>
+<P align=left>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">INSERT</SPAN> RPT_IM_USERINFO_DAILY <SPAN 
+style="COLOR: gray">(</SPAN>THEDATE<SPAN 
+style="COLOR: gray">,</SPAN>ALLUSER<SPAN 
+style="COLOR: gray">,</SPAN>NEWUSER<SPAN style="COLOR: gray">)</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">SELECT</SPAN> AA<SPAN 
+style="COLOR: gray">.</SPAN>THEDATE<SPAN 
+style="COLOR: gray">,</SPAN>ALLUSER<SPAN 
+style="COLOR: gray">,</SPAN>NEWUSER</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">FROM</SPAN> </SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: gray">(</SPAN> <SPAN style="COLOR: gray">(</SPAN> <SPAN 
+style="COLOR: blue">SELECT</SPAN> THEDATE<SPAN style="COLOR: gray">,</SPAN><SPAN 
+style="COLOR: fuchsia">COUNT</SPAN><SPAN style="COLOR: gray">(</SPAN><SPAN 
+style="COLOR: blue">DISTINCT</SPAN> USERID<SPAN style="COLOR: gray">)</SPAN> 
+ALLUSER</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">FROM</SPAN> FACT</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">WHERE</SPAN> THEDATE<SPAN 
+style="COLOR: gray">=</SPAN>@THEDATE</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; <SPAN style="COLOR: blue">GROUP</SPAN> <SPAN 
+style="COLOR: blue">BY</SPAN> THEDATE</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: gray">)</SPAN> AA</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: gray">LEFT</SPAN> <SPAN 
+style="COLOR: gray">JOIN</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: gray">(</SPAN><SPAN style="COLOR: blue">SELECT</SPAN> 
+THEDATE<SPAN style="COLOR: gray">,</SPAN><SPAN 
+style="COLOR: fuchsia">COUNT</SPAN><SPAN style="COLOR: gray">(</SPAN><SPAN 
+style="COLOR: blue">DISTINCT</SPAN> USERID<SPAN style="COLOR: gray">)</SPAN> 
+NEWUSER</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<SPAN style="COLOR: blue">FROM</SPAN> FACT T1</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<SPAN style="COLOR: blue">WHERE</SPAN> <SPAN 
+style="COLOR: gray">NOT</SPAN> <SPAN 
+style="COLOR: gray">EXISTS(</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">SELECT</SPAN> 1 </SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">FROM</SPAN> FACT T2</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">WHERE</SPAN> T2<SPAN 
+style="COLOR: gray">.</SPAN>THEDATE<SPAN 
+style="COLOR: gray">&lt;</SPAN>@THEDATE</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<SPAN style="COLOR: gray">AND</SPAN> T1<SPAN 
+style="COLOR: gray">.</SPAN>USERID<SPAN style="COLOR: gray">=</SPAN>T2<SPAN 
+style="COLOR: gray">.</SPAN>USERID<SPAN style="COLOR: gray">)</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: gray">AND</SPAN> T1<SPAN 
+style="COLOR: gray">.</SPAN>THEDATE<SPAN 
+style="COLOR: gray">=</SPAN>@THEDATE</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<SPAN style="COLOR: blue">GROUP</SPAN> <SPAN style="COLOR: blue">BY</SPAN> 
+THEDATE</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<SPAN style="COLOR: gray">)</SPAN> BB</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">ON</SPAN> AA<SPAN 
+style="COLOR: gray">.</SPAN>THEDATE<SPAN style="COLOR: gray">=</SPAN>BB<SPAN 
+style="COLOR: gray">.</SPAN>THEDATE<SPAN 
+style="COLOR: gray">);</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">GO</SPAN></P>
+<P align=left>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-FAMILY: 宋体">测试执行速度为10分钟，我又检查了一下这个SQL，发现这个SQL有问题，这个SQL使用了not 
+exists，在一个大表里面使用not exists是不太明智的，所以，我又对这个sql进行了改进，改成如下：</SPAN></P>
+<P align=left><SPAN style="FONT-FAMILY: 宋体">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">ALTER</SPAN><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"> <SPAN 
+style="COLOR: blue">PROCEDURE</SPAN> [dbo]<SPAN 
+style="COLOR: gray">.</SPAN>[pro_ImAnalysis_daily]</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">@var_thedate <SPAN 
+style="COLOR: blue">VARCHAR</SPAN><SPAN style="COLOR: gray">(</SPAN>30<SPAN 
+style="COLOR: gray">)</SPAN></SPAN></P>
+<P align=left>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">AS</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">BEGIN</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">declare</SPAN> @THEDATE <SPAN 
+style="COLOR: blue">VARCHAR</SPAN><SPAN style="COLOR: gray">(</SPAN>30<SPAN 
+style="COLOR: gray">)</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">IF</SPAN> @var_thedate <SPAN style="COLOR: gray">IS</SPAN> 
+<SPAN style="COLOR: gray">NULL</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">BEGIN</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">SET</SPAN> @var_thedate<SPAN 
+style="COLOR: gray">=</SPAN><SPAN style="COLOR: fuchsia">CONVERT</SPAN><SPAN 
+style="COLOR: gray">(</SPAN><SPAN style="COLOR: blue">VARCHAR</SPAN><SPAN 
+style="COLOR: gray">(</SPAN>30<SPAN style="COLOR: gray">),</SPAN><SPAN 
+style="COLOR: fuchsia">GETDATE</SPAN><SPAN style="COLOR: gray">()-</SPAN>1<SPAN 
+style="COLOR: gray">,</SPAN>112<SPAN style="COLOR: gray">);</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">END</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"></SPAN>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"></SPAN>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">SET</SPAN> @THEDATE<SPAN 
+style="COLOR: gray">=</SPAN>@var_thedate<SPAN 
+style="COLOR: gray">;</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">DELETE</SPAN> <SPAN style="COLOR: blue">FROM</SPAN> 
+RPT_IM_USERINFO_DAILY <SPAN style="COLOR: blue">WHERE</SPAN> THEDATE<SPAN 
+style="COLOR: gray">=</SPAN>@THEDATE<SPAN 
+style="COLOR: gray">;</SPAN></SPAN></P>
+<P align=left>&nbsp;</P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">INSERT</SPAN> RPT_IM_USERINFO_DAILY<SPAN 
+style="COLOR: gray">(</SPAN>THEDATE<SPAN 
+style="COLOR: gray">,</SPAN>ALLUSER<SPAN 
+style="COLOR: gray">,</SPAN>NEWUSER<SPAN style="COLOR: gray">)</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">select</SPAN> @thedate <SPAN style="COLOR: blue">as</SPAN> 
+thedate<SPAN style="COLOR: gray">,</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: fuchsia">count</SPAN><SPAN style="COLOR: gray">(</SPAN><SPAN 
+style="COLOR: blue">distinct</SPAN> <SPAN style="COLOR: blue">case</SPAN> <SPAN 
+style="COLOR: blue">when</SPAN> today<SPAN style="COLOR: gray">&gt;</SPAN>0 
+<SPAN style="COLOR: blue">then</SPAN> userid <SPAN 
+style="COLOR: blue">else</SPAN> <SPAN style="COLOR: gray">null</SPAN> <SPAN 
+style="COLOR: blue">end</SPAN><SPAN style="COLOR: gray">)</SPAN> <SPAN 
+style="COLOR: blue">as</SPAN> alluser<SPAN 
+style="COLOR: gray">,</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: fuchsia">count</SPAN><SPAN style="COLOR: gray">(</SPAN><SPAN 
+style="COLOR: blue">distinct</SPAN> <SPAN style="COLOR: blue">case</SPAN> <SPAN 
+style="COLOR: blue">when</SPAN> dates<SPAN style="COLOR: gray">=</SPAN>0 <SPAN 
+style="COLOR: blue">then</SPAN> userid <SPAN style="COLOR: blue">else</SPAN> 
+<SPAN style="COLOR: gray">null</SPAN> <SPAN style="COLOR: blue">end</SPAN><SPAN 
+style="COLOR: gray">)</SPAN> <SPAN style="COLOR: blue">as</SPAN> 
+newuser</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: blue">from</SPAN> </SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: gray">(</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">select</SPAN> userid<SPAN 
+style="COLOR: gray">,</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: fuchsia">count</SPAN><SPAN style="COLOR: gray">(</SPAN><SPAN 
+style="COLOR: blue">CASE</SPAN> <SPAN style="COLOR: blue">WHEN</SPAN> 
+thedate<SPAN style="COLOR: gray">&gt;=</SPAN>@thedate <SPAN 
+style="COLOR: blue">then</SPAN> <SPAN style="COLOR: gray">null</SPAN> <SPAN 
+style="COLOR: blue">else</SPAN> thedate <SPAN 
+style="COLOR: blue">end</SPAN><SPAN style="COLOR: gray">)</SPAN> <SPAN 
+style="COLOR: blue">as</SPAN> dates<SPAN style="COLOR: gray">,</SPAN></SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: fuchsia">count</SPAN><SPAN style="COLOR: gray">(</SPAN><SPAN 
+style="COLOR: blue">case</SPAN> <SPAN style="COLOR: blue">when</SPAN> 
+thedate<SPAN style="COLOR: gray">=</SPAN>@thedate <SPAN 
+style="COLOR: blue">then</SPAN> thedate <SPAN style="COLOR: blue">else</SPAN> 
+<SPAN style="COLOR: gray">null</SPAN> <SPAN style="COLOR: blue">end</SPAN><SPAN 
+style="COLOR: gray">)</SPAN> <SPAN style="COLOR: blue">as</SPAN> 
+today</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">from</SPAN>&nbsp;&nbsp; FACT</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<SPAN style="COLOR: blue">group</SPAN> <SPAN style="COLOR: blue">by</SPAN> 
+userid</SPAN></P>
+<P align=left><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp; <SPAN 
+style="COLOR: gray">)</SPAN><SPAN style="COLOR: blue">as</SPAN> fact</SPAN></P>
+<P align=left><SPAN style="FONT-FAMILY: 宋体">GO</SPAN></P>
+<P align=left><SPAN style="FONT-FAMILY: 宋体">测试结果为30ms以下。</SPAN></P>
+<P>&nbsp;from:http://blog.csdn.net/emili/archive/2008/03/17/2192081.aspx</P>
+<DIV id=EntryTag>Tag标签: <A 
+href="http://www.cnblogs.com/wuming/tag/SQLServer/">SQLServer</A>,<A 
+href="http://www.cnblogs.com/wuming/tag/SQL/">SQL</A>,<A 
+href="http://www.cnblogs.com/wuming/tag/SQL+Server/">SQL Server</A></DIV>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/wuming/" 
+target=_blank>无名</A><BR>关注 - 1<BR>粉丝 - 0<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1450980,37329,1)><SPAN class=diggnum 
+id=digg_count_1450980>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1450980,37329,2)><SPAN class=burynum 
+id=bury_count_1450980>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1450980 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1450980>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/wuming/archive/2009/04/20/1439525.html">« 
+</A>上一篇：<A title="发布于2009-04-20 11:02" 
+href="http://www.cnblogs.com/wuming/archive/2009/04/20/1439525.html">js去掉前后空格</A><BR><A 
+href="http://www.cnblogs.com/wuming/archive/2009/05/07/1452029.html">» 
+</A>下一篇：<A title="发布于2009-05-07 16:13" 
+href="http://www.cnblogs.com/wuming/archive/2009/05/07/1452029.html">js 
+获取鼠标的绝对位置</A><BR></DIV>
+<SCRIPT 
+src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '463b420b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+</DIV>
+<DIV class=postfoot>posted on 2009-05-06 20:59 <A 
+href="http://www.cnblogs.com/wuming/">无名</A> 阅读(520) <A 
+href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#commentform">评论(2)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/wuming/admin/EditPosts.aspx?postid=1450980">编辑</A> 
+<A onclick="AddToWz(1450980);return false;" 
+href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#">收藏</A> 
+</DIV></DIV><IMG height=1 
+src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/1450980.jpg" 
+width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html"
+dc:identifier="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/wuming/services/trackbacks/1450980.aspx" />
+</rdf:RDF>
+--><A name=pagedcomment></A><A name=评论><BR>
+<DIV id=comments>
+<H3>评论</H3><SPAN id=span_comment_maxid style="DISPLAY: none">1521860</SPAN> 
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#1521233">#1楼</A><A 
+id=comment_anchor_1521233 name=1521233></A> <SPAN>2009-05-06 23:43 </SPAN><A 
+id=Comments1_CommentList_ctl00_NameLink href="http://www.cnblogs.com/wenjl520/" 
+target=_blank>温景良(Jason)</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æ¸©æ¯è¯(Jason)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1521233>收藏</SPAN> <BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("温景良(Jason)",1521233,"bfqorRSIeDivYXVwaQyupmU2dMQmnEGq7mq/2p55hUOlyg0VOzOP8g==")' 
+href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1521233,"bfqorRSIeDivYXVwaQyupmU2dMQmnEGq7mq/2p55hUOlyg0VOzOP8g==")' 
+href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%b8%a9%e6%99%af%e8%89%af(Jason)" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A 
+href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#1521860">#2楼</A><A 
+id=comment_anchor_1521860 name=1521860></A>[<SPAN class=louzhu>楼主</SPAN>]<A 
+name=Post></A> <SPAN>2009-05-07 16:16 </SPAN><A 
+id=Comments1_CommentList_ctl01_NameLink href="http://www.cnblogs.com/wuming/" 
+target=_blank>无名</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/+++æ&nbsp;å">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText><SPAN class=blog_comment_body 
+id=comment_body_1521860>@温景良(Jason)<BR>上面的解决方案可能只是用多表链接的时候。如果是表比较少应该不会出现这种情况。</SPAN> 
+<BR>&nbsp;&nbsp;<A 
+onclick='ReplyComment("   无名",1521860,"sGMerCFJv0fhOawekXKYhtj5MARpeJGiIHrgiM8TQfW+jLMXy+YOkw==")' 
+href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1521860,"sGMerCFJv0fhOawekXKYhtj5MARpeJGiIHrgiM8TQfW+jLMXy+YOkw==")' 
+href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=+++%e6%97%a0%e5%90%8d" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_EditLink></A> </DIV></DIV><BR></DIV>
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl04_comment_form>
+<DIV id=ctl04_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fwuming%2farchive%2f2009%2f05%2f06%2f1450980.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fwuming%2farchive%2f2009%2f05%2f06%2f1450980.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A href="http://job.cnblogs.com/offer/7427/" 
+target=_blank>沪江网招聘ASP.NET开发工程师</A><BR><A href="http://a4.yeshj.com/rd/35450/" 
+target=_blank>软件研发团队管理年会(上海，7.10-7.11)</A><BR><A href="http://news.cnblogs.com/" 
+target=_blank>IT新闻</A>:<BR>· <A href="http://news.cnblogs.com/n/65674/" 
+target=_blank>回顾传闻历程 苹果第4代iPhone大纪事(下)</A><BR>· <A 
+href="http://news.cnblogs.com/n/65673/" target=_blank>回顾传闻历程 
+苹果第4代iPhone大纪事(上)</A><BR>· <A href="http://news.cnblogs.com/n/65672/" 
+target=_blank>1.5GHz处理器 HTC新机Scorpion传闻再现</A><BR>· <A 
+href="http://news.cnblogs.com/n/65671/" target=_blank>移动互联将成就谁？</A><BR>· <A 
+href="http://news.cnblogs.com/n/65670/" target=_blank>AOL与谷歌合作即将到期 
+寻找下一任合作伙伴</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+alt="" 
+src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=SQLServer" target=_blank>SQLServer</A> <A 
+href="http://zzk.cnblogs.com/s?w=SQL" target=_blank>SQL</A> <A 
+href="http://zzk.cnblogs.com/s?w=SQL+Server" target=_blank>SQL Server</A> </DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/1450980/">SQL 
+Server中存储过程比直接运行SQL语句慢的原因</A></DIV></DIV></DIV>
+<DIV id=lefttemp style="DISPLAY: none">
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: silver" colSpan=7>
+      <TABLE class=CalTitle style="WIDTH: 100%; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev style="WIDTH: 15%"><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3378')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2009年5月</TD>
+          <TD class=CalNextPrev style="WIDTH: 15%" align=right><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3439')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>26</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>27</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>28</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>29</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle>1</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>2</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD style="WIDTH: 14%" align=middle>4</TD>
+    <TD style="WIDTH: 14%" align=middle>5</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wuming/archive/2009/5/6.html"><U>6</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wuming/archive/2009/5/7.html"><U>7</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>8</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>9</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>10</TD>
+    <TD style="WIDTH: 14%" align=middle>11</TD>
+    <TD style="WIDTH: 14%" align=middle>12</TD>
+    <TD style="WIDTH: 14%" align=middle>13</TD>
+    <TD style="WIDTH: 14%" align=middle>14</TD>
+    <TD style="WIDTH: 14%" align=middle>15</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>16</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>17</TD>
+    <TD style="WIDTH: 14%" align=middle>18</TD>
+    <TD style="WIDTH: 14%" align=middle>19</TD>
+    <TD style="WIDTH: 14%" align=middle>20</TD>
+    <TD style="WIDTH: 14%" align=middle>21</TD>
+    <TD style="WIDTH: 14%" align=middle>22</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>23</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>24</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wuming/archive/2009/5/25.html"><U>25</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>26</TD>
+    <TD style="WIDTH: 14%" align=middle>27</TD>
+    <TD style="WIDTH: 14%" align=middle>28</TD>
+    <TD style="WIDTH: 14%" align=middle>29</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>30</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/wuming/archive/2009/5/31.html"><U>31</U></A></TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>1</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>2</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" 
+align=middle>6</TD></TR></TBODY></TABLE>
+<H3>公告</H3>
+<DIV class=News>
+<DIV align=center><A href="http://www.amazingcounter.com/"><IMG 
+alt="Download Web Counters" 
+src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/counter.png" 
+border=0></A><BR><A 
+href="http://www.quality-singles.com/local/arizona.htm"><FONT color=#909090 
+size=2></FONT></A><A 
+href="http://www.quality-singles.com/local/mesa-az.htm"><FONT color=#909090 
+size=2></FONT></A></DIV><EMBED 
+src=http://www.clocklink.com/clocks/0012-silver.swf?TimeZone=GMT0800&amp; 
+width=150 height=150 type=application/x-shockwave-flash wmode="transparent">
+<DIV id=profile_block><A href="http://home.cnblogs.com/wuming/" 
+target=_blank>我的主页</A>&nbsp; <A href="http://home.cnblogs.com/wuming/detail/" 
+target=_blank>个人资料</A><BR><A href="http://home.cnblogs.com/wuming/ing/" 
+target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/æ&nbsp;å" 
+target=_blank>发短消息</A></DIV></DIV>
+<SCRIPT type=text/javascript>
+var blogapp = 'wuming';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/wuming/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/wuming/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/wuming/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/wuming/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/wuming/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/wuming/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/wuming/tag/">我的标签</A> </LI></UL></DIV>
+<H3 class=catListTitle>我的标签</H3>
+<DIV id=MyTag>
+<UL>
+  <LI><A href="http://www.cnblogs.com/wuming/tag/SQL+Server/">SQL Server</A>(12)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/Asp.net/">Asp.net</A>(12)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/SQL/">SQL</A>(10)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/SQLServer/">SQLServer</A>(8)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/C#/">C#</A>(4)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/web/">web</A>(4)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/SQL+SERVER+å³é®å&shy;/">SQL 
+  SERVER 关键字</A>(3)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/XML/">XML</A>(3)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/vs2005/">vs2005</A>(2)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/Other/">Other</A>(2)
+  <LI><A href="http://www.cnblogs.com/wuming/tag/">更多</A> </LI></UL></DIV>
+<H3>随笔档案</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/wuming/archive/2010/05.html">2010年5月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/wuming/archive/2010/04.html">2010年4月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/wuming/archive/2010/03.html">2010年3月 (8)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/wuming/archive/2010/02.html">2010年2月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/wuming/archive/2010/01.html">2010年1月 (4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/12.html">2009年12月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/11.html">2009年11月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/10.html">2009年10月 (4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/08.html">2009年8月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/07.html">2009年7月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/06.html">2009年6月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/05.html">2009年5月 (6)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/04.html">2009年4月 (4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/03.html">2009年3月 (6)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/wuming/archive/2009/02.html">2009年2月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/wuming/archive/2008/10.html">2008年10月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/wuming/archive/2008/09.html">2008年9月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/wuming/archive/2008/07.html">2008年7月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/wuming/archive/2008/06.html">2008年6月 (9)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_Link 
+  href="http://www.cnblogs.com/wuming/archive/2008/05.html">2008年5月 (7)</A> 
+</LI></UL>
+<H3>收藏夹</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/wuming/favorite/141881.html">My Category(1)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_RssLink 
+  title="Subscribe to My Category(1)" 
+  onclick="open_link('http://www.cnblogs.com/wuming/favorite/141881.html/rss');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html###">(rss)</A> 
+  </LI></UL>
+<H3>好友</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://dflying.cnblogs.com/">dflying</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_RssLink 
+  title="Subscribe to dflying" 
+  onclick="open_link('http://dflying.cnblogs.com/rss');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link 
+  href="http://tuyile006.cnblogs.com/">DotNet</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_RssLink 
+  title="Subscribe to DotNet" 
+  onclick="open_link('http://tuyile006.cnblogs.com/rss');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_Link 
+  href="http://skylaugh.cnblogs.com/">skylaugh</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_RssLink 
+  title="Subscribe to skylaugh" 
+  onclick="open_link('http://skylaugh.cnblogs.com/rss');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_Link 
+  href="http://terrylee.cnblogs.com/">TerryLee </A><A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_RssLink 
+  title="Subscribe to TerryLee " 
+  onclick="open_link('http://terrylee.cnblogs.com/rss');return false;" 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl05_Link 
+  href="http://xhan.cnblogs.com/">韩杰</A> </LI></UL>
+<H3 class=catListTitle>最新评论 <A id=SingleColumn1__318407a_RSSHyperlink1 
+href="http://www.cnblogs.com/wuming/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/xml.gif"></A></H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/07/1452029.html#1647949">1.&nbsp;Re:js 
+  获取鼠标的绝对位置</A> 
+  <LI style="WORD-BREAK: break-all">good 搜藏了 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Jacky001 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/10/09/1306992.html#1642577">2.&nbsp;Re:c# 
+  Settings.settings 设置</A> 
+  <LI style="WORD-BREAK: break-all">很好很强大 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Shuke 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#1521860">3.&nbsp;re: 
+  SQL Server中存储过程比直接运行SQL语句慢的原因</A> 
+  <LI 
+  style="WORD-BREAK: break-all">@温景良(Jason)<BR>上面的解决方案可能只是用多表链接的时候。如果是表比较少应该不会出现这种情况。 
+
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">-- 无名 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html#1521233">4.&nbsp;re: 
+  SQL Server中存储过程比直接运行SQL语句慢的原因</A> 
+  <LI style="WORD-BREAK: break-all">收藏 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--温景良(Jason) 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__318407a_CommentList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/07/03/1230964.html#1243408">5.&nbsp;re: 
+  简历</A> 
+  <LI style="WORD-BREAK: break-all">第一个项目好强大!!! 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--高某 </LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/10/09/1306992.html">1.&nbsp;c# 
+  Settings.settings 设置(2953)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/05/30/1210856.html">2.&nbsp;怎样编写注册表reg文件(2062)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/03/26/1422304.html">3.&nbsp;UTC时间(1655)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/02/26/1398931.html">4.&nbsp;C#获取当前路径的方法集合 
+  (1088)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/06/19/1226026.html">5.&nbsp;Sql选择字段唯一值并上后面的字段 
+  (907)</A> </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/06/1450980.html">1.&nbsp;SQL 
+  Server中存储过程比直接运行SQL语句慢的原因(2)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/06/19/file.html">2.&nbsp;Asp.Net 
+  文件操作基类(1)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/10/09/1306992.html">3.&nbsp;c# 
+  Settings.settings 设置(1)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2009/05/07/1452029.html">4.&nbsp;js 
+  获取鼠标的绝对位置(1)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/wuming/archive/2008/06/07/1215541.html">5.&nbsp;揭开Socket编程的面纱(1)</A> 
+  </LI></UL></DIV></DIV>
+<DIV class=footer>
+<P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" href="http://www.cnblogs.com/" 
+name=Hyperlink1>博客园</A> <BR>Copyright © 无名 </P></DIV></FORM>
+<SCRIPT src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT 
+src="SQL Server中存储过程比直接运行SQL语句慢的原因 - 无名 - 博客园#1521233_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

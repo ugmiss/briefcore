@@ -1,0 +1,1601 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html -->
+<HTML><HEAD><TITLE>dsoframer控件学习小结 - jisen - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=C#,dsoframer控件学习小结 name=keywords><LINK 
+href="dsoframer控件学习小结 - jisen - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK id=MainCss 
+href="dsoframer控件学习小结 - jisen - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK href="dsoframer控件学习小结 - jisen - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="dsoframer控件学习小结 - jisen - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK 
+href="dsoframer控件学习小结 - jisen - 博客园_files/shThemeDefault.css" type=text/css 
+rel=stylesheet><LINK title=RSS href="http://www.cnblogs.com/jisen/rss" 
+type=application/rss+xml rel=alternate><LINK title=RSD 
+href="http://www.cnblogs.com/jisen/rsd.xml" type=application/rsd+xml 
+rel=EditURI>
+<SCRIPT src="dsoframer控件学习小结 - jisen - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="dsoframer控件学习小结 - jisen - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="dsoframer控件学习小结 - jisen - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=815772.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<TABLE class=Framework cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD colSpan=3>
+      <DIV id=top>
+      <TABLE cellSpacing=0 cellPadding=10>
+        <TBODY>
+        <TR>
+          <TD noWrap>
+            <H1><A class=headermaintitle id=Header1_HeaderTitle 
+            href="http://www.cnblogs.com/jisen/">jisen</A></H1></TD></TR></TBODY></TABLE></DIV>
+      <DIV id=sub>
+      <DIV id=sub-right>
+      <DIV class=BlogStats>posts - 24, comments - 78, trackbacks - 2, articles - 
+      1</DIV></DIV>&nbsp; <A id=Header1_MyLinks1_HomeLink 
+      href="http://www.cnblogs.com/">博客园</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_MyHomeLink 
+      href="http://www.cnblogs.com/jisen/">首页</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_NewPostLink 
+      href="http://www.cnblogs.com/jisen/admin/EditPosts.aspx?opt=1">新随笔</A>&nbsp;:: 
+      <A id=Header1_MyLinks1_ContactLink accessKey=9 
+      href="http://space.cnblogs.com/msg/send/jisen">联系</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_Syndication 
+      href="http://www.cnblogs.com/jisen/rss">订阅</A> <A class=XMLLink 
+      id=Header1_MyLinks1_XMLLink href="http://www.cnblogs.com/jisen/rss"><IMG 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      alt=订阅 src="dsoframer控件学习小结 - jisen - 博客园_files/xml.gif"></A>&nbsp;:: <A 
+      id=Header1_MyLinks1_Admin 
+      href="http://www.cnblogs.com/jisen/admin/EditPosts.aspx">管理</A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=LeftCell>
+      <DIV id=leftmenu></DIV></TD>
+    <TD class=MainCell>
+      <DIV id=main>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A class=singleposttitle id=ctl03_TitleUrl 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html">dsoframer控件学习小结</A> 
+      </H2>Posted on 2007-07-12 17:24 <A 
+      href="http://www.cnblogs.com/jisen/">jisen</A> 阅读(4309) <A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">评论(37)</A> 
+      &nbsp;<A 
+      href="http://www.cnblogs.com/jisen/admin/EditPosts.aspx?postid=815772">编辑</A> 
+      <A onclick="AddToWz(815772);return false;" 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#">收藏</A> 
+      所属分类: <A href="http://www.cnblogs.com/jisen/category/105314.html">C#</A> 
+      <IMG height=1 src="dsoframer控件学习小结 - jisen - 博客园_files/815772.jpg" 
+      width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html"
+dc:identifier="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/jisen/services/trackbacks/815772.aspx" />
+</rdf:RDF>
+--></DIV>
+      <DIV class=postbody>
+      <P>根据自己对dsoframer控件的学习，想把dsoframer控件进行简单的包装为C#的usercontrol，大体需要作如下：（创建windows的usercontrol的步骤就不再说了。。。）<BR>我们暂时不对dso打开网络文件的功能和上传文件功能作过多研究，一来由于我自己不用它提供的这个功能，二来确实觉得它的这方面功能不是很强大而且使用起来比较<BR>麻烦，呵呵，请见谅！<BR>1.使用前注册该dsoframer控件，我把该dso控件当作嵌入资源，用学习笔记1中的方法注册即可<BR>&nbsp;&nbsp;/// 
+      &lt;summary&gt;<BR>&nbsp;&nbsp;/// usercontrol控件初始化<BR>&nbsp;&nbsp;/// 
+      &lt;/summary&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_sFilePath"&gt;本地文件全路径&lt;/param&gt;<BR>&nbsp;&nbsp;public void 
+      Init(string 
+      _sFilePath)<BR>&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;try<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;RegControl();//注册控件<BR>&nbsp;&nbsp;&nbsp;&nbsp;if(!CheckFile(_sFilePath))//判断是否为所支持的office文件<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw 
+      new 
+      ApplicationException("文件不存在或未标识的文件格式!");<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;AddOfficeControl();//这里一定要先把dso控件加到界面上才能初始化dso控件,这个dso控件在没有被show出来之前是不能进行初始化操作的,很奇怪为什&nbsp;</P>
+      <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      //么作者这样考虑.....<BR>&nbsp;&nbsp;&nbsp;&nbsp;InitOfficeControl(_sFilePath);<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;catch(Exception 
+      ex)<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;throw 
+      ex;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;}</P>
+      <P>&nbsp;&nbsp;public bool RegControl()<BR>&nbsp; 
+      &nbsp;&nbsp;{<BR>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;try<BR>&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Assembly 
+      thisExe = Assembly.GetExecutingAssembly();<BR>&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp; &nbsp;System.IO.Stream myS = 
+      thisExe.GetManifestResourceStream("NameSpaceName.dsoframer.ocx");<BR>&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; string sPath = “该ocx文件的实际路径”+ 
+      @"/dsoframer.ocx";<BR>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;ProcessStartInfo psi = new 
+      ProcessStartInfo("regsvr32","/s " +sPath);<BR>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;Process.Start(psi);<BR>&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;catch(Exception 
+      ex)<BR>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+      &nbsp;MessageBox.Show(ex.Message);<BR>&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;}<BR>&nbsp; &nbsp;&nbsp; return true;<BR>&nbsp; 
+      &nbsp;&nbsp;}</P>
+      <P>2.动态向usercontrol添加dsoframer实例<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      private AxDSOFramer.AxFramerControl m_axFramerControl = new 
+      AxDSOFramer.AxFramerControl();<BR>&nbsp;&nbsp;/// 
+      &lt;summary&gt;<BR>&nbsp;&nbsp;/// 添加控件<BR>&nbsp;&nbsp;/// 
+      &lt;/summary&gt;<BR>&nbsp;&nbsp;private void 
+      AddOfficeControl()<BR>&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;try<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;this.m_Panel_Control.Controls.Add(m_axFramerControl);<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_axFramerControl.Dock 
+      = 
+      DockStyle.Fill;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;catch(Exception 
+      ex)<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;throw 
+      ex;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;}<BR>3.初始化dsoframer控件 
+      ，我这里用已经有的文件进行dso初始化，<BR>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      初始化office控件<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;/// 
+      &lt;param name="_sFilePath"&gt;本地文档路径&lt;/param&gt;<BR>&nbsp;&nbsp;private 
+      void InitOfficeControl(string 
+      _sFilePath)<BR>&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;try<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;if(m_axFramerControl 
+      == 
+      null)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw 
+      new 
+      ApplicationException("请先初始化office控件对象！");<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;//this.m_axFramerControl.SetMenuDisplay(48);//这个方法很特别，一个组合菜单控制方法，我还没有找到参数的规律，有兴趣的朋友可以研究一下<BR>&nbsp;&nbsp;&nbsp;&nbsp;string 
+      sExt = 
+      System.IO.Path.GetExtension(_sFilePath).Replace(".","");<BR>&nbsp;&nbsp;&nbsp;&nbsp;//this.m_axFramerControl.CreateNew(this.LoadOpenFileType(sExt));//创建新的文件<BR>&nbsp;&nbsp;&nbsp;&nbsp;this.m_axFramerControl.Open(_sFilePath,false,this.LoadOpenFileType(sExt),"","");//打开文件<BR>&nbsp;&nbsp;&nbsp;&nbsp;//隐藏标题<BR>&nbsp;&nbsp;&nbsp;&nbsp;this.m_axFramerControl.Titlebar 
+      = false;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;catch(Exception 
+      ex)<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;throw 
+      ex;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;}</P>
+      <P>&nbsp;&nbsp;&nbsp;&nbsp; 
+      下面这个方法是dso打开文件时需要的一个参数，代表office文件类型<BR>&nbsp;&nbsp;/// 
+      &lt;summary&gt;<BR>&nbsp;&nbsp;/// 根据后缀名得到打开方式<BR>&nbsp;&nbsp;/// 
+      &lt;/summary&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_sExten"&gt;&lt;/param&gt;<BR>&nbsp;&nbsp;/// 
+      &lt;returns&gt;&lt;/returns&gt;<BR>&nbsp;&nbsp;private string 
+      LoadOpenFileType(string 
+      _sExten)<BR>&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;try<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;string 
+      sOpenType = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;switch 
+      (_sExten.ToLower())<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 
+      "xls":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sOpenType = 
+      "Excel.Sheet";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 
+      "doc":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sOpenType = 
+      "Word.Document";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 
+      "ppt":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sOpenType = 
+      "PowerPoint.Show";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 
+      "vsd":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sOpenType = 
+      "Visio.Drawing";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sOpenType 
+      = 
+      "Word.Document";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;return 
+      sOpenType;</P>
+      <P>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;catch (Exception 
+      ex)<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;throw 
+      ex;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;}</P>
+      <P>4.我觉的最重要的一步，就是公布dso当前的活动对象，因为自己做这个usercontrol功能不强，但是不能把人家dso功能给杀掉，给使用者留一个更大的空间。。。。<BR>&nbsp;&nbsp;/// 
+      &lt;summary&gt;<BR>&nbsp;&nbsp;/// 获取当前操作的文档<BR>&nbsp;&nbsp;/// 
+      &lt;/summary&gt;<BR>&nbsp;&nbsp;public object 
+      ActiveDocument<BR>&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;get<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;return 
+      this.m_axFramerControl.ActiveDocument;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;}</P>
+      <P>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      获取当前控件对象<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;public 
+      AxDSOFramer.AxFramerControl 
+      OfficeObject<BR>&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;get<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;return 
+      this.m_axFramerControl;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;}<BR>5.公布了一些简单的excel和word操作方法，<BR>&nbsp;&nbsp;#region 
+      public word method,这几个方法只对word文档有效</P>
+      <P>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      设置保留修改痕迹（可以通过word工具栏的审批修改，此方法仅仅是提供初始化）<BR>&nbsp;&nbsp;/// 
+      这个方法挺好,可以模拟键盘按键,很巧啊.(以前很长时间都不知道可以这样...)<BR>&nbsp;&nbsp;/// 
+      &lt;/summary&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_bIs"&gt;&lt;/param&gt;<BR>&nbsp;&nbsp;public void 
+      WordSetSaveTrace()<BR>&nbsp;&nbsp;</P>
+      <P>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      替换标签下<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_sMark"&gt;&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_sReplaceText"&gt;&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_IsD"&gt;替换后是否突出显示&lt;/param&gt;<BR>&nbsp;&nbsp;/// 
+      &lt;returns&gt;&lt;/returns&gt;<BR>&nbsp;&nbsp;public bool 
+      WordReplace(string _sMark,string _sReplaceText,bool 
+      _IsD)<BR>&nbsp;&nbsp;</P>
+      <P>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      文本替换<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_sOrialText"&gt;&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_sReplaceText"&gt;&lt;/param&gt;<BR>&nbsp;&nbsp;/// 
+      &lt;returns&gt;&lt;/returns&gt;<BR>&nbsp;&nbsp;public bool 
+      WordReplace(string _sOrialText,string _sReplaceText)<BR>&nbsp;&nbsp;</P>
+      <P>&nbsp;&nbsp;#endregion</P>
+      <P>&nbsp;&nbsp;#region public excel method</P>
+      <P>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      向固定位置填值<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_sValue"&gt;填写内容&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iBeginRow"&gt;开始行&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iBeginCol"&gt;开始列&lt;/param&gt;<BR>&nbsp;&nbsp;public void 
+      ExcelFillValue(string _sValue,int _iBeginRow,int 
+      _iBeginCol)<BR>&nbsp;&nbsp;</P>
+      <P>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      向固定位置填值<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_sValue"&gt;填写对象&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iBeginRow"&gt;开始行&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iBeginCol"&gt;开始列&lt;/param&gt;<BR>&nbsp;&nbsp;public void 
+      ExcelFillValue(Object _sValue,int _iBeginRow,int 
+      _iBeginCol)<BR>&nbsp;&nbsp;</P>
+      <P>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      向固定位置填值<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_ds"&gt;填写内容&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iBeginRow"&gt;开始行&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iBeginCol"&gt;开始列&lt;/param&gt;<BR>&nbsp;&nbsp;public void 
+      ExcelFillValue(System.Data.DataSet _ds,int _iBeginRow,int _iBeginCol,bool 
+      _IsTitle)<BR>&nbsp;&nbsp;</P>
+      <P>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      清空excel文档<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;public void 
+      ExcelClear()<BR>&nbsp;&nbsp;</P>
+      <P>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      清空固定位置的内容<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iBeginRow"&gt;开始行&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iBeginCol"&gt;开始列&lt;/param&gt;<BR>&nbsp;&nbsp;public void 
+      ExcelClear(int _iBeginRow,int _iBeginCol)<BR>&nbsp;&nbsp;</P>
+      <P>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      清空指定区域的内容<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iBeginRow"&gt;开始行&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iBeginCol"&gt;开始列&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iEndRow"&gt;结束行&lt;/param&gt;<BR>&nbsp;&nbsp;/// &lt;param 
+      name="_iEndCol"&gt;结束列&lt;/param&gt;<BR>&nbsp;&nbsp;public void 
+      ExcelClear(int _iBeginRow,int _iBeginCol,int _iEndRow,int 
+      _iEndCol)<BR>&nbsp;&nbsp;<BR>&nbsp;&nbsp;#endregion<BR>&nbsp;&nbsp;&nbsp; 
+      以上这些都是对excel和word文档操作的小儿科,害怕贴出来各位大虾见笑,不敢贴了.....</P>
+      <P>6.公布一些简单的方法(保存和另存为方法是防止菜单和工具栏被隐藏的情况下不能保存),这类应该有很多方法,我目前只用了这些个所以....<BR>&nbsp;&nbsp;/// 
+      &lt;summary&gt;<BR>&nbsp;&nbsp;/// 保存<BR>&nbsp;&nbsp;/// 
+      &lt;/summary&gt;<BR>&nbsp;&nbsp;public void 
+      Save()<BR>&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;try<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;//先保存<BR>&nbsp;&nbsp;&nbsp;&nbsp;this.m_axFramerControl.Save(true,true,"","");<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;catch(Exception 
+      ex)<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;throw 
+      ex;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;}</P>
+      <P><BR>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      另存为<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;public void 
+      SaveAs()<BR>&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;try<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;//另存为<BR>&nbsp;&nbsp;&nbsp;&nbsp;SaveFileDialog 
+      sfd = new SaveFileDialog();<BR>&nbsp;&nbsp;&nbsp;&nbsp;string sExt = 
+      System.IO.Path.GetExtension(this.m_sFilePath).Replace(".","");<BR>&nbsp;&nbsp;&nbsp;&nbsp;sfd.Filter 
+      = sExt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;if(sfd.ShowDialog() == 
+      DialogResult.OK)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string 
+      sSavePath = 
+      sfd.FileName;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(System.IO.File.Exists(sSavePath))<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.IO.File.Delete(sSavePath);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.m_axFramerControl.SaveAs(sSavePath,this.LoadOpenFileType(sExt));<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;catch(Exception 
+      ex)<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;throw 
+      ex;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;}</P>
+      <P>&nbsp;&nbsp;/// &lt;summary&gt;<BR>&nbsp;&nbsp;/// 
+      关闭当前界面<BR>&nbsp;&nbsp;/// &lt;/summary&gt;<BR>&nbsp;&nbsp;public void 
+      Close()<BR>&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;try<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;if(this.m_axFramerControl 
+      != 
+      null)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.m_axFramerControl.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;catch(Exception 
+      ex)<BR>&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;throw 
+      ex;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;}</P>
+      <P>最后如果想把该dso控件的注册去掉也可以,因为我没有办法得到该控件是否在机器上注册过,所以每次初始化都要注册,不知道园子里的各位朋友有没有办法检测,还请赐教?</P>
+      <P>好了,一个简单的可以用于windows程序的office在线编辑控件完成了.</P>
+      <DIV id=digg_block>
+      <DIV id=author_profile>
+      <DIV class=author_profile_info><A href="http://home.cnblogs.com/jisen/" 
+      target=_blank><IMG class=author_avatar alt="" 
+      src="dsoframer控件学习小结 - jisen - 博客园_files/u23600.jpg"></A> 
+      <DIV class=author_profile_info><A href="http://home.cnblogs.com/jisen/" 
+      target=_blank>jisen</A><BR>关注 - 0<BR>粉丝 - 0<BR></DIV></DIV>
+      <DIV class=clear></DIV>
+      <DIV id=author_profile_follow><A onclick="login();return false;" 
+      href="javascript:void(0);">关注博主</A></DIV></DIV>
+      <DIV id=div_digg>
+      <DIV class=diggit onclick=DiggIt(815772,27159,1)><SPAN class=diggnum 
+      id=digg_count_815772>1</SPAN> </DIV>
+      <DIV class=buryit onclick=DiggIt(815772,27159,2)><SPAN class=burynum 
+      id=bury_count_815772>0</SPAN> </DIV>
+      <DIV class=clear></DIV><SPAN id=span_isdigged_815772 
+      style="DISPLAY: none">0</SPAN> 
+      <DIV class=diggword id=digg_word_815772>(请您对文章做出评价)</DIV></DIV></DIV>
+      <DIV class=clear></DIV>
+      <DIV id=post_next_prev><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/04/805123.html">« 
+      </A>上一篇：<A title="发布于2007-07-04 08:53" 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/04/805123.html">dsoframer学习三（添加菜单以及菜单事件）。。。</A><BR><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/20/825761.html">» 
+      </A>下一篇：<A title="发布于2007-07-20 17:05" 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/20/825761.html">C#实现数据库备份学习</A><BR></DIV>
+      <SCRIPT src="dsoframer控件学习小结 - jisen - 博客园_files/google_service.js" 
+      type=text/javascript></SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '34763d0b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+
+      <DIV id=post_body_ad style="MARGIN-TOP: 5px">
+      <SCRIPT type=text/javascript> try { GA_googleFillSlot("cnblogs_blogpost_body");}catch (e) { } 
+ blog_ad_has_shown=true;</SCRIPT>
+      </DIV></DIV></DIV><A name=pagedcomment></A>
+      <H3>Feedback</H3>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#829650">#1楼</A><A 
+      id=comment_anchor_829650 name=829650></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("小鱼儿",829650,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(829650,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl00_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl00_EditLink></A> </H2>2007-07-24 16:54 by <A 
+      id=Comments1_CommentList_ctl00_NameLink target=_blank>小鱼儿[未注册用户]</A> 
+</DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_829650>你好！可以把你做的本文的例子发一份给我吗？我正在用dsoframer编winform下的程序，苦于找不到合适的接口语句。我的电子邮箱 
+      :yvxiang@163.com,谢谢!</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#830683">#2楼</A><A 
+      id=comment_anchor_830683 name=830683></A>[<SPAN class=louzhu>楼主</SPAN>] 
+      &nbsp;&nbsp;<A 
+      onclick='ReplyComment("jisen",830683,"y/7ZJClKCSD/60Tu6xxOAbKz8yREq/WFnE2hmP2Kxvvyz9pjUryjfA==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(830683,"y/7ZJClKCSD/60Tu6xxOAbKz8yREq/WFnE2hmP2Kxvvyz9pjUryjfA==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=jisen" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl01_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl01_EditLink></A> </H2>2007-07-25 13:13 by <A 
+      id=Comments1_CommentList_ctl01_NameLink 
+      href="http://www.cnblogs.com/jisen/" target=_blank>jisen</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/jisen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_830683>已经发送。</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#836699">#3楼</A><A 
+      id=comment_anchor_836699 name=836699></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("maomao",836699,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(836699,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl02_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl02_EditLink></A> </H2>2007-07-30 18:17 by <A 
+      id=Comments1_CommentList_ctl02_NameLink target=_blank>maomao[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_836699>我对这个控件不太明白，它能不能够放到工具箱拖拽呢？您能不能给我一个实例，就是在web程序中使用这个控件的简单实例就好。我刚刚学，如果问得太傻，请您谅解。我的邮箱 
+      woshixiaomao123456@126.com</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#839283">#4楼</A><A 
+      id=comment_anchor_839283 name=839283></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("jisen",839283,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(839283,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl03_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl03_EditLink></A> </H2>2007-08-01 17:21 by <A 
+      id=Comments1_CommentList_ctl03_NameLink target=_blank>jisen[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_839283>to: maomao 
+      <BR>这个控件是windows控件，不支持web</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#881109">#5楼</A><A 
+      id=comment_anchor_881109 name=881109></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("GZX",881109,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(881109,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl04_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl04_EditLink></A> </H2>2007-09-04 10:08 by <A 
+      id=Comments1_CommentList_ctl04_NameLink target=_blank>GZX[未注册用户]</A> 
+</DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_881109>jisen，你好，我最近也在看这个控件，但是看不太明白，能把你的这个实例的代码发给我一份吗？谢谢你啊！我的信箱： 
+      <BR>gaozhengxu@yahoo.com.cn</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#887419">#6楼</A><A 
+      id=comment_anchor_887419 name=887419></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("jjq",887419,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(887419,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl05_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl05$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl05_EditLink></A> </H2>2007-09-09 14:22 by <A 
+      id=Comments1_CommentList_ctl05_NameLink target=_blank>jjq[未注册用户]</A> 
+</DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_887419>我的邮箱 rowenta@citiz.net <BR></SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#919903">#7楼</A><A 
+      id=comment_anchor_919903 name=919903></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("fixit",919903,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(919903,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl06_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl06$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl06_EditLink></A> </H2>2007-10-10 17:49 by <A 
+      id=Comments1_CommentList_ctl06_NameLink target=_blank>fixit[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_919903>能给我一份么？谢谢！ <BR>cnfixit@gmail.com</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#919942">#8楼</A><A 
+      id=comment_anchor_919942 name=919942></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("fixit",919942,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(919942,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl07_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl07$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl07_EditLink></A> </H2>2007-10-10 18:14 by <A 
+      id=Comments1_CommentList_ctl07_NameLink target=_blank>fixit[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_919942>jisen <BR><BR>看了你的上一篇文章茅塞顿开，非常感谢！ 
+      <BR>现在就是有一点，这个dsoframer放在form上的时候有个默认的file菜单 <BR>很不好看，怎么去掉呢？ 
+      <BR>我用doc.CommandBars["File"].Controls[1].Enabled = 
+      false;测试了不起作用</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#927756">#9楼</A><A 
+      id=comment_anchor_927756 name=927756></A>[<SPAN class=louzhu>楼主</SPAN>] 
+      &nbsp;&nbsp;<A 
+      onclick='ReplyComment("jisen",927756,"y/7ZJClKCSD/60Tu6xxOAbKz8yREq/WFnE2hmP2Kxvvyz9pjUryjfA==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(927756,"y/7ZJClKCSD/60Tu6xxOAbKz8yREq/WFnE2hmP2Kxvvyz9pjUryjfA==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=jisen" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl08_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl08$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl08_EditLink></A> </H2>2007-10-17 16:15 by <A 
+      id=Comments1_CommentList_ctl08_NameLink 
+      href="http://www.cnblogs.com/jisen/" target=_blank>jisen</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/jisen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_927756>@fixit : 
+      <BR>我也有这个问题，试验了很多都去不掉，个人感觉这个默认的file菜单不是word本身自带的那个file菜单，应该是dsoframer的，可能去不掉。不知道园子里的高手注意到这个控件的这个问题没有？ 
+      <BR></SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#932597">#10楼</A><A 
+      id=comment_anchor_932597 name=932597></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("fixit",932597,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(932597,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl09_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl09$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl09_EditLink></A> </H2>2007-10-22 04:15 by <A 
+      id=Comments1_CommentList_ctl09_NameLink target=_blank>fixit[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_932597>@jisen 
+      <BR><BR>file那个菜单去掉了，在源码里一点一点搜索到相关的东西以后注释掉再编译下就没有file菜单了 
+      <BR>但是有个问题，你在用dsoframer打开word文档的时候有没显示一下内容又不显示了，非要拖动下滚动条或者转下鼠标滚轮内容才能显示出来的情况？ 
+      <BR>郁闷的要死……</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#938474">#11楼</A><A 
+      id=comment_anchor_938474 name=938474></A>[<SPAN class=louzhu>楼主</SPAN>] 
+      &nbsp;&nbsp;<A 
+      onclick='ReplyComment("jisen",938474,"y/7ZJClKCSD/60Tu6xxOAbKz8yREq/WFnE2hmP2Kxvvyz9pjUryjfA==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(938474,"y/7ZJClKCSD/60Tu6xxOAbKz8yREq/WFnE2hmP2Kxvvyz9pjUryjfA==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=jisen" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl10_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl10$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl10_EditLink></A> </H2>2007-10-26 11:42 by <A 
+      id=Comments1_CommentList_ctl10_NameLink 
+      href="http://www.cnblogs.com/jisen/" target=_blank>jisen</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/jisen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_938474>源代码我没有，只有ocx，不知道是C++还是C#？我没有遇到过你的问题，就是加载文档比较慢。如果文件内容不显示，会不会和你修改源代码有关，你先查找一下程序，要是实在不行的话，就先找一个临时解决办法，或者可以模拟键盘事件。</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#946866">#12楼</A><A 
+      id=comment_anchor_946866 name=946866></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("阳光女孩",946866,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(946866,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl11_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl11$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl11_EditLink></A> </H2>2007-11-02 13:31 by <A 
+      id=Comments1_CommentList_ctl11_NameLink target=_blank>阳光女孩[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_946866>你好，我现在也在用这个控件做一个打开word的程序，只是刚刚接触这个控件还不会用，您能发给我一点代码（c#）吗？谢谢！ 
+      <BR>我的邮箱是p-happy-666@163.com</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#949900">#13楼</A><A 
+      id=comment_anchor_949900 name=949900></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("阳光女孩",949900,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(949900,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl12_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl12$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl12_EditLink></A> </H2>2007-11-05 15:27 by <A 
+      id=Comments1_CommentList_ctl12_NameLink target=_blank>阳光女孩[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_949900>博主 
+，如果WORD里面有图表的话，用这个控件能将图表显示出来吗？</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#950705">#14楼</A><A 
+      id=comment_anchor_950705 name=950705></A>[<SPAN class=louzhu>楼主</SPAN>] 
+      &nbsp;&nbsp;<A 
+      onclick='ReplyComment("jisen",950705,"y/7ZJClKCSD/60Tu6xxOAbKz8yREq/WFnE2hmP2Kxvvyz9pjUryjfA==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(950705,"y/7ZJClKCSD/60Tu6xxOAbKz8yREq/WFnE2hmP2Kxvvyz9pjUryjfA==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=jisen" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl13_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl13$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl13_EditLink></A> </H2>2007-11-06 10:27 by <A 
+      id=Comments1_CommentList_ctl13_NameLink 
+      href="http://www.cnblogs.com/jisen/" target=_blank>jisen</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/jisen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_950705>@阳光女孩: 
+      <BR>可以将word中的图表显示出来。代码都已经在上面了。</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1148397">#15楼</A><A 
+      id=comment_anchor_1148397 name=1148397></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("啊",1148397,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1148397,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl14_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl14$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl14_EditLink></A> </H2>2008-04-11 14:11 by <A 
+      id=Comments1_CommentList_ctl14_NameLink target=_blank>啊[未注册用户]</A> </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1148397>给我发一份</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1151168">#16楼</A><A 
+      id=comment_anchor_1151168 name=1151168></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("renhaojie",1151168,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1151168,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl15_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl15$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl15_EditLink></A> </H2>2008-04-13 13:17 by <A 
+      id=Comments1_CommentList_ctl15_NameLink target=_blank>renhaojie[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1151168>你好！可以把你做的本文的例子发一份给我吗？我正在用dsoframer编winform下的程序，苦于找不到合适的接口语句。我的电子邮箱 
+      :renhaoj2008@163.com,谢谢! <BR></SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1209446">#17楼</A><A 
+      id=comment_anchor_1209446 name=1209446></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("simon liu",1209446,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1209446,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl16_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl16$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl16_EditLink></A> </H2>2008-05-26 15:47 by <A 
+      id=Comments1_CommentList_ctl16_NameLink target=_blank>simon liu[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1209446>能不能把word等编辑好的内容直接通过表单提交上去。</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1225801">#18楼</A><A 
+      id=comment_anchor_1225801 name=1225801></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("可乐熊",1225801,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1225801,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl17_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl17$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl17_EditLink></A> </H2>2008-06-14 15:48 by <A 
+      id=Comments1_CommentList_ctl17_NameLink target=_blank>可乐熊[未注册用户]</A> 
+</DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1225801>你好能给我也发一份吗？lnzyquan@vip.sina.com 谢谢 
+      <BR><BR>欢迎光临紫辰软件 <BR>www.bornsun.net <BR></SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1240528">#19楼</A><A 
+      id=comment_anchor_1240528 name=1240528></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("qwerqettwet",1240528,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1240528,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl18_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl18$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl18_EditLink></A> </H2>2008-06-30 22:36 by <A 
+      id=Comments1_CommentList_ctl18_NameLink 
+      target=_blank>qwerqettwet[未注册用户]</A> </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1240528>你好！可以把你做的本文的例子发一份给我吗？我苦于实现一个类似的文件浏览组件的winform下的程序，我的电子邮箱 
+      :tanghq_705@163.com,谢谢! <BR><BR></SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1255669">#20楼</A><A 
+      id=comment_anchor_1255669 name=1255669></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("zsgbox",1255669,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1255669,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl19_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl19$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl19_EditLink></A> </H2>2008-07-15 17:33 by <A 
+      id=Comments1_CommentList_ctl19_NameLink target=_blank>zsgbox[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1255669>如果可以，也请发俺一份吧，非常感谢 
+      <BR>zsgbox@gmail.com</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1271621">#21楼</A><A 
+      id=comment_anchor_1271621 name=1271621></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("renhaojie",1271621,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1271621,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl20_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl20$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl20_EditLink></A> </H2>2008-07-30 08:33 by <A 
+      id=Comments1_CommentList_ctl20_NameLink target=_blank>renhaojie[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1271621>你好！可以把你做的本文的例子发一份给我吗？以前那个邮箱打不开了，renhaoj2008@126.com，谢谢</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1277441">#22楼</A><A 
+      id=comment_anchor_1277441 name=1277441></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("wanghuan",1277441,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1277441,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl21_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl21$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl21_EditLink></A> </H2>2008-08-04 16:11 by <A 
+      id=Comments1_CommentList_ctl21_NameLink 
+      href="http://www.cnitblog.com/r.aspx?url=http://wanghuanwd.blog.163.com" 
+      target=_blank rel=nofllow>wanghuan[未注册用户]</A> </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1277441>我也在学习这个组件，麻烦你给我也发一份行吗？谢谢了。wanghuanwd@163.com</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1302329">#23楼</A><A 
+      id=comment_anchor_1302329 name=1302329></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("ygqiang",1302329,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1302329,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl22_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl22$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl22_EditLink></A> </H2>2008-08-29 18:48 by <A 
+      id=Comments1_CommentList_ctl22_NameLink target=_blank>ygqiang[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1302329>你好，我这些天正在看，能否给我发一份你做的，谢谢<BR>我的邮箱是：yonggang_1209@163.com</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1335461">#24楼</A><A 
+      id=comment_anchor_1335461 name=1335461></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("Yocus",1335461,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1335461,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl23_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl23$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl23_EditLink></A> </H2>2008-10-09 09:12 by <A 
+      id=Comments1_CommentList_ctl23_NameLink target=_blank>Yocus[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1335461>你好！可以把你做的本文的例子发一份给我吗？我苦于实现一个类似的文件浏览组件的winform下的程序，我的电子邮箱 
+      :mzsoft001@163.com,谢谢! <BR></SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1489802">#25楼</A><A 
+      id=comment_anchor_1489802 name=1489802></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("hansonsu",1489802,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1489802,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl24_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl24$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl24_EditLink></A> </H2>2009-03-28 11:58 by <A 
+      id=Comments1_CommentList_ctl24_NameLink target=_blank>hansonsu[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1489802>能否发一份给我，多谢。<BR>313172@163.com</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1515517">#26楼</A><A 
+      id=comment_anchor_1515517 name=1515517></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("游龙踏雪",1515517,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1515517,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl25_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl25$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl25_EditLink></A> </H2>2009-04-29 16:47 by <A 
+      id=Comments1_CommentList_ctl25_NameLink target=_blank>游龙踏雪[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1515517>麻烦您发俺一份。wsp6188#qq.com</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1519943">#27楼</A><A 
+      id=comment_anchor_1519943 name=1519943></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("zhqj",1519943,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1519943,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl26_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl26$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl26_EditLink></A> </H2>2009-05-05 16:30 by <A 
+      id=Comments1_CommentList_ctl26_NameLink target=_blank>zhqj[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1519943>希望你也能给我发一份，非常感谢！ 
+      <BR>zhqj.csu@gmail.com或zhqj0858@163.com</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1546254">#28楼</A><A 
+      id=comment_anchor_1546254 name=1546254></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("大傻瓜",1546254,"F17v/tOr+vPTXuBxZ2+mhBM3ZISzfGxudjWMv9SOLB3ZTfVcPXqCmw==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1546254,"F17v/tOr+vPTXuBxZ2+mhBM3ZISzfGxudjWMv9SOLB3ZTfVcPXqCmw==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%a4%a7%e5%82%bb%e7%93%9c" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl27_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl27$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl27_EditLink></A> </H2>2009-06-03 10:38 by <A 
+      id=Comments1_CommentList_ctl27_NameLink 
+      href="http://www.cnblogs.com/studio_guan/" target=_blank>大傻瓜</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/å¤§å»ç">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1546254>麻烦你给俺也来一份，， 
+      <BR>我现在遇到的问题是，如果把控件和测试页置于本机，双击测试html,可以打开word， 
+      但是如果要是把这套东西发布了，浏览测试页的话，就说说什么URL无效之类的，总之么打开，，油箱：xiaoping_guan@163.com 
+      ,谢谢</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1546259">#29楼</A><A 
+      id=comment_anchor_1546259 name=1546259></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("大傻瓜",1546259,"F17v/tOr+vPTXuBxZ2+mhBM3ZISzfGxudjWMv9SOLB3ZTfVcPXqCmw==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1546259,"F17v/tOr+vPTXuBxZ2+mhBM3ZISzfGxudjWMv9SOLB3ZTfVcPXqCmw==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%a4%a7%e5%82%bb%e7%93%9c" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl28_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl28$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl28_EditLink></A> </H2>2009-06-03 10:39 by <A 
+      id=Comments1_CommentList_ctl28_NameLink 
+      href="http://www.cnblogs.com/studio_guan/" target=_blank>大傻瓜</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/å¤§å»ç">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1546259>还有，我这儿原来有份源码，就是稀里糊涂的，不知道从哪儿入手，，能不能指点一二，，，谢谢</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1547976">#30楼</A><A 
+      id=comment_anchor_1547976 name=1547976></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("冷锋2",1547976,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1547976,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl29_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl29$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl29_EditLink></A> </H2>2009-06-04 14:22 by <A 
+      id=Comments1_CommentList_ctl29_NameLink target=_blank>冷锋2[未注册用户]</A> 
+</DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1547976>请问如何清空word里面的内容！能不能把你的测试例子给我一份 
+      <BR>邮箱：junwuya_miss@sina.com</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1638000">#31楼</A><A 
+      id=comment_anchor_1638000 name=1638000></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("hahah",1638000,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1638000,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl30_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl30$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl30_EditLink></A> </H2>2009-09-07 06:12 by <A 
+      id=Comments1_CommentList_ctl30_NameLink target=_blank>hahah[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1638000>真是感谢，很受启发，能给我发一分源码吗？<BR>ly818919@sina.com<BR>谢谢了</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1649102">#32楼</A><A 
+      id=comment_anchor_1649102 name=1649102></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("nmg",1649102,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1649102,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl31_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl31$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl31_EditLink></A> </H2>2009-09-16 21:25 by <A 
+      id=Comments1_CommentList_ctl31_NameLink target=_blank>nmg[未注册用户]</A> 
+</DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1649102>想请教下，dsoframer用于web时，可以设定为不显示word的操作界面，就是把上面那些开始，插入之类的工具栏全隐藏掉，直接显示WORD文本中内容么？</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1650023">#33楼</A><A 
+      id=comment_anchor_1650023 name=1650023></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("nmg",1650023,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1650023,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl32_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl32$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl32_EditLink></A> </H2>2009-09-17 15:47 by <A 
+      id=Comments1_CommentList_ctl32_NameLink target=_blank>nmg[未注册用户]</A> 
+</DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1650023>又发现了个新问题，在toolbars设定为0时，调试时浏览器直接崩溃，不知道是什么原因，请教。。。</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1675064">#34楼</A><A 
+      id=comment_anchor_1675064 name=1675064></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("cyyd",1675064,"ZXrgAxpYNlz2DG5973K6ZjvVJ1sFMWIBnv3vYey4YOekQca8CwofCg==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1675064,"ZXrgAxpYNlz2DG5973K6ZjvVJ1sFMWIBnv3vYey4YOekQca8CwofCg==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=cyyd" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl33_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl33$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl33_EditLink></A> </H2>2009-10-18 19:33 by <A 
+      id=Comments1_CommentList_ctl33_NameLink 
+      href="http://home.cnblogs.com/68281/" target=_blank>cyyd</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/cyyd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1675064>请教一下，我用这个控件时不能正确打开excel，但是可以打开word</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1689858">#35楼</A><A 
+      id=comment_anchor_1689858 name=1689858></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("ADAMdiel",1689858,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1689858,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl34_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl34$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl34_EditLink></A> </H2>2009-11-04 18:50 by <A 
+      id=Comments1_CommentList_ctl34_NameLink target=_blank>ADAMdiel[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1689858>我要疯了，程序老提示找不到AxDSOFramer，这是为什么呢？</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1729380">#36楼</A><A 
+      id=comment_anchor_1729380 name=1729380></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("zhengfeixiong",1729380,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1729380,"")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl35_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl35$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl35_EditLink></A> </H2>2009-12-21 10:34 by <A 
+      id=Comments1_CommentList_ctl35_NameLink 
+      target=_blank>zhengfeixiong[未注册用户]</A> </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1729380><A title=查看所回复的评论 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#830683">@</A>jisen<BR><BR><BR>您好，您能发一份你做的控件给我看看吗，我也是打算在winform下应用，但是现在遇到一个问题，是不能获得它打开文件的实例，而且，提供的接口文档好像是在Web下的，我需要的是Windows下的。很多方法都没有，不知道你怎么解决在windows下的应用。关于远程打开，保存什么的，我也不是挺关心，因为有FTP，可以通过FTP完成这些工作。<BR>我的qq是274529033<BR>email：zhengfeixiong17@163.com<BR>MSN:zhengfeixiong17@hotmail.com<BR>希望你能回复我，非常感谢！</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#1815844">#37楼</A><A 
+      id=comment_anchor_1815844 name=1815844></A><A name=Post></A> 
+      &nbsp;&nbsp;<A 
+      onclick='ReplyComment("秦彦杰",1815844,"WXh9Mby/kDs8AiHPee9chM66lyWY8pljBfnngNi/zejfv4veVyi6Vg==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1815844,"WXh9Mby/kDs8AiHPee9chM66lyWY8pljBfnngNi/zejfv4veVyi6Vg==")' 
+      href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e7%a7%a6%e5%bd%a6%e6%9d%b0" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl36_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl36$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl36_EditLink></A> </H2>2010-05-04 10:53 by <A 
+      id=Comments1_CommentList_ctl36_NameLink 
+      href="http://www.cnblogs.com/qyj0/" target=_blank>秦彦杰</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/ç§¦å½¦æ°">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1815844>您好！ 给我发一份！最近用到 在线编辑这个功能， 
+      想参考下您写的组件，谢谢。</SPAN></DIV></DIV>
+      <SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+      <DIV class=commentform id=ctl04_comment_form>
+      <DIV id=ctl04_divLoginPannel>
+      <DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+      href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fjisen%2farchive%2f2007%2f07%2f12%2f815772.html%3flogin%3d1%23commentform">登录</A> 
+      或 <A class=underline 
+      href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fjisen%2farchive%2f2007%2f07%2f12%2f815772.html%23Bottom2">注册</A> 
+      。</DIV>
+      <DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+      target=_blank>返回博客园首页</A></DIV></DIV>
+      <DIV class="itnews c_ad_block"><A class=site_hot 
+      href="http://a4.yeshj.com/rd/35182/" target=_blank>有道难题开锣头奖8万！</A><BR><A 
+      href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+      href="http://news.cnblogs.com/n/64548/" 
+      target=_blank>55个新奇的USB设计样本</A><BR>· <A 
+      href="http://news.cnblogs.com/n/64547/" 
+      target=_blank>iPhone版Twitter程序将上线</A><BR>· <A 
+      href="http://news.cnblogs.com/n/64546/" 
+      target=_blank>盖茨乔布斯07年对话：乔布斯不看好平板电脑</A><BR>· <A 
+      href="http://news.cnblogs.com/n/64545/" 
+      target=_blank>在一台计算机上使用25个鼠标</A><BR>· <A 
+      href="http://news.cnblogs.com/n/64544/" target=_blank>Android用户版本分布更新 
+      2.1版领先</A><BR></DIV>
+      <DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+      target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+      href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+      <DIV style="MARGIN-TOP: 5px">
+      <SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+      </DIV>
+      <DIV style="MARGIN-TOP: 5px"><A 
+      href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG 
+      alt="" 
+      src="dsoframer控件学习小结 - jisen - 博客园_files/e8_net_468x60.gif"></A></DIV>
+      <DIV class="itnews c_ad_block" id=job_block><A 
+      href="http://job.cnblogs.com/" target=_blank>推荐职位</A>:<BR>
+      <DIV id=job_list></DIV>
+      <SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+      </DIV></DIV>
+      <DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+      href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+      href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+      href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+      href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+      href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+      href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+      href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+      <DIV class=c_ad_block id=ad_under_comment2><A 
+      href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+      target=_blank><IMG 
+      style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+      alt="" 
+      src="dsoframer控件学习小结 - jisen - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+      href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+      计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+      href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+      target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+      <DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+      href="http://zzk.cnblogs.com/s?w=C%23" target=_blank>C#</A> </DIV>
+      <DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+      href="http://kb.cnblogs.com/a/815772/">dsoframer控件学习小结</A></DIV></DIV></DIV></TD></TR>
+  <TR>
+    <TD class=FooterCell colSpan=2>
+      <P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+      style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" 
+      href="http://www.cnblogs.com/" name=Hyperlink1>博客园</A> <BR>Copyright © 
+      jisen </P></TD></TR></TBODY></TABLE>
+<DIV id=lefttemp style="DISPLAY: none">
+<DIV id=Cal><IMG hspace=5 
+src="dsoframer控件学习小结 - jisen - 博客园_files/icon-group.jpg" align=left vspace=2>
+<H3>日历</H3>
+<TABLE class=cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: collapse; HEIGHT: 160px; BORDER-RIGHT-WIDTH: 0px" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: #eeeeee" colSpan=7>
+      <TABLE class=cal 
+      style="FONT-WEIGHT: bold; FONT-SIZE: 13px; WIDTH: 100%; COLOR: #666666; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD style="WIDTH: 15%" vAlign=bottom><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V2708')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2007年7月</TD>
+          <TD style="WIDTH: 15%" vAlign=bottom align=right><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V2769')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=日>日</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=一>一</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=二>二</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=三>三</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=四>四</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=五>五</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>24</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>25</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>26</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>27</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>28</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>29</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>30</TD></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>1</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>2</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/7/3.html"><U>3</U></A></TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/7/4.html"><U>4</U></A></TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>5</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>6</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>7</TD></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>8</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>9</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>10</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>11</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/7/12.html"><U>12</U></A></TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>13</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>14</TD></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>15</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>16</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>17</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>18</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>19</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/7/20.html"><U>20</U></A></TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>21</TD></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>22</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/7/23.html"><U>23</U></A></TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>24</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>25</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>26</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/jisen/archive/2007/7/27.html"><U>27</U></A></TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>28</TD></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>29</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>30</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>31</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>1</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>2</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>3</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" 
+  align=middle>4</TD></TR></TBODY></TABLE></DIV>
+<DIV id=cell><IMG hspace=5 
+src="dsoframer控件学习小结 - jisen - 博客园_files/icon-group.jpg" align=left vspace=2>
+<H3>公告</H3>
+<DIV id=news>北京时间 <BR>
+<OBJECT 
+codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+height=120 width=120 classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000><PARAM NAME="_cx" VALUE="3175"><PARAM NAME="_cy" VALUE="3175"><PARAM NAME="FlashVars" VALUE=""><PARAM NAME="Movie" VALUE="http://blogbeta.blueidea.com/skin/17Ex_06/clock01.swf"><PARAM NAME="Src" VALUE="http://blogbeta.blueidea.com/skin/17Ex_06/clock01.swf"><PARAM NAME="WMode" VALUE="Transparent"><PARAM NAME="Play" VALUE="-1"><PARAM NAME="Loop" VALUE="-1"><PARAM NAME="Quality" VALUE="High"><PARAM NAME="SAlign" VALUE=""><PARAM NAME="Menu" VALUE="-1"><PARAM NAME="Base" VALUE=""><PARAM NAME="AllowScriptAccess" VALUE="always"><PARAM NAME="Scale" VALUE="ShowAll"><PARAM NAME="DeviceFont" VALUE="0"><PARAM NAME="EmbedMovie" VALUE="0"><PARAM NAME="BGColor" VALUE=""><PARAM NAME="SWRemote" VALUE=""><PARAM NAME="MovieData" VALUE=""><PARAM NAME="SeamlessTabbing" VALUE="1"><PARAM NAME="Profile" VALUE="0"><PARAM NAME="ProfileAddress" VALUE=""><PARAM NAME="ProfilePort" VALUE="0"><PARAM NAME="AllowNetworking" VALUE="all"><PARAM NAME="AllowFullScreen" VALUE="false"></OBJECT><BR><BR>读书<BR>clr via 
+c#<BR>effective c# 
+<DIV id=profile_block><A href="http://home.cnblogs.com/jisen/" 
+target=_blank>我的主页</A>&nbsp; <A href="http://home.cnblogs.com/jisen/detail/" 
+target=_blank>个人资料</A><BR><A href="http://home.cnblogs.com/jisen/ing/" 
+target=_blank>我的闪存</A>&nbsp; <A href="http://space.cnblogs.com/msg/send/jisen" 
+target=_blank>发短消息</A></DIV></DIV></DIV>
+<SCRIPT type=text/javascript>
+    var blogapp = 'jisen';
+</SCRIPT>
+
+<DIV id=cell><IMG hspace=5 
+src="dsoframer控件学习小结 - jisen - 博客园_files/icon-group.jpg" align=left vspace=2> 
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+<DIV id=cell><IMG hspace=5 
+src="dsoframer控件学习小结 - jisen - 博客园_files/icon-group.jpg" align=left vspace=2> 
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=Singlecolumn2_ctl03_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/jisen/MyPosts.html">我的随笔</A> 
+  <LI><A id=Singlecolumn2_ctl03_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/jisen/">我的空间</A> 
+  <LI><A id=Singlecolumn2_ctl03_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=Singlecolumn2_ctl03_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/jisen/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=Singlecolumn2_ctl03_repeaterLinks_ctl01_lnkLinkItem 
+  href="http://www.cnblogs.com/jisen/OtherPosts.html">我的参与</A> 
+  <LI><A id=Singlecolumn2_ctl03_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/jisen/MyNews.html">我的新闻</A> 
+  <LI><A id=Singlecolumn2_ctl03_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/jisen/RecentComments.html">最新评论</A> 
+  <LI><A id=Singlecolumn2_ctl03_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/jisen/tag/">我的标签</A> </LI></UL></DIV></DIV>
+<DIV id=cell><IMG hspace=5 
+src="dsoframer控件学习小结 - jisen - 博客园_files/icon-group.jpg" align=left vspace=2>
+<H3>我参与的团队</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=Singlecolumn2__39096c09beba_TeamList_ctl01_lnkTeam 
+  href="http://team.cnblogs.com/database/">数据库团队(0/0)</A> 
+  <LI><A id=Singlecolumn2__39096c09beba_TeamList_ctl02_lnkTeam 
+  href="http://team.cnblogs.com/debug/">Debug 探索团队(0/0)</A> </LI></UL></DIV></DIV>
+<DIV id=cell><IMG hspace=5 
+src="dsoframer控件学习小结 - jisen - 博客园_files/icon-group.jpg" align=left vspace=2>
+<H3>随笔分类</H3>
+<UL>
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to C#(12)" 
+  onclick="open_link('http://www.cnblogs.com/jisen/category/105314.html/rss');return false;" 
+  href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html###"><IMG 
+  title="Subscribe to C#(12)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="dsoframer控件学习小结 - jisen - 博客园_files/xmlsmall.gif"></A><A 
+  id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/jisen/category/105314.html">C#(12)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to 读书(2)" 
+  onclick="open_link('http://www.cnblogs.com/jisen/category/105315.html/rss');return false;" 
+  href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html###"><IMG 
+  title="Subscribe to 读书(2)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="dsoframer控件学习小结 - jisen - 博客园_files/xmlsmall.gif"></A><A 
+  id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/jisen/category/105315.html">读书(2)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to 生活小札(2)" 
+  onclick="open_link('http://www.cnblogs.com/jisen/category/111343.html/rss');return false;" 
+  href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html###"><IMG 
+  title="Subscribe to 生活小札(2)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="dsoframer控件学习小结 - jisen - 博客园_files/xmlsmall.gif"></A><A 
+  id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/jisen/category/111343.html">生活小札(2)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to 数据库(3)" 
+  onclick="open_link('http://www.cnblogs.com/jisen/category/105313.html/rss');return false;" 
+  href="http://www.cnblogs.com/jisen/archive/2007/07/12/815772.html###"><IMG 
+  title="Subscribe to 数据库(3)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="dsoframer控件学习小结 - jisen - 博客园_files/xmlsmall.gif"></A><A 
+  id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/jisen/category/105313.html">数据库(3)</A> 
+</LI></UL></DIV>
+<DIV id=cell><IMG hspace=5 
+src="dsoframer控件学习小结 - jisen - 博客园_files/icon-group.jpg" align=left vspace=2>
+<H3>随笔档案</H3>
+<UL>
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/jisen/archive/2008/05.html">2008年5月 (1)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/jisen/archive/2008/01.html">2008年1月 (1)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/jisen/archive/2007/11.html">2007年11月 (1)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/jisen/archive/2007/10.html">2007年10月 (2)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/jisen/archive/2007/09.html">2007年9月 (2)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/jisen/archive/2007/08.html">2007年8月 (3)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/jisen/archive/2007/07.html">2007年7月 (7)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/jisen/archive/2007/06.html">2007年6月 (2)</A> 
+</LI></UL></DIV></DIV></FORM>
+<SCRIPT src="dsoframer控件学习小结 - jisen - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="dsoframer控件学习小结 - jisen - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="dsoframer控件学习小结 - jisen - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,1457 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0082)http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Silverlight+WCF+WF+Linq结合的一个示例 - 海纳百川 - 博客园</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=keywords content=Silverlight,WCF,WF,Linq结合的一个示例>
+<META name=description 
+content=Silverlight+WCF+WF+Linq的一个简单示例，想了解如何结合这些新技术的童鞋进来看看吧。如果还行，别忘记推荐哈。><LINK 
+rel=stylesheet type=text/css 
+href="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/common.css"><LINK 
+id=MainCss rel=stylesheet type=text/css 
+href="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/style.css"><LINK 
+rel=stylesheet type=text/css 
+href="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/common2.css"><LINK 
+rel=stylesheet type=text/css 
+href="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/shCore.css"><LINK 
+rel=stylesheet type=text/css 
+href="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/shThemeDefault.css"><LINK 
+title=RSS rel=alternate type=application/rss+xml 
+href="http://www.cnblogs.com/zhuqil/rss"><LINK title=RSD rel=EditURI 
+type=application/rsd+xml href="http://www.cnblogs.com/zhuqil/rsd.xml">
+<SCRIPT type=text/javascript 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/jquery.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/common.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/jquery.json-2.2.min.js"></SCRIPT>
+
+<META name=GENERATOR content="MSHTML 8.00.6001.18904"></HEAD>
+<BODY>
+<FORM id=Form1 method=post name=Form1 action=Silverlight-WCF-WF-Linq-Demo.html>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+&nbsp;&nbsp; <FONT>朱祁林</FONT> &nbsp;&nbsp; &nbsp;&nbsp; <FONT>zhuqilin</FONT> 
+&nbsp;&nbsp; <!--done-->
+<DIV id=home>
+<DIV id=header>
+<DIV id=blogTitle><A id=lnkBlogLogo href="http://www.cnblogs.com/zhuqil/"><IMG 
+id=blogLogo alt=返回主页 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/logo.gif"></A> <!--done-->
+<H1><A id=Header1_HeaderTitle class=headermaintitle 
+href="http://www.cnblogs.com/zhuqil/">
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR>
+    <TD 
+    style="FILTER: glow(strength=1) mask(color=#313c40) chroma(color=#313c40)"><FONT 
+      style="LINE-HEIGHT: 150%; WIDTH: 100%; FONT-FAMILY: 华文新魏; COLOR: #313c40; FONT-SIZE: 30pt"><B><A 
+      href="http://www.cnblogs.com/zhuqil">海纳百川</A></B></FONT> 
+</TD></TR></TBODY></TABLE></A></H1>
+<H2><SPAN 
+style="FONT-FAMILY: '华文新魏'; COLOR: #008080; FONT-SIZE: 18px">做好简单的事情,做好简单的人！</SPAN> 
+&nbsp;&nbsp; 
+<DIV style="DISPLAY: none">朱祁林</DIV>&nbsp;&nbsp; 
+<DIV style="DISPLAY: none">zhuqilin</DIV>&nbsp;&nbsp;
+<SCRIPT language=javascript type=text/javascript>  
+  window.onload=function()
+  {
+   var MyLinks1_HomeLink = document.getElementById('MyLinks1_HomeLink');
+            MyLinks1_HomeLink.style.display = "none";
+            var MyLinks1_SpaceLink = document.getElementById('MyLinks1_SpaceLink');
+            MyLinks1_SpaceLink.style.display = "none";
+  }
+</SCRIPT>
+ </H2></DIV><!--end: blogTitle 博客的标题和副标题 -->
+<DIV id=navigator><!--done-->
+<UL id=navList>
+  <LI><A id=MyLinks1_HomeLink class=menu 
+  href="http://www.cnblogs.com/">博客园</A></LI>
+  <LI><A id=MyLinks1_SpaceLink class=menu 
+  href="http://space.cnblogs.com/">社区</A></LI>
+  <LI><A id=MyLinks1_MyHomeLink class=menu 
+  href="http://www.cnblogs.com/zhuqil/">首页</A></LI>
+  <LI><A id=MyLinks1_NewPostLink class=menu 
+  href="http://www.cnblogs.com/zhuqil/admin/EditPosts.aspx?opt=1">新随笔</A></LI>
+  <LI><A accessKey=9 id=MyLinks1_ContactLink class=menu 
+  href="http://space.cnblogs.com/msg/send/%e9%ba%92%e9%ba%9f">联系</A></LI>
+  <LI><A id=MyLinks1_Admin class=menu 
+  href="http://www.cnblogs.com/zhuqil/admin/EditPosts.aspx">管理</A></LI>
+  <LI><A id=MyLinks1_Syndication class=menu 
+  href="http://www.cnblogs.com/zhuqil/rss">订阅</A> <A id=MyLinks1_XMLLink 
+  class=aHeaderXML href="http://www.cnblogs.com/zhuqil/rss"><IMG 
+  style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+  alt=订阅 
+  src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/rss.gif"></A></LI></UL>
+<DIV class=blogStats><!--done-->随笔- 182&nbsp; 文章- 0&nbsp; 评论- 1678&nbsp; </DIV><!--end: blogStats --></DIV><!--end: navigator 博客导航栏 --></DIV><!--end: header 头部 -->
+<DIV id=main>
+<DIV id=mainContent>
+<DIV class=forFlow><!--done-->
+<DIV id=topics>
+<DIV class=post>
+<H1 class=postTitle><A id=ctl04_TitleUrl class=postTitle2 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html">Silverlight+WCF+WF+Linq结合的一个示例</A> 
+</H1>
+<DIV class=clear></DIV>
+<DIV class=postBody>
+<P><FONT size=5><STRONG>概述：</STRONG></FONT>&nbsp;</P>
+<P>&nbsp;&nbsp; 
+这个Demo主要是为了阐述WF4中是如何使用WCF服务的，以及如何在Silverlight中调用WCF服务。因为即使用了Silverlight呈现UI，又用Linq访问数据库。故本文的名字为：“Silverlight+WCF+WF+Linq结合的一个示例”。如果你和我一样，对WCF有点了解，就知道WCF能将很多方法放在一Uri中供大家调用。那如何将多个WF流程放在一个Uri中供你调用呢？很简单，使用一个Pick活动，Pick活动中可以有多个分支，这种方式是非常有用的。对于Pick的每一个分支，你都可以设计一个流程。好了，先看一下这个Demo实现了什么功能，在说如何实现，最后总结，附代码下载。</P>
+<P><STRONG><FONT size=5>效果：</FONT></STRONG></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; 
+就是一个Silverlight的数据显示的界面，使用了northwnd数据库。左边显示所有的客户。右边上面是你选择顾客的订单。右边的下面是这个订单的详细情况。效果有点类似三级级联。</P>
+<P><A 
+href="http://images.cnblogs.com/cnblogs_com/zhuqil/WindowsLiveWriter/SilverlightWCFWFLing_10967/silverlight1_2.png" 
+target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; DISPLAY: inline; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+title=silverlight1 border=0 alt=silverlight1 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/silverlight1_thumb.png" 
+width=742 height=444></A> </P>
+<P><STRONG><FONT size=5>实现：</FONT></STRONG></P>
+<P>&nbsp;&nbsp;&nbsp; 这个Demo一共有四个项目，如下图：</P>
+<P><A 
+href="http://images.cnblogs.com/cnblogs_com/zhuqil/WindowsLiveWriter/SilverlightWCFWFLing_10967/silverlight2_2.png" 
+target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; DISPLAY: inline; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+title=silverlight2 border=0 alt=silverlight2 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/silverlight2_thumb.png" 
+width=312 height=550></A> </P>
+<P><STRONG>项目说明：</STRONG></P>
+<P><STRONG>&nbsp;&nbsp;&nbsp; 1、DataOperate：</STRONG>主要是linq生成的代码，用于数据库操作。</P>
+<P><STRONG>&nbsp;&nbsp;&nbsp; 
+2、MyFirstSilverlight</STRONG>：Silverlight项目，用于显示UI。</P>
+<P><STRONG>&nbsp;&nbsp;&nbsp; 
+3、MyFirstSilverlight.Web：</STRONG>asp.net项目，用于宿主Silverlight。</P>
+<P><STRONG>&nbsp;&nbsp;&nbsp; 4、WFService：</STRONG>把WF+WCF的项目，用于实现业务逻辑。</P>
+<P>&nbsp;&nbsp;&nbsp; 
+我深信WCF+WF功能是十分强大的。本文只讲述一下WCF+WF结合的WFService是如何实现的。Silverlight和Linq的部分，详细见代码。</P>
+<P><STRONG>WFService实现：</STRONG></P>
+<P>&nbsp;&nbsp;&nbsp; 在Workflow模板下面，选择新建一个WCF Workflow Service，命名为WFService。</P>
+<P><A 
+href="http://images.cnblogs.com/cnblogs_com/zhuqil/WindowsLiveWriter/SilverlightWCFWFLing_10967/sl4_2.png" 
+target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; DISPLAY: inline; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+title=sl4 border=0 alt=sl4 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/sl4_thumb.png" 
+width=686 height=439></A> </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; 在Service1.xamlx中删除原有的活动，拖放一个Pick活动，并添加三个分支，如下图。</P>
+<P><A 
+href="http://images.cnblogs.com/cnblogs_com/zhuqil/WindowsLiveWriter/SilverlightWCFWFLing_10967/sl5_2.png" 
+target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; DISPLAY: inline; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+title=sl5 border=0 alt=sl5 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/sl5_thumb.png" 
+width=686 height=337></A> </P>
+<P>&nbsp;&nbsp;&nbsp; 
+新建三个CodeActivity，分别命名为：GetCustomersActivity、GetOrderDetailsActivity、GetOrdersActivity。</P>
+<P>&nbsp;&nbsp;&nbsp; 1、GetCustomersActivity：代码如下：</P><PRE>    <SPAN style="COLOR: #0000ff">public</SPAN> <SPAN style="COLOR: #0000ff">sealed</SPAN> <SPAN style="COLOR: #0000ff">class</SPAN> GetCustomersActivity : CodeActivity
+    {
+        <SPAN style="COLOR: #0000ff">public</SPAN> OutArgument&lt;List&lt;Customer&gt;&gt; CustomerList { <SPAN style="COLOR: #0000ff">get</SPAN>; <SPAN style="COLOR: #0000ff">set</SPAN>; }
+
+        <SPAN style="COLOR: #0000ff">protected</SPAN> <SPAN style="COLOR: #0000ff">override</SPAN> <SPAN style="COLOR: #0000ff">void</SPAN> Execute(CodeActivityContext context)
+        {
+            DataClasses1DataContext datacontext = <SPAN style="COLOR: #0000ff">new</SPAN> DataClasses1DataContext();
+            CustomerList.Set(context, datacontext.Customers.ToList());
+        }
+    }</PRE>
+<P>&nbsp;&nbsp;&nbsp; 这个活动返回所有的顾客资料。</P>
+<P>&nbsp;&nbsp;&nbsp; 2、GetOrdersActivity代码如下：</P><PRE>    <SPAN style="COLOR: #0000ff">public</SPAN> <SPAN style="COLOR: #0000ff">sealed</SPAN> <SPAN style="COLOR: #0000ff">class</SPAN> GetOrdersActivity : CodeActivity
+    {
+        <SPAN style="COLOR: #0000ff">public</SPAN> OutArgument&lt;List&lt;Order&gt;&gt; OrderList { <SPAN style="COLOR: #0000ff">get</SPAN>; <SPAN style="COLOR: #0000ff">set</SPAN>; }
+
+        <SPAN style="COLOR: #0000ff">public</SPAN> InArgument&lt;<SPAN style="COLOR: #0000ff">string</SPAN>&gt; customerID { <SPAN style="COLOR: #0000ff">get</SPAN>; <SPAN style="COLOR: #0000ff">set</SPAN>; }
+
+        <SPAN style="COLOR: #0000ff">protected</SPAN> <SPAN style="COLOR: #0000ff">override</SPAN> <SPAN style="COLOR: #0000ff">void</SPAN> Execute(CodeActivityContext context)
+        {
+            DataClasses1DataContext datacontext = <SPAN style="COLOR: #0000ff">new</SPAN> DataClasses1DataContext();
+            OrderList.Set(context,(from order <SPAN style="COLOR: #0000ff">in</SPAN> datacontext.Orders
+                    where order.CustomerID == customerID.Get(context)
+                    select order).ToList());
+        }
+    }</PRE>
+<P>&nbsp;&nbsp;&nbsp; 这个活动返回顾客为customerID的所有订单。</P>
+<P>&nbsp;&nbsp;&nbsp; 3、GetOrderDetailsActivity代码如下</P><PRE>    <SPAN style="COLOR: #0000ff">public</SPAN> <SPAN style="COLOR: #0000ff">sealed</SPAN> <SPAN style="COLOR: #0000ff">class</SPAN> GetOrderDetailsActivity : CodeActivity
+    {
+        <SPAN style="COLOR: #0000ff">public</SPAN> OutArgument&lt;List&lt;Order_Detail&gt;&gt; OrderDetailList { <SPAN style="COLOR: #0000ff">get</SPAN>; <SPAN style="COLOR: #0000ff">set</SPAN>; }
+        <SPAN style="COLOR: #0000ff">public</SPAN> InArgument&lt;<SPAN style="COLOR: #0000ff">int</SPAN>&gt; orderID { <SPAN style="COLOR: #0000ff">get</SPAN>; <SPAN style="COLOR: #0000ff">set</SPAN>; }
+
+        <SPAN style="COLOR: #0000ff">protected</SPAN> <SPAN style="COLOR: #0000ff">override</SPAN> <SPAN style="COLOR: #0000ff">void</SPAN> Execute(CodeActivityContext context)
+        {
+            DataClasses1DataContext datacontext = <SPAN style="COLOR: #0000ff">new</SPAN> DataClasses1DataContext();
+            OrderDetailList.Set( context,(from orderdetail <SPAN style="COLOR: #0000ff">in</SPAN> datacontext.Order_Details
+                    where orderdetail.OrderID == orderID.Get(context)
+                    select orderdetail).ToList());
+        }
+    }</PRE>
+<P>&nbsp;&nbsp;&nbsp; 这个活动返回订单编号为orderID的订单详情。</P>
+<P>&nbsp;&nbsp;&nbsp; 下面我们将这三个方法放在WF中流程中。</P>
+<P>&nbsp;&nbsp;&nbsp; 在Pick的Trigger中拖三个Receive活动，设置如下图：</P>
+<P><A 
+href="http://images.cnblogs.com/cnblogs_com/zhuqil/WindowsLiveWriter/SilverlightWCFWFLing_10967/sl6_2.png" 
+target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; DISPLAY: inline; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+title=sl6 border=0 alt=sl6 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/sl6_thumb.png" 
+width=797 height=150></A> </P>
+<P>&nbsp;&nbsp;&nbsp; 
+方法的具体使用Linq的访问数据库的实现还是在GetCustomersActivity、GetOrderDetailsActivity、GetOrdersActivity中，将这三个活动，拖入相应的Action中。</P>
+<P><A 
+href="http://images.cnblogs.com/cnblogs_com/zhuqil/WindowsLiveWriter/SilverlightWCFWFLing_10967/sl8_2.png" 
+target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; DISPLAY: inline; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+title=sl8 border=0 alt=sl8 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/sl8_thumb.png" 
+width=799 height=276></A>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp; 创建方法的返回值：右击Receive活动，选择Create 
+SendReply。这是会提示你已经将SendReply复制到剪贴板中，你只需把它们粘贴到相对的地方。如下图：</P>
+<P><A 
+href="http://images.cnblogs.com/cnblogs_com/zhuqil/WindowsLiveWriter/SilverlightWCFWFLing_10967/ls9_2.png" 
+target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; DISPLAY: inline; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+title=ls9 border=0 alt=ls9 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/ls9_thumb.png" 
+width=801 height=392></A> </P>
+<P>&nbsp;&nbsp;&nbsp; 这样我们就定义好了这个WCF和WF的服务。</P>
+<P>&nbsp;&nbsp;&nbsp; 在Silverlight项目中，选择添加服务引用，如下图：</P>
+<P><A 
+href="http://images.cnblogs.com/cnblogs_com/zhuqil/WindowsLiveWriter/SilverlightWCFWFLing_10967/sl9_2.png" 
+target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; DISPLAY: inline; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+title=sl9 border=0 alt=sl9 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/sl9_thumb.png" 
+width=561 height=512></A> </P>
+<P>&nbsp;&nbsp;&nbsp; 在MainPage.xaml.cs中添加下面代码：</P><PRE><SPAN style="COLOR: #0000ff">using</SPAN> MyFirstSilverlight.ServiceReference;</PRE><PRE>Silverlight中调用WCF服务，与普通的不同，不是直接调用，而是异步调用，见下面代码：</PRE><PRE>        <SPAN style="COLOR: #0000ff">private</SPAN> <SPAN style="COLOR: #0000ff">void</SPAN> lstCustomers_Loaded(<SPAN style="COLOR: #0000ff">object</SPAN> sender, RoutedEventArgs e)
+        {
+            Service1Client svc = ServerManager.GetPox();
+            <SPAN style="COLOR: #0000ff">this</SPAN>.txtStatus.Text = "<SPAN style="COLOR: #8b0000">Loading customers...</SPAN>";
+            svc.GetCustomersCompleted += <SPAN style="COLOR: #0000ff">new</SPAN>
+              EventHandler&lt;GetCustomersCompletedEventArgs&gt;(svc_GetCustomersCompleted);
+            svc.GetCustomersAsync();
+        }
+
+        <SPAN style="COLOR: #0000ff">void</SPAN> svc_GetCustomersCompleted(<SPAN style="COLOR: #0000ff">object</SPAN> sender, GetCustomersCompletedEventArgs e)
+        {
+            <SPAN style="COLOR: #0000ff">if</SPAN> (e.Error == <SPAN style="COLOR: #0000ff">null</SPAN>)
+            {
+                <SPAN style="COLOR: #0000ff">this</SPAN>.lstCustomers.ItemsSource = e.Result;
+                <SPAN style="COLOR: #0000ff">this</SPAN>.txtStatus.Text = <SPAN style="COLOR: #0000ff">string</SPAN>.Empty;
+            }
+            <SPAN style="COLOR: #0000ff">else</SPAN>
+            {
+                <SPAN style="COLOR: #0000ff">this</SPAN>.txtStatus.Text =
+                    "<SPAN style="COLOR: #8b0000">Error occured while loading customers from database</SPAN>";
+            }
+        }</PRE>
+<P>&nbsp;&nbsp;&nbsp; Demo很简单，其他项目的实现，详细见代码。</P>
+<P><STRONG><FONT size=5>总结：</FONT></STRONG></P>
+<P>&nbsp;&nbsp;&nbsp; 这篇文章主要阐述了如何在WF中使用WCF服务。以及如何在Silverlight中调用WCF服务。</P>
+<P><STRONG><FONT size=5>代码：</FONT></STRONG></P>
+<P><A title=http://files.cnblogs.com/zhuqil/MyFirstSilverlight.rar 
+href="http://files.cnblogs.com/zhuqil/MyFirstSilverlight.rar" 
+target=_blank>http://files.cnblogs.com/zhuqil/MyFirstSilverlight.rar</A></P>
+<DIV id=MySignature>
+<SCRIPT>
+var loadEvent = function(fn) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = fn;
+    } else {
+        window.onload = function() {
+            oldonload();
+            fn();
+        }
+    }
+}
+window.onload = function() {
+         var Link = document.getElementById('MyLinks1_HomeLink');
+            Link.style.display = "none";
+            Link = document.getElementById('MyLinks1_SpaceLink');
+           Link.style.display = "none"; 
+
+}
+
+function getElementsByClassName(n) {
+    var el = [],
+        _el = document.getElementsByTagName('*');
+    for (var i = 0; i < _el.length; i++) {
+        if (_el[i].className == n) {
+            el[el.length] = _el[i];
+        }
+    }
+    return el;
+}
+function postsomethingtome(msg) {
+    if (window.top.HaveUp) {
+        alert('您已经顶过了！谢谢朋友 ：）');
+        return;
+    }
+    var txt = document.getElementById('tbCommentBody');
+    if (txt != null) {
+        txt.style.backgroundColor = "#E4F5FF";
+        var date = new Date();
+        txt.value = msg; // + '[快捷留言 on ' + date.toJSON() + ']';
+        txt.focus();
+        window.top.HaveUp = true;
+    }
+    //debugger;
+    PostComment();
+    //txt.style.backgroundColor = "";
+}
+function woyaoding() {
+    postsomethingtome("好贴！我顶你！");
+    var ckbtuijian = document.getElementById('ckbtuijian');
+            if (ckbtuijian.checked) 
+            { 
+                  tuijian() ;
+            }
+  
+}
+function woluguo() {
+    postsomethingtome("我是打酱油的！");
+ var ckbtuijian = document.getElementById('ckbtuijian');
+            if (ckbtuijian.checked) 
+            { 
+                  tuijian() ;
+            }
+
+}
+function tuijian() {
+    var diggit = getElementsByClassName('diggit');
+    if (diggit != null) {
+        eval(getdiggitOnclick(diggit));
+    }
+}
+function getdiggitOnclick(diggit) {
+    var strOnclick = diggit[0].onclick.toString();
+    var firstIndex = strOnclick.indexOf('{');
+    var secondIndex = strOnclick.indexOf('}');
+    var length = strOnclick.length;
+    var click = strOnclick.substr(firstIndex + 1, secondIndex - firstIndex - 1);
+    return click;
+}
+var addEvent = function(obj, type, fn) {
+    if (obj.addEventListener)
+        obj.addEventListener(type, fn, true);
+    else if (obj.attachEvent) {
+        obj.attachEvent("on" + type, function() {
+            //eval(fn + "()");
+            fn();
+        });
+    }
+}
+function setburyitMsg() {
+    var buryit = getElementsByClassName('buryit');
+    if (buryit[0] != null) {
+        addEvent(buryit[0], "click", buryitMsg);
+    }
+}
+var buryitMsg = function() {
+    alert('这枚同学，非常希望能听到您的宝贵意见，请赐教...');
+    var txt = document.getElementById('tbCommentBody');
+    if (txt != null) {
+        txt.style.backgroundColor = "#fe9ab3";
+        txt.focus();
+    }
+}
+loadEvent(function() {
+    setburyitMsg();
+})
+</SCRIPT>
+
+<P>作者：<A href="http://zhuqil.cnblogs.com/" target=_blank><FONT 
+color=#9f8248>朱祁林</FONT></A><BR>出处：<A href="http://zhuqil.cnblogs.com/" 
+target=_blank><FONT color=#9f8248>http://zhuqil.cnblogs.com</FONT></A> 
+<BR>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。</P>
+<P>&nbsp;</P>
+<DIV style="DISPLAY: none"><STRONG><SPAN 
+style="COLOR: red; FONT-SIZE: 10pt">(快捷留言：点击下面链接后会直接提交留言信息。)</SPAN></STRONG><BR><IMG 
+title="快捷留言(注：点击链接后&#13;&#10;会直接提交相应留言信息！)" border=0 
+alt=快捷留言(注：点击链接后会直接提交相应留言信息！) 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/055243803.gif" 
+width=61 height=63>&nbsp; <INPUT style="COLOR: red; FONT-SIZE: 30pt" 
+id=ckbtuijian type=checkbox><SPAN style="FONT-SIZE: 20pt"><A id=wyd 
+onclick="woyaoding();return false;" 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html###" 
+target=_blank><SPAN style="FONT-SIZE: 30pt">我要打勾推荐！</SPAN></A> 
+</SPAN></INPUT>&nbsp;<A id=qdxyp onclick="woluguo();return false;" 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html###" 
+target=_blank><SPAN style="FONT-SIZE: 18pt">我是打酱油的</SPAN></A> </DIV></DIV>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/zhuqil/" 
+target=_blank><IMG class=author_avatar alt="" 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/u38542.jpg"></A> 
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/zhuqil/" 
+target=_blank>麒麟</A><BR>关注 - 20<BR>粉丝 - 61<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1745736,42110,1)><SPAN id=digg_count_1745736 
+class=diggnum>4</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1745736,42110,2)><SPAN id=bury_count_1745736 
+class=burynum>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN style="DISPLAY: none" 
+id=span_isdigged_1745736>0</SPAN> 
+<DIV id=digg_word_1745736 class=diggword>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/25/wfaspdotnetpagelifecycle.html">« 
+</A>上一篇：<A title="发布于2010-05-25 23:32" 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/25/wfaspdotnetpagelifecycle.html">WF4.0实战（十八）：模拟asp.net生命周期</A><BR></DIV>
+<SCRIPT type=text/javascript 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/google_service.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = 'c44d420b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+</DIV>
+<DIV class=postDesc>posted @ 2010-05-27 20:42 <A 
+href="http://www.cnblogs.com/zhuqil/">麒麟</A> 阅读(369) <A 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#commentform">评论(5)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/zhuqil/admin/EditPosts.aspx?postid=1745736">编辑</A> 
+<A onclick="AddToWz(1745736);return false;" 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#">收藏</A> 
+</DIV></DIV><IMG 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/1745736.jpg" 
+width=1 height=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html"
+dc:identifier="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/zhuqil/services/trackbacks/1745736.aspx" />
+</rdf:RDF>
+--></DIV><!--end: topics 文章、评论容器--><A name=pagedcomment></A><!--done--><BR>
+<DIV class=feedback_area_title>发表评论</DIV>
+<DIV class=feedbackNoItems><SPAN style="DISPLAY: none" 
+id=span_comment_maxid>1834511</SPAN></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("MiCow",1834460,"0YtfyfbUx7zv9IZZ71HEZIf4AUv/uh0wbDjqzdmkywDkS7eel7IUdw==")' 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1834460,"0YtfyfbUx7zv9IZZ71HEZIf4AUv/uh0wbDjqzdmkywDkS7eel7IUdw==")' 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=MiCow" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#1834460">#1楼</A><A 
+id=comment_anchor_1834460 name=1834460></A>2010-05-27 21:04 | <A 
+id=Comments1_CommentList_ctl00_NameLink href="http://home.cnblogs.com/125512/" 
+target=_blank>MiCow</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/MiCow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN id=comment_body_1834460 
+class=blog_comment_body>很好，先收藏了</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("一只小鱼",1834462,"hU8ZJWzMXodt2BAr5J2pV04mN6UZaSe45pPcuJ/hXGeREE0aSw9SDQ==")' 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1834462,"hU8ZJWzMXodt2BAr5J2pV04mN6UZaSe45pPcuJ/hXGeREE0aSw9SDQ==")' 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e4%b8%80%e5%8f%aa%e5%b0%8f%e9%b1%bc" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#1834462">#2楼</A><A 
+id=comment_anchor_1834462 name=1834462></A>2010-05-27 21:06 | <A 
+id=Comments1_CommentList_ctl01_NameLink href="http://www.cnblogs.com/626498301/" 
+target=_blank>一只小鱼</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/%e4%b8%80%e5%8f%aa%e5%b0%8f%e9%b1%bc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN id=comment_body_1834462 
+class=blog_comment_body>兄弟，我抢个沙发，问个问题吧，这个有WCF的部署是怎样弄的呢，我弄了好几天了，只需要把客户端的配置文件中endPoint的地址改一下再发布到IIS上就行了吗？比如说我在自己的机子上的IIS新建了个网站为www.mytest.com:9000,是不是endPoint节点的值改成http：//www.mytest.com:9000/WCFservice,然后生成一下就行了呢。。<BR>看我打这么多字，希望能帮我一下，我搞了2天了。。或者给我一个Example也行，谢谢了</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("一只小鱼",1834464,"hU8ZJWzMXodt2BAr5J2pV04mN6UZaSe45pPcuJ/hXGeREE0aSw9SDQ==")' 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1834464,"hU8ZJWzMXodt2BAr5J2pV04mN6UZaSe45pPcuJ/hXGeREE0aSw9SDQ==")' 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e4%b8%80%e5%8f%aa%e5%b0%8f%e9%b1%bc" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#1834464">#3楼</A><A 
+id=comment_anchor_1834464 name=1834464></A>2010-05-27 21:09 | <A 
+id=Comments1_CommentList_ctl02_NameLink href="http://www.cnblogs.com/626498301/" 
+target=_blank>一只小鱼</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/%e4%b8%80%e5%8f%aa%e5%b0%8f%e9%b1%bc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN id=comment_body_1834464 
+class=blog_comment_body>项目是WCF+SL的。。刚说的不清楚，是在一个解决方案里的。。<BR>我邮箱地址626498301@qq.com，帮个忙了，看看有什么注意点，或者需要改哪几个地方</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Justin",1834469,"+qoI1da3bugaCZuaZq2E/FJgPtUuB6YJdt1BB/2noQeUYcHjhcDIqQ==")' 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1834469,"+qoI1da3bugaCZuaZq2E/FJgPtUuB6YJdt1BB/2noQeUYcHjhcDIqQ==")' 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Justin" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#1834469">#4楼</A><A 
+id=comment_anchor_1834469 name=1834469></A>2010-05-27 21:15 | <A 
+id=Comments1_CommentList_ctl03_NameLink href="http://www.cnblogs.com/justinw/" 
+target=_blank>Justin</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Justin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN id=comment_body_1834469 
+class=blog_comment_body>Silverlight前途无量呀</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("彦斌",1834511,"kV3jBUrJGEYjnsx5DLciJHC/Hs/nIqXWLU5pEs/PeUo1/tVZgQ4p9A==")' 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1834511,"kV3jBUrJGEYjnsx5DLciJHC/Hs/nIqXWLU5pEs/PeUo1/tVZgQ4p9A==")' 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%bd%a6%e6%96%8c" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#1834511">#5楼</A><A 
+id=comment_anchor_1834511 name=1834511></A><A name=Post></A>2010-05-27 21:54 | 
+<A id=Comments1_CommentList_ctl04_NameLink href="http://www.cnblogs.com/yanbin/" 
+target=_blank>彦斌</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/%e5%bd%a6%e6%96%8c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN id=comment_body_1834511 
+class=blog_comment_body>不错，我今天也开始写sl.<BR>btw,第一张图好像很久以前在codeproject上有见过。</SPAN><BR></DIV></DIV>
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV id=ctl05_comment_form class=commentform>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fzhuqil%2farchive%2f2010%2f05%2f27%2fSilverlight-WCF-WF-Linq-Demo.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fzhuqil%2farchive%2f2010%2f05%2f27%2fSilverlight-WCF-WF-Linq-Demo.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A class=site_hot 
+href="http://a4.yeshj.com/rd/35182/" target=_blank>有道难题开锣头奖8万！</A><BR><A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+href="http://news.cnblogs.com/n/65190/" target=_blank>蓝港王峰：社区有益网游 
+海外收入将达千万</A><BR>· <A href="http://news.cnblogs.com/n/65189/" 
+target=_blank>李彦宏做客创业讲坛 看好互联网技术创业</A><BR>· <A 
+href="http://news.cnblogs.com/n/65188/" target=_blank>Facebook 
+CEO：这次听用户的</A><BR>· <A href="http://news.cnblogs.com/n/65187/" 
+target=_blank>消息称微软中国Windows7正版验证计划或将推迟</A><BR>· <A 
+href="http://news.cnblogs.com/n/65186/" 
+target=_blank>微软鲍尔默回应被苹果超越：将开发更好产品</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV id=job_block class="itnews c_ad_block"><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV id=site_nav_under class=c_ad_block>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV id=ad_under_comment2 class=c_ad_block><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" 
+alt="" 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/1745736/">Silverlight+WCF+WF+Linq结合的一个示例</A></DIV></DIV></DIV><!--end: forFlow --></DIV><!--end: mainContent 主体内容容器-->
+<DIV id=sideBar>
+<DIV id=sideBarMain><!--done-->
+<DIV class=newsItem>
+<H3 class=catListTitle>公告</H3>我的邮箱：zhuqi0@126.com
+<SCRIPT language=JavaScript 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/stat.htm"></SCRIPT>
+ 
+<DIV id=profile_block><A href="http://home.cnblogs.com/zhuqil/" 
+target=_blank>我的主页</A>&nbsp; <A href="http://home.cnblogs.com/zhuqil/detail/" 
+target=_blank>个人资料</A><BR><A href="http://home.cnblogs.com/zhuqil/ing/" 
+target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/%e9%ba%92%e9%ba%9f" 
+target=_blank>发短消息</A></DIV></DIV>
+<DIV id=calendar>
+<TABLE id=Calendar1_entryCal class=Cal title=Calendar border=0 cellSpacing=0 
+cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=7>
+      <TABLE class=CalTitle border=0 cellSpacing=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev><A style="COLOR: black" 
+            title="Go to the previous month" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3743')">&lt;</A></TD>
+          <TD align=middle>2010年5月</TD>
+          <TD class=CalNextPrev align=right><A style="COLOR: black" 
+            title="Go to the next month" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3804')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader abbr=日 scope=col align=middle>日</TH>
+    <TH class=CalDayHeader abbr=一 scope=col align=middle>一</TH>
+    <TH class=CalDayHeader abbr=二 scope=col align=middle>二</TH>
+    <TH class=CalDayHeader abbr=三 scope=col align=middle>三</TH>
+    <TH class=CalDayHeader abbr=四 scope=col align=middle>四</TH>
+    <TH class=CalDayHeader abbr=五 scope=col align=middle>五</TH>
+    <TH class=CalDayHeader abbr=六 scope=col align=middle>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>25</TD>
+    <TD class=CalOtherMonthDay align=middle>26</TD>
+    <TD class=CalOtherMonthDay align=middle>27</TD>
+    <TD class=CalOtherMonthDay align=middle>28</TD>
+    <TD class=CalOtherMonthDay align=middle>29</TD>
+    <TD class=CalOtherMonthDay align=middle>30</TD>
+    <TD class=CalWeekendDay align=middle>1</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/2.html"><U>2</U></A></TD>
+    <TD align=middle>3</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/4.html"><U>4</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/5.html"><U>5</U></A></TD>
+    <TD align=middle>6</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/7.html"><U>7</U></A></TD>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/8.html"><U>8</U></A></TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>9</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/10.html"><U>10</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/11.html"><U>11</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/12.html"><U>12</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/13.html"><U>13</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/14.html"><U>14</U></A></TD>
+    <TD class=CalWeekendDay align=middle>15</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>16</TD>
+    <TD align=middle>17</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/18.html"><U>18</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/19.html"><U>19</U></A></TD>
+    <TD align=middle>20</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/21.html"><U>21</U></A></TD>
+    <TD class=CalWeekendDay align=middle>22</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>23</TD>
+    <TD align=middle>24</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/25.html"><U>25</U></A></TD>
+    <TD align=middle>26</TD>
+    <TD class=CalTodayDay align=middle><A 
+      href="http://www.cnblogs.com/zhuqil/archive/2010/5/27.html"><U>27</U></A></TD>
+    <TD align=middle>28</TD>
+    <TD class=CalWeekendDay align=middle>29</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>30</TD>
+    <TD align=middle>31</TD>
+    <TD class=CalOtherMonthDay align=middle>1</TD>
+    <TD class=CalOtherMonthDay align=middle>2</TD>
+    <TD class=CalOtherMonthDay align=middle>3</TD>
+    <TD class=CalOtherMonthDay align=middle>4</TD>
+    <TD class=CalOtherMonthDay align=middle>5</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<DIV id=side_ing_block>
+<H3 class=catListTitle>最新闪存</H3>
+<UL>
+  <LI>生不进华为,死不进华硕,做鬼不进富士康 <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/104049/">05-27 08:56</A></LI>
+  <LI>12跳了，到底还有多少跳.... <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/104044/">05-27 08:52</A></LI>
+  <LI>注释掉的青春 <A class=ing_lnk href="http://home.cnblogs.com/ing/98499/">04-30 
+  12:44</A></LI>
+  <LI>NND，Google完全不让人用了，还让不让人活呀。 <A class=ing_lnk 
+  href="http://home.cnblogs.com/ing/91520/">03-30 23:40</A></LI>
+  <LI>8832 <A class=ing_lnk href="http://home.cnblogs.com/ing/91130/">03-29 
+  14:28</A></LI>
+  <LI><A class=ing_lnk 
+  href="http://home.cnblogs.com/zhuqil/ing/">更多闪存...</A></LI></UL></DIV>
+<SCRIPT type=text/javascript>
+var blogapp = 'zhuqil';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT onkeydown="return zzk_go_enter(event);" id=q 
+class=input_my_zzk type=text>&nbsp;<INPUT id=btnZzk class=btn_my_zzk onclick=zzk_go() value=找找看 type=button></DIV></DIV>
+<DIV class=catListLink>
+<H3 class=catListTitle>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/zhuqil/MyPosts.html">我的随笔</A></LI>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/zhuqil/">我的空间</A></LI>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A></LI>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/zhuqil/MyComments.html">我的评论</A></LI>
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#">更多链接</A></LI></UL>
+<DIV style="DISPLAY: none" id=itemListLin_con>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl00_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/zhuqil/OtherPosts.html">我的参与</A></LI>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem 
+  href="http://www.cnblogs.com/zhuqil/MyNews.html">我的新闻</A></LI>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/zhuqil/RecentComments.html">最新评论</A></LI>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/zhuqil/tag/">我的标签</A></LI></UL></DIV></DIV>
+<DIV class=catListMyTeams>
+<H3 class=catListTitle>我参与的团队</H3>
+<UL>
+  <LI><A id=SingleColumn1__8b728c_TeamList_ctl00_lnkTeam 
+  href="http://www.cnblogs.com/team/msw/">WF技术研究团队(0/0)</A> </LI>
+  <LI><A id=SingleColumn1__8b728c_TeamList_ctl01_lnkTeam 
+  href="http://www.cnblogs.com/team/SearchEngine/">搜索引擎研究团队(0/0)</A> </LI>
+  <LI><A id=SingleColumn1__8b728c_TeamList_ctl02_lnkTeam 
+  href="http://www.cnblogs.com/team/elite/">微软社区精英(0/0)</A> </LI></UL></DIV>
+<DIV class=catListTag>
+<H3 class=catListTitle>我的标签</H3>
+<UL>
+  <LI><A href="http://www.cnblogs.com/zhuqil/tag/WF4.0/">WF4.0</A>(40)</LI>
+  <LI><A 
+  href="http://www.cnblogs.com/zhuqil/tag/%e8%b6%85%e7%ba%a7%e7%ae%80%e5%8d%95/">超级简单</A>(26)</LI>
+  <LI><A href="http://www.cnblogs.com/zhuqil/tag/WPF/">WPF</A>(6)</LI>
+  <LI><A 
+  href="http://www.cnblogs.com/zhuqil/tag/%e5%81%b7%e9%97%b2%e6%90%9e%e7%ac%91/">偷闲搞笑</A>(4)</LI>
+  <LI><A 
+  href="http://www.cnblogs.com/zhuqil/tag/%e5%ba%8f%e5%88%97%e5%8c%96/">序列化</A>(3)</LI>
+  <LI><A href="http://www.cnblogs.com/zhuqil/tag/C%23/">C#</A>(2)</LI>
+  <LI><A href="http://www.cnblogs.com/zhuqil/tag/ajax/">ajax</A>(2)</LI>
+  <LI><A href="http://www.cnblogs.com/zhuqil/tag/asp.net/">asp.net</A>(2)</LI>
+  <LI><A 
+  href="http://www.cnblogs.com/zhuqil/tag/%e5%b0%8f%e6%8a%80%e5%b7%a7/">小技巧</A>(2)</LI>
+  <LI><A 
+  href="http://www.cnblogs.com/zhuqil/tag/%e5%85%ac%e5%8f%b8%e6%b3%a8%e5%86%8c/">公司注册</A>(1)</LI></UL></DIV>
+<DIV class=catListPostArchive>
+<H3 class=catListTitle>随笔档案<SPAN 
+style="FONT-SIZE: 11px; FONT-WEIGHT: normal">(166)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05.html">2010年5月 (15)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04.html">2010年4月 (16)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/03.html">2010年3月 (17)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/02.html">2010年2月 (19)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/01.html">2010年1月 (39)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2009/12.html">2009年12月 (35)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2009/11.html">2009年11月 (6)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2009/09.html">2009年9月 (1)</A> 
+</LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2009/08.html">2009年8月 (2)</A> 
+</LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2009/07.html">2009年7月 (6)</A> 
+</LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2009/06.html">2009年6月 (1)</A> 
+</LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2009/05.html">2009年5月 (1)</A> 
+</LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2008/12.html">2008年12月 (1)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/zhuqil/archive/2008/08.html">2008年8月 (7)</A> 
+</LI></UL></DIV>
+<DIV class=catListImageCategory>
+<H3 class=catListTitle>相册</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/zhuqil/gallery/229525.html">my girl</A> 
+</LI></UL></DIV>
+<DIV class=catListFavoritCategory>
+<H3 class=catListTitle>收藏夹<SPAN 
+style="FONT-SIZE: 11px; FONT-WEIGHT: normal">(1)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/zhuqil/favorite/225939.html">WPF(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_RssLink 
+  title="Subscribe to WPF(1)" 
+  onclick="open_link('http://www.cnblogs.com/zhuqil/favorite/225939.html/rss');return false;" 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html###">(rss)</A></LI></UL></DIV>
+<DIV class=catList>
+<H3 class=catListTitle>asp.net mvc</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link 
+  href="http://weblogs.asp.net/scottgu/default.aspx">scottgu</A> </LI></UL></DIV>
+<DIV class=catList>
+<H3 class=catListTitle>Visio开发</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl01_Link 
+  href="http://blogs.msdn.com/wmorein/default.aspx">wmorein</A> </LI></UL></DIV>
+<DIV class=catList>
+<H3 class=catListTitle>WCF</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl05_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/artech/">Artech WCF</A> </LI></UL></DIV>
+<DIV class=catList>
+<H3 class=catListTitle>WF</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl01_Link 
+  href="http://blogs.msdn.com/cathyk/default.aspx">Cathy Dumas's Workflow 
+  Designer Blog</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl01_RssLink 
+  title="Subscribe to Cathy Dumas's Workflow Designer Blog" 
+  onclick="open_link('http://blogs.msdn.com/cathyk/rss.xml');return false;" 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html###">(rss)</A></LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl02_Link 
+  href="http://blogs.msdn.com/flow/">Go with The Flow</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl02_RssLink 
+  title="Subscribe to Go with The Flow" 
+  onclick="open_link('http://blogs.msdn.com/flow/');return false;" 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html###">(rss)</A></LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl03_Link 
+  href="http://www.masteringbiztalk.com/blogs/jon/">Jon Flanders </A></LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl04_Link 
+  href="http://blogs.msdn.com/kushals/default.aspx">kushals</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl04_RssLink 
+  title="Subscribe to kushals" 
+  onclick="open_link('http://blogs.msdn.com/kushals/rss.xml');return false;" 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html###">(rss)</A></LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl05_Link 
+  href="http://blogs.msdn.com/mwinkle/">Matt W's Windows Workflow </A><A 
+  id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl05_RssLink 
+  title="Subscribe to Matt W's Windows Workflow " 
+  onclick="open_link('http://blogs.msdn.com/mwinkle/rss.xml');return false;" 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html###">(rss)</A></LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl06_Link 
+  href="http://blogs.msdn.com/pandrew/">pandrew</A> </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl07_Link 
+  href="http://msmvps.com/blogs/theproblemsolver/default.aspx">problemsolver</A> 
+  </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl06_LinkList_ctl08_Link 
+  href="http://blogs.msdn.com/rjacobs/default.aspx">Ron Jacobs</A> 
+</LI></UL></DIV>
+<DIV class=catList>
+<H3 class=catListTitle>Windows Azure </H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl07_LinkList_ctl01_Link 
+  href="http://weblogs.asp.net/">weblogs</A> </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl07_LinkList_ctl02_Link 
+  href="http://www.microsoft.com/windowsazure/">Windows Azure</A> </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl07_LinkList_ctl03_Link 
+  href="http://blogs.msdn.com/azchina/default.aspx">微软Windows Azure 
+  Platform中文博客</A> </LI></UL></DIV>
+<DIV class=catList>
+<H3 class=catListTitle>WPF</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl08_LinkList_ctl01_Link 
+  href="http://blogs.msdn.com/vinsibal/default.aspx">Vincent Sibal's Blog</A> 
+  </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl08_LinkList_ctl02_Link 
+  href="http://blogs.msdn.com/llobo/default.aspx">WPF</A> </LI>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl08_LinkList_ctl03_Link 
+  href="http://www.dotblogs.com.tw/">台湾blog</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl08_LinkList_ctl03_RssLink 
+  title="Subscribe to 台湾blog" 
+  onclick="open_link('http://www.dotblogs.com.tw/rss');return false;" 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html###">(rss)</A></LI></UL></DIV>
+<DIV class=catListBlogRank>
+<H3 class=catListTitle>积分与排名</H3>
+<UL>
+  <LI class=liScore>积分 - 267682 
+  <LI class=liRank>排名 - 211 </LI></UL></DIV>
+<DIV class=catListEssay>
+<H3 class=catListTitle>最新随笔</H3>
+<UL>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl00_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html">1.&nbsp;Silverlight+WCF+WF+Linq结合的一个示例</A></LI>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl01_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/25/wfaspdotnetpagelifecycle.html">2.&nbsp;WF4.0实战（十八）：模拟asp.net生命周期</A></LI>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl02_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/21/wf4-Visit-Web-Site.html">3.&nbsp;WF4.0实战(十七)：实现自动访问网站机器人</A></LI>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl03_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/19/Coded-Workflows.html">4.&nbsp;Beginning 
+  WF4读书笔记（二）：编码实现工作流</A></LI>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl04_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/18/TrafficLight.html">5.&nbsp;WF4.0实战（十六）：模拟红绿灯</A></LI>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl05_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/14/Hello-World.html">6.&nbsp;WPF、WCF、WF打造Hello 
+  World程序</A></LI>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl06_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/13/BeginningWFOne.html">7.&nbsp;Beginning 
+  WF4读书笔记（一）：创建一个简单的工作流</A></LI>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl07_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/12/BeginningWF.html">8.&nbsp;Beginning 
+  WF</A></LI>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl08_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/11/ASP-NET-MVC-and-jQuery-Part-1-Getting-Started.html">9.&nbsp;ASP.NET 
+  MVC和jQuery系列一：入门篇</A></LI>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl09_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/10/shangxinliaotianshi.html">10.&nbsp;WF4.0实战（十五）：伤心聊天室</A></LI></UL></DIV>
+<DIV class=catListComment>
+<H3 class=catListTitle>最新评论<A id=SingleColumn1__e9b9d0_RSSHyperlink1 
+title=RSS订阅最最新评论 href="http://www.cnblogs.com/zhuqil/CommentsRSS.aspx"><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+title=RSS订阅最最新评论 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/xml.gif"></A></H3>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__e9b9d0_CommentList_ctl00_Hyperlink2 class=listitem 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#1834511">1.&nbsp;Re:Silverlight+WCF+WF+Linq结合的一个示例</A> 
+</DIV>
+<DIV class=divRecentComment>不错，我今天也开始写sl. btw,第一张图好像很久以前在codeproject上有见过。 (彦斌) 
+</DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__e9b9d0_CommentList_ctl01_Hyperlink2 class=listitem 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#1834469">2.&nbsp;Re:Silverlight+WCF+WF+Linq结合的一个示例</A> 
+</DIV>
+<DIV class=divRecentComment>Silverlight前途无量呀 (Justin) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__e9b9d0_CommentList_ctl02_Hyperlink2 class=listitem 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#1834464">3.&nbsp;Re:Silverlight+WCF+WF+Linq的一个示例</A> 
+</DIV>
+<DIV 
+class=divRecentComment>项目是WCF+SL的。。刚说的不清楚，是在一个解决方案里的。。我邮箱地址626498301@qq.com，帮个忙了，看看有什么注意点，或者需要改哪几个地方 
+(一只小鱼) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__e9b9d0_CommentList_ctl03_Hyperlink2 class=listitem 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#1834462">4.&nbsp;Re:Silverlight+WCF+WF+Linq的一个示例</A> 
+</DIV>
+<DIV 
+class=divRecentComment>兄弟，我抢个沙发，问个问题吧，这个有WCF的部署是怎样弄的呢，我弄了好几天了，只需要把客户端的配置文件中endPoint的地址改一下再发布到IIS上就行了吗？比如说我在自己的机子上的IIS新建了个网站... 
+(一只小鱼) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__e9b9d0_CommentList_ctl04_Hyperlink2 class=listitem 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/27/Silverlight-WCF-WF-Linq-Demo.html#1834460">5.&nbsp;Re:Silverlight+WCF+WF+Linq的一个示例</A> 
+</DIV>
+<DIV class=divRecentComment>很好，先收藏了 (MiCow) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__e9b9d0_CommentList_ctl05_Hyperlink2 class=listitem 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/25/wfaspdotnetpagelifecycle.html#1833601">6.&nbsp;Re:WF4.0实战（十八）：模拟asp.net生命周期</A> 
+</DIV>
+<DIV 
+class=divRecentComment>清晰易懂，还没有开始学习WF4.0,感觉比3.5改善了很多，特别是流程设计这块，简单了很多，希望楼主多写些这方面文章，最近Winter大哥怎么好久都不写WF了？ 
+(V_Lad@Microsoft) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__e9b9d0_CommentList_ctl06_Hyperlink2 class=listitem 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/25/wfaspdotnetpagelifecycle.html#1833175">7.&nbsp;Re:WF4.0实战（十八）：模拟asp.net生命周期</A> 
+</DIV>
+<DIV class=divRecentComment>Up~ (Frank Xu Lei) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__e9b9d0_CommentList_ctl07_Hyperlink2 class=listitem 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/25/wfaspdotnetpagelifecycle.html#1833084">8.&nbsp;Re:WF4.0实战（十八）：模拟asp.net生命周期</A> 
+</DIV>
+<DIV class=divRecentComment>很好的例子,還可以順帶學習aspnet (温景良(Jason)) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__e9b9d0_CommentList_ctl08_Hyperlink2 class=listitem 
+href="http://www.cnblogs.com/zhuqil/archive/2010/05/25/wfaspdotnetpagelifecycle.html#1833042">9.&nbsp;Re:WF4.0实战（十八）：模拟asp.net生命周期</A> 
+</DIV>
+<DIV class=divRecentComment>greate! 继续继续 前来学习 lz能不能把WCF的process model也描述出来啊？ 
+(Steven Chen) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__e9b9d0_CommentList_ctl09_Hyperlink2 class=listitem 
+href="http://www.cnblogs.com/zhuqil/archive/2010/04/02/Permission.html#1832986">10.&nbsp;Re:一种简单的直观的高效的权限设计</A> 
+</DIV>
+<DIV class=divRecentComment>标记了有时间在看 (初级程序员) </DIV></DIV>
+<DIV class=catListView>
+<H3 class=catListTitle>阅读排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/09/UnCommon-Csharp-keywords-A-Look.html">1.&nbsp;18个不常见的C#关键字，您使用过几个？(6795)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/01/15/Rumorous_Developer.html">2.&nbsp;如何成为人尽皆知的C#开发人员(5317)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/15/Visual-Studio-Extension.html">3.&nbsp;实现Visual 
+  Studio 2010一个很简单的很酷的扩展(5102)</A> </LI>
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2009/12/19/DivLayout.html">4.&nbsp;超级简单:DIV布局(4929)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/01/05/asp-net-23-function.html">5.&nbsp;ASP.Net4.0中新增23项功能(4869)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/02/Permission.html">6.&nbsp;一种简单的直观的高效的权限设计(4764)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/03/23/google-hk.html">7.&nbsp;初试google.com.hk(4572)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/03/17/visual-studio-2010-rc-cool-new-features.html">8.&nbsp;Visual 
+  Studio 2010 RC 几个很酷的新功能(4088)</A> </LI>
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/01/16/40-ASP_NET-Tip.html">9.&nbsp;40条ASP.NET开发Tip(3781)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/01/17/20-coding-habits.html">10.&nbsp;20条.net编码习惯(3503)</A> 
+  </LI></UL></DIV>
+<DIV class=catListFeedback>
+<H3 class=catListTitle>评论排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl09_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/09/UnCommon-Csharp-keywords-A-Look.html">1.&nbsp;18个不常见的C#关键字，您使用过几个？(144)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl09_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/02/Permission.html">2.&nbsp;一种简单的直观的高效的权限设计(120)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl09_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/15/Visual-Studio-Extension.html">3.&nbsp;实现Visual 
+  Studio 2010一个很简单的很酷的扩展(98)</A> </LI>
+  <LI><A id=SingleColumn1_ctl09_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/10/Visual-Studio-2020.html">4.&nbsp;Visual 
+  Studio 2020一些遐想(68)</A> </LI>
+  <LI><A id=SingleColumn1_ctl09_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/01/15/Rumorous_Developer.html">5.&nbsp;如何成为人尽皆知的C#开发人员(67)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl09_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/03/29/GridView_Panel.html">6.&nbsp;一步一步教你在GridView中实现可收缩的面板(56)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl09_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/03/23/google-hk.html">7.&nbsp;初试google.com.hk(51)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl09_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/01/05/asp-net-23-function.html">8.&nbsp;ASP.Net4.0中新增23项功能(41)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl09_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2009/12/19/DivLayout.html">9.&nbsp;超级简单:DIV布局(36)</A> 
+  </LI>
+  <LI><A id=SingleColumn1_ctl09_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/01/17/20-coding-habits.html">10.&nbsp;20条.net编码习惯(32)</A> 
+  </LI></UL></DIV>
+<H3 class=catListTitle>60天内阅读排行</H3>
+<DIV class=RecentComment>
+<UL>
+  <LI><A id=SingleColumn1__9bba1d_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/09/UnCommon-Csharp-keywords-A-Look.html">1.&nbsp;18个不常见的C#关键字，您使用过几个？(6795)</A> 
+  </LI>
+  <LI><A id=SingleColumn1__9bba1d_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/15/Visual-Studio-Extension.html">2.&nbsp;实现Visual 
+  Studio 2010一个很简单的很酷的扩展(5102)</A> </LI>
+  <LI><A id=SingleColumn1__9bba1d_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/02/Permission.html">3.&nbsp;一种简单的直观的高效的权限设计(4764)</A> 
+  </LI>
+  <LI><A id=SingleColumn1__9bba1d_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/03/29/GridView_Panel.html">4.&nbsp;一步一步教你在GridView中实现可收缩的面板(3459)</A> 
+  </LI>
+  <LI><A id=SingleColumn1__9bba1d_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/14/Hello-World.html">5.&nbsp;WPF、WCF、WF打造Hello 
+  World程序(3328)</A> </LI>
+  <LI><A id=SingleColumn1__9bba1d_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/10/Visual-Studio-2020.html">6.&nbsp;Visual 
+  Studio 2020一些遐想(2974)</A> </LI>
+  <LI><A id=SingleColumn1__9bba1d_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/05/04/faster-faster-loops.html">7.&nbsp;越来越快的循环(2631)</A> 
+  </LI>
+  <LI><A id=SingleColumn1__9bba1d_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/23/dataacess.html">8.&nbsp;WF4.0实战(八)：实现一套图形化的数据访问层(1985)</A> 
+  </LI>
+  <LI><A id=SingleColumn1__9bba1d_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/27/DistributedApps.html">9.&nbsp;WF4.0实战(十)：分布式酒店订房系统(1877)</A> 
+  </LI>
+  <LI><A id=SingleColumn1__9bba1d_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/zhuqil/archive/2010/04/16/WF4CashRegister.html">10.&nbsp;WF4.0实战（二）：超市收银软件(1786)</A> 
+  </LI></UL></DIV></DIV></DIV><!--end: sideBarMain --></DIV><!--end: sideBar 侧边栏容器 -->
+<DIV class=clear></DIV></DIV><!--end: main -->
+<DIV class=clear></DIV>
+<DIV id=footer><!--done-->Copyright ©2010 麒麟 </DIV><!--end: footer --></DIV><!--end: home 自定义的最大容器 --></FORM>
+<SCRIPT type=text/javascript 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/shCore.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/shLanguage.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Silverlight+WCF+WF+Linq结合的一个示例%20-%20海纳百川%20-%20博客园_files/ShowHidden.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

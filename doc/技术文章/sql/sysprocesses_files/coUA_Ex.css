@@ -1,0 +1,139 @@
+@import url( coUA.css );
+BODY {
+	Z-INDEX: 1; LINE-HEIGHT: 135%
+}
+A {
+	COLOR: green
+}
+H1.specialheading {
+	MARGIN-TOP: 6px
+}
+P.proclabel {
+	FONT-SIZE: 9pt; COLOR: midnightblue
+}
+P.specialproclabel {
+	MARGIN-TOP: 6px; FONT-WEIGHT: bold
+}
+P.mini {
+	MARGIN-TOP: -2em; FONT-SIZE: 9pt
+}
+H1 {
+	LINE-HEIGHT: 125%
+}
+H2 {
+	LINE-HEIGHT: 125%
+}
+H3 {
+	LINE-HEIGHT: 125%
+}
+H4 {
+	LINE-HEIGHT: 125%
+}
+H5 {
+	LINE-HEIGHT: 125%
+}
+H6 {
+	LINE-HEIGHT: 125%
+}
+#popup {
+	COLOR: #0033bb; TEXT-DECORATION: none
+}
+.popup {
+	TEXT-DECORATION: none
+}
+.poplink {
+	TEXT-DECORATION: none
+}
+.indent {
+	MARGIN-LEFT: 1.5em
+}
+B.notes {
+	FONT-VARIANT: small-caps
+}
+.level2 {
+	MARGIN-BOTTOM: 1em; MARGIN-LEFT: 3em
+}
+.level3 {
+	MARGIN-BOTTOM: 1em; MARGIN-LEFT: 4.5em
+}
+#expand {
+	CURSOR: hand; COLOR: #0033bb; TEXT-DECORATION: none
+}
+DIV.expand {
+	DISPLAY: none; Z-INDEX: 1; MARGIN: 0.5em 1.3em
+}
+DIV.expand2 {
+	PADDING-RIGHT: 10px; DISPLAY: none; PADDING-LEFT: 10px; Z-INDEX: 1; PADDING-BOTTOM: 10px; MARGIN: 0.5em 1.3em; OVERFLOW: visible; WIDTH: 100%; PADDING-TOP: 10px; BACKGROUND-COLOR: #eeeeee
+}
+DIV.syntax {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; Z-INDEX: 1; PADDING-BOTTOM: 10px; MARGIN: 0.5em 1em; WIDTH: 100%; PADDING-TOP: 10px; BACKGROUND-COLOR: #eeeeee
+}
+#space {
+	MARGIN-TOP: -0.25em; MARGIN-BOTTOM: 0.25em; LIST-STYLE-TYPE: none
+}
+IMG.thumbnail {
+	BORDER-TOP-WIDTH: 1pt; BORDER-LEFT-WIDTH: 1pt; BORDER-BOTTOM-WIDTH: 1pt; MARGIN-LEFT: 0px; WIDTH: 90px; BORDER-RIGHT-WIDTH: 1pt
+}
+DIV.thumbnail {
+	Z-INDEX: 1; WIDTH: 100px
+}
+A:link IMG.thumbnail {
+	BORDER-LEFT-COLOR: #0033bb; BORDER-BOTTOM-COLOR: #0033bb; BORDER-TOP-COLOR: #0033bb; BORDER-RIGHT-COLOR: #0033bb
+}
+A:visited IMG.thumbnail {
+	BORDER-LEFT-COLOR: #0033bb; BORDER-BOTTOM-COLOR: #0033bb; BORDER-TOP-COLOR: #0033bb; BORDER-RIGHT-COLOR: #0033bb
+}
+A:active IMG.thumbnail {
+	BORDER-LEFT-COLOR: #ff6600; BORDER-BOTTOM-COLOR: #ff6600; BORDER-TOP-COLOR: #ff6600; BORDER-RIGHT-COLOR: #ff6600
+}
+A:hover IMG.thumbnail {
+	BORDER-LEFT-COLOR: #ff6600; BORDER-BOTTOM-COLOR: #ff6600; BORDER-TOP-COLOR: #ff6600; BORDER-RIGHT-COLOR: #ff6600
+}
+.clear-graphic {
+	CLEAR: left
+}
+SPAN.linkedfile {
+	Z-INDEX: 2; OVERFLOW: visible; WIDTH: 100%
+}
+P.margin {
+	MARGIN-TOP: 0em
+}
+UNKNOWN {
+	MARGIN-TOP: 0.6em; FONT-WEIGHT: bold; MARGIN-LEFT: 1.5em
+}
+UNKNOWN {
+	MARGIN-TOP: 0.6em; FONT-WEIGHT: normal; MARGIN-LEFT: 3em
+}
+UNKNOWN {
+	TEXT-DECORATION: none
+}
+.shortcutA_Selected {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+.shortcutDIV_Active {
+	BORDER-RIGHT: #333333 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #333333 1px solid; DISPLAY: block; PADDING-LEFT: 10px; Z-INDEX: 2; PADDING-BOTTOM: 10px; MARGIN: 0px; BORDER-LEFT: #333333 1px solid; WIDTH: 200px; COLOR: #cc0000; PADDING-TOP: 10px; BORDER-BOTTOM: #333333 1px solid; POSITION: absolute; BACKGROUND-COLOR: #ffffcc
+}
+.shortcutDIV_Inactive {
+	DISPLAY: none
+}
+.break {
+	WORD-BREAK: break-all
+}
+H1.relnotes1 {
+	FONT-SIZE: 12pt; MARGIN-BOTTOM: 0.5em
+}
+H1.relnotes {
+	MARGIN-TOP: 2.5em; FONT-SIZE: 12pt; MARGIN-BOTTOM: 0.5em
+}
+H2.relnotes {
+	FONT-SIZE: 12pt; MARGIN-BOTTOM: 0.5em
+}
+H3.relnotes {
+	FONT-SIZE: 12pt; MARGIN-BOTTOM: 0.5em
+}
+H4.relnotes {
+	FONT-SIZE: 10.5pt; MARGIN-BOTTOM: 0.5em
+}
+H5.relnotes {
+	FONT-SIZE: 10.5pt; MARGIN-BOTTOM: 0.5em
+}

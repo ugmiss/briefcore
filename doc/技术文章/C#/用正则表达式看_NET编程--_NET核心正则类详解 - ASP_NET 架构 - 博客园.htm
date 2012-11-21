@@ -1,0 +1,1514 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0066)http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>用正则表达式看.NET编程--.NET核心正则类详解 - ASP.NET 架构 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="小洋 .NET 正则表达式" name=keywords><LINK 
+href="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/common.css" 
+type=text/css rel=stylesheet><LINK id=MainCss 
+href="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/style.css" 
+type=text/css rel=stylesheet><LINK 
+href="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/common2.css" 
+type=text/css rel=stylesheet><LINK 
+href="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/shCore.css" 
+type=text/css rel=stylesheet><LINK 
+href="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/yanyangtian/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/yanyangtian/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1370005.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<!--done-->
+<DIV id=home>
+<DIV id=header>
+<DIV id=blogTitle><A id=lnkBlogLogo 
+href="http://www.cnblogs.com/yanyangtian/"><IMG id=blogLogo alt=返回主页 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/logo.gif"></A> <!--done-->
+<H1><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/yanyangtian/">ASP.NET 架构</A></H1>
+<H2>专注于ASP.NET以及分布式架构，Framework的开发<BR><B>兢兢业业学技术</B><BR><B>踏踏实实诚做人</B> 
+</H2></DIV><!--end: blogTitle 博客的标题和副标题 --></DIV><!--end: header 头部 -->
+<DIV id=main>
+<DIV id=mainContent>
+<DIV class=forFlow>
+<DIV id=navigator><!--done-->
+<UL id=navList>
+  <LI><A class=menu id=MyLinks1_HomeLink href="http://www.cnblogs.com/">博客园</A> 
+  </LI>
+  <LI><A class=menu id=MyLinks1_SpaceLink 
+  href="http://space.cnblogs.com/">社区</A> </LI>
+  <LI><A class=menu id=MyLinks1_MyHomeLink 
+  href="http://www.cnblogs.com/yanyangtian/">首页</A> </LI>
+  <LI><A class=menu id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/yanyangtian/admin/EditPosts.aspx?opt=1">新随笔</A> 
+  </LI>
+  <LI><A class=menu id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/å°æ´ï¼çæ´å¤©å·¥ä½å®¤ï¼">联系</A> 
+  </LI>
+  <LI><A class=menu id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/yanyangtian/admin/EditPosts.aspx">管理</A> </LI>
+  <LI><A class=menu id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/yanyangtian/rss">订阅</A> <A class=aHeaderXML 
+  id=MyLinks1_XMLLink href="http://www.cnblogs.com/yanyangtian/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/rss.gif"></A> 
+  </LI></UL>
+<DIV class=blogStats><!--done-->随笔- 66&nbsp; 文章- 5&nbsp; 评论- 942&nbsp; </DIV><!--end: blogStats --></DIV><!--end: navigator 博客导航栏 --><!--done-->
+<DIV id=topics>
+<DIV class=post>
+<H1 class=postTitle><A class=postTitle2 id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html">用正则表达式看.NET编程--.NET核心正则类详解</A> 
+</H1>
+<DIV class=clear></DIV>
+<DIV class=postBody>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.NET核心正则类详解</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前言:感谢大家对上一篇文章的支持,真的很高兴自己的文章可以对大家带来一点好处,谢谢各位.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.今天的讲解分为以下部分:</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;<SPAN style="COLOR: red">&nbsp;1.核心对象概述</SPAN></P>
+<P><SPAN style="COLOR: red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.核心对象详解</SPAN></P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先看第一部分:&nbsp;1.核心对象概述</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在.NET中,正则功能是通过7个类的高度交互来提供的,但是我们只要掌握其中的3个类就可以完成绝大部分功能,所以我们来看看这3个类.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1Regex对象:</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先我们创建Regex对象:</P>
+<P>&nbsp;</P>
+<DIV class=cnblogs_code><IMG id=Code_Closed_Image_081338 
+onclick="this.style.display='none'; document.getElementById('Code_Closed_Text_081338').style.display='none'; document.getElementById('Code_Open_Image_081338').style.display='inline'; document.getElementById('Code_Open_Text_081338').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ContractedBlock.gif" 
+width=11 align=top><IMG id=Code_Open_Image_081338 style="DISPLAY: none" 
+onclick="this.style.display='none'; document.getElementById('Code_Open_Text_081338').style.display='none'; getElementById('Code_Closed_Image_081338').style.display='inline'; getElementById('Code_Closed_Text_081338').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ExpandedBlockStart.gif" 
+width=11 align=top><SPAN class=cnblogs_code_Collapse 
+id=Code_Closed_Text_081338>Code</SPAN><SPAN id=Code_Open_Text_081338 
+style="DISPLAY: none"><BR><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN style="COLOR: #000000">Regex&nbsp;regex</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;Regex(</SPAN><SPAN 
+style="COLOR: #800000">@"</SPAN><SPAN 
+style="COLOR: #800000">\s+(\d)$</SPAN><SPAN style="COLOR: #800000">"</SPAN><SPAN 
+style="COLOR: #000000">);<BR></SPAN></SPAN></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建对象后就可以去匹配字符文本了,此时要调用Match方法:</P>
+<P>&nbsp;</P>
+<DIV class=cnblogs_code><IMG id=Code_Closed_Image_081436 
+onclick="this.style.display='none'; document.getElementById('Code_Closed_Text_081436').style.display='none'; document.getElementById('Code_Open_Image_081436').style.display='inline'; document.getElementById('Code_Open_Text_081436').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ContractedBlock.gif" 
+width=11 align=top><IMG id=Code_Open_Image_081436 style="DISPLAY: none" 
+onclick="this.style.display='none'; document.getElementById('Code_Open_Text_081436').style.display='none'; getElementById('Code_Closed_Image_081436').style.display='inline'; getElementById('Code_Closed_Text_081436').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ExpandedBlockStart.gif" 
+width=11 align=top><SPAN class=cnblogs_code_Collapse 
+id=Code_Closed_Text_081436>Code</SPAN><SPAN id=Code_Open_Text_081436 
+style="DISPLAY: none"><BR><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN style="COLOR: #000000">Match&nbsp;match</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN 
+style="COLOR: #000000">regex.Macth(</SPAN><SPAN 
+style="COLOR: #800000">"</SPAN><SPAN 
+style="COLOR: #800000">May&nbsp;16,2007</SPAN><SPAN 
+style="COLOR: #800000">"</SPAN><SPAN 
+style="COLOR: #000000">);</SPAN></SPAN></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请大家注意返回的类型!</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2Match对象</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regex对象的Match方法通过创建并且返回 
+Match对象来提供匹配的信息.Match对象有很多的属性,如Success,表示匹配是否成功,是bool类型的.还有Value属性,如果匹配成功,那么那么Value就保存了实际匹配的文本的副本.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Match对象返回的细节还包含捕获括号所匹配的文本..NET中用两种方法来取得匹配后的捕获文本:用Match对象的Groups[i].Value(i是一个数字),还可</P>
+<P>以用Result方法.这些我们在后面会谈论的.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3Group对象</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们前面谈了一些关于Groups的知识,大家可以猜到,其实Groups就是Group对象的集合,所以Groups[1].Value就是第一个捕获括号匹配的文本值.每一</P>
+<P>组捕获括号都有一个对应的Group对象.另外还有一个"虚拟分组",其编号为0,它是保存全局的匹配信息的.比如上面的例子中,Groups[0].Value的值就是"May 
+</P>
+<P>16,2007",而Groups[1].Value的值就是"16".</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: red">&nbsp;注意:下面例子的match在上面例子中定义了的:</SPAN></P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;因此,match.Value和match.Groups[0].Value是等价的--都是全局匹配的文本的副本.第一种方法很简洁,但是我们要记住有0这个分组因为match.Groups.Count包含了0分组的情况,所以上面的那个例子中match.Groups.Count为2.</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意:匹配时会计算出所有结果:吧正则表达式应用到字符文本中,得到一个Match对象,此时所有的结果,如匹配的位置,每一个捕获分组匹配的内容等,都会计算</P>
+<P>出来,封装到一个Match对象中.我们可以访问那个Match对象的属性和方法来获取我们的结果.</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: red">&nbsp;2.核心对象详解</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;看完上面的部分,大家对一些常用的对象基本有了了解,其实杂实践中,我们很少明确的声明Regex 
+对象,也就是说,我们一般不new一个Regex对象.因为Regex类有很多的静态方法.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: #ff0000">2.1创建Regex对象.</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建一个 
+Regex对象不难,因为Regex的构造函数比较简单,可以接受一个参数(作为正则表达式的字符串),前面的例子大家看过.或者接受两个参数(一个正则表达式,还有一个枚举的值).下面分别举例:</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接受一个参数的构造函数:</P>
+<DIV class=cnblogs_code><IMG id=Code_Closed_Image_081338 
+onclick="this.style.display='none'; document.getElementById('Code_Closed_Text_081338').style.display='none'; document.getElementById('Code_Open_Image_081338').style.display='inline'; document.getElementById('Code_Open_Text_081338').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ContractedBlock.gif" 
+width=11 align=top><IMG id=Code_Open_Image_081338 style="DISPLAY: none" 
+onclick="this.style.display='none'; document.getElementById('Code_Open_Text_081338').style.display='none'; getElementById('Code_Closed_Image_081338').style.display='inline'; getElementById('Code_Closed_Text_081338').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ExpandedBlockStart.gif" 
+width=11 align=top><SPAN class=cnblogs_code_Collapse 
+id=Code_Closed_Text_081338>Code</SPAN><SPAN id=Code_Open_Text_081338 
+style="DISPLAY: none"><BR><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN style="COLOR: #000000">Regex&nbsp;regex</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;Regex(</SPAN><SPAN 
+style="COLOR: #800000">@"</SPAN><SPAN 
+style="COLOR: #800000">\s+(\d)$</SPAN><SPAN style="COLOR: #800000">"</SPAN><SPAN 
+style="COLOR: #000000">);<BR></SPAN></SPAN></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接受两个两个参数的构造函数:</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<DIV class=cnblogs_code><IMG id=Code_Closed_Image_084341 
+onclick="this.style.display='none'; document.getElementById('Code_Closed_Text_084341').style.display='none'; document.getElementById('Code_Open_Image_084341').style.display='inline'; document.getElementById('Code_Open_Text_084341').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ContractedBlock.gif" 
+width=11 align=top><IMG id=Code_Open_Image_084341 style="DISPLAY: none" 
+onclick="this.style.display='none'; document.getElementById('Code_Open_Text_084341').style.display='none'; getElementById('Code_Closed_Image_084341').style.display='inline'; getElementById('Code_Closed_Text_084341').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ExpandedBlockStart.gif" 
+width=11 align=top><SPAN class=cnblogs_code_Collapse 
+id=Code_Closed_Text_084341>Code</SPAN><SPAN id=Code_Open_Text_084341 
+style="DISPLAY: none"><BR><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN style="COLOR: #008000">//</SPAN><SPAN 
+style="COLOR: #008000">不区分大小写的匹配&nbsp;并且匹配多行</SPAN><SPAN 
+style="COLOR: #008000"><BR></SPAN><SPAN 
+style="COLOR: #000000">Regex&nbsp;regex</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;Regex(</SPAN><SPAN 
+style="COLOR: #800000">@"</SPAN><SPAN 
+style="COLOR: #800000">^\s+(\d)$</SPAN><SPAN 
+style="COLOR: #800000">"</SPAN><SPAN 
+style="COLOR: #000000">,RegexOptions.IgnoreCase</SPAN><SPAN 
+style="COLOR: #000000">|</SPAN><SPAN 
+style="COLOR: #000000">RegexOptions.Multiline);<BR></SPAN></SPAN></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大家对后面的那些枚举的值,可能不是很清楚,下面说下(只说很常用的):</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RegexOptions的取值的意义:</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: red">RegexOptions.IgnoreCase</SPAN>:表示不区分大小写的匹配;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: red">RegexOptions.Multiline</SPAN>:表示正则表达式在匹配的时候采用增强的锚点模式,也就是说,可以匹配字符串内部的换行符,不仅仅知识匹配整个字符串的开始和结尾:举例如下:</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一个字符串,string 
+str="This is a apple.(换行)</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello 
+xiaoyang.(换行)</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello 
+everyone!"</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(注:大家甚至可以把一篇文章读入到一个字符串中,文章肯定有很多的行)</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果我们想匹配str中所有的a,那么你用表达式Regex 
+regex=new Regex(@"^a$");,那么你就只能匹配其中的一行,即你得到匹配是a apple,后面的两行</P>
+<P>没有匹配,所以你就可以用&nbsp;RegexOptions.Multiline匹配多行.</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: red">RegexOptions.Singleline:<SPAN 
+style="COLOR: #000000">表示只匹配一行.</SPAN></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: red">RegexOptions.</SPAN><SPAN 
+style="COLOR: #ff0000">ExplicitCapture</SPAN>:在正则表达式中,一般括号"()"是捕获性的括号,即你可以在结果中有Groups[i]来索引相应的值,如果你用了这个枚举,那</P>
+<P>么你的正则表达式中的括号"()"就不是捕获性的括号了.那么你的括号就只是分组了.但是注意:命名捕获括号不受影响,即(?&lt;name&gt;...)还是可以捕获,你可以访问</P>
+<P>Groups["name"].Value来获得你匹配的文本.</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: red">RegexOptions</SPAN>.<SPAN 
+style="COLOR: #ff0000">RightToLeft&nbsp;</SPAN>:进行从右向左的匹配,而我们的表达式一般从左向右匹配的.</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;<SPAN style="COLOR: red">RegexOptions</SPAN>.<SPAN 
+style="COLOR: #ff0000">Complied&nbsp;</SPAN>:表示你的正则表达式是否要编译,就类比我们数据库中的存储结构和一般的查询语句的关系.如果你的正则表达式只用一次,那么</P>
+<P>&nbsp;</P>
+<P>你编译就没有什么意义,如果很常用,那么编译后,以后的匹配就快些.</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上面的枚举值是很常用的,还有几个不怎么用,就不说了.其实我们可以在构造函数中使用多个枚举一起用,如:同时匹配多行,且不区分大小写,且编译表达式.你</P>
+<P>&nbsp;</P>
+<P>就可以这样:</P>
+<DIV class=cnblogs_code><IMG id=Code_Closed_Image_091022 
+onclick="this.style.display='none'; document.getElementById('Code_Closed_Text_091022').style.display='none'; document.getElementById('Code_Open_Image_091022').style.display='inline'; document.getElementById('Code_Open_Text_091022').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ContractedBlock.gif" 
+width=11 align=top><IMG id=Code_Open_Image_091022 style="DISPLAY: none" 
+onclick="this.style.display='none'; document.getElementById('Code_Open_Text_091022').style.display='none'; getElementById('Code_Closed_Image_091022').style.display='inline'; getElementById('Code_Closed_Text_091022').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ExpandedBlockStart.gif" 
+width=11 align=top><SPAN class=cnblogs_code_Collapse 
+id=Code_Closed_Text_091022>Code</SPAN><SPAN id=Code_Open_Text_091022 
+style="DISPLAY: none"><BR><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #008000">//</SPAN><SPAN 
+style="COLOR: #008000">不区分大小写的匹配&nbsp;并且匹配多行,编译</SPAN><SPAN 
+style="COLOR: #008000"><BR></SPAN><SPAN 
+style="COLOR: #000000">Regex&nbsp;regex</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;Regex(</SPAN><SPAN 
+style="COLOR: #800000">@"</SPAN><SPAN 
+style="COLOR: #800000">^\s+(\d)$</SPAN><SPAN 
+style="COLOR: #800000">"</SPAN><SPAN 
+style="COLOR: #000000">,RegexOptions.IgnoreCase</SPAN><SPAN 
+style="COLOR: #000000">|</SPAN><SPAN 
+style="COLOR: #000000">RegexOptions.Multiline</SPAN><SPAN 
+style="COLOR: #000000">|</SPAN><SPAN 
+style="COLOR: #000000">RegexOptions.Complied);<BR></SPAN></SPAN></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意:用"|"连接,表多个.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上面讲了创建Regex对象,下面接着:</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: #ff0000">&nbsp;2.2使用Regex对象:</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先我们先创建一个Regex,便于我们下面的讲解:</P>
+<P>&nbsp;</P>
+<DIV class=cnblogs_code><IMG id=Code_Closed_Image_091022 
+onclick="this.style.display='none'; document.getElementById('Code_Closed_Text_091022').style.display='none'; document.getElementById('Code_Open_Image_091022').style.display='inline'; document.getElementById('Code_Open_Text_091022').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ContractedBlock.gif" 
+width=11 align=top><IMG id=Code_Open_Image_091022 style="DISPLAY: none" 
+onclick="this.style.display='none'; document.getElementById('Code_Open_Text_091022').style.display='none'; getElementById('Code_Closed_Image_091022').style.display='inline'; getElementById('Code_Closed_Text_091022').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ExpandedBlockStart.gif" 
+width=11 align=top><SPAN class=cnblogs_code_Collapse 
+id=Code_Closed_Text_091022>Code</SPAN><SPAN id=Code_Open_Text_091022 
+style="DISPLAY: none"><BR><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN style="COLOR: #000000"><BR></SPAN><SPAN 
+style="COLOR: #008000">//</SPAN><SPAN 
+style="COLOR: #008000">不区分大小写的匹配&nbsp;并且匹配多行,编译</SPAN><SPAN 
+style="COLOR: #008000"><BR></SPAN><SPAN 
+style="COLOR: #000000">Regex&nbsp;regex</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;Regex(</SPAN><SPAN 
+style="COLOR: #800000">@"</SPAN><SPAN 
+style="COLOR: #800000">^\s+(\d)$</SPAN><SPAN 
+style="COLOR: #800000">"</SPAN><SPAN 
+style="COLOR: #000000">,RegexOptions.IgnoreCase</SPAN><SPAN 
+style="COLOR: #000000">|</SPAN><SPAN 
+style="COLOR: #000000">RegexOptions.Multiline</SPAN><SPAN 
+style="COLOR: #000000">|</SPAN><SPAN 
+style="COLOR: #000000">RegexOptions.Complied);<BR></SPAN></SPAN></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们就可以用这个regex对象来匹配文本了.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: #ff0000">2.2.1IsMatch方法:</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这个方法用两个重载:regex.IsMatch(strString),regex.IsMatch(strString,offSet)</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IsMatch方法把目标正则表达式(^\s+(\d)$应用在目标字符串(strString),返回bool的值,表示匹配是否成功,而offSet是一个整数,表示从字符串的那个位</P>
+<P>置开始匹配.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: #ff0000">&nbsp;2.2.2Match方法:</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这个方法有3个重载,很简单的.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;regex.Match(strString),</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;regex.Match(strString,offSet)</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;regex.Match(strString,offSet,maxlength);</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中,strString=要匹配的字符串,offSet=开始匹配的位置(int),maxlength=字符串要匹配的长度,可能字符串很长,担你只是想匹配10个字符.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Match方法返回一个Match的对象,我们可以通过在返回的对象中获取我们匹配的信息.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意:如果提供了maxlength参数,会进行特殊的匹配,从offSet开始的字符开始计算,正则表达式引擎会把maxlength长度的文本当作整个目标字符串,并且</P>
+<P>假设此范围之外的字符不存在,所以此时"^"只能匹配字符串中offSet位置,而"$"匹配之后的maxlength个字符的位置.,就算你的正则表达式中有环视,环视也不能"看</P>
+<P>到"此范围之外的字符.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: #ff0000">&nbsp;2.2.3Matches方法:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其实Matches方法返回一组Match对象,可以类比前面说的Groups 
+和Group 的关系.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例子:</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<DIV class=cnblogs_code><IMG id=Code_Closed_Image_093322 
+onclick="this.style.display='none'; document.getElementById('Code_Closed_Text_093322').style.display='none'; document.getElementById('Code_Open_Image_093322').style.display='inline'; document.getElementById('Code_Open_Text_093322').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ContractedBlock.gif" 
+width=11 align=top><IMG id=Code_Open_Image_093322 style="DISPLAY: none" 
+onclick="this.style.display='none'; document.getElementById('Code_Open_Text_093322').style.display='none'; getElementById('Code_Closed_Image_093322').style.display='inline'; getElementById('Code_Closed_Text_093322').style.display='inline';" 
+height=16 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ExpandedBlockStart.gif" 
+width=11 align=top><SPAN class=cnblogs_code_Collapse 
+id=Code_Closed_Text_093322>Code</SPAN><SPAN id=Code_Open_Text_093322 
+style="DISPLAY: none"><BR><!--<br />
+<br />
+Code highlighting produced by Actipro CodeHighlighter (freeware)<br />
+http://www.CodeHighlighter.com/<br />
+<br />
+--><SPAN style="COLOR: #000000">Regex&nbsp;regex</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;Regex(</SPAN><SPAN 
+style="COLOR: #800000">@"</SPAN><SPAN style="COLOR: #800000">\w+</SPAN><SPAN 
+style="COLOR: #800000">"</SPAN><SPAN style="COLOR: #000000">);<BR></SPAN><SPAN 
+style="COLOR: #0000ff">string</SPAN><SPAN 
+style="COLOR: #000000">&nbsp;str</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #800000">"</SPAN><SPAN 
+style="COLOR: #800000">hello&nbsp;world</SPAN><SPAN 
+style="COLOR: #800000">"</SPAN><SPAN 
+style="COLOR: #000000">;<BR>MatchCollection&nbsp;matchCollection</SPAN><SPAN 
+style="COLOR: #000000">=</SPAN><SPAN 
+style="COLOR: #000000">regex.Matchs(str);</SPAN></SPAN></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在matchCollection中就有两个match对象,即matchCollection.Count为2,你可以迭代集合对象,用Match的Value属性来得到匹配为本:Helle&nbsp; 
+和World.</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今天就到这里,下一篇就会谈谈Regex对象稍微高级一点的问题!</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P>&nbsp;</P>
+<DIV id=EntryTag>Tag标签: <A 
+href="http://www.cnblogs.com/yanyangtian/tag/å°æ´+.NET+æ&shy;£åè¡¨è¾¾å¼/">小洋 
+.NET 正则表达式</A></DIV>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/yanyangtian/" 
+target=_blank>小洋（燕洋天工作室）</A><BR>关注 - 3<BR>粉丝 - 39<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1370005,40700,1)><SPAN class=diggnum 
+id=digg_count_1370005>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1370005,40700,2)><SPAN class=burynum 
+id=bury_count_1370005>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1370005 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1370005>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/05/1369340.html">« 
+</A>上一篇：<A title="发布于2009-01-05 13:49" 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/05/1369340.html">用正则表达式的观点看待.NET编程设计</A><BR><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370114.html">» 
+</A>下一篇：<A title="发布于2009-01-06 11:04" 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370114.html">掌握XML系列(二)--创建格式良好的XML文档</A><BR></DIV>
+<SCRIPT 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '5048420b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+</DIV>
+<DIV class=postDesc>posted @ 2009-01-06 09:38 <A 
+href="http://www.cnblogs.com/yanyangtian/">小洋（燕洋天工作室）</A> 阅读(2579) <A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">评论(12)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/yanyangtian/admin/EditPosts.aspx?postid=1370005">编辑</A> 
+<A onclick="AddToWz(1370005);return false;" 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#">收藏</A> 
+所属分类: <A 
+href="http://www.cnblogs.com/yanyangtian/category/179314.html">用正则表达式看.NET编程</A></DIV></DIV><IMG 
+height=1 src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/1370005.jpg" 
+width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html"
+dc:identifier="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/yanyangtian/services/trackbacks/1370005.aspx" />
+</rdf:RDF>
+--></DIV><!--end: topics 文章、评论容器--><A name=pagedcomment></A><!--done--><BR>
+<DIV class=feedback_area_title>评论</DIV>
+<DIV class=feedbackNoItems><SPAN id=span_comment_maxid 
+style="DISPLAY: none">1718149</SPAN></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("方伍",1422957,"P2jPMejaJ82sH5+mR7BM4F5GsD8o0xT0NP63eabt74RQ8qoXBjxfQw==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1422957,"P2jPMejaJ82sH5+mR7BM4F5GsD8o0xT0NP63eabt74RQ8qoXBjxfQw==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%96%b9%e4%bc%8d" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1422957">#1楼</A><A 
+id=comment_anchor_1422957 name=1422957></A>2009-01-06 09:43 | <A 
+id=Comments1_CommentList_ctl00_NameLink 
+href="http://www.cnblogs.com/binbin1845/" target=_blank>方伍</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æ¹ä¼">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1422957>好文章！<A href="http://www.jj027.com/" 
+target=_new>http://www.jj027.com/</A></SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("gmj",1422965,"")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1422965,"")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1422965">#2楼</A><A 
+id=comment_anchor_1422965 name=1422965></A>2009-01-06 09:48 | <A 
+id=Comments1_CommentList_ctl01_NameLink target=_blank>gmj[未注册用户]</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1422965>排版不是很舒服，建议重新排一下。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Small Light",1422983,"")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1422983,"")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1422983">#3楼</A><A 
+id=comment_anchor_1422983 name=1422983></A>2009-01-06 10:01 | <A 
+id=Comments1_CommentList_ctl02_NameLink target=_blank>Small Light[未注册用户]</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1422983>等好久了...收藏先...</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("kkun",1422988,"crihfV7F7+c81Zlq5yduSsQ2E4iUwjkSGNey7bVJM+XZtBjr+0yWdw==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1422988,"crihfV7F7+c81Zlq5yduSsQ2E4iUwjkSGNey7bVJM+XZtBjr+0yWdw==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=kkun" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1422988">#4楼</A><A 
+id=comment_anchor_1422988 name=1422988></A>2009-01-06 10:04 | <A 
+id=Comments1_CommentList_ctl03_NameLink href="http://www.cnblogs.com/kkun/" 
+target=_blank>kkun</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/kkun">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1422988>收藏收藏没商量~</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("泪海",1423037,"PkrbMOP86F1yZTYLL0FNcszjTEEsES5KQf0CnpIlkwg6OU9qjkCwaA==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1423037,"PkrbMOP86F1yZTYLL0FNcszjTEEsES5KQf0CnpIlkwg6OU9qjkCwaA==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%b3%aa%e6%b5%b7" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1423037">#5楼</A><A 
+id=comment_anchor_1423037 name=1423037></A>2009-01-06 10:26 | <A 
+id=Comments1_CommentList_ctl04_NameLink href="http://www.cnblogs.com/sbxwylt/" 
+target=_blank>泪海</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æ³ªæµ·">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1423037>期待下一文章。讲的很详细。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("iLove.Net",1423086,"MoTSW9n6GnxJuZqQBvuICQbnq3qUqT3ScAMvRpoe+xRgd5dDf0kKdA==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1423086,"MoTSW9n6GnxJuZqQBvuICQbnq3qUqT3ScAMvRpoe+xRgd5dDf0kKdA==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=iLove.Net" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl05_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl05$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl05_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1423086">#6楼</A><A 
+id=comment_anchor_1423086 name=1423086></A>2009-01-06 10:51 | <A 
+id=Comments1_CommentList_ctl05_NameLink 
+href="http://www.cnblogs.com/chenzhip123/" target=_blank>iLove.Net</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/iLove.Net">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1423086>不错,学习了. <BR><A href="http://www.tosharesoft.com/" 
+target=_new>http://www.tosharesoft.com/</A></SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("柠檬的",1423173,"ZDumbVFBKrzRF/5VxYe8K7UTTeqpdiWJrjUaL4optx94IAzmFhyDTQ==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1423173,"ZDumbVFBKrzRF/5VxYe8K7UTTeqpdiWJrjUaL4optx94IAzmFhyDTQ==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%9f%a0%e6%aa%ac%e7%9a%84" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl06_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl06$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl06_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1423173">#7楼</A><A 
+id=comment_anchor_1423173 name=1423173></A>2009-01-06 11:32 | <A 
+id=Comments1_CommentList_ctl06_NameLink href="http://www.cnblogs.com/lemony/" 
+target=_blank>柠檬的</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æ&nbsp;æª¬ç">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1423173>排版看起来很怪，第三行很混乱： 
+<BR><BR>“Match对象返回的细节周彦宏还包含捕获括号所匹配的文本...” 
+<BR><BR>和周彦宏有啥关系</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("小洋",1423195,"hLj7BiKBMUFJ5YUUfHRvdis7PY7OhVWYTvarWrtjpt5xyIkC8xap4A==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1423195,"hLj7BiKBMUFJ5YUUfHRvdis7PY7OhVWYTvarWrtjpt5xyIkC8xap4A==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%b0%8f%e6%b4%8b" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl07_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl07$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl07_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1423195">#8楼</A><A 
+id=comment_anchor_1423195 name=1423195></A>[<SPAN 
+class=louzhu>楼主</SPAN>]2009-01-06 11:48 | <A 
+id=Comments1_CommentList_ctl07_NameLink 
+href="http://www.cnblogs.com/yanyangtian/" target=_blank>小洋</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å°æ´">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1423195>@柠檬的 <BR>不好意思啊 "周彦宏"是笔误 马上改 谢谢啊</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("cobrayang",1423221,"")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1423221,"")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl08_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl08$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl08_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1423221">#9楼</A><A 
+id=comment_anchor_1423221 name=1423221></A>2009-01-06 12:03 | <A 
+id=Comments1_CommentList_ctl08_NameLink target=_blank>cobrayang[未注册用户]</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1423221>感谢分享，希望排版再工整一点，有好多话没说完就换行了，，，</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("David Yang",1424570,"c7i0kYRH0Zipp7wyTlsVRAmBjBoiyDy1xgHhtNRQ8rpK7Ypuzq4ctw==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1424570,"c7i0kYRH0Zipp7wyTlsVRAmBjBoiyDy1xgHhtNRQ8rpK7Ypuzq4ctw==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=David+Yang" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl09_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl09$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl09_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1424570">#10楼</A><A 
+id=comment_anchor_1424570 name=1424570></A>2009-01-07 15:24 | <A 
+id=Comments1_CommentList_ctl09_NameLink href="http://www.cnblogs.com/lethe2046/" 
+target=_blank>David Yang</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/David+Yang">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1424570>感谢楼主的贡献<BR>但是文章读起来有点别扭<BR>语言表达有待提高啊</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Mervin",1459940,"oRBdiB0gwa3FE89HI3E7NZy5QDqToYdEm5vm2GBXxv2Hnv1eVE2Ceg==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1459940,"oRBdiB0gwa3FE89HI3E7NZy5QDqToYdEm5vm2GBXxv2Hnv1eVE2Ceg==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Mervin" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl10_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl10$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl10_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1459940">#11楼</A><A 
+id=comment_anchor_1459940 name=1459940></A>2009-02-24 14:52 | <A 
+id=Comments1_CommentList_ctl10_NameLink href="http://www.cnblogs.com/Mervin/" 
+target=_blank>Mervin</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Mervin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1459940>部分代码展不开，看不到代码</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("poop",1718149,"6oRJ5b0OOFL2QDa4iEo4zqdhPUXZ20p8c0gF0hz4kk/SVe5bXQuTQg==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1718149,"6oRJ5b0OOFL2QDa4iEo4zqdhPUXZ20p8c0gF0hz4kk/SVe5bXQuTQg==")' 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=poop" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl11_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl11$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl11_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#1718149">#12楼</A><A 
+id=comment_anchor_1718149 name=1718149></A><A name=Post></A>2009-12-08 17:37 | 
+<A id=Comments1_CommentList_ctl11_NameLink href="http://www.cnblogs.com/yingpp/" 
+target=_blank>poop</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/poop">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1718149>部分代码展不开，看不到代码<BR><BR>写的还是很清楚，赞一个！</SPAN><BR></DIV></DIV>
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fyanyangtian%2farchive%2f2009%2f01%2f06%2f1370005.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fyanyangtian%2farchive%2f2009%2f01%2f06%2f1370005.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A href="http://job.cnblogs.com/offer/7427/" 
+target=_blank>沪江网招聘ASP.NET开发工程师</A><BR><A href="http://a4.yeshj.com/rd/35450/" 
+target=_blank>软件研发团队管理年会(上海，7.10-7.11)</A><BR><A href="http://news.cnblogs.com/" 
+target=_blank>IT新闻</A>:<BR>· <A href="http://news.cnblogs.com/n/65800/" 
+target=_blank>Linux是否已经准备好迎接Steam？</A><BR>· <A 
+href="http://news.cnblogs.com/n/65799/" target=_blank>网友发文揭穿IPv9奥秘 
+称域名转换类似DNS劫持</A><BR>· <A href="http://news.cnblogs.com/n/65798/" 
+target=_blank>浏览器HTML5能力测试：Chrome夺冠</A><BR>· <A 
+href="http://news.cnblogs.com/n/65785/" 
+target=_blank>Opera称HTML5将承载未来互联网视频</A><BR>· <A 
+href="http://news.cnblogs.com/n/65784/" 
+target=_blank>英特尔智能手机芯片将不支持Windows操作系统</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+alt="" 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=%e5%b0%8f%e6%b4%8b+.NET+%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f" 
+target=_blank>小洋 .NET 正则表达式</A> <A 
+href="http://zzk.cnblogs.com/s?w=%e7%94%a8%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e7%9c%8b.NET%e7%bc%96%e7%a8%8b" 
+target=_blank>用正则表达式看.NET编程</A> </DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/1370005/">用正则表达式看.NET编程--.NET核心正则类详解</A></DIV></DIV></DIV><!--end: forFlow --></DIV><!--end: mainContent 主体内容容器-->
+<DIV id=sideBar>
+<DIV id=sideBarMain><!--done-->
+<DIV class=newsItem>
+<H3 class=catListTitle>公告</H3>
+<DIV id=profile_block><A href="http://home.cnblogs.com/yanyangtian/" 
+target=_blank>我的主页</A>&nbsp; <A 
+href="http://home.cnblogs.com/yanyangtian/detail/" target=_blank>个人资料</A><BR><A 
+href="http://home.cnblogs.com/yanyangtian/ing/" target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/å°æ´ï¼çæ´å¤©å·¥ä½å®¤ï¼" 
+target=_blank>发短消息</A></DIV></DIV>
+<DIV id=calendar>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar cellSpacing=0 
+cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=7>
+      <TABLE class=CalTitle cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev><A title="Go to the previous month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3257')">&lt;</A></TD>
+          <TD align=middle>2009年1月</TD>
+          <TD class=CalNextPrev align=right><A title="Go to the next month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3319')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>28</TD>
+    <TD class=CalOtherMonthDay align=middle>29</TD>
+    <TD class=CalOtherMonthDay align=middle>30</TD>
+    <TD class=CalOtherMonthDay align=middle>31</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>2</TD>
+    <TD class=CalWeekendDay align=middle>3</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>4</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/yanyangtian/archive/2009/1/5.html"><U>5</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/yanyangtian/archive/2009/1/6.html"><U>6</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/yanyangtian/archive/2009/1/7.html"><U>7</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/yanyangtian/archive/2009/1/8.html"><U>8</U></A></TD>
+    <TD align=middle>9</TD>
+    <TD class=CalWeekendDay align=middle>10</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/yanyangtian/archive/2009/1/11.html"><U>11</U></A></TD>
+    <TD align=middle>12</TD>
+    <TD align=middle>13</TD>
+    <TD align=middle>14</TD>
+    <TD align=middle>15</TD>
+    <TD align=middle>16</TD>
+    <TD class=CalWeekendDay align=middle>17</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>18</TD>
+    <TD align=middle>19</TD>
+    <TD align=middle>20</TD>
+    <TD align=middle>21</TD>
+    <TD align=middle>22</TD>
+    <TD align=middle>23</TD>
+    <TD class=CalWeekendDay align=middle>24</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>25</TD>
+    <TD align=middle>26</TD>
+    <TD align=middle>27</TD>
+    <TD align=middle>28</TD>
+    <TD align=middle>29</TD>
+    <TD align=middle>30</TD>
+    <TD class=CalWeekendDay align=middle>31</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>1</TD>
+    <TD class=CalOtherMonthDay align=middle>2</TD>
+    <TD class=CalOtherMonthDay align=middle>3</TD>
+    <TD class=CalOtherMonthDay align=middle>4</TD>
+    <TD class=CalOtherMonthDay align=middle>5</TD>
+    <TD class=CalOtherMonthDay align=middle>6</TD>
+    <TD class=CalOtherMonthDay align=middle>7</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<SCRIPT type=text/javascript>
+var blogapp = 'yanyangtian';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+<DIV class=catListLink>
+<H3 class=catListTitle>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/yanyangtian/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/yanyangtian/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/yanyangtian/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl00_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/yanyangtian/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem 
+  href="http://www.cnblogs.com/yanyangtian/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/yanyangtian/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/yanyangtian/tag/">我的标签</A> </LI></UL></DIV></DIV>
+<DIV class=catListMyTeams>
+<H3 class=catListTitle>我参与的团队</H3>
+<UL>
+  <LI><A id=SingleColumn1__37fabe4_TeamList_ctl00_lnkTeam 
+  href="http://www.cnblogs.com/team/DesignPattern/">Design &amp; 
+  Pattern团队(0/0)</A> 
+  <LI><A id=SingleColumn1__37fabe4_TeamList_ctl01_lnkTeam 
+  href="http://www.cnblogs.com/team/BJDotNetClub/">北京.NET俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn1__37fabe4_TeamList_ctl02_lnkTeam 
+  href="http://www.cnblogs.com/team/regex/">正则表达式团队(0/0)</A> 
+  <LI><A id=SingleColumn1__37fabe4_TeamList_ctl03_lnkTeam 
+  href="http://www.cnblogs.com/team/ENTDevelop/">企业级项目开发团队(0/0)</A> 
+</LI></UL></DIV>
+<DIV class=catListTag>
+<H3 class=catListTitle>我的标签</H3>
+<UL>
+  <LI><A 
+  href="http://www.cnblogs.com/yanyangtian/tag/å°æ´+ASPï¿¥NET+æ§ä»¶ç»ä»¶å¼å/">小洋 
+  ASP.NET 控件组件开发(9)</A>
+  <LI><A 
+  href="http://www.cnblogs.com/yanyangtian/tag/å°æ´+ASPï¿¥NETå®å¨/">小洋 
+  ASP.NET安全(9)</A>
+  <LI><A 
+  href="http://www.cnblogs.com/yanyangtian/tag/å°æ´+ASPï¿¥NET+åé¨æºå¶/">小洋 
+  ASP.NET 内部机制(8)</A>
+  <LI><A 
+  href="http://www.cnblogs.com/yanyangtian/tag/å°æ´+ï¿¥NETåå¸å¼æ¶æè®¾è®¡ä¸å®ç°/">小洋 
+  .NET分布式架构设计与实现(5)</A>
+  <LI><A 
+  href="http://www.cnblogs.com/yanyangtian/tag/å°æ´+çæ´å¤©+ï¿¥NET+4+å¹¶è¡å¤æ&nbsp;¸+ç¼ç¨/">小洋 
+  燕洋天 .NET 4 并行多核 编程(5)</A>
+  <LI><A 
+  href="http://www.cnblogs.com/yanyangtian/tag/å°æ´+ASPï¿¥NET3ï¿¥5+ä¼ä¸çº§é¡¹ç®å¼å/">小洋 
+  ASP.NET3.5 企业级项目开发(4)</A>
+  <LI><A href="http://www.cnblogs.com/yanyangtian/tag/å°æ´+XML/">小洋 XML(4)</A>
+  <LI><A 
+  href="http://www.cnblogs.com/yanyangtian/tag/å°æ´+ï¿¥NET+æ&shy;£åè¡¨è¾¾å¼/">小洋 
+  .NET 正则表达式(4)</A>
+  <LI><A 
+  href="http://www.cnblogs.com/yanyangtian/tag/å°æ´+ASPï¿¥NET+é«çº§è¯é¢/">小洋 
+  ASP.NET 高级话题(3)</A>
+  <LI><A 
+  href="http://www.cnblogs.com/yanyangtian/tag/å°æ´+çåæ´çæäº/">小洋 
+  燕和洋的故事(3)</A> </LI></UL></DIV>
+<DIV class=catListPostCategory>
+<H3 class=catListTitle>随笔分类</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/246954.html">.NET 4 
+  并行(多核)编程系列(5)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to .NET 4 并行(多核)编程系列(5)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/246954.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/246986.html">.NET 
+  分布式架构开发项目实战(7)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to .NET 分布式架构开发项目实战(7)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/246986.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/247270.html">ADO.NET Data 
+  Services系列</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to ADO.NET Data Services系列" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/247270.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/182625.html">ASP.NET 
+  配置文件纵横谈(3)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to ASP.NET 配置文件纵横谈(3)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/182625.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/182800.html">ASP.NET 
+  项目开发心得(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to ASP.NET 项目开发心得(2)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/182800.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/155681.html">ASP.NET2.0自定义控件和组件开发(12)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to ASP.NET2.0自定义控件和组件开发(12)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/155681.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/192325.html">ASP.NET3.5企业级项目开发(4)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to ASP.NET3.5企业级项目开发(4)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/192325.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/186446.html">ASP.NET安全解析(9)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to ASP.NET安全解析(9)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/186446.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/246985.html">Sliverlight 4 
+  项目开发</A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink 
+  title="Subscribe to Sliverlight 4 项目开发" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/246985.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/178439.html">浅谈ASP.NET内部机制(8)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink 
+  title="Subscribe to 浅谈ASP.NET内部机制(8)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/178439.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/198688.html">生活(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink 
+  title="Subscribe to 生活(2)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/198688.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/197953.html">书籍发布(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink 
+  title="Subscribe to 书籍发布(1)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/197953.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/179314.html">用正则表达式看.NET编程(4)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_RssLink 
+  title="Subscribe to 用正则表达式看.NET编程(4)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/179314.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/248938.html">杂谈(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_RssLink 
+  title="Subscribe to 杂谈(1)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/248938.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/yanyangtian/category/179295.html">掌握XML系列(4)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_RssLink 
+  title="Subscribe to 掌握XML系列(4)" 
+  onclick="open_link('http://www.cnblogs.com/yanyangtian/category/179295.html/rss');return false;" 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01/06/1370005.html###">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListPostArchive>
+<H3 class=catListTitle>随笔档案</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/yanyangtian/archive/2010/06.html">2010年6月 (3)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/yanyangtian/archive/2010/05.html">2010年5月 (9)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/07.html">2009年7月 (1)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/06.html">2009年6月 (3)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/05.html">2009年5月 (9)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/04.html">2009年4月 (3)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/03.html">2009年3月 
+  (10)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/02.html">2009年2月 (2)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/01.html">2009年1月 (8)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/yanyangtian/archive/2008/10.html">2008年10月 
+  (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/yanyangtian/archive/2008/08.html">2008年8月 
+  (17)</A> </LI></UL></DIV>
+<DIV 
+class="catListMSN ：yangyang4502@yahoo.com.cn &#13;&#10;<br/>&#13;&#10;&#13;&#10;Email:yangyang4502@yahoo.com.cn ">
+<H3 class=catListTitle>个人信息</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://yanyangtian.cnblogs.com/" target=_blank>联系方式</A> 
+  <LI style="MARGIN-TOP: 2px">MSN :yangyang4502@yahoo.com.cn <BR></LI></UL></DIV>
+<DIV class=catListComment>
+<H3 class=catListTitle>最新评论<A id=SingleColumn1__96101e_RSSHyperlink1 
+title=RSS订阅最最新评论 href="http://www.cnblogs.com/yanyangtian/CommentsRSS.aspx"><IMG 
+title=RSS订阅最最新评论 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/xml.gif"></A></H3>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__96101e_CommentList_ctl00_Hyperlink2 
+href="http://www.cnblogs.com/yanyangtian/archive/2010/06/07/1752921.html#1841772">1.&nbsp;Re:[原创].NET 
+业务框架开发实战之七 业务层初步构想</A> </DIV>
+<DIV class=divRecentComment>学习了，非常不错，支持，希望楼主加油。 (iceknp) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__96101e_CommentList_ctl01_Hyperlink2 
+href="http://www.cnblogs.com/yanyangtian/archive/2008/08/25/1275741.html#1841625">2.&nbsp;Re:ASP.NET自定义控件组件开发 
+第四章 组合控件开发CompositeControl 后篇 －－事件冒泡</A> </DIV>
+<DIV class=divRecentComment>@小雄雄 FileUpLoad？你是想为FileUpLoad控件增加更多的功能，还是? 
+(小洋（燕洋天工作室）) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__96101e_CommentList_ctl02_Hyperlink2 
+href="http://www.cnblogs.com/yanyangtian/archive/2008/08/25/1275741.html#1841622">3.&nbsp;Re:ASP.NET自定义控件组件开发 
+第四章 组合控件开发CompositeControl 后篇 －－事件冒泡</A> </DIV>
+<DIV 
+class=divRecentComment>我想要自定义一个像FileUpLoad这样的自定义控件,该怎么做,虽然看了一些例子,但因为是以前没做过自定义控件,还是有点陌生,大哥能不能发个这样的例子给我,在此谢过, 
+我的:317891276@qq... (小雄雄) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__96101e_CommentList_ctl03_Hyperlink2 
+href="http://www.cnblogs.com/yanyangtian/archive/2010/06/03/1750444.html#1841016">4.&nbsp;Re:[原创].NET 
+业务框架开发实战之六 DAL的重构</A> </DIV>
+<DIV class=divRecentComment>等待看到博主BLL层和DAL层结合的高见! (鹰的翅膀让我翱翔) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__96101e_CommentList_ctl04_Hyperlink2 
+href="http://www.cnblogs.com/yanyangtian/archive/2010/06/04/1751318.html#1840530">5.&nbsp;Re:其实不想走，其实是想留</A> 
+</DIV>
+<DIV class=divRecentComment>@尘尘谢谢提醒，修改了 (小洋（燕洋天工作室）) </DIV></DIV>
+<DIV class=catListView>
+<H3 class=catListTitle>阅读排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/05/25/1489143.html">1.&nbsp;ASP.NET3.5 
+  企业级项目开发(4601)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/02/21/1395473.html">2.&nbsp;浅谈ASP.NET的内部机制(一)(4306)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2008/08/06/1262109.html">3.&nbsp;ASP.NET自定义控件组件开发 
+  第一章 待续(3851)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2008/08/24/1270387.html">4.&nbsp;ASP.NET自定义控件组件开发 
+  第四章 组合控件开发CompositeControl(3537)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/03/09/1406897.html">5.&nbsp;【讨论】对技术的掌握到底应该又多深？(3397)</A> 
+  </LI></UL></DIV>
+<DIV class=catListFeedback>
+<H3 class=catListTitle>评论排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/07/01/1514492.html">1.&nbsp;好文共欣赏－－发布收藏(123)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/05/25/1489143.html">2.&nbsp;ASP.NET3.5 
+  企业级项目开发(44)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2010/05/26/1744064.html">3.&nbsp;[原创].NET 
+  分布式架构开发实战之三 数据访问深入一点的思考(40)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/03/09/1406897.html">4.&nbsp;【讨论】对技术的掌握到底应该又多深？(40)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2009/02/21/1395473.html">5.&nbsp;浅谈ASP.NET的内部机制(一)(32)</A> 
+  </LI></UL></DIV>
+<DIV class=catListView>
+<H3 class=catListTitle>60天内阅读排行</H3>
+<UL>
+  <LI><A id=SingleColumn1__27c3e48_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2010/05/24/1742432.html">1.&nbsp;[原创].NET 
+  分布式架构开发实战之二 草稿设计(2536)</A> 
+  <LI><A id=SingleColumn1__27c3e48_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2010/05/23/1741908.html">2.&nbsp;[原创].NET 
+  分布式架构开发实战之一 故事起源(2298)</A> 
+  <LI><A id=SingleColumn1__27c3e48_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2010/06/03/1750444.html">3.&nbsp;[原创].NET 
+  业务框架开发实战之六 DAL的重构(2088)</A> 
+  <LI><A id=SingleColumn1__27c3e48_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2010/05/31/1747811.html">4.&nbsp;[原创].NET 
+  分布式架构开发实战五 Framework改进篇(1969)</A> 
+  <LI><A id=SingleColumn1__27c3e48_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/yanyangtian/archive/2010/05/26/1744064.html">5.&nbsp;[原创].NET 
+  分布式架构开发实战之三 数据访问深入一点的思考(1821)</A> </LI></UL></DIV></DIV></DIV><!--end: sideBarMain --></DIV><!--end: sideBar 侧边栏容器 -->
+<DIV class=clear></DIV></DIV><!--end: main -->
+<DIV class=clear></DIV>
+<DIV id=footer><!--done-->Copyright ©2010 小洋（燕洋天工作室） 
+</DIV><!--end: footer --></DIV><!--end: home 自定义的最大容器 -->
+<DIV id=liveMessengerContainer 
+style="RIGHT: 5px; BOTTOM: 5px; POSITION: fixed; TEXT-ALIGN: center">
+<DIV id=liveMessengerThumb 
+style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BACKGROUND-IMAGE: url(http://www.cnblogs.com/images/cnblogs_com/jeffreyzhao/Messenger_Header_bg.gif); BORDER-LEFT: black 1px solid; WIDTH: 160px; BORDER-BOTTOM: black 1px solid; HEIGHT: 39px"><A 
+href="msnim:chat?contact=yangyang4502@yahoo.com.cn" target=blank><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 10px 10px 0px 9px; BORDER-RIGHT-WIDTH: 0px" 
+alt="使用Live Messenger联系我" 
+src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/Messenger_logo_beta.gif"> 
+</A></DIV></DIV></FORM>
+<SCRIPT src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="用正则表达式看_NET编程--_NET核心正则类详解 - ASP_NET 架构 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

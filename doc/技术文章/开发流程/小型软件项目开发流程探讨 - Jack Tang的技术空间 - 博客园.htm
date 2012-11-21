@@ -1,0 +1,1471 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0063)http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=小型软件项目,开发流程 name=keywords><LINK 
+href="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK id=MainCss 
+href="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK 
+href="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/common2.css" type=text/css 
+rel=stylesheet><LINK href="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/shCore.css" 
+type=text/css rel=stylesheet><LINK 
+href="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/jacktang/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/jacktang/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1467712.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<!--done-->
+<DIV id=home>
+<DIV id=header>
+<DIV id=blogTitle><A id=lnkBlogLogo href="http://www.cnblogs.com/jacktang/"><IMG 
+id=blogLogo alt=返回主页 
+src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/logo.gif"></A> <!--done-->
+<H1><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/jacktang/">Jack Tang的技术空间</A></H1>
+<H2>我的工作学习经历记录和精彩网文收藏</H2></DIV><!--end: blogTitle 博客的标题和副标题 -->
+<DIV id=navigator><!--done-->
+<UL id=navList>
+  <LI><A class=menu id=MyLinks1_HomeLink href="http://www.cnblogs.com/">博客园</A> 
+  </LI>
+  <LI><A class=menu id=MyLinks1_SpaceLink 
+  href="http://space.cnblogs.com/">社区</A> </LI>
+  <LI><A class=menu id=MyLinks1_MyHomeLink 
+  href="http://www.cnblogs.com/jacktang/">首页</A> </LI>
+  <LI><A class=menu id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/jacktang/admin/EditPosts.aspx?opt=1">新随笔</A> 
+</LI>
+  <LI><A class=menu id=MyLinks1_ContactLink accessKey=9 
+  href="http://space.cnblogs.com/msg/send/Jack+Tang">联系</A> </LI>
+  <LI><A class=menu id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/jacktang/admin/EditPosts.aspx">管理</A> </LI>
+  <LI><A class=menu id=MyLinks1_Syndication 
+  href="http://www.cnblogs.com/jacktang/rss">订阅</A> <A class=aHeaderXML 
+  id=MyLinks1_XMLLink href="http://www.cnblogs.com/jacktang/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/rss.gif"></A> </LI></UL>
+<DIV class=blogStats><!--done-->随笔- 26&nbsp; 文章- 27&nbsp; 评论- 32&nbsp; </DIV><!--end: blogStats --></DIV><!--end: navigator 博客导航栏 --></DIV><!--end: header 头部 -->
+<DIV id=main>
+<DIV id=mainContent>
+<DIV class=forFlow><!--done-->
+<DIV id=topics>
+<DIV class=post>
+<H1 class=postTitle><A class=postTitle2 id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html">小型软件项目开发流程探讨</A> 
+</H1>
+<DIV class=clear></DIV>
+<DIV class=postBody>
+<P class=MsoTitle style="MARGIN: 12pt 0cm 3pt"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">一．导言</SPAN><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">国内很多项目都是小型项目</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">参与人员少</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>(</FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">两到五个人</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>), </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">要快速交付</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>(</FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">一两个月</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>) . </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">要成功完成这种项目</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">除了使用成熟且被团队成员熟练使用的技术之外</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">有一个良好的开发流程</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">也是很必要的</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt; mso-outline-level: 2"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">二．小型软件项目开发流程</SPAN><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">下图是我对小型软件项目开发流程的一个设想</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>:</FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><FONT 
+face=Calibri></FONT></SPAN>&nbsp;</P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US 
+style="mso-no-proof: yes"><V:SHAPETYPE id=_x0000_t75 coordsize="21600,21600" 
+o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" 
+stroked="f"><V:STROKE joinstyle="miter"></V:STROKE><V:FORMULAS><V:F 
+eqn="if lineDrawn pixelLineWidth 0"></V:F><V:F eqn="sum @0 1 0"></V:F><V:F 
+eqn="sum 0 0 @1"></V:F><V:F eqn="prod @2 1 2"></V:F><V:F 
+eqn="prod @3 21600 pixelWidth"></V:F><V:F 
+eqn="prod @3 21600 pixelHeight"></V:F><V:F eqn="sum @0 0 1"></V:F><V:F 
+eqn="prod @6 1 2"></V:F><V:F eqn="prod @7 21600 pixelWidth"></V:F><V:F 
+eqn="sum @8 21600 0"></V:F><V:F eqn="prod @7 21600 pixelHeight"></V:F><V:F 
+eqn="sum @10 21600 0"></V:F></V:FORMULAS><V:PATH o:extrusionok="f" 
+gradientshapeok="t" o:connecttype="rect"></V:PATH><O:LOCK v:ext="edit" 
+aspectratio="t"></O:LOCK></V:SHAPETYPE></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri"><IMG 
+height=777 alt="" 
+src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/o_小软件项目开发流程图-无框.png" width=557 
+border=0></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt">&nbsp;</P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">需求分析的重要性想必大家都应该清楚</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">对于项目来说</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">满足用户的需求是第一位的</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>.</FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">因为时间紧</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">系统设计经常被忽略</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">这会留下很大的隐患</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">国内很多项目的需求通常是很简略的</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">还需要在系统设计阶段把一些需求进一步的明确</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">不然会出现因为前期一些需求不明确</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">一些已经开发好的功能要重做的情况</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">另外</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">设计做好了</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">思路清楚了</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">接下来的开发会顺利很多</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">系统设计包括业务流程设计</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">数据库设计</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">界面设计三部分</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">关于界面设计</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">哪些信息是用户需要的</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">哪些信息是用户不需要的</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">要仔细考虑一下</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">看到设计评审</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">大家肯定有点奇怪</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>: </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">小项目还做什么评审</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">不是浪费时间吗</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>? </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">其实不是这样的</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">三个臭皮匠顶个诸葛亮</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">一个人的设计</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">或多或少会存在一些不足</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">大家集思广益</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">设计出来的方案无疑会更成熟一些</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">在评审的过程</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">大家的设计经验也无形中进行了交流</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">对系统的了解也更多</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">小型项目的设计评审不用很正式</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">搬上椅子坐到设计人员电脑旁边</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">先听讲解</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">再提问题</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">然后有人把提出的问题记录下来就好了</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri"><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: 'Times New Roman'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">很多小型项目</SPAN>没有设置专业测试人员</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">因此</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">开发过程中的自测很重要</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">这也是保障项目质量的重要一环</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">功能都开发完成</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">开发人员也完成自测试之后</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">便可准备进入交叉测试环节</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">测试的思维和开发的思维是不同的</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">测试要站在用户的角色看问题</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">把自己当成用户</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">看项目是否满足全部需求</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">进入交叉测试之前</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">开发人员应先完成部署手册和使用说明</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">并部署到一个全新的环境（最好有个单独的测试服务器）</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">给大家演示一遍</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">交叉测试发现的问题先各自用</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>Excel</FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">表格记录下下</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">最后汇总到一个</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>Excel</FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">文件</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">放到公共目录</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">改</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>Bug</FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">后要验证</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">发布前</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">所有</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>Bug</FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">再验证一次</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt; mso-outline-level: 2"><STRONG 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">三．小型项目人员配置</SPAN><SPAN 
+lang=EN-US><O:P></O:P></SPAN></STRONG></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">一个项目经理</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, <SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN></FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">一到四位开发人员</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">项目经理负责需求分析</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">主持设计评审</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">决定设计评审是否通过</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">决定是否可进入交叉测试决定是否可发布项目</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><O:P><FONT 
+face=Calibri></FONT></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">开发人员负责系统设计</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">开发和自测</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">交叉测试</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">修改</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>Bug, </FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri">编写部署手册和使用说明</SPAN><SPAN 
+lang=EN-US><FONT face=Calibri>. </FONT></SPAN></P>
+<DIV id=EntryTag>Tag标签: <A 
+href="http://www.cnblogs.com/jacktang/tag/å°åè½¯ä»¶é¡¹ç®/">小型软件项目</A>,<A 
+href="http://www.cnblogs.com/jacktang/tag/å¼åæµç¨/">开发流程</A></DIV>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/jacktang/" 
+target=_blank>Jack Tang</A><BR>关注 - 0<BR>粉丝 - 1<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1467712,36663,1)><SPAN class=diggnum 
+id=digg_count_1467712>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1467712,36663,2)><SPAN class=burynum 
+id=bury_count_1467712>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1467712 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1467712>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/04/21/mstsc.html">« 
+</A>上一篇：<A title="发布于2009-04-21 11:31" 
+href="http://www.cnblogs.com/jacktang/archive/2009/04/21/mstsc.html">Windows远程桌面连接命令mstsc收藏</A><BR><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/07/09/1520086.html">» 
+</A>下一篇：<A title="发布于2009-07-09 19:35" 
+href="http://www.cnblogs.com/jacktang/archive/2009/07/09/1520086.html">Windows 
+Live Messenger 2009登录失败的一个解决办法</A><BR></DIV>
+<SCRIPT src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = 'b038420b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+</DIV>
+<DIV class=postDesc>posted @ 2009-05-20 14:00 <A 
+href="http://www.cnblogs.com/jacktang/">Jack Tang</A> 阅读(2218) <A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">评论(17)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/jacktang/admin/EditPosts.aspx?postid=1467712">编辑</A> 
+<A onclick="AddToWz(1467712);return false;" 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#">收藏</A> 
+所属分类: <A 
+href="http://www.cnblogs.com/jacktang/category/143394.html">开发管理</A></DIV></DIV><IMG 
+height=1 src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/1467712.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html"
+dc:identifier="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/jacktang/services/trackbacks/1467712.aspx" />
+</rdf:RDF>
+--></DIV><!--end: topics 文章、评论容器--><A name=pagedcomment></A><!--done--><BR>
+<DIV class=feedback_area_title>发表评论</DIV>
+<DIV class=feedbackNoItems><SPAN id=span_comment_maxid 
+style="DISPLAY: none">1546671</SPAN></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("beango",1532873,"Acb6QmHU7WbqL2D24NnwOhTxqelZ2CqntSWhUaOrVLDcyOlgLmrQ0w==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1532873,"Acb6QmHU7WbqL2D24NnwOhTxqelZ2CqntSWhUaOrVLDcyOlgLmrQ0w==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=beango" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1532873">#1楼</A><A 
+id=comment_anchor_1532873 name=1532873></A>2009-05-20 14:08 | <A 
+id=Comments1_CommentList_ctl00_NameLink href="http://www.cnblogs.com/uwebs/" 
+target=_blank>beango</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/beango">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1532873>要上班了，没仔细看，只看了一下第三点，感觉是项目经理没事干，只是开开会，事都让开发包了<BR>哈哈</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Jack Tang",1532885,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1532885,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Jack+Tang" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1532885">#2楼</A><A 
+id=comment_anchor_1532885 name=1532885></A>[<SPAN 
+class=louzhu>楼主</SPAN>]2009-05-20 14:17 | <A 
+id=Comments1_CommentList_ctl01_NameLink href="http://www.cnblogs.com/jacktang/" 
+target=_blank>Jack Tang</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Jack+Tang">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1532885>@beango <BR><BR>呵呵, 项目经理主要管大方向嘛, 比如需求, 项目进度控制, 项目是否可发布等等 
+<BR></SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("我是马甲",1532955,"")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1532955,"")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1532955">#3楼</A><A 
+id=comment_anchor_1532955 name=1532955></A>2009-05-20 15:11 | <A 
+id=Comments1_CommentList_ctl02_NameLink target=_blank>我是马甲[未注册用户]</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1532955>纯瀑布流程？放弃迭代了？</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("lek",1532977,"")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1532977,"")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1532977">#4楼</A><A 
+id=comment_anchor_1532977 name=1532977></A>2009-05-20 15:23 | <A 
+id=Comments1_CommentList_ctl03_NameLink target=_blank>lek[未注册用户]</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1532977>小型项目其实可以参考XP，XP已经是一种比较成熟的小团队开发模式。最主要的是用户参与和迭代开发。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Jack Tang",1532983,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1532983,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Jack+Tang" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1532983">#5楼</A><A 
+id=comment_anchor_1532983 name=1532983></A>[<SPAN 
+class=louzhu>楼主</SPAN>]2009-05-20 15:28 | <A 
+id=Comments1_CommentList_ctl04_NameLink href="http://www.cnblogs.com/jacktang/" 
+target=_blank>Jack Tang</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Jack+Tang">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1532983>@我是马甲 <BR>迭代看需要吧. 小型项目只要做好控制(比如说每天的工作报告, 
+加上每周五让开发人员演示一下目前完成的功能, 让项目经理对目前的项目进度有个直观的了解等等), 瀑布流程够用了.</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Jack Tang",1532995,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1532995,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Jack+Tang" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl05_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl05$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl05_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1532995">#6楼</A><A 
+id=comment_anchor_1532995 name=1532995></A>[<SPAN 
+class=louzhu>楼主</SPAN>]2009-05-20 15:36 | <A 
+id=Comments1_CommentList_ctl05_NameLink href="http://www.cnblogs.com/jacktang/" 
+target=_blank>Jack Tang</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Jack+Tang">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1532995>@lek <BR>现在很多项目都是异地开发, 而且对于小型项目, 用户不会投入很多资源参与项目开发. 
+<BR></SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("文野",1533000,"uvyif0k96nOkxmIjfxY2BlYESWeQ5VxyqkFDyByUAos6ChfKURzYRQ==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1533000,"uvyif0k96nOkxmIjfxY2BlYESWeQ5VxyqkFDyByUAos6ChfKURzYRQ==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%96%87%e9%87%8e" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl06_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl06$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl06_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1533000">#7楼</A><A 
+id=comment_anchor_1533000 name=1533000></A>2009-05-20 15:38 | <A 
+id=Comments1_CommentList_ctl06_NameLink href="http://www.cnblogs.com/stwyhm/" 
+target=_blank>文野</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æé">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1533000>建议去看看《大象》。这样的开发方式是面向过程的。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A onclick='ReplyComment("鑀鈴",1533007,"")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1533007,"")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl07_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl07$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl07_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1533007">#8楼</A><A 
+id=comment_anchor_1533007 name=1533007></A>2009-05-20 15:43 | <A 
+id=Comments1_CommentList_ctl07_NameLink href="http://space.cnblogs.com/66405/" 
+target=_blank>鑀鈴</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1533007>我们公司就是一个小公司，什么都是自己做的。我觉得需求分析最重要```</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Jack Tang",1533017,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1533017,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Jack+Tang" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl08_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl08$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl08_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1533017">#9楼</A><A 
+id=comment_anchor_1533017 name=1533017></A>[<SPAN 
+class=louzhu>楼主</SPAN>]2009-05-20 15:49 | <A 
+id=Comments1_CommentList_ctl08_NameLink href="http://www.cnblogs.com/jacktang/" 
+target=_blank>Jack Tang</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Jack+Tang">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body id=comment_body_1533017>@文野 
+<BR>谢谢推荐! 看了一下《大象》的介绍, 这本书主要是讲UML的. 里面涉及的RUP过程, 在小型项目的使用, 
+最好结合lek所说的XP.</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("徐少侠",1533285,"Auh0hnxTMKwUGuu4SpjpIfiNB/ep+GYcSZN3OlbBlN+Fkyz8QDZ/Vg==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1533285,"Auh0hnxTMKwUGuu4SpjpIfiNB/ep+GYcSZN3OlbBlN+Fkyz8QDZ/Vg==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%be%90%e5%b0%91%e4%be%a0" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl09_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl09$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl09_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1533285">#10楼</A><A 
+id=comment_anchor_1533285 name=1533285></A>2009-05-20 19:26 | <A 
+id=Comments1_CommentList_ctl09_NameLink 
+href="http://www.cnblogs.com/Chinese-xu/" target=_blank>徐少侠</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å¾å°ä¾&nbsp;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1533285>感觉小项目这么搞也没啥大问题<BR><BR>至于迭代，只要不是真的把流程搞成纯瀑布的样子<BR><BR>平时多注意和客户沟通项目进展多演示基本不会有太大风险了</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("吉日嘎拉",1533408,"09lKp6nG9nel+aU99r5uIhbq2He+tMmShoBL9DAyoX/x+Gc1GCQaxA==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1533408,"09lKp6nG9nel+aU99r5uIhbq2He+tMmShoBL9DAyoX/x+Gc1GCQaxA==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%90%89%e6%97%a5%e5%98%8e%e6%8b%89" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl10_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl10$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl10_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1533408">#11楼</A><A 
+id=comment_anchor_1533408 name=1533408></A>2009-05-20 21:41 | <A 
+id=Comments1_CommentList_ctl10_NameLink href="http://www.cnblogs.com/jirigala/" 
+target=_blank>吉日嘎拉</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/åæ¥åæ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1533408>楼主，别说是小项目，我们大项目也都是在这么做啊， <BR>我仔细阅读了文章内容，也体会了一下你设计的流程图， 
+<BR>我们项目不小啊，也几乎都是跑不出你这个圈圈啊， <BR><BR>不只是小项目啊。哈哈。。。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("别爱上哥，哥只是个传说！",1533543,"Am7dGpw7yAhxuAnRwsEAYg4ryxyagQFHTi+ObIFwbWHJHi/Fkwvh7A==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1533543,"Am7dGpw7yAhxuAnRwsEAYg4ryxyagQFHTi+ObIFwbWHJHi/Fkwvh7A==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%88%ab%e7%88%b1%e4%b8%8a%e5%93%a5%ef%bc%8c%e5%93%a5%e5%8f%aa%e6%98%af%e4%b8%aa%e4%bc%a0%e8%af%b4%ef%bc%81" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl11_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl11$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl11_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1533543">#12楼</A><A 
+id=comment_anchor_1533543 name=1533543></A>2009-05-21 00:12 | <A 
+id=Comments1_CommentList_ctl11_NameLink href="http://www.cnblogs.com/fit/" 
+target=_blank>别爱上哥，哥只是个传说！</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å«ç±ä¸å¥ï¼å¥åªæ¯ä¸ªä¼&nbsp;è¯´ï¼">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1533543>项目经理在国内某些公司来说都是扯谈...所以根据自己公司实际情况来定..有时只让几个开发人员直接跟客户交流并不是什么坏事..真的..</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("xiaotie",1533599,"nifAKnKXSv2rvd+khGeyAGKhxO4gYxV7m6y8MZk0+fs1xPjSE5uXtg==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1533599,"nifAKnKXSv2rvd+khGeyAGKhxO4gYxV7m6y8MZk0+fs1xPjSE5uXtg==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=xiaotie" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl12_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl12$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl12_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1533599">#13楼</A><A 
+id=comment_anchor_1533599 name=1533599></A>2009-05-21 06:30 | <A 
+id=Comments1_CommentList_ctl12_NameLink href="http://www.cnblogs.com/xiaotie/" 
+target=_blank>xiaotie</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/xiaotie">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1533599>@别爱上哥，哥只是个传说！ 
+<BR><BR>别爱上哥，哥只是个传说！这句话的原始出处是哪里？</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Jack Tang",1534284,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1534284,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Jack+Tang" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl13_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl13$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl13_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1534284">#14楼</A><A 
+id=comment_anchor_1534284 name=1534284></A>[<SPAN 
+class=louzhu>楼主</SPAN>]2009-05-21 16:08 | <A 
+id=Comments1_CommentList_ctl13_NameLink href="http://www.cnblogs.com/jacktang/" 
+target=_blank>Jack Tang</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Jack+Tang">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1534284>@徐少侠，吉日嘎拉 <BR><BR>谢谢你们的肯定！</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Jack Tang",1534295,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1534295,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Jack+Tang" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl14_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl14$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl14_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1534295">#15楼</A><A 
+id=comment_anchor_1534295 name=1534295></A>[<SPAN 
+class=louzhu>楼主</SPAN>]2009-05-21 16:15 | <A 
+id=Comments1_CommentList_ctl14_NameLink href="http://www.cnblogs.com/jacktang/" 
+target=_blank>Jack Tang</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Jack+Tang">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1534295>@别爱上哥，哥只是个传说！ <BR><BR>很多公司，项目经理也要写代码的。 
+<BR><BR>和客户的接口人不宜过多，因为有时客户对需求也不是很清楚，人多的话，可能会出现两个人收集到的需求前后矛盾的情况。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("flat_peach",1537602,"rk4tPqk9WzhEUwYWblJGBwG/Rnp1rTZU/mnGMGFU6MpJ6SbVcBrhfg==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1537602,"rk4tPqk9WzhEUwYWblJGBwG/Rnp1rTZU/mnGMGFU6MpJ6SbVcBrhfg==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=flat_peach" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl15_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl15$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl15_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1537602">#16楼</A><A 
+id=comment_anchor_1537602 name=1537602></A>2009-05-25 14:55 | <A 
+id=Comments1_CommentList_ctl15_NameLink 
+href="http://www.cnblogs.com/flat_peach/" target=_blank>flat_peach</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/flat_peach">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1537602>对某一些小项目来说是可行的，没有必要搞的那么复杂 ，支持一下。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("Jack Tang",1546671,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1546671,"25kcAg3qNaDPnD4pt7Bfv2jLV+EwyX/HPgK+td4AWOcaNSUjf1Hd7Q==")' 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=Jack+Tang" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl16_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl16$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl16_EditLink CausesValidation="False"></A> </DIV><A 
+href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#1546671">#17楼</A><A 
+id=comment_anchor_1546671 name=1546671></A>[<SPAN class=louzhu>楼主</SPAN>]<A 
+name=Post></A>2009-06-03 15:02 | <A id=Comments1_CommentList_ctl16_NameLink 
+href="http://www.cnblogs.com/jacktang/" target=_blank>Jack Tang</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/Jack+Tang">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1546671>@flat_peach <BR><BR>谢谢支持 <BR></SPAN><BR></DIV></DIV>
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fjacktang%2farchive%2f2009%2f05%2f20%2f1467712.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fjacktang%2farchive%2f2009%2f05%2f20%2f1467712.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A class=site_hot 
+href="http://a4.yeshj.com/rd/35182/" target=_blank>有道难题开锣头奖8万！</A><BR><A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+href="http://news.cnblogs.com/n/65098/" 
+target=_blank>甲骨文收购eServGlobal预付费软件部门</A><BR>· <A 
+href="http://news.cnblogs.com/n/65090/" 
+target=_blank>BitTorrent官方将"绅士型"BT新协议uTP开源</A><BR>· <A 
+href="http://news.cnblogs.com/n/65089/" target=_blank>宽带速度最快的十个城市</A><BR>· <A 
+href="http://news.cnblogs.com/n/65088/" 
+target=_blank>卓越亚马逊总裁王汉华：垂直帝国的水平进化</A><BR>· <A 
+href="http://news.cnblogs.com/n/65086/" target=_blank>你会选谁：Red Hat还是Ubuntu 
+KVM虚拟化？</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+alt="" 
+src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=%e5%b0%8f%e5%9e%8b%e8%bd%af%e4%bb%b6%e9%a1%b9%e7%9b%ae" 
+target=_blank>小型软件项目</A> <A 
+href="http://zzk.cnblogs.com/s?w=%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b" 
+target=_blank>开发流程</A> <A 
+href="http://zzk.cnblogs.com/s?w=%e5%bc%80%e5%8f%91%e7%ae%a1%e7%90%86" 
+target=_blank>开发管理</A> </DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/1467712/">小型软件项目开发流程探讨</A></DIV></DIV></DIV><!--end: forFlow --></DIV><!--end: mainContent 主体内容容器-->
+<DIV id=sideBar>
+<DIV id=sideBarMain><!--done-->
+<DIV class=newsItem>
+<H3 class=catListTitle>公告</H3>
+<DIV id=profile_block><A href="http://home.cnblogs.com/jacktang/" 
+target=_blank>我的主页</A>&nbsp; <A href="http://home.cnblogs.com/jacktang/detail/" 
+target=_blank>个人资料</A><BR><A href="http://home.cnblogs.com/jacktang/ing/" 
+target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/Jack+Tang" 
+target=_blank>发短消息</A></DIV></DIV>
+<DIV id=calendar>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar cellSpacing=0 
+cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=7>
+      <TABLE class=CalTitle cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev><A title="Go to the previous month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3378')">&lt;</A></TD>
+          <TD align=middle>2009年5月</TD>
+          <TD class=CalNextPrev align=right><A title="Go to the next month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3439')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>26</TD>
+    <TD class=CalOtherMonthDay align=middle>27</TD>
+    <TD class=CalOtherMonthDay align=middle>28</TD>
+    <TD class=CalOtherMonthDay align=middle>29</TD>
+    <TD class=CalOtherMonthDay align=middle>30</TD>
+    <TD align=middle>1</TD>
+    <TD class=CalWeekendDay align=middle>2</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>3</TD>
+    <TD align=middle>4</TD>
+    <TD align=middle>5</TD>
+    <TD align=middle>6</TD>
+    <TD align=middle>7</TD>
+    <TD align=middle>8</TD>
+    <TD class=CalWeekendDay align=middle>9</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>10</TD>
+    <TD align=middle>11</TD>
+    <TD align=middle>12</TD>
+    <TD align=middle>13</TD>
+    <TD align=middle>14</TD>
+    <TD align=middle>15</TD>
+    <TD class=CalWeekendDay align=middle>16</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>17</TD>
+    <TD align=middle>18</TD>
+    <TD align=middle>19</TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/jacktang/archive/2009/5/20.html"><U>20</U></A></TD>
+    <TD align=middle>21</TD>
+    <TD align=middle>22</TD>
+    <TD class=CalWeekendDay align=middle>23</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>24</TD>
+    <TD align=middle>25</TD>
+    <TD align=middle>26</TD>
+    <TD align=middle>27</TD>
+    <TD align=middle>28</TD>
+    <TD align=middle>29</TD>
+    <TD class=CalWeekendDay align=middle>30</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>31</TD>
+    <TD class=CalOtherMonthDay align=middle>1</TD>
+    <TD class=CalOtherMonthDay align=middle>2</TD>
+    <TD class=CalOtherMonthDay align=middle>3</TD>
+    <TD class=CalOtherMonthDay align=middle>4</TD>
+    <TD class=CalOtherMonthDay align=middle>5</TD>
+    <TD class=CalOtherMonthDay align=middle>6</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<SCRIPT type=text/javascript>
+var blogapp = 'jacktang';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+<DIV class=catListLink>
+<H3 class=catListTitle>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/jacktang/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/jacktang/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/jacktang/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl00_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/jacktang/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem 
+  href="http://www.cnblogs.com/jacktang/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/jacktang/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/jacktang/tag/">我的标签</A> </LI></UL></DIV></DIV>
+<DIV class=catListTag>
+<H3 class=catListTitle>我的标签</H3>
+<UL>
+  <LI><A 
+  href="http://www.cnblogs.com/jacktang/tag/windowsæå¡/">windows服务</A>(2)
+  <LI><A 
+href="http://www.cnblogs.com/jacktang/tag/æ°æ®åºè®¾è®¡/">数据库设计</A>(2)
+  <LI><A 
+  href="http://www.cnblogs.com/jacktang/tag/å¼åäººåæ³¨æäºé¡¹/">开发人员注意事项</A>(1)
+  <LI><A 
+href="http://www.cnblogs.com/jacktang/tag/å&shy;å¨è¿ç¨/">存储过程</A>(1)
+  <LI><A href="http://www.cnblogs.com/jacktang/tag/å®ä½ç±»/">实体类</A>(1)
+  <LI><A href="http://www.cnblogs.com/jacktang/tag/FxCop/">FxCop</A>(1)
+  <LI><A 
+  href="http://www.cnblogs.com/jacktang/tag/Sql+Serverè¿ç§»å°Oracle/">Sql 
+  Server迁移到Oracle</A>(1)
+  <LI><A href="http://www.cnblogs.com/jacktang/tag/ç¨åºå/">程序员</A>(1)
+  <LI><A href="http://www.cnblogs.com/jacktang/tag/å®è£ç¨åº/">安装程序</A>(1)
+  <LI><A href="http://www.cnblogs.com/jacktang/tag/é¨ç½²/">部署</A>(1) 
+</LI></UL></DIV>
+<DIV class=catListPostCategory>
+<H3 class=catListTitle>随笔分类</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/jacktang/category/133727.html">DotNet开发(6)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to DotNet开发(6)" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/133727.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/jacktang/category/171138.html">TFS &amp; 
+  VSTS(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to TFS &amp; VSTS(2)" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/171138.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/jacktang/category/143394.html">开发管理(3)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to 开发管理(3)" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/143394.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/jacktang/category/207733.html">软件架构(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to 软件架构(2)" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/207733.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/jacktang/category/207734.html">设计模式</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to 设计模式" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/207734.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/jacktang/category/149482.html">数据库设计(3)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to 数据库设计(3)" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/149482.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/jacktang/category/207732.html">网罗天下</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to 网罗天下" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/207732.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/jacktang/category/237200.html">项目管理(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to 项目管理(1)" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/237200.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/jacktang/category/133729.html">杂谈(6)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink 
+  title="Subscribe to 杂谈(6)" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/133729.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListPostArchive>
+<H3 class=catListTitle>随笔档案</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2010/05.html">2010年5月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2010/03.html">2010年3月 (6)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2009/11.html">2009年11月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2009/10.html">2009年10月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2009/07.html">2009年7月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05.html">2009年5月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2009/04.html">2009年4月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2009/03.html">2009年3月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2009/02.html">2009年2月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2009/01.html">2009年1月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2008/12.html">2008年12月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2008/08.html">2008年8月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2008/07.html">2008年7月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2008/05.html">2008年5月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/jacktang/archive/2008/04.html">2008年4月 (2)</A> 
+  </LI></UL></DIV>
+<DIV class=catListArticleCategory>
+<H3 class=catListTitle>文章分类</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/jacktang/category/207737.html">软件测试</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_RssLink 
+  title="Subscribe to 软件测试" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/207737.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/jacktang/category/207735.html">软件架构(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_RssLink 
+  title="Subscribe to 软件架构(2)" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/207735.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/jacktang/category/207738.html">软件设计</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_RssLink 
+  title="Subscribe to 软件设计" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/207738.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/jacktang/category/207736.html">需求分析</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_RssLink 
+  title="Subscribe to 需求分析" 
+  onclick="open_link('http://www.cnblogs.com/jacktang/category/207736.html/rss');return false;" 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html###">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListImageCategory>
+<H3 class=catListTitle>相册</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/jacktang/gallery/135333.html">流程图</A> 
+</LI></UL></DIV>
+<DIV class=catListComment>
+<H3 class=catListTitle>最新评论<A id=SingleColumn1__1693a81_RSSHyperlink1 
+title=RSS订阅最最新评论 href="http://www.cnblogs.com/jacktang/CommentsRSS.aspx"><IMG 
+title=RSS订阅最最新评论 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/xml.gif"></A></H3>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__1693a81_CommentList_ctl00_Hyperlink2 
+href="http://www.cnblogs.com/jacktang/archive/2010/03/14/1685405.html#1779742">1.&nbsp;Re:一语道破项目管理知识体系五大过程组[转]</A> 
+</DIV>
+<DIV class=divRecentComment>最近在学习项目管理方面的知识，看到这个总结得挺有特色的，就转过来了。 (Jack Tang) 
+</DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__1693a81_CommentList_ctl01_Hyperlink2 
+href="http://www.cnblogs.com/jacktang/archive/2010/03/14/1685405.html#1779154">2.&nbsp;Re:一语道破项目管理知识体系五大过程组[转]</A> 
+</DIV>
+<DIV class=divRecentComment>我点错了，没打算推荐的。写得实在太.... (羽之) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__1693a81_CommentList_ctl02_Hyperlink2 
+href="http://www.cnblogs.com/jacktang/archive/2009/11/06/1597129.html#1691187">3.&nbsp;Re:应用程序架构指南 
+第一部分 第一章 应用程序架构基础[选译]</A> </DIV>
+<DIV class=divRecentComment>谢谢鼓励！ (Jack Tang) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__1693a81_CommentList_ctl03_Hyperlink2 
+href="http://www.cnblogs.com/jacktang/archive/2009/11/06/1597129.html#1691109">4.&nbsp;Re:应用程序架构指南 
+第一部分 第一章 应用程序架构基础[选译]</A> </DIV>
+<DIV class=divRecentComment>很好，收藏了 (火の魅影) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__1693a81_CommentList_ctl04_Hyperlink2 
+href="http://www.cnblogs.com/jacktang/archive/2009/10/24/1588968.html#1690903">5.&nbsp;Re:应用程序架构设计指南2.0 
+第一部分 基本原则 第三章 架构设计指南[下](翻译)</A> </DIV>
+<DIV class=divRecentComment>谢谢，又翻译了些新的章节！ (Jack Tang) </DIV></DIV>
+<DIV class=catListView>
+<H3 class=catListTitle>阅读排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/jacktang/archive/2009/04/21/mstsc.html">1.&nbsp;Windows远程桌面连接命令mstsc收藏(3912)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html">2.&nbsp;小型软件项目开发流程探讨(2218)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/jacktang/archive/2009/01/14/1375912.html">3.&nbsp;将应用程序从Sql 
+  Server迁移到Oracle(1891)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/jacktang/archive/2008/04/29/1175771.html">4.&nbsp;通过BAT文件部署windows服务(469)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/jacktang/archive/2008/05/09/1189702.html">5.&nbsp;一个完整的软件开发流程(433)</A> 
+  </LI></UL></DIV>
+<DIV class=catListFeedback>
+<H3 class=catListTitle>评论排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/jacktang/archive/2009/05/20/1467712.html">1.&nbsp;小型软件项目开发流程探讨(17)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/jacktang/archive/2009/10/24/1588968.html">2.&nbsp;应用程序架构设计指南2.0 
+  第一部分 基本原则 第三章 架构设计指南[下] [翻译](4)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/jacktang/archive/2009/10/22/1588370.html">3.&nbsp;Application 
+  Architecture Guide 2.0 译文收藏(2)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/jacktang/archive/2010/03/14/1685405.html">4.&nbsp;一语道破项目管理知识体系五大过程组[转](2)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/jacktang/archive/2008/05/09/1189702.html">5.&nbsp;一个完整的软件开发流程(2)</A> 
+  </LI></UL></DIV></DIV></DIV><!--end: sideBarMain --></DIV><!--end: sideBar 侧边栏容器 -->
+<DIV class=clear></DIV></DIV><!--end: main -->
+<DIV class=clear></DIV>
+<DIV id=footer><!--done-->Copyright ©2010 Jack Tang 
+</DIV><!--end: footer --></DIV><!--end: home 自定义的最大容器 --></FORM>
+<SCRIPT src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="小型软件项目开发流程探讨 - Jack Tang的技术空间 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

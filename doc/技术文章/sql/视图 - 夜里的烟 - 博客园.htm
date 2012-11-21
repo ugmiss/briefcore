@@ -1,0 +1,1034 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0065)http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html -->
+<HTML><HEAD><TITLE>视图 - 夜里的烟 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=SQL,S范例代码查询辞典,视图 name=keywords><LINK 
+href="视图 - 夜里的烟 - 博客园_files/common.css" type=text/css rel=stylesheet><LINK 
+id=MainCss href="视图 - 夜里的烟 - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK href="视图 - 夜里的烟 - 博客园_files/common2.css" type=text/css 
+rel=stylesheet><LINK href="视图 - 夜里的烟 - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK href="视图 - 夜里的烟 - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/xupengnannan20070617/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD 
+href="http://www.cnblogs.com/xupengnannan20070617/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="视图 - 夜里的烟 - 博客园_files/jquery.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="视图 - 夜里的烟 - 博客园_files/common.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="视图 - 夜里的烟 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1729329.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<TABLE style="MARGIN-TOP: 10px" cellSpacing=0 cellPadding=0 width="98%" 
+align=center border=0>
+  <TBODY>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" 
+    vAlign=top width="70%">
+      <TABLE height=90 cellSpacing=0 cellPadding=5 width="100%" align=center 
+      bgColor=white border=0>
+        <TBODY>
+        <TR>
+          <TD class=banner>
+            <DIV id=header><SPAN><A id=Header1_HeaderTitle 
+            href="http://www.cnblogs.com/xupengnannan20070617/">夜里的烟</A><BR>
+            <DIV class=sub>代码上的烟灰</DIV></SPAN></DIV></TD></TR></TBODY></TABLE>
+      <TABLE class=index height=90 cellSpacing=0 cellPadding=5 width="100%" 
+      align=center bgColor=white border=0>
+        <TBODY>
+        <TR>
+          <TD class=main>
+            <DIV class=block>
+            <H1 class=block_title><A id=ctl04_TitleUrl 
+            href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html">视图</A></H1>
+            <DIV class=post>
+            <DIV class=postcontent>
+            <P>创建基本视图</P>
+            <P>　　CREATE VIEW dbo.v_Product_TransactionHistory AS SELECT 
+            p.Name,p.ProductNumber,c.Name ProductCategory,s.Name 
+            ProductSubCategory,m.Name 
+            ProductModel,t.TransactionID,t.ReferenceOrderID,t.ReferenceOrderLineID,t.TransactionDate,t.TransactionType,</P>
+            <P>t.Quantity,t.ActualCost FROM Production.TransactionHistory t 
+            INNER JOIN Production.Product p ON t.ProductID=p.ProductID INNER 
+            JOIN Production.ProductModel m ON m.ProductModuelID=p.ProductModelID 
+            INNER JOIN Production.ProductSubcategory s ON 
+            s.ProductSubcategoryID-p.ProductSubcategoryID INNER JOIN 
+            Production.ProductCategory c ON 
+            c.ProductCategoryID=s.ProductCategoryID WHERE c.Name='Bikes' 
+            GO<BR>查询视图定义</P>
+            <P>　　SELECT definition FROM sys.sql_dodules WHERE 
+            object_id=OBJECT_ID('v_Product_TransactionHistory')<BR>数据库视图报表</P>
+            <P>　　显示当前数据库中所有的视图</P>
+            <P>　　SELECT s.name SchemaName,v.name ViewName FROM sys.views v INNER 
+            JOIN sys.schemas s ON v.schema_id=s.schema_id ORDER BY 
+            s.name,v.name</P>
+            <P>　　显示当前数据库中每个视图公开的列</P>
+            <P>　　SELECT v.name ViewName,c.name ColumnName FROM sys.columns c 
+            INNER JOIN sys.views v ON c.object_id=v.object_id ORDER BY 
+            v.name,c.name</P>
+            <P>　　显示每个视图依赖的对象</P>
+            <P>　　SELECT DISTINCT s.name SchemaName,v.name ViewName, 
+            OBJECT_NAME(referenced_major_id) ReferencedObject FROM 
+            sys.sql_dependencies d INNER JOIN sys.views v ON 
+            d.object_id=v.object_id INNER JOIN sys.schemas s ON 
+            v.schema_id=s.schema_id ORDER BY s.name,v.name<BR>刷新视图定义</P>
+            <P>　　EXEC sp_refreshview 
+            'dbo.v_Product_TransactionHistory'<BR>修改视图</P>
+            <P>　　ALTER VIEW dbo.v_Product_TransactionHistory AS SELECT 
+            p.Name,p.ProductNumber,t.TransactionID,t.TransactionDate,t.TransactionType,t.Quantity,t.ActualCost 
+            FROM Production.TransactionHistory t INNER JOIN Production.Product p 
+            ON t.ProductID=p.ProductID WHERE Quantity&gt;10</P>
+            <P>　　GO<BR>删除视图</P>
+            <P>　　DROP VIEW dbo.v_Product_Inventory_Location<BR>使用视图修改数据</P>
+            <P>　　CREATE VIEW Production.vw_Location AS SELECT 
+            LocationID,CostRate,Availability,CostRate/Availability 
+            CostToAvailabilityRatio FROM Production.Location GO<BR>视图加密</P>
+            <P>　　CREATE VIEW dbo.v_Product_TopTenListPrice WITH ENCRYPTION AS 
+            SELECT TOP 10 p.Name,p.ProductNumber,p.ListPrice FROM 
+            Production.Product p ORDERED BY p.ListPrice DESC go</P>
+            <P>　　select definition FROM sys.sql_modules WHERE 
+            object_id=OBJECT_ID('v_Product_TopTenListPrice')<BR>创建索引视图</P>
+            <P>　　CREATE VIEW dbo.v_Product_Sales_By_LineTotal WITH SCHEMABINDING 
+            AS SELECT .ProductID,p.Name ProductName,SUM(LineToTal) 
+            LineTotalByProduct,COUNT_BIG(*) LineItems FROM 
+            Sales.SalesOrderDetail s INNER JOIN Production.Product p ON 
+            s.ProductID=p.ProductID GROUP BY p.ProductID,p.Name GO</P>
+            <P>　　SET STATISTICS IO ON GO</P>
+            <P>　　SELECT TOP 5 ProductName,LineTotalByProduct FROM 
+            v_Product_Sales_By_LineTotal ORDER BY LineTotalByProduct DESC</P>
+            <P>　　CREATE UNIQUE CLUSTERED INDEX UCI_v_Product_Sales_By_LineTotal 
+            ON dbo.v_Product_Sales_By_LineTotal (ProductID) GO</P>
+            <P>　　CREATE NONCLUSTERED INDEX NI_v_Product_Sales_By_LineTotal ON 
+            dbo.v_Product_Sales_By_LineTotal(ProductName) GO</P>
+            <P>　　SELECT TOP 5 ProductName,LineTotalByProduct FROM 
+            v_Product_Sales_By_LineTotal ORDER BY LineTotalByProduct 
+            DESC<BR>强制优化器为索引视图使用索引</P>
+            <P>　　SELECT ProductID,LocationID,ProductName,LocationName,Shelf FROM 
+            dbo.v_Product_Inventory_Location WITH 
+            (NOEXPAND,INDEX(NI_v_Product_Inventory_Location_Names)) WHERE 
+            ProductName='Blade'<BR>分区视图</P>
+            <P>　　</P>
+            <DIV id=digg_block>
+            <DIV id=author_profile>
+            <DIV class=author_profile_info>
+            <DIV class=author_profile_info><A 
+            href="http://home.cnblogs.com/xupengnannan20070617/" 
+            target=_blank>夜里的烟</A><BR>关注 - 25<BR>粉丝 - 10<BR></DIV></DIV>
+            <DIV class=clear></DIV>
+            <DIV id=author_profile_follow><A onclick="login();return false;" 
+            href="javascript:void(0);">关注博主</A></DIV></DIV>
+            <DIV id=div_digg>
+            <DIV class=diggit onclick=DiggIt(1729329,67032,1)><SPAN 
+            class=diggnum id=digg_count_1729329>0</SPAN> </DIV>
+            <DIV class=buryit onclick=DiggIt(1729329,67032,2)><SPAN 
+            class=burynum id=bury_count_1729329>0</SPAN> </DIV>
+            <DIV class=clear></DIV><SPAN id=span_isdigged_1729329 
+            style="DISPLAY: none">0</SPAN> 
+            <DIV class=diggword 
+            id=digg_word_1729329>(请您对文章做出评价)</DIV></DIV></DIV>
+            <DIV class=clear></DIV>
+            <DIV id=post_next_prev><A 
+            href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/25/1694621.html">« 
+            </A>上一篇：<A title="发布于2010-03-25 09:59" 
+            href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/25/1694621.html">浅谈C#应用程序域</A><BR></DIV>
+            <SCRIPT src="视图 - 夜里的烟 - 博客园_files/google_service.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+            <SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+            <SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+            <SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '2ebbf896-335a-de11-9510-001cf0cd104b';
+</SCRIPT>
+            </DIV>
+            <DIV class=itemdesc>发表于 2010-05-06 23:54 <A 
+            href="http://www.cnblogs.com/xupengnannan20070617/">夜里的烟</A> 阅读(0) 
+            <A 
+            href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html#commentform">评论(0)</A> 
+            &nbsp;<A 
+            href="http://www.cnblogs.com/xupengnannan20070617/admin/EditArticles.aspx?postid=1729329">编辑</A> 
+            <A onclick="AddToWz(1729329);return false;" 
+            href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html#">收藏</A> 
+            所属分类: <A 
+            href="http://www.cnblogs.com/xupengnannan20070617/category/241746.html">SQL 
+            S范例代码查询辞典</A> </DIV></DIV>
+            <DIV class=seperator>&nbsp;</DIV><IMG height=1 
+            src="视图 - 夜里的烟 - 博客园_files/1729329.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html"
+dc:identifier="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/xupengnannan20070617/services/trackbacks/1729329.aspx" />
+</rdf:RDF>
+-->
+            <SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+            <DIV class=commentform id=ctl05_comment_form>
+            <DIV id=ctl05_divLoginPannel>
+            <DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+            href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fxupengnannan20070617%2farticles%2f1729329.html%3flogin%3d1%23commentform">登录</A> 
+            或 <A class=underline 
+            href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fxupengnannan20070617%2farticles%2f1729329.html%23Bottom2">注册</A> 
+            。</DIV>
+            <DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+            target=_blank>返回博客园首页</A></DIV></DIV>
+            <DIV class="itnews c_ad_block"><A class=site_hot 
+            href="http://a4.yeshj.com/rd/35182/" 
+            target=_blank>有道难题开锣头奖8万！</A><BR><A href="http://news.cnblogs.com/" 
+            target=_blank>IT新闻</A>:<BR>· <A 
+            href="http://news.cnblogs.com/n/64874/" 
+            target=_blank>摩托罗拉Android新机Shadow配置曝光</A><BR>· <A 
+            href="http://news.cnblogs.com/n/64873/" 
+            target=_blank>第四代iPhone全白版整机曝光</A><BR>· <A 
+            href="http://news.cnblogs.com/n/64872/" 
+            target=_blank>谷歌被迫暂停删除个人网络隐私数据</A><BR>· <A 
+            href="http://news.cnblogs.com/n/64871/" 
+            target=_blank>Palm挽歌</A><BR>· <A 
+            href="http://news.cnblogs.com/n/64870/" target=_blank>传下一代苹果iPhone 
+            可能拥有视频会议功能</A><BR></DIV>
+            <DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+            target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+            href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+            <DIV style="MARGIN-TOP: 5px">
+            <SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+            </DIV>
+            <DIV style="MARGIN-TOP: 5px"><A 
+            href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG 
+            alt="" src="视图 - 夜里的烟 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+            <DIV class="itnews c_ad_block" id=job_block><A 
+            href="http://job.cnblogs.com/" target=_blank>推荐职位</A>:<BR>
+            <DIV id=job_list></DIV>
+            <SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+            </DIV></DIV>
+            <DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+            href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+            href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+            href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+            href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+            href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+            href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+            href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+            <DIV class=c_ad_block id=ad_under_comment2><A 
+            href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+            target=_blank><IMG 
+            style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+            alt="" src="视图 - 夜里的烟 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+            href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+            计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+            href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+            target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+            <DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+            href="http://zzk.cnblogs.com/s?w=SQL+S%e8%8c%83%e4%be%8b%e4%bb%a3%e7%a0%81%e6%9f%a5%e8%af%a2%e8%be%9e%e5%85%b8" 
+            target=_blank>SQL S范例代码查询辞典</A> 
+      </DIV></DIV></DIV></TD></TR></TBODY></TABLE></TD>
+    <TD width=10>&nbsp;</TD>
+    <TD vAlign=top>
+      <TABLE height=90 cellSpacing=0 cellPadding=5 width="100%" align=center 
+      bgColor=white border=0>
+        <TBODY>
+        <TR>
+          <TD class=banner>
+            <TABLE height=200 width="100%">
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=Calendar1_entryCal title=Calendar 
+                  style="BORDER-RIGHT: #f7f7f7 1px solid; BORDER-TOP: #f7f7f7 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #f7f7f7 1px solid; WIDTH: 100%; COLOR: #cc0099; BORDER-BOTTOM: #f7f7f7 1px solid; FONT-FAMILY: Verdana; BORDER-COLLAPSE: collapse; HEIGHT: 100%" 
+                  cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD style="BACKGROUND-COLOR: #f7f7f7" colSpan=7>
+                        <TABLE 
+                        style="FONT-SIZE: 12px; WIDTH: 100%; COLOR: #ff6600; FONT-FAMILY: Verdana; BORDER-COLLAPSE: collapse" 
+                        cellSpacing=0 border=0>
+                          <TBODY>
+                          <TR>
+                            <TD style="WIDTH: 15%" vAlign=bottom><A 
+                              title="Go to the previous month" 
+                              style="COLOR: #cc0099" 
+                              href="javascript:__doPostBack('Calendar1$entryCal','V3743')">&lt;</A></TD>
+                            <TD style="WIDTH: 70%" align=middle>2010年5月</TD>
+                            <TD style="WIDTH: 15%" vAlign=bottom 
+                              align=right><A title="Go to the next month" 
+                              style="COLOR: #cc0099" 
+                              href="javascript:__doPostBack('Calendar1$entryCal','V3804')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TH 
+                      style="FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: Arial; BACKGROUND-COLOR: white" 
+                      scope=col align=middle abbr=日>日</TH>
+                      <TH 
+                      style="FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: Arial; BACKGROUND-COLOR: white" 
+                      scope=col align=middle abbr=一>一</TH>
+                      <TH 
+                      style="FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: Arial; BACKGROUND-COLOR: white" 
+                      scope=col align=middle abbr=二>二</TH>
+                      <TH 
+                      style="FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: Arial; BACKGROUND-COLOR: white" 
+                      scope=col align=middle abbr=三>三</TH>
+                      <TH 
+                      style="FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: Arial; BACKGROUND-COLOR: white" 
+                      scope=col align=middle abbr=四>四</TH>
+                      <TH 
+                      style="FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: Arial; BACKGROUND-COLOR: white" 
+                      scope=col align=middle abbr=五>五</TH>
+                      <TH 
+                      style="FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: Arial; BACKGROUND-COLOR: white" 
+                      scope=col align=middle abbr=六>六</TH></TR>
+                    <TR>
+                      <TD style="WIDTH: 14%; COLOR: #303030" 
+align=middle>25</TD>
+                      <TD style="WIDTH: 14%; COLOR: #303030" 
+align=middle>26</TD>
+                      <TD style="WIDTH: 14%; COLOR: #303030" 
+align=middle>27</TD>
+                      <TD style="WIDTH: 14%; COLOR: #303030" 
+align=middle>28</TD>
+                      <TD style="WIDTH: 14%; COLOR: #303030" 
+align=middle>29</TD>
+                      <TD style="WIDTH: 14%; COLOR: #303030" 
+align=middle>30</TD>
+                      <TD style="WIDTH: 14%" align=middle>1</TD></TR>
+                    <TR>
+                      <TD style="WIDTH: 14%" align=middle>2</TD>
+                      <TD style="WIDTH: 14%" align=middle>3</TD>
+                      <TD style="WIDTH: 14%" align=middle>4</TD>
+                      <TD style="WIDTH: 14%" align=middle>5</TD>
+                      <TD style="WIDTH: 14%" align=middle>6</TD>
+                      <TD style="WIDTH: 14%" align=middle>7</TD>
+                      <TD style="WIDTH: 14%" align=middle>8</TD></TR>
+                    <TR>
+                      <TD style="WIDTH: 14%" align=middle>9</TD>
+                      <TD style="WIDTH: 14%" align=middle>10</TD>
+                      <TD style="WIDTH: 14%" align=middle>11</TD>
+                      <TD style="WIDTH: 14%" align=middle>12</TD>
+                      <TD style="WIDTH: 14%" align=middle>13</TD>
+                      <TD style="WIDTH: 14%" align=middle>14</TD>
+                      <TD style="WIDTH: 14%" align=middle>15</TD></TR>
+                    <TR>
+                      <TD style="WIDTH: 14%" align=middle>16</TD>
+                      <TD style="WIDTH: 14%" align=middle>17</TD>
+                      <TD style="WIDTH: 14%" align=middle>18</TD>
+                      <TD style="WIDTH: 14%" align=middle>19</TD>
+                      <TD style="WIDTH: 14%" align=middle>20</TD>
+                      <TD style="WIDTH: 14%" align=middle>21</TD>
+                      <TD style="WIDTH: 14%" align=middle>22</TD></TR>
+                    <TR>
+                      <TD style="WIDTH: 14%" align=middle>23</TD>
+                      <TD style="WIDTH: 14%; BACKGROUND-COLOR: #eeeeee" 
+                      align=middle>24</TD>
+                      <TD style="WIDTH: 14%" align=middle>25</TD>
+                      <TD style="WIDTH: 14%" align=middle>26</TD>
+                      <TD style="WIDTH: 14%" align=middle>27</TD>
+                      <TD style="WIDTH: 14%" align=middle>28</TD>
+                      <TD style="WIDTH: 14%" align=middle>29</TD></TR>
+                    <TR>
+                      <TD style="WIDTH: 14%" align=middle>30</TD>
+                      <TD style="WIDTH: 14%" align=middle>31</TD>
+                      <TD style="WIDTH: 14%; COLOR: #303030" align=middle>1</TD>
+                      <TD style="WIDTH: 14%; COLOR: #303030" align=middle>2</TD>
+                      <TD style="WIDTH: 14%; COLOR: #303030" align=middle>3</TD>
+                      <TD style="WIDTH: 14%; COLOR: #303030" align=middle>4</TD>
+                      <TD style="WIDTH: 14%; COLOR: #303030" 
+                    align=middle>5</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+            <H1>&nbsp;公告</H1><BR>
+            <DIV id=profile_block><A 
+            href="http://home.cnblogs.com/xupengnannan20070617/" 
+            target=_blank>我的主页</A>&nbsp; <A 
+            href="http://home.cnblogs.com/xupengnannan20070617/detail/" 
+            target=_blank>个人资料</A><BR><A 
+            href="http://home.cnblogs.com/xupengnannan20070617/ing/" 
+            target=_blank>我的闪存</A>&nbsp; <A 
+            href="http://space.cnblogs.com/msg/send/å¤éçç" 
+            target=_blank>发短消息</A></DIV>
+            <H1>&nbsp;导航</H1>
+            <UL class=list type=square>
+              <LI class=listitem><A class=listitem id=MyLinks1_HomeLink 
+              href="http://www.cnblogs.com/">博客园</A> 
+              <LI class=listitem><A class=listitem id=MyLinks1_MyHomeLink 
+              href="http://www.cnblogs.com/xupengnannan20070617/">首页</A> 
+              <LI class=listitem><A class=listitem id=MyLinks1_NewPostLink 
+              href="http://www.cnblogs.com/xupengnannan20070617/admin/EditPosts.aspx?opt=1">发新随笔</A> 
+
+              <LI class=listitem><A class=listitem id=MyLinks1_NewArticleLink 
+              href="http://www.cnblogs.com/EnterMyBlog.aspx?NewArticle=1">发新文章</A> 
+
+              <LI class=listitem><A class=listitem id=MyLinks1_ContactLink 
+              accessKey=9 
+              href="http://space.cnblogs.com/msg/send/å¤éçç">联系</A> 
+              <LI class=listitem><A class=listitem id=MyLinks1_Syndication 
+              href="http://www.cnblogs.com/xupengnannan20070617/rss">订阅</A><A 
+              id=MyLinks1_XMLLink 
+              href="http://www.cnblogs.com/xupengnannan20070617/rss"><IMG 
+              style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+              alt=订阅 src="视图 - 夜里的烟 - 博客园_files/xml.gif"></A> 
+              <LI class=listitem><A class=listitem id=MyLinks1_Admin 
+              href="http://www.cnblogs.com/xupengnannan20070617/admin/EditPosts.aspx">管理</A> 
+              </LI></UL>
+            <H1>&nbsp;统计</H1>
+            <UL class=list type=square>
+              <LI class=listitem>随笔： 7 
+              <LI class=listitem>文章： 109 
+              <LI class=listitem>评论： 0 
+              <LI class=listitem>引用： 0 </LI></UL>
+            <DIV id=side_ing_block>
+            <H3 class=catListTitle>最新闪存</H3>
+            <UL>
+              <LI>踩！踩！我踩死你！哈哈 <A class=ing_lnk 
+              href="http://home.cnblogs.com/ing/95783/">04-19 10:23</A>
+              <LI><A class=ing_lnk 
+              href="http://home.cnblogs.com/xupengnannan20070617/ing/">更多闪存...</A></LI></UL></DIV>
+            <SCRIPT type=text/javascript>
+var blogapp = 'xupengnannan20070617';
+</SCRIPT>
+
+            <DIV class=mySearch>
+            <H3 class=catListTitle>搜索</H3>
+            <DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+            onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+            <DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+            onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+            <H3>常用链接</H3>
+            <UL>
+              <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+              href="http://www.cnblogs.com/xupengnannan20070617/MyPosts.html">我的随笔</A> 
+
+              <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+              href="http://home.cnblogs.com/xupengnannan20070617/">我的空间</A> 
+              <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+              href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+              <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+              href="http://www.cnblogs.com/xupengnannan20070617/MyComments.html">我的评论</A> 
+
+              <LI><A id=itemListLink 
+              onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html#">更多链接</A> 
+              </LI></UL>
+            <DIV id=itemListLin_con style="DISPLAY: none">
+            <UL>
+              <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem 
+              href="http://www.cnblogs.com/xupengnannan20070617/MyArticles.html">我的文章</A> 
+
+              <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+              title=我发表过评论的随笔 
+              href="http://www.cnblogs.com/xupengnannan20070617/OtherPosts.html">我的参与</A> 
+
+              <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+              href="http://www.cnblogs.com/xupengnannan20070617/MyNews.html">我的新闻</A> 
+
+              <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+              href="http://www.cnblogs.com/xupengnannan20070617/tag/">我的标签</A> 
+              </LI></UL></DIV>
+            <H1 class=listtitle>随笔档案<SPAN 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(7)</SPAN></H1>
+            <UL class=list type=square>
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03.html">2010年3月 
+              (7)</A> </LI></UL>
+            <H1 class=listtitle>文章分类<SPAN 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(107)</SPAN></H1>
+            <UL class=list type=square>
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/240659.html">.Net 
+              Discovery (11)</A> <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_RssLink 
+              title="Subscribe to .Net Discovery (11)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/240659.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/235121.html">.Net 
+              Remoting(3)</A> <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_RssLink 
+              title="Subscribe to .Net Remoting(3)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/235121.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/235402.html">C#设计模式(17)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_RssLink 
+              title="Subscribe to C#设计模式(17)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/235402.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/235511.html">NET设计规范-.NET约定、惯用法与模式.(3)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_RssLink 
+              title="Subscribe to NET设计规范-.NET约定、惯用法与模式.(3)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/235511.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/238920.html">ORM(2)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_RssLink 
+              title="Subscribe to ORM(2)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/238920.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/237587.html">Runtime 
+              Form Designer(3)</A> <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_RssLink 
+              title="Subscribe to Runtime Form Designer(3)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/237587.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/238921.html">SOA(1)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_RssLink 
+              title="Subscribe to SOA(1)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/238921.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/241746.html">SQL 
+              S范例代码查询辞典(29)</A> <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_RssLink 
+              title="Subscribe to SQL S范例代码查询辞典(29)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/241746.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/238918.html">UML(2)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_RssLink 
+              title="Subscribe to UML(2)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/238918.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/237588.html">WCF(1)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_RssLink 
+              title="Subscribe to WCF(1)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/237588.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/236714.html">winform控件开发(7)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_RssLink 
+              title="Subscribe to winform控件开发(7)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/236714.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/237590.html">WPF(1)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_RssLink 
+              title="Subscribe to WPF(1)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/237590.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/237589.html">WWF(1)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_RssLink 
+              title="Subscribe to WWF(1)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/237589.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/243043.html">美河制作.六个月成为网络专家(4)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_RssLink 
+              title="Subscribe to 美河制作.六个月成为网络专家(4)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/243043.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/238730.html">软件工程(21)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_RssLink 
+              title="Subscribe to 软件工程(21)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/238730.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl16_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/category/240303.html">系统架构设计师教程(1)</A> 
+              <A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl16_RssLink 
+              title="Subscribe to 系统架构设计师教程(1)" 
+              onclick="open_link('http://www.cnblogs.com/xupengnannan20070617/category/240303.html/rss');return false;" 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1729329.html###">(rss)</A> 
+              </LI></UL>
+            <H1 class=listtitle>文章档案<SPAN 
+            style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(109)</SPAN></H1>
+            <UL class=list type=square>
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/archives/2010/05.html">2010年5月 
+              (28)</A> 
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/archives/2010/04.html">2010年4月 
+              (37)</A> 
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/archives/2010/03.html">2010年3月 
+              (36)</A> 
+              <LI class=listitem><A class=listitem 
+              id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_Link 
+              href="http://www.cnblogs.com/xupengnannan20070617/archives/2010/02.html">2010年2月 
+              (8)</A> </LI></UL>
+            <H3 class=catListTitle>最新随笔</H3>
+            <DIV class=RecentComment id=RecentPosts>
+            <UL style="WORD-BREAK: break-all">
+              <LI><A 
+              id=SingleColumn1_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl00_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1730130.html">1.&nbsp;备份与恢复</A> 
+
+              <LI><A 
+              id=SingleColumn1_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl01_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1730126.html">2.&nbsp;性能调优</A> 
+
+              <LI><A 
+              id=SingleColumn1_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl02_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1730122.html">3.&nbsp;链接服务器和分布式查询</A> 
+
+              <LI><A 
+              id=SingleColumn1_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl03_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1730118.html">4.&nbsp;数据库快照</A> 
+
+              <LI><A 
+              id=SingleColumn1_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl04_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1730112.html">5.&nbsp;数据库镜像</A> 
+
+              <LI><A 
+              id=SingleColumn1_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl05_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1730105.html">6.&nbsp;维护数据库对象和对象依赖</A> 
+
+              <LI><A 
+              id=SingleColumn1_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl06_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1730100.html">7.&nbsp;数据库完整性和优化</A> 
+
+              <LI><A 
+              id=SingleColumn1_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl07_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1730098.html">8.&nbsp;创建和配置数据库</A> 
+
+              <LI><A 
+              id=SingleColumn1_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl08_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1730094.html">9.&nbsp;配置和查看SQL 
+              Server 的选项</A> 
+              <LI><A 
+              id=SingleColumn1_ctl05_RecentPostsList_ctl00_RecentPostsList2_ctl09_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/articles/1730092.html">10.&nbsp;Service 
+              Broker</A> </LI></UL></DIV>
+            <H3 class=catListTitle>最新评论 <A 
+            id=SingleColumn1__2b04535_RSSHyperlink1 
+            href="http://www.cnblogs.com/xupengnannan20070617/CommentsRSS.aspx"><IMG 
+            style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+            src="视图 - 夜里的烟 - 博客园_files/xml.gif"></A></H3>
+            <DIV class=RecentComment id=RecentComments>
+            <UL></UL></DIV>
+            <H3 class=catListTitle>阅读排行榜</H3>
+            <DIV class=RecentComment id=TopViewPosts>
+            <UL style="WORD-BREAK: break-all">
+              <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/24/1693536.html">1.&nbsp;基于c#的多线程讲解(98)</A> 
+
+              <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/25/1694621.html">2.&nbsp;浅谈C#应用程序域(82)</A> 
+
+              <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/23/1692841.html">3.&nbsp;VS2008 
+              快捷键大全(65)</A> 
+              <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/24/1693444.html">4.&nbsp;C# 
+              的强类型解释(61)</A> 
+              <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/17/1696619.html">5.&nbsp;运行时窗体设计器Runtime 
+              FormDesigner(13)</A> </LI></UL></DIV>
+            <H3 class=catListTitle>评论排行榜</H3>
+            <DIV class=RecentComment id=TopCommentsPosts>
+            <UL style="WORD-BREAK: break-all">
+              <LI><A id=SingleColumn1_ctl08_TopList_ctl01_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/17/1696619.html">1.&nbsp;运行时窗体设计器Runtime 
+              FormDesigner(0)</A> 
+              <LI><A id=SingleColumn1_ctl08_TopList_ctl02_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/16/1696620.html">2.&nbsp;强名称工具 
+              (Sn.exe)(0)</A> 
+              <LI><A id=SingleColumn1_ctl08_TopList_ctl03_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/15/1696622.html">3.&nbsp;C#事件与委托详解【精华 
+              多看看】(0)</A> 
+              <LI><A id=SingleColumn1_ctl08_TopList_ctl04_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/25/1694621.html">4.&nbsp;浅谈C#应用程序域(0)</A> 
+
+              <LI><A id=SingleColumn1_ctl08_TopList_ctl05_Hyperlink1 
+              href="http://www.cnblogs.com/xupengnannan20070617/archive/2010/03/24/1693536.html">5.&nbsp;基于c#的多线程讲解(0)</A> 
+              </LI></UL></DIV><BR>
+            <DIV class=footer>Powered by: <A 
+            href="http://www.cnblogs.com/">博客园</A><BR>模板提供：<A 
+            href="http://blog.hjenglish.com/">沪江博客</A><BR>Copyright ©2010 夜里的烟 
+            </DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR><!-- 页面内因素 --></FORM>
+<SCRIPT src="视图 - 夜里的烟 - 博客园_files/shCore.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="视图 - 夜里的烟 - 博客园_files/shLanguage.js" type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="视图 - 夜里的烟 - 博客园_files/ShowHidden.js" type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

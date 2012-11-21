@@ -1,0 +1,992 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html -->
+<HTML><HEAD><TITLE>C#动态加载DLL - D调的华丽 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=.NET,Framework,C#动态加载DLL name=keywords><LINK 
+href="C#动态加载DLL - D调的华丽 - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK id=MainCss href="C#动态加载DLL - D调的华丽 - 博客园_files/style.css" 
+type=text/css rel=stylesheet><LINK 
+href="C#动态加载DLL - D调的华丽 - 博客园_files/common2.css" type=text/css 
+rel=stylesheet><LINK href="C#动态加载DLL - D调的华丽 - 博客园_files/shCore.css" 
+type=text/css rel=stylesheet><LINK 
+href="C#动态加载DLL - D调的华丽 - 博客园_files/shThemeDefault.css" type=text/css 
+rel=stylesheet><LINK title=RSS href="http://www.cnblogs.com/elzero/rss" 
+type=application/rss+xml rel=alternate><LINK title=RSD 
+href="http://www.cnblogs.com/elzero/rsd.xml" type=application/rsd+xml 
+rel=EditURI>
+<SCRIPT src="C#动态加载DLL - D调的华丽 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="C#动态加载DLL - D调的华丽 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="C#动态加载DLL - D调的华丽 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4696" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=821288.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<TABLE class=Framework cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD colSpan=3>
+      <DIV id=top>
+      <TABLE cellSpacing=0 cellPadding=10>
+        <TBODY>
+        <TR>
+          <TD noWrap>
+            <H1><A class=headermaintitle id=Header1_HeaderTitle 
+            href="http://www.cnblogs.com/elzero/">D调的华丽</A></H1>认认真真做事，踏踏实实写代码 
+          </TD></TR></TBODY></TABLE></DIV>
+      <DIV id=sub>
+      <DIV id=sub-right>
+      <DIV class=BlogStats>posts - 42, comments - 34, trackbacks - 0, articles - 
+      0</DIV></DIV>&nbsp; <A id=Header1_MyLinks1_HomeLink 
+      href="http://www.cnblogs.com/">博客园</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_MyHomeLink 
+      href="http://www.cnblogs.com/elzero/">首页</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_NewPostLink 
+      href="http://www.cnblogs.com/elzero/admin/EditPosts.aspx?opt=1">新随笔</A>&nbsp;:: 
+      <A id=Header1_MyLinks1_ContactLink accessKey=9 
+      href="http://space.cnblogs.com/msg/send/+D">联系</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_Syndication 
+      href="http://www.cnblogs.com/elzero/rss">订阅</A> <A class=XMLLink 
+      id=Header1_MyLinks1_XMLLink href="http://www.cnblogs.com/elzero/rss"><IMG 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      alt=订阅 src="C#动态加载DLL - D调的华丽 - 博客园_files/xml.gif"></A>&nbsp;:: <A 
+      id=Header1_MyLinks1_Admin 
+      href="http://www.cnblogs.com/elzero/admin/EditPosts.aspx">管理</A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=LeftCell>
+      <DIV id=leftmenu></DIV></TD>
+    <TD class=MainCell>
+      <DIV id=main>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A class=singleposttitle id=ctl03_TitleUrl 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html">C#动态加载DLL 
+      </A></H2>Posted on 2007-07-17 15:47 <A 
+      href="http://www.cnblogs.com/elzero/">D</A> 阅读(5864) <A 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#commentform">评论(5)</A> 
+      &nbsp;<A 
+      href="http://www.cnblogs.com/elzero/admin/EditPosts.aspx?postid=821288">编辑</A> 
+      <A onclick="AddToWz(821288);return false;" 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#">收藏</A> 
+      所属分类: <A href="http://www.cnblogs.com/elzero/category/99597.html">.NET 
+      Framework</A> <IMG height=1 src="C#动态加载DLL - D调的华丽 - 博客园_files/821288.jpg" 
+      width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html"
+dc:identifier="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/elzero/services/trackbacks/821288.aspx" />
+</rdf:RDF>
+--></DIV>
+      <DIV class=postbody>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN 
+      style="FONT-SIZE: 9pt">利用反射进行动态加载和调用.</SPAN></DIV>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN 
+      style="FONT-SIZE: 9pt">Assembly&nbsp;ass=Assembly.LoadFrom(DllPath); 
+      //</SPAN><SPAN style="FONT-SIZE: 9pt">利用dll的路径加载,<FONT 
+      face=宋体>同时将此程序集所依赖的程序集加载进来,需后辍名.dll</FONT></SPAN></DIV>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN style="FONT-SIZE: 9pt"><SPAN 
+      style="FONT-FAMILY: Verdana">Assembly.LoadFile 
+      只加载指定文件，并不会自动加载依赖程序集.Assmbly.Load无需后辍名</SPAN></SPAN></DIV>
+      <DIV style="MARGIN-LEFT: 18pt">&nbsp;</DIV>
+      <DIV style="MARGIN-LEFT: 18pt">&nbsp;</DIV>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN 
+      style="FONT-SIZE: 9pt">加载dll后,需要使用dll中某类.</SPAN></DIV>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN style="FONT-SIZE: 9pt">Type 
+      type=ass.GetType(</SPAN><SPAN style="FONT-SIZE: 9pt">“</SPAN><SPAN 
+      style="FONT-SIZE: 9pt">TypeName</SPAN><SPAN 
+      style="FONT-SIZE: 9pt">”</SPAN><SPAN 
+      style="FONT-SIZE: 9pt">);//</SPAN><SPAN 
+      style="FONT-SIZE: 9pt">利用类型的命名空间和名称获得类型</SPAN></DIV>
+      <DIV style="MARGIN-LEFT: 18pt">&nbsp;</DIV>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN 
+      style="FONT-SIZE: 9pt">需要实例化类型,才可以使用,参数可以人为的指定,也可以无参数,静态实例可以省略</SPAN></DIV>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN style="FONT-SIZE: 9pt">Object obj = 
+      Activator.CreateInstance(type,params[]);//</SPAN><SPAN 
+      style="FONT-SIZE: 9pt">利用指定的参数实例话类型</SPAN></DIV>
+      <DIV style="MARGIN-LEFT: 18pt">&nbsp;</DIV>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN 
+      style="FONT-SIZE: 9pt">调用类型中的某个方法:</SPAN></DIV>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN 
+      style="FONT-SIZE: 9pt">需要首先得到此方法</SPAN></DIV>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN style="FONT-SIZE: 9pt">MethodInfo 
+      mi=type.GetMethod(</SPAN><SPAN style="FONT-SIZE: 9pt">“</SPAN><SPAN 
+      style="FONT-SIZE: 9pt">MehtodName</SPAN><SPAN 
+      style="FONT-SIZE: 9pt">”</SPAN><SPAN 
+      style="FONT-SIZE: 9pt">);//</SPAN><SPAN 
+      style="FONT-SIZE: 9pt">通过方法名称获得方法</SPAN></DIV>
+      <DIV style="MARGIN-LEFT: 18pt">&nbsp;</DIV>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN 
+      style="FONT-SIZE: 9pt">然后对方法进行调用,多态性利用参数进行控制</SPAN></DIV>
+      <DIV style="MARGIN-LEFT: 18pt"><SPAN 
+      style="FONT-SIZE: 9pt">mi.Invoke(obj,params[]);//</SPAN><SPAN 
+      style="FONT-SIZE: 9pt">根据参数直线方法,返回值就是原方法的返回值</SPAN></DIV>
+      <DIV id=c_jquery_test style="DISPLAY: none"></DIV>
+      <SCRIPT type=text/javascript>
+if ($ != jQuery) {
+	$ = jQuery.noConflict();
+}
+</SCRIPT>
+
+      <DIV id=digg_block>
+      <DIV id=author_profile>
+      <DIV class=author_profile_info>
+      <DIV class=author_profile_info><A href="http://home.cnblogs.com/elzero/" 
+      target=_blank>D</A><BR>关注 - 0<BR>粉丝 - 0<BR></DIV></DIV>
+      <DIV class=clear></DIV>
+      <DIV id=author_profile_follow><A onclick="login();return false;" 
+      href="javascript:void(0);">关注博主</A></DIV></DIV>
+      <DIV id=div_digg>
+      <DIV class=diggit onclick=DiggIt(821288,27858,1)><SPAN class=diggnum 
+      id=digg_count_821288>0</SPAN> </DIV>
+      <DIV class=buryit onclick=DiggIt(821288,27858,2)><SPAN class=burynum 
+      id=bury_count_821288>0</SPAN> </DIV>
+      <DIV class=clear></DIV><SPAN id=span_isdigged_821288 
+      style="DISPLAY: none">0</SPAN> 
+      <DIV class=diggword id=digg_word_821288>(请您对文章做出评价)</DIV></DIV></DIV>
+      <DIV class=clear></DIV>
+      <DIV id=post_next_prev><A 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821273.html">« 
+      </A>上一篇：<A title="发布于2007-07-17 15:35" 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821273.html">Asp.net 
+      文件下载</A><BR><A 
+      href="http://www.cnblogs.com/elzero/archive/2007/08/25/869321.html">» 
+      </A>下一篇：<A title="发布于2007-08-25 13:53" 
+      href="http://www.cnblogs.com/elzero/archive/2007/08/25/869321.html">获取同一网段内的SQL 
+      SERVER实例</A><BR></DIV>
+      <SCRIPT src="C#动态加载DLL - D调的华丽 - 博客园_files/google_service.js" 
+      type=text/javascript></SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    var c_enable_dfp = true;
+    if (navigator.userAgent.indexOf("Chrome/6.0.401.1") > 0) {
+        c_enable_dfp = false;
+    }
+    if (c_enable_dfp) {
+        try {
+            GS_googleAddAdSenseService("ca-pub-4210569241504288");
+            GS_googleEnableAllServices();
+        }
+        catch (e) { }
+    }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    if (c_enable_dfp) {
+        try {
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+        }
+        catch (e) { }
+    }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+    if (c_enable_dfp) {
+        try {
+            GA_googleFetchAds();
+        } catch (e) { }
+    }
+</SCRIPT>
+
+      <SCRIPT type=text/javascript>
+	var blog_ad_has_shown = false;
+	var cb_c_u_id = '';
+	var cb_blog_uid = 'e8783d0b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+
+      <DIV id=post_body_ad style="MARGIN-TOP: 5px">
+      <SCRIPT type=text/javascript> try { GA_googleFillSlot("cnblogs_blogpost_body");}catch (e) { } 
+ blog_ad_has_shown=true;</SCRIPT>
+      </DIV></DIV></DIV><A name=pagedcomment></A>
+      <H3>Feedback</H3>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#821457">#1楼</A><A 
+      id=comment_anchor_821457 name=821457></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("web报表",821457,"21IAAoRUF253qUXPftqTiejAyTzGT4hEuDYc1W1CDoSHdaEXOmxi9A==")' 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(821457,"21IAAoRUF253qUXPftqTiejAyTzGT4hEuDYc1W1CDoSHdaEXOmxi9A==")' 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=web%e6%8a%a5%e8%a1%a8" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl00_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl00_EditLink></A> </H2>2007-07-17 17:29 by <A 
+      id=Comments1_CommentList_ctl00_NameLink 
+      href="http://www.cnblogs.com/webreport/" target=_blank>web报表</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/webæ¥è¡¨">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_821457>good</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#849433">#2楼</A><A 
+      id=comment_anchor_849433 name=849433></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("wiki",849433,"fUHZ9pt/9X66J7oKAWRSNrTkhh/f0MPX1y956IvuJ3mrpG4eJYgXAw==")' 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(849433,"fUHZ9pt/9X66J7oKAWRSNrTkhh/f0MPX1y956IvuJ3mrpG4eJYgXAw==")' 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=wiki" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl01_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl01_EditLink></A> </H2>2007-08-09 16:41 by <A 
+      id=Comments1_CommentList_ctl01_NameLink 
+      href="http://www.cnblogs.com/richardcao/" target=_blank>wiki</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/wiki">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_849433>hao</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#853723">#3楼</A><A 
+      id=comment_anchor_853723 name=853723></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment(",nm,n,,n,",853723,"")' 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(853723,"")' 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl02_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl02_EditLink></A> </H2>2007-08-13 14:47 by <A 
+      id=Comments1_CommentList_ctl02_NameLink target=_blank>,nm,n,,n,[未注册用户]</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_853723>支持</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#932670">#4楼</A><A 
+      id=comment_anchor_932670 name=932670></A> &nbsp;&nbsp;<A 
+      onclick='ReplyComment("猪怕壮",932670,"d8zFcTrvxl3B8ChBFvqEQTS4veyI63ArelpiptPs+SLE3FSrqVZseQ==")' 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(932670,"d8zFcTrvxl3B8ChBFvqEQTS4veyI63ArelpiptPs+SLE3FSrqVZseQ==")' 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      title=查看该作者发表过的评论 
+      href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e7%8c%aa%e6%80%95%e5%a3%ae" 
+      target=_blank>查看</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl03_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl03_EditLink></A> </H2>2007-10-22 08:58 by <A 
+      id=Comments1_CommentList_ctl03_NameLink 
+      href="http://www.cnblogs.com/qdzhaokun/" target=_blank>猪怕壮</A>&nbsp;<A 
+      class=sendMsg2This title=给此人发送站内短消息 
+      href="http://space.cnblogs.com/msg/send/çªæå£®">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+      </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_932670>学习</SPAN></DIV></DIV>
+      <DIV class=post>
+      <DIV class=posthead>
+      <H2><A 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#1250946">#5楼</A><A 
+      id=comment_anchor_1250946 name=1250946></A><A name=Post></A> 
+      &nbsp;&nbsp;<A onclick='ReplyComment("bitsnowwolf",1250946,"")' 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#commentform">回复</A>&nbsp;&nbsp;<A 
+      onclick='QuoteComment(1250946,"")' 
+      href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html#commentform">引用</A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl04_DeleteLink 
+      href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+      id=Comments1_CommentList_ctl04_EditLink></A> </H2>2008-07-10 20:50 by <A 
+      id=Comments1_CommentList_ctl04_NameLink 
+      target=_blank>bitsnowwolf[未注册用户]</A> </DIV>
+      <DIV class=postbody><SPAN class=blog_comment_body 
+      id=comment_body_1250946>正想要此类东西，哇哈哈哈，好</SPAN></DIV></DIV>
+      <SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+      <DIV class=commentform id=ctl04_comment_form>
+      <DIV id=ctl04_divLoginPannel>
+      <DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+      href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2felzero%2farchive%2f2007%2f07%2f17%2f821288.html%3flogin%3d1%23commentform">登录</A> 
+      或 <A class=underline 
+      href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2felzero%2farchive%2f2007%2f07%2f17%2f821288.html%23Bottom2">注册</A>，<A 
+      href="http://www.cnblogs.com/" target=_blank>返回博客园首页</A>。</DIV></DIV>
+      <DIV class="itnews c_ad_block">推荐链接：<BR><A class=site_hot 
+      href="http://a4.yeshj.com/rd/35450/" 
+      target=_blank>软件研发团队管理年会(7.10-7.11)</A><BR><A 
+      href="http://a4.yeshj.com/rd/35663/" 
+      target=_blank>沪江网招聘ASP.NET开发工程师</A><BR><A href="http://job.cnblogs.com/" 
+      target=_blank>找优秀程序员，就在博客园</A><BR><A href="http://news.cnblogs.com/" 
+      target=_blank>IT新闻</A>:<BR>· <A href="http://news.cnblogs.com/n/66270/" 
+      target=_blank>俄罗斯小组宣布：星际2局域网破解95%</A><BR>· <A 
+      href="http://news.cnblogs.com/n/66267/" target=_blank>移动时代苹果与谷歌争霸 
+      微软在没落</A><BR>· <A href="http://news.cnblogs.com/n/66266/" 
+      target=_blank>基于Android系统的智能音乐咖啡机</A><BR>· <A 
+      href="http://news.cnblogs.com/n/66265/" target=_blank>WebM进入Firefox 
+      Trunk</A><BR>· <A href="http://news.cnblogs.com/n/66264/" 
+      target=_blank>苹果正式接受iOS 4应用申请 多任务软件将现</A><BR></DIV>
+      <DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+      target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+      href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+      <DIV style="MARGIN-TOP: 5px">
+      <SCRIPT type=text/javascript>
+    if (c_enable_dfp) {
+        try {
+            GA_googleFillSlot("cnblogs_blogpost_bottom");
+        }
+        catch (e) { }
+    }
+</SCRIPT>
+      </DIV>
+      <DIV class="itnews c_ad_block" id=job_block><A 
+      href="http://job.cnblogs.com/" target=_blank>推荐职位</A>:<BR>
+      <DIV id=job_list></DIV>
+      <SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+      </DIV></DIV>
+      <DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+      href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+      href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+      href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+      href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+      href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+      href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+      href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+      <DIV class=c_ad_block id=ad_under_comment2><A 
+      href="http://www.china-pub.com/STATIC07/1005/zh_loving_100528.asp" 
+      target=_blank><IMG 
+      style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+      alt="" 
+      src="C#动态加载DLL - D调的华丽 - 博客园_files/china_pub_20100610.gif"></A><BR><A 
+      href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+      计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+      href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+      target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+      <DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+      href="http://zzk.cnblogs.com/s?w=.NET+Framework" target=_blank>.NET 
+      Framework</A> </DIV>
+      <DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+      href="http://kb.cnblogs.com/a/821288/">C#动态加载DLL 
+  </A></DIV></DIV></DIV></TD></TR>
+  <TR>
+    <TD class=FooterCell colSpan=2>
+      <P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+      style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" 
+      href="http://www.cnblogs.com/" name=Hyperlink1>博客园</A> <BR>Copyright © D 
+      </P></TD></TR></TBODY></TABLE>
+<DIV id=lefttemp style="DISPLAY: none">
+<DIV id=Cal><IMG hspace=5 src="C#动态加载DLL - D调的华丽 - 博客园_files/icon-group.jpg" 
+align=left vspace=2>
+<H3>日历</H3>
+<TABLE class=cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: collapse; HEIGHT: 160px; BORDER-RIGHT-WIDTH: 0px" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: #eeeeee" colSpan=7>
+      <TABLE class=cal 
+      style="FONT-WEIGHT: bold; FONT-SIZE: 13px; WIDTH: 100%; COLOR: #666666; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD style="WIDTH: 15%" vAlign=bottom><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V2708')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2007年7月</TD>
+          <TD style="WIDTH: 15%" vAlign=bottom align=right><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V2769')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=日>日</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=一>一</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=二>二</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=三>三</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=四>四</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=五>五</TH>
+    <TH style="FONT-SIZE: 12px; BACKGROUND-COLOR: #ddddcc" scope=col 
+    align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>24</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>25</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>26</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>27</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>28</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>29</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>30</TD></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>1</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>2</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>3</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>4</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>5</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>6</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>7</TD></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>8</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>9</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>10</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>11</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>12</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>13</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/elzero/archive/2007/7/14.html"><U>14</U></A></TD></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>15</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/elzero/archive/2007/7/16.html"><U>16</U></A></TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/elzero/archive/2007/7/17.html"><U>17</U></A></TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>18</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>19</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>20</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>21</TD></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>22</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>23</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>24</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>25</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>26</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>27</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>28</TD></TR>
+  <TR>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>29</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>30</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%" align=middle>31</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>1</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>2</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" align=middle>3</TD>
+    <TD style="FONT-SIZE: 11px; WIDTH: 14%; COLOR: gray" 
+  align=middle>4</TD></TR></TBODY></TABLE></DIV>
+<DIV id=cell><IMG hspace=5 src="C#动态加载DLL - D调的华丽 - 博客园_files/icon-group.jpg" 
+align=left vspace=2>
+<H3>公告</H3>
+<DIV id=news>
+<DIV id=profile_block>粉丝 - 0<BR>关注 - 0<BR><A 
+href="http://home.cnblogs.com/elzero/" target=_blank>我的主页</A>&nbsp; <A 
+href="http://home.cnblogs.com/elzero/detail/" target=_blank>个人资料</A><BR><A 
+href="http://home.cnblogs.com/elzero/ing/" target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/+D" 
+target=_blank>发短消息</A></DIV></DIV></DIV>
+<DIV id=cell><IMG hspace=5 src="C#动态加载DLL - D调的华丽 - 博客园_files/icon-group.jpg" 
+align=left vspace=2> 
+<H3 class=catListTitle>最新闪存</H3>
+<DIV class=side_ing_list>
+<UL>
+  <LI>放个屁提提神 <A class=ing_lnk href="http://home.cnblogs.com/ing/98119/">04-28 
+  16:40</A>
+  <LI>无聊，没动力…… <A class=ing_lnk href="http://home.cnblogs.com/ing/98118/">04-28 
+  16:40</A>
+  <LI><A class=ing_lnk 
+  href="http://home.cnblogs.com/elzero/ing/">更多闪存...</A></LI></UL></DIV></DIV>
+<SCRIPT type=text/javascript>
+    var blogapp = 'elzero';
+</SCRIPT>
+
+<DIV id=cell><IMG hspace=5 src="C#动态加载DLL - D调的华丽 - 博客园_files/icon-group.jpg" 
+align=left vspace=2> 
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV></DIV>
+<DIV id=cell><IMG hspace=5 src="C#动态加载DLL - D调的华丽 - 博客园_files/icon-group.jpg" 
+align=left vspace=2> 
+<H3>我的标签</H3>
+<DIV id=MyTag>
+<UL>
+  <LI><A 
+  href="http://www.cnblogs.com/elzero/tag/Crystal+Report+æ°´æ¶æ¥è¡¨ãæ°å&shy;ãè±æãè½¬æ¢/">Crystal 
+  Report 水晶报表　数字　英文　转换(1)</A>
+  <LI><A 
+  href="http://www.cnblogs.com/elzero/tag/åå¹¶+GridView+ååæ&nbsp;¼/">合并 
+  GridView 单元格(1)</A>
+  <LI><A 
+  href="http://www.cnblogs.com/elzero/tag/sql+server+2005+æ§è½+CTE+éå½/">sql 
+  server 2005 性能 CTE 递归(1)</A> </LI></UL></DIV></DIV>
+<DIV id=cell><IMG hspace=5 src="C#动态加载DLL - D调的华丽 - 博客园_files/icon-group.jpg" 
+align=left vspace=2>
+<H3>随笔分类</H3>
+<UL>
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to .NET Framework(14)" 
+  onclick="open_link('http://www.cnblogs.com/elzero/category/99597.html/rss');return false;" 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html###"><IMG 
+  title="Subscribe to .NET Framework(14)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C#动态加载DLL - D调的华丽 - 博客园_files/xmlsmall.gif"></A><A 
+  id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/elzero/category/99597.html">.NET 
+  Framework(14)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to ASP.NET(9)" 
+  onclick="open_link('http://www.cnblogs.com/elzero/category/143507.html/rss');return false;" 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html###"><IMG 
+  title="Subscribe to ASP.NET(9)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C#动态加载DLL - D调的华丽 - 博客园_files/xmlsmall.gif"></A><A 
+  id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/elzero/category/143507.html">ASP.NET(9)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to Crystal Report(1)" 
+  onclick="open_link('http://www.cnblogs.com/elzero/category/153343.html/rss');return false;" 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html###"><IMG 
+  title="Subscribe to Crystal Report(1)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C#动态加载DLL - D调的华丽 - 博客园_files/xmlsmall.gif"></A><A 
+  id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/elzero/category/153343.html">Crystal 
+  Report(1)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to JAVA(7)" 
+  onclick="open_link('http://www.cnblogs.com/elzero/category/99604.html/rss');return false;" 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html###"><IMG 
+  title="Subscribe to JAVA(7)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C#动态加载DLL - D调的华丽 - 博客园_files/xmlsmall.gif"></A><A 
+  id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/elzero/category/99604.html">JAVA(7)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to JavaScript(1)" 
+  onclick="open_link('http://www.cnblogs.com/elzero/category/99599.html/rss');return false;" 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html###"><IMG 
+  title="Subscribe to JavaScript(1)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C#动态加载DLL - D调的华丽 - 博客园_files/xmlsmall.gif"></A><A 
+  id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/elzero/category/99599.html">JavaScript(1)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to 数据库(5)" 
+  onclick="open_link('http://www.cnblogs.com/elzero/category/99598.html/rss');return false;" 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html###"><IMG 
+  title="Subscribe to 数据库(5)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C#动态加载DLL - D调的华丽 - 博客园_files/xmlsmall.gif"></A><A 
+  id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/elzero/category/99598.html">数据库(5)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to 网络管理(4)" 
+  onclick="open_link('http://www.cnblogs.com/elzero/category/99602.html/rss');return false;" 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html###"><IMG 
+  title="Subscribe to 网络管理(4)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C#动态加载DLL - D调的华丽 - 博客园_files/xmlsmall.gif"></A><A 
+  id=Singlecolumn2_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/elzero/category/99602.html">网络管理(4)</A> 
+</LI></UL></DIV>
+<DIV id=cell><IMG hspace=5 src="C#动态加载DLL - D调的华丽 - 博客园_files/icon-group.jpg" 
+align=left vspace=2>
+<H3>随笔档案</H3>
+<UL>
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/elzero/archive/2008/09.html">2008年9月 (3)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/elzero/archive/2007/08.html">2007年8月 (3)</A> 
+  <LI><A id=Singlecolumn2_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/elzero/archive/2007/07.html">2007年7月 (36)</A> 
+  </LI></UL></DIV>
+<DIV id=cell><IMG hspace=5 src="C#动态加载DLL - D调的华丽 - 博客园_files/icon-group.jpg" 
+align=left vspace=2>
+<H3>最新评论 <A id=Singlecolumn2__37b497b9c65e_RSSHyperlink1 
+href="http://www.cnblogs.com/elzero/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="C#动态加载DLL - D调的华丽 - 博客园_files/xml.gif"></A></H3>
+<DIV class=RecentComment>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=Singlecolumn2__37b497b9c65e_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2008/09/04/1283738.html#1619011">1.&nbsp;Re:SQL 
+  Server 2005 中新CTE语法 递归性能测试</A> 
+  <LI style="WORD-BREAK: break-all">这样算出来的使用量b.bo_use*r.bo_use准确吗？ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--ydtpan 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=Singlecolumn2__37b497b9c65e_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/14/817917.html#1439508">2.&nbsp;re: 
+  空瓶换啤酒问题！</A> 
+  <LI style="WORD-BREAK: break-all">没那么麻烦！ <BR>2*a-1 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--空瓶换啤酒 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=Singlecolumn2__37b497b9c65e_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/14/817973.html#1362363">3.&nbsp;re: 
+  ASP.NET中GridView动态绑定数据实现编辑更新</A> 
+  <LI style="WORD-BREAK: break-all">我也有过这个问题，现在恍然大悟了呵呵 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--多个 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=Singlecolumn2__37b497b9c65e_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/14/817952.html#1344073">4.&nbsp;re: 
+  用C#实现HTTP协议下的多线程文件传输</A> 
+  <LI style="WORD-BREAK: break-all">感激象涛涛江水 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--过客^不会重名了吧 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=Singlecolumn2__37b497b9c65e_CommentList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/14/817919.html#1322863">5.&nbsp;re: 
+  猴子吃桃问题</A> 
+  <LI style="WORD-BREAK: break-all">#include&lt;iostream&gt; using namespace 
+  std; int fun(int i) { int f; if(i==9) f=1; else f=f... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--HEH </LI></UL></DIV></DIV>
+<DIV id=cell><IMG hspace=5 src="C#动态加载DLL - D调的华丽 - 博客园_files/icon-group.jpg" 
+align=left vspace=2>
+<H3>阅读排行榜</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=Singlecolumn2__19297d1ef8d0_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html">1.&nbsp;C#动态加载DLL 
+  (5864)</A> 
+  <LI><A id=Singlecolumn2__19297d1ef8d0_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/14/817973.html">2.&nbsp;ASP.NET中GridView动态绑定数据实现编辑更新(4855)</A> 
+
+  <LI><A id=Singlecolumn2__19297d1ef8d0_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/14/817976.html">3.&nbsp;GridView导出Excel(2609)</A> 
+
+  <LI><A id=Singlecolumn2__19297d1ef8d0_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2008/09/04/1283738.html">4.&nbsp;SQL 
+  Server 2005 中新CTE语法 递归性能测试(2558)</A> 
+  <LI><A id=Singlecolumn2__19297d1ef8d0_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/14/817941.html">5.&nbsp;用写C#写的一个IP输入框控件(1914)</A> 
+  </LI></UL></DIV></DIV>
+<DIV id=cell><IMG hspace=5 src="C#动态加载DLL - D调的华丽 - 博客园_files/icon-group.jpg" 
+align=left vspace=2>
+<H3>评论排行榜</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=Singlecolumn2__4c5dc7479b21_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2008/09/04/1283738.html">1.&nbsp;SQL 
+  Server 2005 中新CTE语法 递归性能测试(6)</A> 
+  <LI><A id=Singlecolumn2__4c5dc7479b21_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/14/817973.html">2.&nbsp;ASP.NET中GridView动态绑定数据实现编辑更新(6)</A> 
+
+  <LI><A id=Singlecolumn2__4c5dc7479b21_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/17/821288.html">3.&nbsp;C#动态加载DLL 
+  (5)</A> 
+  <LI><A id=Singlecolumn2__4c5dc7479b21_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/14/817919.html">4.&nbsp;猴子吃桃问题(3)</A> 
+
+  <LI><A id=Singlecolumn2__4c5dc7479b21_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/elzero/archive/2007/07/17/821273.html">5.&nbsp;Asp.net 
+  文件下载(2)</A> </LI></UL></DIV></DIV></DIV></FORM>
+<SCRIPT src="C#动态加载DLL - D调的华丽 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="C#动态加载DLL - D调的华丽 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="C#动态加载DLL - D调的华丽 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

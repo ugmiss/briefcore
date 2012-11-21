@@ -1,0 +1,1490 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0057)http://www.cnblogs.com/ami/archive/2006/08/24/485779.html -->
+<HTML><HEAD><TITLE>今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=WebDevelop,.NET,今日问题,操作必须使用一个可更新的查询 name=keywords>
+<META 
+content="今天用asp.net 2.0写access数据库的时候出现了一个问题：操作必须使用一个可更新的查询。我的机器是win2003，数据库文件存放在app_data文件夹中。查找了一下原因，原来用户在请求web页面时win2003服务器使用系统内置的的IIS_WPG组的帐户来访问Access数据库,若IIS_WPG组的帐户没有Access数据库文件的修改权限,就会产生这个异常。" 
+name=description><LINK 
+href="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK id=MainCss 
+href="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK 
+href="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/common2.css" type=text/css 
+rel=stylesheet><LINK 
+href="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/shCore.css" type=text/css 
+rel=stylesheet><LINK 
+href="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/shThemeDefault.css" 
+type=text/css rel=stylesheet><LINK title=RSS 
+href="http://www.cnblogs.com/ami/rss" type=application/rss+xml 
+rel=alternate><LINK title=RSD href="http://www.cnblogs.com/ami/rsd.xml" 
+type=application/rsd+xml rel=EditURI>
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=485779.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<!--done-->
+<DIV id=outer_body>
+<DIV align=center>
+<DIV id=banner><!--done-->
+<DIV class=header>
+<DIV class=headerText><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/ami/">Ami的Blog</A><BR></DIV>
+<DIV class=headerDis>天道酬勤～～～</DIV></DIV>
+<DIV id=left_top>
+<DIV id=mylinks><!--done--><A class=menu id=MyLinks1_HomeLink 
+href="http://www.cnblogs.com/">博客园</A>&nbsp;&nbsp;<A class=menu 
+id=MyLinks1_MyHomeLink href="http://www.cnblogs.com/ami/">首页</A>&nbsp;&nbsp;<A 
+class=menu id=MyLinks1_NewPostLink 
+href="http://www.cnblogs.com/ami/admin/EditPosts.aspx?opt=1">新随笔</A>&nbsp;&nbsp;<A 
+class=menu id=MyLinks1_NewArticleLink 
+href="http://www.cnblogs.com/EnterMyBlog.aspx?NewArticle=1">新文章</A>&nbsp;&nbsp;<A 
+class=menu id=MyLinks1_ContactLink accessKey=9 
+href="http://space.cnblogs.com/msg/send/é¿ç±³">联系</A>&nbsp;&nbsp;<A class=menu 
+id=MyLinks1_Admin 
+href="http://www.cnblogs.com/ami/admin/EditPosts.aspx">管理</A>&nbsp;&nbsp;<A 
+class=menu id=MyLinks1_Syndication 
+href="http://www.cnblogs.com/ami/rss">订阅</A>&nbsp;<A id=MyLinks1_XMLLink 
+href="http://www.cnblogs.com/ami/rss"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+alt=订阅 src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/xml.gif"></A> </DIV>
+<DIV id=mystats><!--done-->
+<DIV class=blogStats>随笔- 184&nbsp; 文章- 0&nbsp; 评论- 89&nbsp; 
+</DIV></DIV></DIV></DIV>
+<DIV id=main><!-- left starts -->
+<DIV id=left>
+<DIV id=topics><!--done-->
+<DIV class=post>
+<DIV class=postTitle><IMG 
+src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/fire.gif" align=absMiddle 
+border=0><A class=postTitle2 id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html">今日问题：操作必须使用一个可更新的查询。</A> 
+</DIV>今天用asp.net 
+2.0写access数据库的时候出现了一个问题：操作必须使用一个可更新的查询。<BR>我的机器是win2003，数据库文件存放在app_data文件夹中。<BR>查找了一下原因，原来用户在请求web页面时win2003服务器使用系统内置的的IIS_WPG组的帐户来访问Access数据库,若IIS_WPG组的帐户没有Access数据库文件的"修改"权限,就会产生这个异常。<BR><BR>"IIS_WPG"用户组是用于访问和管理IIS信息的内置帐户,默认情况下对IIS中虚拟目录的文件只有"读取"<BR>
+<P>解决方法一:</P>
+<P>在Access数据库文件上单击右键-&gt;属性-&gt;安全</P>
+<P>单击添加,在文本框中输入"IIS_WPG",单击确定,</P>
+<P>给IIS_WPG设置权限,选中"允许写入",确定OK!</P>
+<P>方法二:<BR>按上面步骤添加Ervryone用户，并且给Everyone赋写入权限。<BR><BR>IIS_WPG 
+是Win2003的用户,如果是win2000的话,查找IWAM_machin(machine是机器名称)</P>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/ami/" 
+target=_blank>阿米</A><BR>关注 - 0<BR>粉丝 - 0<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(485779,20168,1)><SPAN class=diggnum 
+id=digg_count_485779>1</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(485779,20168,2)><SPAN class=burynum 
+id=bury_count_485779>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_485779 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_485779>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/ami/archive/2006/08/16/478334.html">« </A>上一篇：<A 
+title="发布于2006-08-16 12:25" 
+href="http://www.cnblogs.com/ami/archive/2006/08/16/478334.html">共享寻宝结果（续昨天）</A><BR><A 
+href="http://www.cnblogs.com/ami/archive/2006/09/01/492644.html">» </A>下一篇：<A 
+title="发布于2006-09-01 22:47" 
+href="http://www.cnblogs.com/ami/archive/2006/09/01/492644.html">参加“微软ISV创新日－南昌站活动”</A><BR></DIV>
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = '0c5b360b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+
+<DIV class=postDesc>posted on 2006-08-24 23:39 <A 
+href="http://www.cnblogs.com/ami/">阿米</A> 阅读(4028) <A 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#commentform">评论(5)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/ami/admin/EditPosts.aspx?postid=485779">编辑</A> <A 
+onclick="AddToWz(485779);return false;" 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#">收藏</A> 所属分类: 
+<A href="http://www.cnblogs.com/ami/category/64436.html">WebDevelop</A>, <A 
+href="http://www.cnblogs.com/ami/category/64433.html">.NET</A></DIV></DIV><IMG 
+height=1 src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/485779.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html"
+dc:identifier="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/ami/services/trackbacks/485779.aspx" />
+</rdf:RDF>
+--><A name=pagedcomment></A><!--done--><BR>
+<DIV class=feedback_area_title>发表评论</DIV>
+<DIV class=feedbackNoItems><SPAN id=span_comment_maxid 
+style="DISPLAY: none">1820574</SPAN></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("KKcat",928766,"3qvP33RPcwq644fxvAt6xGYEyRRLft3khCOUg4dCd/bTKC+N2DZ6wg==")' 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(928766,"3qvP33RPcwq644fxvAt6xGYEyRRLft3khCOUg4dCd/bTKC+N2DZ6wg==")' 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=KKcat" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl00_EditLink CausesValidation="False"></A> 
+</DIV>2007-10-18 11:21 | <A id=Comments1_CommentList_ctl00_NameLink 
+href="http://www.cnblogs.com/kerryking/" target=_blank>KKcat</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/KKcat">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_928766>谢谢你了，我也碰到同个问题。</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("xinying",1023835,"")' 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1023835,"")' 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl01_EditLink CausesValidation="False"></A> 
+</DIV>2008-01-02 23:51 | <A id=Comments1_CommentList_ctl01_NameLink 
+target=_blank>xinying[未注册用户]</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1023835>那XP系统要怎么设呢? 
+<BR>说清楚点,我有点看不明白,我在文件上点右键-属性(但没有安全),我要怎么设置呀?</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A onclick='ReplyComment("在此",1462553,"")' 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1462553,"")' 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#commentform">引用</A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl02_EditLink CausesValidation="False"></A> 
+</DIV>2009-02-26 22:49 | <A id=Comments1_CommentList_ctl02_NameLink 
+target=_blank>在此[未注册用户]</A> </DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1462553>--引用-------------------------------------------------- 
+<BR>xinying: 对呀！！那XP系统要怎么设呢? 
+<BR>&lt;br&gt;说清楚点,我有点看不明白,我在文件上点右键-属性(但没有安全),我要怎么设置呀? 
+<BR>-------------------------------------------------------- 
+<BR></SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("bluesky4485",1493007,"j99yFkCoEYfyKlDomvZtQKSxMELafvAFKAhKaFnfjvBN8V7yqy6KRA==")' 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1493007,"j99yFkCoEYfyKlDomvZtQKSxMELafvAFKAhKaFnfjvBN8V7yqy6KRA==")' 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=bluesky4485" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl03_EditLink CausesValidation="False"></A> 
+</DIV>2009-04-01 11:40 | <A id=Comments1_CommentList_ctl03_NameLink 
+href="http://www.cnblogs.com/bluesky4485/" target=_blank>bluesky4485</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/bluesky4485">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1493007>vista上出现这个问题怎么办？</SPAN><BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='ReplyComment("omg",1820574,"YW7ekwayWyGBjDwS+REYEiyoVjbEc4frZ69HPzuxLaME4VBkPiC9gA==")' 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#commentform">回复</A>&nbsp;&nbsp;<A 
+onclick='QuoteComment(1820574,"YW7ekwayWyGBjDwS+REYEiyoVjbEc4frZ69HPzuxLaME4VBkPiC9gA==")' 
+href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#commentform">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=omg" 
+target=_blank>查看</A>&nbsp;&nbsp;<A id=Comments1_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('Comments1$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=Comments1_CommentList_ctl04_EditLink CausesValidation="False"></A> 
+</DIV>2010-05-10 10:52 | <A id=Comments1_CommentList_ctl04_NameLink 
+href="http://home.cnblogs.com/129761/" target=_blank>omg</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/omg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><SPAN class=blog_comment_body 
+id=comment_body_1820574>哈哈，问题解决了！</SPAN><BR></DIV></DIV>
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fami%2farchive%2f2006%2f08%2f24%2f485779.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fami%2farchive%2f2006%2f08%2f24%2f485779.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A class=site_hot 
+href="http://a4.yeshj.com/rd/35182/" target=_blank>有道难题开锣头奖8万！</A><BR><A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+href="http://news.cnblogs.com/n/64718/" target=_blank>Android 
+2.2数据共享功能开启与否将由运营商自主决定</A><BR>· <A href="http://news.cnblogs.com/n/64717/" 
+target=_blank>Google Custom Search 也开始支持自动联想</A><BR>· <A 
+href="http://news.cnblogs.com/n/64716/" 
+target=_blank>2020年欧盟50%居民将享受到30M宽带</A><BR>· <A 
+href="http://news.cnblogs.com/n/64715/" target=_blank>谷歌宣布已收购初创企业Simplify 
+Media</A><BR>· <A href="http://news.cnblogs.com/n/64714/" target=_blank>Android 
+2.2率先应用WiFi tethering技术</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+alt="" 
+src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=relative_search><BR><B>相关搜索:</B><BR><A 
+href="http://zzk.cnblogs.com/s?w=WebDevelop" target=_blank>WebDevelop</A> <A 
+href="http://zzk.cnblogs.com/s?w=.NET" target=_blank>.NET</A> </DIV>
+<DIV id=relative_search><BR><B>在知识库中查看：</B><BR><A 
+href="http://kb.cnblogs.com/a/485779/">今日问题：操作必须使用一个可更新的查询。</A></DIV></DIV></DIV><BR><BR><BR></DIV><!-- left ends --><!-- right starts -->
+<DIV id=right><!-- 右侧工具部分 -->
+<DIV id=right_content><!--done-->
+<H1 class=listtitle>公告</H1>
+<DIV class=newsItem><FONT color=blue>Email:</FONT> <BR><A 
+href="mailto:SunHuangMin@Gmail.com"><FONT 
+color=blue>SunHuangMin@Gmail.com</A></FONT><BR><FONT 
+color=red>MSN:<BR>SunHuangMin@msn.com</FONT><BR><FONT 
+color=green>QQ:<BR>4697791</FONT> <BR><BR>
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/embed.js"></SCRIPT>
+
+<SCRIPT language=JavaScript type=text/javascript>obj = new Object;obj.clockfile = "0006-Gray.swf";obj.TimeZone = "CCT";obj.width = 150;obj.height = 180;obj.wmode = "transparent";showClock(obj);</SCRIPT>
+<BR><BR>
+<SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3553300868877391";
+google_ad_width = 125;
+google_ad_height = 125;
+google_ad_format = "125x125_as_rimg";
+google_cpa_choice = "CAAQhfmujAIaCMnxiOdPaFw8KM_M93M";
+google_ad_channel = "";
+//--></SCRIPT>
+
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/show_ads.js" 
+type=text/javascript>
+</SCRIPT>
+<BR><BR>
+<SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3553300868877391";
+google_ad_width = 120;
+google_ad_height = 90;
+google_ad_format = "120x90_0ads_al_s";
+google_ad_channel ="";
+//--></SCRIPT>
+
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/show_ads.js" 
+type=text/javascript>
+</SCRIPT>
+<BR><BR>
+<SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3553300868877391";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+//--></SCRIPT>
+
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/show_ads.js" 
+type=text/javascript>
+</SCRIPT>
+<BR><BR>
+<SCRIPT language=JavaScript 
+src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/stat.htm" 
+charset=gb2312></SCRIPT>
+<BR><BR><BR>
+<SCRIPT language=javascript 
+src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/613999.js" 
+type=text/javascript></SCRIPT>
+<NOSCRIPT><A href="http://www.51.la/?613999" target=_blank><IMG 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+alt=我要啦免费统计 
+src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/go.htm"></A></NOSCRIPT>
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/urchin.js" 
+type=text/javascript>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+_uacct = "UA-1751188-1";
+urchinTracker();
+</SCRIPT>
+ 
+<DIV id=profile_block><A href="http://home.cnblogs.com/ami/" 
+target=_blank>我的主页</A>&nbsp; <A href="http://home.cnblogs.com/ami/detail/" 
+target=_blank>个人资料</A><BR><A href="http://home.cnblogs.com/ami/ing/" 
+target=_blank>我的闪存</A>&nbsp; <A href="http://space.cnblogs.com/msg/send/é¿ç±³" 
+target=_blank>发短消息</A></DIV></DIV>
+<DIV id=calendar>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: silver" colSpan=7>
+      <TABLE class=CalTitle style="WIDTH: 100%; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev style="WIDTH: 15%"><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V2373')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2006年8月</TD>
+          <TD class=CalNextPrev style="WIDTH: 15%" align=right><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V2435')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>31</TD>
+    <TD style="WIDTH: 14%" align=middle>1</TD>
+    <TD style="WIDTH: 14%" align=middle>2</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ami/archive/2006/8/3.html"><U>3</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>5</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>6</TD>
+    <TD style="WIDTH: 14%" align=middle>7</TD>
+    <TD style="WIDTH: 14%" align=middle>8</TD>
+    <TD style="WIDTH: 14%" align=middle>9</TD>
+    <TD style="WIDTH: 14%" align=middle>10</TD>
+    <TD style="WIDTH: 14%" align=middle>11</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>12</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>13</TD>
+    <TD style="WIDTH: 14%" align=middle>14</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ami/archive/2006/8/15.html"><U>15</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ami/archive/2006/8/16.html"><U>16</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>17</TD>
+    <TD style="WIDTH: 14%" align=middle>18</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>19</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>20</TD>
+    <TD style="WIDTH: 14%" align=middle>21</TD>
+    <TD style="WIDTH: 14%" align=middle>22</TD>
+    <TD style="WIDTH: 14%" align=middle>23</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ami/archive/2006/8/24.html"><U>24</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>25</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>26</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>27</TD>
+    <TD style="WIDTH: 14%" align=middle>28</TD>
+    <TD style="WIDTH: 14%" align=middle>29</TD>
+    <TD style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle>31</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>1</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>2</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>6</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>7</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>8</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" 
+align=middle>9</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<SCRIPT type=text/javascript>
+var blogapp = 'ami';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=q 
+onkeydown="return zzk_go_enter(event);">&nbsp;<INPUT class=btn_my_zzk id=btnZzk onclick=zzk_go() type=button value=找找看></DIV>
+<DIV class=div_my_zzk><INPUT class=input_my_zzk id=google_q 
+onkeydown="return google_go_enter(event)" name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() type=button value=谷歌搜索></DIV></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/ami/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/ami/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/ami/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/ami/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/ami/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/ami/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/ami/tag/">我的标签</A> </LI></UL></DIV>
+<H3 class=catListTitle>我参与的团队</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1__15a619c_TeamList_ctl01_lnkTeam 
+  href="http://team.cnblogs.com/AjaxAndAtlas%20/">Ajax&amp;Atlas技术团队(0/0)</A> 
+  <LI><A id=SingleColumn1__15a619c_TeamList_ctl02_lnkTeam 
+  href="http://team.cnblogs.com/nanchang/">南昌.net俱乐部(0/0)</A> </LI></UL></DIV><!--done-->
+<H1 class=catListTitle>随笔分类<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(206)</SPAN></H1>
+<UL class=catList>
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/ami/category/64433.html">.NET(68)</A><A 
+  class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to .NET(68)" 
+  onclick="open_link('http://www.cnblogs.com/ami/category/64433.html/rss');return false;" 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html###"><IMG 
+  title="Subscribe to .NET(68)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C:\Documents and Settings\Administrator\桌面\技术资料\IIS\今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files\xml(1).gif"></A> 
+
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/ami/category/64435.html">DataBase(25)</A><A 
+  class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to DataBase(25)" 
+  onclick="open_link('http://www.cnblogs.com/ami/category/64435.html/rss');return false;" 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html###"><IMG 
+  title="Subscribe to DataBase(25)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C:\Documents and Settings\Administrator\桌面\技术资料\IIS\今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files\xml(1).gif"></A> 
+
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/ami/category/64434.html">JAVA(8)</A><A 
+  class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to JAVA(8)" 
+  onclick="open_link('http://www.cnblogs.com/ami/category/64434.html/rss');return false;" 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html###"><IMG 
+  title="Subscribe to JAVA(8)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C:\Documents and Settings\Administrator\桌面\技术资料\IIS\今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files\xml(1).gif"></A> 
+
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/ami/category/64438.html">Misc(59)</A><A 
+  class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to Misc(59)" 
+  onclick="open_link('http://www.cnblogs.com/ami/category/64438.html/rss');return false;" 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html###"><IMG 
+  title="Subscribe to Misc(59)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C:\Documents and Settings\Administrator\桌面\技术资料\IIS\今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files\xml(1).gif"></A> 
+
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/ami/category/64436.html">WebDevelop(46)</A><A 
+  class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to WebDevelop(46)" 
+  onclick="open_link('http://www.cnblogs.com/ami/category/64436.html/rss');return false;" 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html###"><IMG 
+  title="Subscribe to WebDevelop(46)" 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  src="C:\Documents and Settings\Administrator\桌面\技术资料\IIS\今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files\xml(1).gif"></A> 
+  </LI></UL>
+<H1 class=catListTitle>随笔档案<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(184)</SPAN></H1>
+<UL class=catList>
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/ami/archive/2010/03.html">2010年3月 (1)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/ami/archive/2010/01.html">2010年1月 (3)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/ami/archive/2009/11.html">2009年11月 (1)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/ami/archive/2009/10.html">2009年10月 (1)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/ami/archive/2009/05.html">2009年5月 (1)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/ami/archive/2009/04.html">2009年4月 (2)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/ami/archive/2009/03.html">2009年3月 (1)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/ami/archive/2008/12.html">2008年12月 (4)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/ami/archive/2008/08.html">2008年8月 (1)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/ami/archive/2008/05.html">2008年5月 (1)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/ami/archive/2008/03.html">2008年3月 (4)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/ami/archive/2008/01.html">2008年1月 (1)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/ami/archive/2007/12.html">2007年12月 (1)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/ami/archive/2007/10.html">2007年10月 (1)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/ami/archive/2007/09.html">2007年9月 (3)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/ami/archive/2007/08.html">2007年8月 (2)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/ami/archive/2007/07.html">2007年7月 (1)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/ami/archive/2007/06.html">2007年6月 (6)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/ami/archive/2007/05.html">2007年5月 (2)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl20_Link 
+  href="http://www.cnblogs.com/ami/archive/2007/04.html">2007年4月 (3)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl21_Link 
+  href="http://www.cnblogs.com/ami/archive/2007/02.html">2007年2月 (5)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl22_Link 
+  href="http://www.cnblogs.com/ami/archive/2006/12.html">2006年12月 (2)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl23_Link 
+  href="http://www.cnblogs.com/ami/archive/2006/11.html">2006年11月 (3)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl24_Link 
+  href="http://www.cnblogs.com/ami/archive/2006/10.html">2006年10月 (3)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl25_Link 
+  href="http://www.cnblogs.com/ami/archive/2006/09.html">2006年9月 (3)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl26_Link 
+  href="http://www.cnblogs.com/ami/archive/2006/08.html">2006年8月 (4)</A> 
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl27_Link 
+  href="http://www.cnblogs.com/ami/archive/2006/07.html">2006年7月 (124)</A> 
+</LI></UL>
+<H1 class=catListTitle>Link:Other</H1>
+<UL class=catList>
+  <LI class=catListItem><A class=listitem 
+  id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://www.youlu.net/">有路网</A> 
+  <LI style="MARGIN-TOP: 2px">书山有路-网上二手书店 </LI></UL>
+<H1 class=catListTitle>Link:Program</H1>
+<UL class=catList></UL>
+<H3>积分与排名</H3>
+<UL>
+  <LI>积分 - 77763 
+  <LI>排名 - 1034 </LI></UL>
+<H3 class=catListTitle>最新评论 <A id=SingleColumn1__94f20b_RSSHyperlink1 
+href="http://www.cnblogs.com/ami/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/xml.gif"></A></H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#1820574">1.&nbsp;Re:今日问题：操作必须使用一个可更新的查询。</A> 
+
+  <LI style="WORD-BREAK: break-all">哈哈，问题解决了！ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--omg 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2010/01/21/1653008.html#1751221">2.&nbsp;Re:firefox不支持background-position-x,background-position-y</A> 
+
+  <LI style="WORD-BREAK: break-all">对背景进行定位时，直接写在background后面就可以了。如 [code=css] 
+  background:url(../images/hbv_birth_06.jpg) no-repeat 30px... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--大兵的博客 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455757.html#1704019">3.&nbsp;Re:昨天试玩了一下征途,无聊就做了一个答案搜索器.</A> 
+
+  <LI style="WORD-BREAK: break-all">怎么修改题库？教一下qq1239172034 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--彼岸01 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2009/04/10/1433043.html#1500696">4.&nbsp;re: 
+  技巧/诀窍：在ASP.NET中重写URL </A>
+  <LI style="WORD-BREAK: break-all">比较全面，收藏，呵。。 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--relax 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2009/04/10/1433043.html#1500259">5.&nbsp;re: 
+  技巧/诀窍：在ASP.NET中重写URL </A>
+  <LI style="WORD-BREAK: break-all">不错啊，学习ing 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--craig 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2009/04/10/1433043.html#1500006">6.&nbsp;re: 
+  技巧/诀窍：在ASP.NET中重写URL </A>
+  <LI style="WORD-BREAK: break-all">鼓励一下，不过翻译的不太顺口 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--yeml 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#1493007">7.&nbsp;re: 
+  今日问题：操作必须使用一个可更新的查询。</A> 
+  <LI style="WORD-BREAK: break-all">vista上出现这个问题怎么办？ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--bluesky4485 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455373.html#1463170">8.&nbsp;re: 
+  海量数据库的查询优化及分页算法方案</A> 
+  <LI style="WORD-BREAK: break-all">楼主写的很好 辛苦了 一楼这种不尊重别人劳动成果的家伙去死吧 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--lj2tj 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#1462553">9.&nbsp;re: 
+  今日问题：操作必须使用一个可更新的查询。</A> 
+  <LI 
+  style="WORD-BREAK: break-all">--引用-------------------------------------------------- 
+  xinying: 对呀！！那XP系统要怎么设呢? &lt;br&gt;说清楚点,我有点看不... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--在此 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455379.html#1434406">10.&nbsp;re: 
+  oracle中如何取前十条记录？</A> 
+  <LI style="WORD-BREAK: break-all">很好~ 正需要 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--Joshua Xu 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl11_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2008/12/04/1347625.html#1433956">11.&nbsp;re: 
+  查询ms sql 2005版本号</A> 
+  <LI style="WORD-BREAK: break-all">不错 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--猪头 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl12_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/12/01/579247.html#1413231">12.&nbsp;re: 
+  163邮箱增加广告邮件文件夹。</A> 
+  <LI style="WORD-BREAK: break-all">想通过广告了解更多情况 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--陆豹 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl13_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/12/11/588435.html#1366126">13.&nbsp;re: 
+  全角字符转换为半角</A> 
+  <LI style="WORD-BREAK: break-all">多谢了 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--王守闯 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl14_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/27/797590.html#1348253">14.&nbsp;re: 
+  本地图片预览代码（支持 IE6、IE7）</A> 
+  <LI style="WORD-BREAK: break-all">FF下怎么改？ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--sikefeg 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl15_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455770.html#1340169">15.&nbsp;re: 
+  2006惊现高考强文，给零分还是满分，拭目以待！！</A> 
+  <LI style="WORD-BREAK: break-all">走自己的路，穿别人的鞋！！！ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--邓晓健 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl16_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/25/794737.html#1317623">16.&nbsp;re: 
+  css背景图片不重复</A> 
+  <LI style="WORD-BREAK: break-all">哈哈，在DW里面就已经有了哦！！ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--张青阳 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl17_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/27/797590.html#1286393">17.&nbsp;re: 
+  本地图片预览代码（支持 IE6、IE7）</A> 
+  <LI style="WORD-BREAK: break-all">无法获得大小。 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--bill22 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl18_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455688.html#1224691">18.&nbsp;re: 
+  困惑，个人资源管理混乱不堪。</A> 
+  <LI style="WORD-BREAK: break-all">不防试用针式个人知识管理软件， 
+  针式PKM是专业的个人知识管理软件，以“知识分类体系”、“知识点关联”、“全文快速搜索”等为核心；是帮助个人进行学习、改善学习和工作中文档管理的友好助手；值得您下载试... 
+
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--个人知识管理 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl19_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/14/783115.html#1216689">19.&nbsp;re: 
+  .NET中，让按钮点后变为不可用状态，防止多次提交</A> 
+  <LI style="WORD-BREAK: break-all">btntxtSubmit 请问这个是什么？ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--巨锦 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl20_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455778.html#1198901">20.&nbsp;re: 
+  搞笑个性签名</A> 
+  <LI 
+  style="WORD-BREAK: break-all">再过几十年，我们来相会，送到火葬场，全部烧成灰，你一堆，我一堆，谁也不认识谁，全部送到农村做化肥 
+
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--QQ个性签名 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl21_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/02/23/654173.html#1145567">21.&nbsp;re: 
+  (轉貼) 大年三十整理的asp.net资料！ (.NET) (ASP.NET) </A>
+  <LI style="WORD-BREAK: break-all">要可以打包下载就好了 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--初学之人 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl22_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455341.html#1075230">22.&nbsp;re: 
+  .net的委托和事件的直接理解</A> 
+  <LI style="WORD-BREAK: break-all">很好 很强大！ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--boying。。 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl23_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/27/797590.html#1070044">23.&nbsp;re: 
+  本地图片预览代码（支持 IE6、IE7）</A> 
+  <LI style="WORD-BREAK: break-all">有办法解决本地获取图片尺寸和大小的问题吗？ <BR><BR>我也想知道这个问题?? 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--ip反查域名 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl24_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455775.html#1067719">24.&nbsp;re: 
+  盗用sina的爱问投诉代码实现网页对话框。</A> 
+  <LI style="WORD-BREAK: break-all">请教一下,在使用最后的openwindow 方法弹出窗口的时候, 
+  弹出的窗口中各元素的关系, 比如, id 为'dialogBoxShadow'的元素的父元素是哪个? <BR>
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--暗暗 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl25_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455681.html#1055948">25.&nbsp;re: 
+  重写DataGrid的DataGridBoolColumn，添加bool值改变事件。</A> 
+  <LI style="WORD-BREAK: break-all">必须首先获得cell的焦点才起作用？即 
+  第一次点击无效，保持焦点不动，在点击的时候事件才起作用，请问怎么在paint之前设置grid的焦点？用了好几个事件都不可以。谢谢！ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--pbc1984 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl26_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/02/23/654173.html#1050935">26.&nbsp;re: 
+  (轉貼) 大年三十整理的asp.net资料！ (.NET) (ASP.NET) </A>
+  <LI style="WORD-BREAK: break-all">楼主这是细心至极啊，准备了好多有用的东西。。 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--小鲁迅@ 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl27_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455760.html#1032543">27.&nbsp;re: 
+  文件下载时，只弹出下载框，不在页面打开的方法。</A> 
+  <LI style="WORD-BREAK: break-all">请问各位大侠，用以下语句： context.Response.ContentType = 
+  "application/octet-stream"; cont... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--小小2 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl28_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#1023835">28.&nbsp;re: 
+  今日问题：操作必须使用一个可更新的查询。</A> 
+  <LI style="WORD-BREAK: break-all">那XP系统要怎么设呢? 
+  <BR>说清楚点,我有点看不明白,我在文件上点右键-属性(但没有安全),我要怎么设置呀? 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--xinying 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl29_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/09/24/904202.html#983363">29.&nbsp;re: 
+  AutoCompleteExtender控件出现undefined和null现象</A> 
+  <LI 
+  style="WORD-BREAK: break-all">最近发觉这个控件有时候会不能激活GetCompletionList方法，不知道是什么情况下出现，朋友遇到过如果有心得请回下 
+
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--李峰艳 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl30_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/09/24/904202.html#983353">30.&nbsp;re: 
+  AutoCompleteExtender控件出现undefined和null现象</A> 
+  <LI style="WORD-BREAK: break-all">这是一个小BUG而已 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--李峰艳 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl31_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/02/23/654173.html#952416">31.&nbsp;re: 
+  (轉貼) 大年三十整理的asp.net资料！ (.NET) (ASP.NET) </A>
+  <LI style="WORD-BREAK: break-all">支持下楼上的 <BR>找东西好难撒 <BR>望楼主分类 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--仕 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl32_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html#928766">32.&nbsp;re: 
+  今日问题：操作必须使用一个可更新的查询。</A> 
+  <LI style="WORD-BREAK: break-all">谢谢你了，我也碰到同个问题。 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--KKcat 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl33_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/09/24/904202.html#910955">33.&nbsp;的确有这种情况。</A> 
+
+  <LI style="WORD-BREAK: break-all">WebService时的情况也是这样，感觉有点郁闷。中文开头的没问题。 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--namhyuk 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl34_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455363.html#878648">34.&nbsp;re: 
+  如何通过DataRelation关联两个DataGrid，实现主从表。</A> 
+  <LI style="WORD-BREAK: break-all">自己做的一个测试: #region datatalbe performance test 
+  /// &lt;summary&gt; /// Test table re... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--alonesword 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl35_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/08/20/862617.html#865211">35.&nbsp;re: 
+  IT业史上最棒的图片之一</A> 
+  <LI style="WORD-BREAK: break-all">稍微有点看懂了。。。<BR>不过要是想把这几张图片转换成文字的话，估计会有点难度吧 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--afalon（张扬） 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl36_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/08/20/862617.html#864690">36.&nbsp;re: 
+  IT业史上最棒的图片之一</A> 
+  <LI style="WORD-BREAK: break-all">hoho... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--iCaca 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl37_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/08/20/862617.html#862861">37.&nbsp;re: 
+  IT业史上最棒的图片之一</A> 
+  <LI style="WORD-BREAK: break-all">呵呵，有意思。软件，本身就是一个很具主观性的东西。 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--neoragex2002 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl38_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455775.html#862705">38.&nbsp;re: 
+  盗用sina的爱问投诉代码实现网页对话框。</A> 
+  <LI style="WORD-BREAK: break-all">感激，困扰本人许久的问题，有望解决啦， 谢谢 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--小小鸟 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl39_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/14/783115.html#852514">39.&nbsp;re: 
+  .NET中，让按钮点后变为不可用状态，防止多次提交</A> 
+  <LI style="WORD-BREAK: break-all">888 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--777777777 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__94f20b_CommentList_ctl40_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/14/783115.html#852513">40.&nbsp;re: 
+  .NET中，让按钮点后变为不可用状态，防止多次提交</A> 
+  <LI style="WORD-BREAK: break-all">0000000000000 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--777777777 </LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html">1.&nbsp;今日问题：操作必须使用一个可更新的查询。(4028)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/25/794737.html">2.&nbsp;css背景图片不重复(4020)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/02/23/654173.html">3.&nbsp;(轉貼) 
+  大年三十整理的asp.net资料！ (.NET) (ASP.NET) (3641)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455760.html">4.&nbsp;文件下载时，只弹出下载框，不在页面打开的方法。(3632)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2009/04/10/1433043.html">5.&nbsp;技巧/诀窍：在ASP.NET中重写URL 
+  (2330)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/19/454570.html">6.&nbsp;C#中如何获取服务器IP，名称，操作系统，客户端IP，名称！(2292)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/10/22/536762.html">7.&nbsp;虚拟主机下asp.net 
+  2.0的导航控件treeview,menu等出错。(2242)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/12/11/588435.html">8.&nbsp;全角字符转换为半角(1881)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/11/16/562040.html">9.&nbsp;为gridview添加删除提示。(1691)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455769.html">10.&nbsp;不被拦截的弹出窗口代码(1606)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl11_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455364.html">11.&nbsp;关于环境变量(1412)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl12_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/27/797590.html">12.&nbsp;本地图片预览代码（支持 
+  IE6、IE7）(1348)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl13_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455757.html">13.&nbsp;昨天试玩了一下征途,无聊就做了一个答案搜索器.(1235)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl14_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455379.html">14.&nbsp;oracle中如何取前十条记录？(1191)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl15_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/19/454561.html">15.&nbsp;奇怪问题：使用Request.QueryString传递一个中文参数，结果少了一个字！(1108)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl16_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455319.html">16.&nbsp;默认web站点被删除，如何设置新的默认站点？(894)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl17_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/04/20/720621.html">17.&nbsp;.NET2.0抓取网页全部链接(转)(870)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl18_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/14/783115.html">18.&nbsp;.NET中，让按钮点后变为不可用状态，防止多次提交(844)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl19_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455775.html">19.&nbsp;盗用sina的爱问投诉代码实现网页对话框。(819)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl20_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455360.html">20.&nbsp;DataGridComboBoxColumn控件(815)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl21_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/21/456515.html">21.&nbsp;"单击以激活并使用此控件"的解决方法(787)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl22_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/10/27/939643.html">22.&nbsp;在ASP.Net2.0中多个通过回车键提交表单时执行特定的button按钮事件(753)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl23_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/21/456190.html">23.&nbsp;.NET 
+  Framework 快速入门安装(734)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl24_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/09/24/904202.html">24.&nbsp;AutoCompleteExtender控件出现undefined和null现象(730)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl25_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/12/01/579247.html">25.&nbsp;163邮箱增加广告邮件文件夹。(728)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl26_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/30/801262.html">26.&nbsp;C#的6种常用集合类大比拼(724)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl27_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455725.html">27.&nbsp;把.NET程序部署到没有安装.NET 
+  Framwork的机器上 ？（.net framework 1.1）(724)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl28_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/02/25/655782.html">28.&nbsp;转几个实用的sql函数。(718)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl29_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455726.html">29.&nbsp;为blog添加天气预报功能(708)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl30_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/10/22/536781.html">30.&nbsp;为什么我在ＣＳ文件中用ＪＳ中的Alert，时，页面背景总是变白?(665)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl31_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/05/15/746652.html">31.&nbsp;类似MSN的任务栏消息提示.rar(661)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl32_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455363.html">32.&nbsp;如何通过DataRelation关联两个DataGrid，实现主从表。(657)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl33_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/07/23/828299.html">33.&nbsp;vs2003和vs2005两种不同的发送email方式(652)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl34_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/30/801256.html">34.&nbsp;关于WINFORM中输入法的设置 
+  (641)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl35_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/02/23/654171.html">35.&nbsp;Datagird 
+  TemplateColumn类型列中如何设定日期格式为yyyy-MM-dd格式？ (638)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl36_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/09/01/492644.html">36.&nbsp;参加“微软ISV创新日－南昌站活动”(618)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl37_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455768.html">37.&nbsp;上下两个表格之间为什么中间会有大约5象素的间距？(581)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl38_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/04/09/705204.html">38.&nbsp;性格决定命运(574)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl39_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/08/20/862617.html">39.&nbsp;IT业史上最棒的图片之一(556)</A> 
+
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl40_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2008/03/03/1089156.html">40.&nbsp;梅花雨日历控件 
+  修正DOCTYPE无法显示问题，增加清空按钮(539)</A> </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/11/16/562040.html">1.&nbsp;为gridview添加删除提示。(14)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455757.html">2.&nbsp;昨天试玩了一下征途,无聊就做了一个答案搜索器.(13)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455775.html">3.&nbsp;盗用sina的爱问投诉代码实现网页对话框。(7)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/12/11/588435.html">4.&nbsp;全角字符转换为半角(6)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/08/24/485779.html">5.&nbsp;今日问题：操作必须使用一个可更新的查询。(5)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/27/797590.html">6.&nbsp;本地图片预览代码（支持 
+  IE6、IE7）(4)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/02/23/654173.html">7.&nbsp;(轉貼) 
+  大年三十整理的asp.net资料！ (.NET) (ASP.NET) (4)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/14/783115.html">8.&nbsp;.NET中，让按钮点后变为不可用状态，防止多次提交(3)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2009/04/10/1433043.html">9.&nbsp;技巧/诀窍：在ASP.NET中重写URL 
+  (3)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/09/24/904202.html">10.&nbsp;AutoCompleteExtender控件出现undefined和null现象(3)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl11_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/08/20/862617.html">11.&nbsp;IT业史上最棒的图片之一(3)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl12_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455685.html">12.&nbsp;历史上最经典智力题(3)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl13_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/08/15/477246.html">13.&nbsp;网上寻宝惊魂记(2)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl14_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/10/22/536781.html">14.&nbsp;为什么我在ＣＳ文件中用ＪＳ中的Alert，时，页面背景总是变白?(2)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl15_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/02/25/655782.html">15.&nbsp;转几个实用的sql函数。(2)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl16_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455760.html">16.&nbsp;文件下载时，只弹出下载框，不在页面打开的方法。(2)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl17_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455373.html">17.&nbsp;海量数据库的查询优化及分页算法方案(2)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl18_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455770.html">18.&nbsp;2006惊现高考强文，给零分还是满分，拭目以待！！(2)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl19_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455341.html">19.&nbsp;.net的委托和事件的直接理解(2)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl20_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455405.html">20.&nbsp;职业规划(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl21_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455338.html">21.&nbsp;用C#实现基于TCP协议的网络通讯(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl22_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455776.html">22.&nbsp;人的一生，到底在追求甚么？...(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl23_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455320.html">23.&nbsp;性能测试基本概念释疑(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl24_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455796.html">24.&nbsp;恭喜恭喜，Blog移植成功！(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl25_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455778.html">25.&nbsp;搞笑个性签名(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl26_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455681.html">26.&nbsp;重写DataGrid的DataGridBoolColumn，添加bool值改变事件。(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl27_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455726.html">27.&nbsp;为blog添加天气预报功能(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl28_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/07/775164.html">28.&nbsp;11个笑话让你领悟人生 
+  (1)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl29_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/09/20/509527.html">29.&nbsp;三个月瘦了6斤。(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl30_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455784.html">30.&nbsp;谎言效应(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl31_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/02/23/654172.html">31.&nbsp;css——之三行三列等高布局 
+  (1)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl32_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2010/01/21/1653008.html">32.&nbsp;firefox不支持background-position-x,background-position-y(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl33_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2008/12/04/1347625.html">33.&nbsp;查询ms 
+  sql 2005版本号(1)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl34_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455379.html">34.&nbsp;oracle中如何取前十条记录？(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl35_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455364.html">35.&nbsp;关于环境变量(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl36_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455363.html">36.&nbsp;如何通过DataRelation关联两个DataGrid，实现主从表。(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl37_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/07/20/455688.html">37.&nbsp;困惑，个人资源管理混乱不堪。(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl38_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2007/06/25/794737.html">38.&nbsp;css背景图片不重复(1)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl39_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/10/22/536762.html">39.&nbsp;虚拟主机下asp.net 
+  2.0的导航控件treeview,menu等出错。(1)</A> 
+  <LI><A id=SingleColumn1_ctl08_TopList_ctl40_Hyperlink1 
+  href="http://www.cnblogs.com/ami/archive/2006/09/08/499192.html">http://www.cnblogs.com/ami/archive/2006/09/08/499192.html</A> 
+  </LI></UL></DIV></DIV></DIV><!-- //右侧工具部分 --></DIV><!-- right ends --></DIV>
+<DIV class=clear></DIV>
+<DIV id=footer>Copyright ©2010 阿米 </DIV></DIV></DIV></FORM>
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="今日问题：操作必须使用一个可更新的查询。 - Ami的Blog - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

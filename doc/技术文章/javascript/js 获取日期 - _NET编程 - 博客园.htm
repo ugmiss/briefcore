@@ -1,0 +1,1248 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html -->
+<HTML><HEAD><TITLE>js 获取日期 - .NET编程 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=js,获取日期 name=keywords><LINK 
+href="js 获取日期 - _NET编程 - 博客园_files/common.css" type=text/css 
+rel=stylesheet><LINK id=MainCss href="js 获取日期 - _NET编程 - 博客园_files/style.css" 
+type=text/css rel=stylesheet><LINK 
+href="js 获取日期 - _NET编程 - 博客园_files/common2.css" type=text/css 
+rel=stylesheet><LINK href="js 获取日期 - _NET编程 - 博客园_files/shCore.css" 
+type=text/css rel=stylesheet><LINK 
+href="js 获取日期 - _NET编程 - 博客园_files/shThemeDefault.css" type=text/css 
+rel=stylesheet><LINK title=RSS href="http://www.cnblogs.com/ggbbeyou/rss" 
+type=application/rss+xml rel=alternate><LINK title=RSD 
+href="http://www.cnblogs.com/ggbbeyou/rsd.xml" type=application/rsd+xml 
+rel=EditURI>
+<SCRIPT src="js 获取日期 - _NET编程 - 博客园_files/jquery.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="js 获取日期 - _NET编程 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="js 获取日期 - _NET编程 - 博客园_files/jquery.json-2.2.min.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.4672" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 action=1621859.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<!--done-->
+<DIV id=banner>
+<DIV id=bnr_pic><!--done-->
+<DIV class=header>
+<DIV class=headerText><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/ggbbeyou/">.NET编程</A><BR></DIV><BR>
+<DIV class=headerDis>.NET编程</DIV></DIV></DIV></DIV>
+<DIV id=main><!-- left starts -->
+<DIV id=left>
+<DIV id=mystats><BR><!--done-->
+<DIV class=blogStats>随笔 - 98&nbsp; 文章 - 0&nbsp; 评论 - 4&nbsp; </DIV></DIV>
+<DIV id=mylinks><!--done--><A class=menu id=MyLinks1_HomeLink 
+href="http://www.cnblogs.com/">博客园</A>&nbsp;&nbsp;<A class=menu 
+id=MyLinks1_MyHomeLink 
+href="http://www.cnblogs.com/ggbbeyou/">首页</A>&nbsp;&nbsp;<A class=menu 
+id=MyLinks1_NewPostLink 
+href="http://www.cnblogs.com/ggbbeyou/admin/EditPosts.aspx?opt=1">新随笔</A>&nbsp;&nbsp;<A 
+class=menu id=MyLinks1_ContactLink accessKey=9 
+href="http://space.cnblogs.com/msg/send/ggbbeyou">联系</A>&nbsp;&nbsp;<A 
+class=menu id=MyLinks1_Admin 
+href="http://www.cnblogs.com/ggbbeyou/admin/EditPosts.aspx">管理</A>&nbsp;&nbsp;<A 
+class=menu id=MyLinks1_Syndication 
+href="http://www.cnblogs.com/ggbbeyou/rss">订阅</A>&nbsp;<A id=MyLinks1_XMLLink 
+href="http://www.cnblogs.com/ggbbeyou/rss"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+alt=订阅 src="js 获取日期 - _NET编程 - 博客园_files/xml.gif"></A></DIV>
+<DIV id=topics>
+<DIV class=post>
+<DIV class=postTitle>
+<H1><A class=postTitle2 id=ctl04_TitleUrl 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html">js 
+获取日期</A></H1></DIV>
+<DIV class=tit>js获取当前日期</DIV>
+<DIV class=date>2009-11-24 09:52</DIV>
+<TABLE style="TABLE-LAYOUT: fixed; WIDTH: 100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=cnt id=blog_text>
+      <P style="TEXT-INDENT: 2em">Js获取当前日期时间及其它操作2008-07-28 17:202008-06-11 
+      17:24var myDate = new Date();</P>
+      <P style="TEXT-INDENT: 2em">myDate.getYear(); //获取当前年份(2位)</P>
+      <P style="TEXT-INDENT: 2em">myDate.getFullYear(); 
+      //获取完整的年份(4位,1970-????)</P>
+      <P style="TEXT-INDENT: 2em">myDate.getMonth(); //获取当前月份(0-11,0代表1月)</P>
+      <P style="TEXT-INDENT: 2em">myDate.getDate(); //获取当前日(1-31)</P>
+      <P style="TEXT-INDENT: 2em">myDate.getDay(); //获取当前星期X(0-6,0代表星期天)</P>
+      <P style="TEXT-INDENT: 2em">myDate.getTime(); 
+//获取当前时间(从1970.1.1开始的毫秒数)</P>
+      <P style="TEXT-INDENT: 2em">myDate.getHours(); //获取当前小时数(0-23)</P>
+      <P style="TEXT-INDENT: 2em">myDate.getMinutes(); //获取当前分钟数(0-59)</P>
+      <P style="TEXT-INDENT: 2em">myDate.getSeconds(); //获取当前秒数(0-59)</P>
+      <P style="TEXT-INDENT: 2em">myDate.getMilliseconds(); //获取当前毫秒数(0-999)</P>
+      <P style="TEXT-INDENT: 2em">myDate.toLocaleDateString(); //获取当前日期</P>
+      <P style="TEXT-INDENT: 2em">var mytime=myDate.toLocaleTimeString(); 
+      //获取当前时间</P>
+      <P style="TEXT-INDENT: 2em">myDate.toLocaleString( ); //获取日期与时间</P>
+      <P style="TEXT-INDENT: 2em">日期时间脚本库方法列表</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.isLeapYear 判断闰年</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.Format 日期格式化</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.DateAdd 日期计算</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.DateDiff 比较日期差</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.toString 日期转字符串</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.toArray 日期分割为数组</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.DatePart 取日期的部分信息</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.MaxDayOfDate 取日期所在月的最大天数</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.WeekNumOfYear 判断日期所在年的第几周</P>
+      <P style="TEXT-INDENT: 2em">StringToDate 字符串转日期型</P>
+      <P style="TEXT-INDENT: 2em">IsValidDate 验证日期有效性</P>
+      <P style="TEXT-INDENT: 2em">CheckDateTime 完整日期时间检查</P>
+      <P style="TEXT-INDENT: 2em">daysBetween 日期天数差</P>
+      <P style="TEXT-INDENT: 2em">js代码：</P>
+      <P 
+      style="TEXT-INDENT: 2em">//---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">// 判断闰年</P>
+      <P 
+      style="TEXT-INDENT: 2em">//---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.isLeapYear = function()</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">return 
+      (0==this.getYear()%4&amp;&amp;((this.getYear()%100!=0)||(this.getYear()%400==0)));</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">// 日期格式化</P>
+      <P style="TEXT-INDENT: 2em">// 格式 YYYY/yyyy/YY/yy 表示年份</P>
+      <P style="TEXT-INDENT: 2em">// MM/M 月份</P>
+      <P style="TEXT-INDENT: 2em">// W/w 星期</P>
+      <P style="TEXT-INDENT: 2em">// dd/DD/d/D 日期</P>
+      <P style="TEXT-INDENT: 2em">// hh/HH/h/H 时间</P>
+      <P style="TEXT-INDENT: 2em">// mm/m 分钟</P>
+      <P style="TEXT-INDENT: 2em">// ss/SS/s/S 秒</P>
+      <P 
+      style="TEXT-INDENT: 2em">//---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.Format = 
+function(formatStr)</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var str = formatStr;</P>
+      <P style="TEXT-INDENT: 2em">var Week = ['日','一','二','三','四','五','六'];</P>
+      <P 
+      style="TEXT-INDENT: 2em">str=str.replace(/yyyy|YYYY/,this.getFullYear());</P>
+      <P style="TEXT-INDENT: 2em">str=str.replace(/yy|YY/,(this.getYear() % 
+      100)&gt;9?(this.getYear() % 100).toString():'0' + (this.getYear() % 
+      100));</P>
+      <P 
+      style="TEXT-INDENT: 2em">str=str.replace(/MM/,this.getMonth()&gt;9?this.getMonth().toString():'0' 
+      + this.getMonth());</P>
+      <P style="TEXT-INDENT: 2em">str=str.replace(/M/g,this.getMonth());</P>
+      <P 
+      style="TEXT-INDENT: 2em">str=str.replace(/w|W/g,Week[this.getDay()]);</P>
+      <P 
+      style="TEXT-INDENT: 2em">str=str.replace(/dd|DD/,this.getDate()&gt;9?this.getDate().toString():'0' 
+      + this.getDate());</P>
+      <P style="TEXT-INDENT: 2em">str=str.replace(/d|D/g,this.getDate());</P>
+      <P 
+      style="TEXT-INDENT: 2em">str=str.replace(/hh|HH/,this.getHours()&gt;9?this.getHours().toString():'0' 
+      + this.getHours());</P>
+      <P style="TEXT-INDENT: 2em">str=str.replace(/h|H/g,this.getHours());</P>
+      <P 
+      style="TEXT-INDENT: 2em">str=str.replace(/mm/,this.getMinutes()&gt;9?this.getMinutes().toString():'0' 
+      + this.getMinutes());</P>
+      <P style="TEXT-INDENT: 2em">str=str.replace(/m/g,this.getMinutes());</P>
+      <P 
+      style="TEXT-INDENT: 2em">str=str.replace(/ss|SS/,this.getSeconds()&gt;9?this.getSeconds().toString():'0' 
+      + this.getSeconds());</P>
+      <P style="TEXT-INDENT: 2em">str=str.replace(/s|S/g,this.getSeconds());</P>
+      <P style="TEXT-INDENT: 2em">return str;</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">//| 求两个时间的天数差 日期格式为 YYYY-MM-dd</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">function daysBetween(DateOne,DateTwo)</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var On<WBR></WBR>eMonth = 
+      DateOne.substring(5,DateOne.lastIndexOf ('-'));</P>
+      <P style="TEXT-INDENT: 2em">var On<WBR></WBR>eDay = 
+      DateOne.substring(DateOne.length,DateOne.lastIndexOf ('-')+1);</P>
+      <P style="TEXT-INDENT: 2em">var On<WBR></WBR>eYear = 
+      DateOne.substring(0,DateOne.indexOf ('-'));</P>
+      <P style="TEXT-INDENT: 2em">var TwoMonth = 
+      DateTwo.substring(5,DateTwo.lastIndexOf ('-'));</P>
+      <P style="TEXT-INDENT: 2em">var TwoDay = 
+      DateTwo.substring(DateTwo.length,DateTwo.lastIndexOf ('-')+1);</P>
+      <P style="TEXT-INDENT: 2em">var TwoYear = 
+      DateTwo.substring(0,DateTwo.indexOf ('-'));</P>
+      <P style="TEXT-INDENT: 2em">var 
+      cha=((Date.parse(On<WBR></WBR>eMonth+'/'+On<WBR></WBR>eDay+'/'+On<WBR></WBR>eYear)- 
+      Date.parse(TwoMonth+'/'+TwoDay+'/'+TwoYear))/86400000);</P>
+      <P style="TEXT-INDENT: 2em">return Math.abs(cha);</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">//| 日期计算</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.DateAdd = function(strInterval, 
+      Number) {</P>
+      <P style="TEXT-INDENT: 2em">var dtTmp = this;</P>
+      <P style="TEXT-INDENT: 2em">switch (strInterval) {</P>
+      <P style="TEXT-INDENT: 2em">case 's' :return new Date(Date.parse(dtTmp) + 
+      (1000 * Number));</P>
+      <P style="TEXT-INDENT: 2em">case 'n' :return new Date(Date.parse(dtTmp) + 
+      (60000 * Number));</P>
+      <P style="TEXT-INDENT: 2em">case 'h' :return new Date(Date.parse(dtTmp) + 
+      (3600000 * Number));</P>
+      <P style="TEXT-INDENT: 2em">case 'd' :return new Date(Date.parse(dtTmp) + 
+      (86400000 * Number));</P>
+      <P style="TEXT-INDENT: 2em">case 'w' :return new Date(Date.parse(dtTmp) + 
+      ((86400000 * 7) * Number));</P>
+      <P style="TEXT-INDENT: 2em">case 'q' :return new Date(dtTmp.getFullYear(), 
+      (dtTmp.getMonth()) + Number*3, dtTmp.getDate(), dtTmp.getHours(), 
+      dtTmp.getMinutes(), dtTmp.getSeconds());</P>
+      <P style="TEXT-INDENT: 2em">case 'm' :return new Date(dtTmp.getFullYear(), 
+      (dtTmp.getMonth()) + Number, dtTmp.getDate(), dtTmp.getHours(), 
+      dtTmp.getMinutes(), dtTmp.getSeconds());</P>
+      <P style="TEXT-INDENT: 2em">case 'y' :return new Date((dtTmp.getFullYear() 
+      + Number), dtTmp.getMonth(), dtTmp.getDate(), dtTmp.getHours(), 
+      dtTmp.getMinutes(), dtTmp.getSeconds());</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">//| 比较日期差 dtEnd 格式为日期型或者 有效日期格式字符串</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.DateDiff = 
+      function(strInterval, dtEnd) {</P>
+      <P style="TEXT-INDENT: 2em">var dtStart = this;</P>
+      <P style="TEXT-INDENT: 2em">if (typeof dtEnd == 'string' 
+      )//如果是字符串转换为日期型</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">dtEnd = StringToDate(dtEnd);</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P style="TEXT-INDENT: 2em">switch (strInterval) {</P>
+      <P style="TEXT-INDENT: 2em">case 's' :return parseInt((dtEnd - dtStart) / 
+      1000);</P>
+      <P style="TEXT-INDENT: 2em">case 'n' :return parseInt((dtEnd - dtStart) / 
+      60000);</P>
+      <P style="TEXT-INDENT: 2em">case 'h' :return parseInt((dtEnd - dtStart) / 
+      3600000);</P>
+      <P style="TEXT-INDENT: 2em">case 'd' :return parseInt((dtEnd - dtStart) / 
+      86400000);</P>
+      <P style="TEXT-INDENT: 2em">case 'w' :return parseInt((dtEnd - dtStart) / 
+      (86400000 * 7));</P>
+      <P style="TEXT-INDENT: 2em">case 'm' :return 
+      (dtEnd.getMonth()+1)+((dtEnd.getFullYear()-dtStart.getFullYear())*12) - 
+      (dtStart.getMonth()+1);</P>
+      <P style="TEXT-INDENT: 2em">case 'y' :return dtEnd.getFullYear() - 
+      dtStart.getFullYear();</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">//| 日期输出字符串，重载了系统的toString方法</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.toString = 
+      function(showWeek)</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var myDate= this;</P>
+      <P style="TEXT-INDENT: 2em">var str = myDate.toLocaleDateString();</P>
+      <P style="TEXT-INDENT: 2em">if (showWeek)</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var Week = ['日','一','二','三','四','五','六'];</P>
+      <P style="TEXT-INDENT: 2em">str += ' 星期' + Week[myDate.getDay()];</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P style="TEXT-INDENT: 2em">return str;</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">//| 日期合法性验证</P>
+      <P style="TEXT-INDENT: 2em">//| 格式为：YYYY-MM-DD或YYYY/MM/DD</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">function IsValidDate(DateStr)</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var sDate=DateStr.replace(/(^\s+|\s+$)/g,''); 
+      //去两边空格;</P>
+      <P style="TEXT-INDENT: 2em">if(sDate=='') return true;</P>
+      <P 
+      style="TEXT-INDENT: 2em">//如果格式满足YYYY-(/)MM-(/)DD或YYYY-(/)M-(/)DD或YYYY-(/)M-(/)D或YYYY-(/)MM-(/)D就替换为''</P>
+      <P 
+      style="TEXT-INDENT: 2em">//数据库中，合法日期可以是:YYYY-MM/DD(2003-3/21),数据库会自动转换为YYYY-MM-DD格式</P>
+      <P style="TEXT-INDENT: 2em">var s = sDate.replace(/[\d]{ 4,4 }[\-/]{ 1 
+      }[\d]{ 1,2 }[\-/]{ 1 }[\d]{ 1,2 }/g,'');</P>
+      <P style="TEXT-INDENT: 2em">if (s=='') 
+      //说明格式满足YYYY-MM-DD或YYYY-M-DD或YYYY-M-D或YYYY-MM-D</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var t=new Date(sDate.replace(/\-/g,'/'));</P>
+      <P style="TEXT-INDENT: 2em">var ar = sDate.split(/[-/:]/);</P>
+      <P style="TEXT-INDENT: 2em">if(ar[0] != t.getYear() || ar[1] != 
+      t.getMonth()+1 || ar[2] != t.getDate())</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P 
+      style="TEXT-INDENT: 2em">//alert('错误的日期格式！格式为：YYYY-MM-DD或YYYY/MM/DD。注意闰年。');</P>
+      <P style="TEXT-INDENT: 2em">return false;</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P style="TEXT-INDENT: 2em">else</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P 
+      style="TEXT-INDENT: 2em">//alert('错误的日期格式！格式为：YYYY-MM-DD或YYYY/MM/DD。注意闰年。');</P>
+      <P style="TEXT-INDENT: 2em">return false;</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P style="TEXT-INDENT: 2em">return true;</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">//| 日期时间检查</P>
+      <P style="TEXT-INDENT: 2em">//| 格式为：YYYY-MM-DD HH:MM:SS</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">function CheckDateTime(str)</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var reg = /^(\d+)-(\d{ 1,2 })-(\d{ 1,2 }) (\d{ 
+      1,2 }):(\d{ 1,2 }):(\d{ 1,2 })$/;</P>
+      <P style="TEXT-INDENT: 2em">var r = str.match(reg);</P>
+      <P style="TEXT-INDENT: 2em">if(r==null)return false;</P>
+      <P style="TEXT-INDENT: 2em">r[2]=r[2]-1;</P>
+      <P style="TEXT-INDENT: 2em">var d= new 
+      Date(r[1],r[2],r[3],r[4],r[5],r[6]);</P>
+      <P style="TEXT-INDENT: 2em">if(d.getFullYear()!=r[1])return false;</P>
+      <P style="TEXT-INDENT: 2em">if(d.getMonth()!=r[2])return false;</P>
+      <P style="TEXT-INDENT: 2em">if(d.getDate()!=r[3])return false;</P>
+      <P style="TEXT-INDENT: 2em">if(d.getHours()!=r[4])return false;</P>
+      <P style="TEXT-INDENT: 2em">if(d.getMinutes()!=r[5])return false;</P>
+      <P style="TEXT-INDENT: 2em">if(d.getSeconds()!=r[6])return false;</P>
+      <P style="TEXT-INDENT: 2em">return true;</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">//| 把日期分割成数组</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.toArray = function()</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var myDate = this;</P>
+      <P style="TEXT-INDENT: 2em">var myArray = Array();</P>
+      <P style="TEXT-INDENT: 2em">myArray[0] = myDate.getFullYear();</P>
+      <P style="TEXT-INDENT: 2em">myArray[1] = myDate.getMonth();</P>
+      <P style="TEXT-INDENT: 2em">myArray[2] = myDate.getDate();</P>
+      <P style="TEXT-INDENT: 2em">myArray[3] = myDate.getHours();</P>
+      <P style="TEXT-INDENT: 2em">myArray[4] = myDate.getMinutes();</P>
+      <P style="TEXT-INDENT: 2em">myArray[5] = myDate.getSeconds();</P>
+      <P style="TEXT-INDENT: 2em">return myArray;</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">//| 取得日期数据信息</P>
+      <P style="TEXT-INDENT: 2em">//| 参数 interval 表示数据类型</P>
+      <P style="TEXT-INDENT: 2em">//| y 年 m月 d日 w星期 ww周 h时 n分 s秒</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.DatePart = 
+      function(interval)</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var myDate = this;</P>
+      <P style="TEXT-INDENT: 2em">var partStr='';</P>
+      <P style="TEXT-INDENT: 2em">var Week = ['日','一','二','三','四','五','六'];</P>
+      <P style="TEXT-INDENT: 2em">switch (interval)</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">case 'y' :partStr = 
+      myDate.getFullYear();break;</P>
+      <P style="TEXT-INDENT: 2em">case 'm' :partStr = 
+      myDate.getMonth()+1;break;</P>
+      <P style="TEXT-INDENT: 2em">case 'd' :partStr = 
+myDate.getDate();break;</P>
+      <P style="TEXT-INDENT: 2em">case 'w' :partStr = 
+      Week[myDate.getDay()];break;</P>
+      <P style="TEXT-INDENT: 2em">case 'ww' :partStr = 
+      myDate.WeekNumOfYear();break;</P>
+      <P style="TEXT-INDENT: 2em">case 'h' :partStr = 
+      myDate.getHours();break;</P>
+      <P style="TEXT-INDENT: 2em">case 'n' :partStr = 
+      myDate.getMinutes();break;</P>
+      <P style="TEXT-INDENT: 2em">case 's' :partStr = 
+      myDate.getSeconds();break;</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P style="TEXT-INDENT: 2em">return partStr;</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">//| 取得当前日期所在月的最大天数</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.MaxDayOfDate = function()</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var myDate = this;</P>
+      <P style="TEXT-INDENT: 2em">var ary = myDate.toArray();</P>
+      <P style="TEXT-INDENT: 2em">var date1 = (new Date(ary[0],ary[1]+1,1));</P>
+      <P style="TEXT-INDENT: 2em">var date2 = date1.dateAdd(1,'m',1);</P>
+      <P style="TEXT-INDENT: 2em">var result = 
+      dateDiff(date1.Format('yyyy-MM-dd'),date2.Format('yyyy-MM-dd'));</P>
+      <P style="TEXT-INDENT: 2em">return result;</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">//| 取得当前日期所在周是一年中的第几周</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">Date.prototype.WeekNumOfYear = function()</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var myDate = this;</P>
+      <P style="TEXT-INDENT: 2em">var ary = myDate.toArray();</P>
+      <P style="TEXT-INDENT: 2em">var year = ary[0];</P>
+      <P style="TEXT-INDENT: 2em">var month = ary[1]+1;</P>
+      <P style="TEXT-INDENT: 2em">var day = ary[2];</P>
+      <P style="TEXT-INDENT: 2em">document.write('&lt; script 
+      language=VBScript\&gt; \n');</P>
+      <P style="TEXT-INDENT: 2em">document.write('myDate = 
+      DateValue(''+month+'-'+day+'-'+year+'') \n');</P>
+      <P style="TEXT-INDENT: 2em">document.write('result = DatePart('ww', 
+      myDate) \n');</P>
+      <P style="TEXT-INDENT: 2em">document.write(' \n');</P>
+      <P style="TEXT-INDENT: 2em">return result;</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">//| 字符串转成日期类型</P>
+      <P style="TEXT-INDENT: 2em">//| 格式 MM/dd/YYYY MM-dd-YYYY YYYY/MM/dd 
+      YYYY-MM-dd</P>
+      <P 
+      style="TEXT-INDENT: 2em">//+---------------------------------------------------</P>
+      <P style="TEXT-INDENT: 2em">function StringToDate(DateStr)</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">var converted = Date.parse(DateStr);</P>
+      <P style="TEXT-INDENT: 2em">var myDate = new Date(converted);</P>
+      <P style="TEXT-INDENT: 2em">if (isNaN(myDate))</P>
+      <P style="TEXT-INDENT: 2em">{</P>
+      <P style="TEXT-INDENT: 2em">//var delimCahar = 
+      DateStr.indexOf('/')!=-1?'/':'-';</P>
+      <P style="TEXT-INDENT: 2em">var arys= DateStr.split('-');</P>
+      <P style="TEXT-INDENT: 2em">myDate = new 
+      Date(arys[0],--arys[1],arys[2]);</P>
+      <P style="TEXT-INDENT: 2em">}</P>
+      <P style="TEXT-INDENT: 2em">return myDate;</P>
+      <P style="TEXT-INDENT: 2em">}</P></DIV></TD></TR></TBODY></TABLE>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV class=author_profile_info>
+<DIV class=author_profile_info><A href="http://home.cnblogs.com/ggbbeyou/" 
+target=_blank>ggbbeyou</A><BR>关注 - 0<BR>粉丝 - 0<BR></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_follow><A onclick="login();return false;" 
+href="javascript:void(0);">关注博主</A></DIV></DIV>
+<DIV id=div_digg>
+<DIV class=diggit onclick=DiggIt(1621859,49696,1)><SPAN class=diggnum 
+id=digg_count_1621859>0</SPAN> </DIV>
+<DIV class=buryit onclick=DiggIt(1621859,49696,2)><SPAN class=burynum 
+id=bury_count_1621859>0</SPAN> </DIV>
+<DIV class=clear></DIV><SPAN id=span_isdigged_1621859 
+style="DISPLAY: none">0</SPAN> 
+<DIV class=diggword id=digg_word_1621859>(请您对文章做出评价)</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev><A 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/09/1620676.html">« 
+</A>上一篇：<A title="发布于2009-12-09 22:48" 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/09/1620676.html">C# 
+winform 动态添加控件 以及 事件</A><BR><A 
+href="http://www.cnblogs.com/ggbbeyou/archive/2010/01/05/1639592.html">» 
+</A>下一篇：<A title="发布于2010-01-05 13:38" 
+href="http://www.cnblogs.com/ggbbeyou/archive/2010/01/05/1639592.html">VS2008简体中文正式版序列号</A><BR></DIV>
+<SCRIPT src="js 获取日期 - _NET编程 - 博客园_files/google_service.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GS_googleAddAdSenseService("ca-pub-4210569241504288");
+        GS_googleEnableAllServices();
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_body");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_commentbox_up");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+        GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom1");
+    }
+    catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFetchAds();
+    } catch (e) { }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var blog_ad_has_shown = false;
+    var cb_c_u_id = '';
+    var cb_blog_uid = 'c308470b-63cf-dd11-9e4d-001cf0cd104b';
+</SCRIPT>
+
+<DIV class=postDesc>posted on 2009-12-11 13:43 <A 
+href="http://www.cnblogs.com/ggbbeyou/">ggbbeyou</A> 阅读(30) <A 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html#commentform">评论(0)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/ggbbeyou/admin/EditPosts.aspx?postid=1621859">编辑</A> 
+<A onclick="AddToWz(1621859);return false;" 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html#">收藏</A> 
+</DIV></DIV><IMG height=1 src="js 获取日期 - _NET编程 - 博客园_files/1621859.jpg" 
+width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html"
+dc:identifier="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html"
+dc:title=""
+trackback:ping="http://www.cnblogs.com/ggbbeyou/services/trackbacks/1621859.aspx" />
+</rdf:RDF>
+-->
+<SCRIPT type=text/javascript>
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            CheckAuthor();        
+        }                
+        if(!hasLogined && !commentAuthorIsValid){
+            isValid = false;
+        }
+                       
+        if(!authenCodeHasChecked){
+            CheckAuthenCode();            
+        }
+        if(!authenCodeIsValid){
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentUrlIsValid){            
+            isValid = false;
+        }        
+        if(!commentEmailIsValid){            
+            isValid = false;
+        }        
+        if(!CheckCommentContent()){
+            isValid = false;
+        }    
+        if(!isValid){
+            return;
+        }
+
+        var content = $("#tbCommentBody").val();
+        if(content.length>2000){
+            alert("评论内容过长！不允许发布！");
+            return;
+        }     
+        
+        if(content.indexOf("　Ｅ　　　　　　　　　Ｅ　　　　　　　　　　Ｅ　　　　　　")>=0){
+            alert("该内容不允许布！");
+            return;
+        }   
+        
+       if ($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+            alert("该评论已发表过!");
+            return;
+        }
+        
+        $("#tip_comment").html("评论提交中...");
+        $("#span_comment_posted").html(content);
+        //content = content.replace("'", "\\'");
+        var email = $("#tbCommentEmail").val();
+        var authenNum = $("#tbAuthenCode").val();
+        var authenId = $("#span_comment_test").html();
+        var comment = {};
+        comment.authenNum = authenNum;
+        comment.authenId= authenId;
+        comment.parentId = 0;
+        comment.blogId = 0;
+        comment.sourceUrl = '';
+        comment.author = $("#tbCommentAuthor").val();
+        comment.url = $("#tbCommentAuthorUrl").val();
+        comment.authenCode = $("#tbAuthenCode").val();
+        comment.email = email;
+        comment.title = '';
+        comment.content = content;
+        comment.parentCommentId = $("#span_parentcomment_id").html();
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddAnonymousComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+               if (data.d["IsSuccess"]) {
+                    ShowCommentMsg("感谢您的回复:)");
+                    //RereshComments2(comment.parentId);
+                    $("#tbCommentBody").val('');
+                    //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");
+                    $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]); 
+                    $("#tip_AuthenCode").html('');
+                    RefreshAuthenCode();
+                    $("#tbAuthenCode").val("");                    
+                    CommentNotify(data.d["CommentID"]);
+                }
+                else {
+                    ShowCommentMsg(data.d["ReturnData"]);//"抱歉！评论提交失败！请与管理员联系。");
+                    $("#span_comment_posted").html(''); 
+                }
+            },
+            error: function(xhr) {
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+                //alert(xhr.responseText);
+            }
+        }
+        );
+    }
+    
+    function RefreshAuthenCode(){
+        AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",RefreshImg); 
+        $("#lnkRereshAuthenCode").html("<span style='color:red'>刷新中...</span>");
+        return false;
+    }
+    
+    function RefreshImg(response){
+       $("#imgAuthenCode").attr("src","/Modules/CaptchaImage/ValidCodeImage.aspx?id="+encodeURIComponent(response));
+       $("#span_comment_test").html(response);
+       $("#lnkRereshAuthenCode").html("看不清，换一个");
+    }
+    
+    function ShowAuthenCode(){
+        //if($("#wrapAuthenCode").css("display")=="none"){    
+        //    AjaxPost("/ws/CommentService.asmx/RefreshAuthenCode","{}",ShowAuthenCodeOk);
+        //}
+        $("#wrapAuthenCode").show();      
+    }
+    
+    function ShowAuthenCodeOk(response){
+         UpdateAuthenCode();
+         $("#tbAuthenCode").val("");
+         $("#wrapAuthenCode").show();
+         $("#tip_AuthenCode").html('');
+    }  
+ 
+    
+    function CheckAuthor(isOnblur){
+        commentAuthorHasChecked = true;
+        var maxLength = 30;
+        if($("#tbCommentAuthor").val().length == 0){
+            $("#tip_author").html("请输入您的昵称！");
+            commentAuthorIsValid = false;
+            return false;
+        }     
+        else if($("#tbCommentAuthor").val().length > maxLength){
+            $("#tip_author").html("昵称不允许超过" + maxLength + "个字符！");
+            commentAuthorIsValid = false;
+            return false;
+        }
+        else{
+            //if(isOnblur){
+                AjaxPost("/ws/CommentService.asmx/IsAuthorExist","{author:'"+$("#tbCommentAuthor").val()+"'}" ,OnCheckAuthorExist);
+            //}
+            //else{
+            //    $("#tip_author").html("");
+            //    commentAuthorIsValid = true;
+            //}
+            return true;
+        }
+   }
+   
+    function OnCheckAuthorExist(response){        
+        if(!response){
+            $("#tip_author").html("");
+            commentAuthorIsValid = true;
+        }
+        else{
+            $("#tip_author").html("该昵称已被使用，请更换昵称");
+            commentAuthorIsValid = false;
+        }
+   }
+   
+    function CheckUrl(){
+        var maxLength = 50;
+        var url = $("#tbCommentAuthorUrl").val();
+        
+        if(url.length == 0){
+            commentUrlIsValid = true;
+            return true;
+        }
+        else if(url.length > maxLength){
+            $("#tip_url").html("主页地址不允许超过" + maxLength + "个字符！");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else if(url.indexOf("http://")!=0 || url.indexOf(".") < 0){
+            $("#tip_url").html("主页地址要以“http://”开头");
+            commentUrlIsValid = false;
+            return false;
+        }
+        else{
+            $("#tip_url").html("");
+            commentUrlIsValid = true;
+            return true;
+        }
+   }
+   
+   function CheckEmail(){
+        var email = $("#tbCommentEmail").val();
+        if(email.length>0){
+            var regExp = new RegExp("\\w+@((\\w|\-)+\\.)+[a-z]{2,3}");
+            if(!regExp.test(email)){
+                $("#tip_email").html("请输入正确的邮件地址!");
+                commentEmailIsValid = false;
+            }
+            else{
+                commentEmailIsValid = true;
+                 $("#tip_email").html("");
+            }
+        }
+        else{
+            commentEmailIsValid = true;
+            $("#tip_email").html("");  
+        }
+   }
+   
+   function CheckAuthenCode(){
+        authenCodeHasChecked = true;
+        var num = $("#tbAuthenCode").val();
+        var id = $("#span_comment_test").html();
+        $("#tip_AuthenCode").css("color","red");
+        if(num.length==0){
+             authenCodeIsValid = false;
+             $("#tip_AuthenCode").html("请输入验证码！");
+             return;
+        }
+        else if(num.length!=4){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else if(new RegExp("(\d+)").test(num)){
+            authenCodeIsValid = false;
+            $("#tip_AuthenCode").html("请输入四位数字！");
+             return;
+        }
+        else{
+            AjaxPost("/ws/CommentService.asmx/CheckAuthenCode","{number:"+num+",id:'"+id+"'}", OnCheckAuthenCode);
+        }
+   }
+   
+   function OnCheckAuthenCode(response){
+        if(response){
+            $("#tip_AuthenCode").css("color","green");
+            $("#tip_AuthenCode").html("验证码输入正确！");
+            authenCodeIsValid = true;            
+        }
+        else{
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("验证码输错啦！");
+            RefreshAuthenCode();
+            authenCodeIsValid = false;           
+        }
+   }
+   
+   function CheckCommentContent(){
+    if($("#tbCommentBody").val().length==0){
+        alert("请输入评论内容！");
+        return false;
+    }
+    return true;
+   }
+    
+</SCRIPT>
+
+<DIV class=commentform id=ctl05_comment_form>
+<DIV id=ctl05_divLoginPannel>
+<DIV class=login_tips>注册用户登录后才能发表评论，请 <A class=underline 
+href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fggbbeyou%2farchive%2f2009%2f12%2f11%2f1621859.html%3flogin%3d1%23commentform">登录</A> 
+或 <A class=underline 
+href="http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fggbbeyou%2farchive%2f2009%2f12%2f11%2f1621859.html%23Bottom2">注册</A> 
+。</DIV>
+<DIV style="MARGIN-TOP: 5px"><A href="http://www.cnblogs.com/" 
+target=_blank>返回博客园首页</A></DIV></DIV>
+<DIV class="itnews c_ad_block"><A class=site_hot 
+href="http://a4.yeshj.com/rd/35182/" target=_blank>有道难题开锣头奖8万！</A><BR><A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A>:<BR>· <A 
+href="http://news.cnblogs.com/n/64680/" target=_blank>Google与Spring深度合作 
+为Spring开启新的篇章</A><BR>· <A href="http://news.cnblogs.com/n/64679/" 
+target=_blank>汗！新数据中心竟用大便发电</A><BR>· <A href="http://news.cnblogs.com/n/64678/" 
+target=_blank>更加友好的设计 Fedora 13的五大亮点</A><BR>· <A 
+href="http://news.cnblogs.com/n/64677/" target=_blank>Firefox开发人员：Google 
+Chrome不足为惧 Google</A><BR>· <A href="http://news.cnblogs.com/n/64676/" 
+target=_blank>微软全国搜罗盗版Win7 称93%样本存潜在危险</A><BR></DIV>
+<DIV class=c_ad_block><A href="http://a4.yeshj.com/rd/34138/" 
+target=_blank>每天10分钟，轻松学英语</A>&nbsp;&nbsp;<A 
+href="http://a4.yeshj.com/rd/35140/" target=_blank>沪江网校</A><BR>
+<DIV style="MARGIN-TOP: 5px">
+<SCRIPT type=text/javascript>
+    try {
+        GA_googleFillSlot("cnblogs_blogpost_bottom");
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV style="MARGIN-TOP: 5px"><A 
+href="http://www.feifanit.com.cn/productFlow.htm" target=_blank><IMG alt="" 
+src="js 获取日期 - _NET编程 - 博客园_files/e8_net_468x60.gif"></A></DIV>
+<DIV class="itnews c_ad_block" id=job_block><A href="http://job.cnblogs.com/" 
+target=_blank>推荐职位</A>:<BR>
+<DIV id=job_list></DIV>
+<SCRIPT type=text/javascript>
+    try {
+        GetJobList();
+    } catch (e) { }
+</SCRIPT>
+</DIV></DIV>
+<DIV class=c_ad_block id=site_nav_under>网站导航：<BR><A 
+href="http://www.cnblogs.com/" target=_blank>博客园首页</A> &nbsp;<A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A> &nbsp;<A 
+href="http://home.cnblogs.com/" target=_blank>个人主页</A> &nbsp;<A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A> &nbsp;<A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> &nbsp;<A 
+href="http://space.cnblogs.com/" target=_blank>社区</A> &nbsp;<A 
+href="http://space.cnblogs.com/q/" target=_blank>博问</A> </DIV>
+<DIV class=c_ad_block id=ad_under_comment2><A 
+href="http://www.china-pub.com/STATIC07/0912/zh_ndcx_091212.asp" 
+target=_blank><IMG 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+alt="" src="js 获取日期 - _NET编程 - 博客园_files/china_pub_20100322.jpg"></A><BR><A 
+href="http://www.china-pub.com/itbook/" target=_blank>China-pub 
+计算机图书网上专卖店！6.5万品种2-8折！</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV></DIV></DIV></DIV><!-- left ends --><!-- right starts -->
+<DIV id=right><!-- 右侧工具部分 -->
+<DIV id=right_content><!--done-->
+<H1 class=listtitle>公告</H1>
+<DIV class=newsItem><!-- Search Google -->
+<CENTER>
+<TABLE bgColor=#aab883>
+  <TBODY>
+  <TR>
+    <TD vAlign=top noWrap align=left height=32><BR><LABEL 
+      style="DISPLAY: none" for=sbi>输入您的搜索字词</LABEL> <INPUT id=sbi maxLength=180 
+      size=32 name=q></INPUT> </TD></TR>
+  <TR>
+    <TD vAlign=top align=left><LABEL style="DISPLAY: none" 
+      for=sbb>提交搜索表单</LABEL> <INPUT id=sbb type=submit value="Google 搜索" name=sa></INPUT> <INPUT 
+      type=hidden value=pub-7290586146954007 name=client></INPUT> <INPUT 
+      type=hidden value=1 name=forid></INPUT> <INPUT type=hidden value=aff 
+      name=prog></INPUT> <INPUT type=hidden value=GB2312 name=ie></INPUT> <INPUT 
+      type=hidden value=GB2312 name=oe></INPUT> <INPUT type=hidden value=zh-CN 
+      name=hl></INPUT> </TD></TR></TBODY></TABLE></CENTER><!-- Search Google -->
+<DIV id=profile_block><A href="http://home.cnblogs.com/ggbbeyou/" 
+target=_blank>我的主页</A>&nbsp; <A href="http://home.cnblogs.com/ggbbeyou/detail/" 
+target=_blank>个人资料</A><BR><A href="http://home.cnblogs.com/ggbbeyou/ing/" 
+target=_blank>我的闪存</A>&nbsp; <A 
+href="http://space.cnblogs.com/msg/send/ggbbeyou" 
+target=_blank>发短消息</A></DIV></DIV>
+<DIV id=calendar>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; COLOR: darkgray; BORDER-BOTTOM: 0px; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: white" colSpan=7>
+      <TABLE class=CalTitle 
+      style="WIDTH: 100%; COLOR: darkgray; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev style="WIDTH: 15%"><A 
+            title="Go to the previous month" style="COLOR: darkgray" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3592')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2009年12月</TD>
+          <TD class=CalNextPrev style="WIDTH: 15%" align=right><A 
+            title="Go to the next month" style="COLOR: darkgray" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3653')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>29</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/1.html"><U>1</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/2.html"><U>2</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/3.html"><U>3</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>5</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>6</TD>
+    <TD style="WIDTH: 14%" align=middle>7</TD>
+    <TD style="WIDTH: 14%" align=middle>8</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/9.html"><U>9</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>10</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11.html"><U>11</U></A></TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>12</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>13</TD>
+    <TD style="WIDTH: 14%" align=middle>14</TD>
+    <TD style="WIDTH: 14%" align=middle>15</TD>
+    <TD style="WIDTH: 14%" align=middle>16</TD>
+    <TD style="WIDTH: 14%" align=middle>17</TD>
+    <TD style="WIDTH: 14%" align=middle>18</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>19</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>20</TD>
+    <TD style="WIDTH: 14%" align=middle>21</TD>
+    <TD style="WIDTH: 14%" align=middle>22</TD>
+    <TD style="WIDTH: 14%" align=middle>23</TD>
+    <TD style="WIDTH: 14%" align=middle>24</TD>
+    <TD style="WIDTH: 14%" align=middle>25</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>26</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>27</TD>
+    <TD style="WIDTH: 14%" align=middle>28</TD>
+    <TD style="WIDTH: 14%" align=middle>29</TD>
+    <TD style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle>31</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>1</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>2</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>6</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>7</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>8</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" 
+align=middle>9</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<SCRIPT type=text/javascript>
+var blogapp = 'ggbbeyou';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/ggbbeyou/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://home.cnblogs.com/ggbbeyou/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/ggbbeyou/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl01_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/ggbbeyou/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/ggbbeyou/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/ggbbeyou/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/ggbbeyou/tag/">我的标签</A> </LI></UL></DIV>
+<H3 class=catListTitle>我的标签</H3>
+<DIV id=MyTag>
+<UL>
+  <LI><A href="http://www.cnblogs.com/ggbbeyou/tag/ç¼©ç¥å¾/">缩略图</A>(1)
+  <LI><A href="http://www.cnblogs.com/ggbbeyou/tag/.NET/">.NET</A>(1)
+  <LI><A 
+  href="http://www.cnblogs.com/ggbbeyou/tag/å¾çè£åªåè½/">图片裁剪功能</A>(1)
+  <LI><A href="http://www.cnblogs.com/ggbbeyou/tag/æ¾ç¤º+éè/">显示 隐藏</A>(1) 
+  </LI></UL></DIV><!--done-->
+<H1 class=catListTitle>随笔分类<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(11)</SPAN></H1>
+<DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+href="http://www.cnblogs.com/ggbbeyou/category/168700.html">.NET(6)</A><A 
+class=listitem id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+title="Subscribe to .NET(6)" 
+onclick="open_link('http://www.cnblogs.com/ggbbeyou/category/168700.html/rss');return false;" 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html###"><IMG 
+title="Subscribe to .NET(6)" 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="C:\Documents and Settings\Administrator\桌面\技术资料\javascript\js 获取日期 - _NET编程 - 博客园_files\xml(1).gif"></A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+href="http://www.cnblogs.com/ggbbeyou/category/168701.html">C#</A><A 
+class=listitem id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+title="Subscribe to C#" 
+onclick="open_link('http://www.cnblogs.com/ggbbeyou/category/168701.html/rss');return false;" 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html###"><IMG 
+title="Subscribe to C#" 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="C:\Documents and Settings\Administrator\桌面\技术资料\javascript\js 获取日期 - _NET编程 - 博客园_files\xml(1).gif"></A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+href="http://www.cnblogs.com/ggbbeyou/category/171113.html">CSS(1)</A><A 
+class=listitem id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+title="Subscribe to CSS(1)" 
+onclick="open_link('http://www.cnblogs.com/ggbbeyou/category/171113.html/rss');return false;" 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html###"><IMG 
+title="Subscribe to CSS(1)" 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="C:\Documents and Settings\Administrator\桌面\技术资料\javascript\js 获取日期 - _NET编程 - 博客园_files\xml(1).gif"></A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+href="http://www.cnblogs.com/ggbbeyou/category/168702.html">GDI+(3)</A><A 
+class=listitem id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+title="Subscribe to GDI+(3)" 
+onclick="open_link('http://www.cnblogs.com/ggbbeyou/category/168702.html/rss');return false;" 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html###"><IMG 
+title="Subscribe to GDI+(3)" 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="C:\Documents and Settings\Administrator\桌面\技术资料\javascript\js 获取日期 - _NET编程 - 博客园_files\xml(1).gif"></A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+href="http://www.cnblogs.com/ggbbeyou/category/168703.html">Oracle(1)</A><A 
+class=listitem id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+title="Subscribe to Oracle(1)" 
+onclick="open_link('http://www.cnblogs.com/ggbbeyou/category/168703.html/rss');return false;" 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html###"><IMG 
+title="Subscribe to Oracle(1)" 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="C:\Documents and Settings\Administrator\桌面\技术资料\javascript\js 获取日期 - _NET编程 - 博客园_files\xml(1).gif"></A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+href="http://www.cnblogs.com/ggbbeyou/category/168704.html">SQL2005</A><A 
+class=listitem id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+title="Subscribe to SQL2005" 
+onclick="open_link('http://www.cnblogs.com/ggbbeyou/category/168704.html/rss');return false;" 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12/11/1621859.html###"><IMG 
+title="Subscribe to SQL2005" 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="C:\Documents and Settings\Administrator\桌面\技术资料\javascript\js 获取日期 - _NET编程 - 博客园_files\xml(1).gif"></A> 
+</DIV></DIV>
+<H1 class=catListTitle>随笔档案<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(98)</SPAN></H1>
+<DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2010/04.html">2010年4月 (1)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2010/03.html">2010年3月 (4)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2010/02.html">2010年2月 (5)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2010/01.html">2010年1月 (8)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/12.html">2009年12月 (9)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/11.html">2009年11月 (8)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/10.html">2009年10月 (7)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/09.html">2009年9月 (11)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/08.html">2009年8月 (6)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/07.html">2009年7月 (5)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/06.html">2009年6月 (4)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/05.html">2009年5月 (1)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/04.html">2009年4月 (4)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/02.html">2009年2月 (5)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2009/01.html">2009年1月 (11)</A> 
+</DIV>
+<DIV class=catList><A class=listitem 
+id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl16_Link 
+href="http://www.cnblogs.com/ggbbeyou/archive/2008/12.html">2008年12月 (9)</A> 
+</DIV></DIV>
+<H3 class=catListTitle>最新评论 <A id=SingleColumn1__2392feb_RSSHyperlink1 
+href="http://www.cnblogs.com/ggbbeyou/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="js 获取日期 - _NET编程 - 博客园_files/xml.gif"></A></H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2392feb_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/09/21/1571442.html#1693360">1.&nbsp;Re:超市购物打印小票的简单程序 
+  记录下来</A> 
+  <LI style="WORD-BREAK: break-all">B/S 上怎么用, 你这是CS打印 
+  System.Windows.Forms.PrintDialog PrintDialog1 = new PrintDialog(); ... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--it186 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2392feb_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/09/21/1571442.html#1683832">2.&nbsp;Re:超市购物打印小票的简单程序 
+  记录下来</A> 
+  <LI style="WORD-BREAK: break-all">你好！这个软件太好了。我想用。能帮忙修改下吗。 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--ylva01 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2392feb_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/01/08/1371708.html#1654174">3.&nbsp;Re:横虚线 
+  、竖虚线的制做</A> 
+  <LI style="WORD-BREAK: break-all">太好使了 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--鹅鹅鹅 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__2392feb_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/08/20/1550541.html#1620699">4.&nbsp;Re:jQUERY 
+  常用用法</A> 
+  <LI style="WORD-BREAK: break-all">很不错的总结 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--冯瑞涛(TerryFeng) 
+</LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/08/19/1550013.html">1.&nbsp;Jquery 
+  编辑器 xhEditor(624)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/07/23/1529122.html">2.&nbsp;试图运行项目时出错:无法启动调试 
+  没有正确安装调试器(619)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2008/12/17/1356919.html">3.&nbsp;ORA-06553：PLS-213：Standard包不可访问 
+  解决方法(486)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/04/22/1441658.html">4.&nbsp;通过JS解析XML字符串(456)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/02/05/1384483.html">5.&nbsp;NeatUpload 
+  js 判断上传文件的大小是否超过了空间的大小 (423)</A> </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/09/21/1571442.html">1.&nbsp;超市购物打印小票的简单程序 
+  记录下来(2)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/01/08/1371708.html">2.&nbsp;横虚线 
+  、竖虚线的制做(1)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/08/20/1550541.html">3.&nbsp;jQUERY 
+  常用用法(1)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/08/19/1550013.html">4.&nbsp;Jquery 
+  编辑器 xhEditor(0)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/ggbbeyou/archive/2009/08/13/1545191.html">5.&nbsp;获取网卡或IP等(0)</A> 
+  </LI></UL></DIV></DIV></DIV><!-- //右侧工具部分 -->
+<DIV id=footer><!--done-->Copyright ©2010 ggbbeyou </DIV></DIV><!-- right ends -->
+<DIV class=clear></DIV></DIV>
+<DIV style="PADDING-LEFT: 260px">
+<SCRIPT type=text/javascript><!--
+google_ad_client = "pub-7290586146954007";
+/* 728x90,尾部 创建于 08-11-18 */
+google_ad_slot = "8298886201";
+google_ad_width = 710;
+google_ad_height = 90;
+//-->
+</SCRIPT>
+
+<SCRIPT src="js 获取日期 - _NET编程 - 博客园_files/show_ads.js" type=text/javascript>
+</SCRIPT>
+</DIV>
+<SCRIPT language=javascript src="js 获取日期 - _NET编程 - 博客园_files/2063325.js" 
+type=text/javascript></SCRIPT>
+<NOSCRIPT><A href="http://www.51.la/?2063325" target=_blank><IMG 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+alt=我要啦免费统计 src="js 获取日期 - _NET编程 - 博客园_files/go.htm"></A></NOSCRIPT> </FORM>
+<SCRIPT src="js 获取日期 - _NET编程 - 博客园_files/shCore.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="js 获取日期 - _NET编程 - 博客园_files/shLanguage.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            SyntaxHighlighter.config.clipboardSwf = 'http://common.cnblogs.com/flash/clipboard.swf';
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    </SCRIPT>
+
+<SCRIPT src="js 获取日期 - _NET编程 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+        try {
+            var pageTracker = _gat._getTracker("UA-476124-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</SCRIPT>
+</BODY></HTML>

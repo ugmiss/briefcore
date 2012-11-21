@@ -1,0 +1,624 @@
+BODY {
+	BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/1741dc011d64e4db267fb53f.jpg); FONT-FAMILY: Georgia
+}
+#header {
+	PADDING-LEFT: 120px; BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/922781b4fd024d7e8ad4b23f.jpg) no-repeat; MARGIN-LEFT: 98px; MARGIN-RIGHT: 0px; HEIGHT: 153px
+}
+#header DIV.lc {
+	
+}
+#header DIV.rc {
+	
+}
+#header DIV.tit {
+	PADDING-RIGHT: 0px; FONT-SIZE: 30px; LEFT: 70px; LINE-HEIGHT: 28px; FONT-FAMILY: Comic Sans MS; TOP: 70px
+}
+#header DIV.tit A.titlink {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+#header DIV.tit A.titlink:visited {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+#header DIV.desc {
+	FONT-SIZE: 14px; RIGHT: 150px; COLOR: #fff; FONT-FAMILY: Kristen ITC; TOP: 40px
+}
+#tabline {
+	DISPLAY: none
+}
+#tab {
+	BACKGROUND: no-repeat; MARGIN-LEFT: -90px; TOP: 129px
+}
+#tab A.on {
+	FONT-SIZE: 14px; COLOR: #666
+}
+#tab A.on:link {
+	FONT-SIZE: 14px; COLOR: #666
+}
+#tab A.on:visited {
+	FONT-SIZE: 14px; COLOR: #666
+}
+#tab A.on:hover {
+	COLOR: #000; TEXT-DECORATION: underline
+}
+#tab SPAN {
+	DISPLAY: none
+}
+#tab A:link {
+	FONT-SIZE: 14px; COLOR: #000; TEXT-DECORATION: none
+}
+#tab A:visited {
+	FONT-SIZE: 14px; COLOR: #000; TEXT-DECORATION: none
+}
+#tab A:hover {
+	COLOR: #000; TEXT-DECORATION: underline
+}
+#tab2 {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+#tab2 SPAN {
+	DISPLAY: none
+}
+#tab2 A {
+	FONT-SIZE: 12px
+}
+#tab2 A:link {
+	COLOR: #000; TEXT-DECORATION: none
+}
+#tab2 A:visited {
+	FONT-SIZE: 12px; COLOR: #000; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#tab2 A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; TEXT-DECORATION: underline
+}
+.stagepad {
+	BORDER-RIGHT: #808080 1px solid; MARGIN-TOP: -10px; BACKGROUND: #ffffff; MARGIN-LEFT: 117px; BORDER-LEFT: #808080 1px solid; WIDTH: 742px
+}
+.stagepad A:link {
+	FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.stagepad A:visited {
+	FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+#layout {
+	BORDER-RIGHT: #808080 1px solid; MARGIN-TOP: -10px; BACKGROUND: #ffffff; MARGIN-LEFT: 117px; BORDER-LEFT: #808080 1px solid; WIDTH: 742px; PADDING-TOP: 10px; BORDER-BOTTOM: #808080 1px solid
+}
+#layout TD.c2t3 {
+	PADDING-RIGHT: 5px; WIDTH: 220px
+}
+#layout TD.c2t1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 14px; WIDTH: 100%
+}
+#layout TD.c2t2 {
+	BORDER-LEFT: #cccccc 1px dotted; WIDTH: 6px
+}
+#comm_info {
+	COLOR: #916c6c; TEXT-INDENT: 18px; PADDING-TOP: 19px; FONT-FAMILY: Georgia; TEXT-ALIGN: left
+}
+#comm_info DIV.line {
+	BORDER-TOP: #5c85bb 0px solid; MARGIN-TOP: 0px
+}
+#comm_info A {
+	COLOR: #916c6c; TEXT-DECORATION: none
+}
+#page {
+	FONT-SIZE: 12px; FONT-FAMILY: Georgia; HEIGHT: 30px; TEXT-ALIGN: center
+}
+#page SPAN {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-WEIGHT: bold; FONT-SIZE: 13px; PADDING-BOTTOM: 3px; COLOR: #660000; PADDING-TOP: 3px
+}
+#page A.pc {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #916c6c
+}
+#page A.pc:visited {
+	COLOR: #916c6c
+}
+#page A.pi {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 13px; PADDING-BOTTOM: 3px; COLOR: #916c6c; PADDING-TOP: 3px
+}
+#page A.pi:visited {
+	COLOR: #916c6c
+}
+#comm_info {
+	COLOR: #000; FONT-FAMILY: Georgia; TEXT-ALIGN: left
+}
+#comm_info DIV.line {
+	BORDER-TOP: #43212e 1px solid; BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/1cc4f2018ae70d0b1c95833f.jpg); LINE-HEIGHT: 300px
+}
+#comm_info A {
+	COLOR: #000
+}
+.mod {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px
+}
+.modhandle {
+	CURSOR: move
+}
+.modth {
+	HEIGHT: 24px
+}
+.modhead {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 0px; PADDING-TOP: 4px
+}
+.modopt {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 4px
+}
+.modtit {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #333
+}
+A.modtit {
+	COLOR: #000
+}
+A.modtit:visited {
+	COLOR: #000
+}
+.modtitlink {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #000
+}
+A.modtitlink {
+	COLOR: #000; TEXT-DECORATION: none
+}
+A.modtitlink:visited {
+	COLOR: #000; TEXT-DECORATION: none
+}
+A.modtitlink:hover {
+	COLOR: #000; TEXT-DECORATION: underline
+}
+.modact {
+	FONT-SIZE: 12px; COLOR: #000; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+A.modact:link {
+	COLOR: #000
+}
+A.modact:visited {
+	COLOR: #000
+}
+A.modact:hover {
+	COLOR: #000; TEXT-DECORATION: underline
+}
+.modbox {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 10px
+}
+.modtl {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.modtc {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.modtr {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.modbl {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.modbc {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.modbr {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+#m_blog DIV.tit {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: Georgia
+}
+#m_blog DIV.tit A {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_blog DIV.tit A:visited {
+	COLOR: #000; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_blog DIV.tit A:hover {
+	COLOR: #226ddd
+}
+#m_blog DIV.date {
+	FONT-SIZE: 12px; MARGIN: 5px 0px 8px; COLOR: #666; FONT-FAMILY: Georgia
+}
+#m_blog DIV.cnt {
+	FONT-SIZE: 13px; COLOR: #555; LINE-HEIGHT: 20px; FONT-FAMILY: Georgia
+}
+#m_blog DIV.cnt A {
+	FONT-SIZE: 14px; COLOR: #226ddd; LINE-HEIGHT: 20px; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_blog DIV.cnt A:visited {
+	FONT-SIZE: 13px; COLOR: #226ddd; LINE-HEIGHT: 20px; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_blog DIV.cnt A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #445f88; TEXT-DECORATION: underline
+}
+#m_blog DIV.cnt PRE {
+	BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN-LEFT: 10px; BORDER-LEFT: #c4c4c4 8px solid; COLOR: #000; MARGIN-RIGHT: 3px; FONT-FAMILY: Georgia
+}
+#m_blog DIV.more {
+	MARGIN: 14px 0px 16px
+}
+#m_blog DIV.more A {
+	FONT-SIZE: 12px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_blog DIV.more A:visited {
+	COLOR: #226ddd; TEXT-DECORATION: none
+}
+#m_blog DIV.more A:hover {
+	TEXT-DECORATION: underline
+}
+#m_blog DIV.opt {
+	FONT-SIZE: 12px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_blog DIV.opt A {
+	FONT-SIZE: 12px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_blog DIV.opt A:visited {
+	COLOR: #226ddd
+}
+#m_blog DIV.opt A:hover {
+	TEXT-DECORATION: underline
+}
+#m_blog DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 17px; LINE-HEIGHT: 17px
+}
+#m_blog DIV.none {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 14px; PADDING-BOTTOM: 100px; COLOR: #000; PADDING-TOP: 100px
+}
+#m_pro A {
+	COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_pro A:visited {
+	COLOR: #226ddd; TEXT-DECORATION: none
+}
+#m_pro A:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#m_pro DIV.image {
+	TEXT-ALIGN: center
+}
+#m_pro DIV.act {
+	MARGIN-TOP: 0px
+}
+#m_pro DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 17px; LINE-HEIGHT: 17px
+}
+#m_pro TD {
+	FONT-SIZE: 14px; COLOR: #666; LINE-HEIGHT: 24px; FONT-FAMILY: Georgia
+}
+#m_album DIV.image {
+	TEXT-ALIGN: center
+}
+#m_album DIV.page {
+	FONT-SIZE: 12px; COLOR: #666; TEXT-ALIGN: center
+}
+#m_album DIV.page A {
+	FONT-SIZE: 12px; COLOR: #666
+}
+#m_album DIV.page A:visited {
+	COLOR: #666
+}
+#m_links DIV.item {
+	FONT-SIZE: 12px; COLOR: #666; FONT-FAMILY: Georgia
+}
+#m_links DIV.item A {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_links DIV.item A:visited {
+	COLOR: #226ddd; TEXT-DECORATION: none
+}
+#m_links DIV.item A:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#m_links DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 5px; LINE-HEIGHT: 8px
+}
+#m_mylink1 DIV.item {
+	FONT-SIZE: 13px; COLOR: #666; LINE-HEIGHT: 18px; FONT-FAMILY: Georgia
+}
+#m_mylink1 DIV.item A {
+	FONT-SIZE: 13px; COLOR: #226ddd; LINE-HEIGHT: 18px; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_mylink1 DIV.item A:visited {
+	COLOR: #226ddd; TEXT-DECORATION: none
+}
+#m_mylink1 DIV.item A:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#m_mylink1 DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 5px; LINE-HEIGHT: 8px
+}
+#m_mylink2 DIV.item {
+	FONT-SIZE: 12px; COLOR: #666; FONT-FAMILY: Georgia
+}
+#m_mylink2 DIV.item A {
+	FONT-SIZE: 12px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_mylink2 DIV.item A:visited {
+	COLOR: #226ddd; TEXT-DECORATION: none
+}
+#m_mylink2 DIV.item A:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#m_mylink2 DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 5px; LINE-HEIGHT: 8px
+}
+#m_mylink3 DIV.item {
+	FONT-SIZE: 13px; COLOR: #666; FONT-FAMILY: Georgia
+}
+#m_mylink3 DIV.item A {
+	FONT-SIZE: 13px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_mylink3 DIV.item A:visited {
+	FONT-SIZE: 14px; COLOR: #226ddd; TEXT-DECORATION: none
+}
+#m_mylink3 DIV.item A:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#m_mylink3 DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 5px; LINE-HEIGHT: 8px
+}
+#m_mylink4 DIV.item {
+	FONT-SIZE: 12px; COLOR: #666; FONT-FAMILY: Georgia
+}
+#m_mylink4 DIV.item A {
+	FONT-SIZE: 12px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_mylink4 DIV.item A:visited {
+	COLOR: #226ddd; TEXT-DECORATION: none
+}
+#m_mylink4 DIV.item A:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#m_mylink4 DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 5px; LINE-HEIGHT: 8px
+}
+#m_artclg DIV.item {
+	FONT-SIZE: 13px; COLOR: #666; FONT-FAMILY: Georgia
+}
+#m_artclg DIV.item A {
+	FONT-SIZE: 13px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_artclg DIV.item A:visited {
+	COLOR: #226ddd; TEXT-DECORATION: none
+}
+#m_artclg DIV.item A:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#m_artclg DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 5px; LINE-HEIGHT: 8px
+}
+#m_filed DIV.item {
+	FONT-SIZE: 14px; COLOR: #666; FONT-FAMILY: Georgia
+}
+#m_filed DIV.item A {
+	FONT-SIZE: 13px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_filed DIV.item A:visited {
+	COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_filed DIV.item A:hover {
+	COLOR: #445f88; tfont-family: Georgia; ext-decoration: underline
+}
+#m_filed DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 5px; LINE-HEIGHT: 8px
+}
+#m_comment DIV.item {
+	FONT-SIZE: 12px; COLOR: #000; FONT-FAMILY: Georgia
+}
+#m_comment DIV.item A {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_comment DIV.item A:visited {
+	COLOR: #226ddd; TEXT-DECORATION: none
+}
+#m_comment DIV.item A:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#m_comment DIV.item A.cnt {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #666; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_comment DIV.item A.cnt:visited {
+	COLOR: #666; TEXT-DECORATION: none
+}
+#m_comment DIV.item A.cnt:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#m_comment DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 5px; LINE-HEIGHT: 8px
+}
+#m_albumlist DIV.note {
+	FONT-SIZE: 14px; COLOR: #333333; FONT-FAMILY: Georgia
+}
+#m_albumlist DIV.desc {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 14px; MARGIN-BOTTOM: 12px; PADDING-BOTTOM: 3px; LINE-HEIGHT: 22px; PADDING-TOP: 3px; FONT-FAMILY: Georgia; BACKGROUND-COLOR: #eeedea
+}
+#m_albumlist DIV.none {
+	PADDING-RIGHT: 0px; FONT-SIZE: 14px; PADDING-BOTTOM: 100px; COLOR: #333; PADDING-TOP: 100px; FONT-FAMILY: Georgia
+}
+#m_albumlist DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 10px; LINE-HEIGHT: 16px
+}
+#m_albumlist DIV.tit {
+	FONT-SIZE: 14px; MARGIN: 6px 0px 7px; COLOR: #333; FONT-FAMILY: Georgia
+}
+#m_albumlist DIV.tit A {
+	FONT-SIZE: 14px; COLOR: #333; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#m_albumlist DIV.tit A:visited {
+	COLOR: #333; TEXT-DECORATION: none
+}
+#m_albumlist DIV.tit A:hover {
+	COLOR: #395500; BACKGROUND-COLOR: #eff9d0; TEXT-DECORATION: underline
+}
+#m_albumlist SPAN.count {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: Georgia
+}
+#m_albumlist SPAN.size {
+	FONT-SIZE: 12px; COLOR: #999999; FONT-FAMILY: Georgia
+}
+#m_albumlist A.act {
+	FONT-SIZE: 12px; COLOR: #3399cc; FONT-FAMILY: Georgia
+}
+#m_albumlist A.act:visited {
+	COLOR: #3399cc
+}
+#m_albumlist A.page {
+	FONT-SIZE: 14px; COLOR: #000; FONT-FAMILY: Georgia
+}
+#m_albumlist A.page:visited {
+	COLOR: #000
+}
+#m_albumlist TD.image {
+	BORDER-RIGHT: #999999 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #999999 1px solid; PADDING-LEFT: 5px; BACKGROUND: #ffffff; PADDING-BOTTOM: 5px; BORDER-LEFT: #999999 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #999999 1px solid
+}
+#m_friend DIV.filter {
+	PADDING-LEFT: 10px; MARGIN-BOTTOM: 10px; WIDTH: 742px; LINE-HEIGHT: 27px; PADDING-TOP: 10px; HEIGHT: 27px
+}
+#m_friend DIV.catalog {
+	PADDING-LEFT: 10px; FONT-SIZE: 14px; MARGIN-BOTTOM: 10px; WIDTH: 742px; LINE-HEIGHT: 27px; FONT-FAMILY: Georgia; HEIGHT: 27px; BACKGROUND-COLOR: #f2f2f2
+}
+#m_friend DIV.user {
+	MARGIN-TOP: 4px; FONT-SIZE: 12px; COLOR: #333333; FONT-FAMILY: Georgia
+}
+#m_friend DIV.user A {
+	FONT-SIZE: 12px; COLOR: #3399cc; FONT-FAMILY: Georgia
+}
+#m_friend DIV.user A:visited {
+	COLOR: #3399cc
+}
+#m_friend DIV.line {
+	BORDER-TOP: #e4e2da 1px solid; MARGIN-TOP: 10px; LINE-HEIGHT: 16px
+}
+#m_setting A {
+	COLOR: #000; TEXT-DECORATION: none
+}
+#m_setting A:visited {
+	COLOR: #000; TEXT-DECORATION: none
+}
+#m_setting A:hover {
+	COLOR: #000; TEXT-DECORATION: underline
+}
+#m_setting {
+	FONT-SIZE: 14px; COLOR: #333333; LINE-HEIGHT: 22px; FONT-FAMILY: Georgia
+}
+#m_setting IMG.sel {
+	BORDER-RIGHT: #e4e2da 4px solid; BORDER-TOP: #e4e2da 4px solid; BORDER-LEFT: #e4e2da 4px solid; BORDER-BOTTOM: #e4e2da 4px solid
+}
+#m_setting IMG.unsel {
+	BORDER-RIGHT: #e4e2da 1px solid; BORDER-TOP: #e4e2da 1px solid; BORDER-LEFT: #e4e2da 1px solid; BORDER-BOTTOM: #e4e2da 1px solid
+}
+#m_setting SPAN.tit {
+	FONT-SIZE: 14px; FONT-FAMILY: Georgia
+}
+#m_setting SPAN.usr {
+	COLOR: #666666
+}
+#m_setting DIV.sel {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-TOP: 6px; FONT-FAMILY: Georgia
+}
+#m_setting DIV.line {
+	BORDER-TOP: #e4e2da 1px solid; MARGIN-TOP: 20px; LINE-HEIGHT: 16px
+}
+#m_sysinfo A {
+	COLOR: #000; TEXT-DECORATION: none
+}
+#m_sysinfo A:visited {
+	COLOR: #000; TEXT-DECORATION: none
+}
+#m_sysinfo A:hover {
+	COLOR: #395500; TEXT-DECORATION: underline
+}
+#m_sysinfo {
+	FONT-SIZE: 14px; COLOR: #000; LINE-HEIGHT: 22px; FONT-FAMILY: Georgia
+}
+#m_sysinfo SPAN.new {
+	FONT-SIZE: 10px; COLOR: #ff0000; FONT-FAMILY: Georgia
+}
+#m_sysinfo SPAN.date {
+	FONT-SIZE: 14px; COLOR: #666666; FONT-FAMILY: Georgia
+}
+#m_setbase {
+	FONT-SIZE: 14px; COLOR: #000; LINE-HEIGHT: 20px; FONT-FAMILY: Georgia
+}
+#m_setbase TD {
+	FONT-SIZE: 14px; COLOR: #000; FONT-FAMILY: Georgia
+}
+#m_setbase DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 5px; LINE-HEIGHT: 8px
+}
+#in_comment {
+	WIDTH: 700px
+}
+#in_comment DIV.tit {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: 12px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#in_comment DIV.user {
+	FONT-SIZE: 12px; MARGIN-BOTTOM: 6px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#in_comment DIV.user A {
+	FONT-SIZE: 12px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#in_comment DIV.user A:visited {
+	COLOR: #226ddd; TEXT-DECORATION: none
+}
+#in_comment DIV.user A:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#in_comment DIV.user SPAN.date {
+	FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: Georgia
+}
+#in_comment DIV.desc {
+	FONT-SIZE: 12px; COLOR: #333333; FONT-FAMILY: Georgia
+}
+#in_comment DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 17px; LINE-HEIGHT: 17px
+}
+#in_send DIV.tit {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN: 10px 0px; COLOR: #333333; FONT-FAMILY: Georgia
+}
+#in_send INPUT {
+	BORDER-RIGHT: #226ddd 1px solid; BORDER-TOP: #226ddd 1px solid; BORDER-LEFT: #226ddd 1px solid; BORDER-BOTTOM: #226ddd 1px solid
+}
+#in_send TEXTAREA {
+	BORDER-RIGHT: #226ddd 1px solid; BORDER-TOP: #226ddd 1px solid; BORDER-LEFT: #226ddd 1px solid; BORDER-BOTTOM: #226ddd 1px solid
+}
+#mod_bgmusic {
+	DISPLAY: block; no-repeat: 
+}
+#phx {
+	FILTER: Alpha(Opacity=100, FinishOpacity=10, Style=2, StartX=20, StartY=40, FinishX=0, FinishY=0) gray; WIDTH: 225px; HEIGHT: 32px
+}
+#in_msg {
+	WIDTH: 700px
+}
+#in_msg DIV.tit {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: 12px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#in_msg .item TD.index {
+	FONT-WEIGHT: bold; WIDTH: 40px
+}
+#in_msg .item DIV.user {
+	FONT-SIZE: 12px; MARGIN-BOTTOM: 6px; WIDTH: 150px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#in_msg .item DIV.user A {
+	FONT-SIZE: 12px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#in_msg .item DIV.user A:visited {
+	COLOR: #226ddd; TEXT-DECORATION: none
+}
+#in_msg .item DIV.user A:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#in_msg .item DIV.user IMG {
+	MARGIN-BOTTOM: 5px
+}
+#in_msg .item TD.cnt A {
+	FONT-SIZE: 12px; COLOR: #226ddd; FONT-FAMILY: Georgia; TEXT-DECORATION: none
+}
+#in_msg .item TD.cnt A:visited {
+	COLOR: #226ddd; TEXT-DECORATION: none
+}
+#in_msg .item TD.cnt A:hover {
+	COLOR: #445f88; TEXT-DECORATION: underline
+}
+#in_msg SPAN.date {
+	FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: Georgia
+}
+#in_msg DIV.desc {
+	FONT-SIZE: 12px; COLOR: #333333; FONT-FAMILY: Georgia
+}
+#in_msg DIV.line {
+	BORDER-TOP: #e4e2da 1px dotted; MARGIN-TOP: 17px; LINE-HEIGHT: 17px
+}
