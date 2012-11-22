@@ -1,6 +1,6 @@
-#summary code.google无法获取SVN密码的解决办法
+#summary GoogleCodeSVN相关
 #labels Google,svn,hosts
-
+==code.google无法获取SVN密码的解决办法==
 在用SVN提交文件时会要求输入密码，密码从项目主页的source标签页中获取，找到如下的文字链接，When prompted, enter your generated googlecode.com password. 
 但是经常打不开，解决方法如下： 
 
@@ -21,3 +21,16 @@
 3. 复制该文件到桌面，编辑该文件并添加一行配置“74.125.71.139 code.google.com”，保存文件，将修改后的文件覆盖“C:\Windows\System32\drivers\etc\hosts”。（可绕过windows 7下直接修改“C:\Windows\System32\drivers\etc\hosts”文件后因为没有配置用户对hosts文件的权限而无法保存的问题）。
 
 4. 在命令行窗口执行“ipconfig /flushdns”刷新本地缓存。
+
+==SVN 代理==
+C:\Users\用户名\AppData\Roaming\Subversion下的servers文件
+对于googlecode.com域的svn使用代理
+{{{
+[groups]
+group1 = *.googlecode.com
+[group1]
+http-proxy-host = 127.0.0.1
+http-proxy-port = 8087
+http-proxy-username = ugmiss@gmail.com
+http-proxy-password = 密码
+}}}
