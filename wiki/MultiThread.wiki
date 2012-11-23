@@ -1,0 +1,9 @@
+#summary 多线程，线程安全集合，锁，快照
+#labels lock,Interlocked,ConcurrentDictionary
+
+=== Interlocked===
+  为多线程共享变量提供原子操作
+===ConcurrentDictionary===
+===Task===
+===Parrellel===
+===lock===
