@@ -53,6 +53,8 @@ System.Threading.Monitor.Exit(obj);
 ||`OrderablePartitioner<T>`||表示将一个可排序数据源拆分成多个分区的特定方式|| 
 ||`Partitioner`||提供针对数组、列表和可枚举项的常见分区策略|| 
 ||`Partitioner<T>`|| 表示将一个数据源拆分成多个分区的特定方式||
+
 [http://www.cnblogs.com/kain/archive/2010/08/10/1796524.html]
+
 ===Task===
 ===Parrellel===
