@@ -88,7 +88,7 @@ static void Main(string[] args)
      Console.ReadKey();
 }
 }}}
-
+*一、新建任务*
 创建任务的方式有两种，一种是通过Task.Factory.StartNew方法来创建一个新任务，如：
 {{{
 //此行代码执行后，任务就开始执行
@@ -100,6 +100,45 @@ Task task = Task.Facotry.StartNew(()=>Console.WriteLine(“Hello, World!”));
 Task task = new Task(()=>Console.WriteLine(“Hello, World!”));
 //调用Start方法后，任务才会在将来某个时候开始执行。
 task.Start();
+}}}
+*二、任务的取消*
+{{{
+using System; 
+using System.Threading; 
+using System.Threading.Tasks;
+
+namespace TaskDemo 
+{ 
+    class Program 
+    { 
+        static void Main() 
+        { 
+            CancellationTokenSource cts = new CancellationTokenSource(); 
+            Task t = new Task(() => LongRunTask(cts.Token)); 
+            t.Start(); 
+            Thread.Sleep(2000); 
+            cts.Cancel(); 
+            Console.Read(); 
+        }
+        static void LongRunTask(CancellationToken token) 
+        {
+            //此处方法模拟一个耗时的工作 
+            for (int i = 0; i < 1000; i++) 
+            { 
+                if (!token.IsCancellationRequested) 
+                { 
+                    Thread.Sleep(500); 
+                    Console.Write("."); 
+                } 
+                else 
+                { 
+                    Console.WriteLine("任务取消"); 
+                    break; 
+                } 
+            } 
+        } 
+    } 
+}
 }}}
 
 ===Parrellel===
