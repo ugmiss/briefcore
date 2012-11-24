@@ -141,6 +141,8 @@ namespace TaskDemo
 }
 }}}
 
+[http://www.cnblogs.com/henllyee/archive/2011/06/06/net_parallel_programing.html]
+
 ===Parrellel===
 
 ===MTA STA===
