@@ -1,0 +1,14 @@
+#summary python语言
+
+= 安装 =
+window版下载[http://www.python.org/download/]
+
+= 环境变量 =
+将python的安装目录E:\Python27加在PATH=%PATH%;E:\Python27;
+
+= Hello Word=
+cmd下
+{{{
+c:\>python
+>>>print 'Hello Word'
+}}}
