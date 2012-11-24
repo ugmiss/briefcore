@@ -13,6 +13,9 @@ foreach和linq是线程安全的，执行是会锁定整个集合
 Parallel.For(0, N, i =>
 {
     //类似for循环
+    //使用Stop会立即停止循环，使用Break会执行完毕所有符合条件的项。
+    LoopState.Stop();
+    LoopState.Break();
 });
 
 Parallel.ForEach(list,item =>
