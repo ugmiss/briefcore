@@ -82,7 +82,8 @@ static void Main(string[] args)
      t.ContinueWith((task) =>
      {
            Console.WriteLine("任务完成，完成时候的状态为：");
-           Console.WriteLine("IsCanceled={0}\tIsCompleted={1}\tIsFaulted={2}", task.IsCanceled, task.IsCompleted, task.IsFaulted);
+           Console.WriteLine("IsCanceled={0}\tIsCompleted={1}\tIsFaulted={2}",
+ task.IsCanceled, task.IsCompleted, task.IsFaulted);
      });
      Console.ReadKey();
 }
