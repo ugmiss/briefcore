@@ -56,5 +56,13 @@ System.Threading.Monitor.Exit(obj);
 
 [http://www.cnblogs.com/kain/archive/2010/08/10/1796524.html]
 
+===ThreadPool===
+ThreadPool是托管线程池，是由CLR管理的。
+
+通常是将计算密集型的操作放在worker线程池中运行，而线程池的大小会根据当前的CPU使用量自动调整，通过下面两个方法，我们可以设置线程池的大小：
+{{{
+ThreadPool.SetMaxThreads(10, 200);
+ThreadPool.SetMinThreads(2, 40);//两个参数分别是WorkThread和IO thread的限制。
+}}}
 ===Task===
 ===Parrellel===
