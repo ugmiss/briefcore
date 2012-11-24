@@ -12,3 +12,16 @@ cmd下
 c:\>python
 >>>print 'Hello Word'
 }}}
+
+=编译=
+下载py2exe 对应python的版本 
+[http://sourceforge.net/projects/py2exe/files/py2exe/0.6.9/py2exe-0.6.9.win32-py2.7.exe/download]
+创建一个例子文件foobar.py：
+print "foobar"
+
+创建一个安装文件setup.py：
+from distutils.core import setup
+import py2exe
+setup(console=['foobar.py'])
+
+执行：python setup.py py2exe
