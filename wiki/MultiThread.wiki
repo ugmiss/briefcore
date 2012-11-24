@@ -66,3 +66,5 @@ ThreadPool.SetMinThreads(2, 40);//两个参数分别是WorkThread和IO thread的
 }}}
 ===Task===
 ===Parrellel===
+
+===MTA STA===
