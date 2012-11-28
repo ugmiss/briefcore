@@ -12,6 +12,12 @@ using (StreamReader reader = new StreamReader(ass.GetManifestResourceStream("MyA
 }}}
 ===一般输入的文本框需要控制其输入法（IME）===
 TextBox的ImeMode属性
-Off       当切换到此控件时，默认将输入法切换成英文，但仍然可以手动切换成中文
-Disable   无论什么时候切换到此控件上，都只能输入英文，不能切换输入法
-NoControl 默认不控制
+||Off||当切换到此控件时，默认将输入法切换成英文，但仍然可以手动切换成中文||
+||Disable||无论什么时候切换到此控件上，都只能输入英文，不能切换输入法||
+||NoControl||默认不控制||
+===DialogResult===
+{{{
+if (DialogResult.OK == XtraMessageBox.Show("是否确定删除此监测点计划", "提示", MessageBoxButtons.OKCancel))
+{
+    BusinessManager.DeleteVideoRecordPlan(plan);
+}
