@@ -10,3 +10,8 @@ using (StreamReader reader = new StreamReader(ass.GetManifestResourceStream("MyA
     xml = reader.ReadToEnd();
 }
 }}}
+===一般输入的文本框需要控制其输入法（IME）===
+TextBox的ImeMode属性
+Off       当切换到此控件时，默认将输入法切换成英文，但仍然可以手动切换成中文
+Disable   无论什么时候切换到此控件上，都只能输入英文，不能切换输入法
+NoControl 默认不控制
