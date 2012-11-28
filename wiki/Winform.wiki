@@ -21,6 +21,7 @@ if (DialogResult.OK == XtraMessageBox.Show("是否确定删除此监测点计划
 {
     BusinessManager.DeleteVideoRecordPlan(plan);
 }
+}}}
 
 ===ToolTip===
 {{{
