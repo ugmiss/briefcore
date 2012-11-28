@@ -85,6 +85,7 @@ ToolTip没有直接提供Width属性，找了很久可用以下方法设置：
 }}}
 
 ===右键菜单===
+{{{
 void gridPointJoinPlan_MouseUp(object sender, MouseEventArgs e)
 {
     if (e.Button == System.Windows.Forms.MouseButtons.Right)
@@ -92,3 +93,4 @@ void gridPointJoinPlan_MouseUp(object sender, MouseEventArgs e)
          popupMenuPoint.ShowPopup(Control.MousePosition);
     }
 }
+}}}
