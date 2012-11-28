@@ -1,0 +1,15 @@
+#summary C#
+===string===
+{{{
+// 空串
+string.Empty
+// 判断null或空串
+string.IsNullOrEmpty()
+// 格式化
+string.Format("{0}{1}",a,b);
+// 拼串
+string.Join(",", (from c in dictPlan[mi.Name].LsFileInfo select c.MusicFileName).ToArray());
+// 拆串
+string s=" asd , asd,as|qw ";
+s.Split(new char[] { ',', '|', ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+}}}
