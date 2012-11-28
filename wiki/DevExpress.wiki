@@ -1,6 +1,6 @@
 #summary DevExpress控件的一些使用
 
-= CheckedListBoxControl=
+===CheckedListBoxControl===
 用到了Dev中的CheckedListBoxControl，我使用DataSource属性，给其绑定了一个List对象。界面显示都挺正常的，当若干个项的复选框被选中的后，它的checkedListBoxControl1.CheckedItems也是正常的。
 唯独的问题是在代码中得到的checkedListBoxControl1.Items.Count 为0，自然就不能遍历控件的中的所有项。checkedListBoxControl1能够正确获得某个Item对象的方法就剩下GetItemValue(idx)、SetItemChecked等。
 如果你也遇到这种情况，请使用下面的方法来遍历所有的Item，并做出相应的处理：
