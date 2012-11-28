@@ -25,6 +25,7 @@ while (checkedListBoxControl1.GetItemValue(idx) != null)
     // 你要做的处理逻辑
     idx++;
 }
+}}}
 当然，如果你不是通过DataSource进行绑定，而是通过Items.add来添加的话，上面的问题就不会存在。s
 
 ===GridControl行改变事件===
