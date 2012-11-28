@@ -105,18 +105,12 @@
 103. WM_MENUCHAR=0X 0120:  当菜单已被激活用户按下了某个键（不同于加速键），发送此消息给菜单的所有者；
 104. WM_ENTERIDLE=0X 0121:  当一个模态对话框或菜单进入空载状态时发送此消息给它的所有者，一个模态对话框或菜单进入空载状态就是在处理一条或几条先前的消息后没有消息它的列队中等待
 105. WM_MENURBUTTONUP=0X 0122: 
-
 106. WM_MENUDRAG=0X 0123: 
-
 107. WM_MENUGETOBJECT=0X 0124: 
-
 108. WM_UNINITMENUPOPUP=0X 0125:
 109. WM_MENUCOMMAND=0X 0126: 
-
 110. WM_CHANGEUISTATE=0X 0127:
-
 111. WM_UPDATEUISTATE=0X 0128:
-
 112. WM_QUERYUISTATE=0X 0129:
 113. WM_CTLCOLORMSGBOX=0X 0132: 在windows绘制消息框前发送此消息给消息框的所有者窗口，通过响应这条消息，所有者窗口可以通过使用给定的相关显示设备的句柄来设置消息框的文本和背景颜色
 114. WM_CTLCOLOREDIT=0X 0133: 当一个编辑型控件将要被绘制时发送此消息给它的父窗口:通过响应这条消息,所有者窗口可以通过使用给定的相关显示设备的句柄来设置编辑框的文本和背景颜色
@@ -208,7 +202,6 @@
 200. WM_DDE_ADVISE=WM_DDE_FIRST+2:  一个DDE客户程序提交此消息给一个DDE服务程序来请求服务器每当数据项改变时更新它
 201. WM_DDE_UNADVISE=WM_DDE_FIRST+3:  一个DDE客户程序通过此消息通知一个DDE服务程序不更新指定的项或一个特殊的剪贴板格式的项
 202. WM_DDE_ACK =WM_DDE_FIRST+4:  此消息通知一个DDE（动态数据交换）程序已收到并正在处理WM_DDE_POKE, WM_DDE_EXECUTE, WM_DDE_DATA, WM_DDE_ADVISE, WM_DDE_UNADVISE, or WM_DDE_INITIAT 消息. 
-
 203. WM_DDE_DATA=WM_DDE_FIRST+5:   一个DDE服务程序提交此消息给DDE客户程序来传递个一数据项给客户或通知客户的一条可用数据项
 204. WM_DDE_REQUEST=WM_DDE_FIRST+6: 一个DDE客户程序提交此消息给一个DDE服务程序来请求一个数据项的值；
 205. WM_DDE_POKE =WM_DDE_FIRST+7:  一个DDE客户程序提交此消息给一个DDE服务程序，客户使用此消息来请求服务器接收一个未经同意的数据项；服务器通过答复WM_DDE_ACK消息提示是否它接收这个数据项；
