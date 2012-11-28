@@ -49,3 +49,21 @@ inner join sys.databases db on sf.dbid=db.database_id where
 ||byte[]  || System.Byte[]||N/A||(binary,image,timestamp,varbinary)(binary)固定长度的二进制数据,其最大长度为 8,000 个字节(varbinary)可变长度的二进制数据,其最大长度为 8,000 个字节(image)可变长度的二进制数据,其最大长度为2^31^ - 1 (2,147,483,647)个字节(timestamp)数据库范围的唯一数字,每次更新行时也进行更新||
 ||string  || System.String||N/A||(char,nchar,text,ntext,varchar,nvarchar,xml)(char) 固定长度的非 Unicode 字符数据,1字符1字节,长度不足时自动补空(nchar)1字符占2字节,数据长度不足自动补空(varchar)可变长度的非 Unicode 数据,最长为 8,000 个字符(nvarchar)可变长度 Unicode 数据,其最大长度为 4,000 字符 (nvarchar(max))可变长度 Unicode 数据, 在 SQL 2005+ 以后用来取代ntext(text)可变长度的非 Unicode 数据,最大长度为 2^31^ - 1 (2,147,483,647) 个字符 1字符占1字节,最大2GB(ntext)可变长度 Unicode 数据,其最大长度为 2^30 - 1^ (1,073,741,823) 个字符||  
 ||object||System.Object||N/A||(sql_variant)||
+
+6 SqlBulkCopy
+{{{
+conn.Open();
+SqlBulkCopyColumnMapping mapping1 = new SqlBulkCopyColumnMapping("DataPointID", "DataPointID");
+SqlBulkCopyColumnMapping mapping2 = new SqlBulkCopyColumnMapping("TimeStamp", "TimeStamp");
+SqlBulkCopyColumnMapping mapping3 = new SqlBulkCopyColumnMapping("DataValue", "DataValue");
+SqlBulkCopyColumnMapping mapping4 = new SqlBulkCopyColumnMapping("Status", "Status");
+SqlBulkCopy bulkCopy = new SqlBulkCopy(conn);
+bulkCopy.BatchSize = 10000;
+bulkCopy.ColumnMappings.Add(mapping1);
+bulkCopy.ColumnMappings.Add(mapping2);
+bulkCopy.ColumnMappings.Add(mapping3);
+bulkCopy.ColumnMappings.Add(mapping4);
+bulkCopy.DestinationTableName = "dbo.DP_GeneralData";
+bulkCopy.WriteToServer(dt);
+
+}}}
