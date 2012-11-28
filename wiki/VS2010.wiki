@@ -15,3 +15,6 @@
 .suo（Solution User Opertion）：解决方案用户选项记录所有将与解决方案建立关联的选项，以便在每次打开时，它都包含您所做的自定义设置。
 
 比如VS布局,项目最后编译的而又没有关掉的文件(下次打开时用)。
+
+==vssettings==
+[http://studiostyl.es/schemes?page=1]
