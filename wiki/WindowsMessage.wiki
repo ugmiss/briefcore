@@ -1,5 +1,5 @@
 #summary WindowsMessageID
-
+{{{
 1. WM_NULL=0X 0000:
 2. WM_CREATE=0X 0001:    应用程序创建一个窗口
 3. WM_DESTROY=0X 0002:    一个窗口被销毁
@@ -247,3 +247,4 @@
 238. LBN_SELCANCEL  选择被取消
 239. LBN_SELCHANGE  选择了另一项
 240. LBN_SETFOCUS  列表框获得输入焦点
+}}}
