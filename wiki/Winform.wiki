@@ -83,3 +83,12 @@ ToolTip没有直接提供Width属性，找了很久可用以下方法设置：
 在显示前ToolTip.Popup 事件 中通过参数PopupEventArgs.Size进行设置。但是这只能覆盖多出的信息。这种处理不合理。
 建议另外一种方法：设置每一行固定字符，多出的则换行显示
 }}}
+
+===右键菜单===
+void gridPointJoinPlan_MouseUp(object sender, MouseEventArgs e)
+{
+    if (e.Button == System.Windows.Forms.MouseButtons.Right)
+    {
+         popupMenuPoint.ShowPopup(Control.MousePosition);
+    }
+}
