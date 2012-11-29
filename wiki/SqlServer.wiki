@@ -15,4 +15,4 @@
 }}}
 
 ===跨库===
-同server跨库查询与同库查询性能相同，linked server跨库查询性能差
+同server跨库查询与同库查询性能相同，linked server跨库查询性能差;所以同server上的跨库存储过程和跨库视图都没有性能问题。
