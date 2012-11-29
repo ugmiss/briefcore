@@ -1,0 +1,8 @@
+#summary SqlServer数据库
+
+=== Raid===
+读效率: 因为是并行读取, 读取效率都很高.
+写效率: RAID 0 > RAID 1 > RAID 10 > RAID 5
+磁盘利用率: RAID 0 > RAID 5 > RAID 1 = RAID 10
+容错能力:  RAID 10 = RAID 1 > RAID 5 > RAID 0
+作为SQL Server 的DB Server建议使用RAID 1 或RAID10.
