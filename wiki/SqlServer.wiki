@@ -13,3 +13,6 @@
 容错能力:  RAID 10 = RAID 1 > RAID 5 > RAID 0
 作为SQL Server 的DB Server建议使用RAID 1 或RAID10.
 }}}
+
+===跨库===
+同server跨库查询与同库查询性能相同，linked server跨库查询性能差
