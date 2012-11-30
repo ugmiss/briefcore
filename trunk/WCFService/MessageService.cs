@@ -13,6 +13,9 @@ namespace WCFService
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession, ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class MessageService : IMessageService
     {
+        /// <summary>
+        /// 通道缓存
+        /// </summary>
         static ConcurrentDictionary<Guid, ICallback> CallList = new ConcurrentDictionary<Guid, ICallback>();
         public void SendClientMessage(Guid clientid, WcfMsg msg)
         {
