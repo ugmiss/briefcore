@@ -61,6 +61,10 @@
       <Project>{D987663D-EA4B-49D5-803B-81BBBAEE2CA9}</Project>
       <Name>WCFContract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WCFEntity\WCFEntity.csproj">
+      <Project>{9F3B39CF-294D-487C-B790-361FFF4E92D9}</Project>
+      <Name>WCFEntity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
