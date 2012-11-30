@@ -25,6 +25,7 @@
     <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="6f3e0977-0899-44e4-88d0-abb14cf2704a" SourceId="1" SourceUrl="http://localhost:2012/MessageService/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="944d065e-2350-4cca-a93d-b18ef2254f5e" SourceId="1" SourceUrl="http://localhost:2012/MessageService/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="228e92e5-fa89-48c4-9f71-01205bebdf11" SourceId="1" SourceUrl="http://localhost:2012/MessageService/mex" />
+    <MetadataFile FileName="WCFEntity.xsd" MetadataType="Schema" ID="3a158176-ecf4-4574-8254-e367ede5d6fd" SourceId="1" SourceUrl="http://localhost:2012/MessageService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

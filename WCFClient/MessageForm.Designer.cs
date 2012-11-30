@@ -36,7 +36,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(11, 28);
+            this.button1.Location = new System.Drawing.Point(328, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -46,10 +46,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 30);
+            this.textBox1.Location = new System.Drawing.Point(59, 6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.Size = new System.Drawing.Size(259, 21);
             this.textBox1.TabIndex = 1;
+            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // label1
             // 
@@ -62,9 +63,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(11, 58);
+            this.richTextBox1.Location = new System.Drawing.Point(11, 35);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(392, 159);
+            this.richTextBox1.Size = new System.Drawing.Size(392, 182);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 

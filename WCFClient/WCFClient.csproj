@@ -77,6 +77,9 @@
     <None Include="Service References\WCFService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\WCFService\WCFEntity.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utility\Utility.csproj">

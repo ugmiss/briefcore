@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.ServiceModel;
 using WCFContract;
 using WCFClient.WCFService;
+using Utility;
 
 namespace WCFClient
 {
@@ -21,19 +22,35 @@ namespace WCFClient
 
         private void MessageForm_Load(object sender, EventArgs e)
         {
-            label1.Text = new Utility.Hanzi.CnNameFactory().GetBoyName();
+            label1.Text = CnNameFactory.GetBoyName();
             InstanceContext instanceContext = new InstanceContext(new MessageServiceCallback());
             MessageServiceClient client = new MessageServiceClient(instanceContext);
-            client.SendMessage(gid, "Login");
+            WcfMsg msg = new WcfMsg() { ID = Guid.NewGuid(), MsgType = MsgType.Login };
+            client.SendClientMessage(clientid, msg);
         }
-        Guid gid = Guid.NewGuid();
+        Guid clientid = Guid.NewGuid();
         private void button1_Click(object sender, EventArgs e)
+        {
+            Send();
+        }
+
+        void Send()
         {
             if (textBox1.Text != "")
             {
                 InstanceContext instanceContext = new InstanceContext(new MessageServiceCallback());
                 MessageServiceClient client = new MessageServiceClient(instanceContext);
-                client.SendMessage(gid, label1.Text + ":" + textBox1.Text);
+                WcfMsg msg = new WcfMsg() { ID = Guid.NewGuid(), MsgType = MsgType.AllChat, ClientName = label1.Text, Content = textBox1.Text };
+                client.SendClientMessage(clientid, msg);
+                textBox1.Text = "";
+            }
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Send();
             }
         }
 

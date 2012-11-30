@@ -9,21 +9,193 @@
 //------------------------------------------------------------------------------
 
 namespace WCFClient.WCFService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WcfMsg", Namespace="http://schemas.datacontract.org/2004/07/WCFEntity")]
+    [System.SerializableAttribute()]
+    public partial class WcfMsg : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClientNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.Guid> FromIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime MsgTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WCFClient.WCFService.MsgType MsgTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.Guid> ToIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ClientName {
+            get {
+                return this.ClientNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClientNameField, value) != true)) {
+                    this.ClientNameField = value;
+                    this.RaisePropertyChanged("ClientName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Content {
+            get {
+                return this.ContentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContentField, value) != true)) {
+                    this.ContentField = value;
+                    this.RaisePropertyChanged("Content");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.Guid> FromID {
+            get {
+                return this.FromIDField;
+            }
+            set {
+                if ((this.FromIDField.Equals(value) != true)) {
+                    this.FromIDField = value;
+                    this.RaisePropertyChanged("FromID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime MsgTime {
+            get {
+                return this.MsgTimeField;
+            }
+            set {
+                if ((this.MsgTimeField.Equals(value) != true)) {
+                    this.MsgTimeField = value;
+                    this.RaisePropertyChanged("MsgTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WCFClient.WCFService.MsgType MsgType {
+            get {
+                return this.MsgTypeField;
+            }
+            set {
+                if ((this.MsgTypeField.Equals(value) != true)) {
+                    this.MsgTypeField = value;
+                    this.RaisePropertyChanged("MsgType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.Guid> ToID {
+            get {
+                return this.ToIDField;
+            }
+            set {
+                if ((this.ToIDField.Equals(value) != true)) {
+                    this.ToIDField = value;
+                    this.RaisePropertyChanged("ToID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MsgType", Namespace="http://schemas.datacontract.org/2004/07/WCFEntity")]
+    public enum MsgType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Login = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ReLogin = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LogOff = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        System = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SystemMsg = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Command = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AllChat = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SingleChat = 7,
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.hujao.com/", ConfigurationName="WCFService.IMessageService", CallbackContract=typeof(WCFClient.WCFService.IMessageServiceCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
     public interface IMessageService {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.hujao.com/IMessageService/SendMessage")]
-        void SendMessage(System.Guid uid, string msg);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.hujao.com/IMessageService/SendClientMessage")]
+        void SendClientMessage(System.Guid clientid, WCFClient.WCFService.WcfMsg msg);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IMessageServiceCallback {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.hujao.com/IMessageService/BroadCast")]
-        void BroadCast(string msg);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.hujao.com/IMessageService/PollServerMessage")]
+        void PollServerMessage(System.Guid clientid, WCFClient.WCFService.WcfMsg msg);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -54,8 +226,8 @@ namespace WCFClient.WCFService {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void SendMessage(System.Guid uid, string msg) {
-            base.Channel.SendMessage(uid, msg);
+        public void SendClientMessage(System.Guid clientid, WCFClient.WCFService.WcfMsg msg) {
+            base.Channel.SendClientMessage(clientid, msg);
         }
     }
 }
