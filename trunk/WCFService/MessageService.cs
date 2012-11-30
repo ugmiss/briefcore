@@ -6,6 +6,7 @@ using System.ServiceModel;
 using WCFContract;
 using System.Threading;
 using System.Collections.Concurrent;
+using WCFEntity;
 
 namespace WCFService
 {
@@ -13,17 +14,18 @@ namespace WCFService
     public class MessageService : IMessageService
     {
         static ConcurrentDictionary<Guid, ICallback> CallList = new ConcurrentDictionary<Guid, ICallback>();
-        public void SendMessage(Guid uid, string msg)
+        public void SendClientMessage(Guid clientid, WcfMsg msg)
         {
-            if (msg == "Login")
+            if (msg.MsgType == MsgType.Login)
             {
-                CallList.TryAdd(uid, OperationContext.Current.GetCallbackChannel<ICallback>());
+                CallList.TryAdd(clientid, OperationContext.Current.GetCallbackChannel<ICallback>());
             }
             else
             {
                 foreach (var item in CallList.ToArray())
                 {
-                    item.Value.BroadCast(msg);
+                    msg.MsgTime = DateTime.Now;
+                    item.Value.PollServerMessage(clientid, msg);
                 }
             }
         }
