@@ -45,6 +45,12 @@
     <Compile Include="IMessageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WCFEntity\WCFEntity.csproj">
+      <Project>{9F3B39CF-294D-487C-B790-361FFF4E92D9}</Project>
+      <Name>WCFEntity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
