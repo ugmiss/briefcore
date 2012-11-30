@@ -28,7 +28,18 @@ namespace WCFService
                 foreach (var item in CallList.ToArray())
                 {
                     msg.MsgTime = DateTime.Now;
-                    item.Value.PollServerMessage(clientid, msg);
+                    try
+                    {
+                        item.Value.PollServerMessage(clientid, msg);
+                    }
+                    catch
+                    {
+                        ThreadPool.QueueUserWorkItem(o =>
+                        {
+                            ICallback ICallback;
+                            CallList.TryRemove(item.Key, out ICallback);
+                        });
+                    }
                 }
             }
         }
