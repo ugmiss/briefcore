@@ -8,9 +8,10 @@ namespace Utility
 {
     public class CnNameFactory
     {
-        public CnNameFactory()
+        private CnNameFactory()
         {
         }
+        #region 字库
         const string FirstName = @"
 赵 钱 孙 李 周 吴 郑 王 
 冯 陈 褚 卫 蒋 沈 韩 杨 
@@ -335,7 +336,8 @@ namespace Utility
 梓彤 梓童 梓琬 梓欣 梓馨 梓萱 梓瑶 梓莹 梓颖 梓榆 梓玥 梓云 
 紫蕙 紫琼 紫杉 紫桐 紫薇 紫玉 
 ";
-        public string GetNewName(out bool IsMale)
+        #endregion
+        public static string GetNewName(out bool IsMale)
         {
             Random r = new Random(Guid.NewGuid().GetHashCode());
             if (r.Next(2) > 0)
@@ -352,13 +354,13 @@ namespace Utility
         static string[] boynames = boy.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
         static string[] fs = FirstName.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
         static string[] girlsnames = girls.Split(" \n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-        public string GetBoyName()
+        public static string GetBoyName()
         {
             Random r = new Random(Guid.NewGuid().GetHashCode() + DateTime.Now.Millisecond);
             string name = fs[r.Next(fs.Length)] + boynames[r.Next(boynames.Length)];
             return name;
         }
-        public string GetGirlName()
+        public static string GetGirlName()
         {
             Random r = new Random(Guid.NewGuid().GetHashCode());
             string name = fs[r.Next(fs.Length)] + girlsnames[r.Next(girlsnames.Length)];
