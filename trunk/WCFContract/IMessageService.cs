@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ServiceModel;
+using WCFEntity;
 
 namespace WCFContract
 {
@@ -10,6 +11,6 @@ namespace WCFContract
     public interface IMessageService
     {
         [OperationContract(IsOneWay = true)]
-        void SendMessage(Guid uid,string msg);
+        void SendClientMessage(Guid clientid, WcfMsg msg);
     }
 }
