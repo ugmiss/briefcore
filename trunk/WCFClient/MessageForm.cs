@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.ServiceModel;
 using WCFContract;
+using WCFClient.WCFService;
 
 namespace WCFClient
 {
@@ -21,10 +22,8 @@ namespace WCFClient
         private void MessageForm_Load(object sender, EventArgs e)
         {
             label1.Text = new Utility.Hanzi.CnNameFactory().GetBoyName();
-            EndpointAddress endpointAddress = new EndpointAddress("net.tcp://localhost:1999/MessageService");
             InstanceContext instanceContext = new InstanceContext(new MessageServiceCallback());
-            MessageClient client = new MessageClient(instanceContext);
-            client.Endpoint.Address = endpointAddress;
+            MessageServiceClient client = new MessageServiceClient(instanceContext);
             client.SendMessage(gid, "Login");
         }
         Guid gid = Guid.NewGuid();
@@ -32,10 +31,8 @@ namespace WCFClient
         {
             if (textBox1.Text != "")
             {
-                EndpointAddress endpointAddress = new EndpointAddress("net.tcp://localhost:1999/MessageService");
                 InstanceContext instanceContext = new InstanceContext(new MessageServiceCallback());
-                MessageClient client = new MessageClient(instanceContext);
-                client.Endpoint.Address = endpointAddress;
+                MessageServiceClient client = new MessageServiceClient(instanceContext);
                 client.SendMessage(gid, label1.Text + ":" + textBox1.Text);
             }
         }
