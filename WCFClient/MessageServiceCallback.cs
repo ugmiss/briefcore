@@ -8,7 +8,7 @@ using System.ServiceModel;
 namespace WCFClient
 {
     [CallbackBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]
-    public class MessageServiceCallback : ICallback
+    public class MessageServiceCallback : WCFClient.WCFService.IMessageServiceCallback
     {
         public void BroadCast(string msg)
         {
