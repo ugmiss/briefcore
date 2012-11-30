@@ -34,14 +34,14 @@
   <wsdl:binding name="NetTcpBinding_IMessageService" type="i0:IMessageService">
     <wsp:PolicyReference URI="#NetTcpBinding_IMessageService_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="SendMessage">
-      <soap12:operation soapAction="http://www.hujao.com/IMessageService/SendMessage" style="document" />
+    <wsdl:operation name="SendClientMessage">
+      <soap12:operation soapAction="http://www.hujao.com/IMessageService/SendClientMessage" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="BroadCast">
-      <soap12:operation soapAction="http://www.hujao.com/IMessageService/BroadCast" style="document" />
+    <wsdl:operation name="PollServerMessage">
+      <soap12:operation soapAction="http://www.hujao.com/IMessageService/PollServerMessage" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

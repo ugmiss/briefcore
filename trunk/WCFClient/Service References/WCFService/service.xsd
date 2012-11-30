@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://www.hujao.com/" elementFormDefault="qualified" targetNamespace="http://www.hujao.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:element name="SendMessage">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/WCFEntity" />
+  <xs:element name="SendClientMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="uid" type="q1:guid" />
-        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="clientid" type="q1:guid" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFEntity" minOccurs="0" name="msg" nillable="true" type="q2:WcfMsg" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="BroadCast">
+  <xs:element name="PollServerMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="clientid" type="q3:guid" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFEntity" minOccurs="0" name="msg" nillable="true" type="q4:WcfMsg" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

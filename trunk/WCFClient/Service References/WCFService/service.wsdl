@@ -4,20 +4,21 @@
     <xsd:schema targetNamespace="http://www.hujao.com/Imports">
       <xsd:import namespace="http://www.hujao.com/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCFEntity" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IMessageService_SendMessage_InputMessage">
-    <wsdl:part name="parameters" element="tns:SendMessage" />
+  <wsdl:message name="IMessageService_SendClientMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendClientMessage" />
   </wsdl:message>
-  <wsdl:message name="IMessageService_BroadCast_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:BroadCast" />
+  <wsdl:message name="IMessageService_PollServerMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PollServerMessage" />
   </wsdl:message>
   <wsdl:portType msc:usingSession="true" name="IMessageService">
-    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SendMessage">
-      <wsdl:input wsaw:Action="http://www.hujao.com/IMessageService/SendMessage" message="tns:IMessageService_SendMessage_InputMessage" />
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SendClientMessage">
+      <wsdl:input wsaw:Action="http://www.hujao.com/IMessageService/SendClientMessage" message="tns:IMessageService_SendClientMessage_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="BroadCast">
-      <wsdl:output wsaw:Action="http://www.hujao.com/IMessageService/BroadCast" message="tns:IMessageService_BroadCast_OutputCallbackMessage" />
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PollServerMessage">
+      <wsdl:output wsaw:Action="http://www.hujao.com/IMessageService/PollServerMessage" message="tns:IMessageService_PollServerMessage_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
