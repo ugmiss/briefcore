@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ServiceModel;
 
 namespace WCFService
 {
@@ -9,8 +10,14 @@ namespace WCFService
     {
         static void Main(string[] args)
         {
-            WCFServer.Instance.Start();
-            Console.ReadLine();
+            using (ServiceHost host = new ServiceHost(typeof(MessageService)))
+            {
+                host.Open();
+                Console.Read();
+            }
         }
     }
 }
+
+
+
