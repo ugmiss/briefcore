@@ -1,4 +1,10 @@
 #summary SqlServer数据库
+===刷新视图===
+视图保存了元数据，当基础表结构变化时，视图并不会更新结构所以需要执行下面的sql
+{{{
+EXEC sp_refreshview V_Name
+}}}
+
 
 === Raid===
  # RAID 0：通过并行读取来提高数据I/O, 读取操作效率很高, 但是不提供数据容错及保护. 不推荐作为SQL Server使用.
