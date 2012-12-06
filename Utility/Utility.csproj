@@ -95,6 +95,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStructureAndAlgorithms\DirectGraph.cs" />
     <Compile Include="EnCodingHelper.cs" />
     <Compile Include="File\Pather.cs" />
     <Compile Include="Hanzi\Bopomofo.cs" />
