@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -12,6 +12,11 @@
     <AssemblyName>DataTransfer</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
     <PublishUrl>http://localhost/DataTransfer/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -24,7 +29,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -36,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,6 +49,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -64,59 +70,18 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.GridView, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.Aqua.dll</HintPath>
+    <Reference Include="Telerik.WinControls">
+      <HintPath>dll\Telerik.WinControls.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.Breeze.dll</HintPath>
+    <Reference Include="Telerik.WinControls.GridView">
+      <HintPath>dll\Telerik.WinControls.GridView.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.BreezeExtended, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.BreezeExtended.dll</HintPath>
+    <Reference Include="Telerik.WinControls.UI">
+      <HintPath>dll\Telerik.WinControls.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Desert, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.Desert.dll</HintPath>
+    <Reference Include="TelerikCommon">
+      <HintPath>dll\TelerikCommon.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Miscellaneous, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.Miscellaneous.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2010, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.Office2010.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Telerik, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.Telerik.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Vista, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.Vista.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Telerik.WinControls.Themes.Windows7.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.UI, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="TelerikCommon, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="TelerikData, Version=2010.2.10.806, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppResource.Designer.cs">
@@ -193,6 +158,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Utility\Utility.csproj">
+      <Project>{8D45C50B-B6AF-4E1D-BB1B-23AD9ACA1A69}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{4DF49465-F81E-4BE5-9EDD-8AE1BF278B56}</Project>
       <Name>DataAccess</Name>
@@ -201,12 +170,9 @@
       <Project>{1D680A8B-82B3-4E7D-894A-488EFB5D36A0}</Project>
       <Name>TelerikUsing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Utility\Utility.csproj">
-      <Project>{8D45C50B-B6AF-4E1D-BB1B-23AD9ACA1A69}</Project>
-      <Name>Utility</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dll\TelerikData.dll" />
     <Content Include="images\16.ico" />
     <Content Include="images\24.ico" />
     <Content Include="images\32.ico" />
@@ -215,7 +181,7 @@
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
-      <ProductName>.NET Framework Client Profile</ProductName>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
