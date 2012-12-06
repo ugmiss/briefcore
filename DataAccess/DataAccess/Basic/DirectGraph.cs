@@ -6,70 +6,105 @@ using System.Collections;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// 有向图
+    /// </summary>
     public class DirectGraph
     {
-        public List<Vertex> V_List = new List<Vertex>();
-        public List<Edge> E_List = new List<Edge>();
-        public void Add(params Vertex[] vs)
+        /// <summary>
+        /// 顶点集合
+        /// </summary>
+        public List<Vertex> Vertex_List = new List<Vertex>();
+        /// <summary>
+        /// 边集合
+        /// </summary>
+        public List<Edge> Edge_List = new List<Edge>();
+        /// <summary>
+        /// 添加顶点
+        /// </summary>
+        /// <param name="vertexArray"></param>
+        public void Add(params Vertex[] vertexArray)
         {
-            foreach (Vertex v in vs)
+            foreach (Vertex v in vertexArray)
             {
-                V_List.Add(v);
-                E_List.AddRange(v.Follow_E);
+                Vertex_List.Add(v);
+                Edge_List.AddRange(v.Follow_Edge);
             }
         }
-        public void AddE(Vertex vFrom, Vertex vTo)
+        /// <summary>
+        /// 添加边
+        /// </summary>
+        /// <param name="vertexFrom"></param>
+        /// <param name="vertexTo"></param>
+        public void AddEdge(Vertex vertexFrom, Vertex vertexTo)
         {
-            Edge e = new Edge(vFrom, vTo);
-            vFrom.Follow_E.Add(e);
+            Edge e = new Edge(vertexFrom, vertexTo);
+            vertexFrom.Follow_Edge.Add(e);
         }
-        public void AddE(string vFrom, string vTo)
+        /// <summary>
+        /// 添加边
+        /// </summary>
+        /// <param name="vertexFrom">源点（主点，父节点）</param>
+        /// <param name="vertexTo">目标点（从点，子节点）</param>
+        public void AddEdge(string vertexFrom, string vertexTo)
         {
-            if (vFrom == vTo) return;//自引用的不处理
-            foreach (Edge temp in E_List)
+            //自引用的不处理，源点与目标点同名。
+            if (vertexFrom == vertexTo) return;
+            //已经引用过的不处理。
+            foreach (Edge temp in Edge_List)
             {
-                if (temp.From.Name == vFrom && temp.To.Name == vTo)
-                    return;//已经引用的不处理
+                if (temp.From.Name == vertexFrom && temp.To.Name == vertexTo)
+                    return;
             }
-
+            //定义点的引用
             Vertex v1, v2;
-            var q = from c in V_List where c.Name == vFrom select c;
+            //取源点，如果已经在点集内直接取出，没有则创建新的点并添加到点集。
+            var q = from c in Vertex_List where c.Name == vertexFrom select c;
             if (!(q.ToList().Count > 0))
             {
-                v1 = new Vertex(vFrom);
-                V_List.Add(v1);
+                v1 = new Vertex(vertexFrom);
+                Vertex_List.Add(v1);
             }
             else
             {
                 v1 = q.ToArray()[0];
             }
-            var q2 = from c in V_List where c.Name == vTo select c;
+            //取目标点，如果已经在点集内直接取出，没有则创建新的点并添加到点集。
+            var q2 = from c in Vertex_List where c.Name == vertexTo select c;
             if (!(q2.ToList().Count > 0))
             {
-                v2 = new Vertex(vTo);
-                V_List.Add(v2);
+                v2 = new Vertex(vertexTo);
+                Vertex_List.Add(v2);
             }
             else
             {
                 v2 = q2.ToArray()[0];
             }
-
+            //创建边并添加到边集合
             Edge e = new Edge(v1, v2);
-            v1.Follow_E.Add(e);
-
-
-            E_List.Add(e);
+            v1.Follow_Edge.Add(e);
+            Edge_List.Add(e);
         }
-
+        /// <summary>
+        /// 有向图 拓扑排序算法
+        /// 遍历所有点，找到顶点，顶点判断依据所有打开边没有指向此点，
+        /// 找到顶点后将顶点加入队列
+        /// 关闭所有从顶点出发边
+        /// 递归找顶点，同样操作直到所有的点都加入了队列
+        /// 队列的顺序就是 偏序有向图的拓扑排序。
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="temp"></param>
+        /// <returns></returns>
         public static Queue<Vertex> GetTopoList(DirectGraph g, Queue<Vertex> temp)
         {
             if (temp == null)
                 temp = new Queue<Vertex>();
-            foreach (Vertex v in g.V_List)
+            foreach (Vertex v in g.Vertex_List)
             {
                 if (temp.Contains(v)) continue;
                 bool isTop = true;
-                foreach (Edge e in g.E_List)
+                foreach (Edge e in g.Edge_List)
                 {
                     if (e.To == v && e.Open)
                     {
@@ -79,20 +114,20 @@ namespace DataAccess
                 }
                 if (isTop)
                 {
-                    foreach (Edge e in v.Follow_E)
+                    foreach (Edge e in v.Follow_Edge)
                     {
                         e.Open = false;
                     }
-                    bool noE = (from c in g.E_List where c.Open select c).ToList().Count == 0;
-                    if (noE)
-                    {
-                        temp.Enqueue(v);
-                        continue;
-                    }
+                    //bool noE = (from c in g.Edge_List where c.Open select c).ToList().Count == 0;
+                    //if (noE)
+                    //{
+                    //    temp.Enqueue(v);
+                    //    continue;
+                    //}
                     temp.Enqueue(v);
                 }
             }
-            if (temp.Count == g.V_List.Count)
+            if (temp.Count == g.Vertex_List.Count)
                 return temp;
             else
                 return GetTopoList(g, temp);
@@ -120,7 +155,7 @@ namespace DataAccess
     {
         public string Name { get; set; }
         public object Tag { get; set; }
-        public List<Edge> Follow_E = new List<Edge>();
+        public List<Edge> Follow_Edge = new List<Edge>();
         public Vertex() { }
         public Vertex(string n) { Name = n; }
     }
