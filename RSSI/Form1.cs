@@ -89,14 +89,14 @@ namespace RSSI
             g.DrawEllipse(p1, (float)(x1 - d1), (float)(y1 - d1), (float)d1 * 2, (float)d1 * 2);
             g.DrawEllipse(p2, (float)(x2 - d2), (float)(y2 - d2), (float)d2 * 2, (float)d2 * 2);
             g.DrawEllipse(p3, (float)(x3 - d3), (float)(y3 - d3), (float)d3 * 2, (float)d3 * 2);
-            g.DrawEllipse(p4, (float)(x4 - d4), (float)(y4 - d4), (float)d4 * 2, (float)d4 * 2);
+          // g.DrawEllipse(p4, (float)(x4 - d4), (float)(y4 - d4), (float)d4 * 2, (float)d4 * 2);
 
 
 
             g.DrawLine(p1, (float)x1, (float)y1, (float)xA, (float)yA);
             g.DrawLine(p2, (float)x2, (float)y2, (float)xA, (float)yA);
             g.DrawLine(p3, (float)x3, (float)y3, (float)xA, (float)yA);
-            if (true)
+            if (false)
             {
                 g.FillEllipse(Brushes.Black, (float)x4 - r, (float)y4 - r, 2 * r, 2 * r);
 
@@ -120,6 +120,7 @@ namespace RSSI
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
+            return;
             ThreadPool.QueueUserWorkItem(o =>
             {
                 double x1 = Convert.ToDouble(tx1.Text);
