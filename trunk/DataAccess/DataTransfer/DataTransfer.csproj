@@ -118,37 +118,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dll\Telerik.WinControls.GridView.dll">
     </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.GridView.XML">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.Aqua.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.Breeze.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.BreezeExtended.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.Desert.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.HighContrastBlack.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.Miscellaneous.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.Office2007Black.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.Office2007Silver.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.Office2010.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.Telerik.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.Vista.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.Themes.Windows7.dll">
-    </EmbeddedResource>
     <EmbeddedResource Include="dll\Telerik.WinControls.UI.dll">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.UI.XML">
-    </EmbeddedResource>
-    <EmbeddedResource Include="dll\Telerik.WinControls.XML">
     </EmbeddedResource>
     <EmbeddedResource Include="dll\TelerikCommon.dll">
     </EmbeddedResource>
