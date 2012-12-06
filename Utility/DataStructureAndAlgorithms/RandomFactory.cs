@@ -12,10 +12,15 @@ namespace Utility.DataStructureAndAlgorithms
             Random random = new Random(Guid.NewGuid().GetHashCode());
             return random.Next(max);
         }
-        public static int Next(int min,int max)
+        public static int Next(int min, int max)
         {
             Random random = new Random(Guid.NewGuid().GetHashCode());
-            return random.Next(min,max);
+            return random.Next(min, max);
+        }
+        public static double NextDouble()
+        {
+            Random random = new Random(Guid.NewGuid().GetHashCode());
+            return random.NextDouble();
         }
     }
 }
