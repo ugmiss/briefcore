@@ -80,9 +80,17 @@ namespace DataAccess
             }
             Executer.NonQuery(string.Format("create database [{0}]", dbname));
             Executer.NonQuery(string.Format("use {0} ", dbname));
-            foreach (Tab tab in db.Tables)
+            List<string> order = GetOrder(db);
+            foreach (var s in order)
             {
-                Executer.NonQuery(tab.Definition);
+                foreach (Tab tab in db.Tables)
+                {
+                    if (tab.TableName == s)
+                    {
+                        Executer.NonQuery(tab.Definition);
+                        break;
+                    }
+                }
             }
             foreach (Proc proc in db.Procs)
             {
@@ -100,7 +108,11 @@ namespace DataAccess
             CreateViews(0, list, Executer);
             foreach (ForeignKey fk in db.ForeignKeys)
             {
-                Executer.NonQuery(fk.Definition);
+                try
+                {
+                    Executer.NonQuery(fk.Definition);
+                }
+                catch { }
             }
         }
 
@@ -139,7 +151,7 @@ namespace DataAccess
             DirectGraph graph = new DirectGraph();
             foreach (ForeignKey fk in db.ForeignKeys)
             {
-                graph.AddE(fk.PK_Tab_Name, fk.PK_Tab_Name);
+                graph.AddE(fk.PK_Tab_Name, fk.FK_Tab_Name);
             }
             string[] tablenames = DirectGraph.GetTopoListNames(graph, null);
             list.AddRange(tablenames);

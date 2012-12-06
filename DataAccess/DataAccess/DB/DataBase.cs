@@ -73,6 +73,7 @@ namespace DataAccess
             SqlExecuter Executer = new SqlExecuter(ConnectionString);
             DataTable dttables = Executer.QueryTable(AppResource.tables);
             DataTable dtcols = Executer.QueryTable(AppResource.cols);
+            
             foreach (DataRow dr in dttables.Rows)
             {
                 Tab table = new Tab();

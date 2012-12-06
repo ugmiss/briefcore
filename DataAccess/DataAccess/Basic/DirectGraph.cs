@@ -25,6 +25,13 @@ namespace DataAccess
         }
         public void AddE(string vFrom, string vTo)
         {
+            if (vFrom == vTo) return;//自引用的不处理
+            foreach (Edge temp in E_List)
+            {
+                if (temp.From.Name == vFrom && temp.To.Name == vTo)
+                    return;//已经引用的不处理
+            }
+
             Vertex v1, v2;
             var q = from c in V_List where c.Name == vFrom select c;
             if (!(q.ToList().Count > 0))
@@ -49,6 +56,8 @@ namespace DataAccess
 
             Edge e = new Edge(v1, v2);
             v1.Follow_E.Add(e);
+
+
             E_List.Add(e);
         }
 
