@@ -7,6 +7,7 @@ using WCFContract;
 using System.Threading;
 using System.Collections.Concurrent;
 using WCFEntity;
+using GameModel;
 
 namespace WCFService
 {
@@ -21,7 +22,10 @@ namespace WCFService
         {
             if (msg.MsgType == MsgType.Login)
             {
-                CallList.TryAdd(clientid, OperationContext.Current.GetCallbackChannel<ICallback>());
+                Player p = msg.Data.XmlDeserialize<Player>();
+                ICallback ICallback = OperationContext.Current.GetCallbackChannel<ICallback>();
+                CallList.TryAdd(clientid, ICallback);
+                ICallback.PollServerMessage(clientid, new WcfMsg() { MsgType = MsgType.LoginOK });
             }
             else
             {

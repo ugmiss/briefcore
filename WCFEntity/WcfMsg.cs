@@ -9,6 +9,7 @@ namespace WCFEntity
     public enum MsgType
     {
         Login,
+        LoginOK,
         ReLogin,
         LogOff,
         System,
@@ -34,5 +35,9 @@ namespace WCFEntity
         public Guid? ToID { get; set; }
         [DataMember]
         public DateTime MsgTime { get; set; }
+        [DataMember]
+        public string Data { get; set; }
+        [DataMember]
+        public string DataType { get; set; }
     }
 }

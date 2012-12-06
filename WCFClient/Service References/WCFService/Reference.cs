@@ -29,6 +29,12 @@ namespace WCFClient.WCFService {
         private string ContentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DataTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.Guid> FromIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -75,6 +81,32 @@ namespace WCFClient.WCFService {
                 if ((object.ReferenceEquals(this.ContentField, value) != true)) {
                     this.ContentField = value;
                     this.RaisePropertyChanged("Content");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DataType {
+            get {
+                return this.DataTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataTypeField, value) != true)) {
+                    this.DataTypeField = value;
+                    this.RaisePropertyChanged("DataType");
                 }
             }
         }
@@ -162,25 +194,28 @@ namespace WCFClient.WCFService {
         Login = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ReLogin = 1,
+        LoginOK = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LogOff = 2,
+        ReLogin = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        System = 3,
+        LogOff = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SystemMsg = 4,
+        System = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Command = 5,
+        SystemMsg = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllChat = 6,
+        Command = 6,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SingleChat = 7,
+        AllChat = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SingleChat = 8,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

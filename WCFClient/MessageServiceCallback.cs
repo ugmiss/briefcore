@@ -13,7 +13,7 @@ namespace WCFClient
     {
         public void PollServerMessage(Guid clientid, WcfMsg msg)
         {
-            Environment.MessageForm.richTextBox1.AppendText(msg.MsgTime.ToString("hh:mm:ss ")+msg.ClientName + ":" + msg.Content + "\n");
+            ClientManager.Instance.ReceiveFromServer(clientid, msg);
         }
     }
 }

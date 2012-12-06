@@ -5,6 +5,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FromID" nillable="true" type="ser:guid" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MsgTime" type="xs:dateTime" />
@@ -16,6 +18,7 @@
   <xs:simpleType name="MsgType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Login" />
+      <xs:enumeration value="LoginOK" />
       <xs:enumeration value="ReLogin" />
       <xs:enumeration value="LogOff" />
       <xs:enumeration value="System" />
