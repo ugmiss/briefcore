@@ -29,6 +29,7 @@ namespace DataTransfer
         public TransferMainForm()
         {
             InitializeComponent();
+            Control.CheckForIllegalCrossThreadCalls = false;
         }
         /// <summary>
         /// 确定。
@@ -42,6 +43,7 @@ namespace DataTransfer
             this.radGroupBox1.Enabled = false;
             this.radButton1.Enabled = false;
             Control.CheckForIllegalCrossThreadCalls = false;
+            
             ThreadPool.QueueUserWorkItem((o) =>
             {
                 try
@@ -70,7 +72,7 @@ namespace DataTransfer
                     if (!string.IsNullOrEmpty(this.radDropDownList1.Text))
                     {
                         Logic.BackUp(Logic.GetConnStr(txtServer.Text, txtUid.Text, txtPwd.Text, txtDataBase.Text), TempDir);//备份
-                        Utility.Zip.CreateZipFile(TempDir, this.txtDir.Text + this.radDropDownList1.Text);
+                        Utility.SharpZip.CreateZipFile(TempDir, this.txtDir.Text +"\\"+ this.radDropDownList1.Text);
                         foreach (string f in Directory.GetFiles(TempDir))
                             File.Delete(f);
                     }
@@ -90,12 +92,12 @@ namespace DataTransfer
                 }
                 else if (radRadioButton4.ToggleState == Telerik.WinControls.Enumerations.ToggleState.On)
                 {
-                    string[] diff = Logic.VaryDataBase(txtServer.Text, txtUid.Text, txtPwd.Text, txtDataBase.Text);
-                    if (diff != null && diff.Length > 0)
-                    {
-                        MsgBox.Show(string.Concat(diff));
-                        return;
-                    }
+                    //string[] diff = Logic.VaryDataBase(txtServer.Text, txtUid.Text, txtPwd.Text, txtDataBase.Text);
+                    //if (diff != null && diff.Length > 0)
+                    //{
+                    //    MsgBox.Show(string.Concat(diff));
+                    //    return;
+                    //}
                     Logic.TransData(Logic.GetConnStr(txtServer.Text, txtUid.Text, txtPwd.Text, txtDataBase.Text), TempDir);//导数据
                 }
             }
@@ -118,10 +120,12 @@ namespace DataTransfer
                     filepath = dialog.FileName;
                 }
             }
+            Directory.Delete(TempDir, true);
+
             if (!Directory.Exists(TempDir))
                 Directory.CreateDirectory(TempDir);
             if (filepath == null) return null;
-            Utility.Zip.UnZipFile(filepath, AppDomain.CurrentDomain.BaseDirectory + "Temp\\");
+            Utility.SharpZip.UnZipFile(filepath, AppDomain.CurrentDomain.BaseDirectory + "Temp\\");
             return filepath;
         }
 
@@ -150,7 +154,7 @@ namespace DataTransfer
             if (radRadioButton6.ToggleState == Telerik.WinControls.Enumerations.ToggleState.On)
             {
                 this.radDropDownList1.DataSource = null;
-                this.radDropDownList1.Text = DateTime.Now.ToShortDateString().Replace("\\", "-") + ".zip";
+                this.radDropDownList1.Text = DateTime.Now.ToString("yyyy_MM_dd") + ".zip";
                 radDropDownList1.CaseSensitive = false;
                 radDropDownList1.DropDownStyle = RadDropDownStyle.DropDown;
             }

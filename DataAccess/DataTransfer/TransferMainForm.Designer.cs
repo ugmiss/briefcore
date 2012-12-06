@@ -30,6 +30,7 @@ namespace DataTransfer
         {
             this.radWaitingBar1 = new Telerik.WinControls.UI.RadWaitingBar();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.lblinfo = new Telerik.WinControls.UI.RadLabel();
             this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
             this.radButton4 = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
@@ -47,10 +48,9 @@ namespace DataTransfer
             this.txtDataBase = new Telerik.WinControls.UI.RadTextBox();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.txtDir = new Telerik.WinControls.UI.RadTextBox();
-            this.lblinfo = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
-            this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lblinfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -68,7 +68,6 @@ namespace DataTransfer
             ((System.ComponentModel.ISupportInitialize)(this.txtDataBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblinfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,11 +79,12 @@ namespace DataTransfer
             this.radWaitingBar1.TabIndex = 29;
             this.radWaitingBar1.Text = "radWaitingBar1";
             this.radWaitingBar1.ThemeName = "Breeze";
-            this.radWaitingBar1.WaitingIndicatorWidth = 100;
+            this.radWaitingBar1.WaitingIndicatorSize = new System.Drawing.Size(100, 30);
             this.radWaitingBar1.WaitingSpeed = 4;
             // 
             // radGroupBox1
             // 
+            this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.Controls.Add(this.lblinfo);
             this.radGroupBox1.Controls.Add(this.radDropDownList1);
             this.radGroupBox1.Controls.Add(this.radButton4);
@@ -119,10 +119,26 @@ namespace DataTransfer
             this.radGroupBox1.Text = "数据库初始化";
             this.radGroupBox1.ThemeName = "Breeze";
             // 
+            // lblinfo
+            // 
+            this.lblinfo.BackColor = System.Drawing.Color.White;
+            this.lblinfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblinfo.Location = new System.Drawing.Point(13, 161);
+            this.lblinfo.Name = "lblinfo";
+            // 
+            // 
+            // 
+            this.lblinfo.RootElement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblinfo.Size = new System.Drawing.Size(2, 2);
+            this.lblinfo.TabIndex = 34;
+            this.lblinfo.ThemeName = "Breeze";
+            // 
             // radDropDownList1
             // 
+            this.radDropDownList1.DropDownAnimationEnabled = true;
             this.radDropDownList1.Location = new System.Drawing.Point(85, 134);
             this.radDropDownList1.Name = "radDropDownList1";
+            this.radDropDownList1.ShowImageInEditorArea = true;
             this.radDropDownList1.Size = new System.Drawing.Size(259, 20);
             this.radDropDownList1.TabIndex = 33;
             this.radDropDownList1.ThemeName = "Breeze";
@@ -147,7 +163,7 @@ namespace DataTransfer
             // 
             // 
             this.radLabel1.RootElement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.radLabel1.Size = new System.Drawing.Size(68, 18);
+            this.radLabel1.Size = new System.Drawing.Size(63, 18);
             this.radLabel1.TabIndex = 31;
             this.radLabel1.Text = "压缩文件名";
             this.radLabel1.ThemeName = "Breeze";
@@ -273,7 +289,7 @@ namespace DataTransfer
             this.txtPwd.Size = new System.Drawing.Size(136, 20);
             this.txtPwd.TabIndex = 21;
             this.txtPwd.TabStop = false;
-            this.txtPwd.Text = "sa";
+            this.txtPwd.Text = "123456";
             this.txtPwd.ThemeName = "Breeze";
             // 
             // radLabel5
@@ -320,20 +336,6 @@ namespace DataTransfer
             this.txtDir.TabStop = false;
             this.txtDir.ThemeName = "Breeze";
             // 
-            // lblinfo
-            // 
-            this.lblinfo.BackColor = System.Drawing.Color.White;
-            this.lblinfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblinfo.Location = new System.Drawing.Point(13, 161);
-            this.lblinfo.Name = "lblinfo";
-            // 
-            // 
-            // 
-            this.lblinfo.RootElement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblinfo.Size = new System.Drawing.Size(2, 2);
-            this.lblinfo.TabIndex = 34;
-            this.lblinfo.ThemeName = "Breeze";
-            // 
             // TransferMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -355,8 +357,7 @@ namespace DataTransfer
             this.Load += new System.EventHandler(this.TransferMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
-            this.radGroupBox1.ResumeLayout(false);
-            this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lblinfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
@@ -374,7 +375,6 @@ namespace DataTransfer
             ((System.ComponentModel.ISupportInitialize)(this.txtDataBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblinfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
