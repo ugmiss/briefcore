@@ -151,7 +151,7 @@ namespace DataAccess
             DirectGraph graph = new DirectGraph();
             foreach (ForeignKey fk in db.ForeignKeys)
             {
-                graph.AddE(fk.PK_Tab_Name, fk.FK_Tab_Name);
+                graph.AddEdge(fk.PK_Tab_Name, fk.FK_Tab_Name);
             }
             string[] tablenames = DirectGraph.GetTopoListNames(graph, null);
             list.AddRange(tablenames);
