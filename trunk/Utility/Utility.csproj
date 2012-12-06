@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="DataStructureAndAlgorithms\DirectGraph.cs" />
     <Compile Include="DataStructureAndAlgorithms\RadicalCenter.cs" />
+    <Compile Include="DataStructureAndAlgorithms\RandomFactory.cs" />
     <Compile Include="EnCodingHelper.cs" />
     <Compile Include="File\Pather.cs" />
     <Compile Include="Hanzi\Bopomofo.cs" />
