@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ServiceModel;
+using System.Windows.Forms;
 
 namespace WCFService
 {
@@ -10,11 +11,7 @@ namespace WCFService
     {
         static void Main(string[] args)
         {
-            using (ServiceHost host = new ServiceHost(typeof(MessageService)))
-            {
-                host.Open();
-                Console.Read();
-            }
+            Application.Run(new ServerForm());
         }
     }
 }
