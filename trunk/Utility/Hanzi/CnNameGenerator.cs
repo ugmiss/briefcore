@@ -6,9 +6,9 @@ using System.Threading;
 
 namespace Utility
 {
-    public class CnNameFactory
+    public class CnNameGenerator
     {
-        private CnNameFactory()
+        private CnNameGenerator()
         {
         }
         #region 字库
