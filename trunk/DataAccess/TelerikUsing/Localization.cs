@@ -14,8 +14,8 @@ namespace TelerikUsing
         public static void ApplicationInit()
         {
             Localization.LocalizationInit();
-            new BreezeTheme();
-            ThemeResolutionService.ApplicationThemeName = "Breeze";
+           
+            //ThemeResolutionService.ApplicationThemeName = "Breeze";
         }
     }
 
