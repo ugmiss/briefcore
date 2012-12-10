@@ -17,8 +17,9 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
         /// <returns></returns>
         public static Chromosome NewMutation(Chromosome chromosome)
         {
-            // 突变位
+            // 随机突变位
             int index = RandomFactory.Next(Environment.ChromosomeLength);
+            // 1变0 0变1
             chromosome.GeneArray[index] = chromosome.GeneArray[index] == 0 ? 1 : 0;
             return chromosome;
         }
