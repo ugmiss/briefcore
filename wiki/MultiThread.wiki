@@ -54,6 +54,9 @@ System.Threading.Monitor.Exit(obj);
 ||`Partitioner`||提供针对数组、列表和可枚举项的常见分区策略|| 
 ||`Partitioner<T>`|| 表示将一个数据源拆分成多个分区的特定方式||
 
+
+ConcurrentBag 是无需集合，所以在取元素的时候没有提供移除指定元素的方法，所以适用于类似连接池的应用。
+
 [http://www.cnblogs.com/kain/archive/2010/08/10/1796524.html]
 
 ===ThreadPool===
