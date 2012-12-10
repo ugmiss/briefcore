@@ -17,11 +17,13 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
         /// <summary>
         /// 染色体长度。
         /// </summary>
-        public static int ChromosomeLength = 24;
+        public static int ChromosomeLength = 4;
         /// <summary>
         /// 总代数。
         /// </summary>
         public static int MaxGenarationCount = 50;
+
+        public static List<Individual> list = new List<Individual>();
 
     }
 }

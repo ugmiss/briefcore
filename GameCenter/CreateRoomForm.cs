@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GameModel;
+using WCFClient;
+using WCFClient.WCFService;
 
 namespace GameCenter
 {
@@ -28,7 +30,7 @@ namespace GameCenter
             room.PersonCount = textBox2.Text.ParseTo<int>();
             room.RoomType = comboBox1.SelectedText;
 
-
+            ClientManager.Instance.SendClientMessage(MsgType.CreateRoom, null, room.XmlSerialize(), typeof(Room));
         }
 
         private void button1_Click(object sender, EventArgs e)

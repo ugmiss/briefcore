@@ -12,7 +12,16 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
     {
         public static Individual[] NewCrossover(Individual[] IndividualArray)
         {
-            return IndividualArray;
+            int CrossIndex = RandomFactory.Next(Environment.ChromosomeLength);
+            Individual i1 = IndividualArray[0];
+            Individual i2 = IndividualArray[1];
+            for (int x = CrossIndex; x < Environment.ChromosomeLength; x++)
+            {
+                int temp = i1.Chromosome.GeneArray[x];
+                i1.Chromosome.GeneArray[x] = i2.Chromosome.GeneArray[x];
+                i2.Chromosome.GeneArray[x] = temp;
+            }
+            return new Individual[] { i1, i2 };
         }
     }
 }
