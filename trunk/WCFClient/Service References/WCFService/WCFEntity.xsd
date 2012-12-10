@@ -26,6 +26,7 @@
       <xs:enumeration value="Command" />
       <xs:enumeration value="AllChat" />
       <xs:enumeration value="SingleChat" />
+      <xs:enumeration value="CreateRoom" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="MsgType" nillable="true" type="tns:MsgType" />

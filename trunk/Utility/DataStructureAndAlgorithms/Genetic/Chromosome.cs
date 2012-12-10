@@ -15,7 +15,7 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
         { 
            for(int i=0;i<Environment.ChromosomeLength;i++)
            {
-               GeneArray[i] = RandomFactory.Next(1);
+               GeneArray[i] = RandomFactory.Next(2);
            }
         }
     }

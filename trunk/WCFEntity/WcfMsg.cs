@@ -15,8 +15,7 @@ namespace WCFEntity
         System,
         SystemMsg,
         Command,
-        AllChat,
-        SingleChat,
+        CenterAction
     }
     [DataContract]
     public class WcfMsg

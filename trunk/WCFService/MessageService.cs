@@ -20,31 +20,35 @@ namespace WCFService
         static ConcurrentDictionary<Guid, ICallback> CallList = new ConcurrentDictionary<Guid, ICallback>();
         public void SendClientMessage(Guid clientid, WcfMsg msg)
         {
-            if (msg.MsgType == MsgType.Login)
+            switch (msg.MsgType)
             {
-                Player p = msg.Data.XmlDeserialize<Player>();
-                ICallback ICallback = OperationContext.Current.GetCallbackChannel<ICallback>();
-                CallList.TryAdd(clientid, ICallback);
-                ICallback.PollServerMessage(clientid, new WcfMsg() { MsgType = MsgType.LoginOK });
-            }
-            else
-            {
-                foreach (var item in CallList.ToArray())
-                {
-                    msg.MsgTime = DateTime.Now;
-                    try
-                    {
-                        item.Value.PollServerMessage(clientid, msg);
-                    }
-                    catch
-                    {
-                        ThreadPool.QueueUserWorkItem(o =>
-                        {
-                            ICallback ICallback;
-                            CallList.TryRemove(item.Key, out ICallback);
-                        });
-                    }
-                }
+                case MsgType.Login:
+                    Player p = msg.Data.XmlDeserialize<Player>();
+                    ICallback ICallback = OperationContext.Current.GetCallbackChannel<ICallback>();
+                    CallList.TryAdd(clientid, ICallback);
+                    ICallback.PollServerMessage(clientid, new WcfMsg() { MsgType = MsgType.LoginOK });
+                    break;
+                case MsgType.CenterAction:
+                    Room r = msg.Data.XmlDeserialize<Room>();
+                    GameService.RoomList.Add(r);
+                    break;
+
+                //foreach (var item in CallList.ToArray())
+                //{
+                //    msg.MsgTime = DateTime.Now;
+                //    try
+                //    {
+                //        item.Value.PollServerMessage(clientid, msg);
+                //    }
+                //    catch
+                //    {
+                //        ThreadPool.QueueUserWorkItem(o =>
+                //        {
+                //            ICallback ICallback;
+                //            CallList.TryRemove(item.Key, out ICallback);
+                //        });
+                //    }
+                //}
             }
         }
     }

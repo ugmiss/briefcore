@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CenterAction.cs" />
+    <Compile Include="CenterActionType.cs" />
+    <Compile Include="GameService.cs" />
     <Compile Include="IGame.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

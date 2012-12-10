@@ -20,7 +20,7 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
         /// <summary>
         /// 个体集合。
         /// </summary>
-        List<Individual> IndividualList = new List<Individual>();
+        public List<Individual> IndividualList = new List<Individual>();
 
     }
 }

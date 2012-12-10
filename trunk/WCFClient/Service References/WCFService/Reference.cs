@@ -216,6 +216,9 @@ namespace WCFClient.WCFService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         SingleChat = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CreateRoom = 9,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
