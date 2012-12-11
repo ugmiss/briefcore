@@ -15,5 +15,10 @@ namespace AlgorithmDemo
         {
             InitializeComponent();
         }
+
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            txtCityNum.Text.ParseTo<int>();
+        }
     }
 }
