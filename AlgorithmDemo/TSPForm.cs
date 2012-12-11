@@ -6,22 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Utility.DataStructureAndAlgorithms.Genetic;
 
 namespace AlgorithmDemo
 {
-    public partial class DemoForm : Form
+    public partial class TSPForm : Form
     {
-        public DemoForm()
+        public TSPForm()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-           
-        }
     }
-
-   
 }
