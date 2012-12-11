@@ -96,10 +96,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataStructureAndAlgorithms\DirectGraph.cs" />
+    <Compile Include="DataStructureAndAlgorithms\Genetic\Choose\EliteChooseStrategy.cs" />
+    <Compile Include="DataStructureAndAlgorithms\Genetic\Choose\RouletteChooseStrategy.cs" />
     <Compile Include="DataStructureAndAlgorithms\Genetic\Chromosome.cs" />
     <Compile Include="DataStructureAndAlgorithms\Genetic\Crossover.cs" />
     <Compile Include="DataStructureAndAlgorithms\Genetic\Environment.cs" />
     <Compile Include="DataStructureAndAlgorithms\Genetic\FitnessFunction.cs" />
+    <Compile Include="DataStructureAndAlgorithms\Genetic\Choose\IChooseStrategy.cs" />
     <Compile Include="DataStructureAndAlgorithms\Genetic\Individual.cs" />
     <Compile Include="DataStructureAndAlgorithms\Genetic\Mutation.cs" />
     <Compile Include="DataStructureAndAlgorithms\Genetic\Population.cs" />

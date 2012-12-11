@@ -55,7 +55,9 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
             GetFirstPopulation();
             for (int i = 0; i < Environment.MaxGenarationCount; i++)
             {
+
                 Individual[] temp2 = Choose(func);
+               
                 foreach (var t in temp2)
                 {
                     if (FitnessFunction.GetFitnessRate(t, func) > 0)
@@ -63,15 +65,20 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
                         Environment.list.Add(t);
                     }
                 }
+
+                //孵化池
+                Individual[] MatingPool = new Individual[Environment.PopulationCount];
+                //随机交配
                 if (RandomFactory.NextDouble() < .5)
                 {
                     temp2 = Crossover.NewCrossover(temp2);
                 }
+                //随机突变
                 if (RandomFactory.NextDouble() < .05)
                 {
                     temp2[0].Chromosome = Mutation.NewMutation(temp2[0].Chromosome);
                 }
-
+                //新生代
                 Population newPopulation = new Population();
                 newPopulation.IndividualList.AddRange(temp2);
                 for (int k= 2; k < Environment.PopulationCount; k++)
