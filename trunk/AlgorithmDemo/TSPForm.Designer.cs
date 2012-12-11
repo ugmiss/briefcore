@@ -57,7 +57,7 @@
             // 
             this.txtCityNum.Location = new System.Drawing.Point(12, 28);
             this.txtCityNum.Name = "txtCityNum";
-            this.txtCityNum.Size = new System.Drawing.Size(75, 21);
+            this.txtCityNum.Size = new System.Drawing.Size(109, 21);
             this.txtCityNum.TabIndex = 2;
             // 
             // btnRandom
