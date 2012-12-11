@@ -21,18 +21,15 @@ namespace AlgorithmDemo
         {
 
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        List<Deal> li = new List<Deal>();
+        double MaxWeight = 0;
+        private void btnCalc_Click(object sender, EventArgs e)
         {
-            List<Deal> li = new List<Deal>();
-            li.Add(new Deal() { Weight = 7, Value = 12 });
-            li.Add(new Deal() { Weight = 3, Value = 12 });
-            li.Add(new Deal() { Weight = 4, Value = 40 });
-            li.Add(new Deal() { Weight = 5, Value = 25 });
+            MaxWeight = Convert.ToDouble(txtMax.Text);
             Func<Individual, double> func = p =>
             {
-                int SumWeight = 0;
-                int SumValue = 0;
+                double SumWeight = 0;
+                double SumValue = 0;
                 for (int x = 0; x < p.Chromosome.GeneArray.Length; x++)
                 {
                     if (p.Chromosome.GeneArray[x] == 1)
@@ -58,11 +55,28 @@ namespace AlgorithmDemo
             var lis = Revolution.GetList().OrderByDescending(p => FitnessFunction.GetFitnessRate(p, func)).ToList();
             var s = FitnessFunction.GetFitnessRate(lis[0], func);
         }
-    }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Deal d = new Deal();
+            d.Weight = Convert.ToDouble(txtWeight.Text);
+            d.Value = Convert.ToDouble(txtValue.Text);
+            li.Add(d);
+            dataGridView1.DataSource = li.ToArray();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            li.Clear();
+            dataGridView1.DataSource = li.ToArray();
+        }
+    }
+    /// <summary>
+    /// 货物
+    /// </summary>
     class Deal
     {
-        public int Weight { get; set; }
-        public int Value { get; set; }
+        public double Weight { get; set; }
+        public double Value { get; set; }
     }
 }

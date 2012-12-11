@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnCalc = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMax = new System.Windows.Forms.TextBox();
+            this.txtWeight = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtValue = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkIsMulti = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(12, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "添加";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(12, 42);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "添加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dataGridView1
             // 
@@ -63,24 +64,25 @@
             this.dataGridView1.Size = new System.Drawing.Size(384, 216);
             this.dataGridView1.TabIndex = 1;
             // 
-            // button2
+            // btnReset
             // 
-            this.button2.Location = new System.Drawing.Point(95, 42);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "重置";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnReset.Location = new System.Drawing.Point(95, 42);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 2;
+            this.btnReset.Text = "重置";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // button3
+            // btnCalc
             // 
-            this.button3.Location = new System.Drawing.Point(204, 225);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "计算";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnCalc.Location = new System.Drawing.Point(204, 225);
+            this.btnCalc.Name = "btnCalc";
+            this.btnCalc.Size = new System.Drawing.Size(75, 23);
+            this.btnCalc.TabIndex = 3;
+            this.btnCalc.Text = "计算";
+            this.btnCalc.UseVisualStyleBackColor = true;
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
             // 
             // dataGridView2
             // 
@@ -92,19 +94,19 @@
             this.dataGridView2.Size = new System.Drawing.Size(384, 80);
             this.dataGridView2.TabIndex = 4;
             // 
-            // textBox1
+            // txtMax
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 5;
+            this.txtMax.Location = new System.Drawing.Point(84, 6);
+            this.txtMax.Name = "txtMax";
+            this.txtMax.Size = new System.Drawing.Size(100, 21);
+            this.txtMax.TabIndex = 5;
             // 
-            // textBox2
+            // txtWeight
             // 
-            this.textBox2.Location = new System.Drawing.Point(84, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 6;
+            this.txtWeight.Location = new System.Drawing.Point(84, 81);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(100, 21);
+            this.txtWeight.TabIndex = 6;
             // 
             // label1
             // 
@@ -115,12 +117,12 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "总重量";
             // 
-            // textBox3
+            // txtValue
             // 
-            this.textBox3.Location = new System.Drawing.Point(84, 108);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 8;
+            this.txtValue.Location = new System.Drawing.Point(84, 108);
+            this.txtValue.Name = "txtValue";
+            this.txtValue.Size = new System.Drawing.Size(100, 21);
+            this.txtValue.TabIndex = 8;
             // 
             // label2
             // 
@@ -140,33 +142,33 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "价值";
             // 
-            // checkBox1
+            // chkIsMulti
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(76, 148);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(108, 16);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "是否可重复添加";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkIsMulti.AutoSize = true;
+            this.chkIsMulti.Location = new System.Drawing.Point(76, 148);
+            this.chkIsMulti.Name = "chkIsMulti";
+            this.chkIsMulti.Size = new System.Drawing.Size(108, 16);
+            this.chkIsMulti.TabIndex = 11;
+            this.chkIsMulti.Text = "是否可重复添加";
+            this.chkIsMulti.UseVisualStyleBackColor = true;
             // 
             // NPForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 345);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkIsMulti);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtValue);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtWeight);
+            this.Controls.Add(this.txtMax);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCalc);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAdd);
             this.Name = "NPForm";
             this.Text = "NP背包";
             this.Load += new System.EventHandler(this.NPForm_Load);
@@ -179,17 +181,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMax;
+        private System.Windows.Forms.TextBox txtWeight;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtValue;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkIsMulti;
     }
 }
