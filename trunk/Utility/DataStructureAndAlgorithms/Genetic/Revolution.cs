@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Utility.DataStructureAndAlgorithms.Genetic.Choose;
 
 namespace Utility.DataStructureAndAlgorithms.Genetic
 {
@@ -10,6 +11,7 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
     /// </summary>
     public class Revolution
     {
+        public static IChooseStrategy ChooseStrategy { get; set; }
         /// <summary>
         /// 每代
         /// </summary>
@@ -39,6 +41,10 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
         public static Individual[] Choose(Func<Individual, double> func)
         {
             List<Individual> li = CurrentPopulation.IndividualList.OrderBy(p => FitnessFunction.GetFitnessRate(p, func)).ToList();
+
+            ChooseStrategy.GetNewChoose(CurrentPopulation);
+            
+
             return new Individual[] { li[0], li[1] };
         }
 
@@ -58,13 +64,13 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
 
                 Individual[] temp2 = Choose(func);
                
-                foreach (var t in temp2)
-                {
-                    if (FitnessFunction.GetFitnessRate(t, func) > 0)
-                    {
-                        Environment.list.Add(t);
-                    }
-                }
+                //foreach (var t in temp2)
+                //{
+                //    if (FitnessFunction.GetFitnessRate(t, func) > 0)
+                //    {
+                //        Environment.list.Add(t);
+                //    }
+                //}
 
                 //孵化池
                 Individual[] MatingPool = new Individual[Environment.PopulationCount];
