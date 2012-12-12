@@ -10,6 +10,6 @@ namespace Utility.DataStructureAndAlgorithms.Genetic.Choose
     /// </summary>
     public interface IChooseStrategy
     {
-        Population GetNewChoose(Population population);
+        Individual[] GetNewChoose(Individual[] population);
     }
 }
