@@ -10,7 +10,7 @@ namespace Utility.DataStructureAndAlgorithms.Genetic.Choose
     /// </summary>
     public class EliteChooseStrategy:IChooseStrategy
     {
-        public Population GetNewChoose(Population population)
+        public Individual[] GetNewChoose(Individual[] population)
         {
             return population;
         }
