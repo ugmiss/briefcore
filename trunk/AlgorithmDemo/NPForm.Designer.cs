@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.chkIsMulti = new System.Windows.Forms.CheckBox();
+            this.lblResult = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -153,11 +154,20 @@
             this.chkIsMulti.Text = "是否可重复添加";
             this.chkIsMulti.UseVisualStyleBackColor = true;
             // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Location = new System.Drawing.Point(304, 230);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(0, 12);
+            this.lblResult.TabIndex = 12;
+            // 
             // NPForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 345);
+            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.chkIsMulti);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -194,5 +204,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkIsMulti;
+        private System.Windows.Forms.Label lblResult;
     }
 }

@@ -24,6 +24,9 @@ namespace AlgorithmDemo
             li.Add(new Deal() { Weight = 5, Value = 14 });
             li.Add(new Deal() { Weight = 4, Value = 11 });
             li.Add(new Deal() { Weight = 6, Value = 18 });
+            li.Add(new Deal() { Weight = 8, Value = 19 });
+            li.Add(new Deal() { Weight = 9, Value = 23 });
+            li.Add(new Deal() { Weight = 11, Value = 25 });
 
             dataGridView1.DataSource = li.ToArray();
         }
@@ -32,6 +35,11 @@ namespace AlgorithmDemo
         private void btnCalc_Click(object sender, EventArgs e)
         {
             MaxWeight = Convert.ToDouble(txtMax.Text);
+            Deal best = li.OrderByDescending(p => p.Value / p.Weight).ToArray()[0];
+
+
+            double MaxGuess = MaxWeight / best.Weight * best.Value;
+
             Func<Individual, double> func = p =>
             {
                 double SumWeight = 0;
@@ -48,15 +56,25 @@ namespace AlgorithmDemo
                 if (SumWeight > MaxWeight)
                     return 0;
                 else
-                    return (double)SumValue;
+                    return (double)1 / (MaxGuess - SumValue);
             };
 
             Revolution.ChooseStrategy = new RouletteChooseStrategy();
-            Revolution.Begin(func, 100, li.Count, 200);
-
+            Revolution.Begin(func, 100, li.Count, 2000);
+            double Value = 0;
+            double Weight = 0;
             Individual individual = Revolution.GetBestIndividual();
             double dd = individual.Fitness;
-
+            for (int x = 0; x < individual.Chromosome.GeneArray.Length; x++)
+            {
+                if (individual.Chromosome.GeneArray[x] == 1)
+                {
+                    Deal d = li[x];
+                    Weight += d.Weight;
+                    Value += d.Value;
+                }
+            }
+            lblResult.Text = "C：" + MaxGuess + " 重量：" + Weight + " 价值：" + Value;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
