@@ -10,18 +10,21 @@ namespace Utility.DataStructureAndAlgorithms.Genetic.Choose
     /// </summary>
     public class RouletteChooseStrategy : IChooseStrategy
     {
-        public int GetIndividualIndex(Population population)
+        public Population GetNewChoose(Population population)
         {
-
-            double m = 0;
-            double r = RandomFactory.NextDouble(); //r为0至1的随机数
-            for (int i = 1; i <= Environment.PopulationCount; i++)
+            Population result = new Population();
+            for (int k = 0; k < Environment.PopulationCount; k++)
             {
-                m = m + population.IndividualList[i].ProbabilityOfSelect;
-                if (r <= m)
-                    return i;
+                double m = 0;
+                double r = RandomFactory.NextDouble(); //r为0至1的随机数
+                for (int i = 0; i < Environment.PopulationCount; i++)
+                {
+                    m = m + population.IndividualList[i].ProbabilityOfSelect;
+                    if (r <= m)
+                        result.IndividualList.Add(population.IndividualList[i]);
+                }
             }
-            return 0;
+            return result;
         }
 
     }
