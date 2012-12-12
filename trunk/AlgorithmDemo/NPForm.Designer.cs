@@ -100,6 +100,7 @@
             this.txtMax.Name = "txtMax";
             this.txtMax.Size = new System.Drawing.Size(100, 21);
             this.txtMax.TabIndex = 5;
+            this.txtMax.Text = "10";
             // 
             // txtWeight
             // 

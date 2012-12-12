@@ -11,6 +11,7 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
     /// </summary>
     public class Revolution
     {
+        public static Individual EliteIndividual { get; set; }
         public static IChooseStrategy ChooseStrategy { get; set; }
         /// <summary>
         /// 每代
@@ -25,13 +26,21 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
             Population population = new Population();
             for (int i = 0; i < Environment.PopulationCount; i++)
             {
-                Individual indi= new Individual();
+                Individual indi = new Individual();
                 indi.Chromosome = new Chromosome();
                 population.IndividualList.Add(indi);
             }
             CurrentPopulation = population;
             return population;
         }
+
+        public static Individual GetBestIndividual()
+        {
+            List<Individual> r = CurrentPopulation.IndividualList.OrderByDescending(p => p.Fitness).ToList();
+            return r[0];
+        }
+
+
         public static Population CurrentPopulation { get; set; }
         /// <summary>
         /// 选择
@@ -40,12 +49,20 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
         /// <returns></returns>
         public static Individual[] Choose(Func<Individual, double> func)
         {
-            List<Individual> li = CurrentPopulation.IndividualList.OrderBy(p => FitnessFunction.GetFitnessRate(p, func)).ToList();
-
-            ChooseStrategy.GetNewChoose(CurrentPopulation);
-            
-
-            return new Individual[] { li[0], li[1] };
+            double SumFitness = 0;
+            foreach (Individual individual in CurrentPopulation.IndividualList)
+            {
+                individual.Fitness = FitnessFunction.GetFitnessRate(individual, func);
+                SumFitness += individual.Fitness;
+            }
+            foreach (Individual individual in CurrentPopulation.IndividualList)
+            {
+                if (SumFitness == 0)
+                    individual.ProbabilityOfSelect = 0;
+                else
+                    individual.ProbabilityOfSelect = individual.Fitness / SumFitness;
+            }
+            return ChooseStrategy.GetNewChoose(CurrentPopulation.IndividualList.ToArray());
         }
 
         public static List<Individual> GetList()
@@ -53,7 +70,7 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
             return Environment.list;
         }
 
-        public static void Begin(Func<Individual, double> func, int PopulationCount,int ChromosomeLength,int MaxGenarationCount )
+        public static void Begin(Func<Individual, double> func, int PopulationCount, int ChromosomeLength, int MaxGenarationCount)
         {
             Environment.ChromosomeLength = ChromosomeLength;
             Environment.MaxGenarationCount = MaxGenarationCount;
@@ -61,39 +78,45 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
             GetFirstPopulation();
             for (int i = 0; i < Environment.MaxGenarationCount; i++)
             {
-
-                Individual[] temp2 = Choose(func);
-               
-                //foreach (var t in temp2)
-                //{
-                //    if (FitnessFunction.GetFitnessRate(t, func) > 0)
-                //    {
-                //        Environment.list.Add(t);
-                //    }
-                //}
-
                 //孵化池
-                Individual[] MatingPool = new Individual[Environment.PopulationCount];
+                Individual[] MatingPool = Choose(func);
                 //随机交配
-                if (RandomFactory.NextDouble() < .5)
-                {
-                    temp2 = Crossover.NewCrossover(temp2);
-                }
+                MatingPool = Crossover.NewCrossover(MatingPool);
                 //随机突变
-                if (RandomFactory.NextDouble() < .05)
+                if (RandomFactory.NextDouble() < .01)
                 {
-                    temp2[0].Chromosome = Mutation.NewMutation(temp2[0].Chromosome);
+                    MatingPool[0].Chromosome = Mutation.NewMutation(MatingPool[0].Chromosome);
                 }
                 //新生代
                 Population newPopulation = new Population();
-                newPopulation.IndividualList.AddRange(temp2);
-                for (int k= 2; k < Environment.PopulationCount; k++)
-                { 
-                    Individual indi=new Individual();
-                    indi.Chromosome=new Chromosome();
-                    newPopulation.IndividualList.Add(indi);
+                for (int x = 0; x < Environment.PopulationCount; x++)
+                {
+                    if (RandomFactory.NextDouble() < .5)
+                    {
+                        newPopulation.IndividualList.Add(MatingPool[RandomFactory.Next(MatingPool.Length)]);
+                    }
+                    else
+                    {
+                        if (EliteIndividual != null)
+                        {
+                            newPopulation.IndividualList.Add(EliteIndividual.Clone() as Individual);
+                        }
+                        else
+                        {
+                            Individual indi = new Individual();
+                            indi.Chromosome = new Chromosome();
+                            newPopulation.IndividualList.Add(indi);
+                        }
+                    }
+                }
+                if (EliteIndividual != null)
+                {
+                    newPopulation.IndividualList.RemoveAt(RandomFactory.Next(MatingPool.Length));
+                    newPopulation.IndividualList.Add(EliteIndividual);
                 }
                 CurrentPopulation = newPopulation;
+                if (EliteIndividual != null && GetBestIndividual().Fitness > EliteIndividual.Fitness)
+                    EliteIndividual = GetBestIndividual();
             }
         }
     }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Utility.DataStructureAndAlgorithms.Genetic;
+using Utility.DataStructureAndAlgorithms.Genetic.Choose;
 
 namespace AlgorithmDemo
 {
@@ -19,7 +20,12 @@ namespace AlgorithmDemo
 
         private void NPForm_Load(object sender, EventArgs e)
         {
+            li.Add(new Deal() { Weight = 3, Value = 8 });
+            li.Add(new Deal() { Weight = 5, Value = 14 });
+            li.Add(new Deal() { Weight = 4, Value = 11 });
+            li.Add(new Deal() { Weight = 6, Value = 18 });
 
+            dataGridView1.DataSource = li.ToArray();
         }
         List<Deal> li = new List<Deal>();
         double MaxWeight = 0;
@@ -39,21 +45,18 @@ namespace AlgorithmDemo
                         SumValue += d.Value;
                     }
                 }
-                if (SumWeight > 10)
+                if (SumWeight > MaxWeight)
                     return 0;
                 else
                     return (double)SumValue;
             };
 
+            Revolution.ChooseStrategy = new RouletteChooseStrategy();
+            Revolution.Begin(func, 100, li.Count, 200);
 
-            Revolution.Begin(func, 5, 4, 20000);
+            Individual individual = Revolution.GetBestIndividual();
+            double dd = individual.Fitness;
 
-            Population pp = Revolution.CurrentPopulation;
-
-            double dd = FitnessFunction.GetFitnessRate(pp.IndividualList[0], func);
-
-            var lis = Revolution.GetList().OrderByDescending(p => FitnessFunction.GetFitnessRate(p, func)).ToList();
-            var s = FitnessFunction.GetFitnessRate(lis[0], func);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
