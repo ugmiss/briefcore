@@ -108,7 +108,7 @@
     <Compile Include="DataStructureAndAlgorithms\Genetic\Population.cs" />
     <Compile Include="DataStructureAndAlgorithms\Genetic\Revolution.cs" />
     <Compile Include="DataStructureAndAlgorithms\RadicalCenter.cs" />
-    <Compile Include="DataStructureAndAlgorithms\RandomFactory.cs" />
+    <Compile Include="RandomFactory.cs" />
     <Compile Include="EnCodingHelper.cs" />
     <Compile Include="File\Pather.cs" />
     <Compile Include="Hanzi\Bopomofo.cs" />
