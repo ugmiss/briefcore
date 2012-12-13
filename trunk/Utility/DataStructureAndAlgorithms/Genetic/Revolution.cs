@@ -81,7 +81,10 @@ namespace Utility.DataStructureAndAlgorithms.Genetic
                 //孵化池
                 Individual[] MatingPool = Choose(func);
                 //随机交配
-                MatingPool = Crossover.NewCrossover(MatingPool);
+                if (RandomFactory.NextDouble() < .5)
+                {
+                    MatingPool = Crossover.NewCrossover(MatingPool);
+                }
                 //随机突变
                 if (RandomFactory.NextDouble() < .01)
                 {
