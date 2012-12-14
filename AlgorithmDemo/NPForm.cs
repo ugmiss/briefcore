@@ -6,8 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Utility.DataStructureAndAlgorithms.Genetic;
-using Utility.DataStructureAndAlgorithms.Genetic.Choose;
 
 namespace AlgorithmDemo
 {
@@ -40,13 +38,13 @@ namespace AlgorithmDemo
 
             double MaxGuess = MaxWeight / best.Weight * best.Value;
 
-            Func<Individual, double> func = p =>
+            Func<int[], double> func = p =>
             {
                 double SumWeight = 0;
                 double SumValue = 0;
-                for (int x = 0; x < p.Chromosome.GeneArray.Length; x++)
+                for (int x = 0; x < p.Length; x++)
                 {
-                    if (p.Chromosome.GeneArray[x] == 1)
+                    if (p[x] == 1)
                     {
                         Deal d = li[x];
                         SumWeight += d.Weight;
@@ -59,21 +57,21 @@ namespace AlgorithmDemo
                     return (double)1 / (MaxGuess - SumValue);
             };
 
-            Revolution.ChooseStrategy = new RouletteChooseStrategy();
-            Revolution.Begin(func, 100, li.Count, 2000);
+            //Revolution.ChooseStrategy = new RouletteChooseStrategy();
+            //Revolution.Begin(func, 100, li.Count, 2000);
             double Value = 0;
             double Weight = 0;
-            Individual individual = Revolution.GetBestIndividual();
-            double dd = individual.Fitness;
-            for (int x = 0; x < individual.Chromosome.GeneArray.Length; x++)
-            {
-                if (individual.Chromosome.GeneArray[x] == 1)
-                {
-                    Deal d = li[x];
-                    Weight += d.Weight;
-                    Value += d.Value;
-                }
-            }
+            //Individual individual = Revolution.GetBestIndividual();
+            //double dd = individual.Fitness;
+            //for (int x = 0; x < individual.Chromosome.GeneArray.Length; x++)
+            //{
+            //    if (individual.Chromosome.GeneArray[x] == 1)
+            //    {
+            //        Deal d = li[x];
+            //        Weight += d.Weight;
+            //        Value += d.Value;
+            //    }
+            //}
             lblResult.Text = "C：" + MaxGuess + " 重量：" + Weight + " 价值：" + Value;
         }
 

@@ -5,8 +5,7 @@ using System.Text;
 
 namespace Algorithms.Genetic
 {
-    public class Chromosome
+    public class GeneticCache
     {
-        List<int> GeneList;
     }
 }
