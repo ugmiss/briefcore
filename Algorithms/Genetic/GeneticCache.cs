@@ -11,6 +11,8 @@ namespace Algorithms.Genetic
         public static int PopulationCount { get; set; }
         //当前代数
         public static int CurrentGenarationCount { get; set; }
+        //当前最优解
+        public static int[] BestIndividual { get; set; }
         //最大代数
         public static int MaxGenarationCount { get; set; }
         //适应度函数
