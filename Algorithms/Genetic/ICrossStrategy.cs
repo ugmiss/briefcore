@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Algorithms.Genetic
 {
-    interface ICrossStrategy
+    public interface ICrossStrategy
     {
     }
 }
