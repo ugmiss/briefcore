@@ -10,6 +10,6 @@ namespace Algorithms.Genetic
     /// </summary>
     public interface IChooseStrategy
     {
-        Chromosome[] GetNewChoose(Chromosome[] population);
+        int[][] GetNewChoose(int[][] population);
     }
 }
