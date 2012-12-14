@@ -108,6 +108,8 @@ namespace Algorithms.Genetic
             //精英率 精英直接进入新生代
             if (BestIndividual != null && RandomFactory.NextDouble() < EliteRate)
             {
+#warning TODO：删除最差个体。
+                //添加精英个体。
                 NewGeneration.Add(BestIndividual);
             }
         }
