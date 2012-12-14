@@ -54,11 +54,12 @@ namespace Algorithms.Genetic
         #endregion
 
         //初始数据
-        public void InitData(int PopulationCount, int ChromosomeLength, int MaxGenarationCount)
+        public void InitData(int PopulationCount, int ChromosomeLength, int MaxGenarationCount, int SpawningPoolLength)
         {
             this.PopulationLength = PopulationCount;
             this.ChromosomeLength = ChromosomeLength;
             this.MaxGenarationCount = MaxGenarationCount;
+            this.SpawningPoolLength = SpawningPoolLength;
         }
         //初始函数
         public void InitFunc(Func<int[], double> FitnessFunc, Func<int[]> ChromosomeFunc, Func<int[][], int[]> ChooseFunc, Func<int[], int[], int[][]> CrossFunc, Action<int[]> MutationAction)
@@ -112,11 +113,12 @@ namespace Algorithms.Genetic
                         NewGeneration.Add(ChromosomeABandBA[1]);
                     }
                 }
-                while (SpawningPool.Count == 0);
+                while (SpawningPool.Count != 0);
             });
             //起两个任务去执行交叉操作，不知道Task数是不是与双核有关，还待研究。
-            Task.Factory.StartNew(action);
-            Task.Factory.StartNew(action);
+           Task t1= Task.Factory.StartNew(action);
+           Task t2= Task.Factory.StartNew(action);
+           Task.WaitAll(t1, t2);
             //变异
             if (RandomFactory.NextDouble() < MutationRate)
             {
@@ -127,12 +129,12 @@ namespace Algorithms.Genetic
             //精英率 精英直接进入新生代
             if (BestIndividual != null && RandomFactory.NextDouble() < EliteRate)
             {
-#warning TODO：删除最差个体。
                 //添加精英个体。
                 NewGeneration.Add(BestIndividual);
             }
-#warning TODO：计算Fitness，缓存最优解。
-            CurrentPopulation = NewGeneration.ToArray();
+            CurrentPopulation = NewGeneration.OrderByDescending(p => FitnessFunc(p)).ToArray();
+            if (BestIndividual == null || FitnessFunc(BestIndividual) < FitnessFunc(CurrentPopulation[0]))
+                BestIndividual = CurrentPopulation[0];
         }
     }
 }
