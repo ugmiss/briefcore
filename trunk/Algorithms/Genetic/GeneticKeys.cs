@@ -12,7 +12,7 @@ namespace Algorithms.Genetic
         const string Individual = "个体";
         const string Chromosome = "染色体";
         const string Fitness = "适应度";
-        const string Probability = "概率";
+        const string Probability = "选择概率";
         const string Elite = "精英";
         const string Roulette = "轮盘赌";
         const string Choose = "选择";

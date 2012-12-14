@@ -7,5 +7,6 @@ namespace Algorithms.Genetic
 {
     public class Revolution
     {
+
     }
 }
