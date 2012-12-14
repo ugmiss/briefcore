@@ -85,18 +85,26 @@ namespace Algorithms.Genetic
                 SpawningPool.Add(ChooseFunc(CurrentPopulation));
             });
             //交叉
-            do
+            Action action = new Action(() =>
             {
-                int[] ChromosomeA;
-                int[] ChromosomeB;
-                SpawningPool.TryTake(out ChromosomeA);
-                SpawningPool.TryTake(out ChromosomeB);
-                int[][] ChromosomeABandBA = CrossFunc(ChromosomeA, ChromosomeB);
-                NewGeneration.Add(ChromosomeABandBA[0]);
-                NewGeneration.Add(ChromosomeABandBA[1]);
-            }
-            while (SpawningPool.Count == 0);
-
+                do
+                {
+                    int[] ChromosomeA;
+                    int[] ChromosomeB;
+                    SpawningPool.TryTake(out ChromosomeA);
+                    SpawningPool.TryTake(out ChromosomeB);
+                    if (ChromosomeA != null && ChromosomeB != null)
+                    {
+                        int[][] ChromosomeABandBA = CrossFunc(ChromosomeA, ChromosomeB);
+                        NewGeneration.Add(ChromosomeABandBA[0]);
+                        NewGeneration.Add(ChromosomeABandBA[1]);
+                    }
+                }
+                while (SpawningPool.Count == 0);
+            });
+            //起两个任务去执行交叉操作，不知道Task数是不是与双核有关，还待研究。
+            Task.Factory.StartNew(action);
+            Task.Factory.StartNew(action);
             //精英率 精英直接进入新生代
             if (BestIndividual != null && RandomFactory.NextDouble() < EliteRate)
             {
