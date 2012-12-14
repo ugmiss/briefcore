@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmDemo", "AlgorithmDemo\AlgorithmDemo.csproj", "{2822089A-8A4D-4B41-B69D-1E0EC0FEAAEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Algorithms.csproj", "{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Brief.vsmdi
@@ -50,6 +52,16 @@ Global
 		{2822089A-8A4D-4B41-B69D-1E0EC0FEAAEA}.Release|Mixed Platforms.Build.0 = Release|x86
 		{2822089A-8A4D-4B41-B69D-1E0EC0FEAAEA}.Release|x86.ActiveCfg = Release|x86
 		{2822089A-8A4D-4B41-B69D-1E0EC0FEAAEA}.Release|x86.Build.0 = Release|x86
+		{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
