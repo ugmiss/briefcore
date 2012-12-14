@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DirectGraph.cs" />
+    <Compile Include="Genetic\Funcs\ChooseFuncFactory.cs" />
     <Compile Include="Genetic\GeneticEnvironment.cs" />
     <Compile Include="Genetic\GeneticKeys.cs" />
     <Compile Include="Genetic\IChooseStrategy.cs" />
@@ -48,6 +49,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RadicalCenter.cs" />
     <Compile Include="Genetic\Revolution.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{8D45C50B-B6AF-4E1D-BB1B-23AD9ACA1A69}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
