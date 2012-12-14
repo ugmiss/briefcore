@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DirectGraph.cs" />
-    <Compile Include="Genetic\GeneticCache.cs" />
+    <Compile Include="Genetic\GeneticEnvironment.cs" />
     <Compile Include="Genetic\GeneticKeys.cs" />
     <Compile Include="Genetic\IChooseStrategy.cs" />
     <Compile Include="Genetic\ICrossStrategy.cs" />
