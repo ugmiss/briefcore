@@ -51,9 +51,6 @@
     <Compile Include="Genetic\Revolution.cs" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Utility\Utility.csproj">
       <Project>{8D45C50B-B6AF-4E1D-BB1B-23AD9ACA1A69}</Project>
       <Name>Utility</Name>
