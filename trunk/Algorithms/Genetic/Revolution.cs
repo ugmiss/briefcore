@@ -49,6 +49,8 @@ namespace Algorithms.Genetic
         public Func<int[][], int[]> ChooseFunc { get; set; }
         //交叉函数
         public Func<int[], int[], int[][]> CrossFunc { get; set; }
+        //变异方法
+        public Action<int[]> MutationAction { get; set; }
         #endregion
 
         //初始数据
@@ -59,10 +61,13 @@ namespace Algorithms.Genetic
             this.MaxGenarationCount = MaxGenarationCount;
         }
         //初始函数
-        public void InitFunc(Func<int[], double> FitnessFunc, Func<int[]> ChromosomeFunc)
+        public void InitFunc(Func<int[], double> FitnessFunc, Func<int[]> ChromosomeFunc, Func<int[][], int[]> ChooseFunc, Func<int[], int[], int[][]> CrossFunc, Action<int[]> MutationAction)
         {
             this.FitnessFunc = FitnessFunc;
             this.ChromosomeFunc = ChromosomeFunc;
+            this.ChooseFunc = ChooseFunc;
+            this.CrossFunc = CrossFunc;
+            this.MutationAction = MutationAction;
         }
         //开始进化
         public void Begin()
@@ -75,9 +80,16 @@ namespace Algorithms.Genetic
                 Chromosome = ChromosomeFunc();
                 CurrentPopulation[i] = Chromosome;
             });
+
+            do { Loop(); }
+            while (MaxGenarationCount-- > 0);
+        }
+
+
+        public void Loop()
+        {
             //新生代
             ConcurrentBag<int[]> NewGeneration = new ConcurrentBag<int[]>();
-
             //选择并生成孵化池
             ConcurrentBag<int[]> SpawningPool = new ConcurrentBag<int[]>();
             Parallel.For(0, SpawningPoolLength, i =>
@@ -105,6 +117,13 @@ namespace Algorithms.Genetic
             //起两个任务去执行交叉操作，不知道Task数是不是与双核有关，还待研究。
             Task.Factory.StartNew(action);
             Task.Factory.StartNew(action);
+            //变异
+            if (RandomFactory.NextDouble() < MutationRate)
+            {
+                int[] Chromosomex;
+                NewGeneration.TryPeek(out Chromosomex);
+                MutationAction(Chromosomex);
+            }
             //精英率 精英直接进入新生代
             if (BestIndividual != null && RandomFactory.NextDouble() < EliteRate)
             {
@@ -112,6 +131,8 @@ namespace Algorithms.Genetic
                 //添加精英个体。
                 NewGeneration.Add(BestIndividual);
             }
+#warning TODO：计算Fitness，缓存最优解。
+            CurrentPopulation = NewGeneration.ToArray();
         }
     }
 }
