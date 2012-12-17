@@ -8,6 +8,8 @@ using Utility;
 
 namespace Algorithms.Genetic
 {
+
+    public delegate void BestChange(Revolution sender);
     //进化
     public class Revolution
     {
@@ -15,15 +17,16 @@ namespace Algorithms.Genetic
         //交叉率 90%让孵化池中的个体交叉产生新个体，10%个体直接进入新生代。
         public static double CrossRate = 0.9;
         //突变率 1%基因位突变，引起物种多样性，进化或者退化。
-        public static double MutationRate = 0.1;
+        public static double MutationRate = 0.2;
         //精英率 10%的概率历史最优个体直接进入新生代，不参加选择，交叉和突变。 
         //精英率值越大收敛越快
-        public static double EliteRate = 0.1;
+        public static double EliteRate = 0.2;
         //免疫率
         public static double ImmuneRate = 0.1;
         //灾难率
         public static double DisasterRate = 0.01;
         #endregion
+        public event BestChange OnBestChange;
 
         #region 必要参数
         //种群长度初始 维持种群多样性，可通过环境影响，模拟灾难，移除部分解，并逐渐加入新个体。
@@ -38,7 +41,24 @@ namespace Algorithms.Genetic
         //当代种群
         public int[][] CurrentPopulation { get; set; }
         //历史最优解
-        public int[] BestIndividual { get; set; }
+        public int[] _BestIndividual;
+
+        public int[] BestIndividual
+        {
+            get
+            {
+                return _BestIndividual;
+            }
+
+            set
+            {
+                _BestIndividual = value;
+                if (OnBestChange != null)
+                {
+                    OnBestChange(this);
+                }
+            }
+        }
         //最大代数
         public int MaxGenarationCount { get; set; }
         //适应度函数
@@ -74,6 +94,7 @@ namespace Algorithms.Genetic
         public void Begin()
         {
             CurrentPopulation = new int[PopulationLength][];
+            CurrentGenarationIndex = 0;
             //初始化第一代
             Parallel.For(0, PopulationLength, i =>
             {
@@ -89,6 +110,7 @@ namespace Algorithms.Genetic
 
         public void Loop()
         {
+            CurrentGenarationIndex++;
             //新生代
             ConcurrentBag<int[]> NewGeneration = new ConcurrentBag<int[]>();
             //选择并生成孵化池
@@ -116,9 +138,9 @@ namespace Algorithms.Genetic
                 while (SpawningPool.Count != 0);
             });
             //起两个任务去执行交叉操作，不知道Task数是不是与双核有关，还待研究。
-           Task t1= Task.Factory.StartNew(action);
-           Task t2= Task.Factory.StartNew(action);
-           Task.WaitAll(t1, t2);
+            Task t1 = Task.Factory.StartNew(action);
+            Task t2 = Task.Factory.StartNew(action);
+            Task.WaitAll(t1, t2);
             //变异
             if (RandomFactory.NextDouble() < MutationRate)
             {

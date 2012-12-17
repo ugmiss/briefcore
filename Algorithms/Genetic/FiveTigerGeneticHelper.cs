@@ -6,68 +6,126 @@ using Utility;
 
 namespace Algorithms.Genetic
 {
-    public class City
+    public class FiveTigerGeneticHelper
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-    }
-    public class TSPGeneticHelper
-    {
-        public static List<City> List { get; set; }
-        public static double[][] DistanceMap { get; set; }
-        public static double GetBestLenth(int[] p)
+        public static int[] Blacks;
+        public static int[] Whites;
+        public static bool Isblackturn;
+        public FiveTigerGeneticHelper(int[] blacks, int[] whites, bool isblackturn)
         {
-            double SumDistance = 0;
-            for (int i = 0; i < p.Length - 1; i++)
-            {
-                SumDistance += DistanceMap[p[i]][p[i + 1]];
-            }
-            SumDistance += DistanceMap[0][p.Length - 1];
-            return SumDistance;
+            Blacks = blacks;
+            Whites = whites;
+            Isblackturn = isblackturn;
         }
-
-        public TSPGeneticHelper(List<City> cityList)
+        public static int GetBlackPoint(int[] blacks, out double[] rights)
         {
-            List = cityList;
-            int citycount = List.Count;
-            //计算距离矩阵。
-            DistanceMap = new double[citycount][];
-            for (int i = 0; i < citycount; i++)
+            int sum = 0;
+            rights = new double[25];
+            for (int i = 0; i < rights.Length; i++)
             {
-                DistanceMap[i] = new double[citycount];
+                rights[i] = 0;
             }
-            for (int i = 0; i < citycount; i++)
+            int[] qi = Enumerable.Repeat(0, 25).ToArray();
+            for (int i = 0; i < blacks.Length; i++)
             {
-                for (int k = 0; k < citycount; k++)
+                qi[blacks[i]] = 1;
+            }
+            //通天2个
+            if (GetLine(qi, 5, rights, 0, 6, 12, 18, 24))
+                sum += 5;
+            if (GetLine(qi, 5, rights, 4, 8, 12, 16, 20))
+                sum += 5;
+            //横5
+            int[] temp1 = Enumerable.Range(0, 5).ToArray();
+            for (int x = 0; x < 5; x++)
+            {
+                var q = (from c in temp1 select c + 5*x).ToArray();
+                if (GetLine(qi, 4, rights, q))
+                    sum += 4;
+            }
+            //竖5
+            int[] temp2 = Enumerable.Range(0, 5).ToArray();
+            for (int x = 0; x < 5; x++)
+            {
+                var q = (from c in temp2 select c * 5 + x).ToArray();
+                if (GetLine(qi, 4, rights, q))
+                    sum += 4;
+            }
+            //四斜
+            if (GetLine(qi, 3, rights, 1, 7, 13, 19))
+                sum += 3;
+            if (GetLine(qi, 3, rights, 5, 11, 17, 23))
+                sum += 3;
+
+            if (GetLine(qi, 3, rights, 3, 7, 11, 15))
+                sum += 3;
+            if (GetLine(qi, 3, rights, 9, 13, 17, 21))
+                sum += 3;
+
+            //三斜
+            if (GetLine(qi, 2, rights, 2, 6, 10))
+                sum += 2;
+            if (GetLine(qi, 2, rights, 2, 8, 14))
+                sum += 2;
+
+            if (GetLine(qi, 2, rights, 10, 16, 22))
+                sum += 2;
+            if (GetLine(qi, 2, rights, 14, 18, 22))
+                sum += 2;
+
+            //井
+            for (int x = 0; x < 19; x++)
+            {
+                if (x % 5 == 4) continue;
+                if ((qi[x] + qi[x + 1] + qi[x + 5] + qi[x + 6]) == 4)
                 {
-                    if (i == k)
-                        continue;
-                    var CityA = cityList[i];
-                    var CityB = cityList[k];
-                    DistanceMap[i][k] = System.Math.Sqrt((CityA.X - CityB.X) * (CityA.X - CityB.X) + (CityA.Y - CityB.Y) * (CityA.Y - CityB.Y));
+                    sum += 1;
+                    rights[x] += 0.25;
+                    rights[x + 1] += 0.25;
+                    rights[x + 5] += 0.25;
+                    rights[x + 6] += 0.25;
                 }
             }
+
+
+            return sum;
         }
+
+        public static bool GetLine(int[] qi, double fen, double[] rights, params int[] arr)
+        {
+            int sum = 0;
+            foreach (int x in arr)
+            {
+                sum += qi[x];
+            }
+            if (sum == arr.Length)
+            {
+                foreach (int x in arr)
+                {
+                    rights[x] += fen / arr.Length;
+                }
+                return true;
+            }
+
+            
+
+            return false;
+        }
+
         /// <summary>
         /// 适应度函数。
         /// </summary>
         public static Func<int[], double> FitnessFunc = p =>
         {
-            double SumDistance = 0;
-            for (int i = 0; i < p.Length - 1; i++)
-            {
-                SumDistance += DistanceMap[p[i]][p[i + 1]];
-            }
-            SumDistance += DistanceMap[0][p.Length - 1];
-            return 1000 / SumDistance;//路径和越小，适应度越高
+            return 0;
         };
         /// <summary>
         /// 染色体生成函数。
         /// </summary>
         public static Func<int[]> ChromosomeFunc = () =>
         {
-            int[] chromosome = new int[List.Count];
-            for (int i = 0; i < List.Count; i++)
+            int[] chromosome = new int[25];
+            for (int i = 0; i < 25; i++)
             {
                 chromosome[i] = i;
             }
@@ -141,15 +199,15 @@ namespace Algorithms.Genetic
                 {
                     if (flag) break;
                     tempx = ab[i];
-                    indexa=i;
-                  
+                    indexa = i;
+
                     for (int k = i + 1; k < ab.Length; k++)
                     {
                         if (tempx == ab[k])
                         {
-                            int tp=ab[k];
-                            ab[k]=ba[indexa];
-                            ba[indexa]=tp;
+                            int tp = ab[k];
+                            ab[k] = ba[indexa];
+                            ba[indexa] = tp;
                             flag = true;
                             break;
                         }
@@ -168,7 +226,7 @@ namespace Algorithms.Genetic
             int indexB = RandomFactory.Next(p.Length);
             int temp = p[indexA];
             p[indexA] = p[indexB];
-            p[indexB] =temp;
+            p[indexB] = temp;
         };
     }
 }
