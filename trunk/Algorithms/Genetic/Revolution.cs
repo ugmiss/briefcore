@@ -15,7 +15,7 @@ namespace Algorithms.Genetic
         //交叉率 90%让孵化池中的个体交叉产生新个体，10%个体直接进入新生代。
         public static double CrossRate = 0.9;
         //突变率 1%基因位突变，引起物种多样性，进化或者退化。
-        public static double MutationRate = 0.01;
+        public static double MutationRate = 0.1;
         //精英率 10%的概率历史最优个体直接进入新生代，不参加选择，交叉和突变。 
         //精英率值越大收敛越快
         public static double EliteRate = 0.1;
@@ -117,8 +117,8 @@ namespace Algorithms.Genetic
             });
             //起两个任务去执行交叉操作，不知道Task数是不是与双核有关，还待研究。
            Task t1= Task.Factory.StartNew(action);
-           Task t2= Task.Factory.StartNew(action);
-           Task.WaitAll(t1, t2);
+           //Task t2= Task.Factory.StartNew(action);
+           Task.WaitAll(t1);//, t2);
             //变异
             if (RandomFactory.NextDouble() < MutationRate)
             {

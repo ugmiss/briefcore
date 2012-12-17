@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Utility;
+using Algorithms.Genetic;
 
 namespace AlgorithmDemo
 {
@@ -29,22 +30,7 @@ namespace AlgorithmDemo
                 c.Y = RandomFactory.Next(panel1.Height);
                 cityList.Add(c);
             }
-            double[][] DistanceMap = new double[citycount][];
-            for (int i = 0; i < citycount; i++)
-            {
-                DistanceMap[i] = new double[citycount];
-            }
-            for (int i = 0; i < citycount; i++)
-            {
-                for (int k = 0; k < citycount; k++)
-                {
-                    if (i == k)
-                        continue;
-                    var CityA = cityList[i];
-                    var CityB = cityList[k];
-                    DistanceMap[i][k] = System.Math.Sqrt((CityA.X - CityB.X) * (CityA.X - CityB.X) + (CityA.Y - CityB.Y) * (CityA.Y - CityB.Y));
-                }
-            }
+           
             panel1.Refresh();
 
         }
@@ -56,13 +42,32 @@ namespace AlgorithmDemo
             {
                 g.FillEllipse(Brushes.Red, c.X, c.Y, 3, 3);
             }
+            if (result != null)
+            {
+                Pen p=new Pen(Color.Blue);
+                for (int i = 0; i < result.Length; i++)
+                {
+                   var ca= cityList[i];
+                   var cb =i+1==result.Length?cityList[0]:cityList[i+1];
+                   g.DrawLine(p, ca.X, ca.Y, cb.X, cb.Y);
+                }
+            }
+        }
+        int[] result = null;
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+            TSPGeneticHelper helper = new TSPGeneticHelper(cityList);
+
+
+            Revolution revolution = new Revolution();
+            revolution.InitData(100, cityList.Count, 1000, 100);
+            revolution.InitFunc(TSPGeneticHelper.FitnessFunc, TSPGeneticHelper.ChromosomeFunc, TSPGeneticHelper.ChooseFunc, TSPGeneticHelper.CrossFunc, TSPGeneticHelper.MutationAction);
+            revolution.Begin();
+            result = revolution.BestIndividual;
+            var s = string.Join("", revolution.BestIndividual);
+            panel1.Refresh();
         }
     }
 
-    public class City
-    {
-        public string CityName { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
-    }
+    
 }

@@ -43,6 +43,7 @@
             this.btnCalc.TabIndex = 0;
             this.btnCalc.Text = "计算";
             this.btnCalc.UseVisualStyleBackColor = true;
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
             // 
             // label1
             // 
@@ -59,7 +60,7 @@
             this.txtCityNum.Name = "txtCityNum";
             this.txtCityNum.Size = new System.Drawing.Size(109, 21);
             this.txtCityNum.TabIndex = 2;
-            this.txtCityNum.Text = "10";
+            this.txtCityNum.Text = "40";
             // 
             // btnRandom
             // 
