@@ -60,7 +60,7 @@
             this.txtCityNum.Name = "txtCityNum";
             this.txtCityNum.Size = new System.Drawing.Size(109, 21);
             this.txtCityNum.TabIndex = 2;
-            this.txtCityNum.Text = "40";
+            this.txtCityNum.Text = "30";
             // 
             // btnRandom
             // 
@@ -93,6 +93,7 @@
             this.Controls.Add(this.btnCalc);
             this.Name = "TSPForm";
             this.Text = "旅行商TSP";
+            this.Load += new System.EventHandler(this.TSPForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

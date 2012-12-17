@@ -117,8 +117,8 @@ namespace Algorithms.Genetic
             });
             //起两个任务去执行交叉操作，不知道Task数是不是与双核有关，还待研究。
            Task t1= Task.Factory.StartNew(action);
-           //Task t2= Task.Factory.StartNew(action);
-           Task.WaitAll(t1);//, t2);
+           Task t2= Task.Factory.StartNew(action);
+           Task.WaitAll(t1, t2);
             //变异
             if (RandomFactory.NextDouble() < MutationRate)
             {

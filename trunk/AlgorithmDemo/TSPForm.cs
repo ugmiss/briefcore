@@ -30,7 +30,7 @@ namespace AlgorithmDemo
                 c.Y = RandomFactory.Next(panel1.Height);
                 cityList.Add(c);
             }
-           
+            result = null;
             panel1.Refresh();
 
         }
@@ -44,12 +44,12 @@ namespace AlgorithmDemo
             }
             if (result != null)
             {
-                Pen p=new Pen(Color.Blue);
+                Pen p = new Pen(Color.Blue);
                 for (int i = 0; i < result.Length; i++)
                 {
-                   var ca= cityList[i];
-                   var cb =i+1==result.Length?cityList[0]:cityList[i+1];
-                   g.DrawLine(p, ca.X, ca.Y, cb.X, cb.Y);
+                    var ca = cityList[result[i]];
+                    var cb = i + 1 == result.Length ? cityList[result[0]] : cityList[result[i + 1]];
+                    g.DrawLine(p, ca.X, ca.Y, cb.X, cb.Y);
                 }
             }
         }
@@ -57,17 +57,23 @@ namespace AlgorithmDemo
         private void btnCalc_Click(object sender, EventArgs e)
         {
             TSPGeneticHelper helper = new TSPGeneticHelper(cityList);
-
-
             Revolution revolution = new Revolution();
-            revolution.InitData(100, cityList.Count, 1000, 100);
+            revolution.InitData(100, cityList.Count, 500, 100);
             revolution.InitFunc(TSPGeneticHelper.FitnessFunc, TSPGeneticHelper.ChromosomeFunc, TSPGeneticHelper.ChooseFunc, TSPGeneticHelper.CrossFunc, TSPGeneticHelper.MutationAction);
             revolution.Begin();
             result = revolution.BestIndividual;
             var s = string.Join("", revolution.BestIndividual);
             panel1.Refresh();
         }
+
+        private void TSPForm_Load(object sender, EventArgs e)
+        {
+            btnRandom_Click(null, null);
+
+            panel1.Refresh();
+
+        }
     }
 
-    
+
 }
