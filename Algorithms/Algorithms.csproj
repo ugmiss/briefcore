@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="DirectGraph.cs" />
     <Compile Include="Genetic\AbstractGeneticHelper.cs" />
-    <Compile Include="Genetic\Funcs\ChooseFuncFactory.cs" />
     <Compile Include="Genetic\GeneticEnvironment.cs" />
     <Compile Include="Genetic\GeneticKeys.cs" />
     <Compile Include="Genetic\IChooseStrategy.cs" />
@@ -59,6 +58,7 @@
       <Name>Utility</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
