@@ -65,15 +65,10 @@ namespace AlgorithmDemo
             var s = string.Join("", revolution.BestIndividual);
             panel1.Refresh();
         }
-
         private void TSPForm_Load(object sender, EventArgs e)
         {
             btnRandom_Click(null, null);
-
             panel1.Refresh();
-
         }
     }
-
-
 }
