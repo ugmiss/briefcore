@@ -95,6 +95,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Array\ArrayHelper.cs" />
     <Compile Include="RandomFactory.cs" />
     <Compile Include="EnCodingHelper.cs" />
     <Compile Include="File\Pather.cs" />
