@@ -17,7 +17,6 @@ namespace AlgorithmDemo
             InitializeComponent();
         }
         List<City> cityList = new List<City>();
-        List<Route> routeList = new List<Route>();
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
@@ -30,30 +29,35 @@ namespace AlgorithmDemo
                 c.Y = RandomFactory.Next(panel1.Height);
                 cityList.Add(c);
             }
+            double[][] DistanceMap = new double[citycount][];
+            for (int i = 0; i < citycount; i++)
+            {
+                DistanceMap[i] = new double[citycount];
+            }
             for (int i = 0; i < citycount; i++)
             {
                 for (int k = 0; k < citycount; k++)
                 {
                     if (i == k)
                         continue;
-                    Route r = new Route();
-                    r.CityA = cityList[i];
-                    r.CityB = cityList[k];
-                    r.Distance = System.Math.Sqrt((r.CityA.X - r.CityB.X) * (r.CityA.X - r.CityB.X) + (r.CityA.X - r.CityB.X) * (r.CityA.X - r.CityB.X));
+                    var CityA = cityList[i];
+                    var CityB = cityList[k];
+                    DistanceMap[i][k] = System.Math.Sqrt((CityA.X - CityB.X) * (CityA.X - CityB.X) + (CityA.Y - CityB.Y) * (CityA.Y - CityB.Y));
                 }
             }
-
+            panel1.Refresh();
 
         }
-    }
 
-    public class Route
-    {
-        public City CityA { get; set; }
-        public City CityB { get; set; }
-        public double Distance { get; set; }
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            foreach (City c in cityList)
+            {
+                g.FillEllipse(Brushes.Red, c.X, c.Y, 3, 3);
+            }
+        }
     }
-
 
     public class City
     {
