@@ -53,6 +53,12 @@
     <Compile Include="DemoForm.Designer.cs">
       <DependentUpon>DemoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FiveTigerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiveTigerForm.Designer.cs">
+      <DependentUpon>FiveTigerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NPForm.cs">
       <SubType>Form</SubType>
     </Compile>

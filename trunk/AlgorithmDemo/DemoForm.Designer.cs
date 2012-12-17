@@ -33,6 +33,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -57,7 +58,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 70);
+            this.button3.Location = new System.Drawing.Point(12, 129);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 23);
             this.button3.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 128);
+            this.button4.Location = new System.Drawing.Point(12, 158);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 23);
             this.button4.TabIndex = 3;
@@ -75,18 +76,28 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 99);
+            this.button5.Location = new System.Drawing.Point(12, 100);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 23);
             this.button5.TabIndex = 4;
             this.button5.Text = "选址问题";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(12, 71);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(90, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "棋子问题";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // DemoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 168);
+            this.ClientSize = new System.Drawing.Size(245, 209);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -106,6 +117,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 
