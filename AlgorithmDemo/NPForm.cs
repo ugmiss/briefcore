@@ -24,8 +24,6 @@ namespace AlgorithmDemo
             li.Add(new Deal() { Weight = 4, Value = 11 });
             li.Add(new Deal() { Weight = 6, Value = 18 });
             li.Add(new Deal() { Weight = 8, Value = 19 });
-            li.Add(new Deal() { Weight = 9, Value = 23 });
-            li.Add(new Deal() { Weight = 11, Value = 25 });
             dataGridView1.DataSource = li.ToArray();
         }
         List<Deal> li = new List<Deal>();
@@ -34,11 +32,10 @@ namespace AlgorithmDemo
         {
             var max= txtMax.Text.ParseTo<double>();
             NPGeneticHelper helper = new NPGeneticHelper(max, li);
-
-
             Revolution revolution = new Revolution();
             revolution.InitData(100, li.Count, 200,100);
-            revolution.InitFunc(NPGeneticHelper.FitnessFunc, NPGeneticHelper.ChromosomeFunc, NPGeneticHelper.ChooseFunc, NPGeneticHelper.CrossFunc, NPGeneticHelper.MutationAction);
+            revolution.InitFunc(NPGeneticHelper.FitnessFunc, NPGeneticHelper.ChromosomeFunc, 
+                NPGeneticHelper.ChooseFunc, NPGeneticHelper.CrossFunc, NPGeneticHelper.MutationAction);
             revolution.Begin();
             lblResult.Text = string.Join("", revolution.BestIndividual); 
         }

@@ -8,7 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using Utility;
 using Algorithms.Genetic;
-
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Concurrent;
 namespace AlgorithmDemo
 {
     public partial class TSPForm : Form
@@ -57,16 +59,32 @@ namespace AlgorithmDemo
         private void btnCalc_Click(object sender, EventArgs e)
         {
             TSPGeneticHelper helper = new TSPGeneticHelper(cityList);
-            Revolution revolution = new Revolution();
-            revolution.InitData(100, cityList.Count, 1000, 100);
-            revolution.InitFunc(TSPGeneticHelper.FitnessFunc, TSPGeneticHelper.ChromosomeFunc, TSPGeneticHelper.ChooseFunc, TSPGeneticHelper.CrossFunc, TSPGeneticHelper.MutationAction);
-            revolution.Begin();
-            result = revolution.BestIndividual;
-            var s = string.Join("", revolution.BestIndividual);
-            panel1.Refresh();
+           
+                Revolution revolution = new Revolution();
+                revolution.OnBestChange += new BestChange(revolution_OnBestChange);
+                revolution.InitData(500, cityList.Count, 5000, 500);
+                revolution.InitFunc(TSPGeneticHelper.FitnessFunc, TSPGeneticHelper.ChromosomeFunc, TSPGeneticHelper.ChooseFunc, TSPGeneticHelper.CrossFunc, TSPGeneticHelper.MutationAction);
+                revolution.Begin();
+           
         }
+
+        void revolution_OnBestChange(Revolution sender)
+        {
+            result = sender.BestIndividual;
+
+
+
+            lblLength.Text = "长度：" + TSPGeneticHelper.GetBestLenth(result);
+            lbltimes.Text = sender.CurrentGenarationIndex.ToString();
+
+            panel1.Refresh();
+
+        }
+
+
         private void TSPForm_Load(object sender, EventArgs e)
         {
+            Control.CheckForIllegalCrossThreadCalls = false;
             btnRandom_Click(null, null);
             panel1.Refresh();
         }

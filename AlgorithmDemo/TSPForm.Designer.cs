@@ -33,6 +33,8 @@
             this.txtCityNum = new System.Windows.Forms.TextBox();
             this.btnRandom = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLength = new System.Windows.Forms.Label();
+            this.lbltimes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCalc
@@ -81,11 +83,31 @@
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // lblLength
+            // 
+            this.lblLength.AutoSize = true;
+            this.lblLength.Location = new System.Drawing.Point(13, 137);
+            this.lblLength.Name = "lblLength";
+            this.lblLength.Size = new System.Drawing.Size(29, 12);
+            this.lblLength.TabIndex = 5;
+            this.lblLength.Text = "长度";
+            // 
+            // lbltimes
+            // 
+            this.lbltimes.AutoSize = true;
+            this.lbltimes.Location = new System.Drawing.Point(13, 196);
+            this.lbltimes.Name = "lbltimes";
+            this.lbltimes.Size = new System.Drawing.Size(29, 12);
+            this.lbltimes.TabIndex = 6;
+            this.lbltimes.Text = "次数";
+            // 
             // TSPForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 446);
+            this.Controls.Add(this.lbltimes);
+            this.Controls.Add(this.lblLength);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRandom);
             this.Controls.Add(this.txtCityNum);
@@ -106,5 +128,7 @@
         private System.Windows.Forms.TextBox txtCityNum;
         private System.Windows.Forms.Button btnRandom;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblLength;
+        private System.Windows.Forms.Label lbltimes;
     }
 }

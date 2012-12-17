@@ -15,7 +15,7 @@ namespace AlgorithmDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TSPForm());
+            Application.Run(new FiveTigerForm());
         }
     }
 }
