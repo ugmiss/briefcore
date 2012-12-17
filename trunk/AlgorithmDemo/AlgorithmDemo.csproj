@@ -76,6 +76,9 @@
     <EmbeddedResource Include="DemoForm.resx">
       <DependentUpon>DemoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FiveTigerForm.resx">
+      <DependentUpon>FiveTigerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NPForm.resx">
       <DependentUpon>NPForm.cs</DependentUpon>
     </EmbeddedResource>
