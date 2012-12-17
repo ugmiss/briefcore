@@ -124,7 +124,6 @@ namespace Algorithms.Genetic
             while (intersect.Length != ba.Length)
             {
                 int indexa = 0;
-                int indexb = 0;
                 int tempx;
                 bool flag = false;
                 for (int i = 0; i < ab.Length - 1; i++)
