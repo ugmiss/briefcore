@@ -58,7 +58,7 @@ namespace AlgorithmDemo
         {
             TSPGeneticHelper helper = new TSPGeneticHelper(cityList);
             Revolution revolution = new Revolution();
-            revolution.InitData(100, cityList.Count, 500, 100);
+            revolution.InitData(100, cityList.Count, 1000, 100);
             revolution.InitFunc(TSPGeneticHelper.FitnessFunc, TSPGeneticHelper.ChromosomeFunc, TSPGeneticHelper.ChooseFunc, TSPGeneticHelper.CrossFunc, TSPGeneticHelper.MutationAction);
             revolution.Begin();
             result = revolution.BestIndividual;
