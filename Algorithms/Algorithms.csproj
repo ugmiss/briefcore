@@ -42,10 +42,7 @@
   <ItemGroup>
     <Compile Include="DirectGraph.cs" />
     <Compile Include="Genetic\AbstractGeneticHelper.cs" />
-    <Compile Include="Genetic\GeneticEnvironment.cs" />
     <Compile Include="Genetic\GeneticKeys.cs" />
-    <Compile Include="Genetic\IChooseStrategy.cs" />
-    <Compile Include="Genetic\ICrossStrategy.cs" />
     <Compile Include="Genetic\NPGeneticHelper.cs" />
     <Compile Include="Genetic\TSPGeneticHelper.cs" />
     <Compile Include="Genetic\FiveTigerGeneticHelper.cs" />
