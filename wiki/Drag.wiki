@@ -1,0 +1,14 @@
+#summary Drag 拖拽
+
+===零散的拖拽代码===
+{{{
+private void XXX_DragOver(object sender, DragEventArgs e)
+{
+    e.Effect = DragDropEffects.Move;
+}
+        
+private void XXX_DragDrop(object sender, DragEventArgs e)
+{
+    MyClass myClass= e.Data.GetData(typeof(MyClass)) as MyClass;
+}
+}}}
