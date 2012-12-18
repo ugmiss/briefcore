@@ -34,3 +34,8 @@ http-proxy-port = 8087
 http-proxy-username = ugmiss@gmail.com
 http-proxy-password = 密码
 }}}
+
+
+===svn迁入失败的问题===
+svn是区分文件夹大小写的，在有权限的前提下：
+如果大小写不对，迁出没问题，但迁入就会失败。
