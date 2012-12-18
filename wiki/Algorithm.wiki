@@ -1,0 +1,18 @@
+#summary 算法
+
+= 遗传算法=
+{{{
+Environment = "环境";
+Population = "种群";
+Individual = "个体";
+Chromosome = "染色体";
+Fitness = "适应度";
+Probability = "选择概率";
+Elite = "精英";
+Roulette = "轮盘赌";
+Choose = "选择";
+SpawningPool = "孵化池";
+Cross = "交叉";
+Mutation = "突变";
+Revolution = "进化";
+}}}
