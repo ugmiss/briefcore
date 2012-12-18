@@ -17,7 +17,7 @@ namespace Algorithms.Genetic
             Whites = whites;
             Isblackturn = isblackturn;
         }
-        public static int GetBlackPoint(int[] blacks, out double[] rights)
+        public static int GetBlackPoint(int[] blacksinAll, out double[] rights)
         {
             int sum = 0;
             rights = new double[25];
@@ -26,16 +26,16 @@ namespace Algorithms.Genetic
                 rights[i] = 0;
             }
             int[] qi = Enumerable.Repeat(0, 25).ToArray();
-            for (int i = 0; i < blacks.Length; i++)
+            for (int i = 0; i < blacksinAll.Length; i++)
             {
-                qi[blacks[i]] = 1;
+                qi[i] = blacksinAll[i];
             }
             //通天2个
             if (GetLine(qi, 5, rights, 0, 6, 12, 18, 24))
                 sum += 5;
             if (GetLine(qi, 5, rights, 4, 8, 12, 16, 20))
                 sum += 5;
-            //横5
+            //五虎横5
             int[] temp1 = Enumerable.Range(0, 5).ToArray();
             for (int x = 0; x < 5; x++)
             {
@@ -43,7 +43,7 @@ namespace Algorithms.Genetic
                 if (GetLine(qi, 4, rights, q))
                     sum += 4;
             }
-            //竖5
+            //五虎竖5
             int[] temp2 = Enumerable.Range(0, 5).ToArray();
             for (int x = 0; x < 5; x++)
             {
@@ -106,9 +106,6 @@ namespace Algorithms.Genetic
                 }
                 return true;
             }
-
-            
-
             return false;
         }
 
