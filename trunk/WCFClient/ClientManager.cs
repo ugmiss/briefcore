@@ -9,8 +9,7 @@ namespace WCFClient
 {
     public class ClientManager
     {
-        private ClientManager() { }
-        public static readonly ClientManager Instance = new ClientManager();
+         
 
         public static readonly Guid ClientID = Guid.NewGuid();
         public event OnReceiveFromServer OnReceiveFromServer;
