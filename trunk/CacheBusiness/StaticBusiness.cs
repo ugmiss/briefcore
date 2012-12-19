@@ -5,6 +5,7 @@ using System.Text;
 using CacheBusiness.Model;
 using System.Caching.RefreshActions;
 using System.ServiceModel;
+using System.Caching.Expirations;
 
 namespace CacheBusiness
 {
@@ -22,7 +23,7 @@ namespace CacheBusiness
             {
                 BussinessExecuter exec = new BussinessExecuter(ConnString);
                 UserInfo[] userdata = exec.GetAll<UserInfo>().ToArray();
-                CacheHelper.MemCache.Add(typeName, userdata, new CallBackRefreshAction());
+                CacheHelper.MemCache.Add(typeName, userdata, null, new CallBackExpiration(typeName));
             }
             return null;
         }

@@ -5,6 +5,8 @@ using System.Text;
 using System.ServiceModel;
 using CacheBusiness;
 using CacheBusiness.Model;
+using System.Caching.RefreshActions;
+using System.Caching.Expirations;
 
 namespace CacheClient
 {
@@ -19,12 +21,24 @@ namespace CacheClient
 
         }
 
+
+
         public UserInfo[] GetUserData()
         {
-            List<UserInfo> li = new List<UserInfo>();
-            foreach(var u in client.GetUserData())
-                li.Add((UserInfo)u);
-            return li.ToArray();
+            string typeName = typeof(UserInfo).ToString();
+            if (CacheHelper.MemCache.Contains(typeName))
+            {
+                return CacheHelper.MemCache.GetData(typeName) as UserInfo[];
+            }
+            else
+            {
+
+                List<UserInfo> li = new List<UserInfo>();
+                foreach (var u in client.GetUserData())
+                    li.Add((UserInfo)u);
+                CacheHelper.MemCache.Add(typeName, li.ToArray(), null, new CallBackExpiration(typeName));
+                return li.ToArray();
+            }
         }
         public void AddUser(UserInfo u)
         {
