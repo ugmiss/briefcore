@@ -102,6 +102,7 @@
     <Compile Include="Caching\Expirations\AbsoluteTimeExpiration.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Caching\Expirations\CallBackExpiration.cs" />
     <Compile Include="Caching\Expirations\DataTableExpiration.cs" />
     <Compile Include="Caching\Expirations\FileExpiration.cs">
       <SubType>Code</SubType>
@@ -115,6 +116,7 @@
     <Compile Include="Caching\Expirations\ICacheItemExpiration.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Caching\RefreshActions\CallBackRefreshAction.cs" />
     <Compile Include="Caching\RefreshActions\ICacheItemRefreshAction.cs">
       <SubType>Code</SubType>
     </Compile>
