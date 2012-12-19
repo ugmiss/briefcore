@@ -8,10 +8,15 @@ namespace System.Caching.Expirations
 {
     public class CallBackExpiration : ICacheItemExpiration
     {
-        public bool IsExpired = false;
+        public CallBackExpiration(string typname)
+        {
+            Typename = typname;
+        }
+        public static Dictionary<string, bool> TimeOut = new Dictionary<string, bool>();
+        public string Typename { get; set; }
         public bool HasExpired()
         {
-            return IsExpired;
+            return TimeOut[Typename];
         }
         public void Notify()
         {
