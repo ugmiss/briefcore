@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Caching;
 
 namespace Caching
 {
     public class CacheManager : IDisposable
     {
-        private Cache realCache;
-        public CacheManager(Cache realCache)
+        private ConcurrentCache realCache;
+        public CacheManager(ConcurrentCache realCache)
         {
             this.realCache = realCache;
         }
@@ -36,10 +37,6 @@ namespace Caching
         public object GetData(string key)
         {
             return realCache.GetData(key);
-        }
-        public void Flush()
-        {
-            realCache.Flush();
         }
         public void Dispose()
         {

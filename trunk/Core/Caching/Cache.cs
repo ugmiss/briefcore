@@ -215,10 +215,5 @@ namespace Caching
         {
         }
     }
-    public enum EnumRemovedReason
-    {
-        Expired,
-        Removed,
-        Unknown = 9999
-    }
+   
 }
