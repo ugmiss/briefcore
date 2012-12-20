@@ -89,16 +89,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caching\CacheHelper.cs" />
     <Compile Include="Caching\Cache.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Caching\CacheHelper.cs" />
     <Compile Include="Caching\CacheItem.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Caching\CacheManager.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Caching\ConcurrentCache.cs" />
     <Compile Include="Caching\Expirations\AbsoluteTimeExpiration.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -116,7 +117,6 @@
     <Compile Include="Caching\Expirations\ICacheItemExpiration.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Caching\RefreshActions\CallBackRefreshAction.cs" />
     <Compile Include="Caching\RefreshActions\ICacheItemRefreshAction.cs">
       <SubType>Code</SubType>
     </Compile>
