@@ -6,7 +6,6 @@ using System.ServiceModel;
 using System.Text;
 using CacheBusiness;
 using CacheBusiness.Model;
-using System.Caching.RefreshActions;
 
 namespace CacheWCFService
 {
