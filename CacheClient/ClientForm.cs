@@ -39,6 +39,7 @@ namespace CacheClient
         private void ClientForm_Load(object sender, EventArgs e)
         {
             CacheCallBack.OnOutTime += new OutTime(CacheCallBack_OnOutTime);
+            dataGridView1.DataSource = ClientCore.Instance.GetUserData();
         }
 
         void CacheCallBack_OnOutTime(string typeName)

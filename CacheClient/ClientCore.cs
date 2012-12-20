@@ -5,7 +5,6 @@ using System.Text;
 using System.ServiceModel;
 using CacheBusiness;
 using CacheBusiness.Model;
-using System.Caching.RefreshActions;
 using System.Caching.Expirations;
 
 namespace CacheClient

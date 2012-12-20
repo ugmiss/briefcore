@@ -37,10 +37,6 @@ namespace System.Caching
             {
                 cacheItem = (CacheItem)Cache[key];
             }
-
-
-
-
             cacheItem.TouchedAction(true);
             CacheItem newCacheItem = new CacheItem(key, value, refreshAction, expirations);
             try
