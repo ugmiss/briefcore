@@ -71,7 +71,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(138, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(286, 189);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(298, 202);
             this.dataGridView1.TabIndex = 3;
             // 
             // ClientForm
@@ -85,6 +86,7 @@
             this.Controls.Add(this.button1);
             this.Name = "ClientForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.ClientForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

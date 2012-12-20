@@ -20,16 +20,30 @@ namespace CacheClient
         private void button1_Click(object sender, EventArgs e)
         {
             ClientCore.Instance.AddUser(new CacheBusiness.Model.UserInfo() { ID = Guid.NewGuid().ToString(), Name = CnNameGenerator.GetBoyName(), Age = RandomFactory.Next(20) + 20 });
+          //  dataGridView1.DataSource = ClientCore.Instance.GetUserData();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ClientCore.Instance.AddUser(new CacheBusiness.Model.UserInfo() { ID = Guid.NewGuid().ToString(), Name = CnNameGenerator.GetBoyName(), Age = RandomFactory.Next(20) + 20 });
+            if (dataGridView1.SelectedRows.Count == 0) return;
+            CacheBusiness.Model.UserInfo u = dataGridView1.SelectedRows[0].DataBoundItem as CacheBusiness.Model.UserInfo;
+            ClientCore.Instance.DeleteUser(u);
+           // dataGridView1.DataSource = ClientCore.Instance.GetUserData();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ClientCore.Instance.GetUserData();
+            dataGridView1.DataSource = ClientCore.Instance.GetUserData();
+        }
+
+        private void ClientForm_Load(object sender, EventArgs e)
+        {
+            CacheCallBack.OnOutTime += new OutTime(CacheCallBack_OnOutTime);
+        }
+
+        void CacheCallBack_OnOutTime(string typeName)
+        {
+            dataGridView1.DataSource = ClientCore.Instance.GetUserData();
         }
     }
 }

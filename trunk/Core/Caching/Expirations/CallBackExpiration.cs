@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Caching;
+using System.Collections.Concurrent;
 
 namespace System.Caching.Expirations
 {
@@ -11,8 +12,12 @@ namespace System.Caching.Expirations
         public CallBackExpiration(string typname)
         {
             Typename = typname;
+            bool a;
+            if (TimeOut.ContainsKey(typname))
+                TimeOut.TryRemove(typname, out a);
+            TimeOut.TryAdd(typname, false);
         }
-        public static Dictionary<string, bool> TimeOut = new Dictionary<string, bool>();
+        public static ConcurrentDictionary<string, bool> TimeOut = new ConcurrentDictionary<string, bool>();
         public string Typename { get; set; }
         public bool HasExpired()
         {

@@ -23,7 +23,7 @@ namespace CacheWCFService
         {
             ThreadPool.QueueUserWorkItem(o =>
             {
-                BusinessManager.StartUp(new StaticBusiness());
+                
                 using (ServiceHost host = new ServiceHost(typeof(CacheWCFService)))
                 {
                     host.Open();

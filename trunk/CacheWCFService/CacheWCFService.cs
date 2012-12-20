@@ -13,6 +13,10 @@ namespace CacheWCFService
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession, ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class CacheWCFService : ICacheWCF
     {
+        public CacheWCFService()
+        {
+            BusinessManager.StartUp(new StaticBusiness());
+        }
         public UserInfo[] GetUserData()
         {
             return BusinessManager.GetUserData();
