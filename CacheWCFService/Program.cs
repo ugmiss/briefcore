@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using CacheBusiness;
 
 namespace CacheWCFService
 {
@@ -13,6 +14,7 @@ namespace CacheWCFService
         [STAThread]
         static void Main()
         {
+            BusinessManager.StartUp(new StaticBusiness());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ServerForm());

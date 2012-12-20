@@ -10,8 +10,10 @@ using System.Caching.Expirations;
 
 namespace CacheClient
 {
+
     public class ClientCore : ICacheWCF
     {
+
         CacheClient.ServiceReference1.CacheWCFClient client;
         public static ClientCore Instance { get; set; }
         public ClientCore()
@@ -26,15 +28,14 @@ namespace CacheClient
         public UserInfo[] GetUserData()
         {
             string typeName = typeof(UserInfo).ToString();
-            if (CacheHelper.MemCache.Contains(typeName))
+            if (CacheHelper.MemCache.Contains(typeName) && CacheHelper.MemCache.GetData(typeName) != null)
             {
                 return CacheHelper.MemCache.GetData(typeName) as UserInfo[];
             }
             else
             {
-
                 List<UserInfo> li = new List<UserInfo>();
-                foreach (var u in client.GetUserData())
+                foreach (UserInfo u in client.GetUserData())
                     li.Add((UserInfo)u);
                 CacheHelper.MemCache.Add(typeName, li.ToArray(), null, new CallBackExpiration(typeName));
                 return li.ToArray();
