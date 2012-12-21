@@ -9,7 +9,7 @@ namespace Caching
         {
             if (removedCacheItem == null) throw new ArgumentNullException("removedCacheItem");
             if (removedCacheItem.RefreshAction == null)
-            {
+            { 
                 return;
             }
             try
