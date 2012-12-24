@@ -1,0 +1,21 @@
+#summary Hosts文件
+==屏蔽广告==
+{{{
+#AdKiller_Start
+66.85.175.210 www.baidu.com
+127.0.0.1 www.b.com
+66.85.175.210 www.soso.com
+127.0.0.1 www.s.com
+66.85.175.210 www.sogou.com
+127.0.0.1 www.g.com
+66.85.175.210 valf.atm.youku.com
+66.85.175.210 td.atm.youku.com
+66.85.175.210 letv.allyes.com
+66.85.175.210 float.sandai.net
+66.85.175.210 acs.56.com
+66.85.175.210 ugcfile.ppstream.com
+66.85.175.210 g.aa.sdo.comm
+66.85.175.210 images.sohu.com
+66.85.175.210 adslvfile.qq.com
+#AdKiller_End
+}}}
