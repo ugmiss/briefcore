@@ -1,4 +1,4 @@
-#summary AdBlock Chrome广告拦截
+#summary AdBlock 谷歌Chrome插件 广告拦截
 
 = 插件下载地址 =
 [https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom]
