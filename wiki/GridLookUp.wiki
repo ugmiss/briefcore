@@ -1,4 +1,5 @@
 #summary GridLookUp Dev控件
+#labels Dev
 
 = 实现多列模糊查询绑定的GridLookUp=
 
