@@ -171,6 +171,6 @@ namespace TaskDemo
 ===Parrellel===
 
 ===MTA STA===
-STA:   Single-Thread   Apartment，   中文叫单线程套间。就是在COM库初始化的时候创建一个内存结构，然后让它和调用CoInitialize的线程相关联。这个内存结构针对每个线程都会有一个。支持STA的COM对象只能在创建它的线程里被使用，其它线程如果再创建它就会失败。   
+STA:   Single-Thread  Apartment，中文叫单线程套间。就是在COM库初始化的时候创建一个内存结构，然后让它和调用CoInitialize的线程相关联。这个内存结构针对每个线程都会有一个。支持STA的COM对象只能在创建它的线程里被使用，其它线程如果再创建它就会失败。   
 
-MTA:   Mutil-Thread   Apartment，中文叫多线程套间。COM库在进程中创建一个内存结构，这个内存结构在整个进程中只能有一个，然后让它和调用CoInitializeEx的线程相关联。支持MTA的COM对象可以在任意线程里被使用。多有针对它的调用都会被封装成为消息。   
+MTA:   Multi-Thread   Apartment，中文叫多线程套间。COM库在进程中创建一个内存结构，这个内存结构在整个进程中只能有一个，然后让它和调用CoInitializeEx的线程相关联。支持MTA的COM对象可以在任意线程里被使用。多有针对它的调用都会被封装成为消息。   
