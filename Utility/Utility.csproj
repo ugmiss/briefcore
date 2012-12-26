@@ -101,7 +101,7 @@
     <Compile Include="File\Pather.cs" />
     <Compile Include="Hanzi\Bopomofo.cs" />
     <Compile Include="Email.cs" />
-    <Compile Include="Hanzi\CnNameGenerator.cs" />
+    <Compile Include="Hanzi\NameFactory.cs" />
     <Compile Include="Mac\MacAddressGenerator.cs" />
     <Compile Include="OCR\unCodeAiYing.cs" />
     <Compile Include="OCR\UnCodeBase.cs" />
