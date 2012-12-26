@@ -9,9 +9,29 @@
 
 若每个线程中对全局变量、静态变量只有读操作，而无写操作，一般来说，这个全局变量是线程安全的；若有多个线程同时对一个变量执行读写操作，一般都需要考虑线程同步，否则就可能影响线程安全
 ===线程阻塞===
-winform程序有UI线程
+winform程序有主UI线程，控件在主UI线程上创建，当其他线程调用修改主线程创建的控件时，会抛出InvalidOperationException异常，所以又2种方式屏蔽：
+1.在方法内通过this.Invoke()方式。
 {{{
-if (this.InvokeRequired) //Form1的多线程方法中的代码片段（WPF中也有类似的属性）
+this.Invoke((ThreadStart)delegate()
+{
+});
+}}}
+2.关闭控件的跨线程访问检查
+{{{
+Control.CheckForIllegalCrossThreadCalls = false;
+}}}
+
+在第一种方式中的这个只是主线程调用，还不过完美。可能有其他的线程调用，这时就需要用
+if (this.InvokeRequired)的方式。
+{{{
+if (this.InvokeRequired)
+{
+   this.Invoke(new DelegateChangeText(ChangeText));
+}
+else
+{
+   this.ChangeText();
+}
 }}}  
 ===lock===
 lock 确保当一个线程位于代码的临界区时，另一个线程不进入临界区。如果其他线程试图进入锁定的代码，则它将一直等待（即被阻止），直到该对象被释放
