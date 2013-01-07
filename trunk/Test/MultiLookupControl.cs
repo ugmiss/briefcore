@@ -15,7 +15,7 @@ namespace Test
 {
     public partial class MultiLookupControl : XtraUserControl
     {
-        
+
         object dataSource = null;
         Dictionary<string, string> bindCols = null;
         string valueMember = null;
@@ -40,7 +40,16 @@ namespace Test
             GridLookUpEditInit(gridLookup, this.dataSource, this.valueMember, this.displayMember, bindCols);
             gridLookup.Popup += new EventHandler(gridLookup_Popup);
             gridLookup.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(gridLookup_EditValueChanging);
+            //gridLookup.FormatEditValue += new DevExpress.XtraEditors.Controls.ConvertEditValueEventHandler(gridLookup_FormatEditValue);
+            //gridLookup.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(gridLookup_CustomDisplayText);
         }
+
+        void gridLookup_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            //e.DisplayText = string.Join(",", list.ToArray());
+        }
+        List<string> list = new List<string>();
+       
         void gridLookup_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
             this.BeginInvoke(new MethodInvoker(delegate { FilterLookup(sender); }));
@@ -72,17 +81,21 @@ namespace Test
                 gridView.Columns.Add(col);
             }
         }
+        string searchtext;
         void FilterLookup(object sender)
         {
+
+
             try
             {
                 GridLookUpEdit edit = sender as GridLookUpEdit;
+                searchtext = textEdit1.Text;
                 GridView gridView = edit.Properties.View as GridView;
                 FieldInfo fi = gridView.GetType().GetField("extraFilter", BindingFlags.NonPublic | BindingFlags.Instance);
                 List<CriteriaOperator> li = new List<CriteriaOperator>();
                 foreach (string s in this.bindCols.Keys)
                 {
-                    CriteriaOperator op = new BinaryOperator(s, "%" + edit.AutoSearchText + "%", BinaryOperatorType.Like);
+                    CriteriaOperator op = new BinaryOperator(s, "%" + searchtext + "%", BinaryOperatorType.Like);
                     li.Add(op);
                 }
                 string filterCondition = new GroupOperator(GroupOperatorType.Or, li.ToArray()).ToString();
@@ -91,6 +104,14 @@ namespace Test
                 mi.Invoke(gridView, null);
             }
             catch { }
+        }
+
+
+        private void textEdit1_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            FilterLookup(gridLookup);
+            gridLookup.ShowPopup();
+            textEdit1.Focus();
         }
     }
 }
