@@ -1,15 +1,15 @@
 #summary ACM
 = WEB =
-*同济大学的 Online Judge [http://acm.tongji.edu.cn/]
-*浙江大学的 Online Judge [http://acm.zju.edu.cn/]
-*北京大学的 Online Judge [http://acm.pku.edu.cn/]
-*吉林大学的 Online Judge [http://acm.jlu.edu.cn/]
-*四川大学的 Online Judge [http://cs.scu.edu.cn/acm]
-*汕头大学的 Online Judge [http://acm.stu.edu.cn/]
-*中科大的 Online Judge [http://acm.ustc.edu.cn/index.php]
-*哈工大的 Online Judge [http://acm.hit.edu.cn/acm.php]
-*西班牙的 Universidad de Valladolid [http://acm.uva.es/]
-*俄罗斯乌拉尔大学 [http://acm.timus.ru/]
+ * 同济大学的 Online Judge [http://acm.tongji.edu.cn/]
+ * 浙江大学的 Online Judge [http://acm.zju.edu.cn/]
+ * 北京大学的 Online Judge [http://acm.pku.edu.cn/]
+ * 吉林大学的 Online Judge [http://acm.jlu.edu.cn/]
+ * 四川大学的 Online Judge [http://cs.scu.edu.cn/acm]
+ * 汕头大学的 Online Judge [http://acm.stu.edu.cn/]
+ * 中科大的 Online Judge [http://acm.ustc.edu.cn/index.php]
+ * 哈工大的 Online Judge [http://acm.hit.edu.cn/acm.php]
+ * 西班牙的 Universidad de Valladolid [http://acm.uva.es/]
+ * 俄罗斯乌拉尔大学 [http://acm.timus.ru/]
 = 分类 =
 Data Structures 基本数据结构
 Dictionaries 字典
