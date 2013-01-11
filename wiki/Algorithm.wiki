@@ -12,6 +12,101 @@
 图象处理
 模式识别
 地理信息系统
+===viterbi算法===
+{{{
+package algorithm;
+
+public class Viterbi {
+	/**
+	 * 维特比算法（Viterbi algorithm）是一种动态规划算法。它用于寻找最有可能产生观测事件序列的-维特比路径-隐含状态序列,特别是在马尔可夫信息源上下文和隐马尔可夫模型中。
+术语“维特比路径”和“维特比算法”也被用于寻找观察结果最有可能解释相关的动态规划算法。例如在统计句法分析中动态规划算法可以被用于发现最可能的上下文无关的派生(解析)的字符串，有时被称为“维特比分析”。
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// 用分词举例有如下结构.采用少词方式
+		// 0 中 中国 中国人
+		// 1 国 国人
+		// 2 人 人民
+		// 构建一个数组将如上结构放入数组中
+
+		Node begin = new Node("B", 0);
+		begin.score = 1 ;
+		Node end = new Node("END", 5);
+		Node[][] graph = new Node[6][0];
+		graph[0] = new Node[] { begin };
+		graph[1] = new Node[] { new Node("中", 1), new Node("中国", 1), new Node("中国人", 1) };
+		graph[2] = new Node[] { new Node("国", 2), new Node("国人", 2) };
+		graph[3] = new Node[] { new Node("人", 3), new Node("人民", 3) };
+		graph[4] = new Node[] { new Node("民", 4) };
+		graph[5] = new Node[] { end };
+
+		int to = 0;
+		Node node = null;
+
+		// viterbi寻找最优路径
+		for (int i = 0; i < graph.length - 1; i++) {
+			for (int j = 0; j < graph[i].length; j++) {
+				node = graph[i][j];
+				to = node.getTo();
+				for (int k = 0; k < graph[to].length; k++) {
+					graph[to][k].setFrom(node);
+				}
+			}
+		}
+
+		// 反向遍历寻找结果
+		node = graph[5][0];
+		while ((node = node.getFrom()) != null) {
+			System.out.println(node.getName());
+		}
+
+	}
+
+	static class Node {
+		private String name;
+		private Node from;
+		private int offe;
+		private Integer score;
+
+		public Node(String name, int offe) {
+			this.name = name;
+			this.offe = offe;
+		}
+
+		public Node(Node node, Node node2, Node node3) {
+			// TODO Auto-generated constructor stub
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Node getFrom() {
+			return from;
+		}
+
+		public void setFrom(Node from) {
+			if (this.score == null) {
+				this.score = from.score + 1;
+				this.from = from;
+			} else if (this.score > from.score + 1) {
+				this.score = from.score + 1;
+				this.from = from;
+			}
+		}
+
+		public int getTo() {
+			return this.offe + name.length();
+		}
+
+	}
+}
+
+}}}
 ===最短路径算法===
 Dijkstra算法
 A*算法
@@ -38,4 +133,3 @@ Cross = "交叉";
 Mutation = "突变";
 Revolution = "进化";
 }}}
-
