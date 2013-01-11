@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="DirectGraph.cs" />
     <Compile Include="Genetic\AbstractGeneticHelper.cs" />
     <Compile Include="Genetic\GeneticKeys.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RadicalCenter.cs" />
     <Compile Include="Genetic\Revolution.cs" />
+    <Compile Include="Search.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utility\Utility.csproj">
