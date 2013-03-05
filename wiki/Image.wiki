@@ -2,23 +2,23 @@
 
 = Image.FromFile()=
 {{{
-            OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "*.jpg|*.jpg|*.png|*png|*.bmp|*.bmp";
-            file.ShowDialog();
-            if (!string.IsNullOrEmpty(file.FileName))
-            {
-                try
-                {
-                    Image image = Image.FromFile(file.FileName);
-                    Image cloneImage = new Bitmap(image);
-                    //需要手动释放文件
-                    image.Dispose();
-                    this.picPerson.Image = cloneImage;
-                }
-                catch (OutOfMemoryException ex)
-                {
-                    MessageBox.Show("图片太大或非法的图片格式。");
-                    return;
-                }
-            }
+OpenFileDialog file = new OpenFileDialog();
+file.Filter = "*.jpg|*.jpg|*.png|*png|*.bmp|*.bmp";
+file.ShowDialog();
+if (!string.IsNullOrEmpty(file.FileName))
+{
+    try
+    {
+        Image image = Image.FromFile(file.FileName);
+        Image cloneImage = new Bitmap(image);
+        //需要手动释放文件
+          image.Dispose();
+        this.picPerson.Image = cloneImage;
+    }
+    catch (OutOfMemoryException ex)
+    {
+        MessageBox.Show("图片太大或非法的图片格式。");
+        return;
+    }
+}
 }}}
