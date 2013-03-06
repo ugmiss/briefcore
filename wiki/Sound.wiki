@@ -1,0 +1,3 @@
+#summary 关于声音的方方面面
+= 什么叫PCM =
+PCM（Pulse-code modulation），即脉冲编码调制
