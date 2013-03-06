@@ -23,7 +23,7 @@ namespace Test
             //rtblog.Text = sr.ReadToEnd();
             //sr.Close();
             //fs.Close();  
-            Application.Run(new Form1());
+            Application.Run(new Form2());
         }
     }
 }
