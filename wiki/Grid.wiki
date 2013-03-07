@@ -7,4 +7,8 @@
 }}}
 
 = 单元格按钮=
+{{{
 添加ButtonEdit到ColumnEdit 并隐藏Text
+其中要设置整体AllowEdit=true，其他列设成false
+只保留此一列
+}}}
