@@ -5,3 +5,6 @@
 {{{
      this.gridView1.RefreshData();
 }}}
+
+= 单元格按钮=
+添加ButtonEdit到ColumnEdit 并隐藏Text
