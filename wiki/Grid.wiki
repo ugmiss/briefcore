@@ -1,0 +1,7 @@
+#summary devexpress Grid使用技巧
+= 数据绑定和刷新 =
+  当GridControl绑定一个List或其他集合时
+  通过遍历集合元素，更新元素的属性后，可以通过刷新GridControl关联的GridView来刷新显示数据
+{{{
+     this.gridView1.RefreshData();
+}}}
