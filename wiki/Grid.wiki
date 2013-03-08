@@ -1,14 +1,26 @@
 #summary devexpress Grid使用技巧
+
 = 数据绑定和刷新 =
-  当GridControl绑定一个List或其他集合时
-  通过遍历集合元素，更新元素的属性后，可以通过刷新GridControl关联的GridView来刷新显示数据
+当GridControl绑定一个List或其他集合时
+通过遍历集合元素，更新元素的属性后，可以通过刷新GridControl关联的GridView来刷新显示数据
 {{{
      this.gridView1.RefreshData();
 }}}
 
-= 单元格按钮=
+= 添加单元格按钮=
 {{{
 添加ButtonEdit到ColumnEdit 并隐藏Text
 其中要设置整体AllowEdit=true，其他列设成false
 只保留此一列
+}}}
+
+= 改变单元格的显示颜色=
+{{{
+private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+{
+    if (e.DisplayText == "异常")
+        e.Appearance.ForeColor = Color.Red;
+    else
+        e.Appearance.ForeColor = Color.Black;
+}
 }}}
