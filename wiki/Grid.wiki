@@ -1,4 +1,4 @@
-#summary devexpress Grid使用技巧
+#summary Devexpress GridControl使用技巧
 
 = 数据绑定和刷新 =
 当GridControl绑定一个List或其他集合时
