@@ -20,11 +20,7 @@ namespace System
                 return Conn.Database;
             }
         }
-        /// <summary>
-        /// 测试数据库连接
-        /// </summary>
-        /// <param name="second">超时秒数</param>
-        /// <returns></returns>
+        // 测试数据库连接,"second"超时秒数
         public bool TestConnection(int second)
         {
             try
@@ -40,7 +36,6 @@ namespace System
                 return false;
             }
         }
-
         // 事务对象
         SqlTransaction Transaction { get; set; }
         // 构造
@@ -433,6 +428,7 @@ namespace System
                 }
             }
         }
+        // 析构
         public void Dispose()
         {
             this.ConnectionString = "";
