@@ -109,15 +109,15 @@ namespace Geometria
         {   // 点到线段的投影,落在区间外的返回空值
             Point p = new Point();
             //点到直线投影的X坐标
-            p.X = GetGetProjectionX(x1, y1, x2, y2, x0, y0);
+            p.X = GetProjectionX(x1, y1, x2, y2, x0, y0);
             //点到直线投影的Y坐标
             p.Y = GetThreePointY(x1, y1, x2, y2, p.X);
             //点到A端点距离
-            double d1 = GetDistanceBetweenPoint(p.X, p.Y, x1, y1);
+            double d1 = GetDistance(p.X, p.Y, x1, y1);
             //点到B端点距离
-            double d2 = GetDistanceBetweenPoint(p.X, p.Y, x2, y2);
+            double d2 = GetDistance(p.X, p.Y, x2, y2);
             //AB端点的距离
-            double d = GetDistanceBetweenPoint(x1, y1, x2, y2);
+            double d = GetDistance(x1, y1, x2, y2);
             if (d1 + d2 - d > 0)
             {   //两个距离大于AB基站距离认为投影没落在AB的线段上。
                 return null;
