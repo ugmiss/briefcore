@@ -87,7 +87,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dll\Gma.QrCodeNet.Encoding.dll" />
     <Content Include="dll\Gma.QrCodeNet.Encoding.Net35.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
