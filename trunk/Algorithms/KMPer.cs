@@ -5,9 +5,9 @@ using System.Text;
 
 namespace SupportCenter.Test
 {
-    public class Program
+    public class KMPer
     {
-        static void Main(string[] args)
+        static void Test(string[] args)
         {
             string zstr = "ababcabababdc";
             string mstr = "babdc";

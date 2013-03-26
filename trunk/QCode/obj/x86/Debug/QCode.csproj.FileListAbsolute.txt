@@ -1,0 +1,11 @@
+C:\Users\vorient-pc\Desktop\PathAna\QCode\bin\Debug\QCode.exe.config
+C:\Users\vorient-pc\Desktop\PathAna\QCode\bin\Debug\QCode.exe
+C:\Users\vorient-pc\Desktop\PathAna\QCode\bin\Debug\QCode.pdb
+C:\Users\vorient-pc\Desktop\PathAna\QCode\bin\Debug\Gma.QrCodeNet.Encoding.Net35.dll
+C:\Users\vorient-pc\Desktop\PathAna\QCode\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\vorient-pc\Desktop\PathAna\QCode\obj\x86\Debug\QCode.Form1.resources
+C:\Users\vorient-pc\Desktop\PathAna\QCode\obj\x86\Debug\QCode.Properties.Resources.resources
+C:\Users\vorient-pc\Desktop\PathAna\QCode\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\vorient-pc\Desktop\PathAna\QCode\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\vorient-pc\Desktop\PathAna\QCode\obj\x86\Debug\QCode.exe
+C:\Users\vorient-pc\Desktop\PathAna\QCode\obj\x86\Debug\QCode.pdb

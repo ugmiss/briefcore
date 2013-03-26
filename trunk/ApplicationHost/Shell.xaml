@@ -1,4 +1,4 @@
-﻿<dxr:DXRibbonWindow x:Class="ApplicationHost.Shell"
+﻿<Window x:Class="ApplicationHost.Shell"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
@@ -29,4 +29,4 @@
             </local:SwitchControl>
         </Canvas>-->
     </Grid>
-</dxr:DXRibbonWindow>
+</Window>

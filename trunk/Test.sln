@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordTest", "RecordTest\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weibo", "Weibo\Weibo.csproj", "{0FD6B05F-43E4-4BD4-B1DC-DF784600E15B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AExplorer", "AExplorer\AExplorer.csproj", "{19098BCC-E61E-4451-9EA4-55111509D002}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Brief.vsmdi
@@ -74,6 +76,16 @@ Global
 		{0FD6B05F-43E4-4BD4-B1DC-DF784600E15B}.Release|Mixed Platforms.Build.0 = Release|x86
 		{0FD6B05F-43E4-4BD4-B1DC-DF784600E15B}.Release|x86.ActiveCfg = Release|x86
 		{0FD6B05F-43E4-4BD4-B1DC-DF784600E15B}.Release|x86.Build.0 = Release|x86
+		{19098BCC-E61E-4451-9EA4-55111509D002}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{19098BCC-E61E-4451-9EA4-55111509D002}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{19098BCC-E61E-4451-9EA4-55111509D002}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{19098BCC-E61E-4451-9EA4-55111509D002}.Debug|x86.ActiveCfg = Debug|x86
+		{19098BCC-E61E-4451-9EA4-55111509D002}.Debug|x86.Build.0 = Debug|x86
+		{19098BCC-E61E-4451-9EA4-55111509D002}.Release|Any CPU.ActiveCfg = Release|x86
+		{19098BCC-E61E-4451-9EA4-55111509D002}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{19098BCC-E61E-4451-9EA4-55111509D002}.Release|Mixed Platforms.Build.0 = Release|x86
+		{19098BCC-E61E-4451-9EA4-55111509D002}.Release|x86.ActiveCfg = Release|x86
+		{19098BCC-E61E-4451-9EA4-55111509D002}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
