@@ -24,7 +24,7 @@ namespace ApplicationHost
     /// Shell.xaml 的交互逻辑
     /// </summary>
     [Export]
-    public partial class Shell : DXRibbonWindow
+    public partial class Shell : Window
     {
         [Import(AllowRecomposition = false)]
 
