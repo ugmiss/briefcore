@@ -1,6 +1,8 @@
 #summary 二维码
 #labels QrCode
 
+QRCode项目地址[http://qrcodenet.codeplex.com/]
+应用示例：
 {{{
 string str = textBox1.Text;
 QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
