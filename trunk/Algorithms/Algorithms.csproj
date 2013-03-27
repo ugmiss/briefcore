@@ -43,14 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dijkstra\Edge.cs" />
     <Compile Include="Dijkstra\Graph.cs" />
-    <Compile Include="Dijkstra\Node.cs" />
     <Compile Include="Dijkstra\PassedPath.cs" />
     <Compile Include="Dijkstra\PlanCache.cs" />
     <Compile Include="Dijkstra\Test.cs" />
     <Compile Include="Dijkstra\RoutePlanner.cs" />
-    <Compile Include="Dijkstra\RoutePlanResult.cs" />
     <Compile Include="KMPer.cs" />
     <Compile Include="DirectGraph.cs" />
     <Compile Include="Genetic\AbstractGeneticHelper.cs" />
