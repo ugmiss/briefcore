@@ -195,7 +195,7 @@ namespace Algorithms
 
             static void Main(string[] args)
             {
-                DirectoryInfo root = new DirectoryInfo("C:\\");
+                DirectoryInfo root = new DirectoryInfo("D:\\");
 
                 Search lsFile = new Search();
                 DateTime start = DateTime.Now;

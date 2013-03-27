@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Algorithms.Dijkstra;
 
 namespace AlgorithmDemo
 {
@@ -13,9 +14,10 @@ namespace AlgorithmDemo
         [STAThread]
         static void Main()
         {
+            Test.Try();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FiveTigerForm());
+            Application.Run(new DemoForm());
         }
     }
 }
