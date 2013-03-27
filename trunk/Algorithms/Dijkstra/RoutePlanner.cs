@@ -15,7 +15,7 @@ namespace Algorithms.Dijkstra
         {
             //初始化起始节点到其他节点的路径表(权值，经过的节点，是否被处理）
             //同时初始化其他节点的路径表
-            PlanCourse planCourse = new PlanCourse(nodeList, originID);
+            PlanCache planCourse = new PlanCache(nodeList, originID);
             Node curNode = this.GetMinWeightRudeNode(planCourse, nodeList, originID);
             while (curNode != null)
             {
@@ -48,7 +48,7 @@ namespace Algorithms.Dijkstra
         /// 从PlanCourse表中取出目标节点的PassedPath，这个PassedPath即是规划结果
         /// </summary>
         /// <returns></returns>
-        private RoutePlanResult GetResult(PlanCourse planCourse, string destID)
+        private RoutePlanResult GetResult(PlanCache planCourse, string destID)
         {
             PassedPath pPath = planCourse[destID];
             if (pPath.Weight == int.MaxValue)
@@ -68,7 +68,7 @@ namespace Algorithms.Dijkstra
         /// 从PlanCourse取出一个当前累积权值最小，并且没有被处理过的节点
         /// </summary>
         /// <returns></returns>
-        private Node GetMinWeightRudeNode(PlanCourse planCourse, List<Node> nodeList, string originID)
+        private Node GetMinWeightRudeNode(PlanCache planCourse, List<Node> nodeList, string originID)
         {
             double weight = double.MaxValue;
             Node destNode = null;

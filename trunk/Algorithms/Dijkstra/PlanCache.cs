@@ -9,11 +9,11 @@ namespace Algorithms.Dijkstra
     /// <summary>
     /// PlanCourse 缓存从源节点到其它任一节点的最小权值路径（路径表）
     /// </summary>
-    public class PlanCourse
+    public class PlanCache
     {
         private Hashtable htPassedPath;
 
-        public PlanCourse(List<Node> nodeList, string originID)
+        public PlanCache(List<Node> nodeList, string originID)
         {
             this.htPassedPath = new Hashtable();
 
