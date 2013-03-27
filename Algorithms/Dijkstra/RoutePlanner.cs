@@ -51,16 +51,17 @@ namespace Algorithms.Dijkstra
         private RoutePlanResult GetResult(PlanCache planCourse, string destID)
         {
             PassedPath pPath = planCourse[destID];
-            if (pPath.Weight == int.MaxValue)
+            if (pPath.Weight == double.MaxValue)
             {
-                RoutePlanResult result1 = new RoutePlanResult(null, int.MaxValue);
+                RoutePlanResult result1 = new RoutePlanResult(null, double.MaxValue);
                 return result1;
             }
-            string[] passedNodeIDs = new string[pPath.PassedIDList.Count];
-            for (int i = 0; i < passedNodeIDs.Length; i++)
+            string[] passedNodeIDs = new string[pPath.PassedIDList.Count + 1];
+            for (int i = 0; i < passedNodeIDs.Length-1; i++)
             {
                 passedNodeIDs[i] = pPath.PassedIDList[i].ToString();
             }
+            passedNodeIDs[passedNodeIDs.Length-1] = destID;
             RoutePlanResult result = new RoutePlanResult(passedNodeIDs, pPath.Weight);
             return result;
         }
