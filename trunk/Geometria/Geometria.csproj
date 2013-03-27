@@ -47,7 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlaneCalculator.cs" />
+    <Compile Include="CircleToCircle.cs" />
+    <Compile Include="LineToCircle.cs" />
+    <Compile Include="LineToLine.cs" />
+    <Compile Include="PointToLine.cs" />
+    <Compile Include="PointToPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
