@@ -5,6 +5,30 @@ using System.Text;
 
 namespace Algorithms.Dijkstra
 {
+
+    public class Edge
+    {
+        public string StartNodeID;
+        public string EndNodeID;
+        public double Weight;
+        public Edge(string sid, string eid, double w)
+        {
+            StartNodeID = sid;
+            EndNodeID = eid;
+            Weight = w;
+        }
+    }
+    public class Node
+    {
+        public string ID { get; set; }
+        public List<Edge> EdgeList { get; set; }//Edge的集合－－出边表
+
+        public Node(string id)
+        {
+            this.ID = id;
+            this.EdgeList = new List<Edge>();
+        }
+    }
     public class Graph
     {
         public Graph()
@@ -34,5 +58,15 @@ namespace Algorithms.Dijkstra
             }
             NodeList = nodelist;
         }
+    }
+    public class RoutePlanResult
+    {
+        public RoutePlanResult(string[] passedNodes, double value)
+        {
+            ResultNodes = passedNodes;
+            Value = value;
+        }
+        public string[] ResultNodes { get; set; }
+        public double Value { get; set; }
     }
 }
