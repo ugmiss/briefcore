@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Algorithms.Dijkstra
 {
-    public class RoutePlanner
+    public class DijkstraPlanner
     {
-        public RoutePlanner()
+        public DijkstraPlanner()
         {
         }
         //获取权值最小的路径

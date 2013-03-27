@@ -44,10 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dijkstra\Graph.cs" />
-    <Compile Include="Dijkstra\PassedPath.cs" />
     <Compile Include="Dijkstra\PlanCache.cs" />
     <Compile Include="Dijkstra\Test.cs" />
-    <Compile Include="Dijkstra\RoutePlanner.cs" />
+    <Compile Include="Dijkstra\DijkstraPlanner.cs" />
     <Compile Include="KMPer.cs" />
     <Compile Include="DirectGraph.cs" />
     <Compile Include="Genetic\AbstractGeneticHelper.cs" />

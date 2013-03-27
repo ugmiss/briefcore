@@ -21,7 +21,7 @@ namespace Algorithms.Dijkstra
             list.Add(new Edge("E", "D", 20));
             list.Add(new Edge("C", "D", 30));
             graph.Init(list);
-            RoutePlanner planner = new RoutePlanner();
+            DijkstraPlanner planner = new DijkstraPlanner();
             string start = "A";
             string end = "D";
             RoutePlanResult result = planner.Plan(graph.NodeList, start, end);
