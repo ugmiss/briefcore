@@ -22,8 +22,11 @@ namespace Algorithms.Dijkstra
             list.Add(new Edge("C", "D", 30));
             graph.Init(list);
             RoutePlanner planner = new RoutePlanner();
-            RoutePlanResult result = planner.Plan(graph.NodeList, "A", "D");
-            Console.WriteLine(string.Join("->", result.ResultNodes));
+            string start = "A";
+            string end = "D";
+            RoutePlanResult result = planner.Plan(graph.NodeList, start, end);
+            Console.WriteLine(start + "到" + end + "的最短路径为："+string.Join("->", result.ResultNodes));
+            Console.WriteLine("路径距离为：" + result.Value);
             Console.ReadLine();
         }
     }
