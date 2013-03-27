@@ -152,7 +152,7 @@ namespace Algorithms
             //1.把root 压入 栈中
             Stack<DirectoryInfo> dirStack = new Stack<DirectoryInfo>();
             dirStack.Push(dir);
-            DirectoryInfo parent = null;
+            //DirectoryInfo parent = null;
             while (dirStack.Count != 0)
             {
                 //读顶栈
