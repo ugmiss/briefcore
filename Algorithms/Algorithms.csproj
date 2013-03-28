@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dijkstra\DijkstraSimple.cs" />
     <Compile Include="TreeSearch\BreadthFirstSearch.cs" />
     <Compile Include="TreeSearch\DepthFirstSearch.cs" />
     <Compile Include="Dijkstra\Graph.cs" />

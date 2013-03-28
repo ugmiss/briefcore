@@ -15,7 +15,7 @@ namespace AlgorithmDemo
         [STAThread]
         static void Main()
         {
-            Test.Try();
+            Test.Try2();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DemoForm());

@@ -29,5 +29,27 @@ namespace Algorithms.Dijkstra
             Console.WriteLine("路径距离为：" + result.Value);
             Console.ReadLine();
         }
+        public static void Try2()
+        {
+            int[,] L ={
+                {-1,  5, -1, -1, -1,  3, -1, -1}, 
+                { 5, -1,  2, -1, -1, -1,  3, -1}, 
+                {-1,  2, -1,  6, -1, -1, -1, 10}, 
+                {-1, -1,  6, -1,  3, -1, -1, -1},
+                {-1, -1, -1,  3, -1,  8, -1,  5}, 
+                { 3, -1, -1, -1,  8, -1,  7, -1}, 
+                {-1,  3, -1, -1, -1,  7, -1,  2}, 
+                {-1, -1, 10, -1,  5, -1,  2, -1} 
+            };
+            Dijkstra clss = new Dijkstra((int)Math.Sqrt(L.Length), L);
+            clss.Run();
+            Console.WriteLine("Solution is");
+            foreach (int i in clss.D)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine("Press Enter for exit.");
+            Console.Read();
+        }
     }
 }
