@@ -16,8 +16,6 @@ namespace AlgorithmDemo
         static void Main()
         {
             Test.Try();
-            var x = LineToLine.GetX(0, 0, 1, 3, 3, 4, 4, 3);
-            var y = LineToLine.GetY(0, 0, 1, 3, 3, 4, 4, 3);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DemoForm());

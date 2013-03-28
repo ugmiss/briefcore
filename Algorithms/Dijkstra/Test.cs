@@ -7,7 +7,7 @@ namespace Algorithms.Dijkstra
     public class Test
     {
         /// <summary>
-        /// 应用程序的主入口点。
+        /// Dijkstra算法求图上一个端点到另一个端点的最小路径
         /// </summary>
         public static void Try()
         {
@@ -25,7 +25,7 @@ namespace Algorithms.Dijkstra
             string start = "A";
             string end = "D";
             RoutePlanResult result = planner.Plan(graph.NodeList, start, end);
-            Console.WriteLine(start + "到" + end + "的最短路径为："+string.Join("->", result.ResultNodes));
+            Console.WriteLine(start + "到" + end + "的最短路径为：" + string.Join("->", result.ResultNodes));
             Console.WriteLine("路径距离为：" + result.Value);
             Console.ReadLine();
         }
