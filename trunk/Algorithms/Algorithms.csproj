@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BreadthFirstSearch.cs" />
-    <Compile Include="DepthFirstSearch.cs" />
+    <Compile Include="Search\BreadthFirstSearch.cs" />
+    <Compile Include="Search\DepthFirstSearch.cs" />
     <Compile Include="Dijkstra\Graph.cs" />
     <Compile Include="Dijkstra\PlanCache.cs" />
     <Compile Include="Dijkstra\Test.cs" />
