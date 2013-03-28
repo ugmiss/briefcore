@@ -41,5 +41,12 @@ namespace QCode
             }
             this.pictureBox1.Image = Image.FromFile(@"D:\" + str2 + ".bmp");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            
+            
+        }
     }
 }

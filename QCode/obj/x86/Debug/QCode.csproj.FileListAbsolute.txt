@@ -20,3 +20,6 @@ C:\Users\Administrator\Desktop\brief\trunk\QCode\obj\x86\Debug\QCode.Form1.resou
 C:\Users\Administrator\Desktop\brief\trunk\QCode\obj\x86\Debug\QCode.Properties.Resources.resources
 C:\Users\Administrator\Desktop\brief\trunk\QCode\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Administrator\Desktop\brief\trunk\QCode\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\BriefCore\trunk\QCode\bin\Debug\QCode.exe.config
+D:\BriefCore\trunk\QCode\obj\x86\Debug\QCode.exe
+D:\BriefCore\trunk\QCode\obj\x86\Debug\QCode.pdb
