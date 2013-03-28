@@ -1,4 +1,5 @@
-#summary MapReduce
+#summary MapReduce 映射与化简
+#labels hadoop
 
 ===Map=== 
 映射
