@@ -17,9 +17,6 @@ namespace Algorithms
                 {
                     DirectoryInfo root = new DirectoryInfo(@"E:\");
                     var sw = Stopwatch.StartNew();
-                    int fileCount = TreeParallelSearch.TraverseTreeParallelForEach(root);
-                    Console.WriteLine("Processed {0} files in {1} milleseconds", fileCount, sw.ElapsedMilliseconds);
-                    sw = Stopwatch.StartNew();
                     int strBFS = BreadthFirstSearch.BFS(root);
                     Console.WriteLine("Processed {0} files in {1} milleseconds", strBFS, sw.ElapsedMilliseconds);
                     sw = Stopwatch.StartNew();

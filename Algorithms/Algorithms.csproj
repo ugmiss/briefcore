@@ -49,8 +49,8 @@
     <Compile Include="Dijkstra\PlanCache.cs" />
     <Compile Include="Dijkstra\Test.cs" />
     <Compile Include="Dijkstra\DijkstraPlanner.cs" />
-    <Compile Include="KMPer.cs" />
-    <Compile Include="DirectGraph.cs" />
+    <Compile Include="String\KMPer.cs" />
+    <Compile Include="Graphs\DirectGraph.cs" />
     <Compile Include="Genetic\AbstractGeneticHelper.cs" />
     <Compile Include="Genetic\GeneticKeys.cs" />
     <Compile Include="Genetic\NPGeneticHelper.cs" />
@@ -58,8 +58,7 @@
     <Compile Include="Genetic\FiveTigerGeneticHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Genetic\Revolution.cs" />
-    <Compile Include="Search.cs" />
-    <Compile Include="TreeParallelSearch.cs" />
+    <Compile Include="Search\Search.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utility\Utility.csproj">
@@ -70,6 +69,7 @@
   <ItemGroup>
     <Content Include="常见的数据结构和算法.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
