@@ -1,0 +1,7 @@
+#summary C++学习
+
+== Win32与CLR控制台==
+{{{
+#include "stdafx.h"
+#include "string.h"
+}}}
