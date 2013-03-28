@@ -1,6 +1,6 @@
 #summary C++学习
 
-==STL，ATL==
+==STL，ATL，MFC==
 
 == Win32与CLR控制台==
 {{{
