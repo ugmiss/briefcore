@@ -61,7 +61,5 @@ namespace Algorithms
             }
             return fileCount;
         }
-
-        
     }
 }

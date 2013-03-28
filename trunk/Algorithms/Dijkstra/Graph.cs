@@ -5,7 +5,6 @@ using System.Text;
 
 namespace Algorithms.Dijkstra
 {
-
     public class Edge
     {
         public string StartNodeID;
