@@ -8,7 +8,7 @@ namespace Algorithms
     public class Route
     {
         public string EndVertexID { get; set; }  //终点
-        public bool HasProcessed { get; set; }   //是否已被处理
+        public bool Flag { get; set; }   //是否已被处理
         public double Weight { get; set; }       //累积的权值
         public List<string> IDList { get; set; } //路径
         public string RouteString
@@ -22,7 +22,7 @@ namespace Algorithms
     public class Vertex
     {
         public string ID { get; set; } //顶点ID
-        public List<Edge> EdgeList { get; set; }//出方向边
+        public List<Edge> EdgeList { get; set; }//出边
     }
     public class Edge
     {

@@ -23,7 +23,7 @@ namespace Algorithms
                     EndVertexID = vertex.ID,
                     Weight = double.MaxValue,//初始路径权为无穷大
                     IDList = new List<string>(),
-                    HasProcessed = false
+                    Flag = false
                 };
                 if (vertex.ID == startID)
                 {   //初始起点为当前端点
@@ -46,11 +46,11 @@ namespace Algorithms
                         route.IDList.Add(currentVertex.ID);
                     }
                 }
-                RouteCache[currentVertex.ID].HasProcessed = true;//目标点计算结束，标示为true
+                RouteCache[currentVertex.ID].Flag = true;//目标点计算结束，标示为true
                 currentVertex = null;
                 foreach (var vertex in vertexList)
                 {
-                    if (!RouteCache[vertex.ID].HasProcessed && RouteCache[vertex.ID].Weight != double.MaxValue)
+                    if (!RouteCache[vertex.ID].Flag && RouteCache[vertex.ID].Weight != double.MaxValue)
                         currentVertex = vertex;
                 }
             }
