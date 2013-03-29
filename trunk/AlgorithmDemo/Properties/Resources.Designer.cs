@@ -59,5 +59,12 @@ namespace AlgorithmDemo.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Bitmap wood {
+            get {
+                object obj = ResourceManager.GetObject("wood", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
