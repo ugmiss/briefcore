@@ -10,13 +10,174 @@ namespace Algorithms.Genetic
     {
         public static int[] Blacks;
         public static int[] Whites;
-        public static bool Isblackturn;
-        public FiveTigerGeneticHelper(int[] blacks, int[] whites, bool isblackturn)
+        public FiveTigerGeneticHelper(int[] blacks, int[] whites)
         {
             Blacks = blacks;
             Whites = whites;
-            Isblackturn = isblackturn;
         }
+
+        /// <summary>
+        /// 适应度函数。
+        /// </summary>
+        public static Func<int[], double> FitnessFunc = p =>
+        {
+            int[] b = new int[25];
+            for (int i = 0; i < Blacks.Length; i++)
+            {
+                b[Blacks[i]] = 1;
+            }
+            for (int i = 0; i < Whites.Length; i++)
+            {
+                b[Whites[i]] = -1;
+            }
+            int index = 0;
+            int pindex = 0;
+            while (true)
+            {
+                if (index == 24)
+                    break;
+                if (b[index] == 0)
+                {
+                    b[index] = p[pindex]==1?1:-1;
+                    pindex++;
+                }
+                else
+                {
+                    index++;
+                }
+            }
+            double[] brights;
+            for (int i = 0; i < 25; i++)
+            {
+                b[i] = b[i] == 1 ? 1 : 0;
+            }
+            int bpoint = GetBlackPoint(b, out brights);
+            for (int i = 0; i < 25; i++)
+            {
+                b[i] = b[i] == 1 ? 0 : 1;
+            }
+            int wpoint = GetBlackPoint(b, out brights);
+
+            return ((double)(bpoint/86.0));
+        };
+        /// <summary>
+        /// 染色体生成函数。
+        /// </summary>
+        public static Func<int[]> ChromosomeFunc = () =>
+        {
+            int len = 25 - Blacks.Length - Whites.Length;
+            int[] chromosome = new int[len];
+            for (int i = 0; i < len; i++)
+            {
+                chromosome[i] = 0;
+            }
+            for (int i = 0; i < 13 - Blacks.Length; i++)
+            {
+                chromosome[i] = 1;
+            }
+            chromosome = ArrayHelper.Shuffle(chromosome);
+            return chromosome;
+        };
+        /// <summary>
+        /// 选择函数。
+        /// </summary>
+        public static Func<int[][], int[]> ChooseFunc = (p) =>
+        {
+            double[] fitness = new double[p.Length];
+            double[] probabilities = new double[p.Length];
+            double sumfitness = 0;
+            for (int i = 0; i < p.Length; i++)
+            {
+                fitness[i] = FitnessFunc(p[i]);
+                sumfitness += fitness[i];
+            }
+            for (int i = 0; i < p.Length; i++)
+            {
+                probabilities[i] = fitness[i] / sumfitness;
+            }
+            double m = 0;
+            double r = RandomFactory.NextDouble();
+            for (int i = 0; i < p.Length; i++)
+            {
+                m = m + probabilities[i];
+                if (r <= m)
+                    return p[i];
+            }
+            return null;
+        };
+        /// <summary>
+        /// 交叉函数。
+        /// </summary>
+        public static Func<int[], int[], int[][]> CrossFunc = (a, b) =>
+        {
+            int index = RandomFactory.Next(a.Length);
+            int[] ab = new int[a.Length];
+            int[] ba = new int[a.Length];
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (i > index)
+                {
+                    ab[i] = b[i];
+                    ba[i] = a[i];
+                }
+                else
+                {
+                    ab[i] = a[i];
+                    ba[i] = b[i];
+                }
+            }
+
+            int sumAB = 0;
+            int sumBA = 0;
+            do
+            {
+                for (int x = 0; x < ab.Length; x++)
+                {
+                    sumAB += ab[x];
+                    sumBA += ba[x];
+                }
+                if (sumAB > sumBA)
+                {
+                    for (int x = 0; x < ab.Length; x++)
+                    {
+                        if (ab[x] > ba[x])
+                        {
+                            ab[x] = 0;
+                            ba[x] = 1;
+                            break;
+                        }
+                    }
+                }
+                if (sumBA > sumAB)
+                {
+                    for (int x = 0; x < ab.Length; x++)
+                    {
+                        if (ba[x] > ab[x])
+                        {
+                            ab[x] = 1;
+                            ba[x] = 0;
+                            break;
+                        }
+                    }
+                }
+
+            } while (sumAB != sumBA);
+            return new int[][] { ab, ba };
+        };
+        /// <summary>
+        /// 变异函数。
+        /// </summary>
+        public static Action<int[]> MutationAction = (p) =>
+        {
+            int indexA = RandomFactory.Next(p.Length);
+            int indexB = RandomFactory.Next(p.Length);
+            int temp = p[indexA];
+            p[indexA] = p[indexB];
+            p[indexB] = temp;
+        };
+
+
+
         public static int GetBlackPoint(int[] blacksinAll, out double[] rights)
         {
             int sum = 0;
@@ -39,7 +200,7 @@ namespace Algorithms.Genetic
             int[] temp1 = Enumerable.Range(0, 5).ToArray();
             for (int x = 0; x < 5; x++)
             {
-                var q = (from c in temp1 select c + 5*x).ToArray();
+                var q = (from c in temp1 select c + 5 * x).ToArray();
                 if (GetLine(qi, 4, rights, q))
                     sum += 4;
             }
@@ -86,8 +247,6 @@ namespace Algorithms.Genetic
                     rights[x + 6] += 0.25;
                 }
             }
-
-
             return sum;
         }
 
@@ -109,122 +268,6 @@ namespace Algorithms.Genetic
             return false;
         }
 
-        /// <summary>
-        /// 适应度函数。
-        /// </summary>
-        public static Func<int[], double> FitnessFunc = p =>
-        {
-            return 0;
-        };
-        /// <summary>
-        /// 染色体生成函数。
-        /// </summary>
-        public static Func<int[]> ChromosomeFunc = () =>
-        {
-            int[] chromosome = new int[25];
-            for (int i = 0; i < 25; i++)
-            {
-                chromosome[i] = i;
-            }
-            chromosome = ArrayHelper.Shuffle(chromosome);
-            return chromosome;
-        };
-        /// <summary>
-        /// 选择函数。
-        /// </summary>
-        public static Func<int[][], int[]> ChooseFunc = (p) =>
-        {
-            double[] fitness = new double[p.Length];
-            double[] probabilities = new double[p.Length];
-            double sumfitness = 0;
-            for (int i = 0; i < p.Length; i++)
-            {
-                fitness[i] = FitnessFunc(p[i]);
-                sumfitness += fitness[i];
-            }
-            for (int i = 0; i < p.Length; i++)
-            {
-                probabilities[i] = fitness[i] / sumfitness;
-            }
-            double m = 0;
-            double r = RandomFactory.NextDouble();
-            for (int i = 0; i < p.Length; i++)
-            {
-
-                m = m + probabilities[i];
-                if (r <= m)
-                    return p[i];
-            }
-            return null;
-        };
-        /// <summary>
-        /// 交叉函数。
-        /// </summary>
-        public static Func<int[], int[], int[][]> CrossFunc = (a, b) =>
-        {
-            int indexA = RandomFactory.Next(a.Length);
-            int indexB = RandomFactory.Next(a.Length);
-            if (indexA > indexB)
-            {
-                int temp = indexA;
-                indexA = indexB;
-                indexB = temp;
-            }
-            int[] ab = new int[a.Length];
-            int[] ba = new int[a.Length];
-
-            for (int i = 0; i < a.Length; i++)
-            {
-                if (i > indexA && i <= indexB)
-                {
-                    ab[i] = b[i];
-                    ba[i] = a[i];
-                }
-                else
-                {
-                    ab[i] = a[i];
-                    ba[i] = b[i];
-                }
-            }
-            int[] intersect = ba.Intersect(ab).ToArray();
-            while (intersect.Length != ba.Length)
-            {
-                int indexa = 0;
-                int tempx;
-                bool flag = false;
-                for (int i = 0; i < ab.Length - 1; i++)
-                {
-                    if (flag) break;
-                    tempx = ab[i];
-                    indexa = i;
-
-                    for (int k = i + 1; k < ab.Length; k++)
-                    {
-                        if (tempx == ab[k])
-                        {
-                            int tp = ab[k];
-                            ab[k] = ba[indexa];
-                            ba[indexa] = tp;
-                            flag = true;
-                            break;
-                        }
-                    }
-                }
-                intersect = ba.Intersect(ab).ToArray();
-            }
-            return new int[][] { ab, ba };
-        };
-        /// <summary>
-        /// 变异函数。
-        /// </summary>
-        public static Action<int[]> MutationAction = (p) =>
-        {
-            int indexA = RandomFactory.Next(p.Length);
-            int indexB = RandomFactory.Next(p.Length);
-            int temp = p[indexA];
-            p[indexA] = p[indexB];
-            p[indexB] = temp;
-        };
     }
 }
 
