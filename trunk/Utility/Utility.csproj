@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array\ArrayHelper.cs" />
+    <Compile Include="Cam.cs" />
     <Compile Include="Drawing\ImageHelp.cs" />
     <Compile Include="RandomFactory.cs" />
     <Compile Include="EnCodingHelper.cs" />
