@@ -57,5 +57,4 @@ namespace Algorithms
             return RouteCache[endID].Weight == double.MaxValue ? null : RouteCache[endID];
         }
     }
-
 }
