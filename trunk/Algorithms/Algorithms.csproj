@@ -46,7 +46,7 @@
     <Compile Include="Graphs\Dijkstra.cs" />
     <Compile Include="TreeSearch\BreadthFirstSearch.cs" />
     <Compile Include="TreeSearch\DepthFirstSearch.cs" />
-    <Compile Include="StringSearch\KMPer.cs" />
+    <Compile Include="StringSearch\KMP.cs" />
     <Compile Include="Graphs\DirectGraph.cs" />
     <Compile Include="Genetic\AbstractGeneticHelper.cs" />
     <Compile Include="Genetic\GeneticKeys.cs" />

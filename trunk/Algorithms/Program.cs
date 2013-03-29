@@ -27,6 +27,18 @@ namespace Algorithms
             Route p = Dijkstra.GetShortestRoute(new List<Vertex>() { vA, vB, vC, vD }, "A", "C");
         }
 
+        static void TestKMP()
+        {
+            string zstr = "ababcabababdc";
+            string mstr = "babdc";
+            var index = KMP.Find(zstr, mstr);
+            if (index == -1)
+                Console.WriteLine("没有匹配的字符串！");
+            else
+                Console.WriteLine("找到字符位置为：" + index);
+            Console.Read();
+        }
+
         static void TestSeach()
         {
             for (int i = 0; i < 4; i++)
