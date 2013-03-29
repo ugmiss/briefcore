@@ -30,6 +30,24 @@ namespace System
             return !string.IsNullOrEmpty(s);
         }
         /// <summary>
+        /// base64加密
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string EnBase64(this string s)
+        {
+            return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(s));
+        }
+        /// <summary>
+        /// base64解密
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string DeBase64(this string s)
+        {
+            return System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(s));
+        }
+        /// <summary>
         /// 字符串为空
         /// </summary>
         /// <param name="s"></param>
