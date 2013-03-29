@@ -1,5 +1,21 @@
 #summary 算法
 参考[http://972169909-qq-com.iteye.com/blog/1463593]
+
+==基本遍历==
+深度优先搜索 · 广度优先搜索 · A* · Flood fill
+==最短路径==
+Dijkstra · Bellman-Ford · Floyd-Warshall · Kneser图
+==最小生成树==
+Prim · Kruskal
+==强连通分量==
+Kosaraju算法 · Gabow算法 · Tarjan算法
+==图匹配==
+匈牙利算法 · Hopcroft–Karp · Edmonds's matching
+==网络流==
+Ford-Fulkerson · Edmonds-Karp · Dinic · Push-relabel maximum flow 
+
+
+
 ===冒泡排序==
 ===二分查找==
 ===递归===
