@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Algorithms.Dijkstra;
+using Algorithms;
 using Geometria;
 
 namespace AlgorithmDemo
@@ -15,7 +15,6 @@ namespace AlgorithmDemo
         [STAThread]
         static void Main()
         {
-            Test.Try2();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DemoForm());
