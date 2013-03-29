@@ -3,22 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SupportCenter.Test
+namespace Algorithms
 {
-    public class KMPer
+    public class KMP
     {
-        static void Test(string[] args)
-        {
-            string zstr = "ababcabababdc";
-            string mstr = "babdc";
-            var index = KMP(zstr, mstr);
-            if (index == -1)
-                Console.WriteLine("没有匹配的字符串！");
-            else
-                Console.WriteLine("哈哈，找到字符啦，位置为：" + index);
-            Console.Read();
-        }
-        static int KMP(string bigstr, string smallstr)
+        public static int Find(string bigstr, string smallstr)
         {
             int i = 0;
             int j = 0;
@@ -40,7 +29,6 @@ namespace SupportCenter.Test
                 return i - smallstr.Length;
             return -1;
         }
-
         /// <summary>  
         /// p0,p1....pk-1         （前缀串）  
         /// pj-k,pj-k+1....pj-1   （后缀串)  
