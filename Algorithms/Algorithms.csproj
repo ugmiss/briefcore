@@ -43,13 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dijkstra\DijkstraSimple.cs" />
+    <Compile Include="Graphs\Dijkstra.cs" />
     <Compile Include="TreeSearch\BreadthFirstSearch.cs" />
     <Compile Include="TreeSearch\DepthFirstSearch.cs" />
-    <Compile Include="Dijkstra\Graph.cs" />
-    <Compile Include="Dijkstra\PlanCache.cs" />
-    <Compile Include="Dijkstra\Test.cs" />
-    <Compile Include="Dijkstra\DijkstraPlanner.cs" />
     <Compile Include="StringSearch\KMPer.cs" />
     <Compile Include="Graphs\DirectGraph.cs" />
     <Compile Include="Genetic\AbstractGeneticHelper.cs" />
@@ -59,7 +55,7 @@
     <Compile Include="Genetic\FiveTigerGeneticHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Genetic\Revolution.cs" />
-    <Compile Include="TreeSearch\Search.cs" />
+    <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utility\Utility.csproj">

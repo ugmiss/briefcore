@@ -28,7 +28,7 @@ namespace Utility
             foreach (Vertex v in vertexArray)
             {
                 Vertex_List.Add(v);
-                Edge_List.AddRange(v.Follow_Edge);
+                Edge_List.AddRange(v.EdgeList);
             }
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace Utility
         public void AddEdge(Vertex vertexFrom, Vertex vertexTo)
         {
             Edge e = new Edge(vertexFrom, vertexTo);
-            vertexFrom.Follow_Edge.Add(e);
+            vertexFrom.EdgeList.Add(e);
         }
         /// <summary>
         /// 添加边
@@ -53,13 +53,13 @@ namespace Utility
             //已经引用过的不处理。
             foreach (Edge temp in Edge_List)
             {
-                if (temp.From.Name == vertexFrom && temp.To.Name == vertexTo)
+                if (temp.From.ID == vertexFrom && temp.To.ID == vertexTo)
                     return;
             }
             //定义点的引用
             Vertex v1, v2;
             //取源点，如果已经在点集内直接取出，没有则创建新的点并添加到点集。
-            var q = from c in Vertex_List where c.Name == vertexFrom select c;
+            var q = from c in Vertex_List where c.ID == vertexFrom select c;
             if (!(q.ToList().Count > 0))
             {
                 v1 = new Vertex(vertexFrom);
@@ -70,7 +70,7 @@ namespace Utility
                 v1 = q.ToArray()[0];
             }
             //取目标点，如果已经在点集内直接取出，没有则创建新的点并添加到点集。
-            var q2 = from c in Vertex_List where c.Name == vertexTo select c;
+            var q2 = from c in Vertex_List where c.ID == vertexTo select c;
             if (!(q2.ToList().Count > 0))
             {
                 v2 = new Vertex(vertexTo);
@@ -82,7 +82,7 @@ namespace Utility
             }
             //创建边并添加到边集合
             Edge e = new Edge(v1, v2);
-            v1.Follow_Edge.Add(e);
+            v1.EdgeList.Add(e);
             Edge_List.Add(e);
         }
         /// <summary>
@@ -114,7 +114,7 @@ namespace Utility
                 }
                 if (isTop)
                 {
-                    foreach (Edge e in v.Follow_Edge)
+                    foreach (Edge e in v.EdgeList)
                     {
                         e.Open = false;
                     }
@@ -141,7 +141,7 @@ namespace Utility
         public static string[] GetTopoListNames(DirectGraph g, Queue<Vertex> temp)
         {
             Queue<Vertex> q = GetTopoList(g, temp);
-            return (from c in q select c.Name).ToArray();
+            return (from c in q select c.ID).ToArray();
         }
     }
     /// <summary>
@@ -185,15 +185,11 @@ namespace Utility
         /// <summary>
         /// 顶点名称
         /// </summary>
-        public string Name { get; set; }
-        /// <summary>
-        /// 顶点对象
-        /// </summary>
-        public object Tag { get; set; }
+        public string ID { get; set; }
         /// <summary>
         /// 此顶点出发的边的集合
         /// </summary>
-        public List<Edge> Follow_Edge = new List<Edge>();
+        public List<Edge> EdgeList = new List<Edge>();
         /// <summary>
         /// 构造方法
         /// </summary>
@@ -202,6 +198,6 @@ namespace Utility
         /// 构造方法
         /// </summary>
         /// <param name="n"></param>
-        public Vertex(string n) { Name = n; }
+        public Vertex(string n) { ID = n; }
     }
 }
