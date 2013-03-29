@@ -1,4 +1,5 @@
 #summary Prim最小生成树
+#labels 算法
 {{{
 public static List<Edge> GetMinTree(List<Vertex> vertexList)
 {
