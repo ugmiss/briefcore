@@ -11,20 +11,53 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
+            TestPrim();
             TestDijkstra();
             Console.ReadLine();
         }
         static void TestDijkstra()
         {
             Edge eAB = new Edge() { FromID = "A", ToID = "B", Weight = 10 };
+            Edge eBA = new Edge() { FromID = "B", ToID = "A", Weight = 10 };
+
             Edge eAC = new Edge() { FromID = "A", ToID = "C", Weight = 30 };
-            Vertex vA = new Vertex() { ID = "A", EdgeList = new List<Edge>() { eAB, eAC } };
+            Edge eCA = new Edge() { FromID = "C", ToID = "A", Weight = 30 };
+
+
             Edge eBC = new Edge() { FromID = "B", ToID = "C", Weight = 10 };
-            Vertex vB = new Vertex() { ID = "B", EdgeList = new List<Edge>() { eBC } };
-            Vertex vC = new Vertex() { ID = "C", EdgeList = new List<Edge>() { } };
-            Vertex vD = new Vertex() { ID = "D", EdgeList = new List<Edge>() { } };
+            Edge eCB = new Edge() { FromID = "C", ToID = "B", Weight = 10 };
+
+            Vertex vA = new Vertex() { ID = "A", EdgeList = new List<Edge>() { eAB, eAC } };
+            Vertex vB = new Vertex() { ID = "B", EdgeList = new List<Edge>() { eBC, eBA } };
+            Vertex vC = new Vertex() { ID = "C", EdgeList = new List<Edge>() { eCA, eCB } };
+
             //非负权有向图的最短路径Dijkstra算法。
-            Route p = Dijkstra.GetShortestRoute(new List<Vertex>() { vA, vB, vC, vD }, "A", "C");
+            Route p = Dijkstra.GetShortestRoute(new List<Vertex>() { vA, vB, vC }, "A", "C");
+        }
+
+        static void TestPrim()
+        {
+            Edge eAB = new Edge() { FromID = "A", ToID = "B", Weight = 10 };
+            Edge eBA = new Edge() { FromID = "B", ToID = "A", Weight = 10 };
+
+            Edge eAC = new Edge() { FromID = "A", ToID = "C", Weight = 30 };
+            Edge eCA = new Edge() { FromID = "C", ToID = "A", Weight = 30 };
+
+
+            Edge eBC = new Edge() { FromID = "B", ToID = "C", Weight = 10 };
+            Edge eCB = new Edge() { FromID = "C", ToID = "B", Weight = 10 };
+
+            Vertex vA = new Vertex() { ID = "A", EdgeList = new List<Edge>() { eAB, eAC } };
+            Vertex vB = new Vertex() { ID = "B", EdgeList = new List<Edge>() { eBC, eBA } };
+            Vertex vC = new Vertex() { ID = "C", EdgeList = new List<Edge>() { eCA, eCB } };
+
+            List<Edge> list = Prim.GetMinTree(new List<Vertex>() { vB, vA, vC });
+            double sum = 0;
+            foreach (Edge e in list)
+            {
+                sum += e.Weight;
+            }
+            Console.WriteLine("最小生成树的权值之和为" + sum);
         }
 
         static void TestKMP()
