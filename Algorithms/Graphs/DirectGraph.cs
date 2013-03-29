@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 
-namespace Utility
+namespace Algorithms.Graphs
 {
     /// <summary>
     /// 有向图
@@ -118,12 +118,6 @@ namespace Utility
                     {
                         e.Open = false;
                     }
-                    //bool noE = (from c in g.Edge_List where c.Open select c).ToList().Count == 0;
-                    //if (noE)
-                    //{
-                    //    temp.Enqueue(v);
-                    //    continue;
-                    //}
                     temp.Enqueue(v);
                 }
             }
