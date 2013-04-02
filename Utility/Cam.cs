@@ -40,6 +40,7 @@ namespace Utility
         public const int WM_CAP_SET_PREVIEW = WM_USER + 50;
         public const int WM_CAP_SET_PREVIEWRATE = WM_USER + 52;
         public const int WM_CAP_SET_VIDEOFORMAT = WM_USER + 45;
+        public const int WM_CAP_SAVEDIB = WM_USER + 25;
 
         // Structures
         [StructLayout(LayoutKind.Sequential)]
@@ -221,6 +222,11 @@ namespace Utility
             if (this.RecievedFrame != null)
                 this.RecievedFrame(VideoData);
         }
+
+       
+
+
+
     }
 }
 
