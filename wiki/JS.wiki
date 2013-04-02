@@ -22,4 +22,3 @@ encodeURIComponent() 方法：
 
 传参：用encodeURI("url参数")将url编码 
 收参：用decodeURI("接收到的值")解码 
-详细出处参考：http://www.jb51.net/article/22985.htm
