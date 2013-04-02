@@ -4,7 +4,7 @@
 ==基本遍历==
 深度优先搜索 · 广度优先搜索 · A* · Flood fill
 ==最短路径==
-Dijkstra · Bellman-Ford · Floyd-Warshall · Kneser图
+[Dijkstra]· Bellman-Ford · Floyd-Warshall · Kneser图
 ==最小生成树==
 Prim · Kruskal
 ==强连通分量==
