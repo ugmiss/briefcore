@@ -6,7 +6,7 @@
 ==最短路径==
 [Dijkstra]· Bellman-Ford · Floyd-Warshall · Kneser图
 ==最小生成树==
-Prim · Kruskal
+[Prim] · Kruskal
 ==强连通分量==
 Kosaraju算法 · Gabow算法 · Tarjan算法
 ==图匹配==
@@ -21,11 +21,10 @@ Ford-Fulkerson · Edmonds-Karp · Dinic · Push-relabel maximum flow
 ===递归===
 ===回溯===
 ===深度优先===
+[DFS]
 ===广度优先===
+[BFS]
 ===有向拓扑排序===
-===最小生成树算法===
-prim
-kruskal
 ===最小树形图===
 ===凸包===
 图象处理
