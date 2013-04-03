@@ -99,7 +99,7 @@
     <Compile Include="Cam.cs" />
     <Compile Include="Drawing\ImageHelp.cs" />
     <Compile Include="RandomFactory.cs" />
-    <Compile Include="EnCodingHelper.cs" />
+    <Compile Include="Encodings.cs" />
     <Compile Include="File\Pather.cs" />
     <Compile Include="Hanzi\Bopomofo.cs" />
     <Compile Include="Email.cs" />
