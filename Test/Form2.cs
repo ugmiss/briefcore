@@ -116,19 +116,19 @@ namespace Test
         {
             //for (int i = 0; i < 10; i++)
             //{
-                x1 = RandomFactory.NextDouble() * 400;
-                y1 = RandomFactory.NextDouble() * 400;
+            x1 = RandomFactory.NextDouble() * 400;
+            y1 = RandomFactory.NextDouble() * 400;
 
-                x2 =  RandomFactory.NextDouble() * 400;
-                y2 =  RandomFactory.NextDouble() * 400;
+            x2 = RandomFactory.NextDouble() * 400;
+            y2 = RandomFactory.NextDouble() * 400;
 
-                d1 =   RandomFactory.NextDouble() *50;
-                d2 =   RandomFactory.NextDouble() *50;
+            d1 = RandomFactory.NextDouble() * 50;
+            d2 = RandomFactory.NextDouble() * 50;
 
-                x = GetBowStringMidX(x1, y1, x2, y2, d1, d2);
-                double xx = GetBowStringMidX(x2, y2, x1, y1, d2, d1);
-                y = GetBowStringMidY(x1, y1, x2, y2, x);
-                panel1.Refresh();
+            x = GetBowStringMidX(x1, y1, x2, y2, d1, d2);
+            double xx = GetBowStringMidX(x2, y2, x1, y1, d2, d1);
+            y = GetBowStringMidY(x1, y1, x2, y2, x);
+            panel1.Refresh();
             //    MessageBox.Show(string.Format("({0},{1})-{2} ({3},{4})-{5} x={6}", x1, y1, d1, x2, y2, d2, x));
             //}
         }
@@ -156,6 +156,17 @@ namespace Test
             g.FillEllipse(Brushes.Blue, (float)(x2 - d2), (float)(y2 - d2), (float)(2.0 * d2), (float)(2.0 * d2));
             g.FillEllipse(Brushes.Red, (float)(x - 2), (float)(y - 2), (float)(2.0 * 2), (float)(2.0 * 2));
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dia = new OpenFileDialog();
+            dia.ShowDialog();
+            if (dia.FileName.NotNullOrEmpty())
+            {
+                Encoding enc =  EnCodingHelper.GetEncoding(dia.FileName, Encoding.Default);
+                textBox2.Text = enc.EncodingName;
+            }
         }
     }
 }

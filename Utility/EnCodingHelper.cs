@@ -8,57 +8,50 @@ namespace Utility
 {
     public class EnCodingHelper
     {
-        /// <summary>
-        /// 通过流取编码格式。
-        /// </summary>
-        /// <param name="stream"></param>
-        /// <param name="defaultEncoding"></param>
-        /// <returns></returns>
-        public static Encoding GetEncoding(Stream stream, Encoding defaultEncoding)
+        public static Encoding GetEncoding(string file, Encoding defEnc)
         {
-            Encoding targetEncoding = defaultEncoding;
-            if (stream != null && stream.Length >= 2)
+            using (var stream = File.OpenRead(file))
             {
-                // 保存文件流的前4个字节
-                byte byte1 = 0;
-                byte byte2 = 0;
-                byte byte3 = 0;
-                byte byte4 = 0;
-                // 保存当前Seek位置
-                long origPos = stream.Seek(0, SeekOrigin.Begin);
-                stream.Seek(0, SeekOrigin.Begin);
+                //判断流可读？
+                if (!stream.CanRead)
+                    return null;
+                //字节数组存储BOM
+                var bom = new byte[4];
+                //实际读入的长度
+                int readc;
+                readc = stream.Read(bom, 0, 4);
+                if (readc >= 2)
+                {
+                    if (readc >= 4)
+                    {
+                        //UTF32，Big-Endian
+                        if (CheckBytes(bom, 4, 0x00, 0x00, 0xFE, 0xFF))
+                            return new UTF32Encoding(true, true);
+                        //UTF32，Little-Endian
 
-                int nByte = stream.ReadByte();
-                byte1 = Convert.ToByte(nByte);
-                byte2 = Convert.ToByte(stream.ReadByte());
-                if (stream.Length >= 3)
-                {
-                    byte3 = Convert.ToByte(stream.ReadByte());
+                        if (CheckBytes(bom, 4, 0xFF, 0xFE, 0x00, 0x00))
+                            return new UTF32Encoding(false, true);
+                    }
+                    //UTF8
+                    if (readc >= 3 && CheckBytes(bom, 3, 0xEF, 0xBB, 0xBF))
+                        return new UTF8Encoding(true);
+                    //UTF16，Big-Endian
+                    if (CheckBytes(bom, 2, 0xFE, 0xFF))
+                        return new UnicodeEncoding(true, true);
+                    //UTF16，Little-Endian
+                    if (CheckBytes(bom, 2, 0xFF, 0xFE))
+                        return new UnicodeEncoding(false, true);
                 }
-                if (stream.Length >= 4)
-                {
-                    byte4 = Convert.ToByte(stream.ReadByte());
-                }
-                // 根据文件流的前4个字节判断Encoding
-                // Unicode {0xFF, 0xFE};
-                // BE-Unicode {0xFE, 0xFF};
-                // UTF8 = {0xEF, 0xBB, 0xBF};
-                if (byte1 == 0xFE && byte2 == 0xFF)//UnicodeBe
-                {
-                    targetEncoding = Encoding.BigEndianUnicode;
-                }
-                if (byte1 == 0xFF && byte2 == 0xFE && byte3 != 0xFF)//Unicode
-                {
-                    targetEncoding = Encoding.Unicode;
-                }
-                if (byte1 == 0xEF && byte2 == 0xBB && byte3 == 0xBF)//UTF8
-                {
-                    targetEncoding = Encoding.UTF8;
-                }
-                // 恢复Seek位置       
-                stream.Seek(origPos, SeekOrigin.Begin);
+                return defEnc;
             }
-            return targetEncoding;
+        }
+        //辅助函数，判断字节中的值
+        static bool CheckBytes(byte[] bytes, int count, params int[] values)
+        {
+            for (int i = 0; i < count; i++)
+                if (bytes[i] != values[i])
+                    return false;
+            return true;
         }
     }
 }

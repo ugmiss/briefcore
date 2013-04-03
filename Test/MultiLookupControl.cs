@@ -52,7 +52,7 @@ namespace Test
        
         void gridLookup_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            this.BeginInvoke(new MethodInvoker(delegate { FilterLookup(sender); }));
+            this.BeginInvoke(new System.Windows.Forms.MethodInvoker(delegate { FilterLookup(sender); }));
         }
         void gridLookup_Popup(object sender, EventArgs e)
         {
