@@ -67,9 +67,7 @@ namespace Utility
             {
                 return false;
                 //MessageBox.Show("Send Email Failed." + ex.ToString());
-
             }
         }
-
     }
 }
