@@ -19,16 +19,14 @@ namespace Utility
             client.Credentials = new System.Net.NetworkCredential("hujaoadmin", "hujaoweb2011");
             //星号改成自己邮箱的密码
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
-
             System.Net.Mail.MailMessage message = new MailMessage("hujaoadmin@126.com", "ace2011@126.com");
             message.Subject = "胡椒网注册确认信";
             message.Body = "欢迎您成为胡椒网的一员，在此表示热烈欢迎。";
             message.BodyEncoding = System.Text.Encoding.UTF8;
             message.IsBodyHtml = true;
-           //添加附件
-           //Attachment data = new Attachment(@"c:\Service1.cs", System.Net.Mime.MediaTypeNames.Application.Octet);
-           //message.Attachments.Add(data);
-
+            //添加附件
+            //Attachment data = new Attachment(@"c:\Service1.cs", System.Net.Mime.MediaTypeNames.Application.Octet);
+            //message.Attachments.Add(data);
             try
             {
                 client.Send(message);
