@@ -15,4 +15,6 @@ Type t = typeof(List<T>).GetGenericArguments()[0];
 }}}
 
 3 求和尾数9
+{{{
 int sum= Enumerable.Range(0, 100).Where(o=>o%10==9).Sum();
+}}}
