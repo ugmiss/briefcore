@@ -124,7 +124,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Caching\RefreshActions\DataTableRefreshAction.cs" />
-    <Compile Include="Comb.cs" />
+    <Compile Include="IdFactory.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="FastReflect\ConstructorInvoker.cs" />
