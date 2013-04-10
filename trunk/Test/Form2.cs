@@ -164,7 +164,7 @@ namespace Test
             dia.ShowDialog();
             if (dia.FileName.NotNullOrEmpty())
             {
-                Encoding enc =  EnCodingHelper.GetEncoding(dia.FileName, Encoding.Default);
+                Encoding enc = Utility.Encodings.GetEncoding(dia.FileName, Encoding.Default);
                 textBox2.Text = enc.EncodingName;
             }
         }
