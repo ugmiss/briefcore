@@ -35,8 +35,54 @@ namespace Snake
 
         public void Loop()
         {
+            PointM head = Snake.Peek();
+            Direction d = CurrentDirection;
+            int x = head.X + ((d == Direction.Right) ? 1 : 0) + ((d == Direction.Left) ? -1 : 0);
+            int y = head.Y + ((d == Direction.Down) ? 1 : 0) + ((d == Direction.Up) ? -1 : 0);
+            if (Bean.X == x && Bean.Y == y)
+            {
+                Snake.Enqueue(new PointM() { X = Bean.X, Y = Bean.Y });
+                Bean = RandomBean();
+            }
+            else if (x >= rowCount || x < 0 || y < 0 || y >= colCount || Matrix[x][y] == 1)
+            {
+                GameOver();
+            }
+            else
+            {
+                Snake.Enqueue(new PointM() { X = x, Y = y });
+                Snake.Dequeue();
+            }
+
+
+            CurrentDirection = GetNextDirection();
+        }
+
+        void Refresh()
+        {
+            for (int i = 0; i < rowCount; i++)
+            {
+                Matrix[i] = Enumerable.Repeat(0, 10).ToArray();
+            }
+            Snake.Enqueue(new PointM() { X = 0, Y = 0 });
+            Snake.Enqueue(new PointM() { X = 1, Y = 0 });
+            Snake.Enqueue(new PointM() { X = 2, Y = 0 });
+            Snake.ForEach(p =>
+            {
+                Matrix[p.X][p.Y] = 1;
+            });
+            Matrix[Bean.X][Bean.Y] = 1;
+        }
+
+        void GameOver()
+        {
 
         }
+        Direction GetNextDirection()
+        {
+            return Direction.Right;
+        }
+
 
         public List<PointM> GetNewPlan()
         {
