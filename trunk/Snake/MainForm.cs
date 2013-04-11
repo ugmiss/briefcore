@@ -16,8 +16,8 @@ namespace Snake
 
     public partial class MainForm : Form
     {
-        public const int rowCount = 64;
-        public const int colCount = 64;
+        public const int rowCount = 20;
+        public const int colCount = 20;
         public Direction CurrentDirection { get; set; }
 
         public List<PointM> CurrentPlan { get; set; }
@@ -38,18 +38,16 @@ namespace Snake
                 Matrix[i] = Enumerable.Repeat(0, rowCount).ToArray();
             }
             Init();
-            do
-            {
-                Loop();
-            } while (!IsGameOver);
+
         }
 
         public void Loop()
         {
             if (CurrentPlan == null)
                 CurrentPlan = GetNewPlan();
-            Thread.Sleep(500);
+            Thread.Sleep(100);
             PointM head = Snake.ToArray()[Snake.Count - 1];
+            CurrentDirection = GetNextDirection();
             Direction d = CurrentDirection;
             int x = head.X + ((d == Direction.Right) ? 1 : 0) + ((d == Direction.Left) ? -1 : 0);
             int y = head.Y + ((d == Direction.Down) ? 1 : 0) + ((d == Direction.Up) ? -1 : 0);
@@ -57,6 +55,7 @@ namespace Snake
             {
                 Snake.Enqueue(new PointM() { X = Bean.X, Y = Bean.Y });
                 Bean = RandomBean();
+                CurrentPlan = GetNewPlan();
             }
             else if (x >= rowCount || x < 0 || y < 0 || y >= colCount || Matrix[x][y] == 1)
             {
@@ -67,7 +66,7 @@ namespace Snake
                 Snake.Enqueue(new PointM() { X = x, Y = y });
                 Snake.Dequeue();
             }
-            CurrentDirection = GetNextDirection();
+
             Refresh();
         }
 
@@ -154,13 +153,25 @@ namespace Snake
                     PointM D = new PointM(i, k + 1);
 
                     if (TestPointM(R))
+                    {
                         list.Add(new Edge() { FromID = M.ID, ToID = R.ID, Weight = 1.0 });
+                        list.Add(new Edge() { FromID = R.ID, ToID = M.ID, Weight = 1.0 });
+                    }
                     if (TestPointM(L))
+                    {
                         list.Add(new Edge() { FromID = M.ID, ToID = L.ID, Weight = 1.0 });
+                        list.Add(new Edge() { FromID = L.ID, ToID = M.ID, Weight = 1.0 });
+                    }
                     if (TestPointM(U))
+                    {
                         list.Add(new Edge() { FromID = M.ID, ToID = U.ID, Weight = 1.0 });
+                        list.Add(new Edge() { FromID = U.ID, ToID = M.ID, Weight = 1.0 });
+                    }
                     if (TestPointM(D))
+                    {
                         list.Add(new Edge() { FromID = M.ID, ToID = D.ID, Weight = 1.0 });
+                        list.Add(new Edge() { FromID = D.ID, ToID = M.ID, Weight = 1.0 });
+                    }
                     v.EdgeList = list;
                     vlist.Add(v);
                 }
@@ -174,6 +185,8 @@ namespace Snake
                 PointM temp = new PointM(xy[0].ParseTo<int>(), xy[1].ParseTo<int>());
                 Plan.Add(temp);
             }
+            Plan.RemoveAt(0);
+            Plan.Add(Bean);
             return Plan;
         }
 
@@ -221,6 +234,19 @@ namespace Snake
                     }
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Control.CheckForIllegalCrossThreadCalls = false;
+
+            ThreadPool.QueueUserWorkItem(o =>
+            {
+                do
+                {
+                    Loop();
+                } while (!IsGameOver);
+            });
         }
     }
     public enum Direction
