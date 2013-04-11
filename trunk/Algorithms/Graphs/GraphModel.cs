@@ -23,6 +23,7 @@ namespace Algorithms
     {
         public string ID { get; set; } //顶点ID
         public List<Edge> EdgeList { get; set; }//出边
+        public object Tag { get; set; }
     }
     public class Edge
     {
