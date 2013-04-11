@@ -95,6 +95,7 @@ namespace Snake
         {
             PointM head = Snake.ToArray()[Snake.Count - 1];
             PointM next = CurrentPlan[0];
+            CurrentPlan.Remove(next);
             if ((next.X - head.X) == 1)
                 return Direction.Right;
             if ((next.X - head.X) == -1)
@@ -103,7 +104,7 @@ namespace Snake
                 return Direction.Down;
             if ((next.Y - head.Y) == -1)
                 return Direction.Up;
-            throw new Exception("Direction");
+            return CurrentDirection;
         }
         bool TestPointM(PointM p)
         {
