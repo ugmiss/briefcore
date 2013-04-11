@@ -25,7 +25,7 @@ namespace Test
             //rtblog.Text = sr.ReadToEnd();
             //sr.Close();
             //fs.Close();  
-            Application.Run(new Form2());
+            Application.Run(new Form3());
         }
     }
 }
