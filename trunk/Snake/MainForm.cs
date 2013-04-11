@@ -8,18 +8,20 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections;
 using Utility;
+using System.Threading;
 
 namespace Snake
 {
 
     public partial class MainForm : Form
     {
-        public const int rowCount = 10;
-        public const int colCount = 10;
+        public const int rowCount = 64;
+        public const int colCount = 64;
         public Direction CurrentDirection { get; set; }
         public Queue<PointM> Snake = new Queue<PointM>();
         public PointM Bean { get; set; }
         int[][] Matrix = new int[rowCount][];
+        bool IsGameOver = false;
         public MainForm()
         {
             InitializeComponent();
@@ -27,15 +29,22 @@ namespace Snake
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             for (int i = 0; i < rowCount; i++)
             {
-                Matrix[i] = Enumerable.Repeat(0, 10).ToArray();
+                Matrix[i] = Enumerable.Repeat(0, rowCount).ToArray();
             }
+            Init();
+            do
+            {
+                Loop();
+            } while (!IsGameOver);
         }
 
         public void Loop()
         {
-            PointM head = Snake.Peek();
+            Thread.Sleep(500);
+            PointM head = Snake.ToArray()[Snake.Count - 1];
             Direction d = CurrentDirection;
             int x = head.X + ((d == Direction.Right) ? 1 : 0) + ((d == Direction.Left) ? -1 : 0);
             int y = head.Y + ((d == Direction.Down) ? 1 : 0) + ((d == Direction.Up) ? -1 : 0);
@@ -53,30 +62,29 @@ namespace Snake
                 Snake.Enqueue(new PointM() { X = x, Y = y });
                 Snake.Dequeue();
             }
-
-
             CurrentDirection = GetNextDirection();
+            Refresh();
         }
 
         void Refresh()
         {
             for (int i = 0; i < rowCount; i++)
             {
-                Matrix[i] = Enumerable.Repeat(0, 10).ToArray();
+                Matrix[i] = Enumerable.Repeat(0, rowCount).ToArray();
             }
-            Snake.Enqueue(new PointM() { X = 0, Y = 0 });
-            Snake.Enqueue(new PointM() { X = 1, Y = 0 });
-            Snake.Enqueue(new PointM() { X = 2, Y = 0 });
             Snake.ForEach(p =>
             {
                 Matrix[p.X][p.Y] = 1;
             });
             Matrix[Bean.X][Bean.Y] = 1;
+
+            pnlCanvas.Refresh();
         }
 
         void GameOver()
         {
-
+            IsGameOver = true;
+            MessageBox.Show("");
         }
         Direction GetNextDirection()
         {
@@ -115,7 +123,24 @@ namespace Snake
             }
         }
 
+        private void pnlCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
 
+            g.FillRectangle(Brushes.LightGray, 0, 0, pnlCanvas.Width, pnlCanvas.Height);
+            //g.Clear(Color.White);
+            int len = pnlCanvas.Width / rowCount;
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int k = 0; k < colCount; k++)
+                {
+                    if (Matrix[i][k] == 1)
+                    {
+                        g.FillRectangle(Brushes.White, i * len, k * len, len, len);
+                    }
+                }
+            }
+        }
     }
     public enum Direction
     {
