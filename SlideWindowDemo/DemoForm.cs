@@ -195,7 +195,7 @@ ProductCount int not null
                         {
                             CreateTime = DateTime.Now,
                             ProductCount = r.Next(1000),
-                            ProductName = new Utility.Hanzi.CnNameFactory().GetBoyName(),
+                            ProductName = Utility.NameFactory.GetBoyName(),
                             ProductPrice = r.NextDouble() + r.Next(500)
                         };
                         be.Add<Orders>(or);
@@ -331,6 +331,9 @@ go", Color.Blue, Color.White);
                 box.AppendText(text);
                 box.Select(start, len);
                 box.SelectionColor = forecolor;
+                Font newFont; newFont = new Font(box.SelectionFont, box.SelectionFont.Style | FontStyle.Bold | FontStyle.Underline | FontStyle.Italic);
+                box.SelectionFont = newFont;
+
                 box.Select(start + len, 0);
                 box.ScrollToCaret();
 

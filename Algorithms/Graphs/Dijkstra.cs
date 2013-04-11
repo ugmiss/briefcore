@@ -36,6 +36,8 @@ namespace Algorithms
             {
                 foreach (Edge edge in currentVertex.EdgeList)//遍历当前顶点的出方向边
                 {
+                    if (RouteCache[edge.ToID].Flag == true)
+                        continue;
                     Route route = RouteCache[edge.ToID];//目标点的路径
                     Route routePrev = RouteCache[currentVertex.ID]; //前一段路径
                     double weightTemp = routePrev.Weight + edge.Weight;//计算临时新路径的权值=前一段路径与边的权值之和
@@ -51,9 +53,26 @@ namespace Algorithms
                 foreach (var vertex in vertexList)
                 {
                     if (!RouteCache[vertex.ID].Flag && RouteCache[vertex.ID].Weight != double.MaxValue)
-                        currentVertex = vertex;
+                    {
+                        if (currentVertex != null)
+                        {
+                            if (RouteCache[currentVertex.ID].Weight < RouteCache[vertex.ID].Weight)
+                                continue;
+                            else
+                                currentVertex = vertex;
+                        }
+                        else
+                        {
+                            currentVertex = vertex;
+                        }
+                    }
                 }
             }
+
+            //foreach (var r in RouteCache)
+            //{
+            //    Console.WriteLine(startID + "-" + r.Key + ":" + r.Value.RouteString + " " + r.Value.Weight);
+            //}
             return RouteCache[endID].Weight == double.MaxValue ? null : RouteCache[endID];
         }
     }

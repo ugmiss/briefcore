@@ -34,6 +34,7 @@
             // 
             // pnlCanvas
             // 
+            this.pnlCanvas.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pnlCanvas.Location = new System.Drawing.Point(12, 12);
             this.pnlCanvas.Name = "pnlCanvas";
             this.pnlCanvas.Size = new System.Drawing.Size(320, 320);

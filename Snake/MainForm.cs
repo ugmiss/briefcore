@@ -10,14 +10,15 @@ using System.Collections;
 using Utility;
 using System.Threading;
 using Algorithms;
+using System.Drawing.Drawing2D;
 
 namespace Snake
 {
 
     public partial class MainForm : Form
     {
-        public const int rowCount = 20;
-        public const int colCount = 20;
+        public const int rowCount = 32;
+        public const int colCount = 32;
         public Direction CurrentDirection { get; set; }
 
         public List<PointM> CurrentPlan { get; set; }
@@ -32,7 +33,11 @@ namespace Snake
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer |
 
+                    ControlStyles.ResizeRedraw |
+
+                    ControlStyles.AllPaintingInWmPaint, true);
             for (int i = 0; i < rowCount; i++)
             {
                 Matrix[i] = Enumerable.Repeat(0, rowCount).ToArray();
@@ -45,7 +50,7 @@ namespace Snake
         {
             if (CurrentPlan == null)
                 CurrentPlan = GetNewPlan();
-            Thread.Sleep(100);
+            Thread.Sleep(10);
             PointM head = Snake.ToArray()[Snake.Count - 1];
             CurrentDirection = GetNextDirection();
             Direction d = CurrentDirection;
@@ -65,8 +70,9 @@ namespace Snake
             {
                 Snake.Enqueue(new PointM() { X = x, Y = y });
                 Snake.Dequeue();
+                
             }
-
+            CurrentPlan = GetNewPlan();
             Refresh();
         }
 
@@ -112,7 +118,7 @@ namespace Snake
             PointM head = Snake.ToArray()[Snake.Count - 1];
             PointM tag = Bean;
             if (p.X == head.X && p.Y == head.Y)
-                return true;
+                return false;
             if (p.X == tag.X && p.Y == tag.Y)
                 return true;
             if (x >= rowCount || x < 0 || y < 0 || y >= colCount || Matrix[x][y] == 1)
@@ -155,24 +161,25 @@ namespace Snake
                     if (TestPointM(R))
                     {
                         list.Add(new Edge() { FromID = M.ID, ToID = R.ID, Weight = 1.0 });
-                        list.Add(new Edge() { FromID = R.ID, ToID = M.ID, Weight = 1.0 });
+                        //list.Add(new Edge() { FromID = R.ID, ToID = M.ID, Weight = 1.0 });
                     }
                     if (TestPointM(L))
                     {
                         list.Add(new Edge() { FromID = M.ID, ToID = L.ID, Weight = 1.0 });
-                        list.Add(new Edge() { FromID = L.ID, ToID = M.ID, Weight = 1.0 });
+                        //list.Add(new Edge() { FromID = L.ID, ToID = M.ID, Weight = 1.0 });
                     }
                     if (TestPointM(U))
                     {
                         list.Add(new Edge() { FromID = M.ID, ToID = U.ID, Weight = 1.0 });
-                        list.Add(new Edge() { FromID = U.ID, ToID = M.ID, Weight = 1.0 });
+                        //list.Add(new Edge() { FromID = U.ID, ToID = M.ID, Weight = 1.0 });
                     }
                     if (TestPointM(D))
                     {
                         list.Add(new Edge() { FromID = M.ID, ToID = D.ID, Weight = 1.0 });
-                        list.Add(new Edge() { FromID = D.ID, ToID = M.ID, Weight = 1.0 });
+                        //list.Add(new Edge() { FromID = D.ID, ToID = M.ID, Weight = 1.0 });
                     }
                     v.EdgeList = list;
+                   // Console.WriteLine(v.ID+" "+list.Count);
                     vlist.Add(v);
                 }
             }
@@ -219,9 +226,15 @@ namespace Snake
 
         private void pnlCanvas_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
+            Rectangle rect = e.ClipRectangle;
 
-            g.FillRectangle(Brushes.LightGray, 0, 0, pnlCanvas.Width, pnlCanvas.Height);
+            BufferedGraphicsContext currentContext = BufferedGraphicsManager.Current;
+            BufferedGraphics myBuffer = currentContext.Allocate(e.Graphics, e.ClipRectangle);
+            Graphics g = myBuffer.Graphics;
+            g.SmoothingMode = SmoothingMode.HighQuality;
+            g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
+            g.Clear(this.BackColor);
+            g.FillRectangle(Brushes.Black, 0, 0, pnlCanvas.Width, pnlCanvas.Height);
             //g.Clear(Color.White);
             int len = pnlCanvas.Width / rowCount;
             for (int i = 0; i < rowCount; i++)
@@ -230,10 +243,24 @@ namespace Snake
                 {
                     if (Matrix[i][k] == 1)
                     {
-                        g.FillRectangle(Brushes.White, i * len, k * len, len, len);
+                        g.FillRectangle(Brushes.White, i * len, k * len, len - 1, len - 1);
+                        if (Bean.X == i && Bean.Y == k)
+                            g.FillRectangle(Brushes.YellowGreen, i * len, k * len, len - 1, len - 1);
+                        PointM head = Snake.ToArray()[Snake.Count - 1];
+                        if (head.X == i && head.Y == k)
+                            g.FillRectangle(Brushes.Tomato, i * len, k * len, len - 1, len - 1);
+
+
                     }
                 }
             }
+
+            myBuffer.Render(e.Graphics);
+            g.Dispose();
+            myBuffer.Dispose();//释放资源
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
