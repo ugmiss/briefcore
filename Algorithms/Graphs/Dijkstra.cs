@@ -56,9 +56,7 @@ namespace Algorithms
                     {
                         if (currentVertex != null)
                         {
-                            if (RouteCache[currentVertex.ID].Weight < RouteCache[vertex.ID].Weight)
-                                continue;
-                            else
+                            if (RouteCache[currentVertex.ID].Weight > RouteCache[vertex.ID].Weight)
                                 currentVertex = vertex;
                         }
                         else
