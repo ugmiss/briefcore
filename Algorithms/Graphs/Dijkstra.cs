@@ -66,11 +66,6 @@ namespace Algorithms
                     }
                 }
             }
-
-            //foreach (var r in RouteCache)
-            //{
-            //    Console.WriteLine(startID + "-" + r.Key + ":" + r.Value.RouteString + " " + r.Value.Weight);
-            //}
             return RouteCache[endID].Weight == double.MaxValue ? null : RouteCache[endID];
         }
     }
