@@ -20,7 +20,6 @@ namespace Snake
         public const int rowCount = 32;
         public const int colCount = 32;
         public Direction CurrentDirection { get; set; }
-
         public List<PointM> CurrentPlan { get; set; }
         public Queue<PointM> Snake = new Queue<PointM>();
         public PointM Bean { get; set; }
@@ -70,7 +69,7 @@ namespace Snake
             {
                 Snake.Enqueue(new PointM() { X = x, Y = y });
                 Snake.Dequeue();
-                
+
             }
             CurrentPlan = GetNewPlan();
             Refresh();
@@ -159,27 +158,14 @@ namespace Snake
                     PointM D = new PointM(i, k + 1);
 
                     if (TestPointM(R))
-                    {
                         list.Add(new Edge() { FromID = M.ID, ToID = R.ID, Weight = 1.0 });
-                        //list.Add(new Edge() { FromID = R.ID, ToID = M.ID, Weight = 1.0 });
-                    }
                     if (TestPointM(L))
-                    {
                         list.Add(new Edge() { FromID = M.ID, ToID = L.ID, Weight = 1.0 });
-                        //list.Add(new Edge() { FromID = L.ID, ToID = M.ID, Weight = 1.0 });
-                    }
                     if (TestPointM(U))
-                    {
                         list.Add(new Edge() { FromID = M.ID, ToID = U.ID, Weight = 1.0 });
-                        //list.Add(new Edge() { FromID = U.ID, ToID = M.ID, Weight = 1.0 });
-                    }
                     if (TestPointM(D))
-                    {
                         list.Add(new Edge() { FromID = M.ID, ToID = D.ID, Weight = 1.0 });
-                        //list.Add(new Edge() { FromID = D.ID, ToID = M.ID, Weight = 1.0 });
-                    }
                     v.EdgeList = list;
-                   // Console.WriteLine(v.ID+" "+list.Count);
                     vlist.Add(v);
                 }
             }
