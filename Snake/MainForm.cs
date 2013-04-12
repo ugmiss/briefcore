@@ -17,8 +17,8 @@ namespace Snake
 
     public partial class MainForm : Form
     {
-        public const int rowCount = 32;
-        public const int colCount = 32;
+        public const int rowCount = 16;
+        public const int colCount = 16;
         public Direction CurrentDirection { get; set; }
         public List<PointM> CurrentPlan { get; set; }
         public Queue<PointM> Snake = new Queue<PointM>();
@@ -33,23 +33,20 @@ namespace Snake
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer |
-
                     ControlStyles.ResizeRedraw |
-
                     ControlStyles.AllPaintingInWmPaint, true);
             for (int i = 0; i < rowCount; i++)
             {
                 Matrix[i] = Enumerable.Repeat(0, rowCount).ToArray();
             }
             Init();
-
         }
 
         public void Loop()
         {
             if (CurrentPlan == null)
                 CurrentPlan = GetNewPlan();
-            Thread.Sleep(10);
+            //Thread.Sleep(10);
             PointM head = Snake.ToArray()[Snake.Count - 1];
             CurrentDirection = GetNextDirection();
             Direction d = CurrentDirection;
@@ -86,10 +83,8 @@ namespace Snake
                 Matrix[p.X][p.Y] = 1;
             });
             Matrix[Bean.X][Bean.Y] = 1;
-
             pnlCanvas.Refresh();
         }
-
         void GameOver()
         {
             IsGameOver = true;
@@ -141,7 +136,6 @@ namespace Snake
                     {
                         if ((i == head.X && k == head.Y) || (i == tag.X && k == tag.Y))
                         {
-
                         }
                         else
                         {
@@ -213,7 +207,6 @@ namespace Snake
         private void pnlCanvas_Paint(object sender, PaintEventArgs e)
         {
             Rectangle rect = e.ClipRectangle;
-
             BufferedGraphicsContext currentContext = BufferedGraphicsManager.Current;
             BufferedGraphics myBuffer = currentContext.Allocate(e.Graphics, e.ClipRectangle);
             Graphics g = myBuffer.Graphics;
@@ -221,7 +214,6 @@ namespace Snake
             g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
             g.Clear(this.BackColor);
             g.FillRectangle(Brushes.Black, 0, 0, pnlCanvas.Width, pnlCanvas.Height);
-            //g.Clear(Color.White);
             int len = pnlCanvas.Width / rowCount;
             for (int i = 0; i < rowCount; i++)
             {
@@ -235,18 +227,12 @@ namespace Snake
                         PointM head = Snake.ToArray()[Snake.Count - 1];
                         if (head.X == i && head.Y == k)
                             g.FillRectangle(Brushes.Tomato, i * len, k * len, len - 1, len - 1);
-
-
                     }
                 }
             }
-
             myBuffer.Render(e.Graphics);
             g.Dispose();
             myBuffer.Dispose();//释放资源
-
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
