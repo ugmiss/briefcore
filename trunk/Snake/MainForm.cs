@@ -46,7 +46,7 @@ namespace Snake
         {
             if (CurrentPlan == null)
                 CurrentPlan = GetNewPlan();
-            //Thread.Sleep(10);
+            //Thread.Sleep(200);
             PointM head = Snake.ToArray()[Snake.Count - 1];
             CurrentDirection = GetNextDirection();
             Direction d = CurrentDirection;
@@ -166,6 +166,20 @@ namespace Snake
 
             //非负权有向图的最短路径Dijkstra算法。
             Route p = Dijkstra.GetShortestRoute(vlist, head.ID, tag.ID);
+            if (p == null)
+            {
+                int times = 0;
+                do
+                {
+                    PointM tp = RandomBean();
+                    p = Dijkstra.GetShortestRoute(vlist, head.ID, tp.ID);
+                    times++;
+                    if (times > 1000)
+                        break;
+                } while (p == null);
+
+            }
+
             foreach (string id in p.IDList)
             {
                 string[] xy = id.Replace(")", "").Replace("(", "").Split(',');
