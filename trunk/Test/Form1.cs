@@ -15,5 +15,12 @@ namespace Test
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Utility.Validate v = new Utility.Validate();
+            v.CreateImageGif("a.gif");
+            pictureBox1.ImageLocation = "a.gif";
+        }
     }
 }
