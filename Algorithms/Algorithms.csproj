@@ -46,6 +46,7 @@
     <Compile Include="Graphs\Dijkstra.cs" />
     <Compile Include="Graphs\GraphModel.cs" />
     <Compile Include="Graphs\Prim.cs" />
+    <Compile Include="StringSearch\LevenshteinDistance.cs" />
     <Compile Include="TreeSearch\BreadthFirstSearch.cs" />
     <Compile Include="TreeSearch\DepthFirstSearch.cs" />
     <Compile Include="StringSearch\KMP.cs" />
