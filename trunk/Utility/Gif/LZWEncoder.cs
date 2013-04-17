@@ -21,7 +21,7 @@
 using System;
 using System.IO;
 
-namespace Gif.Components
+namespace Utility
 {
 	public class LZWEncoder 
 	{

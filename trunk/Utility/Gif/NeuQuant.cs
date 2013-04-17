@@ -39,7 +39,7 @@
 
 using System;
 
-namespace Gif.Components
+namespace Utility
 {
 	public class NeuQuant 
 	{
