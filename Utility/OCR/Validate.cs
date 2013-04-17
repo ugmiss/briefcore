@@ -3,7 +3,6 @@ using System.IO;
 using System.Web;
 using System.Drawing;
 using Utility.OCR;
-using Gif.Components;
 
 namespace Utility
 {
