@@ -123,7 +123,6 @@
     <Compile Include="Hanzi\RandomHanzi.cs" />
     <Compile Include="RegEdit.cs" />
     <Compile Include="Security\Security.cs" />
-    <Compile Include="File\Serializer.cs" />
     <Compile Include="Office\WordEdit.cs" />
     <Compile Include="File\SharpZip.cs" />
     <Compile Include="Html\HTMLHelper.cs" />
