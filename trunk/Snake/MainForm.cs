@@ -69,10 +69,10 @@ namespace Snake
 
             }
             CurrentPlan = GetNewPlan();
-            Refresh();
+            RefreshData();
         }
 
-        void Refresh()
+        void RefreshData()
         {
             for (int i = 0; i < rowCount; i++)
             {

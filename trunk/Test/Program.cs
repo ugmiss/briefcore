@@ -18,14 +18,8 @@ namespace Test
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //FileShare
-            //string filename = AppDomain.CurrentDomain.BaseDirectory + "log//" + cmblogfile.Text;
-            //FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            //StreamReader sr = new StreamReader(fs, System.Text.Encoding.Default);
-            //rtblog.Text = sr.ReadToEnd();
-            //sr.Close();
-            //fs.Close();  
-            Application.Run(new Form3());
+      
+            Application.Run(new Form1());
         }
     }
 }
