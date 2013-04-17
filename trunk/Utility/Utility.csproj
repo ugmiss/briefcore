@@ -98,12 +98,12 @@
     <Compile Include="Array\ArrayHelper.cs" />
     <Compile Include="Cam.cs" />
     <Compile Include="Drawing\ImageHelp.cs" />
-    <Compile Include="OCR\AnimatedGifEncoder.cs" />
+    <Compile Include="Gif\AnimatedGifEncoder.cs" />
     <Compile Include="OCR\Validate.cs" />
-    <Compile Include="OCR\GifDecoder.cs" />
+    <Compile Include="Gif\GifDecoder.cs" />
     <Compile Include="OCR\ImageOCR.cs" />
-    <Compile Include="OCR\LZWEncoder.cs" />
-    <Compile Include="OCR\NeuQuant.cs" />
+    <Compile Include="Gif\LZWEncoder.cs" />
+    <Compile Include="Gif\NeuQuant.cs" />
     <Compile Include="RandomFactory.cs" />
     <Compile Include="Encodings.cs" />
     <Compile Include="File\Pather.cs" />
