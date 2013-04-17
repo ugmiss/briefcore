@@ -13,7 +13,6 @@ namespace ConsoleTest
             string ssssss = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
             Console.WriteLine(ssssss);
             Console.ReadKey();
-
             BussinessExecuter exec = new BussinessExecuter("");
             exec.Modify<Person>(p => p.ID == "1", o => new Person() { Name = "AAA" });
         }
