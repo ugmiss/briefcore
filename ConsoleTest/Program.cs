@@ -8,28 +8,20 @@ namespace ConsoleTest
 {
     class Program
     {
-        public const int rowCount = 10;
-        public const int colCount = 10;
         static void Main(string[] args)
         {
+            string ssssss = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+            Console.WriteLine(ssssss);
+            Console.ReadKey();
 
-            int[][] Matrix = new int[rowCount][];
-            for (int i = 0; i < rowCount; i++)
-            {
-                Matrix[i] = Enumerable.Repeat(0, 10).ToArray();
-            }
-            PrintMatrix(Matrix);
+            BussinessExecuter exec = new BussinessExecuter("");
+            exec.Modify<Person>(p => p.ID == "1", o => new Person() { Name = "AAA" });
         }
-
-        public static void PrintMatrix(int[][] Matrix)
-        {
-            for (int i = 0; i < Matrix.Length; i++)
-            {
-                Console.Write("|");
-                Console.Write(string.Join(",",Matrix[i]));
-                Console.Write("|");
-                Console.WriteLine();
-            }
-        }
+    }
+    public class Person
+    {
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string Sex { get; set; }
     }
 }

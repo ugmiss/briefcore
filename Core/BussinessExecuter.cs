@@ -179,7 +179,6 @@ namespace System
             string sql = string.Format("delete from {0} where {1}", GetTableName<T>(), string.Join(" and ", wheres.ToArray()));
             return ExecuteNonQuery(ParseCommandString(sql, paramList.ToArray()));
         }
-
         // 删除单例
         public int DeleteAll<T>()
         {
@@ -190,7 +189,6 @@ namespace System
             string sql = string.Format("TRUNCATE TABLE  {0}", GetTableName<T>());
             return ExecuteNonQuery(sql);
         }
-
         // 删除批量
         public int Delete<T>(Expression<Func<T, bool>> func)
         {
