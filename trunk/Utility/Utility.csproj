@@ -97,7 +97,6 @@
   <ItemGroup>
     <Compile Include="Array\ArrayHelper.cs" />
     <Compile Include="Cam.cs" />
-    <Compile Include="Drawing\ImageHelp.cs" />
     <Compile Include="Gif\AnimatedGifEncoder.cs" />
     <Compile Include="OCR\Validate.cs" />
     <Compile Include="Gif\GifDecoder.cs" />
