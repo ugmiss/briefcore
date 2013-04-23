@@ -1,0 +1,7 @@
+#summary Architect 架构师
+=== 分类====
+
+ * 企业架构师EA(Enterprise Architect)
+ * 基础结构架构师IA(Infrastructure Architect)
+ * 特定技术架构TSA(Technology-Specific Architect)
+ * 解决方案架构师SA (Solution Architect)。
