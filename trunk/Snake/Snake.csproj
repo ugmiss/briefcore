@@ -84,10 +84,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
-      <Project>{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}</Project>
-      <Name>Algorithms</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}</Project>
       <Name>Core</Name>

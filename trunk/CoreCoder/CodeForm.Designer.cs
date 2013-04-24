@@ -93,6 +93,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ace代码生成器";
+            this.Load += new System.EventHandler(this.CodeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

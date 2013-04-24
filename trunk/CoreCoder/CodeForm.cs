@@ -25,6 +25,8 @@ namespace CoreCoder
             exec = new SqlExecuter(this.textBox1.Text);
             if (!textBox2.Text.IsNullOrEmpty())
                 namespacestr = textBox2.Text;
+            namespacestr.WriteToFile("names.txt");
+            this.textBox1.Text.WriteToFile("conn.txt");
             try
             {
                 if (Directory.Exists(namespacestr.AppPath()))
@@ -137,6 +139,16 @@ namespace {0}
             string istborview = !isview ? "[Description(\"IsTable\")]\r\n" : "[Description(\"IsView\")]\r\n";
             istborview += "    [DataContract]";
             code.FormatWith(namespacestr, tablename, fieldstr, istborview).WriteToFile((namespacestr + "\\" + tablename + ".cs").AppPath());
+        }
+
+        private void CodeForm_Load(object sender, EventArgs e)
+        {
+            string s2 = "".ReadFromFile("names.txt");
+            string s1 = "".ReadFromFile("conn.txt");
+            if (s1.NotNullOrEmpty())
+                textBox1.Text = s1.Trim();
+            if (s2.NotNullOrEmpty())
+                textBox2.Text = s2.Trim();
         }
     }
 }
