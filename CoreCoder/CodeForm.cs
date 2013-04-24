@@ -112,7 +112,6 @@ namespace {0}
     {{
 {2}
     }}
-           
 }}";
             string fieldstr = "";
             foreach (DataRow dr in exec.QueryDataTable(sql).Rows)
