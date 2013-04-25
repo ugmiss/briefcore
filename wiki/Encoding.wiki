@@ -1,9 +1,9 @@
 #summary Encoding使用技巧
 === 中文英文宽度问题 ===
 {{{
-int cnlen=System.Text.Encoding.Default.GetByteCount("中文");//cnlen=4
-int enlen=System.Text.Encoding.Default.GetByteCount("English");//enlen=7
-int len=System.Text.Encoding.Default.GetByteCount("京NB8000");//len=8
+int cnlen=System.Text.Encoding.Default.GetByteCount("中文");//cnlen=4，"中文".Length=2
+int enlen=System.Text.Encoding.Default.GetByteCount("English");//enlen=7,"English".Length=7
+int len=System.Text.Encoding.Default.GetByteCount("京NB8000");//len=8,"京NB8000".Length=7
 }}}
 === 文本文件格式ASII时，防止中文乱码问题===
 {{{
