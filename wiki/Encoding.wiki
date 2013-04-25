@@ -1,4 +1,5 @@
 #summary Encoding使用技巧
+#labels Encoding,乱码,gb2312,UTF8,ASII
 === 中文英文宽度问题 ===
 {{{
 int cnlen=System.Text.Encoding.Default.GetByteCount("中文");//cnlen=4，"中文".Length=2
