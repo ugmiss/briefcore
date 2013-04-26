@@ -1,0 +1,11 @@
+#summary 垃圾回收机制
+=== SOH与LOH ===
+小于85000byte进SOH
+大于85000byte进LOH
+SOH 会做碎片压缩
+LOH 不做碎片压缩，成本较高
+=== GC ===
+{{{
+GC.Collect();
+GC.SuppressFinalize(this);
+}}}
