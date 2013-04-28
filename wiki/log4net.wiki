@@ -82,7 +82,9 @@ public static class Logger
     public static log4net.ILog Instance { get; private set; }
     static Logger()
     {
+        // 文件监视
         log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo("log4net.config"));
+        // 传空串表示取root里引用的appender
         Instance = log4net.LogManager.GetLogger("");
     }
 }
