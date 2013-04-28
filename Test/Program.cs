@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
 using System.Text;
+using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace Test
 {
@@ -14,9 +16,15 @@ namespace Test
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            using (GISDataEntities GISDataEntities = new GISDataEntities())
+            {
+                GIS_Mine mine = new GIS_Mine() { Name = "aaa", IsValid = true };
+                GISDataEntities.GIS_Mine.AddObject(mine);
+                GISDataEntities.SaveChanges();
+            }
         }
     }
 }
+
+
+
