@@ -39,7 +39,8 @@ namespace Log4netDemo
 
         private void btnLogFatal_Click(object sender, EventArgs e)
         {
-            Logger.Instance.Fatal("严重错误：未捕获的异常XXX");
+            if (Logger.Instance.IsFatalEnabled)
+                Logger.Instance.Fatal("严重错误：未捕获的异常XXX");
         }
 
         private void MainForm_Load(object sender, EventArgs e)

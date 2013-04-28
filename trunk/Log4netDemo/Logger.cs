@@ -11,58 +11,13 @@ using System.Collections;
 
 namespace Log4netDemo
 {
-    /// <summary>
-    /// 程序运行日志记录接口, FATAL > ERROR > WARN > INFO > DEBUG
-    /// </summary>
     public static class Logger
     {
-        /*
-         * -------------------Level---------------------------
-         * 日志从高到低的五个级别 : FATAL ERROR WARN INFO DEBUG
-         * 错误日志:FATAL ERROR WARN 
-         * 消息日志:INFO DEBUG
-         * -------------------ConversionPattern---------------
-         * %m(message):输出的日志消息，如ILog.Debug(…)输出的一条消息
-         * %n(new line):换行
-         * %d(datetime):输出当前语句运行的时刻
-         * %r(run time):输出程序从运行到执行到当前语句时消耗的毫秒数
-         * %t(thread id):当前语句所在的线程ID
-         * %p(priority): 日志的当前优先级别，即DEBUG、INFO、WARN…等
-         * %c(class):当前日志对象的名称，例如：
-         * %L：输出语句所在的行号
-         * %F：输出语句所在的文件名
-         * %-数字：表示该项的最小长度，如果不够，则用空格填充
-         */
         public static log4net.ILog Instance { get; private set; }
         static Logger()
         {
             log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo("log4net.config"));
             Instance = log4net.LogManager.GetLogger("");
         }
-        //public static void Debug(string format, params object[] args)
-        //{
-        //    if (Log.IsDebugEnabled)
-        //        Log.DebugFormat(format, args);
-        //}
-        //public static void Info(string format, params object[] args)
-        //{
-        //    if (Log.IsInfoEnabled)
-        //        Log.InfoFormat(format, args);
-        //}
-        //public static void Warn(string format, params object[] args)
-        //{
-        //    if (Log.IsWarnEnabled)
-        //        Log.WarnFormat(format, args);
-        //}
-        //public static void Error(string format, params object[] args)
-        //{
-        //    if (Log.IsErrorEnabled)
-        //        Log.ErrorFormat(format, args);
-        //}
-        //public static void Fatal(string format, params object[] args)
-        //{
-        //    if (Log.IsFatalEnabled)
-        //        Log.FatalFormat(format, args);
-        //}
     }
 }
