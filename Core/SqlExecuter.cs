@@ -244,6 +244,7 @@ namespace System
                 Connection.Open();
             }
             string sql = ParseCommandString(commandText, parameterArray);
+            //Logger.Info(sql);
             try
             {
                 using (SqlCommand Command = new SqlCommand(sql, Connection))
@@ -251,6 +252,7 @@ namespace System
                     Command.Transaction = Transaction;
                     return Command.ExecuteNonQuery();
                 }
+
             }
             catch (Exception ex)
             {

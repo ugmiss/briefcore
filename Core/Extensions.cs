@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace System
 {
@@ -362,6 +363,10 @@ namespace System
                 }
             }
             throw new InvalidCastException(string.Format("Invalid cast from type \"{0}\" to type \"{1}\".", convertibleValue.GetType().FullName, typeof(T).FullName));
+        }
+        public static int GetTypeSize<T>(this T t)
+        {
+            return typeof(T).IsValueType ? Marshal.SizeOf(default(T)) : IntPtr.Size;
         }
     }
     public static class DataExtensions
