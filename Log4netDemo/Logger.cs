@@ -65,5 +65,4 @@ namespace Log4netDemo
                 log.FatalFormat(format, args);
         }
     }
-
 }
