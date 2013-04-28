@@ -1,5 +1,5 @@
 #summary log4net日志配置与使用
-#labels log
+#labels log4net,多进程共享日志文件
 ====配置===
 {{{
 <?xml version="1.0" encoding="utf-8" ?>
@@ -22,7 +22,7 @@
     <appender name="DebugAppender" type="log4net.Appender.RollingFileAppender" >
       <!--追加文件-->
       <param name="AppendToFile" value="true" />
-      <!--多进程访问同一日志文件-->
+      <!--多进程共享日志文件-->
       <param name="LockingModel" type="log4net.Appender.FileAppender+MinimalLock" />
       <!--静态日志文件名-->
       <param name="StaticLogFileName" value="false" />
