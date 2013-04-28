@@ -33,36 +33,36 @@ namespace Log4netDemo
          * %F：输出语句所在的文件名
          * %-数字：表示该项的最小长度，如果不够，则用空格填充
          */
-        private static log4net.ILog log = null;
+        public static log4net.ILog Instance { get; private set; }
         static Logger()
         {
             log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo("log4net.config"));
-            log = log4net.LogManager.GetLogger("CommonLogger");
+            Instance = log4net.LogManager.GetLogger("");
         }
-        public static void Debug(string format, params object[] args)
-        {
-            if (log.IsDebugEnabled)
-                log.DebugFormat(format, args);
-        }
-        public static void Info(string format, params object[] args)
-        {
-            if (log.IsInfoEnabled)
-                log.InfoFormat(format, args);
-        }
-        public static void Warn(string format, params object[] args)
-        {
-            if (log.IsWarnEnabled)
-                log.WarnFormat(format, args);
-        }
-        public static void Error(string format, params object[] args)
-        {
-            if (log.IsErrorEnabled)
-                log.ErrorFormat(format, args);
-        }
-        public static void Fatal(string format, params object[] args)
-        {
-            if (log.IsFatalEnabled)
-                log.FatalFormat(format, args);
-        }
+        //public static void Debug(string format, params object[] args)
+        //{
+        //    if (Log.IsDebugEnabled)
+        //        Log.DebugFormat(format, args);
+        //}
+        //public static void Info(string format, params object[] args)
+        //{
+        //    if (Log.IsInfoEnabled)
+        //        Log.InfoFormat(format, args);
+        //}
+        //public static void Warn(string format, params object[] args)
+        //{
+        //    if (Log.IsWarnEnabled)
+        //        Log.WarnFormat(format, args);
+        //}
+        //public static void Error(string format, params object[] args)
+        //{
+        //    if (Log.IsErrorEnabled)
+        //        Log.ErrorFormat(format, args);
+        //}
+        //public static void Fatal(string format, params object[] args)
+        //{
+        //    if (Log.IsFatalEnabled)
+        //        Log.FatalFormat(format, args);
+        //}
     }
 }

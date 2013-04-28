@@ -19,27 +19,27 @@ namespace Log4netDemo
 
         private void btnLogInfo_Click(object sender, EventArgs e)
         {
-           Logger.Info("消息：系统操作日志XXX");
+            Logger.Instance.Info("消息：系统操作日志XXX");
         }
 
         private void btnLogError_Click(object sender, EventArgs e)
         {
-            Logger.Error("错误：系统异常XXX");
+            Logger.Instance.Error("错误：系统异常XXX");
         }
 
         private void btnLogDebug_Click(object sender, EventArgs e)
         {
-            Logger.Debug("调试：调试信息XXX");
+            Logger.Instance.Debug("调试：调试信息XXX");
         }
 
         private void btLogWarn_Click(object sender, EventArgs e)
         {
-            Logger.Warn("警告:逻辑错误或已知异常XXX");
+            Logger.Instance.Warn("警告:逻辑错误或已知异常XXX");
         }
 
         private void btnLogFatal_Click(object sender, EventArgs e)
         {
-            Logger.Fatal("严重错误：未捕获的异常XXX");
+            Logger.Instance.Fatal("严重错误：未捕获的异常XXX");
         }
 
         private void MainForm_Load(object sender, EventArgs e)
