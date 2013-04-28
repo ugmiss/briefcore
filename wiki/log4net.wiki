@@ -1,4 +1,5 @@
 #summary log4net日志配置与使用
+#labels log
 ====配置===
 {{{
 <?xml version="1.0" encoding="utf-8" ?>
@@ -27,7 +28,7 @@
       <param name="StaticLogFileName" value="false" />
       <!--日志保存目录-->
       <param name="File" value="./Log/" />
-      <!--日期方式-->
+      <!--日期格式文件名-->
       <param name="DatePattern" value="yyyy-MM-dd'.log'" />
       <!--滚动方式-->
       <param name="RollingStyle" value="Date" />
