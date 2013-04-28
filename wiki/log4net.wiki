@@ -88,5 +88,6 @@ public static class Logger
 }}}
  * 调用
 {{{
-Logger.Instance.Fatal("严重错误：未捕获的异常XXX");
+if (Logger.Instance.IsFatalEnabled)
+    Logger.Instance.Fatal("严重错误：未捕获的异常XXX");
 }}}
