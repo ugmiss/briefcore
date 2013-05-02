@@ -142,6 +142,90 @@ namespace AopDemo
     }
 }
 }}}
+app.Config方式
+{{{
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <!--spring配置-->
+    <sectionGroup name="spring">
+      <section name="context" type="Spring.Context.Support.ContextHandler, Spring.Core"/>
+      <section name="objects" type="Spring.Context.Support.DefaultSectionHandler, Spring.Core"/>
+    </sectionGroup>
+    <!-- 日志配置 -->
+    <sectionGroup name="common">
+      <section name="logging" type="Common.Logging.ConfigurationSectionHandler, Common.Logging" />
+    </sectionGroup>
+  </configSections>
+  <!--spring配置项-->
+  <spring>
+    <context>
+      <resource uri="config://spring/objects"/>
+    </context>
+    <objects xmlns="http://www.springframework.net">
+      <!--Repository开始-->
+      <object id="IGIS_MineRepository" type="vOrient.MPS.Repository.GIS_MineRepository, vOrient.MPS.Repository"/>
+      <!--Repository结束-->
+      <!--Aop切点配置-->
+      <object id="afterAdvisor" type="Spring.Aop.Support.NameMatchMethodPointcutAdvisor, Spring.Aop">
+        <property name="Advice">
+          <!--切点类型-->
+          <object type="vOrient.Common.LoggingAdvice, vOrient.Common"/>
+        </property>
+        <property name="MappedNames">
+          <list>
+            <!--方法名匹配-->
+            <value>Add*</value>
+            <value>Remove*</value>
+            <value>Modify*</value>
+            <value>GetAll*</value>
+          </list>
+        </property>
+      </object>
+      <!--按object id匹配-->
+      <object type="Spring.Aop.Framework.AutoProxy.ObjectNameAutoProxyCreator, Spring.Aop">
+        <property name="ObjectNames">
+          <list>
+            <value>*Repository</value>
+          </list>
+        </property>
+        <property name="InterceptorNames">
+          <list>
+            <value>afterAdvisor</value>
+          </list>
+        </property>
+      </object>
+      <!--按类型名称匹配-->
+      <!--<object type="Spring.Aop.Framework.AutoProxy.TypeNameAutoProxyCreator, Spring.Aop">
+        <property name="TypeNames">
+          <list>
+            <value>vOrient.MPS.Repository.*</value>
+          </list>
+        </property>
+        <property name="InterceptorNames">
+          <list>
+            <value>afterAdvisor</value>
+          </list>
+        </property>
+      </object>-->
+    </objects>
+  </spring>
+  <!--common.logging配置项-->
+  <common>
+    <logging>
+      <factoryAdapter type="Common.Logging.Simple.TraceLoggerFactoryAdapter, Common.Logging">
+        <arg key="level" value="DEBUG" />
+        <arg key="showLogName" value="true" />
+        <arg key="showDataTime" value="true" />
+        <arg key="dateTimeFormat" value="yyyy/MM/dd HH:mm:ss:fff" />
+      </factoryAdapter>
+    </logging>
+  </common>
+</configuration>
+
+}}}
+
+
  * 企业库Unity(基于动态代理的*消息拦截*)
 {{{
 using System;
