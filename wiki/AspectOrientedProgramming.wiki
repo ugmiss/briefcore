@@ -224,6 +224,35 @@ app.Config方式
 </configuration>
 
 }}}
+app.config代码实现部分
+{{{
+public class RepositoryFactory
+{
+    public static T GetProxy<T>()
+    {
+        string repositoryid = typeof(T).Name;
+        IApplicationContext ctx = ContextRegistry.GetContext();
+        return (T)ctx[repositoryid];
+    }
+}
+    
+public class GIS_MineService
+{
+    IGIS_MineRepository ir = RepositoryFactory.GetProxy<IGIS_MineRepository>();
+    public GIS_MineService()
+    {
+    }
+    public bool AddGIS_Mine(string mineName)
+    {
+        return ir.Add(new GIS_Mine() { IsValid = true, Name = mineName });
+    }
+    public List<GIS_Mine> GetGIS_Mine()
+    {
+        return ir.GetAll();
+    }
+}
+
+}}}
 
 
  * 企业库Unity(基于动态代理的*消息拦截*)
