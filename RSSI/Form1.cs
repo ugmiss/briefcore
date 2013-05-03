@@ -85,18 +85,21 @@ namespace RSSI
             g.FillEllipse(Brushes.Blue, (float)x1 - r, (float)y1 - r, 2 * r, 2 * r);
             g.FillEllipse(Brushes.Green, (float)x2 - r, (float)y2 - r, 2 * r, 2 * r);
             g.FillEllipse(Brushes.Red, (float)x3 - r, (float)y3 - r, 2 * r, 2 * r);
+            g.FillEllipse(Brushes.Black, (float)x4 - r, (float)y4 - r, 2 * r, 2 * r);
 
             g.DrawEllipse(p1, (float)(x1 - d1), (float)(y1 - d1), (float)d1 * 2, (float)d1 * 2);
             g.DrawEllipse(p2, (float)(x2 - d2), (float)(y2 - d2), (float)d2 * 2, (float)d2 * 2);
             g.DrawEllipse(p3, (float)(x3 - d3), (float)(y3 - d3), (float)d3 * 2, (float)d3 * 2);
-          // g.DrawEllipse(p4, (float)(x4 - d4), (float)(y4 - d4), (float)d4 * 2, (float)d4 * 2);
+            g.DrawEllipse(p4, (float)(x4 - d4), (float)(y4 - d4), (float)d4 * 2, (float)d4 * 2);
 
 
 
             g.DrawLine(p1, (float)x1, (float)y1, (float)xA, (float)yA);
             g.DrawLine(p2, (float)x2, (float)y2, (float)xA, (float)yA);
             g.DrawLine(p3, (float)x3, (float)y3, (float)xA, (float)yA);
-            if (false)
+            g.DrawLine(p4, (float)x4, (float)y4, (float)xA, (float)yA);
+
+            if (true)
             {
                 g.FillEllipse(Brushes.Black, (float)x4 - r, (float)y4 - r, 2 * r, 2 * r);
 
@@ -120,7 +123,7 @@ namespace RSSI
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
-            return;
+
             ThreadPool.QueueUserWorkItem(o =>
             {
                 double x1 = Convert.ToDouble(tx1.Text);
@@ -138,16 +141,16 @@ namespace RSSI
                 double d3 = Convert.ToDouble(td3.Text);
                 double d4 = Convert.ToDouble(td4.Text);
                 Random r = new Random(Guid.NewGuid().GetHashCode());
-                //td1.Text = Math.Sqrt((double)((e.X - x1) * (e.X - x1) + (e.Y - y1) * (e.Y - y1)) + 10000).ToString();
-                //td2.Text = Math.Sqrt((double)((e.X - x2) * (e.X - x2) + (e.Y - y2) * (e.Y - y2)) + 10000).ToString();
-                //td3.Text = Math.Sqrt((double)((e.X - x3) * (e.X - x3) + (e.Y - y3) * (e.Y - y3)) + 10000).ToString();
-                //td4.Text = Math.Sqrt((double)((e.X - x4) * (e.X - x4) + (e.Y - y4) * (e.Y - y4)) + 10000).ToString();
+                td1.Text = Math.Sqrt((double)((e.X - x1) * (e.X - x1) + (e.Y - y1) * (e.Y - y1)) + 10000).ToString();
+                td2.Text = Math.Sqrt((double)((e.X - x2) * (e.X - x2) + (e.Y - y2) * (e.Y - y2)) + 10000).ToString();
+                td3.Text = Math.Sqrt((double)((e.X - x3) * (e.X - x3) + (e.Y - y3) * (e.Y - y3)) + 10000).ToString();
+                td4.Text = Math.Sqrt((double)((e.X - x4) * (e.X - x4) + (e.Y - y4) * (e.Y - y4)) + 10000).ToString();
 
                 td1.Text = Math.Sqrt((double)((e.X - x1) * (e.X - x1) + (e.Y - y1) * (e.Y - y1)) + r.NextDouble() * 50000 - 30000).ToString();
                 td2.Text = Math.Sqrt((double)((e.X - x2) * (e.X - x2) + (e.Y - y2) * (e.Y - y2)) + r.NextDouble() * 50000 - 30000).ToString();
                 td3.Text = Math.Sqrt((double)((e.X - x3) * (e.X - x3) + (e.Y - y3) * (e.Y - y3)) + r.NextDouble() * 50000 - 30000).ToString();
                 td4.Text = Math.Sqrt((double)((e.X - x4) * (e.X - x4) + (e.Y - y4) * (e.Y - y4)) + r.NextDouble() * 50000 - 30000).ToString();
-               // Thread.Sleep(500);
+                // Thread.Sleep(500);
                 panel1.Refresh();
             });
         }
