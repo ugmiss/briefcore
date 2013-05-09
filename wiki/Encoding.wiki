@@ -1,5 +1,15 @@
 #summary Encoding使用技巧
 #labels Encoding,乱码,gb2312,UTF8,ASII
+=== 打印字符 ===
+{{{
+//'\0'是char常量，int值为0;
+string aaa = string.Empty;
+Enumerable.Range(1,999).ForEach(c =>
+{
+   aaa += (char)c;
+});
+}}}
+
 === 中文英文宽度问题 ===
 {{{
 int cnlen=System.Text.Encoding.Default.GetByteCount("中文");//cnlen=4，"中文".Length=2
