@@ -1,4 +1,4 @@
-#summary P/Invoke
+#summary P/Invoke 平台调用服务
 ==Platform Invocation Services==
 在受控代码与非受控代码进行交互时会产生一个事务（transition） ，这通常发生在使用平台调用服务（Platform Invocation Services），即P/Invoke
 平台调用是一种服务，它使托管代码能够调用 DLL 中实现的非托管函数
