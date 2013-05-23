@@ -1,6 +1,5 @@
 #summary DomainDrivenDesign 领域驱动设计
-#labels 领域驱动设计
-
+#labels 领域驱动设计,Domain
 
 ==领域驱动设计模式==
     Domain Driven Design简称DDD。领域模式对业务逻辑独立封装，隔离与数据访问，实现层与层之间的解耦，提高整个系统的可扩展性，易修改性。
@@ -37,3 +36,4 @@
 ====其他====
      Common组件，通用组件为整体框架提供基础的方法，包括AOP，IOC，扩展方法，GUID生成器，配置文件访问器，异常管理器，日志访问类等。
      DTO数据传输对象，粗粒度的数据，用于高效率的网络传输和对业务模型的隐藏。
+[http://briefcore.googlecode.com/files/DDD.jpg]
