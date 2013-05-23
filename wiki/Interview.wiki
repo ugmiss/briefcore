@@ -20,13 +20,15 @@ WCF:
 WF:Bookmark
 WPF:
 VSTO：
+VSAdding:
 }}}
 框架篇
 {{{
-EF
-EntLib
+EF:
+EntLib:Unity
 Spring
-Prism
+Prism:MEF
+DDD:Repository
 }}}
 数据库篇
 {{{
@@ -40,4 +42,7 @@ SqlServer:视图 存储过程 索引 分区
 策略：
 观察者：
 消费者：
+}}}
+算法篇
+{{{
 }}}
