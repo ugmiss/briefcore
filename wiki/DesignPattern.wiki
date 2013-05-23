@@ -1,10 +1,10 @@
 #summary 23种设计模式
  * 创建型 
- # Factory Method（工厂方法） 
+ # Factory Method （工厂方法）
  # Abstract Factory（抽象工厂） 
  # Builder（建造者） 
  # Prototype（原型） 
- # Singleton（单例） 
+ # [Singleton]（单例） 
  * 结构型 
  # Adapter Class/Object（适配器） 
  # Bridge（桥接） 
