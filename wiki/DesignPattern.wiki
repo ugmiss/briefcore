@@ -1,6 +1,6 @@
 #summary 23种设计模式
  * 创建型 
- # [FactoryMethod] （工厂方法）
+ # [SimpleFactory] （简单工厂或工厂方法）
  # [AbstractFactory]（抽象工厂） 
  # [Builder]（建造者） 
  # [Prototype]（原型） 
