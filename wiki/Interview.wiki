@@ -2,13 +2,13 @@
 = 问题汇总 =
 基础篇
 {{{
-类：
-结构体：
+类：class 
+结构体：struct
 接口：
 泛型：
 反射：
 事件，代理：
-集合：
+集合：HashTable，Dictionary，ConcurrentDictionary
 线程：
 }}}
 
@@ -32,7 +32,10 @@ DDD:Repository
 }}}
 数据库篇
 {{{
-SqlServer:视图 存储过程 索引 分区
+视图 
+存储过程
+索引:聚集 非聚集 
+分区
 }}}
 设计模式篇
 {{{
@@ -43,6 +46,20 @@ SqlServer:视图 存储过程 索引 分区
 观察者：
 消费者：
 }}}
-算法篇
+数据结构，算法篇
 {{{
+}}}
+nosql篇
+{{{
+}}}
+Framework篇
+{{{
+Linq
+Lambda
+并行任务
+}}}
+BI篇
+{{{
+SSIS
+OLAP
 }}}
