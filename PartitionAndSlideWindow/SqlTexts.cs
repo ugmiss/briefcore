@@ -46,7 +46,7 @@ add file
  name={0}FG{1},
  filename='{2}{0}FG{1}.ndf',
  size=1,
- maxsize=5,
+ maxsize=UNLIMITED,
  filegrowth=1
 )
 to filegroup {0}FG{1}
