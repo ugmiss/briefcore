@@ -1,5 +1,5 @@
 #summary Jquery常用
-===选择器===
+===选择器nth-child===
 {{{
 第一：nth-child(number)
 //直接匹配第number个元素。参数number必须为大于0的整数。
