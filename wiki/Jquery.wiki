@@ -16,7 +16,8 @@ li:nth-child(5n-1){background:orange;}/*匹配第5-1=4、第10-1=9、…、第5�
 li:nth-child(3n±0){background:orange;}/*相当于(3n)*/ 
 li:nth-child(±0n+3){background:orange;}/*相当于(3)*/ 
 第四：nth-child(-an+b) 
-//此处一负一正，均不可缺省，否则无意义。这时与:nth-child(an+1)相似，都是匹配第1个，但不同的是它是倒着算的，从第b个开始往回算，所以它所匹配的最多也不会超过b个。 
+//此处一负一正，均不可缺省，否则无意义。这时与:nth-child(an+1)相似，都是匹配第1个，但不同的是它是倒着算的，
+//从第b个开始往回算，所以它所匹配的最多也不会超过b个。 
 (EG) li:nth-child(-3n+8){background:orange;}/*匹配第8、第5和第2个LI*/ 
 li:nth-child(-1n+8){background:orange;}/*或(-n+8)，匹配前8个（包括第8个）LI，这个较为实用点，用来限定前面N个匹配常会用到*/ 
 第五：nth-child(odd) 与 :nth-child(even) 
