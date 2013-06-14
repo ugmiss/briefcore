@@ -31,3 +31,52 @@ li:nth-child(-1n+8){background:orange;}/*或(-n+8)，匹配前8个（包括第8�
  //取值
  var 'menuindex'=$.cookie('menuindex');
 }}}
+
+===遍历===
+{{{
+ $("#leftmenu li").each(function () {
+     $(this).css("color","#000");
+     $(this).children("img").attr("src","../../img/li.png");
+}}}
+
+===Ajax===
+无参
+{{{
+ $.ajax({
+            type: "get", //使用get方法访问后台
+            dataType: "json", //返回json格式的数据
+            url: "/Menu/GetNav", //要访问的后台地址
+            complete: function () { $("#load").hide(); }, //AJAX请求完成时隐藏loading提示
+            success: function (data) {//
+                var dataObj = eval(data);
+                $.each(dataObj, function (i, n) {
+                    if (n.NavID == $.cookie('navindex'))
+                        topnav.append("<li style='margin-top:15px;margin-left:10px;height:36px;line-height:30px;float:left;' id=" + n.NavID + " name='" + n.NavName + "' onclick= 'LoadMenu(" + n.NavID + ")'><img src='../../img/" + n.NavName + "02.png'></li>");
+                    else
+                        topnav.append("<li style='margin-top:15px;margin-left:10px;height:36px;line-height:30px;float:left;' id=" + n.NavID + " name='" + n.NavName + "' onclick= 'LoadMenu(" + n.NavID + ")'><img src='../../img/" + n.NavName + "01.png'></li>");
+                    $.cookie('nav' + n.NavID, n.NavName);
+                });
+            }
+        });
+}}}
+带参
+{{{
+$.ajax({
+            type: "get", //使用get方法访问后台
+            dataType: "json", //返回json格式的数据
+            url: "/Menu/GetMenu", //要访问的后台地址
+            data: "navid=" + navid, //要发送的数据
+            success: function (data) {//
+                var dataObj = eval(data);
+                $.each(dataObj, function (i, n) {
+                    leftmenu.append("<li id='" + n.MenuItemID + "' onclick=\"MenuSelect('" + n.Src + "','" + n.MenuItemID + "')\" ><div style='text-align:center; margin-left:0px;padding-left:0px;height:48px; margin-top:10px;background:url(../../img/left_1.png) no-repeat left top;font-family:Consolas;color:black;-moz-background-size:100% 100%;-webkit-background-size: 100% 100%;background-size: 100% 100%; '>" + n.MenuName + "</div></li>");
+                });
+                leftmenu.find("li:nth-child(" + $.cookie('menuindex') + ")").click();
+            }
+        });
+}}}
+===清空子元素===
+{{{
+var leftmenu = $("#leftmenu");
+leftmenu.empty();
+}}}
