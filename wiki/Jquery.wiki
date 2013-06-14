@@ -23,3 +23,11 @@ li:nth-child(-1n+8){background:orange;}/*或(-n+8)，匹配前8个（包括第8�
 第五：nth-child(odd) 与 :nth-child(even) 
 //分别匹配序号为奇数与偶数的元素。奇数(odd)与(2n+1)结果一样；偶数(even)与(2n+0)及(2n)结果一样。
 }}}
+
+===Cookie===
+{{{
+ //赋值
+ $.cookie('menuindex', menuid);
+ //取值
+ var 'menuindex'=$.cookie('menuindex');
+}}}
