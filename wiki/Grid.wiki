@@ -148,3 +148,30 @@ public FrmView1()
 值得注意的是，如果repositoryItemButtonEdit所在的列的宽度不够时，即Button 上的字不能完全显示时，点击按钮可能不会触发事件，后者点击按钮之后按钮消失了，产生一个或者多个的空白格子，这是只要调整按钮所在列的宽度，是Button上的字充分显示，即可解决问题。
 
 }}}
+
+= 打印 添加标题(默认的打印无标题)=
+{{{
+/// <summary>
+/// 打印
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
+private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+{
+    PrintingSystem ps = new DevExpress.XtraPrinting.PrintingSystem();
+    DevExpress.XtraPrinting.PrintableComponentLink link = null;
+    link = new DevExpress.XtraPrinting.PrintableComponentLink(ps);
+    ps.Links.Add(link);
+    link.Component = gridMineEnter;//PrintableComponentLink的组件指向对应的Grid控件
+    string strPrintHeader = "井下人员进出查询";
+    PageHeaderFooter phf = link.PageHeaderFooter as PageHeaderFooter;
+    phf.Header.Content.Clear();
+    phf.Header.Content.AddRange(new string[] { "", strPrintHeader, "" });
+    phf.Header.Font = new System.Drawing.Font("宋体", 14, System.Drawing.FontStyle.Bold);
+    phf.Header.LineAlignment = BrickAlignment.Center;
+    link.CreateDocument();
+    ps.PreviewFormEx.Show();
+    //this.gridMineEnter.ShowPrintPreview();//默认的打印
+}
+
+}}}
