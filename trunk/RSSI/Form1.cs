@@ -150,7 +150,7 @@ namespace RSSI
                 td2.Text = Math.Sqrt((double)((e.X - x2) * (e.X - x2) + (e.Y - y2) * (e.Y - y2)) + r.NextDouble() * 50000 - 30000).ToString();
                 td3.Text = Math.Sqrt((double)((e.X - x3) * (e.X - x3) + (e.Y - y3) * (e.Y - y3)) + r.NextDouble() * 50000 - 30000).ToString();
                 td4.Text = Math.Sqrt((double)((e.X - x4) * (e.X - x4) + (e.Y - y4) * (e.Y - y4)) + r.NextDouble() * 50000 - 30000).ToString();
-                // Thread.Sleep(500);
+                //Thread.Sleep(500);
                 panel1.Refresh();
             });
         }

@@ -8,20 +8,39 @@ using System.Runtime.InteropServices;
 
 namespace Test
 {
-    static class Program
+    public class Program
     {
-        /// <summary>
-        /// 应用程序的主入口点。
-        /// </summary>
-        [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            using (GISDataEntities GISDataEntities = new GISDataEntities())
+            long smallBlockSize = 90000;
+            long largeBlockSize = 1 << 24;
+            long count = 0;
+            long a = 1024;
+            var bigBlock = new byte[0];
+            try
             {
-                GIS_Mine mine = new GIS_Mine() { Name = "aaa", IsValid = true };
-                GISDataEntities.GIS_Mine.AddObject(mine);
-                GISDataEntities.SaveChanges();
+                var smallBlocks = new List<byte[]>();
+                while (true)
+                {
+                    GC.Collect();
+                    bigBlock = new byte[largeBlockSize];
+                    largeBlockSize++;
+                    smallBlocks.Add(new byte[smallBlockSize]);
+                    count++;
+                    Console.WriteLine("{0} Mb allocated",
+                    (count * smallBlockSize) / (a * a));
+                }
             }
+            catch (OutOfMemoryException)
+            {
+                bigBlock = null;
+                GC.Collect();
+                Console.WriteLine("OUTMEM {0} Mb allocated",
+                     (count * smallBlockSize) / (a * a));
+                Console.WriteLine(count);
+            }
+
+            Console.ReadLine();
         }
     }
 }
