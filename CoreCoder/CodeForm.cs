@@ -14,6 +14,8 @@ namespace CoreCoder
 {
     public partial class CodeForm : Form
     {
+        string namespacestr2 = "vOrient.MPS.Repository";
+        string namespacestr3 = "vOrient.MPS.IRepository";
         public CodeForm()
         {
             InitializeComponent();
@@ -31,12 +33,29 @@ namespace CoreCoder
             {
                 if (Directory.Exists(namespacestr.AppPath()))
                     Directory.Delete(namespacestr.AppPath(), true);
+                if (Directory.Exists(namespacestr2.AppPath()))
+                    Directory.Delete(namespacestr2.AppPath(), true);
+                if (Directory.Exists(namespacestr3.AppPath()))
+                    Directory.Delete(namespacestr3.AppPath(), true);
                 while (true)
                 {   //删除文件夹时，由于文件可能在其他地方被打开
                     if (!Directory.Exists(namespacestr.AppPath()))
                         break;
                 }
+                while (true)
+                {   //删除文件夹时，由于文件可能在其他地方被打开
+                    if (!Directory.Exists(namespacestr2.AppPath()))
+                        break;
+                }
+                while (true)
+                {   //删除文件夹时，由于文件可能在其他地方被打开
+                    if (!Directory.Exists(namespacestr3.AppPath()))
+                        break;
+                }
                 Directory.CreateDirectory(namespacestr.AppPath());
+                Directory.CreateDirectory(namespacestr2.AppPath());
+                Directory.CreateDirectory(namespacestr3.AppPath());
+
                 string sqltable = "SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_TYPE FROM INFORMATION_SCHEMA.TABLES WHERE Table_name<>'sysdiagrams' and (Table_Type='BASE TABLE' or  Table_Type='View') and ISNULL(OBJECTPROPERTY(OBJECT_ID(TABLE_NAME), 'IsMSShipped'), 0) = 0 ORDER BY TABLE_NAME";
                 foreach (DataRow dr in exec.QueryDataTable(sqltable).Rows)
                 {
@@ -113,6 +132,64 @@ namespace {0}
 {2}
     }}
 }}";
+
+
+string code2 =
+@"using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using vOrient.MPS.DomainModel;
+using vOrient.MPS.IRepository;
+
+namespace {0}
+{{
+    public class {1}Repository:I{1}Repository
+    {{
+        ModelExecuter exec = new ModelExecuter(ConfigManager.Get(SystemKeys.MinePositionDatabase));
+        public bool Add({1} model)
+        {{
+            return exec.Add(model) > 0;
+        }}
+
+        public bool Modify({1} model)
+        {{
+            return exec.Modify(model) > 0;
+        }}
+
+        public bool Remove({1} model)
+        {{
+            return exec.Delete(model) > 0;
+        }}
+
+        public List<{1}> GetAll()
+        {{
+            return exec.GetAll<{1}>();
+        }}
+    }}
+}}";
+
+            
+
+string code3 =
+@"using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using vOrient.MPS.DomainModel;
+
+namespace {0}
+{{
+    public interface I{1}Repository
+    {{
+        bool Add({1} model);
+        bool Modify({1} model);
+        bool Remove({1} model);
+        List<{1}> GetAll();
+    }}
+}}";
             string fieldstr = "";
             foreach (DataRow dr in exec.QueryDataTable(sql).Rows)
             {
@@ -138,6 +215,8 @@ namespace {0}
             string istborview = !isview ? "[Description(\"IsTable\")]\r\n" : "[Description(\"IsView\")]\r\n";
             istborview += "    [DataContract]";
             code.FormatWith(namespacestr, tablename, fieldstr, istborview).WriteToFile((namespacestr + "\\" + tablename + ".cs").AppPath());
+            code2.FormatWith(namespacestr2, tablename).WriteToFile((namespacestr2 + "\\" + tablename + "Repository.cs").AppPath());
+            code3.FormatWith(namespacestr3, tablename).WriteToFile((namespacestr3 + "\\I" + tablename + "Repository.cs").AppPath());
         }
 
         private void CodeForm_Load(object sender, EventArgs e)

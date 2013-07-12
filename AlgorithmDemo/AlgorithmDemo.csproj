@@ -97,9 +97,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
+      <Project>{26F00C1A-DB21-4EEA-BA51-1E3769C27DE7}</Project>
+      <Name>Algorithms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}</Project>
       <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geometria\Geometria.csproj">
+      <Project>{F7F94CAE-47E0-44A9-B52E-777F68BF9EEC}</Project>
+      <Name>Geometria</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utility\Utility.csproj">
       <Project>{8D45C50B-B6AF-4E1D-BB1B-23AD9ACA1A69}</Project>
