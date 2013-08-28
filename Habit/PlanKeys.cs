@@ -19,6 +19,5 @@ namespace Habit
         public const string Video = "Video";
         public const string Telphone = "Telphone";
         public const string Sport = "Sport";
-
     }
 }
