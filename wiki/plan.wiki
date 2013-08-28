@@ -1,5 +1,5 @@
 #summary Plan
-==PlanKeys==
+==Plan==
 {{{
 public const string Wash = "Wash";
 public const string Sweep = "Sweep";
