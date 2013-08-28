@@ -1,7 +1,7 @@
 ﻿--查询所有索引
 select    indexs.Tab_Name  as Tab_Name,indexs.Index_Name as Index_Name ,indexs.[Co_Names] as Co_Names,
         Ind_Attribute.is_primary_key as is_primary_key,Ind_Attribute.is_unique AS is_unique,
-        Ind_Attribute.is_disabled AS is_disabled
+        Ind_Attribute.is_disabled AS is_disabled,type_desc as clusterstr
  from (
     select Tab_Name,Index_Name, [Co_Names]=stuff((select ','+[Co_Name] from 
     (    select tab.Name as Tab_Name,ind.Name as Index_Name,Col.Name as Co_Name from sys.indexes ind 

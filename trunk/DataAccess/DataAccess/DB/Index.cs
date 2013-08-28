@@ -14,5 +14,7 @@ namespace DataAccess
         public bool Is_Primary_Key{get;set;}
         public bool Is_Unique { get; set; }
         public bool Is_Disabled { get; set; }
+
+        public string ClusterStr { get; set; }
     }
 }

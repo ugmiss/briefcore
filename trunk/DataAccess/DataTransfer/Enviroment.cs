@@ -13,7 +13,7 @@ namespace DataTransfer
         {
             using (StreamReader sr = new StreamReader("Enviroment.xml"))
             {
-                Enviroment env = Utility.Serializer.XmlDeserialize<Enviroment>(sr.ReadToEnd());
+                Enviroment env = sr.ReadToEnd().XmlDeserialize<Enviroment>();
                 return env.TempDir;
             }
         }
@@ -22,7 +22,7 @@ namespace DataTransfer
             this.TempDir = dir;
             using (StreamWriter sr = new StreamWriter("Enviroment.xml",false,Encoding.UTF8))
             {
-                sr.Write(Utility.Serializer.XmlSerialize<Enviroment>(this));
+                sr.Write(this.XmlSerialize<Enviroment>());
             }
         }
     }
