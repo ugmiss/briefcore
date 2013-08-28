@@ -8,7 +8,7 @@ public const string Arrange = "Arrange";
 public const string Read = "Read";
 public const string Study = "Study";
 public const string Program = "Program";
-public const string Telphone = "Telphone";
+public const string Contact = "Contact";
 public const string Shop = "Shop";
 public const string Sport = "Sport";
 
