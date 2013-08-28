@@ -73,7 +73,7 @@ namespace DataAccess
             SqlExecuter Executer = new SqlExecuter(ConnectionString);
             DataTable dttables = Executer.QueryTable(AppResource.tables);
             DataTable dtcols = Executer.QueryTable(AppResource.cols);
-            
+
             foreach (DataRow dr in dttables.Rows)
             {
                 Tab table = new Tab();
@@ -236,7 +236,13 @@ namespace DataAccess
                 inx.Is_Disabled = Convert.ToBoolean(dr["Is_Disabled"]);
                 inx.Is_Primary_Key = Convert.ToBoolean(dr["Is_Primary_Key"]);
                 inx.Is_Unique = Convert.ToBoolean(dr["Is_Unique"]);
-                Indexs.Add(inx);
+                inx.ClusterStr = dr["ClusterStr"].ToString();
+                if (!inx.Is_Primary_Key)
+                {
+                    string unique = inx.Is_Unique ? "unique" : "";
+                    inx.Definition = "create " + unique + " " + inx.ClusterStr + " index " + inx.Index_Name + " on " + inx.Tab_Name + "(" + inx.Co_Names + ")";
+                    Indexs.Add(inx);
+                }
             }
         }
 

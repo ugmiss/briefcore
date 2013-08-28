@@ -104,6 +104,10 @@ namespace DataAccess
             {
                 Executer.NonQuery(tri.Definition);
             }
+            foreach (Index idx in db.Indexs)
+            {
+                Executer.NonQuery(idx.Definition);
+            }
             List<View> list = new List<View>(db.Views);
             CreateViews(0, list, Executer);
             foreach (ForeignKey fk in db.ForeignKeys)

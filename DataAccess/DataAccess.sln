@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelerikUsing", "TelerikUsin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "..\Utility\Utility.csproj", "{8D45C50B-B6AF-4E1D-BB1B-23AD9ACA1A69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "..\Core\Core.csproj", "{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{8D45C50B-B6AF-4E1D-BB1B-23AD9ACA1A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D45C50B-B6AF-4E1D-BB1B-23AD9ACA1A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D45C50B-B6AF-4E1D-BB1B-23AD9ACA1A69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72DA6619-B8C5-4189-BE52-CC0F0FCFFF67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
