@@ -14,8 +14,8 @@ namespace CoreCoder
 {
     public partial class CodeForm : Form
     {
-        string namespacestr2 = "vOrient.MPS.Repository";
-        string namespacestr3 = "vOrient.MPS.IRepository";
+        string namespacestr2 = "vOrient.LMS.Repository";
+        string namespacestr3 = "vOrient.LMS.IRepository";
         public CodeForm()
         {
             InitializeComponent();
@@ -140,14 +140,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
-using vOrient.MPS.DomainModel;
-using vOrient.MPS.IRepository;
+using vOrient.LMS.DomainModel;
+using vOrient.LMS.IRepository;
 
 namespace {0}
 {{
     public class {1}Repository:I{1}Repository
     {{
-        ModelExecuter exec = new ModelExecuter(ConfigManager.Get(SystemKeys.MinePositionDatabase));
+        ModelExecuter exec = new ModelExecuter(ConfigManager.Get(SystemKeys.LogisticsDatabase));
         public bool Add({1} model)
         {{
             return exec.Add(model) > 0;
@@ -178,7 +178,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
-using vOrient.MPS.DomainModel;
+using vOrient.LMS.DomainModel;
 
 namespace {0}
 {{
