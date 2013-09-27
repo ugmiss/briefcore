@@ -1,0 +1,11 @@
+D:\BriefCore\trunk\ScanImage\ScanImage\bin\Release\ScanImage.exe
+D:\BriefCore\trunk\ScanImage\ScanImage\bin\Release\ScanImage.pdb
+D:\BriefCore\trunk\ScanImage\ScanImage\obj\x86\Release\ResolveAssemblyReference.cache
+D:\BriefCore\trunk\ScanImage\ScanImage\obj\x86\Release\ScanImage.Form1.resources
+D:\BriefCore\trunk\ScanImage\ScanImage\obj\x86\Release\ScanImage.Properties.Resources.resources
+D:\BriefCore\trunk\ScanImage\ScanImage\obj\x86\Release\GenerateResource.read.1.tlog
+D:\BriefCore\trunk\ScanImage\ScanImage\obj\x86\Release\GenerateResource.write.1.tlog
+D:\BriefCore\trunk\ScanImage\ScanImage\obj\x86\Release\ScanImage.exe
+D:\BriefCore\trunk\ScanImage\ScanImage\obj\x86\Release\ScanImage.pdb
+D:\BriefCore\trunk\ScanImage\ScanImage\bin\Release\470.bmp
+D:\BriefCore\trunk\ScanImage\ScanImage\bin\Release\560.bmp
