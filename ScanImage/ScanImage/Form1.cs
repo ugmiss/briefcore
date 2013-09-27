@@ -51,33 +51,43 @@ namespace ScanImage
         }
         bool TestPix8(Bitmap bm, int x, int y)
         {
-            if (TestPix(bm, x + 1, y)) return true;
-            if (TestPix(bm, x + 1, y + 1)) return true;
-            if (TestPix(bm, x + 1, y - 1)) return true;
-            if (TestPix(bm, x, y + 1)) return true;
-            if (TestPix(bm, x, y - 1)) return true;
-            if (TestPix(bm, x - 1, y + 1)) return true;
-            if (TestPix(bm, x - 1, y)) return true;
-            if (TestPix(bm, x - 1, y - 1)) return true;
-            return false;
+            try
+            {
+                if (TestPix(bm, x + 1, y)) return true;
+                if (TestPix(bm, x + 1, y + 1)) return true;
+                if (TestPix(bm, x + 1, y - 1)) return true;
+                if (TestPix(bm, x, y + 1)) return true;
+                if (TestPix(bm, x, y - 1)) return true;
+                if (TestPix(bm, x - 1, y + 1)) return true;
+                if (TestPix(bm, x - 1, y)) return true;
+                if (TestPix(bm, x - 1, y - 1)) return true;
+                return false;
+            }
+            catch {
+                return true;
+            }
         }
 
 
         bool TestPix(Bitmap bm, int x, int y)
         {
             Color pixel = bm.GetPixel(x, y);//获取当前坐标的像素值
-            if (pixel.R == 0x0 && pixel.G == 0x9a && pixel.B == 0xff)
-            {
-                return true;
-            }
-            else if (pixel.R == 0x09 && pixel.G == 0xae && pixel.B == 0xf4)
-            {
-                return true;
-            }
+            //if (pixel.R == 0x00 && pixel.G == 0x9a && pixel.B == 0xff)
+            //{
+            //    return true;
+            //}
+            //else if (pixel.R == 0x09 && pixel.G == 0xae && pixel.B == 0xf4)
+            //{
+            //    return true;
+            //}
             //else if (pixel.R == 0x29 && pixel.G == 0xae && pixel.B == 0xd6)
             //{
             //    return true;
             //}
+            if (pixel.R == 0xff && pixel.G == 0xff && pixel.B == 0xff)
+            {
+               return true;
+            }
             else
             {
                 return false;
