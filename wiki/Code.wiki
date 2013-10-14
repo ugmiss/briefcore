@@ -29,3 +29,8 @@ foreach (PropertyInfo p in typeof(T).GetProperties())
     }
 }
 }}}
+
+===字符串格式化===
+{{{
+string str="{0,-8} | {1} | {2}| {3,-8}  | {4,-8}";
+}}}
