@@ -607,7 +607,7 @@ namespace System
     //{
     //    public static string JsonSerialize<T>(this T obj)
     //    {
-    //        return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+    //        return new Newtonsoft.Json.JsonSerializer().JsonSerializeizeObject(obj);
     //    }
     //    public static T JsonDeerialize<T>(this string obj)
     //    {
