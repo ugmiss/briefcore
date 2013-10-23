@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTL", "RTL\RTL.csproj", "{45AF2A22-2D67-4680-A1A5-06EDAE8C2378}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{61FE412E-0286-4597-AC69-A69949360497}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45AF2A22-2D67-4680-A1A5-06EDAE8C2378}.Debug|x86.ActiveCfg = Debug|x86
+		{45AF2A22-2D67-4680-A1A5-06EDAE8C2378}.Debug|x86.Build.0 = Debug|x86
+		{45AF2A22-2D67-4680-A1A5-06EDAE8C2378}.Release|x86.ActiveCfg = Release|x86
+		{45AF2A22-2D67-4680-A1A5-06EDAE8C2378}.Release|x86.Build.0 = Release|x86
+		{61FE412E-0286-4597-AC69-A69949360497}.Debug|x86.ActiveCfg = Debug|x86
+		{61FE412E-0286-4597-AC69-A69949360497}.Debug|x86.Build.0 = Debug|x86
+		{61FE412E-0286-4597-AC69-A69949360497}.Release|x86.ActiveCfg = Release|x86
+		{61FE412E-0286-4597-AC69-A69949360497}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
