@@ -34,3 +34,8 @@ foreach (PropertyInfo p in typeof(T).GetProperties())
 {{{
 string str="{0,-8} | {1} | {2}| {3,-8}  | {4,-8}";
 }}}
+
+===十进制，16进制转换===
+{{{
+
+}}}
