@@ -1,0 +1,26 @@
+  * 创建型
+  1. [SimpleFactory](SimpleFactory.md) （简单工厂或工厂方法）
+  1. [AbstractFactory](AbstractFactory.md)（抽象工厂）
+  1. [Builder](Builder.md)（建造者）
+  1. [Prototype](Prototype.md)（原型）
+  1. [Singleton](Singleton.md)（单例）
+  * 结构型
+  1. [Adapter](Adapter.md)（适配器）
+  1. [Bridge](Bridge.md)（桥接）
+  1. [Composite](Composite.md)（组合）
+  1. [Decorator](Decorator.md)（装饰）
+  1. [Facade](Facade.md)（外观）
+  1. [Flyweight](Flyweight.md)（享元）
+  1. [Proxy](Proxy.md)（代理）
+  * 行为型
+  1. [Interpreter](Interpreter.md)（解释器）
+  1. [TemplateMethod](TemplateMethod.md)（模板方法）
+  1. [ChainOfResponsibility](ChainOfResponsibility.md)（责任链）
+  1. [Command](Command.md)（命令）
+  1. [Iterator](Iterator.md)（迭代器）
+  1. [Mediator](Mediator.md)（中介者）
+  1. [Memento](Memento.md)（备忘录）
+  1. [Observer](Observer.md)（观察者）
+  1. [State](State.md)（状态）
+  1. [Strategy](Strategy.md)（策略）
+  1. [Visitor](Visitor.md)（访问者）
